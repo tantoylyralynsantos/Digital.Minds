@@ -1,0 +1,912 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <title>DIGITAL MINDS | BSIT E-BOOK</title>
+
+    <!-- CSS FILES -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="logout.css">
+    <link rel="stylesheet" href="display-settings.css">
+
+    <!-- JAVASCRIPT FILES -->
+    <script src="script.js" defer></script>
+    <script src="display-settings.js" defer></script>
+    <script src="index-auth.js" defer></script>
+
+</head>
+
+<body>
+
+    <!-- =====================================
+         DISPLAY SETTINGS
+    ====================================== -->
+
+    <div id="displaySettings">
+
+        <button id="settingsToggle" type="button" aria-label="Display settings">
+            ⚙️
+        </button>
+
+        <div id="settingsPanel">
+
+            <div class="settings-heading">
+                Display Settings
+            </div>
+
+            <span class="settings-label">Appearance</span>
+
+            <button id="darkModeButton" class="settings-dark-button" type="button">
+                🌙 Switch to Dark Mode
+            </button>
+
+            <span class="settings-label">Text Size</span>
+
+            <div class="settings-size-controls">
+
+                <button id="decreaseText" type="button" aria-label="Decrease text size">
+                    A−
+                </button>
+
+                <span id="textSizeValue">100%</span>
+
+                <button id="increaseText" type="button" aria-label="Increase text size">
+                    A+
+                </button>
+
+            </div>
+
+            <button id="resetSettings" type="button">
+                Reset Settings
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================
+         HEADER AND NAVIGATION
+    ====================================== -->
+
+    <header class="header">
+
+        <div class="nav-container">
+
+            <!-- LOGO -->
+            <a href="index.html" class="logo">
+
+                <img
+                    src="3rd yr/logo.jpg"
+                    alt="BSIT Digital Minds Logo"
+                    class="logo-image"
+                >
+
+                <span class="logo-text">
+                    <small>DIGITAL MINDS</small>
+                </span>
+
+            </a>
+
+
+            <!-- MOBILE MENU -->
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                type="button"
+                aria-label="Open navigation"
+                aria-expanded="false"
+                aria-controls="navigation"
+            >
+                ☰
+            </button>
+
+
+          
+<nav class="navigation" id="navigation">
+
+    <a href="index.html" class="nav-link active">
+        Home
+    </a>
+
+ 
+<!-- LESSONS DROPDOWN -->
+<div class="nav-dropdown">
+
+    <button type="button"
+        class="nav-link nav-dropdown-toggle"
+        id="lessonsToggle"
+        aria-expanded="false">
+
+        Lessons
+        <span class="dropdown-arrow">⌄</span>
+
+    </button>
+
+    <div class="nav-dropdown-menu">
+
+        <a href="2nd yr/2nd yr toc.html"
+           data-protected-year="2nd">
+            2nd Year
+        </a>
+
+        <a href="pics/3rd yr toc.html"
+           data-protected-year="3rd">
+            3rd Year
+        </a>
+
+    </div>
+
+</div>
+
+
+    <a href="#group-members" class="nav-link">
+        Group Members
+    </a>
+
+    <a href="#objectives" class="nav-link">
+        Objectives
+    </a>
+
+</nav>
+
+
+
+            <!-- LOGIN BUTTON -->
+            <a
+                href="login.html"
+                class="login-nav-button"
+                id="loginNavButton"
+                style="display: inline-flex;"
+            >
+                ↪ Login
+            </a>
+
+
+         
+<!-- PROFILE CONTAINER -->
+<div class="profile-container" id="profileContainer" style="display: none;">
+
+    <button class="profile-btn" id="profileBtn" type="button">
+        <span class="profile-avatar" id="profileInitials">S</span>
+        <span>Profile</span>
+        <span>⌄</span>
+    </button>
+
+    <div class="profile-dropdown" id="profileDropdown">
+
+        <div class="profile-info">
+            <div class="profile-avatar large" id="dropdownInitials">S</div>
+
+            <div class="profile-details">
+                <h4 id="profileUserName">Student Name</h4>
+                <p id="profileUserEmail">student@email.com</p>
+                <span class="account-status">● Active Account</span>
+            </div>
+        </div>
+
+        <div class="profile-divider"></div>
+
+        <a href="profile.html" class="profile-item">
+            👤 <span>My Profile</span>
+        </a>
+
+       <a href="learning-account.html" class="profile-item">
+    📚 <span>My Learning Account</span>
+</a>
+
+        <a href="settings.html" class="profile-item">
+            ⚙️ <span>Account Settings</span>
+        </a>
+
+        <div class="profile-divider"></div>
+
+        <button type="button" class="logout-link" id="logoutButton">
+            ↪ <span>Logout</span>
+        </button>
+
+    </div>
+</div>
+
+
+    </header>
+
+
+    <!-- =====================================
+         MAIN CONTENT
+    ====================================== -->
+
+    <main>
+
+
+        <!-- HERO SECTION -->
+
+        <section class="hero">
+
+            <div class="hero-background-shape shape-one"></div>
+            <div class="hero-background-shape shape-two"></div>
+
+            <div class="hero-container">
+
+                <div class="hero-content">
+
+                    <span class="hero-label">
+                        <span class="label-dot"></span>
+                        BACHELOR OF SCIENCE IN INFORMATION TECHNOLOGY
+                    </span>
+
+                    <h1>
+                        Learn, Explore, and Grow in the
+                        <span>World of Technology.</span>
+                    </h1>
+
+                    <p>
+                        Discover the world of web technology through
+                        interactive lessons, practical activities,
+                        assessments, and learning resources.
+                    </p>
+
+                    <div class="hero-buttons">
+
+                        <a href="#year-levels" class="primary-btn">
+                            Explore Lessons <span>→</span>
+                        </a>
+
+                        <a href="#project" class="outline-btn">
+                            About This Project
+                        </a>
+
+                    </div>
+
+                    <div class="hero-note">
+                        <span class="hero-note-icon">✦</span>
+                        Learn at your own pace. Grow your IT knowledge.
+                    </div>
+
+                </div>
+
+
+                <!-- HERO VISUAL -->
+
+                <div class="hero-visual">
+
+                    <div class="visual-card main-visual-card">
+
+                        <div class="visual-top">
+
+                            <span class="visual-dot"></span>
+                            <span class="visual-dot"></span>
+                            <span class="visual-dot"></span>
+
+                            <span class="visual-title">
+                                WEBTECH LEARN
+                            </span>
+
+                        </div>
+
+                        <div class="visual-content">
+
+                            <div class="code-icon">&lt;/&gt;</div>
+
+                            <h3>Explore. Learn. Create.</h3>
+
+                            <p>
+                                Your journey to understanding
+                                web technology starts here.
+                            </p>
+
+                            <div class="visual-line line-long"></div>
+                            <div class="visual-line line-medium"></div>
+                            <div class="visual-line line-short"></div>
+
+                        </div>
+
+                        <div class="visual-bottom">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JAVASCRIPT</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="floating-card floating-top">
+
+                        <span>📘</span>
+
+                        <div>
+                            <strong>20 Lessons</strong>
+                            <small>Learning modules</small>
+                        </div>
+
+                    </div>
+
+
+                    <div class="floating-card floating-bottom">
+
+                        <span>🎓</span>
+
+                        <div>
+                            <strong>BSIT E-Book</strong>
+                            <small>Digital learning</small>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             PROJECT INFORMATION
+        ====================================== -->
+
+        <section class="section project-section" id="project">
+
+            <div class="section-heading">
+
+                <span class="section-label">
+                    ABOUT THE PROJECT
+                </span>
+
+                <h2>
+                    Welcome to <span>E-BOOK LEARNING</span>
+                </h2>
+
+                <p>
+                    Your digital learning companion for Web Technology.
+                    Explore essential information about this project.
+                </p>
+
+            </div>
+
+
+            <div class="project-grid">
+
+                <article class="info-card">
+
+                    <div class="card-icon">📘</div>
+                    <span class="card-number">01</span>
+
+                    <h3>Project File</h3>
+                    <p>BSIT Digital E-Book</p>
+
+                </article>
+
+
+                <article class="info-card">
+
+                    <div class="card-icon">💻</div>
+                    <span class="card-number">02</span>
+
+                    <h3>Subject</h3>
+                    <p>Web Technology</p>
+
+                </article>
+
+
+                <article class="info-card">
+
+                    <div class="card-icon">🎓</div>
+                    <span class="card-number">03</span>
+
+                    <h3>Year Level</h3>
+                    <p>BSIT 2nd Year and 3rd Year</p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             YEAR LEVEL SELECTION
+        ====================================== -->
+
+        <section class="year-level-section" id="year-levels">
+
+            <div class="section">
+
+                <div class="section-heading">
+
+                    <span class="section-label">
+                        START LEARNING
+                    </span>
+
+                    <h2>
+                        Choose Your <span>Year Level</span>
+                    </h2>
+
+                    <p>
+                        Select your academic year to explore
+                        the available learning modules.
+                    </p>
+
+                </div>
+
+
+                <div class="year-selection-grid">
+
+
+                    <!-- SECOND YEAR -->
+
+                    <article class="year-selection-card">
+
+                        <div class="year-card-top">
+
+                            <span class="year-tag">
+                                UNDERGRADUATE
+                            </span>
+
+                            <span class="year-icon">02</span>
+
+                        </div>
+
+
+                        <div class="year-card-content">
+
+                            <p class="year-subtitle">
+                                INFORMATION TECHNOLOGY
+                            </p>
+
+                            <h3>BSIT 2nd Year</h3>
+
+                            <p class="year-description">
+                                Strengthen your knowledge of web development
+                                through essential programming concepts,
+                                practical exercises, and activities.
+                            </p>
+
+                            <div class="year-card-footer">
+
+                                <span>10 Learning Modules</span>
+                                <span class="module-icon">📚</span>
+
+                            </div>
+
+                            <a
+                                href="2nd yr/2nd yr toc.html"
+                                class="year-button"
+                                data-protected-year="2nd"
+                            >
+                                Explore 2nd Year Lessons
+                                <span>→</span>
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- THIRD YEAR -->
+
+                    <article class="year-selection-card featured-year">
+
+                        <div class="year-card-top">
+
+                            <span class="year-tag">
+                                UNDERGRADUATE
+                            </span>
+
+                            <span class="year-icon">03</span>
+
+                        </div>
+
+
+                        <div class="year-card-content">
+
+                            <p class="year-subtitle">
+                                INFORMATION TECHNOLOGY
+                            </p>
+
+                            <h3>BSIT 3rd Year</h3>
+
+                            <p class="year-description">
+                                Expand your understanding of advanced
+                                web technology concepts, web applications,
+                                accessibility, and modern development.
+                            </p>
+
+                            <div class="year-card-footer">
+
+                                <span>10 Learning Modules</span>
+                                <span class="module-icon">📚</span>
+
+                            </div>
+
+                            <a
+                                href="3rd yr/3rd yr toc.html"
+                                class="year-button"
+                                data-protected-year="3rd"
+                            >
+                                Explore 3rd Year Lessons
+                                <span>→</span>
+                            </a>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             GROUP MEMBERS
+        ====================================== -->
+
+        <section class="group-section" id="group-members">
+
+            <div class="group-heading">
+
+                <span class="section-label">
+                    THE PEOPLE BEHIND THE PROJECT
+                </span>
+
+                <h2>Meet Our Group Members</h2>
+
+                <p>
+                    Meet the creative minds behind WEBTECH LEARN.
+                </p>
+
+            </div>
+
+
+            <div class="group-container">
+
+
+                <!-- MEMBER 1 -->
+
+                <div class="member-card">
+
+                    <div class="member-image">
+
+                        <img
+                            src="leader.png"
+                            alt="Group Leader"
+                        >
+
+                    </div>
+
+                    <div class="member-info">
+
+                        <span class="member-number">
+                            Website Developer
+                        </span>
+
+                        <h3>Tantoy Lyralyn S.</h3>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- MEMBER 2 -->
+
+                <div class="member-card">
+
+                    <div class="member-image">
+
+                        <img
+                            src="images/member2.jpg"
+                            alt="Group Member"
+                        >
+
+                    </div>
+
+                    <div class="member-info">
+
+                        <span class="member-number">
+                            Group Member
+                        </span>
+
+                        <h3>Yumol Richard Phillip Bartilet.</h3>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             LEARNING OBJECTIVES
+        ====================================== -->
+
+        <section class="objectives-section" id="objectives">
+
+            <div class="section">
+
+                <div class="section-heading">
+
+                    <span class="section-label">
+                        WHAT YOU WILL ACHIEVE
+                    </span>
+
+                    <h2>
+                        Learning <span>Objectives</span>
+                    </h2>
+
+                    <p>
+                        The main goals of this digital e-book
+                        are to support students in learning Web Technology.
+                    </p>
+
+                </div>
+
+
+                <div class="objectives-grid">
+
+
+                    <article class="objective-card">
+
+                        <span class="objective-check">✓</span>
+
+                        <div>
+
+                            <h3>Understand Web Technology</h3>
+
+                            <p>
+                                Learn the fundamental concepts,
+                                principles, and technologies used
+                                in web development.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="objective-card">
+
+                        <span class="objective-check">✓</span>
+
+                        <div>
+
+                            <h3>Develop Technical Knowledge</h3>
+
+                            <p>
+                                Understand the purpose and functions
+                                of different web development tools
+                                and technologies.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="objective-card">
+
+                        <span class="objective-check">✓</span>
+
+                        <div>
+
+                            <h3>Apply Practical Skills</h3>
+
+                            <p>
+                                Develop practical knowledge through
+                                activities, examples, and exercises.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="objective-card">
+
+                        <span class="objective-check">✓</span>
+
+                        <div>
+
+                            <h3>Evaluate Learning Progress</h3>
+
+                            <p>
+                                Measure understanding through
+                                quizzes, assessments, and learning tasks.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             CALL TO ACTION
+        ====================================== -->
+
+        <section class="closing-section">
+
+            <div class="closing-content">
+
+                <span class="section-label">
+                    YOUR LEARNING JOURNEY STARTS HERE
+                </span>
+
+                <h2>Ready to Explore Web Technology?</h2>
+
+                <p>
+                    Choose your year level and begin exploring
+                    your learning modules today.
+                </p>
+
+                <a href="#year-levels" class="primary-btn">
+                    Start Learning <span>→</span>
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =====================================
+         YEAR LEVEL PASSWORD LOGIN MODAL
+    ====================================== -->
+
+    <div
+        class="login-overlay"
+        id="loginOverlay"
+        aria-hidden="true"
+    >
+
+        <div
+            class="login-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="loginTitle"
+        >
+
+            <button
+                type="button"
+                class="login-close"
+                id="closeLogin"
+                aria-label="Close login"
+            >
+                &times;
+            </button>
+
+
+            <div class="login-icon">
+                🔐
+            </div>
+
+            <span class="login-label">
+                WEBTECH LEARN ACCESS
+            </span>
+
+            <h2 id="loginTitle">
+                Year Level Access
+            </h2>
+
+            <p class="login-description">
+                Enter your password to access your learning modules.
+            </p>
+
+
+            <form id="yearLoginForm">
+
+                <label for="loginPassword">
+                    Password
+                </label>
+
+
+                <div class="password-wrapper">
+
+                    <input
+                        type="password"
+                        id="loginPassword"
+                        placeholder="Enter your password"
+                        autocomplete="current-password"
+                        required
+                    >
+
+                    <button
+                        type="button"
+                        id="togglePassword"
+                        aria-label="Show password"
+                    >
+                        Show
+                    </button>
+
+                </div>
+
+
+                <p
+                    class="login-error"
+                    id="loginError"
+                    aria-live="polite"
+                ></p>
+
+
+                <button type="submit" class="login-submit">
+                    Login to Lessons →
+                </button>
+
+            </form>
+
+
+            <p class="login-footer">
+                <span class="login-footer-dot"></span>
+                Authorized students only
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================
+         FOOTER
+    ====================================== -->
+
+    <footer class="footer">
+
+        <div class="footer-content">
+
+            <div class="footer-brand">
+
+                <div class="footer-logo">W</div>
+
+                <div>
+                    <h3>WEBTECH LEARN</h3>
+                    <p>BSIT DIGITAL E-BOOK</p>
+                </div>
+
+            </div>
+
+
+            <p class="footer-description">
+                A digital learning resource for students
+                exploring the world of Web Technology.
+            </p>
+
+
+            <div class="footer-divider"></div>
+
+
+            <p class="copyright">
+                © 2026 WEBTECH LEARN. All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+</body>
+</html>

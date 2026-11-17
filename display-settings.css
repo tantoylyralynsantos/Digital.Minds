@@ -1,0 +1,1351 @@
+
+/* =========================================
+   WEBTECH LEARN
+   GLOBAL DISPLAY SETTINGS
+   DARK MODE + TEXT SIZE
+========================================= */
+
+/* =========================================
+   COLOR VARIABLES
+========================================= */
+
+:root {
+    --display-text-scale: 1;
+
+    --navy: #082d59;
+    --blue: #10569a;
+    --light-blue: #eaf3fc;
+
+    --dark-background: #050d19;
+    --dark-surface: #0d1d32;
+    --dark-surface-2: #102944;
+    --dark-border: #244568;
+
+    --dark-heading: #ffffff;
+    --dark-text: #dce9f8;
+    --dark-muted: #a9bfd8;
+    --dark-accent: #63baff;
+}
+
+/* =========================================
+   DISPLAY SETTINGS FLOATING BUTTON
+========================================= */
+
+#displaySettings {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 99999;
+    font-family: Arial, sans-serif;
+}
+
+#settingsToggle {
+    width: 52px;
+    height: 52px;
+    border: none;
+    border-radius: 50%;
+    background: #07376f;
+    color: #ffffff;
+    font-size: 23px;
+    cursor: pointer;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.25);
+    transition: 0.2s ease;
+}
+
+#settingsToggle:hover {
+    background: #1265a8;
+    transform: translateY(-2px);
+}
+
+/* =========================================
+   SETTINGS PANEL
+========================================= */
+
+#settingsPanel {
+    display: none;
+    position: absolute;
+    right: 0;
+    bottom: 65px;
+    width: 245px;
+    padding: 20px;
+
+    background: #ffffff;
+    color: #263445;
+
+    border: 1px solid #dce5ef;
+    border-radius: 14px;
+
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.2);
+}
+
+#settingsPanel.show {
+    display: block;
+}
+
+.settings-heading {
+    margin: 0 0 15px;
+    color: #07376f;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.settings-label {
+    display: block;
+    margin: 14px 0 9px;
+    color: #263445;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.settings-dark-button {
+    width: 100%;
+    padding: 11px;
+
+    border: none;
+    border-radius: 7px;
+
+    background: #07376f;
+    color: #ffffff;
+
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.settings-dark-button:hover {
+    background: #1265a8;
+}
+
+/* =========================================
+   TEXT SIZE BUTTONS
+========================================= */
+
+.settings-size-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.settings-size-controls button {
+    flex: 1;
+    padding: 10px;
+
+    border: 1px solid #d6e1ef;
+    border-radius: 7px;
+
+    background: #f1f6fc;
+    color: #07376f;
+
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.settings-size-controls button:hover {
+    background: #dceaff;
+}
+
+#textSizeValue {
+    min-width: 42px;
+    text-align: center;
+    color: #263445;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+/* =========================================
+   RESET BUTTON
+========================================= */
+
+#resetSettings {
+    width: 100%;
+    margin-top: 14px;
+    padding: 9px;
+
+    border: 1px solid #d6e1ef;
+    border-radius: 7px;
+
+    background: #ffffff;
+    color: #52647a;
+
+    font-size: 12px;
+    cursor: pointer;
+}
+
+#resetSettings:hover {
+    background: #f1f6fc;
+}
+
+/* =========================================
+   TEXT SIZE SYSTEM
+   Works with display-settings.js
+========================================= */
+
+html {
+    --display-text-scale: 1;
+}
+
+html body .display-scaled-text {
+    font-size: calc(
+        var(--original-text-size) * var(--display-text-scale)
+    ) !important;
+}
+
+/* Settings panel is excluded from text scaling */
+#displaySettings,
+#displaySettings * {
+    --display-text-scale: 1;
+}
+
+/* =========================================
+   DARK MODE - MAIN BACKGROUND
+========================================= */
+
+html.dark-mode {
+    color-scheme: dark;
+    background: var(--dark-background) !important;
+}
+
+html.dark-mode body {
+    background: var(--dark-background) !important;
+    color: var(--dark-text) !important;
+}
+
+/* Main page areas */
+
+html.dark-mode body main,
+html.dark-mode body .main-content,
+html.dark-mode body .toc-container,
+html.dark-mode body .project-section,
+html.dark-mode body .members-section,
+html.dark-mode body .objectives-section,
+html.dark-mode body .section {
+    background-color: var(--dark-background) !important;
+    color: var(--dark-text) !important;
+}
+
+/* =========================================
+   DARK MODE - CONTENT CARDS
+========================================= */
+
+html.dark-mode body :is(
+    .info-card,
+    .year-selection-card,
+    .year-card,
+    .lesson-card,
+    .content-card,
+    .lesson-content,
+    .content-section,
+    .quiz-container,
+    .quiz-card,
+    .activity-card,
+    .resource-card,
+    .glossary-card,
+    .objective-card,
+    .member-placeholder,
+    .highlight-box,
+    .timeline-content,
+    .timeline-card,
+    .timeline-event,
+    .timeline-item,
+    .timeline-box,
+    .example-box,
+    .definition-box,
+    .question,
+    .exercise,
+    .assessment,
+    .no-results
+) {
+    background-color: var(--dark-surface) !important;
+    color: var(--dark-text) !important;
+    border-color: var(--dark-border) !important;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25) !important;
+}
+
+/* =========================================
+   DARK MODE - HEADINGS
+========================================= */
+
+html.dark-mode body h1,
+html.dark-mode body h2,
+html.dark-mode body h3,
+html.dark-mode body h4,
+html.dark-mode body h5,
+html.dark-mode body h6,
+html.dark-mode body .title,
+html.dark-mode body .chapter-title,
+html.dark-mode body .lesson-title,
+html.dark-mode body .section-title,
+html.dark-mode body .year-heading,
+html.dark-mode body .section-heading h2,
+html.dark-mode body .content-card h2,
+html.dark-mode body .content-card h3,
+html.dark-mode body .lesson-card h3,
+html.dark-mode body .objective-card h3,
+html.dark-mode body .member-placeholder h3 {
+    color: var(--dark-heading) !important;
+    opacity: 1 !important;
+}
+
+/* =========================================
+   DARK MODE - PARAGRAPHS AND TEXT
+========================================= */
+
+html.dark-mode body p,
+html.dark-mode body li,
+html.dark-mode body label,
+html.dark-mode body figcaption,
+html.dark-mode body blockquote,
+html.dark-mode body td,
+html.dark-mode body .year-description,
+html.dark-mode body .lesson-description,
+html.dark-mode body .card-description,
+html.dark-mode body .login-description,
+html.dark-mode body .explanation-text,
+html.dark-mode body .result-details,
+html.dark-mode body .question-text {
+    color: var(--dark-text) !important;
+    opacity: 1 !important;
+}
+
+/* Bold text */
+
+html.dark-mode body strong,
+html.dark-mode body b {
+    color: #ffffff !important;
+}
+
+/* Small labels */
+
+html.dark-mode body .section-label,
+html.dark-mode body .eyebrow,
+html.dark-mode body .year-subtitle,
+html.dark-mode body .hero-label,
+html.dark-mode body .lesson-number,
+html.dark-mode body .card-number {
+    color: var(--dark-accent) !important;
+    opacity: 1 !important;
+}
+
+/* =========================================
+   DARK MODE - LINKS
+========================================= */
+
+html.dark-mode body a:not(
+    .year-button
+):not(
+    .nav-link
+):not(
+    .logo
+):not(
+    .assessment-button
+):not(
+    .assessment-sidebar-button
+) {
+    color: #75c5ff;
+}
+
+html.dark-mode body a:hover {
+    color: #b4e0ff;
+}
+
+/* =========================================
+   DARK MODE - NAVIGATION
+========================================= */
+
+html.dark-mode body :is(
+    .header,
+    .top-header,
+    .main-header,
+    header
+) {
+    color: #ffffff;
+}
+
+/* Keep navigation text readable */
+
+html.dark-mode body nav a,
+html.dark-mode body .nav-link,
+html.dark-mode body .logo {
+    color: #ffffff !important;
+}
+
+/* =========================================
+   DARK MODE - BLUE BANNERS
+========================================= */
+
+/* Preserve original blue gradient backgrounds */
+
+html.dark-mode body :is(
+    .hero,
+    .lesson-banner,
+    .chapter-banner,
+    .year-card-top,
+    .hero-visual
+) {
+    color: #ffffff !important;
+}
+
+html.dark-mode body :is(
+    .hero,
+    .lesson-banner,
+    .chapter-banner,
+    .year-card-top
+) h1,
+html.dark-mode body :is(
+    .hero,
+    .lesson-banner,
+    .chapter-banner,
+    .year-card-top
+) h2,
+html.dark-mode body :is(
+    .hero,
+    .lesson-banner,
+    .chapter-banner,
+    .year-card-top
+) p {
+    color: #ffffff !important;
+}
+
+/* Blue title accents */
+
+html.dark-mode body .hero h1 span,
+html.dark-mode body .section-heading h2 span {
+    color: #55c5ff !important;
+}
+
+/* =========================================
+   DARK MODE - SIDEBAR
+========================================= */
+
+html.dark-mode body :is(
+    aside,
+    .sidebar,
+    .sidebar-content
+) {
+    background: #09182b !important;
+    color: #edf5ff !important;
+    border-color: var(--dark-border) !important;
+}
+
+html.dark-mode body .sidebar h2,
+html.dark-mode body .sidebar h3,
+html.dark-mode body .sidebar a {
+    color: #eaf4ff !important;
+}
+
+html.dark-mode body .sidebar nav a {
+    background: transparent;
+}
+
+html.dark-mode body .sidebar nav a:hover,
+html.dark-mode body .sidebar nav a.active {
+    background: #123b60 !important;
+    color: #ffffff !important;
+}
+
+/* =========================================
+   DARK MODE - TABLES
+========================================= */
+
+html.dark-mode body table {
+    background: var(--dark-surface) !important;
+    color: var(--dark-text) !important;
+    border-color: var(--dark-border) !important;
+}
+
+html.dark-mode body table th {
+    background: #123b66 !important;
+    color: #ffffff !important;
+    border-color: var(--dark-border) !important;
+}
+
+html.dark-mode body table td {
+    background: var(--dark-surface) !important;
+    color: var(--dark-text) !important;
+    border-color: var(--dark-border) !important;
+}
+
+/* =========================================
+   DARK MODE - INPUTS AND SEARCH
+========================================= */
+
+html.dark-mode body input,
+html.dark-mode body textarea,
+html.dark-mode body select {
+    background: #09182a !important;
+    color: #ffffff !important;
+    border-color: #365675 !important;
+}
+
+html.dark-mode body input::placeholder,
+html.dark-mode body textarea::placeholder {
+    color: #a9bfd8 !important;
+    opacity: 1 !important;
+}
+
+html.dark-mode body input:focus,
+html.dark-mode body textarea:focus,
+html.dark-mode body select:focus {
+    outline-color: #55b8ff !important;
+    border-color: #55b8ff !important;
+}
+
+/* =========================================
+   DARK MODE - HIGHLIGHT BOXES
+========================================= */
+
+html.dark-mode body .highlight-box {
+    background: #0d1d32 !important;
+    color: #eaf3ff !important;
+    border: 1px solid #245078 !important;
+    border-left: 5px solid #0875ce !important;
+}
+
+html.dark-mode body .highlight-box h1,
+html.dark-mode body .highlight-box h2,
+html.dark-mode body .highlight-box h3,
+html.dark-mode body .highlight-box h4,
+html.dark-mode body .highlight-box strong {
+    color: #ffffff !important;
+}
+
+html.dark-mode body .highlight-box p,
+html.dark-mode body .highlight-box li {
+    color: #dceaff !important;
+}
+
+/* =========================================
+   DARK MODE - OBJECTIVES
+========================================= */
+
+html.dark-mode body .objective-card {
+    background: var(--dark-surface) !important;
+    border: 1px solid var(--dark-border) !important;
+}
+
+html.dark-mode body .objective-card p {
+    color: #c9ddf3 !important;
+}
+
+html.dark-mode body .objective-check {
+    background: #07529a !important;
+    color: #ffffff !important;
+}
+
+/* =========================================
+   DARK MODE - GROUP MEMBERS
+========================================= */
+
+html.dark-mode body .member-placeholder {
+    background: var(--dark-surface) !important;
+    color: #ffffff !important;
+    border: 1px solid var(--dark-border) !important;
+}
+
+html.dark-mode body .member-placeholder p {
+    color: #c9ddf3 !important;
+}
+
+html.dark-mode body .member-placeholder .member-icon {
+    background: #123b60 !important;
+    color: #ffffff !important;
+}
+
+/* =========================================
+   DARK MODE - TIMELINE
+========================================= */
+
+html.dark-mode body :is(
+    .timeline-content,
+    .timeline-card,
+    .timeline-event,
+    .timeline-item,
+    .timeline-box,
+    .timeline .event
+) {
+    background: var(--dark-surface) !important;
+    color: var(--dark-text) !important;
+    border-color: var(--dark-border) !important;
+}
+
+html.dark-mode body .timeline::before,
+html.dark-mode body .timeline::after {
+    background: #0875ce !important;
+}
+
+html.dark-mode body .timeline .year {
+    background: #07529a !important;
+    color: #ffffff !important;
+}
+
+/* =========================================
+   DARK MODE - CODE BLOCKS
+========================================= */
+
+html.dark-mode body pre,
+html.dark-mode body code {
+    background: #071321 !important;
+    color: #a9d7ff !important;
+    border-color: var(--dark-border) !important;
+}
+
+/* =========================================
+   DARK MODE - LOGIN
+========================================= */
+
+html.dark-mode body .login-overlay {
+    background: rgba(0, 8, 20, 0.9) !important;
+}
+
+html.dark-mode body .login-modal {
+    background: #0b1b30 !important;
+    color: #ffffff !important;
+    border: 1px solid var(--dark-border) !important;
+}
+
+html.dark-mode body .login-modal h2,
+html.dark-mode body #loginTitle {
+    color: #ffffff !important;
+}
+
+html.dark-mode body .login-label,
+html.dark-mode body .login-modal label {
+    color: #eaf4ff !important;
+}
+
+html.dark-mode body .login-description,
+html.dark-mode body .login-footer {
+    color: #c9ddf3 !important;
+}
+
+html.dark-mode body .login-modal input {
+    background: #041426 !important;
+    color: #ffffff !important;
+    border-color: #27618f !important;
+}
+
+html.dark-mode body .login-modal input::placeholder {
+    color: #9bb4ce !important;
+}
+
+html.dark-mode body #togglePassword {
+    color: #55b8ff !important;
+}
+
+html.dark-mode body .login-submit {
+    background: #07529a !important;
+    color: #ffffff !important;
+}
+
+html.dark-mode body .login-error {
+    color: #ff8585 !important;
+}
+
+/* =========================================
+   DARK MODE - FOOTER
+========================================= */
+
+html.dark-mode body footer,
+html.dark-mode body .footer {
+    background: #030b16 !important;
+    color: #dceaff !important;
+}
+
+html.dark-mode body footer p,
+html.dark-mode body .footer p,
+html.dark-mode body footer a,
+html.dark-mode body .footer a {
+    color: #dceaff !important;
+}
+
+/* =========================================
+   DARK MODE - BACK TO TOP
+========================================= */
+
+html.dark-mode body #backToTop {
+    background: #1267ad !important;
+    color: #ffffff !important;
+}
+
+/* =========================================
+   DARK MODE - SETTINGS PANEL
+========================================= */
+
+html.dark-mode #settingsPanel {
+    background: #081526 !important;
+    color: #edf5ff !important;
+    border: 1px solid #244568 !important;
+}
+
+html.dark-mode #settingsPanel .settings-heading {
+    color: #ffffff !important;
+}
+
+html.dark-mode #settingsPanel .settings-label {
+    color: #dceaff !important;
+}
+
+html.dark-mode #settingsPanel .settings-size-controls button,
+html.dark-mode #settingsPanel #resetSettings {
+    background: #102944 !important;
+    color: #ffffff !important;
+    border-color: #315475 !important;
+}
+
+html.dark-mode #settingsPanel #textSizeValue {
+    color: #ffffff !important;
+}
+
+html.dark-mode #settingsPanel .settings-size-controls button:hover,
+html.dark-mode #settingsPanel #resetSettings:hover {
+    background: #164b7a !important;
+}
+
+html.dark-mode #settingsToggle {
+    background: #07529a !important;
+    color: #ffffff !important;
+}
+
+html.dark-mode #settingsToggle:hover {
+    background: #0875ce !important;
+}
+
+/* =========================================
+   MOBILE RESPONSIVE SETTINGS
+========================================= */
+
+@media (max-width: 600px) {
+    #displaySettings {
+        right: 14px;
+        bottom: 14px;
+    }
+
+    #settingsToggle {
+        width: 47px;
+        height: 47px;
+        font-size: 21px;
+    }
+
+    #settingsPanel {
+        width: 225px;
+        padding: 17px;
+    }
+}
+#settingsPanel {
+    display: none;
+}
+
+#settingsPanel.show {
+    display: block;
+}
+
+/* =========================================
+   DARK MODE - LEARNING FOCUS AND INFO BOXES
+========================================= */
+
+html.dark-mode body .info-box,
+html.dark-mode body .note-box,
+html.dark-mode body .learning-focus,
+html.dark-mode body .focus-box,
+html.dark-mode body .tip-box,
+html.dark-mode body .warning-box,
+html.dark-mode body .important-box,
+html.dark-mode body .highlight-box,
+html.dark-mode body .callout-box {
+    background: #12365b !important;
+    color: #eaf3fc !important;
+    border-color: #3b78ad !important;
+}
+
+/* Box headings */
+html.dark-mode body .info-box h2,
+html.dark-mode body .info-box h3,
+html.dark-mode body .note-box h2,
+html.dark-mode body .note-box h3,
+html.dark-mode body .learning-focus h2,
+html.dark-mode body .learning-focus h3,
+html.dark-mode body .focus-box h2,
+html.dark-mode body .focus-box h3,
+html.dark-mode body .tip-box h2,
+html.dark-mode body .tip-box h3,
+html.dark-mode body .warning-box h2,
+html.dark-mode body .warning-box h3 {
+    color: #ffffff !important;
+}
+
+/* Box paragraphs and text */
+html.dark-mode body .info-box p,
+html.dark-mode body .note-box p,
+html.dark-mode body .learning-focus p,
+html.dark-mode body .focus-box p,
+html.dark-mode body .tip-box p,
+html.dark-mode body .warning-box p,
+html.dark-mode body .important-box p,
+html.dark-mode body .highlight-box p,
+html.dark-mode body .callout-box p,
+html.dark-mode body .info-box strong,
+html.dark-mode body .note-box strong,
+html.dark-mode body .learning-focus strong,
+html.dark-mode body .focus-box strong {
+    color: #eaf3fc !important;
+}
+
+/* Links inside information boxes */
+html.dark-mode body .info-box a,
+html.dark-mode body .note-box a,
+html.dark-mode body .learning-focus a {
+    color: #8ecbff !important;
+}
+
+/* =========================================
+   DARK MODE - LEARNING RESOURCES CARDS
+========================================= */
+
+html.dark-mode body .resource-list li,
+html.dark-mode body .resource-card,
+html.dark-mode body .resource-item {
+    background: #12365b !important;
+    color: #eaf3fc !important;
+    border: 1px solid #315d85 !important;
+}
+
+/* Resource titles */
+html.dark-mode body .resource-list li strong,
+html.dark-mode body .resource-card h3,
+html.dark-mode body .resource-item h3 {
+    color: #ffffff !important;
+}
+
+/* Resource descriptions */
+html.dark-mode body .resource-list li p,
+html.dark-mode body .resource-card p,
+html.dark-mode body .resource-item p {
+    color: #d5e7f8 !important;
+}
+
+/* Resource links */
+html.dark-mode body .resource-list li a,
+html.dark-mode body .resource-card a,
+html.dark-mode body .resource-item a {
+    color: #69baff !important;
+}
+
+html.dark-mode body .resource-list li a:hover,
+html.dark-mode body .resource-card a:hover,
+html.dark-mode body .resource-item a:hover {
+    color: #ffffff !important;
+}
+
+/* =========================================
+   WEBTECH LEARN
+   GLOBAL DARK MODE FIX - ALL CONTENT
+========================================= */
+
+/* ALL COMMON CONTENT BOXES AND CARDS */
+html.dark-mode body :is(
+    .content-card,
+    .content-section,
+    .info-card,
+    .info-box,
+    .note-box,
+    .highlight-box,
+    .learning-focus,
+    .focus-box,
+    .tip-box,
+    .warning-box,
+    .important-box,
+    .callout-box,
+    .resource-card,
+    .resource-item,
+    .resource-list li,
+    .activity,
+    .activity-card,
+    .exercise,
+    .example-box,
+    .definition-box,
+    .form-demo,
+    .password-levels,
+    .quiz-container,
+    .quiz-card,
+    .quiz-result,
+    .question,
+    .question-card,
+    .question-block,
+    .assessment,
+    .assessment-card,
+    .assessment-overview,
+    .result-card,
+    .explanation,
+    .answer-explanation,
+    .glossary-card,
+    .glossary-list,
+    .references-list li,
+    .table-wrap,
+    .diagram,
+    .timeline-content,
+    .timeline-card,
+    .timeline-event,
+    .timeline-item,
+    .timeline-box,
+    .objective-card,
+    .member-placeholder,
+    .no-results,
+    .pagination,
+    .ebook-pagination
+) {
+    background: #0d1d32 !important;
+    color: #dce9f8 !important;
+    border-color: #315475 !important;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.22) !important;
+}
+
+/* SPECIAL RESOURCE CARDS */
+html.dark-mode body .resource-list li,
+html.dark-mode body .resource-card,
+html.dark-mode body .resource-item {
+    background: #12365b !important;
+    border: 1px solid #315d85 !important;
+}
+
+/* ALL HEADINGS INSIDE CONTENT BOXES */
+html.dark-mode body :is(
+    .content-card,
+    .content-section,
+    .info-card,
+    .info-box,
+    .note-box,
+    .highlight-box,
+    .learning-focus,
+    .focus-box,
+    .tip-box,
+    .warning-box,
+    .resource-card,
+    .resource-item,
+    .resource-list li,
+    .activity,
+    .activity-card,
+    .exercise,
+    .example-box,
+    .definition-box,
+    .form-demo,
+    .quiz-container,
+    .quiz-card,
+    .quiz-result,
+    .question,
+    .question-card,
+    .question-block,
+    .assessment,
+    .assessment-card,
+    .assessment-overview,
+    .result-card,
+    .glossary-card,
+    .glossary-list,
+    .references-list li
+) h1,
+html.dark-mode body :is(
+    .content-card,
+    .content-section,
+    .info-card,
+    .info-box,
+    .note-box,
+    .highlight-box,
+    .learning-focus,
+    .focus-box,
+    .tip-box,
+    .warning-box,
+    .resource-card,
+    .resource-item,
+    .resource-list li,
+    .activity,
+    .activity-card,
+    .exercise,
+    .example-box,
+    .definition-box,
+    .form-demo,
+    .quiz-container,
+    .quiz-card,
+    .quiz-result,
+    .question,
+    .question-card,
+    .question-block,
+    .assessment,
+    .assessment-card,
+    .assessment-overview,
+    .result-card,
+    .glossary-card,
+    .glossary-list,
+    .references-list li
+) h2,
+html.dark-mode body :is(
+    .content-card,
+    .content-section,
+    .info-card,
+    .info-box,
+    .note-box,
+    .highlight-box,
+    .learning-focus,
+    .focus-box,
+    .tip-box,
+    .warning-box,
+    .resource-card,
+    .resource-item,
+    .resource-list li,
+    .activity,
+    .activity-card,
+    .exercise,
+    .example-box,
+    .definition-box,
+    .form-demo,
+    .quiz-container,
+    .quiz-card,
+    .quiz-result,
+    .question,
+    .question-card,
+    .question-block,
+    .assessment,
+    .assessment-card,
+    .assessment-overview,
+    .result-card,
+    .glossary-card,
+    .glossary-list,
+    .references-list li
+) h3,
+html.dark-mode body :is(
+    .content-card,
+    .content-section,
+    .info-card,
+    .info-box,
+    .note-box,
+    .highlight-box,
+    .learning-focus,
+    .focus-box,
+    .tip-box,
+    .warning-box,
+    .resource-card,
+    .resource-item,
+    .resource-list li,
+    .activity,
+    .activity-card,
+    .exercise,
+    .example-box,
+    .definition-box,
+    .form-demo,
+    .quiz-container,
+    .quiz-card,
+    .quiz-result,
+    .question,
+    .question-card,
+    .question-block,
+    .assessment,
+    .assessment-card,
+    .assessment-overview,
+    .result-card,
+    .glossary-card,
+    .glossary-list,
+    .references-list li
+) h4 {
+    color: #ffffff !important;
+    opacity: 1 !important;
+}
+
+/* ALL PARAGRAPHS AND DESCRIPTIONS */
+html.dark-mode body :is(
+    .content-card,
+    .content-section,
+    .info-card,
+    .info-box,
+    .note-box,
+    .highlight-box,
+    .learning-focus,
+    .focus-box,
+    .tip-box,
+    .warning-box,
+    .resource-card,
+    .resource-item,
+    .resource-list li,
+    .activity,
+    .activity-card,
+    .exercise,
+    .example-box,
+    .definition-box,
+    .form-demo,
+    .quiz-container,
+    .quiz-card,
+    .quiz-result,
+    .question,
+    .question-card,
+    .question-block,
+    .assessment,
+    .assessment-card,
+    .assessment-overview,
+    .result-card,
+    .glossary-card,
+    .glossary-list,
+    .references-list li
+) p {
+    color: #dce9f8 !important;
+    opacity: 1 !important;
+}
+
+/* BOLD TEXT */
+html.dark-mode body :is(
+    .content-card,
+    .content-section,
+    .info-card,
+    .info-box,
+    .note-box,
+    .highlight-box,
+    .learning-focus,
+    .resource-card,
+    .resource-item,
+    .resource-list,
+    .activity,
+    .exercise,
+    .quiz-container,
+    .assessment,
+    .glossary-list,
+    .references-list
+) strong,
+html.dark-mode body :is(
+    .content-card,
+    .content-section,
+    .info-card,
+    .info-box,
+    .note-box,
+    .highlight-box,
+    .learning-focus,
+    .resource-card,
+    .resource-item,
+    .activity,
+    .exercise,
+    .quiz-container,
+    .assessment
+) b {
+    color: #ffffff !important;
+}
+
+/* LIST ITEMS */
+html.dark-mode body :is(
+    .content-card,
+    .content-section,
+    .info-box,
+    .note-box,
+    .activity,
+    .activity-card,
+    .resource-list,
+    .glossary-list,
+    .assessment
+) li {
+    color: #dce9f8 !important;
+}
+
+/* GLOSSARY */
+html.dark-mode body .glossary-list dt {
+    color: #ffffff !important;
+}
+
+html.dark-mode body .glossary-list dd {
+    color: #dce9f8 !important;
+}
+
+/* RESOURCE LINKS AND OTHER CONTENT LINKS */
+html.dark-mode body :is(
+    .resource-list,
+    .resource-card,
+    .resource-item,
+    .references-list,
+    .content-card,
+    .info-box,
+    .note-box
+) a {
+    color: #69baff !important;
+}
+
+html.dark-mode body :is(
+    .resource-list,
+    .resource-card,
+    .resource-item,
+    .references-list,
+    .content-card,
+    .info-box,
+    .note-box
+) a:hover {
+    color: #ffffff !important;
+}
+
+/* ASSESSMENT QUESTIONS AND ANSWERS */
+html.dark-mode body :is(
+    .question,
+    .question-card,
+    .question-block,
+    .quiz-card,
+    .assessment-card,
+    .assessment-overview,
+    .result-card,
+    .answer-explanation
+) label {
+    color: #dce9f8 !important;
+}
+
+html.dark-mode body :is(
+    .question,
+    .question-card,
+    .question-block,
+    .quiz-card,
+    .assessment-card
+) input[type="radio"],
+html.dark-mode body :is(
+    .question,
+    .question-card,
+    .question-block,
+    .quiz-card,
+    .assessment-card
+) input[type="checkbox"] {
+    accent-color: #63baff;
+}
+
+/* FORM FIELDS */
+html.dark-mode body .form-demo,
+html.dark-mode body .form-demo .field {
+    background: #0d1d32 !important;
+    color: #dce9f8 !important;
+    border-color: #315475 !important;
+}
+
+html.dark-mode body .form-demo label,
+html.dark-mode body .form-demo small {
+    color: #dce9f8 !important;
+}
+
+/* TABLES */
+html.dark-mode body table,
+html.dark-mode body table tbody tr,
+html.dark-mode body table tbody td {
+    background: #0d1d32 !important;
+    color: #dce9f8 !important;
+    border-color: #315475 !important;
+}
+
+html.dark-mode body table thead th {
+    background: #123b66 !important;
+    color: #ffffff !important;
+}
+
+/* KEEP BLUE BANNERS BLUE */
+html.dark-mode body :is(
+    .hero,
+    .lesson-banner,
+    .chapter-banner,
+    .year-card-top,
+    .hero-visual
+) {
+    color: #ffffff !important;
+}
+
+/* KEEP BUTTON TEXT READABLE */
+html.dark-mode body button,
+html.dark-mode body .primary-btn,
+html.dark-mode body .secondary-btn {
+    color: #ffffff;
+}
+
+/* REMOVE FADED TEXT IN DARK MODE */
+html.dark-mode body :is(
+    .content-card,
+    .content-section,
+    .info-card,
+    .info-box,
+    .note-box,
+    .resource-card,
+    .resource-item,
+    .resource-list,
+    .activity,
+    .exercise,
+    .quiz-container,
+    .assessment,
+    .glossary-list,
+    .references-list
+) :is(p, h1, h2, h3, h4, li, strong, b, label) {
+    opacity: 1 !important;
+}
+
+/* =========================================
+   FINAL FIX - RESOURCE CARD WHITE BACKGROUND
+========================================= */
+
+html.dark-mode body .resource-list li,
+html.dark-mode body .resource-list li > a,
+html.dark-mode body .resource-list li > div,
+html.dark-mode body .resource-list li > article,
+html.dark-mode body .resource-card,
+html.dark-mode body .resource-item {
+    background-color: #12365b !important;
+    color: #eaf3fc !important;
+    border-color: #315d85 !important;
+}
+
+html.dark-mode body .resource-list li h1,
+html.dark-mode body .resource-list li h2,
+html.dark-mode body .resource-list li h3,
+html.dark-mode body .resource-list li h4,
+html.dark-mode body .resource-list li strong {
+    color: #ffffff !important;
+}
+
+html.dark-mode body .resource-list li p {
+    color: #d5e7f8 !important;
+}
+
+html.dark-mode body .resource-list li a {
+    color: #69baff !important;
+}
+
+/* Prevent nested resource elements from retaining white backgrounds */
+html.dark-mode body .resource-list li > a * {
+    background-color: transparent !important;
+}
+
+/* =========================================
+   DARK MODE - REFERENCES SECTION FIX
+========================================= */
+
+html.dark-mode body #references > div,
+html.dark-mode body #references .reference-card,
+html.dark-mode body #references .reference-item,
+html.dark-mode body #references li,
+html.dark-mode body #references article {
+    background: #12365b !important;
+    background-color: #12365b !important;
+    color: #eaf3fc !important;
+    border: 1px solid #315d85 !important;
+}
+
+/* Reference titles */
+html.dark-mode body #references h3,
+html.dark-mode body #references h4,
+html.dark-mode body #references strong,
+html.dark-mode body #references b {
+    color: #ffffff !important;
+    opacity: 1 !important;
+}
+
+/* Reference descriptions */
+html.dark-mode body #references p,
+html.dark-mode body #references span {
+    color: #d5e7f8 !important;
+    opacity: 1 !important;
+}
+
+/* Reference links */
+html.dark-mode body #references a {
+    color: #69baff !important;
+}
+
+html.dark-mode body #references a:hover {
+    color: #ffffff !important;
+}
+
+/* Prevent nested elements from keeping white backgrounds */
+html.dark-mode body #references > div * {
+    opacity: 1 !important;
+}

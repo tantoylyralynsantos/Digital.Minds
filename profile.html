@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile | DIGITAL MINDS</title>
+    <link rel="stylesheet" href="account-pages.css">
+    <script src="account-pages.js" defer></script>
+</head>
+<body>
+
+<header class="account-header">
+    <a href="index.html" class="brand">DIGITAL MINDS</a>
+    <a href="index.html" class="back-link">← Back to Home</a>
+</header>
+
+<main class="account-main">
+
+    <div class="page-heading">
+        <span class="eyebrow">STUDENT ACCOUNT</span>
+        <h1>My Profile</h1>
+        <p>Manage and view your personal information.</p>
+    </div>
+
+    <section class="profile-card">
+
+        <div class="profile-cover"></div>
+
+        <div class="profile-content">
+
+            <div class="large-avatar" id="profileAvatar">S</div>
+
+            <h2 id="studentName">Student Name</h2>
+            <p id="studentEmail">student@email.com</p>
+
+            <span class="status-label">● Active Account</span>
+
+            <div class="profile-divider"></div>
+
+            <h3>Personal Information</h3>
+
+            <div class="information-grid">
+
+                <div class="information-item">
+                    <span>Full Name</span>
+                    <strong id="infoName">Student Name</strong>
+                </div>
+
+                <div class="information-item">
+                    <span>Email Address</span>
+                    <strong id="infoEmail">student@email.com</strong>
+                </div>
+
+                <div class="information-item">
+                    <span>Course</span>
+                    <strong>Bachelor of Science in Information Technology</strong>
+                </div>
+
+                <div class="information-item">
+                    <span>Year Level</span>
+                    <strong id="infoYear">Not specified</strong>
+                </div>
+
+            </div>
+
+            <button class="primary-button" id="editProfile">
+                Edit Profile
+            </button>
+
+            <form id="profileForm" class="edit-form" hidden>
+
+                <h3>Edit Personal Information</h3>
+
+                <label for="editName">Full Name</label>
+                <input type="text" id="editName" required>
+
+                <label for="editEmail">Email Address</label>
+                <input type="email" id="editEmail" required>
+
+                <div class="form-actions">
+                    <button type="submit" class="primary-button">
+                        Save Changes
+                    </button>
+
+                    <button type="button" class="secondary-button" id="cancelEdit">
+                        Cancel
+                    </button>
+                </div>
+
+            </form>
+
+            <p id="profileMessage" class="message"></p>
+
+        </div>
+    </section>
+
+</main>
+
+<footer class="account-footer">
+    © 2026 DIGITAL MINDS | BSIT DIGITAL E-BOOK
+</footer>
+
+</body>
+</html>

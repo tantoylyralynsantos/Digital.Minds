@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Settings | DIGITAL MINDS</title>
+    <link rel="stylesheet" href="account-pages.css">
+    <script src="account-pages.js" defer></script>
+</head>
+<body>
+
+<header class="account-header">
+    <a href="index.html" class="brand">DIGITAL MINDS</a>
+    <a href="index.html" class="back-link">← Back to Home</a>
+</header>
+
+<main class="account-main">
+
+    <div class="page-heading">
+        <span class="eyebrow">ACCOUNT PREFERENCES</span>
+        <h1>Account Settings</h1>
+        <p>Manage your account information and preferences.</p>
+    </div>
+
+    <section class="settings-card">
+
+        <div class="settings-title">
+            <span class="settings-icon">👤</span>
+            <div>
+                <h2>Personal Information</h2>
+                <p>Update your account details.</p>
+            </div>
+        </div>
+
+        <form id="settingsForm">
+
+            <label for="settingsName">Full Name</label>
+            <input type="text" id="settingsName" required>
+
+            <label for="settingsEmail">Email Address</label>
+            <input type="email" id="settingsEmail" required>
+
+            <button type="submit" class="primary-button">
+                Save Changes
+            </button>
+
+            <p id="settingsMessage" class="message"></p>
+
+        </form>
+
+    </section>
+
+    <section class="settings-card">
+
+        <div class="settings-title">
+            <span class="settings-icon">🔐</span>
+            <div>
+                <h2>Account Security</h2>
+                <p>Information about your current account session.</p>
+            </div>
+        </div>
+
+        <div class="setting-row">
+            <div>
+                <strong>Login Status</strong>
+                <p>Your account session status.</p>
+            </div>
+            <span class="status-label">● Active</span>
+        </div>
+
+        <div class="setting-row">
+            <div>
+                <strong>Password Management</strong>
+                <p>Password changes require a connected authentication system.</p>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="settings-card logout-card">
+
+        <div class="settings-title">
+            <span class="settings-icon">↪</span>
+            <div>
+                <h2>Logout</h2>
+                <p>End your current Digital Minds session.</p>
+            </div>
+        </div>
+
+        <button type="button" class="logout-button" id="settingsLogout">
+            Logout from Account
+        </button>
+
+    </section>
+
+</main>
+
+<footer class="account-footer">
+    © 2026 DIGITAL MINDS | BSIT DIGITAL E-BOOK
+</footer>
+
+</body>
+</html>

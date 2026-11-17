@@ -1,0 +1,335 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login | DIGITAL MINDS</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+
+<div class="login-page">
+
+    <main class="login-card">
+
+        <!-- LEFT PANEL -->
+        <section class="left-panel">
+
+            <div class="brand">
+
+                <div class="brand-icon">
+                    <svg viewBox="0 0 60 60" fill="none">
+                        <path d="M5 12C15 8 24 11 30 17V49C22 42 14 42 5 46V12Z" fill="white"/>
+                        <path d="M55 12C45 8 36 11 30 17V49C38 42 46 42 55 46V12Z" fill="#BBDDFB"/>
+                        <path d="M30 17V49" stroke="#082D59" stroke-width="2"/>
+                        <path d="M11 22L24 24M11 30L24 32M36 24L49 22M36 32L49 30" stroke="#83B9E8" stroke-width="2"/>
+                    </svg>
+                </div>
+
+                <div class="brand-text">
+                    <h2>DIGITAL MINDS</h2>
+                    <span>BSIT E-BOOK</span>
+                </div>
+
+            </div>
+
+
+            <div class="welcome-content">
+
+                <span class="eyebrow">WELCOME TO DIGITAL MINDS</span>
+
+                <h1>Welcome</h1>
+
+                <p>
+                    Sign in to explore, learn, and grow.
+                    Continue your journey through the
+                    world of Information Technology.
+                </p>
+
+                <div class="small-line"></div>
+
+            </div>
+
+
+            <!-- BOOK ILLUSTRATION -->
+            <div class="book-area">
+
+                <div class="book-orbit orbit-one"></div>
+                <div class="book-orbit orbit-two"></div>
+
+                <div class="book-illustration">
+
+                    <svg viewBox="0 0 240 190" fill="none">
+
+                        <path d="M20 43C57 28 91 34 120 56V157C87 132 51 132 20 146V43Z"
+                              fill="#FFFFFF"/>
+
+                        <path d="M220 43C183 28 149 34 120 56V157C153 132 189 132 220 146V43Z"
+                              fill="#B9DAFA"/>
+
+                        <path d="M120 56V157"
+                              stroke="#0A396B" stroke-width="4"/>
+
+                        <path d="M43 67C67 57 88 62 105 74M43 88C67 78 88 83 105 95M43 109C67 99 88 104 105 116"
+                              stroke="#8BAFD4" stroke-width="5" stroke-linecap="round"/>
+
+                        <path d="M137 74C154 62 175 57 197 67M137 95C154 83 175 78 197 88M137 116C154 104 175 99 197 109"
+                              stroke="#7EA9D4" stroke-width="5" stroke-linecap="round"/>
+
+                    </svg>
+
+                </div>
+
+                <div class="orbit-dot dot-one"></div>
+                <div class="orbit-dot dot-two"></div>
+                <div class="orbit-dot dot-three"></div>
+
+            </div>
+
+
+            <div class="left-bottom">
+
+                <h3>Learn Without Limits.</h3>
+
+                <p>
+                    Discover Knowledge. Build Skills. Create Possibilities.
+                </p>
+
+            </div>
+
+
+            <div class="left-footer">
+                LEARN &nbsp; • &nbsp; EXPLORE &nbsp; • &nbsp; GROW
+            </div>
+
+        </section>
+
+
+        <!-- RIGHT PANEL -->
+        <section class="right-panel">
+
+            <div class="form-container">
+
+                <a href="index.html" class="back-home">
+                    ← Back to Home
+                </a>
+
+
+                <div class="form-heading">
+
+                    <span class="form-eyebrow">
+                        STUDENT PORTAL
+                    </span>
+
+                    <h1>Welcome!</h1>
+
+                    <p>
+                        Sign in to explore your digital learning resources.
+                    </p>
+
+                </div>
+
+
+                <p class="form-description">
+                    Access your account and explore valuable learning resources.
+                </p>
+
+
+                <!-- LOGIN FORM -->
+              <form id="loginForm" action="index.html" method="get">
+
+                    <!-- USERNAME -->
+                    <div class="input-group">
+
+                        <label for="username">
+                            Username
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <svg viewBox="0 0 24 24" fill="none"
+                                 stroke="currentColor" stroke-width="1.8">
+
+                                <circle cx="12" cy="8" r="4"/>
+                                <path d="M4 21C4 16.5 7.5 14 12 14C16.5 14 20 16.5 20 21"/>
+
+                            </svg>
+
+                            <input
+                                type="text"
+                                id="username"
+                                name="username"
+                                placeholder="Enter your username"
+                                autocomplete="username"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- PASSWORD -->
+                    <div class="input-group">
+
+                        <label for="password">
+                            Password
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <svg viewBox="0 0 24 24" fill="none"
+                                 stroke="currentColor" stroke-width="1.8">
+
+                                <rect x="4" y="10" width="16" height="11" rx="2"/>
+                                <path d="M8 10V7A4 4 0 0 1 16 7V10"/>
+
+                            </svg>
+
+                            <input
+                                type="password"
+                                id="password"
+                                name="password"
+                                placeholder="Enter your password"
+                                autocomplete="current-password"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                class="toggle-password"
+                                id="togglePassword"
+                                aria-label="Show password">
+
+                                <svg viewBox="0 0 24 24" fill="none"
+                                     stroke="currentColor" stroke-width="1.8">
+
+                                    <path d="M2 12S5.5 5 12 5S22 12 22 12S18.5 19 12 19S2 12 2 12Z"/>
+                                    <circle cx="12" cy="12" r="3"/>
+
+                                </svg>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- OPTIONS -->
+                    <div class="form-options">
+
+                        <label class="remember-option">
+
+                            <input type="checkbox" id="rememberMe">
+
+                            <span>Remember me</span>
+
+                        </label>
+
+                        <a href="forgot-password.html">
+                            Forgot password?
+                        </a>
+
+                    </div>
+
+
+                    <!-- LOGIN BUTTON -->
+                    <button type="submit" class="login-button">
+
+                        Login <span>⟶</span>
+
+                    </button>
+
+                    <p id="loginMessage" class="login-message"
+                       aria-live="polite"></p>
+
+                </form>
+
+
+                <!-- REGISTER -->
+                <div class="register-section">
+
+                    <span>Don't have an account?</span>
+
+                    <a href="register.html">
+                        Create account
+                    </a>
+
+                </div>
+
+
+                <!-- FOOTER -->
+                <div class="form-footer">
+
+                    <span>DIGITAL MINDS</span>
+                    <span>© 2026</span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script src="login.js" defer></script>
+</body>
+</html>
+
+
+const loginForm = document.getElementById("loginForm");
+
+const usernameInput = document.getElementById("username");
+const rememberMe = document.getElementById("rememberMe");
+
+// LOAD SAVED USERNAME
+window.addEventListener("DOMContentLoaded", function () {
+
+    const savedUsername = localStorage.getItem("digitalMindsUsername");
+
+    if (savedUsername) {
+        usernameInput.value = savedUsername;
+        rememberMe.checked = true;
+    }
+
+});
+
+// SAVE USERNAME BEFORE SUBMITTING
+loginForm.addEventListener("submit", function () {
+
+    const username = usernameInput.value.trim();
+
+    if (rememberMe.checked) {
+        localStorage.setItem("digitalMindsUsername", username);
+    } else {
+        localStorage.removeItem("digitalMindsUsername");
+    }
+
+});
+
+// SHOW / HIDE PASSWORD
+const passwordInput = document.getElementById("password");
+const togglePassword = document.getElementById("togglePassword");
+
+togglePassword.addEventListener("click", function () {
+
+    const hidden = passwordInput.type === "password";
+
+    passwordInput.type = hidden ? "text" : "password";
+
+    togglePassword.setAttribute(
+        "aria-label",
+        hidden ? "Hide password" : "Show password"
+    );
+
+});

@@ -1,0 +1,176 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f7fc;
+    color: #263445;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-header {
+    background: linear-gradient(135deg, #07376f, #062f61);
+    padding: 20px 7%;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.logo {
+    color: white;
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.subtitle {
+    color: #dceaff;
+    font-size: 13px;
+    letter-spacing: 2px;
+}
+
+main {
+    flex: 1;
+}
+
+.hero {
+    text-align: center;
+    padding: 85px 20px 45px;
+    max-width: 850px;
+    margin: auto;
+}
+
+.eyebrow {
+    color: #1265a8;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 18px;
+}
+
+.hero h1 {
+    color: #07376f;
+    font-size: 42px;
+    margin-bottom: 18px;
+}
+
+.hero p:last-child {
+    color: #64748b;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.year-section {
+    max-width: 1000px;
+    margin: 20px auto 80px;
+    padding: 0 25px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.year-card {
+    background: white;
+    padding: 35px;
+    border-radius: 16px;
+    text-decoration: none;
+    color: #263445;
+    border: 1px solid #e1eaf5;
+    box-shadow: 0 8px 25px rgba(7, 55, 111, 0.08);
+    transition: 0.3s ease;
+}
+
+.year-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 14px 30px rgba(7, 55, 111, 0.15);
+    border-color: #1265a8;
+}
+
+.year-number {
+    color: #dceaff;
+    font-size: 55px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.year-card h2 {
+    color: #07376f;
+    font-size: 25px;
+    margin-bottom: 13px;
+}
+
+.year-card p {
+    color: #64748b;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.view-button {
+    display: inline-block;
+    background: #07376f;
+    color: white;
+    padding: 12px 22px;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+footer {
+    background: #062f61;
+    color: #dceaff;
+    text-align: center;
+    padding: 22px 15px;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+@media (max-width: 650px) {
+    .header-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero {
+        padding: 60px 20px 30px;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+    }
+
+    .year-section {
+        grid-template-columns: 1fr;
+        margin-bottom: 50px;
+    }
+
+    .year-card {
+        padding: 28px;
+    }
+}
+
+@media (max-width: 360px) {
+    .logo {
+        font-size: 21px;
+    }
+
+    .hero h1 {
+        font-size: 26px;
+    }
+
+    .year-card h2 {
+        font-size: 22px;
+    }
+}

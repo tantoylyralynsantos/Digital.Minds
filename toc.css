@@ -1,0 +1,239 @@
+
+/* =====================================
+   WEBTECH LEARN - TABLE OF CONTENTS
+===================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f7fc;
+    color: #263445;
+    min-height: 100vh;
+}
+
+/* HEADER */
+
+.top-header {
+    width: 100%;
+    background: linear-gradient(135deg, #07376f, #062f61);
+    padding: 18px 6%;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.logo {
+    color: white;
+    text-decoration: none;
+    font-size: 23px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.back-link {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    padding: 10px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.back-link:hover {
+    background: #1265a8;
+}
+
+/* MAIN CONTENT */
+
+.toc-container {
+    max-width: 1150px;
+    margin: 65px auto;
+    padding: 0 25px;
+}
+
+.eyebrow {
+    color: #1265a8;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.toc-container > h1 {
+    color: #07376f;
+    font-size: 38px;
+    margin-bottom: 12px;
+}
+
+.toc-container > p:not(.eyebrow) {
+    color: #64748b;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+/* SEARCH BAR */
+
+.lesson-search {
+    margin: 30px 0 35px;
+}
+
+.lesson-search input {
+    width: 100%;
+    max-width: 550px;
+    padding: 15px 18px;
+    border: 1px solid #d6e1ef;
+    border-radius: 8px;
+    outline: none;
+    background: white;
+    color: #263445;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.lesson-search input:focus {
+    border-color: #1265a8;
+    box-shadow: 0 0 0 3px rgba(18, 101, 168, 0.10);
+}
+
+#resultMessage {
+    margin-top: 10px;
+    color: #64748b;
+    font-size: 13px;
+}
+
+/* SECTION HEADING */
+
+.year-heading {
+    color: #07376f;
+    font-size: 23px;
+    margin-bottom: 22px;
+}
+
+/* LESSON CARDS */
+
+.lesson-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.lesson-card {
+    display: block;
+    background: white;
+    padding: 25px;
+    border: 1px solid #e1eaf5;
+    border-radius: 12px;
+    text-decoration: none;
+    color: #263445;
+    box-shadow: 0 5px 18px rgba(7, 55, 111, 0.06);
+    transition: 0.3s ease;
+}
+
+.lesson-card:hover {
+    transform: translateY(-5px);
+    border-color: #1265a8;
+    box-shadow: 0 10px 25px rgba(7, 55, 111, 0.12);
+}
+
+.lesson-card span {
+    display: inline-block;
+    color: #1265a8;
+    background: #e7f1fc;
+    padding: 7px 12px;
+    border-radius: 5px;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 14px;
+}
+
+.lesson-card h3 {
+    color: #07376f;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.lesson-card[hidden] {
+    display: none !important;
+}
+
+/* NO SEARCH RESULTS */
+
+.no-results {
+    background: white;
+    border: 1px solid #e1eaf5;
+    border-radius: 10px;
+    padding: 25px;
+    text-align: center;
+    color: #64748b;
+    margin-top: 20px;
+}
+
+.no-results[hidden] {
+    display: none !important;
+}
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 768px) {
+    .toc-container {
+        margin: 45px auto;
+    }
+
+    .lesson-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .toc-container > h1 {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 480px) {
+    .top-header {
+        padding: 16px 5%;
+    }
+
+    .header-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .toc-container {
+        margin: 35px auto;
+        padding: 0 18px;
+    }
+
+    .toc-container > h1 {
+        font-size: 28px;
+    }
+
+    .lesson-card {
+        padding: 20px;
+    }
+
+    .lesson-card h3 {
+        font-size: 16px;
+    }
+
+    .lesson-search input {
+        max-width: 100%;
+    }
+}
