@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lesson 6 - DOM Manipulation and JavaScript Events </title>
+
+    <link rel="stylesheet" href="chapter6.css">
+    <link rel="stylesheet" href="../display-settings.css">
+    
+
+    <script src="../display-settings.js" defer></script>
+ 
+    <script src="chapter6-assessment.js" defer></script>
+</head>
+<body>
+<!-- HEADER -->
+<header class="header">
+    <div class="nav-container">
+
+        <a href="index.html" class="logo">
+            <img src="logo.jpg" alt="BSIT Digital Minds Logo" class="logo-image">
+
+            <span class="logo-text">
+                <small>BSIT | DIGITAL MINDS</small>
+            </span>
+        </a>
+
+        <a href="../pics/3rd yr toc.html" class="back-home">
+            ← Back to Table of Content
+        </a>
+
+    </div>
+    <link rel="stylesheet" href="ebook-pagination.css">
+<script src="ebook-pagination.js" defer></script>
+</header>
+
+<div class="page-layout">
+
+    <aside class="sidebar">
+        <h3>CHAPTER 6</h3>
+        <p class="sidebar-subtitle">Lesson Navigation</p>
+
+        <nav>
+            <a href="#introduction">Introduction</a>
+            <a href="#object-model">Document Object Model</a>
+            <a href="#dom-tree">DOM Tree and Nodes</a>
+            <a href="#collections">DOM Collections</a>
+            <a href="#selectors">Selecting Elements</a>
+            <a href="#modification">Modifying Elements</a>
+            <a href="#styling">DOM Styling</a>
+            <a href="#events">JavaScript Events</a>
+            <a href="#event-listeners">Event Listeners</a>
+            <a href="#custom-events">Custom Events</a>
+            <a href="#resources">Learning Resources</a>
+            <a href="#activities">Activities</a>
+            <a href="#glossary">Glossary</a>
+            <a href="#references">References</a>
+              
+        </nav>
+        
+        
+       <div class="separate-learning-links">
+    <a href="chapter6-assesment.html">📋 Chapter 6 Assessment</a>
+</div>
+
+<!-- DOWNLOAD PDF BUTTON -->
+<div class="sidebar-download">
+    <button type="button" id="downloadPDF">
+        <span>↓</span>
+        Download Lesson PDF
+    </button>
+</div>
+    </aside>
+
+    <main class="main-content">
+
+
+        <section class="chapter-banner">
+            <span class="chapter-label">BSIT 3RD YEAR • WEB TECHNOLOGY</span>
+            <h1>Chapter 6: DOM Manipulation and JavaScript Events</h1>
+            <p>Understanding how JavaScript interacts with HTML documents and responds to user actions.</p>
+        </section>
+
+        <section class="content-card" id="introduction">
+            <h2>Introduction</h2>
+            <p>
+                A website becomes interactive when JavaScript can access and modify
+                the elements of an HTML document. The Document Object Model (DOM)
+                provides a structured representation of a web page, allowing
+                JavaScript to select elements, change their content, update styles,
+                and respond to user actions.
+            </p>
+            <p>
+                This chapter introduces the DOM, its tree structure, element
+                selection methods, document modification, and JavaScript events.
+                These concepts are important when developing dynamic and interactive
+                websites.
+            </p>
+            <div class="info-box">
+                <strong>Learning Focus:</strong> Use JavaScript to access HTML
+                elements, change page content, and handle events such as clicks,
+                keyboard input, and form submissions.
+            </div>
+        </section>
+
+        <section class="content-card" id="object-model">
+            <h2>1. Document Object Model (DOM)</h2>
+            <p>
+                The <strong>Document Object Model (DOM)</strong> is a programming
+                interface that represents an HTML document as a structured
+                collection of objects. It allows programming languages such as
+                JavaScript to access and manipulate the content, structure, and
+                styles of a web page.
+            </p>
+            <p>
+                When a browser loads an HTML document, it creates a DOM
+                representation. Each HTML element becomes an object that JavaScript
+                can work with.
+            </p>
+
+            <h3>Example: Accessing the DOM</h3>
+            <pre><code>&lt;h1 id="heading"&gt;Hello, Student!&lt;/h1&gt;
+
+&lt;script&gt;
+    document.getElementById("heading").style.color = "blue";
+&lt;/script&gt;</code></pre>
+
+            <p>
+                In this example, JavaScript finds the element with the ID
+                <code>heading</code> and changes its text color to blue.
+            </p>
+        </section>
+
+        <section class="content-card" id="dom-tree">
+            <h2>2. DOM Tree and Nodes</h2>
+            <p>
+                The DOM organizes an HTML document in a tree-like structure.
+                Elements are connected through parent, child, and sibling
+                relationships.
+            </p>
+
+            <figure class="diagram">
+                <svg viewBox="0 0 700 340" role="img" aria-label="DOM tree diagram">
+                    <g stroke="#7b9bc2" stroke-width="3" fill="none">
+                        <path d="M350 65 V105 M175 145 V185 M350 145 V185 M525 145 V185"/>
+                        <path d="M175 225 V260 M525 225 V260"/>
+                    </g>
+                    <g font-family="Arial" text-anchor="middle" font-size="16">
+                        <rect x="270" y="20" width="160" height="48" rx="10" fill="#07376f"/>
+                        <text x="350" y="50" fill="white">document</text>
+
+                        <rect x="95" y="105" width="160" height="48" rx="10" fill="#1765a5"/>
+                        <text x="175" y="135" fill="white">html</text>
+
+                        <rect x="270" y="105" width="160" height="48" rx="10" fill="#1765a5"/>
+                        <text x="350" y="135" fill="white">head</text>
+
+                        <rect x="445" y="105" width="160" height="48" rx="10" fill="#1765a5"/>
+                        <text x="525" y="135" fill="white">body</text>
+
+                        <rect x="95" y="185" width="160" height="48" rx="10" fill="#dcecff" stroke="#1765a5"/>
+                        <text x="175" y="215" fill="#07376f">title</text>
+
+                        <rect x="445" y="185" width="160" height="48" rx="10" fill="#dcecff" stroke="#1765a5"/>
+                        <text x="525" y="215" fill="#07376f">h1 / p / div</text>
+
+                        <rect x="445" y="260" width="160" height="48" rx="10" fill="#fff0c2" stroke="#c18b00"/>
+                        <text x="525" y="290" fill="#604600">Text Content</text>
+                    </g>
+                </svg>
+                <figcaption>Figure 6.1 – Simplified representation of a DOM tree.</figcaption>
+            </figure>
+
+            <h3>Common DOM Node Types</h3>
+            <ul>
+                <li><strong>Document Node:</strong> Represents the entire HTML document.</li>
+                <li><strong>Element Node:</strong> Represents HTML elements such as h1, p, div, and body.</li>
+                <li><strong>Text Node:</strong> Contains the text inside an element.</li>
+                <li><strong>Attribute Node:</strong> Represents attributes such as id, class, and href.</li>
+            </ul>
+
+            <h3>Parent, Child, and Sibling Relationships</h3>
+            <ul>
+                <li><strong>Parent:</strong> An element that contains another element.</li>
+                <li><strong>Child:</strong> An element located inside another element.</li>
+                <li><strong>Sibling:</strong> Elements that share the same parent.</li>
+                <li><strong>First Child:</strong> The first child node of a parent.</li>
+                <li><strong>Last Child:</strong> The last child node of a parent.</li>
+            </ul>
+
+            <pre><code>const parent = document.getElementById("container");
+
+console.log(parent.children);
+console.log(parent.firstElementChild);
+console.log(parent.lastElementChild);</code></pre>
+        </section>
+
+        <section class="content-card" id="collections">
+            <h2>3. DOM Collections</h2>
+            <p>
+                DOM collections are groups of nodes or elements returned by
+                certain DOM properties and methods. They allow developers to
+                work with multiple elements.
+            </p>
+
+            <ul>
+                <li><code>childNodes</code> – Returns all child nodes, including text nodes.</li>
+                <li><code>children</code> – Returns the child elements only.</li>
+                <li><code>firstChild</code> – Returns the first child node.</li>
+                <li><code>lastChild</code> – Returns the last child node.</li>
+                <li><code>parentElement</code> – Returns the parent element.</li>
+            </ul>
+
+            <h3>Example</h3>
+            <pre><code>const list = document.getElementById("myList");
+
+console.log(list.children);
+console.log(list.childNodes);
+console.log(list.firstElementChild);
+console.log(list.lastElementChild);</code></pre>
+
+            <div class="note-box">
+                <strong>Remember:</strong> The <code>childNodes</code> property may
+                include text nodes created by spaces and line breaks, while
+                <code>children</code> returns only HTML elements.
+            </div>
+        </section>
+
+        <section class="content-card" id="selectors">
+            <h2>4. Selecting DOM Elements</h2>
+            <p>
+                JavaScript provides different methods for finding HTML elements.
+                Selecting the correct element is the first step before changing
+                its content or behavior.
+            </p>
+
+            <h3>Common Selection Methods</h3>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr><th>Method</th><th>Purpose</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>getElementById()</td><td>Selects an element using its ID.</td></tr>
+                        <tr><td>getElementsByClassName()</td><td>Selects elements using a class name.</td></tr>
+                        <tr><td>getElementsByTagName()</td><td>Selects elements using a tag name.</td></tr>
+                        <tr><td>querySelector()</td><td>Selects the first element matching a CSS selector.</td></tr>
+                        <tr><td>querySelectorAll()</td><td>Selects all elements matching a CSS selector.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>Examples</h3>
+            <pre><code>// Select by ID
+const title = document.getElementById("mainTitle");
+
+// Select by class
+const cards = document.getElementsByClassName("card");
+
+// Select by tag
+const paragraphs = document.getElementsByTagName("p");
+
+// Select the first matching CSS selector
+const firstCard = document.querySelector(".card");
+
+// Select all matching CSS selectors
+const allCards = document.querySelectorAll(".card");</code></pre>
+
+            <div class="info-box">
+                <strong>Tip:</strong> <code>querySelector()</code> and
+                <code>querySelectorAll()</code> support CSS selector syntax,
+                making them flexible for selecting elements.
+            </div>
+        </section>
+
+        <section class="content-card" id="modification">
+            <h2>5. Modifying HTML Elements</h2>
+            <p>
+                JavaScript can modify the content and structure of a web page
+                after it has loaded. Developers can change text, update HTML,
+                create new elements, and remove existing elements.
+            </p>
+
+            <h3>Changing Text Content</h3>
+            <pre><code>document.getElementById("message").textContent =
+    "Welcome to WEBTECH LEARN!";</code></pre>
+
+            <h3>Changing HTML Content</h3>
+            <pre><code>document.getElementById("content").innerHTML =
+    "&lt;strong&gt;Hello, BSIT 3!&lt;/strong&gt;";</code></pre>
+
+            <h3>Creating and Adding Elements</h3>
+            <pre><code>const newParagraph = document.createElement("p");
+
+newParagraph.textContent = "This is a new paragraph.";
+
+document.body.appendChild(newParagraph);</code></pre>
+
+            <h3>Removing an Element</h3>
+            <pre><code>const item = document.getElementById("oldItem");
+
+item.remove();</code></pre>
+
+            <h3>Adding and Removing Classes</h3>
+            <pre><code>const box = document.getElementById("myBox");
+
+box.classList.add("active");
+box.classList.remove("active");
+box.classList.toggle("active");</code></pre>
+        </section>
+
+        <section class="content-card" id="styling">
+            <h2>6. Styling DOM Elements</h2>
+            <p>
+                JavaScript can change the CSS styles of an element through its
+                <code>style</code> property. It can also add or remove CSS classes.
+            </p>
+
+            <h3>Using the style Property</h3>
+            <pre><code>const heading = document.getElementById("heading");
+
+heading.style.color = "blue";
+heading.style.backgroundColor = "lightgray";
+heading.style.fontSize = "30px";</code></pre>
+
+            <h3>Using classList</h3>
+            <pre><code>const box = document.querySelector(".box");
+
+box.classList.add("highlight");
+box.classList.remove("highlight");
+box.classList.toggle("highlight");</code></pre>
+
+            <div class="demo-area">
+                <h3>Try the DOM Style Demo</h3>
+                <p id="styleDemo">Click the button to change my appearance.</p>
+                <button type="button" id="styleDemoButton" class="primary-btn">Change Style</button>
+            </div>
+        </section>
+
+        <section class="content-card" id="events">
+            <h2>7. JavaScript Events</h2>
+            <p>
+                An event is an action or occurrence detected by the browser.
+                JavaScript can respond to these events to make a web page
+                interactive.
+            </p>
+
+            <h3>Common JavaScript Events</h3>
+            <ul>
+                <li><code>click</code> – Occurs when an element is clicked.</li>
+                <li><code>dblclick</code> – Occurs when an element is double-clicked.</li>
+                <li><code>mouseover</code> – Occurs when the pointer moves over an element.</li>
+                <li><code>mouseout</code> – Occurs when the pointer leaves an element.</li>
+                <li><code>keydown</code> – Occurs when a keyboard key is pressed.</li>
+                <li><code>keyup</code> – Occurs when a keyboard key is released.</li>
+                <li><code>submit</code> – Occurs when a form is submitted.</li>
+                <li><code>change</code> – Occurs when the value of an input changes.</li>
+                <li><code>load</code> – Occurs when a page or resource finishes loading.</li>
+            </ul>
+
+            <h3>Example: Click Event</h3>
+            <pre><code>const button = document.getElementById("myButton");
+
+button.onclick = function() {
+    alert("Button clicked!");
+};</code></pre>
+        </section>
+
+        <section class="content-card" id="event-listeners">
+            <h2>8. Event Listeners and Event Objects</h2>
+            <p>
+                The <code>addEventListener()</code> method attaches an event
+                handler to an element. It is a recommended way to handle events
+                because multiple listeners can be attached to the same element.
+            </p>
+
+            <h3>Syntax</h3>
+            <pre><code>element.addEventListener("event", function);</code></pre>
+
+            <h3>Example</h3>
+            <pre><code>const button = document.getElementById("clickButton");
+
+button.addEventListener("click", function() {
+    alert("You clicked the button!");
+});</code></pre>
+
+            <h3>Using the Event Object</h3>
+            <p>
+                The event object contains information about the event that
+                occurred. It is commonly represented by the parameter
+                <code>event</code> or <code>e</code>.
+            </p>
+            <pre><code>document.addEventListener("click", function(event) {
+    console.log("Event type:", event.type);
+    console.log("Clicked element:", event.target);
+});</code></pre>
+
+            <h3>Removing an Event Listener</h3>
+            <pre><code>function showMessage() {
+    alert("Hello!");
+}
+
+button.addEventListener("click", showMessage);
+
+// Remove the same listener
+button.removeEventListener("click", showMessage);</code></pre>
+
+            <div class="demo-area">
+                <h3>Try an Event Listener</h3>
+                <p id="eventDemoMessage">No button click detected yet.</p>
+                <button type="button" id="eventDemoButton" class="primary-btn">Click Me</button>
+            </div>
+        </section>
+
+        <section class="content-card" id="custom-events">
+            <h2>9. dispatchEvent() and CustomEvent</h2>
+            <p>
+                JavaScript can trigger events programmatically using
+                <code>dispatchEvent()</code>. Developers can also create their
+                own events using the <code>CustomEvent</code> constructor.
+            </p>
+
+            <h3>Creating and Dispatching a Custom Event</h3>
+            <pre><code>const messageEvent = new CustomEvent("messageReady", {
+    detail: {
+        message: "A custom event was triggered!"
+    }
+});
+
+document.addEventListener("messageReady", function(event) {
+    console.log(event.detail.message);
+});
+
+document.dispatchEvent(messageEvent);</code></pre>
+
+            <p>
+                In this example, a custom event named
+                <code>messageReady</code> is created and dispatched.
+                The <code>detail</code> property carries additional information.
+            </p>
+
+            <div class="demo-area">
+                <h3>Try a Custom Event</h3>
+                <p id="customEventMessage">Waiting for a custom event...</p>
+                <button type="button" id="customEventButton" class="primary-btn">Dispatch Custom Event</button>
+            </div>
+        </section>
+
+        <section class="content-card" id="resources">
+            <h2>10. Learning Resources</h2>
+            <p>Use these resources to review and practice DOM manipulation and JavaScript events.</p>
+
+            <ul class="resource-list">
+                <li>
+                    <strong>MDN Web Docs – Document Object Model (DOM)</strong>
+                    <p>Learn how the DOM represents HTML documents and how scripts interact with web pages.</p>
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model" target="_blank" rel="noopener">Open DOM Guide</a>
+                </li>
+
+                <li>
+                    <strong>MDN Web Docs – Introduction to Events</strong>
+                    <p>Review browser events and how JavaScript responds to user actions.</p>
+                    <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Events" target="_blank" rel="noopener">Open Events Guide</a>
+                </li>
+
+                <li>
+                    <strong>MDN Web Docs – EventTarget.addEventListener()</strong>
+                    <p>Study how to register event handlers on elements.</p>
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener" target="_blank" rel="noopener">Open addEventListener Guide</a>
+                </li>
+
+                <li>
+                    <strong>JavaScript.info – Document</strong>
+                    <p>Explore DOM navigation, element selection, and document modification.</p>
+                    <a href="https://javascript.info/document" target="_blank" rel="noopener">Open JavaScript.info</a>
+                </li>
+            </ul>
+        </section>
+
+        <section class="content-card" id="activities">
+            <h2>11. Activities and Hands-on Exercises</h2>
+
+            <div class="activity">
+                <h3>Activity 1: DOM Tree Identification</h3>
+                <p><strong>Objective:</strong> Identify the parent, child, and sibling elements in an HTML structure.</p>
+                <p>Study the following code and answer the questions.</p>
+
+                <pre><code>&lt;div id="container"&gt;
+    &lt;h2&gt;My Website&lt;/h2&gt;
+    &lt;p&gt;Welcome!&lt;/p&gt;
+    &lt;button&gt;Click Me&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+
+                <ol>
+                    <li>What is the parent element?</li>
+                    <li>How many direct child elements are inside the container?</li>
+                    <li>Which elements are siblings?</li>
+                </ol>
+            </div>
+
+            <div class="activity">
+                <h3>Activity 2: Element Selection Practice</h3>
+                <p><strong>Objective:</strong> Practice selecting elements using DOM methods.</p>
+                <p>Create an HTML page with one heading, two paragraphs, and three elements with the class name <code>item</code>.</p>
+
+                <ol>
+                    <li>Select the heading using <code>getElementById()</code>.</li>
+                    <li>Select the paragraphs using <code>getElementsByTagName()</code>.</li>
+                    <li>Select all items using <code>querySelectorAll()</code>.</li>
+                    <li>Display the selected elements in the browser console.</li>
+                </ol>
+            </div>
+
+            <div class="activity">
+                <h3>Activity 3: Interactive Button</h3>
+                <p><strong>Objective:</strong> Apply event listeners and DOM modification.</p>
+                <p>Create a button that changes a paragraph's text when clicked. Use <code>addEventListener()</code> and <code>textContent</code>.</p>
+                <p><strong>Expected Output:</strong> The paragraph should display a new message after the button is clicked.</p>
+            </div>
+
+            <div class="activity">
+                <h3>Activity 4: Mini Project – Interactive Profile Card</h3>
+                <p><strong>Objective:</strong> Combine DOM selection, styling, and events.</p>
+
+                <ol>
+                    <li>Create a profile card with a name, course, and short description.</li>
+                    <li>Add a button labeled "Show More".</li>
+                    <li>Use JavaScript to reveal additional information when clicked.</li>
+                    <li>Change the card's background color using <code>classList.toggle()</code>.</li>
+                    <li>Test your page in a web browser.</li>
+                </ol>
+            </div>
+        </section>
+
+        <section class="content-card" id="glossary">
+            <h2>12. Glossary</h2>
+
+            <dl class="glossary-list">
+                <dt>DOM (Document Object Model)</dt>
+                <dd>A programming interface that represents an HTML document as objects.</dd>
+
+                <dt>DOM Tree</dt>
+                <dd>A hierarchical structure showing the relationships between document nodes.</dd>
+
+                <dt>Node</dt>
+                <dd>A basic unit in the DOM, such as a document, element, or text node.</dd>
+
+                <dt>Element</dt>
+                <dd>An HTML component represented as an object in the DOM.</dd>
+
+                <dt>Selector</dt>
+                <dd>A method or pattern used to find HTML elements.</dd>
+
+                <dt>Event</dt>
+                <dd>An action or occurrence detected by the browser.</dd>
+
+                <dt>Event Listener</dt>
+                <dd>A function registered to respond when a specific event occurs.</dd>
+
+                <dt>Event Object</dt>
+                <dd>An object containing information about an event.</dd>
+
+                <dt>addEventListener()</dt>
+                <dd>A method used to attach an event handler to an element.</dd>
+
+                <dt>dispatchEvent()</dt>
+                <dd>A method used to trigger an event programmatically.</dd>
+
+                <dt>CustomEvent</dt>
+                <dd>An event created by a developer for a specific application purpose.</dd>
+            </dl>
+        </section>
+
+        <section class="content-card" id="references">
+            <h2>13. References</h2>
+
+            <ol class="references-list">
+                <li>Smashing Ebook 26. (n.d.). <em>DOM (Document Object Model), DOM Collections, DOM Modification, and JavaScript Events.</em> User-provided PDF reference, 17 pages.</li>
+
+                <li>MDN Web Docs. (n.d.). <em>Document Object Model (DOM).</em> <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model" target="_blank" rel="noopener">https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model</a></li>
+
+                <li>MDN Web Docs. (n.d.). <em>Introduction to Events.</em> <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Events" target="_blank" rel="noopener">MDN Events Guide</a></li>
+
+                <li>MDN Web Docs. (n.d.). <em>EventTarget: addEventListener().</em> <a href="https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener" target="_blank" rel="noopener">MDN addEventListener Reference</a></li>
+
+                <li>JavaScript.info. (n.d.). <em>Document.</em> <a href="https://javascript.info/document" target="_blank" rel="noopener">https://javascript.info/document</a></li>
+            </ol>
+        </section>
+
+
+<button id="backToTop" type="button" aria-label="Back to top" title="Back to Top">↑</button>
+
+<div id="displaySettings">
+    <button id="settingsToggle" type="button" aria-label="Display settings">⚙</button>
+
+    <div id="settingsPanel">
+        <div class="settings-heading">Display Settings</div>
+
+        <span class="settings-label">Appearance</span>
+        <button id="darkModeButton" class="settings-dark-button" type="button">
+            🌙 Switch to Dark Mode
+        </button>
+
+        <span class="settings-label">Text Size</span>
+
+        <div class="settings-size-controls">
+            <button id="decreaseText" type="button">A−</button>
+            <span id="textSizeValue">100%</span>
+            <button id="increaseText" type="button">A+</button>
+        </div>
+
+        <button id="resetSettings" type="button">Reset Settings</button>
+    </div>
+</div>
+
+<footer class="page-footer">
+    <p>WEBTECH LEARN | Web Technology Learning E-Book</p>
+    <p>Excellence Beyond Limits</p>
+</footer>
+<script src="chapter6.js" defer></script>
+</body>
+</html>

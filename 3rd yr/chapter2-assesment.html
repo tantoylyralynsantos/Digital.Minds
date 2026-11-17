@@ -1,0 +1,396 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 2 Assessment | WEBTECH LEARN</title>
+
+    <link rel="stylesheet" href="chapter2-assesment.css">
+    <link rel="stylesheet" href="../display-settings.css">
+
+    <script src="../display-settings.js" defer></script>
+    <script src="chapter2-asessement.js" defer></script>
+</head>
+<body>
+
+
+<!-- HEADER -->
+<header class="header">
+    <div class="nav-container">
+
+        <a href="index.html" class="logo">
+            <img src="logo.jpg" alt="BSIT Digital Minds Logo" class="logo-image">
+
+            <span class="logo-text">
+                <small>BSIT | DIGITAL MINDS</small>
+            </span>
+        </a>
+
+        <a href="3rd yr toc.html" class="back-home">
+            ← Back to Table of Content
+        </a>
+
+    </div>
+    <link rel="stylesheet" href="ebook-pagination.css">
+<script src="ebook-pagination.js" defer></script>
+</header>
+
+
+<div class="page-layout">
+
+    <aside class="sidebar">
+        <div class="sidebar-heading">ASSESSMENT MENU</div>
+        <a href="#overview" class="side-link">Overview</a>
+        <a href="#instructions" class="side-link">Instructions</a>
+        <a href="#assessment" class="side-link">Assessment Questions</a>
+        <a href="#results" class="side-link">Assessment Results</a>
+
+        <div class="sidebar-note">
+            <strong>Remember!</strong>
+            <p>Read each question carefully before choosing your answer.</p>
+        </div>
+    </aside>
+
+    <main class="main-content">
+
+        <section class="lesson-banner">
+            <span class="banner-label">WEBTECH LEARN • CHAPTER 2</span>
+            <h1>Chapter 2 Assessment</h1>
+            <p>Web Browsers, Web Servers, and HTTP/HTTPS</p>
+            <div class="banner-info">
+                <span>20 Questions</span>
+                <span>Multiple Choice</span>
+                <span>Automatic Results</span>
+            </div>
+        </section>
+
+        <section class="content-section" id="overview">
+            <span class="section-tag">ASSESSMENT OVERVIEW</span>
+            <h2>Test Your Knowledge</h2>
+            <p>
+                This assessment evaluates your understanding of web browsers,
+                web servers, HTTP, HTTPS, client-server communication, and
+                related web technologies discussed in Chapter 2.
+            </p>
+
+            <div class="overview-grid">
+                <div class="overview-card">
+                    <span class="overview-number">20</span>
+                    <span class="overview-label">Total Questions</span>
+                </div>
+                <div class="overview-card">
+                    <span class="overview-number">20</span>
+                    <span class="overview-label">Total Points</span>
+                </div>
+                <div class="overview-card">
+                    <span class="overview-number">100%</span>
+                    <span class="overview-label">Maximum Score</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section" id="instructions">
+            <span class="section-tag">BEFORE YOU BEGIN</span>
+            <h2>Assessment Instructions</h2>
+            <ul class="instruction-list">
+                <li>Read every question carefully.</li>
+                <li>Select only one answer for each question.</li>
+                <li>Answer all 20 questions before submitting.</li>
+                <li>Each correct answer is worth one point.</li>
+                <li>Your score and answer explanations will appear after submission.</li>
+                <li>You may retake the assessment using the Try Again button.</li>
+            </ul>
+        </section>
+
+        <section class="content-section assessment-section" id="assessment">
+            <div class="assessment-heading">
+                <div>
+                    <span class="section-tag">CHAPTER 2</span>
+                    <h2>Multiple Choice Assessment</h2>
+                    <p>Choose the best answer for each question.</p>
+                </div>
+                <div class="question-total">20 ITEMS</div>
+            </div>
+
+            <div class="progress-container">
+                <div class="progress-top">
+                    <span>Assessment Progress</span>
+                    <strong id="progressText">0 of 20 answered</strong>
+                </div>
+                <div class="progress-track">
+                    <div id="progressBar" class="progress-fill"></div>
+                </div>
+            </div>
+
+            <form id="chapter2Assessment">
+
+                <div class="question-card">
+                    <span class="question-number">QUESTION 01</span>
+                    <h3>What is the primary function of a web browser?</h3>
+                    <label><input type="radio" name="q1" value="a"> A. To store website files permanently</label>
+                    <label><input type="radio" name="q1" value="b"> B. To access and display web pages</label>
+                    <label><input type="radio" name="q1" value="c"> C. To manage computer hardware</label>
+                    <label><input type="radio" name="q1" value="d"> D. To create internet connections only</label>
+                </div>
+
+                <div class="question-card">
+                    <span class="question-number">QUESTION 02</span>
+                    <h3>Which of the following is an example of a web browser?</h3>
+                    <label><input type="radio" name="q2" value="a"> A. Microsoft Excel</label>
+                    <label><input type="radio" name="q2" value="b"> B. Adobe Photoshop</label>
+                    <label><input type="radio" name="q2" value="c"> C. Google Chrome</label>
+                    <label><input type="radio" name="q2" value="d"> D. Microsoft Word</label>
+                </div>
+
+                <div class="question-card">
+                    <span class="question-number">QUESTION 03</span>
+                    <h3>What is the main role of a web server?</h3>
+                    <label><input type="radio" name="q3" value="a"> A. To store and deliver website resources</label>
+                    <label><input type="radio" name="q3" value="b"> B. To design computer processors</label>
+                    <label><input type="radio" name="q3" value="c"> C. To replace the web browser</label>
+                    <label><input type="radio" name="q3" value="d"> D. To create presentation slides</label>
+                </div>
+
+                <div class="question-card">
+                    <span class="question-number">QUESTION 04</span>
+                    <h3>Which component sends a request to a web server?</h3>
+                    <label><input type="radio" name="q4" value="a"> A. Monitor</label>
+                    <label><input type="radio" name="q4" value="b"> B. Printer</label>
+                    <label><input type="radio" name="q4" value="c"> C. Database only</label>
+                    <label><input type="radio" name="q4" value="d"> D. Client</label>
+                </div>
+
+                <div class="question-card">
+                    <span class="question-number">QUESTION 05</span>
+                    <h3>What does HTTP stand for?</h3>
+                    <label><input type="radio" name="q5" value="a"> A. High Text Transfer Program</label>
+                    <label><input type="radio" name="q5" value="b"> B. Hypertext Transfer Protocol</label>
+                    <label><input type="radio" name="q5" value="c"> C. Hyperlink Transmission Process</label>
+                    <label><input type="radio" name="q5" value="d"> D. Hyper Transfer Text Program</label>
+                </div>
+
+                <div class="question-card">
+                    <span class="question-number">QUESTION 06</span>
+                    <h3>What is the primary purpose of HTTPS?</h3>
+                    <label><input type="radio" name="q6" value="a"> A. To make websites load without internet</label>
+                    <label><input type="radio" name="q6" value="b"> B. To remove website advertisements</label>
+                    <label><input type="radio" name="q6" value="c"> C. To provide encrypted communication</label>
+                    <label><input type="radio" name="q6" value="d"> D. To increase screen resolution</label>
+                </div>
+
+                <div class="question-card">
+                    <span class="question-number">QUESTION 07</span>
+                    <h3>Which protocol is commonly used to transfer web pages?</h3>
+                    <label><input type="radio" name="q7" value="a"> A. FTP</label>
+                    <label><input type="radio" name="q7" value="b"> B. SMTP</label>
+                    <label><input type="radio" name="q7" value="c"> C. POP3</label>
+                    <label><input type="radio" name="q7" value="d"> D. HTTP</label>
+                </div>
+
+                <div class="question-card">
+                    <span class="question-number">QUESTION 08</span>
+                    <h3>Which port is commonly associated with HTTP?</h3>
+                    <label><input type="radio" name="q8" value="a"> A. Port 80</label>
+                    <label><input type="radio" name="q8" value="b"> B. Port 21</label>
+                    <label><input type="radio" name="q8" value="c"> C. Port 25</label>
+                    <label><input type="radio" name="q8" value="d"> D. Port 110</label>
+                </div>
+
+                <div class="question-card">
+                    <span class="question-number">QUESTION 09</span>
+                    <h3>Which port is commonly used by HTTPS?</h3>
+                    <label><input type="radio" name="q9" value="a"> A. Port 20</label>
+                    <label><input type="radio" name="q9" value="b"> B. Port 53</label>
+                    <label><input type="radio" name="q9" value="c"> C. Port 443</label>
+                    <label><input type="radio" name="q9" value="d"> D. Port 25</label>
+                </div>
+
+                <div class="question-card">
+                    <span class="question-number">QUESTION 10</span>
+                    <h3>What does a URL identify?</h3>
+                    <label><input type="radio" name="q10" value="a"> A. The computer's processor</label>
+                    <label><input type="radio" name="q10" value="b"> B. The physical size of a website</label>
+                    <label><input type="radio" name="q10" value="c"> C. The browser's memory capacity</label>
+                    <label><input type="radio" name="q10" value="d"> D. The address of a resource on the internet</label>
+                </div>
+
+                <div class="question-card">
+                    <span class="question-number">QUESTION 11</span>
+                    <h3>What happens when a user enters a website address in a browser?</h3>
+                    <label><input type="radio" name="q11" value="a"> A. The browser sends a request to locate and retrieve the resource</label>
+                    <label><input type="radio" name="q11" value="b"> B. The computer automatically shuts down</label>
+                    <label><input type="radio" name="q11" value="c"> C. The browser deletes the website</label>
+                    <label><input type="radio" name="q11" value="d"> D. The monitor connects directly to a printer</label>
+                </div>
+
+                <div class="question-card">
+                    <span class="question-number">QUESTION 12</span>
+                    <h3>Which technology helps secure HTTPS connections?</h3>
+                    <label><input type="radio" name="q12" value="a"> A. HTML</label>
+                    <label><input type="radio" name="q12" value="b"> B. CSS</label>
+                    <label><input type="radio" name="q12" value="c"> C. TLS</label>
+                    <label><input type="radio" name="q12" value="d"> D. FTP</label>
+                </div>
+
+                <div class="question-card">
+                    <span class="question-number">QUESTION 13</span>
+                    <h3>What is an HTTP request?</h3>
+                    <label><input type="radio" name="q13" value="a"> A. A message sent by a client asking a server for an action or resource</label>
+                    <label><input type="radio" name="q13" value="b"> B. A computer's power supply</label>
+                    <label><input type="radio" name="q13" value="c"> C. A type of monitor display</label>
+                    <label><input type="radio" name="q13" value="d"> D. A file used only for printing</label>
+                </div>
+
+                <div class="question-card">
+                    <span class="question-number">QUESTION 14</span>
+                    <h3>What is an HTTP response?</h3>
+                    <label><input type="radio" name="q14" value="a"> A. A command to restart a computer</label>
+                    <label><input type="radio" name="q14" value="b"> B. A message returned by the server to the client</label>
+                    <label><input type="radio" name="q14" value="c"> C. A browser extension</label>
+                    <label><input type="radio" name="q14" value="d"> D. A method of creating passwords</label>
+                </div>
+
+                <div class="question-card">
+                    <span class="question-number">QUESTION 15</span>
+                    <h3>Which HTTP method is commonly used to retrieve data?</h3>
+                    <label><input type="radio" name="q15" value="a"> A. GET</label>
+                    <label><input type="radio" name="q15" value="b"> B. DELETE</label>
+                    <label><input type="radio" name="q15" value="c"> C. PATCH</label>
+                    <label><input type="radio" name="q15" value="d"> D. CONNECT</label>
+                </div>
+
+                <div class="question-card">
+                    <span class="question-number">QUESTION 16</span>
+                    <h3>Which HTTP method is commonly used to submit data to a server?</h3>
+                    <label><input type="radio" name="q16" value="a"> A. TRACE</label>
+                    <label><input type="radio" name="q16" value="b"> B. HEAD</label>
+                    <label><input type="radio" name="q16" value="c"> C. POST</label>
+                    <label><input type="radio" name="q16" value="d"> D. OPTIONS</label>
+                </div>
+
+                <div class="question-card">
+                    <span class="question-number">QUESTION 17</span>
+                    <h3>What does the HTTP status code 404 mean?</h3>
+                    <label><input type="radio" name="q17" value="a"> A. Successful request</label>
+                    <label><input type="radio" name="q17" value="b"> B. Resource not found</label>
+                    <label><input type="radio" name="q17" value="c"> C. Server is working normally</label>
+                    <label><input type="radio" name="q17" value="d"> D. Permanent redirect</label>
+                </div>
+
+                <div class="question-card">
+                    <span class="question-number">QUESTION 18</span>
+                    <h3>What does the HTTP status code 200 usually indicate?</h3>
+                    <label><input type="radio" name="q18" value="a"> A. Successful request</label>
+                    <label><input type="radio" name="q18" value="b"> B. Unauthorized access</label>
+                    <label><input type="radio" name="q18" value="c"> C. Page not found</label>
+                    <label><input type="radio" name="q18" value="d"> D. Server error</label>
+                </div>
+
+                <div class="question-card">
+                    <span class="question-number">QUESTION 19</span>
+                    <h3>Which of the following is a popular web server software?</h3>
+                    <label><input type="radio" name="q19" value="a"> A. Apache HTTP Server</label>
+                    <label><input type="radio" name="q19" value="b"> B. Microsoft PowerPoint</label>
+                    <label><input type="radio" name="q19" value="c"> C. Paint</label>
+                    <label><input type="radio" name="q19" value="d"> D. Calculator</label>
+                </div>
+
+                <div class="question-card">
+                    <span class="question-number">QUESTION 20</span>
+                    <h3>Why is HTTPS recommended when accessing websites that handle sensitive information?</h3>
+                    <label><input type="radio" name="q20" value="a"> A. It removes the need for passwords</label>
+                    <label><input type="radio" name="q20" value="b"> B. It makes every website anonymous</label>
+                    <label><input type="radio" name="q20" value="c"> C. It encrypts data exchanged between the browser and server</label>
+                    <label><input type="radio" name="q20" value="d"> D. It prevents all possible cyberattacks</label>
+                </div>
+
+                <div class="submit-area">
+                    <p>Make sure you have answered all 20 questions before submitting.</p>
+                    <button type="submit" class="primary-button">Submit Assessment</button>
+                    <button type="reset" id="resetAssessment" class="secondary-button">Reset Answers</button>
+                </div>
+
+            </form>
+        </section>
+
+        <section class="content-section results-section" id="results" hidden>
+            <span class="section-tag">ASSESSMENT SUMMARY</span>
+            <h2>Your Assessment Results</h2>
+
+            <div class="result-score-card">
+                <span class="result-caption">YOUR FINAL SCORE</span>
+                <div class="score-line">
+                    <span id="scoreNumber">0/20</span>
+                    <span id="scorePercentage">0%</span>
+                </div>
+                <h3 id="resultMessage">Assessment Completed</h3>
+                <p id="resultDetails"></p>
+            </div>
+
+            <div class="result-breakdown">
+                <div class="breakdown-card correct-card">
+                    <span id="correctCount">0</span>
+                    <small>Correct Answers</small>
+                </div>
+                <div class="breakdown-card incorrect-card">
+                    <span id="incorrectCount">0</span>
+                    <small>Incorrect Answers</small>
+                </div>
+            </div>
+
+            <div class="explanations-area">
+                <h3>Answer Key and Explanations</h3>
+                <p>Review the correct answers and explanations below.</p>
+                <div id="explanationList"></div>
+            </div>
+
+            <div class="submit-area">
+                <button type="button" id="tryAgain" class="primary-button">Try Again</button>
+                <a href="chapter2.html" class="secondary-button button-link">Back to Chapter 2</a>
+            </div>
+        </section>
+
+        <footer class="page-footer">
+            <p>WEBTECH LEARN | BSIT DIGITAL E-BOOK</p>
+            <span>Chapter 2 Assessment</span>
+            
+        </footer>
+
+    </main>
+</div>
+
+<button id="backToTop" type="button" aria-label="Back to top">↑</button>
+<!-- DISPLAY SETTINGS -->
+<div id="displaySettings">
+
+    <button id="settingsToggle" type="button" aria-label="Display settings">
+        ⚙️
+    </button>
+
+    <div id="settingsPanel">
+
+        <div class="settings-heading">Display Settings</div>
+
+        <span class="settings-label">Appearance</span>
+
+        <button id="darkModeButton" class="settings-dark-button" type="button">
+            🌙 Switch to Dark Mode
+        </button>
+
+        <span class="settings-label">Text Size</span>
+
+        <div class="settings-size-controls">
+            <button id="decreaseText" type="button">A−</button>
+            <span id="textSizeValue">100%</span>
+            <button id="increaseText" type="button">A+</button>
+        </div>
+
+        <button id="resetSettings" type="button">
+            Reset Settings
+        </button>
+
+     </div>
+</div>
+</body>
+</html>

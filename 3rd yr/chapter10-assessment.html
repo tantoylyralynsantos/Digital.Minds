@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Chapter 10 Assessment | WEBTECH LEARN</title>
+
+    <link rel="stylesheet" href="chapter10-assessment.css">
+    <link rel="stylesheet" href="../display-settings.css">
+
+    <script src="../display-settings.js" defer></script>
+    <script src="chapter10-assessment.js" defer></script>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+    <div class="nav-container">
+
+        <a href="index.html" class="logo">
+            <img src="logo.jpg" alt="BSIT Digital Minds Logo" class="logo-image">
+
+            <span class="logo-text">
+                <small>BSIT | DIGITAL MINDS</small>
+            </span>
+        </a>
+
+        <a href="chapter10.html" class="back-home">
+            ← Back to Chapter 10
+        </a>
+
+    </div>
+    <link rel="stylesheet" href="ebook-pagination.css">
+<script src="ebook-pagination.js" defer></script>
+</header>
+
+<div class="page-layout">
+
+    <aside class="sidebar">
+        <h3>CHAPTER 10</h3>
+        <p class="sidebar-subtitle">Assessment Navigation</p>
+
+        <nav>
+            <a href="#assessment-intro">Assessment Overview</a>
+            <a href="#multiple-choice">Part I – Multiple Choice</a>
+            <a href="#results">Your Results</a>
+        </nav>
+
+        <div class="separate-learning-links">
+            <a href="chapter10.html">📖 Back to Lesson</a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+
+        <!-- ASSESSMENT BANNER -->
+        <section class="lesson-banner" id="assessment-intro">
+            <span class="chapter-label">CHAPTER 10</span>
+            <h1>Chapter 10 Assessment</h1>
+            <p>Website Testing, Hosting, Deployment, and Maintenance</p>
+        </section>
+
+        <!-- ASSESSMENT OVERVIEW -->
+        <section class="content-section">
+
+            <h2>Assessment Overview</h2>
+
+            <p>
+                Welcome to the Chapter 10 Assessment of WEBTECH LEARN.
+                This assessment evaluates your understanding of Website
+                Testing, Hosting, Deployment, and Maintenance, including
+                website testing methods, test cases, bug identification,
+                web hosting, domain names, DNS, deployment environments,
+                website security, backups, and website maintenance.
+            </p>
+
+            <p>
+                Read each question carefully and select the best answer
+                from the four choices provided.
+            </p>
+
+            <div class="highlight-box">
+
+                <h3>Assessment Coverage</h3>
+
+                <ul>
+                    <li>Part I – Multiple Choice: 20 Questions</li>
+                </ul>
+
+                <p><strong>Total Questions: 20</strong></p>
+                <p><strong>Total Points: 20</strong></p>
+
+                <p>
+                    Each question is worth one point. Answer all questions
+                    before submitting your assessment.
+                </p>
+
+            </div>
+
+            <!-- PROGRESS BAR -->
+            <div class="progress-area">
+
+                <div class="progress-information">
+                    <span>Assessment Progress</span>
+                    <strong id="progressText">0 / 20 Answered</strong>
+                </div>
+
+                <div class="progress-track">
+                    <div id="progressBar"></div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <form id="assessmentForm">
+
+            <!-- PART I -->
+            <section class="content-section" id="multiple-choice">
+
+                <div class="part-heading">
+                    <span class="assessment-label">PART I</span>
+                    <h2>Multiple Choice</h2>
+                    <p>Select the best answer for each question.</p>
+                </div>
+
+                <div id="multipleChoiceQuestions"></div>
+
+            </section>
+
+            <!-- SUBMIT SECTION -->
+            <section class="content-section submit-section">
+
+                <h2>Submit Your Assessment</h2>
+
+                <p>
+                    Review your answers before submitting.
+                    Make sure all 20 questions are completed.
+                </p>
+
+                <button type="submit" class="quiz-button">
+                    Submit Assessment
+                </button>
+
+                <button type="button" id="resetAssessment" class="reset-button">
+                    Reset Answers
+                </button>
+
+                <p class="submit-note">
+                    Your score, performance, and answer explanations
+                    will appear after submission.
+                </p>
+
+            </section>
+
+        </form>
+
+        <!-- RESULTS SECTION -->
+        <section class="content-section results-section" id="results" hidden>
+
+            <span class="assessment-label">ASSESSMENT RESULTS</span>
+
+            <h2>Your Results</h2>
+
+            <p>Here is your performance summary for Chapter 10.</p>
+
+            <div class="score-display">
+
+                <div>
+                    <span class="score-caption">YOUR SCORE</span>
+                    <strong id="scoreNumber">0/20</strong>
+                </div>
+
+                <div>
+                    <span class="score-caption">PERCENTAGE</span>
+                    <strong id="scorePercentage">0%</strong>
+                </div>
+
+            </div>
+
+            <h3 id="resultMessage">Assessment completed!</h3>
+
+            <p id="resultDetails"></p>
+
+            <div class="score-breakdown">
+
+                <div>
+                    <span>Multiple Choice</span>
+                    <strong id="mcScore">0/20</strong>
+                </div>
+
+            </div>
+
+            <div class="answer-explanations">
+
+                <h3>Answer Key and Explanations</h3>
+
+                <p>
+                    Review your answers and the explanations below.
+                </p>
+
+                <div id="explanationList"></div>
+
+            </div>
+
+            <button type="button" id="tryAgain" class="quiz-button">
+                Try Again
+            </button>
+
+        </section>
+
+        <!-- PAGE NAVIGATION -->
+        <div class="lesson-navigation">
+
+            <a href="chapter10.html" class="previous-button">
+                ← Back to Lesson
+            </a>
+
+            <a href="3rd yr toc.html" class="next-button">
+                Back to Table of Contents →
+            </a>
+
+        </div>
+
+    </main>
+</div>
+
+<!-- FOOTER -->
+<footer class="page-footer">
+    <p>WEBTECH LEARN | BSIT DIGITAL E-BOOK</p>
+    <p>Excellence Beyond Limits</p>
+</footer>
+
+<!-- BACK TO TOP -->
+<button id="backToTop" type="button" title="Back to Top" aria-label="Back to Top">
+    ↑
+</button>
+
+<!-- DISPLAY SETTINGS -->
+<div id="displaySettings">
+
+    <button id="settingsToggle" type="button" aria-label="Open display settings">
+        ⚙️
+    </button>
+
+    <div id="settingsPanel">
+
+        <h3 class="settings-heading">Display Settings</h3>
+
+        <span class="settings-label">Dark Mode</span>
+
+        <button id="darkModeButton" class="settings-dark-button" type="button">
+            🌙 Toggle Dark Mode
+        </button>
+
+        <span class="settings-label">Text Size</span>
+
+        <div class="settings-size-controls">
+            <button id="decreaseText" type="button">A−</button>
+            <span id="textSizeValue">100%</span>
+            <button id="increaseText" type="button">A+</button>
+        </div>
+
+        <button id="resetSettings" type="button">
+            Reset Settings
+        </button>
+
+    </div>
+</div>
+
+</body>
+</html>

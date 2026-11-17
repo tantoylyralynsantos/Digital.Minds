@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Chapter 6 Assessment | WEBTECH LEARN</title>
+
+    <link rel="stylesheet" href="chapter6-assesment.css">
+    <link rel="stylesheet" href="../display-settings.css">
+
+    <script src="../display-settings.js" defer></script>
+    <script src="chapter6-assesment.js" defer></script>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+    <div class="nav-container">
+
+        <a href="index.html" class="logo">
+            <img src="logo.jpg" alt="BSIT Digital Minds Logo" class="logo-image">
+
+            <span class="logo-text">
+                <small>BSIT | DIGITAL MINDS</small>
+            </span>
+        </a>
+
+        <a href="chapter6.html" class="back-home">
+            ← Back to Chapter 6
+        </a>
+
+    </div>
+    <link rel="stylesheet" href="ebook-pagination.css">
+<script src="ebook-pagination.js" defer></script>
+</header>
+
+<div class="page-layout">
+
+    <aside class="sidebar">
+        <h3>CHAPTER 6</h3>
+        <p class="sidebar-subtitle">Assessment Navigation</p>
+
+        <nav>
+            <a href="#assessment-intro">Assessment Overview</a>
+            <a href="#multiple-choice">Part I – Multiple Choice</a>
+            <a href="#identification">Part II – Identification</a>
+            <a href="#true-false">Part III – True or False</a>
+            <a href="#results">Your Results</a>
+        </nav>
+
+        <div class="separate-learning-links">
+            <a href="chapter6.html">📖 Back to Lesson</a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+
+        <section class="lesson-banner" id="assessment-intro">
+            <span class="chapter-label">CHAPTER 06</span>
+            <h1>Chapter 6 Assessment</h1>
+            <p>DOM Manipulation and JavaScript Events</p>
+        </section>
+
+        <section class="content-section">
+            <h2>Assessment Overview</h2>
+
+            <p>
+                Welcome to the Chapter 6 Assessment of WEBTECH LEARN.
+                This assessment evaluates your understanding of the
+                Document Object Model (DOM), DOM tree and collections,
+                element selection, DOM manipulation, styling, JavaScript
+                events, event listeners, and custom events.
+            </p>
+
+            <p>
+                Read each question carefully. Choose the correct answer
+                for multiple-choice and true-or-false questions. For
+                identification, type the correct term.
+            </p>
+
+            <div class="highlight-box">
+                <h3>Assessment Coverage</h3>
+                <ul>
+                    <li>Part I – Multiple Choice: 20 Questions</li>
+                    <li>Part II – Identification: 10 Questions</li>
+                    <li>Part III – True or False: 5 Questions</li>
+                </ul>
+
+                <p><strong>Total Questions: 35</strong></p>
+                <p><strong>Total Points: 35</strong></p>
+
+                <p>Each question is worth one point. Answer all questions before submitting.</p>
+            </div>
+
+            <div class="progress-area">
+                <div class="progress-information">
+                    <span>Assessment Progress</span>
+                    <strong id="progressText">0 / 35 Answered</strong>
+                </div>
+                <div class="progress-track">
+                    <div id="progressBar"></div>
+                </div>
+            </div>
+        </section>
+
+        <form id="assessmentForm">
+
+            <section class="content-section" id="multiple-choice">
+                <div class="part-heading">
+                    <span class="assessment-label">PART I</span>
+                    <h2>Multiple Choice</h2>
+                    <p>Select the best answer for each question.</p>
+                </div>
+
+                <div id="multipleChoiceQuestions"></div>
+            </section>
+
+            <section class="content-section" id="identification">
+                <div class="part-heading">
+                    <span class="assessment-label">PART II</span>
+                    <h2>Identification</h2>
+                    <p>Write the correct term being described.</p>
+                </div>
+
+                <div id="identificationQuestions"></div>
+            </section>
+
+            <section class="content-section" id="true-false">
+                <div class="part-heading">
+                    <span class="assessment-label">PART III</span>
+                    <h2>True or False</h2>
+                    <p>Select True if the statement is correct and False if it is incorrect.</p>
+                </div>
+
+                <div id="trueFalseQuestions"></div>
+            </section>
+
+            <section class="content-section submit-section">
+                <h2>Submit Your Assessment</h2>
+
+                <p>
+                    Review your answers before submitting.
+                    Make sure all 35 questions are completed.
+                </p>
+
+                <button type="submit" class="quiz-button">
+                    Submit Assessment
+                </button>
+
+                <button type="button" id="resetAssessment" class="reset-button">
+                    Reset Answers
+                </button>
+
+                <p class="submit-note">
+                    Your score, performance, and answer explanations
+                    will appear after submission.
+                </p>
+            </section>
+
+        </form>
+
+        <section class="content-section results-section" id="results" hidden>
+
+            <span class="assessment-label">ASSESSMENT RESULTS</span>
+            <h2>Your Results</h2>
+
+            <p>Here is your performance summary for Chapter 6.</p>
+
+            <div class="score-display">
+                <div>
+                    <span class="score-caption">YOUR SCORE</span>
+                    <strong id="scoreNumber">0/35</strong>
+                </div>
+                <div>
+                    <span class="score-caption">PERCENTAGE</span>
+                    <strong id="scorePercentage">0%</strong>
+                </div>
+            </div>
+
+            <h3 id="resultMessage">Assessment completed!</h3>
+            <p id="resultDetails"></p>
+
+            <div class="score-breakdown">
+                <div>
+                    <span>Multiple Choice</span>
+                    <strong id="mcScore">0/20</strong>
+                </div>
+                <div>
+                    <span>Identification</span>
+                    <strong id="idScore">0/10</strong>
+                </div>
+                <div>
+                    <span>True or False</span>
+                    <strong id="tfScore">0/5</strong>
+                </div>
+            </div>
+
+            <div class="answer-explanations">
+                <h3>Answer Key and Explanations</h3>
+                <p>Review your answers and the explanations below.</p>
+                <div id="explanationList"></div>
+            </div>
+
+            <button type="button" id="tryAgain" class="quiz-button">
+                Try Again
+            </button>
+
+        </section>
+
+        <div class="lesson-navigation">
+            <a href="chapter6.html" class="previous-button">← Back to Lesson</a>
+            <a href="3rd yr toc.html" class="next-button">Back to Table of Contents →</a>
+        </div>
+
+    </main>
+</div>
+
+<footer class="page-footer">
+    <p>WEBTECH LEARN | BSIT DIGITAL E-BOOK</p>
+    <p>Excellence Beyond Limits</p>
+</footer>
+
+<button id="backToTop" type="button" title="Back to Top" aria-label="Back to Top">
+    ↑
+</button>
+
+<div id="displaySettings">
+    <button id="settingsToggle" type="button" aria-label="Display settings">⚙️</button>
+
+    <div id="settingsPanel">
+        <div class="settings-heading">Display Settings</div>
+
+        <span class="settings-label">Appearance</span>
+        <button id="darkModeButton" class="settings-dark-button" type="button">
+            🌙 Switch to Dark Mode
+        </button>
+
+        <span class="settings-label">Text Size</span>
+
+        <div class="settings-size-controls">
+            <button id="decreaseText" type="button">A−</button>
+            <span id="textSizeValue">100%</span>
+            <button id="increaseText" type="button">A+</button>
+        </div>
+
+        <button id="resetSettings" type="button">Reset Settings</button>
+    </div>
+</div>
+
+</body>
+</html>

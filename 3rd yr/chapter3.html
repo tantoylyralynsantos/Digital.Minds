@@ -1,0 +1,964 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lesson 3 | HTML Structure and Semantic Elements</title>
+
+    <link rel="stylesheet" href="chapter3.css">
+    <link rel="stylesheet" href="../display-settings.css">
+    <link rel="stylesheet" href="ebook-pagination.css">
+
+    <script src="../display-settings.js" defer></script>
+    <script src="ebook-pagination.js" defer></script>
+    <script src="chapter3.js" defer></script>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="header">
+    <div class="nav-container">
+
+        <a href="index.html" class="logo">
+            <img src="logo.jpg" alt="BSIT Digital Minds Logo" class="logo-image">
+            <span class="logo-text">
+                <small>BSIT | DIGITAL MINDS</small>
+            </span>
+        </a>
+
+        <a href="../pics/3rd yr toc.html" class="back-home">
+            ← Back to Table of Content
+        </a>
+
+    </div>
+</header>
+
+
+<div class="page-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="sidebar-heading">
+            <h3>CHAPTER 03</h3>
+            <p class="sidebar-subtitle">
+                HTML Structure and Semantic Elements
+            </p>
+        </div>
+
+        <nav aria-label="Chapter 3 Contents">
+
+            <a href="#introduction" class="active">Introduction</a>
+            <a href="#semantic-html">What is Semantic HTML?</a>
+            <a href="#non-semantic">Semantic vs. Non-Semantic</a>
+            <a href="#benefits">Benefits of Semantic HTML</a>
+            <a href="#elements">Common Semantic Elements</a>
+            <a href="#structure">Basic HTML Structure</a>
+            <a href="#hands-on">Hands-On Activity</a>
+            <a href="#best-practices">Best Practices</a>
+            <a href="#summary">Lesson Summary</a>
+            <a href="#glossary">Glossary</a>
+            <a href="#learning-resources">Learning Resources</a>
+            <a href="#references">References</a>
+
+        </nav>
+
+        <div class="separate-learning-links">
+            <a href="chapter2-assesment.html">
+                <span>▤</span>
+                Chapter Assessment
+            </a>
+        </div>
+
+        <div class="sidebar-download">
+            <button type="button" id="downloadPDF">
+                <span>↓</span>
+                Download Lesson PDF
+            </button>
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- LESSON BANNER -->
+        <section class="lesson-banner" id="introduction">
+
+            <span class="lesson-label">CHAPTER 03</span>
+
+            <h1>HTML Structure and Semantic Elements</h1>
+
+            <p>
+                Learn how to organize webpage content using meaningful
+                HTML elements and understand their importance in web development.
+            </p>
+
+        </section>
+
+
+        <!-- INTRODUCTION -->
+        <section class="content-section">
+
+            <h2>Introduction</h2>
+
+            <figure class="historical-image">
+                <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/8/85/HTML5_logo_and_wordmark.svg"
+                    alt="Official HTML5 logo and wordmark"
+                    loading="lazy">
+
+                <figcaption>
+                    HTML5 is the markup language used to structure
+                    content and organize elements on modern webpages.
+                </figcaption>
+            </figure>
+
+            <p>
+                Semantic HTML is an important part of web development.
+                It helps developers create well-organized webpages by
+                using HTML elements that describe the meaning of their content.
+            </p>
+
+            <p>
+                In this lesson, you will learn about semantic HTML,
+                common semantic elements, their purposes, and how they
+                improve accessibility, search engine optimization,
+                and website maintenance.
+            </p>
+
+            <h3>Learning Goals</h3>
+
+            <ul>
+                <li>Understand what Semantic HTML is.</li>
+                <li>Learn common semantic elements and their purposes.</li>
+                <li>Explore the benefits of Semantic HTML for accessibility, SEO, and maintainability.</li>
+                <li>Build a webpage using semantic HTML.</li>
+            </ul>
+
+        </section>
+
+
+        <!-- WHAT IS SEMANTIC HTML -->
+        <section class="content-section" id="semantic-html">
+
+            <h2>1. What is Semantic HTML?</h2>
+
+            <figure class="historical-image">
+                <img
+                    src="https://f1.madcapsoftware.com/blogImages/2024/03/ill-the%20power-of-semantic-styles-for-accessibility-1200x1200.png?w=1800"
+                    alt="Illustration of a webpage organized using semantic HTML elements"
+                    loading="lazy">
+
+                <figcaption>
+                    A visual example of semantic webpage organization
+                    using header, navigation, section, article, aside,
+                    and footer elements.
+                </figcaption>
+            </figure>
+
+            <p>
+                <strong>Semantic HTML</strong> uses meaningful tags
+                that describe the content they enclose. These tags help
+                developers and browsers understand the structure and
+                meaning of a webpage.
+            </p>
+
+            <p>
+                Instead of using generic elements for every part of a
+                webpage, semantic HTML provides specific elements that
+                describe the purpose of each content section.
+            </p>
+
+            <div class="highlight-box">
+                <h3>Remember!</h3>
+                <p>
+                    Semantic elements describe the meaning of the content,
+                    not just how the content looks on the webpage.
+                </p>
+            </div>
+
+        </section>
+
+
+        <!-- SEMANTIC VS NON-SEMANTIC -->
+        <section class="content-section" id="non-semantic">
+
+            <h2>2. Semantic vs. Non-Semantic Elements</h2>
+
+            <figure class="historical-image">
+                <img
+                    src="https://blog.logrocket.com/wp-content/uploads/2024/07/difference-between-nonsemantic-semantic-html.png"
+                    alt="Visual comparison of semantic and non-semantic HTML structures"
+                    loading="lazy">
+
+                <figcaption>
+                    Comparison of generic HTML containers and meaningful
+                    semantic elements used to organize webpage content.
+                </figcaption>
+            </figure>
+
+            <p>
+                HTML elements can be classified as semantic or
+                non-semantic depending on whether they describe
+                the meaning of their content.
+            </p>
+
+            <div class="info-grid">
+
+                <article class="info-card">
+                    <h3>Non-Semantic Elements</h3>
+
+                    <p>
+                        Non-semantic elements do not clearly describe
+                        the meaning of their content. They are commonly
+                        used as general containers.
+                    </p>
+
+                    <ul>
+                        <li>&lt;div&gt;</li>
+                        <li>&lt;span&gt;</li>
+                    </ul>
+                </article>
+
+                <article class="info-card">
+                    <h3>Semantic Elements</h3>
+
+                    <p>
+                        Semantic elements clearly describe the purpose
+                        and meaning of the content they contain.
+                    </p>
+
+                    <ul>
+                        <li>&lt;header&gt;</li>
+                        <li>&lt;article&gt;</li>
+                        <li>&lt;footer&gt;</li>
+                    </ul>
+                </article>
+
+            </div>
+
+            <div class="highlight-box">
+                <h3>Example</h3>
+
+                <p>
+                    A &lt;div&gt; can group content without describing
+                    its purpose, while a &lt;header&gt; identifies the
+                    header section of a webpage.
+                </p>
+            </div>
+
+        </section>
+
+
+        <!-- BENEFITS -->
+        <section class="content-section" id="benefits">
+
+            <h2>3. Benefits of Semantic HTML</h2>
+
+            <figure class="historical-image">
+                <img
+                    src="https://media.licdn.com/dms/image/v2/D4E12AQEgWu0wMqNjpg/article-cover_image-shrink_720_1280/B4EZnGCSndGYAI-/0/1759964120888?e=2147483647&t=Rv6SlQdAPWPuFFnTUK3FA6jeia-r37yyuoHzVStLSTE&v=beta"
+                    alt="Illustration showing semantic HTML and screen reader accessibility"
+                    loading="lazy">
+
+                <figcaption>
+                    Semantic HTML helps assistive technologies,
+                    including screen readers, understand webpage
+                    content and navigation.
+                </figcaption>
+            </figure>
+
+            <p>
+                Using semantic HTML provides several benefits
+                when developing and maintaining websites.
+            </p>
+
+            <div class="info-grid">
+
+                <article class="info-card">
+                    <h3>Accessibility</h3>
+                    <p>
+                        Semantic elements help screen readers and
+                        assistive technologies understand webpage content.
+                    </p>
+                </article>
+
+                <article class="info-card">
+                    <h3>Search Engine Optimization (SEO)</h3>
+                    <p>
+                        Well-structured HTML helps search engines
+                        understand the organization and content of a webpage.
+                    </p>
+                </article>
+
+                <article class="info-card">
+                    <h3>Maintainability</h3>
+                    <p>
+                        Semantic HTML makes code more readable,
+                        organized, and easier for developers to maintain.
+                    </p>
+                </article>
+
+                <article class="info-card">
+                    <h3>Future-Proofing</h3>
+                    <p>
+                        Using meaningful HTML elements supports
+                        structured webpage development.
+                    </p>
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- COMMON SEMANTIC ELEMENTS -->
+        <section class="content-section" id="elements">
+
+            <h2>4. Common Semantic HTML Elements</h2>
+
+            <figure class="historical-image">
+                <img
+                    src="diag.jpg"
+                    alt="Diagram showing header, navigation, main, article, section, and footer elements"
+                    loading="lazy">
+
+                <figcaption>
+                    Common semantic HTML elements arranged in a
+                    typical webpage layout.
+                </figcaption>
+            </figure>
+
+            <p>
+                Semantic HTML provides different elements that help
+                organize the structure and content of a webpage.
+            </p>
+
+            <div class="detail-card">
+                <h4>&lt;header&gt; — Header Element</h4>
+                <p>
+                    Defines the header section of a webpage or a content area.
+                    It commonly contains titles, logos, and introductory content.
+                </p>
+            </div>
+
+            <div class="detail-card">
+                <h4>&lt;nav&gt; — Navigation Element</h4>
+                <p>
+                    Represents a section containing navigation links
+                    used to move between pages or sections of a website.
+                </p>
+            </div>
+
+            <div class="detail-card">
+                <h4>&lt;main&gt; — Main Element</h4>
+                <p>
+                    Represents the main content of a webpage.
+                </p>
+            </div>
+
+            <div class="detail-card">
+                <h4>&lt;section&gt; — Section Element</h4>
+                <p>
+                    Groups related content together into a meaningful section.
+                </p>
+            </div>
+
+            <div class="detail-card">
+                <h4>&lt;article&gt; — Article Element</h4>
+                <p>
+                    Represents independent and self-contained content,
+                    such as an article, blog post, or news story.
+                </p>
+            </div>
+
+            <div class="detail-card">
+                <h4>&lt;aside&gt; — Aside Element</h4>
+                <p>
+                    Represents related content that is separate from
+                    the main content, such as a sidebar or related links.
+                </p>
+            </div>
+
+            <div class="detail-card">
+                <h4>&lt;footer&gt; — Footer Element</h4>
+                <p>
+                    Defines the footer section of a webpage.
+                    It commonly contains contact information or other
+                    closing information.
+                </p>
+            </div>
+
+        </section>
+
+
+        <!-- HTML PAGE STRUCTURE -->
+        <section class="content-section" id="structure">
+
+            <h2>5. Basic Semantic HTML Page Structure</h2>
+
+            <p>
+                A webpage can be organized using different semantic
+                elements. Each element has its own purpose in
+                arranging the content.
+            </p>
+
+            <div class="process-flow">
+
+                <div class="process-step">
+                    <span>01</span>
+                    <h3>&lt;header&gt;</h3>
+                    <p>
+                        Contains the webpage header and introductory information.
+                    </p>
+                </div>
+
+                <div class="process-arrow">↓</div>
+
+                <div class="process-step">
+                    <span>02</span>
+                    <h3>&lt;nav&gt;</h3>
+                    <p>
+                        Contains the navigation links of the website.
+                    </p>
+                </div>
+
+                <div class="process-arrow">↓</div>
+
+                <div class="process-step">
+                    <span>03</span>
+                    <h3>&lt;main&gt;</h3>
+                    <p>
+                        Contains the main content of the webpage.
+                    </p>
+                </div>
+
+                <div class="process-arrow">↓</div>
+
+                <div class="process-step">
+                    <span>04</span>
+                    <h3>&lt;section&gt; and &lt;article&gt;</h3>
+                    <p>
+                        Organize related and independent content.
+                    </p>
+                </div>
+
+                <div class="process-arrow">↓</div>
+
+                <div class="process-step">
+                    <span>05</span>
+                    <h3>&lt;aside&gt; and &lt;footer&gt;</h3>
+                    <p>
+                        Provide related information and footer details.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="highlight-box">
+                <h3>Important Note</h3>
+                <p>
+                    These semantic elements can be arranged according
+                    to the needs and structure of a webpage.
+                </p>
+            </div>
+
+        </section>
+
+
+        <!-- HANDS-ON ACTIVITY -->
+        <section class="content-section" id="hands-on">
+
+            <h2>6. Hands-On Activity: Building a Semantic Webpage</h2>
+
+            <figure class="historical-image">
+                <img
+                    src="https://www.w3.org/html/logo/downloads/HTML5_Logo_512.png"
+                    alt="HTML5 technology logo for webpage development"
+                    loading="lazy">
+
+                <figcaption>
+                    HTML5 is used to create the structure of webpages
+                    through elements and tags.
+                </figcaption>
+            </figure>
+
+            <p>
+                In this activity, you will create a simple webpage
+                using semantic HTML elements.
+            </p>
+
+            <h3>Activity Requirements</h3>
+
+            <ul>
+                <li>Create a header containing the webpage title.</li>
+                <li>Add a navigation section with links.</li>
+                <li>Create a main content section.</li>
+                <li>Add an article inside the main content.</li>
+                <li>Create a sidebar using the aside element.</li>
+                <li>Add a footer containing contact information.</li>
+            </ul>
+
+            <h3>Steps to Follow</h3>
+
+            <ol>
+                <li>Open your code editor, such as Visual Studio Code.</li>
+                <li>Create a new HTML file.</li>
+                <li>Organize the webpage using semantic HTML elements.</li>
+                <li>Add sample content to each element.</li>
+                <li>Save the file and open it in a web browser.</li>
+                <li>Check whether the webpage is properly structured.</li>
+            </ol>
+
+        </section>
+
+
+        <!-- BEST PRACTICES -->
+        <section class="content-section" id="best-practices">
+
+            <h2>7. Best Practices for Semantic HTML</h2>
+
+            <p>
+                Follow these practices when creating webpages
+                using semantic HTML:
+            </p>
+
+            <ul>
+                <li>Use semantic elements whenever they are appropriate.</li>
+                <li>Avoid overusing &lt;div&gt; and &lt;span&gt; when a more meaningful element is available.</li>
+                <li>Organize webpage content into clear sections.</li>
+                <li>Use elements according to their intended purpose.</li>
+                <li>Write readable and maintainable HTML code.</li>
+            </ul>
+
+        </section>
+
+
+        <!-- LESSON SUMMARY -->
+        <section class="content-section" id="summary">
+
+            <h2>8. Lesson Summary</h2>
+
+            <p>
+                Semantic HTML uses meaningful elements to describe
+                the structure and content of a webpage.
+            </p>
+
+            <p>
+                Common semantic elements include header, nav, main,
+                section, article, aside, and footer. Each element
+                serves a specific purpose in organizing webpage content.
+            </p>
+
+            <div class="highlight-box">
+                <h3>Key Takeaway</h3>
+                <p>
+                    Semantic HTML helps developers create webpages
+                    that are more organized, accessible, readable,
+                    and easier to maintain.
+                </p>
+            </div>
+
+        </section>
+
+
+        <!-- GLOSSARY -->
+        <section class="content-section" id="glossary">
+
+            <span class="section-label">CHAPTER 03 VOCABULARY</span>
+
+            <h2>Glossary of Terms</h2>
+
+            <p>
+                This glossary contains important terms and definitions
+                discussed in Lesson 3: HTML Structure and Semantic Elements.
+            </p>
+
+            <div class="glossary-grid">
+
+                <article class="glossary-item">
+                    <h3>1. HTML</h3>
+                    <p>
+                        HyperText Markup Language. The standard markup
+                        language used to structure webpage content.
+                    </p>
+                </article>
+
+                <article class="glossary-item">
+                    <h3>2. Semantic HTML</h3>
+                    <p>
+                        The use of meaningful HTML elements that describe
+                        the purpose and meaning of webpage content.
+                    </p>
+                </article>
+
+                <article class="glossary-item">
+                    <h3>3. Non-Semantic Elements</h3>
+                    <p>
+                        HTML elements that do not clearly describe
+                        the meaning of their content, such as div and span.
+                    </p>
+                </article>
+
+                <article class="glossary-item">
+                    <h3>4. Element</h3>
+                    <p>
+                        A component of an HTML document, usually made up
+                        of a start tag, content, and an end tag.
+                    </p>
+                </article>
+
+                <article class="glossary-item">
+                    <h3>5. Tag</h3>
+                    <p>
+                        A markup instruction written inside angle brackets
+                        that identifies an HTML element.
+                    </p>
+                </article>
+
+                <article class="glossary-item">
+                    <h3>6. Header</h3>
+                    <p>
+                        An HTML element that represents introductory
+                        content or a group of navigational aids.
+                    </p>
+                </article>
+
+                <article class="glossary-item">
+                    <h3>7. Navigation</h3>
+                    <p>
+                        The section of a webpage that contains links
+                        for navigating between pages or sections.
+                    </p>
+                </article>
+
+                <article class="glossary-item">
+                    <h3>8. Main Element</h3>
+                    <p>
+                        An element that represents the dominant content
+                        of a webpage.
+                    </p>
+                </article>
+
+                <article class="glossary-item">
+                    <h3>9. Section</h3>
+                    <p>
+                        An HTML element used to group related content
+                        into a meaningful section.
+                    </p>
+                </article>
+
+                <article class="glossary-item">
+                    <h3>10. Article</h3>
+                    <p>
+                        An element representing independent and
+                        self-contained content.
+                    </p>
+                </article>
+
+                <article class="glossary-item">
+                    <h3>11. Aside</h3>
+                    <p>
+                        An element representing content related to
+                        the main content but separate from it.
+                    </p>
+                </article>
+
+                <article class="glossary-item">
+                    <h3>12. Footer</h3>
+                    <p>
+                        An element that represents footer information
+                        for a webpage or section.
+                    </p>
+                </article>
+
+                <article class="glossary-item">
+                    <h3>13. Accessibility</h3>
+                    <p>
+                        The practice of making websites usable by
+                        people with different abilities.
+                    </p>
+                </article>
+
+                <article class="glossary-item">
+                    <h3>14. SEO</h3>
+                    <p>
+                        Search Engine Optimization. Practices that help
+                        search engines understand webpage content.
+                    </p>
+                </article>
+
+                <article class="glossary-item">
+                    <h3>15. Screen Reader</h3>
+                    <p>
+                        Assistive technology that reads digital content
+                        aloud or presents it through another output.
+                    </p>
+                </article>
+
+                <article class="glossary-item">
+                    <h3>16. Maintainability</h3>
+                    <p>
+                        The ease with which developers can understand,
+                        update, and manage website code.
+                    </p>
+                </article>
+
+                <article class="glossary-item">
+                    <h3>17. DOM</h3>
+                    <p>
+                        Document Object Model. A structured representation
+                        of an HTML document that scripts can access.
+                    </p>
+                </article>
+
+                <article class="glossary-item">
+                    <h3>18. Webpage Structure</h3>
+                    <p>
+                        The organization of content and elements
+                        within an HTML document.
+                    </p>
+                </article>
+
+            </div>
+
+            <div class="highlight-box">
+                <h3>Learning Tip</h3>
+                <p>
+                    Review these terms to better understand how semantic
+                    elements organize webpage content and improve
+                    accessibility and maintainability.
+                </p>
+            </div>
+
+        </section>
+
+
+        <!-- LEARNING RESOURCES -->
+        <section class="content-section" id="learning-resources">
+
+            <span class="section-label">ADDITIONAL STUDY MATERIALS</span>
+
+            <h2>Learning Resources</h2>
+
+            <p>
+                Explore these learning materials to strengthen
+                your understanding of HTML structure and semantic elements.
+            </p>
+
+            <div class="resource-grid">
+
+                <article class="resource-card">
+                    <span class="resource-icon">📘</span>
+                    <div>
+                        <h3>MDN – HTML Basics</h3>
+                        <p>
+                            Learn the fundamentals of HTML, including
+                            elements, tags, attributes, and document structure.
+                        </p>
+                        <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content"
+                           target="_blank" rel="noopener noreferrer">
+                            Explore HTML Learning Materials →
+                        </a>
+                    </div>
+                </article>
+
+                <article class="resource-card">
+                    <span class="resource-icon">🧱</span>
+                    <div>
+                        <h3>MDN – Structuring Documents</h3>
+                        <p>
+                            Understand how HTML elements organize
+                            the different parts of a webpage.
+                        </p>
+                        <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Structuring_documents"
+                           target="_blank" rel="noopener noreferrer">
+                            Learn Document Structure →
+                        </a>
+                    </div>
+                </article>
+
+                <article class="resource-card">
+                    <span class="resource-icon">🌐</span>
+                    <div>
+                        <h3>W3Schools – HTML Semantic Elements</h3>
+                        <p>
+                            Review common semantic elements and
+                            how they are used in HTML documents.
+                        </p>
+                        <a href="https://www.w3schools.com/html/html5_semantic_elements.asp"
+                           target="_blank" rel="noopener noreferrer">
+                            Study Semantic Elements →
+                        </a>
+                    </div>
+                </article>
+
+                <article class="resource-card">
+                    <span class="resource-icon">♿</span>
+                    <div>
+                        <h3>W3C – Web Accessibility</h3>
+                        <p>
+                            Explore accessibility principles that help
+                            make websites usable by more people.
+                        </p>
+                        <a href="https://www.w3.org/WAI/fundamentals/"
+                           target="_blank" rel="noopener noreferrer">
+                            Explore Accessibility →
+                        </a>
+                    </div>
+                </article>
+
+                <article class="resource-card">
+                    <span class="resource-icon">🖥️</span>
+                    <div>
+                        <h3>WHATWG – HTML Living Standard</h3>
+                        <p>
+                            Read the HTML standard and learn more
+                            about HTML elements and their meanings.
+                        </p>
+                        <a href="https://html.spec.whatwg.org/"
+                           target="_blank" rel="noopener noreferrer">
+                            View HTML Standard →
+                        </a>
+                    </div>
+                </article>
+
+                <article class="resource-card">
+                    <span class="resource-icon">📝</span>
+                    <div>
+                        <h3>HTML Element Reference</h3>
+                        <p>
+                            Review HTML elements and their descriptions
+                            using the MDN element reference.
+                        </p>
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements"
+                           target="_blank" rel="noopener noreferrer">
+                            Browse HTML Elements →
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- REFERENCES -->
+        <section class="content-section" id="references">
+
+            <h2>9. References</h2>
+
+            <p>
+                Lesson content is based on the provided learning material:
+                <strong>Session 4 – Semantic HTML</strong>.
+            </p>
+
+            <div class="reference-item">
+                <h3>MDN Web Docs – Structuring Documents</h3>
+                <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Structuring_documents"
+                   target="_blank" rel="noopener noreferrer">
+                    View Reference
+                </a>
+            </div>
+
+            <div class="reference-item">
+                <h3>W3C – HTML5</h3>
+                <a href="https://www.w3.org/html/logo/"
+                   target="_blank" rel="noopener noreferrer">
+                    View Reference
+                </a>
+            </div>
+
+            <div class="reference-item">
+                <h3>W3Schools – HTML Semantic Elements</h3>
+                <a href="https://www.w3schools.com/html/html5_semantic_elements.asp"
+                   target="_blank" rel="noopener noreferrer">
+                    View Reference
+                </a>
+            </div>
+
+            <div class="reference-item">
+                <h3>Historical and Educational Image Sources</h3>
+                <p>
+                    Images used for educational illustration of
+                    HTML5 and semantic webpage structure.
+                </p>
+
+                <a href="https://commons.wikimedia.org/"
+                   target="_blank" rel="noopener noreferrer">
+                    Wikimedia Commons
+                </a>
+
+                <br>
+
+                <a href="https://www.w3.org/"
+                   target="_blank" rel="noopener noreferrer">
+                    World Wide Web Consortium (W3C)
+                </a>
+            </div>
+
+        </section>
+
+
+       
+
+
+        <!-- FOOTER -->
+        <footer class="page-footer">
+            <p>WEBTECH LEARN | Web Technology Learning E-Book</p>
+            <p>Excellence Beyond Limits</p>
+        </footer>
+
+    </main>
+
+</div>
+
+
+<!-- BACK TO TOP -->
+<button id="backToTop" title="Back to Top" aria-label="Back to top">
+    ↑
+</button>
+
+
+<!-- DISPLAY SETTINGS -->
+<div id="displaySettings">
+
+    <button id="settingsToggle" aria-label="Open Display Settings">
+        ⚙️
+    </button>
+
+    <div id="settingsPanel">
+
+        <div class="settings-heading">
+            Display Settings
+        </div>
+
+        <span class="settings-label">Appearance</span>
+
+        <button id="darkModeButton" class="settings-dark-button">
+            🌙 Switch to Dark Mode
+        </button>
+
+        <span class="settings-label">Text Size</span>
+
+        <div class="settings-size-controls">
+            <button id="decreaseText">A−</button>
+            <span id="textSizeValue">100%</span>
+            <button id="increaseText">A+</button>
+        </div>
+
+        <button id="resetSettings">
+            Reset Settings
+        </button>
+
+    </div>
+
+</div>
+
+</body>
+</html>

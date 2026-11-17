@@ -1,0 +1,1210 @@
+
+    <style>
+        /* LESSON IMAGE DESIGN */
+        .lesson-visual {
+            width: 100%;
+            margin: 25px auto;
+            padding: 22px;
+            background: #f1f6fc;
+            border: 1px solid #dce7f3;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .lesson-visual svg {
+            display: block;
+            width: 100%;
+            max-width: 650px;
+            height: auto;
+            margin: auto;
+        }
+
+        .lesson-visual figcaption {
+            margin-top: 12px;
+            color: #52647a;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        .visual-label {
+            color: #24558a;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        @media (max-width: 600px) {
+            .lesson-visual {
+                padding: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lesson 9 - Authentication, Authorization, and Web Security </title>
+
+    <link rel="stylesheet" href="chapter8.css">
+    <link rel="stylesheet" href="../display-settings.css">
+    
+
+    <script src="../display-settings.js" defer></script>
+ 
+    <script src="chapter8-assesment.js" defer></script>
+</head>
+<body>
+<!-- HEADER -->
+<header class="header">
+    <div class="nav-container">
+
+        <a href="index.html" class="logo">
+            <img src="logo.jpg" alt="BSIT Digital Minds Logo" class="logo-image">
+
+            <span class="logo-text">
+                <small>BSIT | DIGITAL MINDS</small>
+            </span>
+        </a>
+
+        <a href="../pics/3rd yr toc.html" class="back-home">
+            ← Back to Table of Content
+        </a>
+
+    </div>
+    <link rel="stylesheet" href="ebook-pagination.css">
+<script src="ebook-pagination.js" defer></script>
+</header>
+
+<div class="page-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <h3>Chapter 9</h3>
+        <p class="sidebar-subtitle">
+            Authentication, Authorization, and Web Security
+        </p>
+
+        <nav>
+            <a href="#section1">1. Introduction to Web Security</a>
+            <a href="#section2">2. Authentication</a>
+            <a href="#section3">3. Types of Authentication</a>
+            <a href="#section4">4. Authorization</a>
+            <a href="#section5">5. Types of Authorization</a>
+            <a href="#section6">6. Authentication vs Authorization</a>
+            <a href="#section7">7. Common Web Security Threats</a>
+            <a href="#section8">8. Web Security Best Practices</a>
+            <a href="#section9">9. Learning Resources</a>
+            <a href="#section10">10. Glossary</a>
+            <a href="#section11">11. Review and Reflection</a>
+            <a href="#section12">12. References</a>
+        </nav>
+
+        <div class="separate-learning-links">
+            <a href="chapter9-assessment.html">📋 Chapter 9 Assessment</a>
+        </div>
+        <div class="sidebar-download">
+    <button type="button" id="downloadPDF">
+        <span>↓</span>
+        Download Lesson PDF
+    </button>
+</div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- CHAPTER BANNER -->
+        <section class="lesson-banner" id="top">
+            <span class="chapter-label">CHAPTER 9 • WEB TECHNOLOGY</span>
+            <h1>Authentication, Authorization, and Web Security</h1>
+            <p>
+                Understand how websites verify users, control access to
+                information, and protect online systems from common
+                security threats.
+            </p>
+        </section>
+
+        <!-- SECTION 1 -->
+        <section class="content-section" id="section1">
+            <h2>1. Introduction to Web Security</h2>
+
+            <p>
+                <strong>Web security</strong> refers to the practices,
+                technologies, and procedures used to protect websites,
+                web applications, servers, and user information from
+                unauthorized access, misuse, damage, and other online threats.
+            </p>
+
+            <p>
+                Whenever people log in, submit forms, make online transactions,
+                or share personal information, security measures help protect
+                their accounts and data.
+            </p>
+
+            <figure class="lesson-visual">
+                <div class="visual-label">WEB SECURITY OVERVIEW</div>
+                <svg viewBox="0 0 650 310" role="img"
+                     aria-label="Illustration of a computer protected by a security shield">
+                    <rect x="105" y="35" width="440" height="225"
+                          rx="18" fill="#dceafa"/>
+                    <rect x="130" y="58" width="390" height="175"
+                          rx="10" fill="#ffffff"/>
+                    <rect x="130" y="58" width="390" height="27"
+                          rx="10" fill="#24558a"/>
+                    <circle cx="150" cy="72" r="5" fill="#ffffff"/>
+                    <circle cx="168" cy="72" r="5" fill="#ffffff"/>
+                    <circle cx="186" cy="72" r="5" fill="#ffffff"/>
+                    <rect x="165" y="108" width="115" height="90"
+                          rx="9" fill="#e9f1fb"/>
+                    <rect x="300" y="112" width="175" height="12"
+                          rx="6" fill="#c4d6ea"/>
+                    <rect x="300" y="138" width="145" height="10"
+                          rx="5" fill="#dce7f3"/>
+                    <rect x="300" y="160" width="160" height="10"
+                          rx="5" fill="#dce7f3"/>
+                    <path d="M222 126 L255 140 L255 160
+                             Q255 181 222 193 Q189 181 189 160
+                             L189 140 Z" fill="#2e78c5"/>
+                    <path d="M207 158 L218 169 L239 145"
+                          fill="none" stroke="#ffffff"
+                          stroke-width="7" stroke-linecap="round"
+                          stroke-linejoin="round"/>
+                    <path d="M275 260 L375 260 L390 278
+                             L260 278 Z" fill="#9bb6d3"/>
+                    <text x="325" y="300" text-anchor="middle"
+                          fill="#24558a" font-size="15"
+                          font-weight="bold">PROTECTED ONLINE SYSTEM</text>
+                </svg>
+                <figcaption>
+                    Web security protects websites, systems, and user information
+                    from unauthorized access and online threats.
+                </figcaption>
+            </figure>
+
+            <h3>The CIA Triad</h3>
+
+            <p>
+                The CIA Triad is a basic model used to explain three important
+                goals of information security.
+            </p>
+
+            <figure class="lesson-visual">
+                <div class="visual-label">THE CIA TRIAD</div>
+                <svg viewBox="0 0 650 300" role="img"
+                     aria-label="CIA Triad showing confidentiality integrity and availability">
+                    <path d="M325 48 L145 235 L505 235 Z"
+                          fill="#e5effa" stroke="#24558a" stroke-width="4"/>
+                    <circle cx="325" cy="65" r="54" fill="#24558a"/>
+                    <circle cx="145" cy="235" r="54" fill="#397db8"/>
+                    <circle cx="505" cy="235" r="54" fill="#5a9bcf"/>
+                    <text x="325" y="60" text-anchor="middle"
+                          fill="white" font-size="12" font-weight="bold">C</text>
+                    <text x="325" y="79" text-anchor="middle"
+                          fill="white" font-size="11">CONFIDENTIALITY</text>
+                    <text x="145" y="230" text-anchor="middle"
+                          fill="white" font-size="12" font-weight="bold">I</text>
+                    <text x="145" y="248" text-anchor="middle"
+                          fill="white" font-size="10">INTEGRITY</text>
+                    <text x="505" y="230" text-anchor="middle"
+                          fill="white" font-size="12" font-weight="bold">A</text>
+                    <text x="505" y="248" text-anchor="middle"
+                          fill="white" font-size="10">AVAILABILITY</text>
+                    <text x="325" y="164" text-anchor="middle"
+                          fill="#24558a" font-size="21" font-weight="bold">CIA</text>
+                    <text x="325" y="185" text-anchor="middle"
+                          fill="#52647a" font-size="13">TRIAD</text>
+                </svg>
+                <figcaption>
+                    The CIA Triad represents the three main goals of information
+                    security: Confidentiality, Integrity, and Availability.
+                </figcaption>
+            </figure>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Confidentiality</h3>
+                    <p>
+                        Ensures that information is available only to authorized
+                        people. Example: protecting a student's grades from
+                        public access.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Integrity</h3>
+                    <p>
+                        Ensures that information remains accurate and is not
+                        changed without permission.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Availability</h3>
+                    <p>
+                        Ensures that systems and information are accessible
+                        when authorized users need them.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Why It Matters</h3>
+                    <p>
+                        These three principles work together to build trust
+                        and support reliable online services.
+                    </p>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <h3>Key Idea</h3>
+                <p>
+                    Web security is not only about preventing attacks.
+                    It also involves protecting user privacy, maintaining
+                    accurate information, and keeping services dependable.
+                </p>
+            </div>
+        </section>
+
+        <!-- SECTION 2 -->
+        <section class="content-section" id="section2">
+            <h2>2. Authentication</h2>
+
+            <p>
+                <strong>Authentication</strong> is the process of verifying
+                the identity of a person, device, or system. It answers
+                the question: <strong>Who are you?</strong>
+            </p>
+
+            <p>
+                For example, when a student signs in to a school portal
+                using a username and password, the system checks whether
+                the submitted credentials match the account's stored
+                authentication information.
+            </p>
+
+            <h3>How Authentication Works</h3>
+
+            <figure class="lesson-visual">
+                <div class="visual-label">AUTHENTICATION PROCESS</div>
+                <svg viewBox="0 0 650 270" role="img"
+                     aria-label="Four steps of authentication">
+                    <g font-size="13" text-anchor="middle" fill="#24558a">
+                        <rect x="15" y="55" width="130" height="125"
+                              rx="12" fill="#e5effa"/>
+                        <circle cx="80" cy="90" r="22" fill="#2e78c5"/>
+                        <text x="80" y="95" fill="white" font-size="16">1</text>
+                        <text x="80" y="135" font-weight="bold">USER</text>
+                        <text x="80" y="154" font-size="11">Enters details</text>
+
+                        <path d="M148 118 H174 M165 109 L174 118 L165 127"
+                              stroke="#24558a" stroke-width="3" fill="none"/>
+
+                        <rect x="180" y="55" width="130" height="125"
+                              rx="12" fill="#e5effa"/>
+                        <circle cx="245" cy="90" r="22" fill="#2e78c5"/>
+                        <text x="245" y="95" fill="white" font-size="16">2</text>
+                        <text x="245" y="135" font-weight="bold">SYSTEM</text>
+                        <text x="245" y="154" font-size="11">Checks identity</text>
+
+                        <path d="M313 118 H339 M330 109 L339 118 L330 127"
+                              stroke="#24558a" stroke-width="3" fill="none"/>
+
+                        <rect x="345" y="55" width="130" height="125"
+                              rx="12" fill="#e5effa"/>
+                        <circle cx="410" cy="90" r="22" fill="#2e78c5"/>
+                        <text x="410" y="95" fill="white" font-size="16">3</text>
+                        <text x="410" y="135" font-weight="bold">VERIFY</text>
+                        <text x="410" y="154" font-size="11">Validates details</text>
+
+                        <path d="M478 118 H504 M495 109 L504 118 L495 127"
+                              stroke="#24558a" stroke-width="3" fill="none"/>
+
+                        <rect x="510" y="55" width="125" height="125"
+                              rx="12" fill="#d8f1e3"/>
+                        <circle cx="572" cy="90" r="22" fill="#238451"/>
+                        <text x="572" y="95" fill="white" font-size="16">4</text>
+                        <text x="572" y="135" font-weight="bold">ACCESS</text>
+                        <text x="572" y="154" font-size="11">Sign-in result</text>
+                    </g>
+                    <text x="325" y="225" text-anchor="middle"
+                          fill="#52647a" font-size="13">
+                        Identity is checked before an authenticated session is established.
+                    </text>
+                </svg>
+                <figcaption>
+                    Authentication verifies the identity of a user before
+                    allowing access to an account.
+                </figcaption>
+            </figure>
+
+            <ol>
+                <li>The user opens a website or application and chooses to sign in.</li>
+                <li>The user provides an identity claim, such as a username or email address, and an authentication factor.</li>
+                <li>The system securely checks the submitted information.</li>
+                <li>If the information is valid, the system establishes an authenticated session or issues a secure token.</li>
+                <li>If the information is invalid, access is not granted.</li>
+            </ol>
+
+            <div class="highlight-box">
+                <h3>Example</h3>
+                <p>
+                    A student enters an email address and password on a
+                    learning management system. The system verifies the
+                    credentials before allowing the student to open their account.
+                </p>
+            </div>
+        </section>
+
+        <!-- SECTION 3 -->
+        <section class="content-section" id="section3">
+            <h2>3. Types of Authentication</h2>
+
+            <p>
+                Authentication methods use one or more factors to verify
+                identity. Different systems choose methods based on their
+                security needs.
+            </p>
+
+            <figure class="lesson-visual">
+                <div class="visual-label">COMMON AUTHENTICATION METHODS</div>
+                <svg viewBox="0 0 650 320" role="img"
+                     aria-label="Illustrations of password, two factor, biometric and token authentication">
+                    <g text-anchor="middle" font-size="12" fill="#24558a">
+                        <rect x="20" y="25" width="190" height="115" rx="12" fill="#e5effa"/>
+                        <rect x="95" y="48" width="40" height="48" rx="6" fill="#2e78c5"/>
+                        <circle cx="115" cy="63" r="4" fill="white"/>
+                        <path d="M105 78 H125 M105 86 H125" stroke="white" stroke-width="3"/>
+                        <text x="115" y="121" font-weight="bold">PASSWORD</text>
+
+                        <rect x="230" y="25" width="190" height="115" rx="12" fill="#e5effa"/>
+                        <rect x="305" y="43" width="40" height="58" rx="7" fill="#2e78c5"/>
+                        <rect x="312" y="52" width="26" height="30" rx="3" fill="white"/>
+                        <circle cx="325" cy="91" r="3" fill="white"/>
+                        <text x="325" y="121" font-weight="bold">2FA / MFA</text>
+
+                        <rect x="440" y="25" width="190" height="115" rx="12" fill="#e5effa"/>
+                        <circle cx="535" cy="70" r="28" fill="#2e78c5"/>
+                        <path d="M520 70 Q535 43 550 70 Q535 98 520 70"
+                              stroke="white" fill="none" stroke-width="2"/>
+                        <text x="535" y="121" font-weight="bold">BIOMETRICS</text>
+
+                        <rect x="125" y="170" width="190" height="115" rx="12" fill="#e5effa"/>
+                        <rect x="195" y="193" width="48" height="36" rx="7" fill="#2e78c5"/>
+                        <circle cx="219" cy="211" r="8" fill="white"/>
+                        <text x="220" y="266" font-weight="bold">TOKEN-BASED</text>
+
+                        <rect x="335" y="170" width="190" height="115" rx="12" fill="#e5effa"/>
+                        <rect x="400" y="193" width="60" height="38" rx="7" fill="#2e78c5"/>
+                        <path d="M410 205 H450 M410 216 H440"
+                              stroke="white" stroke-width="3"/>
+                        <text x="430" y="266" font-weight="bold">SINGLE SIGN-ON</text>
+                    </g>
+                </svg>
+                <figcaption>
+                    Different authentication methods help systems verify
+                    users through passwords, devices, biometrics, and tokens.
+                </figcaption>
+            </figure>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Password-Based Authentication</h3>
+                    <p>
+                        Uses a secret password or passphrase known by the
+                        account holder.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Two-Factor Authentication (2FA)</h3>
+                    <p>
+                        Requires two different verification factors,
+                        such as a password and a one-time code.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Multi-Factor Authentication (MFA)</h3>
+                    <p>
+                        Uses two or more independent factors to provide
+                        additional identity verification.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Biometric Authentication</h3>
+                    <p>
+                        Uses physical or behavioral characteristics,
+                        such as fingerprints or facial recognition.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Token-Based Authentication</h3>
+                    <p>
+                        Uses a digital token issued after successful
+                        authentication.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Single Sign-On (SSO)</h3>
+                    <p>
+                        Allows a user to access multiple related applications
+                        through one trusted sign-in process.
+                    </p>
+                </div>
+            </div>
+
+            <h3>Authentication Factors</h3>
+
+            <ul>
+                <li><strong>Something you know:</strong> A password or PIN.</li>
+                <li><strong>Something you have:</strong> A registered device or security key.</li>
+                <li><strong>Something you are:</strong> A biometric characteristic, such as a fingerprint.</li>
+            </ul>
+
+            <blockquote>
+                Using more than one independent factor can make account
+                access more secure than relying on a password alone.
+            </blockquote>
+        </section>
+
+        <!-- SECTION 4 -->
+        <section class="content-section" id="section4">
+            <h2>4. Authorization</h2>
+
+            <p>
+                <strong>Authorization</strong> is the process of determining
+                what an authenticated user is allowed to view, use, or change.
+                It answers the question: <strong>What are you allowed to do?</strong>
+            </p>
+
+            <p>
+                After a user signs in, the application checks the user's
+                permissions before allowing access to protected pages,
+                records, or actions.
+            </p>
+
+            <figure class="lesson-visual">
+                <div class="visual-label">USER ACCESS PERMISSIONS</div>
+                <svg viewBox="0 0 650 280" role="img"
+                     aria-label="Administrator teacher student and guest with different permissions">
+                    <g text-anchor="middle">
+                        <rect x="15" y="25" width="140" height="185" rx="12" fill="#e5effa"/>
+                        <circle cx="85" cy="75" r="28" fill="#24558a"/>
+                        <text x="85" y="81" fill="white" font-size="18">A</text>
+                        <text x="85" y="125" fill="#24558a" font-size="14" font-weight="bold">ADMIN</text>
+                        <text x="85" y="150" fill="#52647a" font-size="11">Manage system</text>
+                        <text x="85" y="167" fill="#52647a" font-size="11">Full permissions</text>
+
+                        <rect x="175" y="25" width="140" height="185" rx="12" fill="#e5effa"/>
+                        <circle cx="245" cy="75" r="28" fill="#397db8"/>
+                        <text x="245" y="81" fill="white" font-size="18">T</text>
+                        <text x="245" y="125" fill="#24558a" font-size="14" font-weight="bold">TEACHER</text>
+                        <text x="245" y="150" fill="#52647a" font-size="11">Manage classes</text>
+                        <text x="245" y="167" fill="#52647a" font-size="11">Record grades</text>
+
+                        <rect x="335" y="25" width="140" height="185" rx="12" fill="#e5effa"/>
+                        <circle cx="405" cy="75" r="28" fill="#5a9bcf"/>
+                        <text x="405" y="81" fill="white" font-size="18">S</text>
+                        <text x="405" y="125" fill="#24558a" font-size="14" font-weight="bold">STUDENT</text>
+                        <text x="405" y="150" fill="#52647a" font-size="11">View grades</text>
+                        <text x="405" y="167" fill="#52647a" font-size="11">View schedule</text>
+
+                        <rect x="495" y="25" width="140" height="185" rx="12" fill="#e5effa"/>
+                        <circle cx="565" cy="75" r="28" fill="#829bb5"/>
+                        <text x="565" y="81" fill="white" font-size="18">G</text>
+                        <text x="565" y="125" fill="#24558a" font-size="14" font-weight="bold">GUEST</text>
+                        <text x="565" y="150" fill="#52647a" font-size="11">Public pages</text>
+                        <text x="565" y="167" fill="#52647a" font-size="11">Limited access</text>
+                    </g>
+                    <text x="325" y="250" text-anchor="middle"
+                          fill="#52647a" font-size="13">
+                        Each role receives only the permissions it needs.
+                    </text>
+                </svg>
+                <figcaption>
+                    Authorization controls what each user can access based
+                    on assigned permissions.
+                </figcaption>
+            </figure>
+
+            <h3>How Authorization Works</h3>
+
+            <ol>
+                <li>The user is authenticated by the application.</li>
+                <li>The system identifies the user's role or assigned permissions.</li>
+                <li>The user requests a resource or action.</li>
+                <li>The system checks the applicable access rules.</li>
+                <li>Access is allowed or denied based on those rules.</li>
+            </ol>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Administrator</h3>
+                    <p>
+                        May manage accounts, update system settings,
+                        and access administrative features.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Teacher</h3>
+                    <p>
+                        May view class lists, record grades, and manage
+                        learning materials for assigned classes.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Student</h3>
+                    <p>
+                        May view personal grades, schedules, and learning
+                        materials, but cannot change another student's records.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Guest</h3>
+                    <p>
+                        May view public information but cannot access
+                        private account information.
+                    </p>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <h3>Important</h3>
+                <p>
+                    Being successfully signed in does not mean a user has
+                    permission to access every feature. Authorization limits
+                    access according to approved rules.
+                </p>
+            </div>
+        </section>
+
+        <!-- SECTION 5 -->
+        <section class="content-section" id="section5">
+            <h2>5. Types of Authorization and Access Control</h2>
+
+            <p>
+                Access control models define how systems decide who can
+                access particular resources.
+            </p>
+
+            <figure class="lesson-visual">
+                <div class="visual-label">ACCESS CONTROL MODELS</div>
+                <svg viewBox="0 0 650 300" role="img"
+                     aria-label="Four access control models">
+                    <g text-anchor="middle">
+                        <rect x="20" y="25" width="285" height="100" rx="12" fill="#e5effa"/>
+                        <circle cx="75" cy="75" r="28" fill="#24558a"/>
+                        <text x="75" y="81" fill="white" font-size="14">R</text>
+                        <text x="190" y="65" fill="#24558a" font-size="15" font-weight="bold">RBAC</text>
+                        <text x="190" y="88" fill="#52647a" font-size="12">Role-Based Access</text>
+
+                        <rect x="345" y="25" width="285" height="100" rx="12" fill="#e5effa"/>
+                        <circle cx="400" cy="75" r="28" fill="#397db8"/>
+                        <text x="400" y="81" fill="white" font-size="14">A</text>
+                        <text x="515" y="65" fill="#24558a" font-size="15" font-weight="bold">ABAC</text>
+                        <text x="515" y="88" fill="#52647a" font-size="12">Attribute-Based Access</text>
+
+                        <rect x="20" y="155" width="285" height="100" rx="12" fill="#e5effa"/>
+                        <circle cx="75" cy="205" r="28" fill="#5a9bcf"/>
+                        <text x="75" y="211" fill="white" font-size="14">D</text>
+                        <text x="190" y="195" fill="#24558a" font-size="15" font-weight="bold">DAC</text>
+                        <text x="190" y="218" fill="#52647a" font-size="12">Discretionary Access</text>
+
+                        <rect x="345" y="155" width="285" height="100" rx="12" fill="#e5effa"/>
+                        <circle cx="400" cy="205" r="28" fill="#829bb5"/>
+                        <text x="400" y="211" fill="white" font-size="14">M</text>
+                        <text x="515" y="195" fill="#24558a" font-size="15" font-weight="bold">MAC</text>
+                        <text x="515" y="218" fill="#52647a" font-size="12">Mandatory Access</text>
+                    </g>
+                </svg>
+                <figcaption>
+                    RBAC, ABAC, DAC, and MAC are access control models
+                    used to manage permissions.
+                </figcaption>
+            </figure>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Role-Based Access Control (RBAC)</h3>
+                    <p>
+                        Permissions are assigned to roles, and users receive
+                        permissions through their assigned roles.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Attribute-Based Access Control (ABAC)</h3>
+                    <p>
+                        Access decisions are based on attributes such as
+                        the user's department, resource type, or time.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Discretionary Access Control (DAC)</h3>
+                    <p>
+                        The owner of a resource can decide which other users
+                        may access it and what permissions they receive.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Mandatory Access Control (MAC)</h3>
+                    <p>
+                        Access is controlled by a central policy using
+                        assigned security levels or classifications.
+                    </p>
+                </div>
+            </div>
+
+            <h3>Choosing an Access Control Model</h3>
+            <p>
+                The appropriate model depends on the organization's needs,
+                the sensitivity of its information, and how permissions
+                should be managed. A school portal may use RBAC for common
+                student, teacher, and administrator permissions.
+            </p>
+        </section>
+
+        <!-- SECTION 6 -->
+        <section class="content-section" id="section6">
+            <h2>6. Authentication vs. Authorization</h2>
+
+            <p>
+                Authentication and authorization are related security
+                processes, but they have different purposes.
+            </p>
+
+            <figure class="lesson-visual">
+                <div class="visual-label">UNDERSTANDING THE DIFFERENCE</div>
+                <svg viewBox="0 0 650 260" role="img"
+                     aria-label="Authentication verifies identity while authorization checks permissions">
+                    <rect x="25" y="30" width="260" height="170"
+                          rx="14" fill="#e5effa"/>
+                    <circle cx="155" cy="82" r="32" fill="#24558a"/>
+                    <path d="M140 82 L151 93 L172 69"
+                          fill="none" stroke="white" stroke-width="5"
+                          stroke-linecap="round" stroke-linejoin="round"/>
+                    <text x="155" y="140" text-anchor="middle"
+                          fill="#24558a" font-size="17" font-weight="bold">
+                        AUTHENTICATION
+                    </text>
+                    <text x="155" y="165" text-anchor="middle"
+                          fill="#52647a" font-size="13">Who are you?</text>
+
+                    <rect x="365" y="30" width="260" height="170"
+                          rx="14" fill="#e5effa"/>
+                    <circle cx="495" cy="82" r="32" fill="#397db8"/>
+                    <path d="M480 70 H510 M480 82 H510 M480 94 H500"
+                          stroke="white" stroke-width="4" stroke-linecap="round"/>
+                    <text x="495" y="140" text-anchor="middle"
+                          fill="#24558a" font-size="17" font-weight="bold">
+                        AUTHORIZATION
+                    </text>
+                    <text x="495" y="165" text-anchor="middle"
+                          fill="#52647a" font-size="13">What can you do?</text>
+
+                    <path d="M290 115 H360 M350 105 L360 115 L350 125"
+                          stroke="#24558a" stroke-width="3" fill="none"/>
+                </svg>
+                <figcaption>
+                    Authentication checks identity; authorization checks
+                    what that identity is allowed to do.
+                </figcaption>
+            </figure>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Basis</th>
+                            <th>Authentication</th>
+                            <th>Authorization</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Main Question</strong></td>
+                            <td>Who are you?</td>
+                            <td>What are you allowed to do?</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Purpose</strong></td>
+                            <td>Verifies identity.</td>
+                            <td>Checks permissions.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>When It Happens</strong></td>
+                            <td>Usually before access to an account is granted.</td>
+                            <td>After identity is established, when a resource or action is requested.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Example</strong></td>
+                            <td>Signing in with a username and password.</td>
+                            <td>Allowing a teacher to record grades but not change system-wide settings.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="highlight-box">
+                <h3>Remember the Difference</h3>
+                <p>
+                    Authentication verifies the user. Authorization determines
+                    the user's permitted actions. A secure application needs both.
+                </p>
+            </div>
+        </section>
+
+        <!-- SECTION 7 -->
+        <section class="content-section" id="section7">
+            <h2>7. Common Web Security Threats</h2>
+
+            <p>
+                Web applications may face different threats. Understanding
+                them helps developers create safer systems and helps users
+                make informed decisions online.
+            </p>
+
+            <figure class="lesson-visual">
+                <div class="visual-label">COMMON ONLINE SECURITY THREATS</div>
+                <svg viewBox="0 0 650 320" role="img"
+                     aria-label="Warning illustration for common web security threats">
+                    <path d="M325 25 L430 75 L430 170
+                             Q430 240 325 280 Q220 240 220 170
+                             L220 75 Z" fill="#e5effa"
+                             stroke="#24558a" stroke-width="5"/>
+                    <path d="M325 75 L365 155 H285 Z"
+                          fill="#f0b84b"/>
+                    <rect x="319" y="105" width="12" height="28"
+                          rx="5" fill="white"/>
+                    <circle cx="325" cy="143" r="6" fill="white"/>
+                    <g fill="#24558a" font-size="12" font-weight="bold">
+                        <text x="60" y="85">PHISHING</text>
+                        <text x="465" y="85">SQL INJECTION</text>
+                        <text x="50" y="235">XSS</text>
+                        <text x="490" y="235">CSRF</text>
+                        <text x="325" y="310" text-anchor="middle">DENIAL OF SERVICE</text>
+                    </g>
+                    <g stroke="#7ca6d1" stroke-width="2" fill="none">
+                        <path d="M130 95 L240 120"/>
+                        <path d="M510 95 L410 120"/>
+                        <path d="M100 225 L235 190"/>
+                        <path d="M545 225 L415 190"/>
+                    </g>
+                </svg>
+                <figcaption>
+                    Security threats can affect the confidentiality,
+                    integrity, and availability of web applications.
+                </figcaption>
+            </figure>
+
+            <div class="browser-list">
+                <div class="browser-card">
+                    <span class="browser-year">Threat 01</span>
+                    <div>
+                        <h3>Phishing</h3>
+                        <p>
+                            A deceptive message or website attempts to trick
+                            people into revealing sensitive information.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="browser-card">
+                    <span class="browser-year">Threat 02</span>
+                    <div>
+                        <h3>SQL Injection</h3>
+                        <p>
+                            A vulnerability that can occur when an application
+                            handles database input unsafely. Developers reduce
+                            this risk by using parameterized queries.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="browser-card">
+                    <span class="browser-year">Threat 03</span>
+                    <div>
+                        <h3>Cross-Site Scripting (XSS)</h3>
+                        <p>
+                            Can occur when untrusted content is included in a
+                            webpage without proper handling. Output encoding
+                            helps prevent it.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="browser-card">
+                    <span class="browser-year">Threat 04</span>
+                    <div>
+                        <h3>Cross-Site Request Forgery (CSRF)</h3>
+                        <p>
+                            Can cause a signed-in browser to send an unwanted
+                            request to a website. Anti-CSRF tokens help protect
+                            applications.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="browser-card">
+                    <span class="browser-year">Threat 05</span>
+                    <div>
+                        <h3>Denial-of-Service (DoS)</h3>
+                        <p>
+                            Attempts to make a service unavailable by
+                            overwhelming its resources. Monitoring and
+                            rate limits can improve resilience.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <h3>Safe Learning Reminder</h3>
+                <p>
+                    Study security threats to understand how to recognize,
+                    prevent, and report them. Only test systems when you
+                    have clear permission from the system owner.
+                </p>
+            </div>
+        </section>
+
+        <!-- SECTION 8 -->
+        <section class="content-section" id="section8">
+            <h2>8. Web Security Best Practices</h2>
+
+            <p>
+                Developers and website administrators should apply security
+                throughout the development and maintenance of a web application.
+            </p>
+
+            <figure class="lesson-visual">
+                <div class="visual-label">WEB SECURITY BEST PRACTICES</div>
+                <svg viewBox="0 0 650 330" role="img"
+                     aria-label="Security shield surrounded by eight protection practices">
+                    <circle cx="325" cy="160" r="82" fill="#dceafa"/>
+                    <path d="M325 88 L382 110 L382 163
+                             Q382 211 325 235 Q268 211 268 163
+                             L268 110 Z" fill="#24558a"/>
+                    <path d="M298 160 L318 181 L355 138"
+                          fill="none" stroke="white" stroke-width="9"
+                          stroke-linecap="round" stroke-linejoin="round"/>
+
+                    <g fill="#e5effa" stroke="#8aafd4" stroke-width="2">
+                        <rect x="15" y="20" width="150" height="60" rx="10"/>
+                        <rect x="485" y="20" width="150" height="60" rx="10"/>
+                        <rect x="15" y="130" width="150" height="60" rx="10"/>
+                        <rect x="485" y="130" width="150" height="60" rx="10"/>
+                        <rect x="15" y="245" width="150" height="60" rx="10"/>
+                        <rect x="485" y="245" width="150" height="60" rx="10"/>
+                    </g>
+                    <g fill="#24558a" font-size="12" font-weight="bold" text-anchor="middle">
+                        <text x="90" y="55">HTTPS / TLS</text>
+                        <text x="560" y="55">SECURE PASSWORDS</text>
+                        <text x="90" y="165">ENABLE MFA</text>
+                        <text x="560" y="165">INPUT VALIDATION</text>
+                        <text x="90" y="280">BACKUPS</text>
+                        <text x="560" y="280">SOFTWARE UPDATES</text>
+                    </g>
+                </svg>
+                <figcaption>
+                    Applying multiple security practices helps protect
+                    websites and their users.
+                </figcaption>
+            </figure>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Use HTTPS and TLS</h3>
+                    <p>
+                        Protect data while it travels between a user's browser
+                        and the website server.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Store Passwords Securely</h3>
+                    <p>
+                        Store passwords using a dedicated password-hashing
+                        algorithm with unique salts. Never store plain-text passwords.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Enable MFA</h3>
+                    <p>
+                        Offer multi-factor authentication for accounts,
+                        especially those with access to sensitive information.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Validate Input</h3>
+                    <p>
+                        Check data on the server and use safe database
+                        queries and output encoding.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Protect Sessions</h3>
+                    <p>
+                        Use secure session settings, expire inactive sessions,
+                        and avoid exposing session identifiers.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Update Software</h3>
+                    <p>
+                        Apply trusted updates and security patches to
+                        frameworks, libraries, servers, and applications.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Back Up Important Data</h3>
+                    <p>
+                        Maintain protected backups and periodically check
+                        that data can be restored.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Apply Least Privilege</h3>
+                    <p>
+                        Give users and application components only the
+                        permissions needed to perform their tasks.
+                    </p>
+                </div>
+            </div>
+
+            <h3>For Everyday Users</h3>
+            <ul>
+                <li>Use strong, unique passwords for different accounts.</li>
+                <li>Do not share passwords or verification codes.</li>
+                <li>Be careful with unexpected links and attachments.</li>
+                <li>Sign out when using a shared computer.</li>
+                <li>Report suspicious activity to the appropriate support team.</li>
+            </ul>
+        </section>
+
+        <!-- SECTION 9 -->
+        <section class="content-section" id="section9">
+            <h2>9. Learning Resources</h2>
+
+            <p>
+                Use these trusted learning resources to explore web security
+                concepts and secure development practices.
+            </p>
+
+            <div class="reference-item">
+                <h3>OWASP</h3>
+                <p>Guidance and learning materials about common web application security risks.</p>
+                <a href="https://owasp.org/" target="_blank" rel="noopener">Visit OWASP</a>
+            </div>
+
+            <div class="reference-item">
+                <h3>MDN Web Docs</h3>
+                <p>Web development documentation, including guidance related to web security.</p>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/Security" target="_blank" rel="noopener">Explore MDN Web Security</a>
+            </div>
+
+            <div class="reference-item">
+                <h3>Google Safety Center</h3>
+                <p>Information about online safety, account protection, and privacy.</p>
+                <a href="https://safety.google/" target="_blank" rel="noopener">Visit Google Safety Center</a>
+            </div>
+
+            <div class="reference-item">
+                <h3>NIST</h3>
+                <p>Cybersecurity publications, frameworks, and guidance for organizations.</p>
+                <a href="https://www.nist.gov/cybersecurity" target="_blank" rel="noopener">Visit NIST Cybersecurity</a>
+            </div>
+
+            <div class="reference-item">
+                <h3>Microsoft Learn</h3>
+                <p>Learning paths and documentation covering identity, security, and technology.</p>
+                <a href="https://learn.microsoft.com/" target="_blank" rel="noopener">Visit Microsoft Learn</a>
+            </div>
+        </section>
+
+        <!-- SECTION 10 -->
+        <section class="content-section" id="section10">
+            <h2>10. Glossary</h2>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Term</th>
+                            <th>Definition</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>Authentication</strong></td><td>The process of verifying a user's or system's identity.</td></tr>
+                        <tr><td><strong>Authorization</strong></td><td>The process of deciding what an authenticated user is permitted to access or do.</td></tr>
+                        <tr><td><strong>Access Control</strong></td><td>Rules and mechanisms that determine who can use specific resources.</td></tr>
+                        <tr><td><strong>Encryption</strong></td><td>The process of transforming information so it cannot be understood without the proper key.</td></tr>
+                        <tr><td><strong>HTTPS</strong></td><td>The secure version of HTTP that uses encryption through TLS.</td></tr>
+                        <tr><td><strong>MFA</strong></td><td>Multi-Factor Authentication; identity verification using multiple independent factors.</td></tr>
+                        <tr><td><strong>Session</strong></td><td>A period of interaction between a user and an application.</td></tr>
+                        <tr><td><strong>Token</strong></td><td>A digital value used to represent or prove an authenticated state or permission.</td></tr>
+                        <tr><td><strong>Phishing</strong></td><td>A deceptive attempt to obtain sensitive information by pretending to be trustworthy.</td></tr>
+                        <tr><td><strong>Vulnerability</strong></td><td>A weakness that could affect the security of a system.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- SECTION 11 -->
+        <section class="content-section" id="section11">
+            <h2>11. Review and Reflection Activities</h2>
+
+            <h3>Part A: Review Questions</h3>
+
+            <ol>
+                <li>What is web security, and why is it important?</li>
+                <li>What are the three elements of the CIA Triad?</li>
+                <li>What question does authentication answer?</li>
+                <li>What is the difference between 2FA and MFA?</li>
+                <li>What question does authorization answer?</li>
+                <li>How does Role-Based Access Control work?</li>
+                <li>Give one example of a common web security threat.</li>
+                <li>Why should websites use HTTPS?</li>
+                <li>Why should passwords not be stored as plain text?</li>
+                <li>What does the principle of least privilege mean?</li>
+            </ol>
+
+            <h3>Part B: Reflection</h3>
+
+            <p>
+                In your own words, explain how authentication and authorization
+                help protect a school portal. Identify two security practices
+                you can apply as a student and explain why they are important.
+            </p>
+
+            <h3>Write Your Reflection</h3>
+
+            <textarea id="reflectionAnswer" rows="7"
+                placeholder="Write your reflection here..."></textarea>
+
+            <p class="small-note">
+                Your response is for your own practice. Copy it somewhere
+                safe if you want to keep it.
+            </p>
+
+            <div class="highlight-box">
+                <h3>Key Takeaway</h3>
+                <p>
+                    Authentication verifies identity, authorization controls
+                    permissions, and web security combines practices that
+                    protect information, users, and online services.
+                </p>
+            </div>
+        </section>
+
+        <!-- SECTION 12 -->
+        <section class="content-section" id="section12">
+            <h2>12. References</h2>
+
+            <div class="reference-item">
+                <p>
+                    OWASP Foundation. (n.d.). <em>OWASP.</em>
+                    <a href="https://owasp.org/" target="_blank" rel="noopener">https://owasp.org/</a>
+                </p>
+            </div>
+
+            <div class="reference-item">
+                <p>
+                    MDN Web Docs. (n.d.). <em>Web security.</em>
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/Security" target="_blank" rel="noopener">https://developer.mozilla.org/en-US/docs/Web/Security</a>
+                </p>
+            </div>
+
+            <div class="reference-item">
+                <p>
+                    National Institute of Standards and Technology. (n.d.).
+                    <em>Cybersecurity.</em>
+                    <a href="https://www.nist.gov/cybersecurity" target="_blank" rel="noopener">https://www.nist.gov/cybersecurity</a>
+                </p>
+            </div>
+
+            <div class="reference-item">
+                <p>
+                    Google. (n.d.). <em>Google Safety Center.</em>
+                    <a href="https://safety.google/" target="_blank" rel="noopener">https://safety.google/</a>
+                </p>
+            </div>
+
+            <div class="reference-item">
+                <p>
+                    Microsoft. (n.d.). <em>Microsoft Learn.</em>
+                    <a href="https://learn.microsoft.com/" target="_blank" rel="noopener">https://learn.microsoft.com/</a>
+                </p>
+            </div>
+        </section>
+
+        <blockquote>
+            “Security is not a one-time task. It is an ongoing responsibility
+            shared by developers, organizations, and users.”
+            <span>— WEBTECH LEARN</span>
+        </blockquote>
+
+        <!-- LESSON NAVIGATION -->
+        <div class="lesson-navigation">
+            <a href="chapter8.html" class="previous-button">← Previous Chapter</a>
+            <a href="chapter10.html" class="next-button">Next Chapter →</a>
+        </div>
+
+        </div>
+</div>
+        <footer class="page-footer">
+            <p>WEBTECH LEARN | Web Technology Learning E-Book</p>
+            <p>Excellence Beyond Limits</p>
+        </footer>
+
+    </main>
+</div>
+
+<button id="backToTop" title="Back to Top" aria-label="Back to Top">↑</button>
+
+<!-- DISPLAY SETTINGS -->
+<div id="displaySettings">
+    <button id="settingsToggle" type="button" aria-label="Display settings">⚙️</button>
+
+    <div id="settingsPanel">
+        <div class="settings-heading">Display Settings</div>
+
+        <span class="settings-label">Appearance</span>
+        <button id="darkModeButton" class="settings-dark-button" type="button">
+            🌙 Switch to Dark Mode
+        </button>
+
+        <span class="settings-label">Text Size</span>
+
+        <div class="settings-size-controls">
+            <button id="decreaseText" type="button">A−</button>
+            <span id="textSizeValue">100%</span>
+            <button id="increaseText" type="button">A+</button>
+        </div>
+
+        <button id="resetSettings" type="button">Reset Settings</button>
+    </div>
+</div>
+<script src="chapter9.js" defer></script>
+</body>
+</html>

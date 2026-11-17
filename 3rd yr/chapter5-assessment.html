@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Chapter 5 Assessment | WEBTECH LEARN</title>
+
+    <link rel="stylesheet" href="chapter5-assessment.css">
+    <link rel="stylesheet" href="../display-settings.css">
+
+    <script src="../display-settings.js" defer></script>
+    <script src="chapter5-assessment.js" defer></script>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+    <div class="nav-container">
+
+        <a href="index.html" class="logo">
+            <img src="logo.jpg" alt="BSIT Digital Minds Logo" class="logo-image">
+
+            <span class="logo-text">
+                <small>BSIT | DIGITAL MINDS</small>
+            </span>
+        </a>
+
+        <a href="chapter5.html" class="back-home">
+            ← Back to Chapter 5
+        </a>
+
+    </div>
+    <link rel="stylesheet" href="ebook-pagination.css">
+<script src="ebook-pagination.js" defer></script>
+</header>
+
+<div class="page-layout">
+
+    <aside class="sidebar">
+        <h3>CHAPTER 05</h3>
+        <p class="sidebar-subtitle">Responsive Web Design</p>
+
+        <nav>
+            <a href="#assessment-intro" class="active">Assessment Overview</a>
+            <a href="#quiz-section">Multiple Choice</a>
+            <a href="#assessment-results">Assessment Results</a>
+            <a href="chapter5.html">Back to Lesson</a>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+
+        <section class="assessment-banner" id="assessment-intro">
+            <span class="chapter-label">CHAPTER 05 ASSESSMENT</span>
+            <h1>Responsive Web Design</h1>
+            <p>
+                Test your understanding of responsive layouts, media queries,
+                mobile-first design, flexible images, Flexbox, and CSS Grid.
+            </p>
+        </section>
+
+        <section class="assessment-overview">
+            <h2>Assessment Instructions</h2>
+            <p>
+                Read each question carefully and select the letter of the
+                best answer. Complete all 10 questions before submitting.
+            </p>
+
+            <div class="overview-grid">
+                <div class="overview-card">
+                    <strong>10</strong>
+                    <span>Questions</span>
+                </div>
+
+                <div class="overview-card">
+                    <strong>10</strong>
+                    <span>Total Points</span>
+                </div>
+
+                <div class="overview-card">
+                    <strong>1</strong>
+                    <span>Point Each</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="assessment-section" id="quiz-section">
+
+            <div class="section-heading">
+                <span class="section-label">CHECK YOUR KNOWLEDGE</span>
+                <h2>Multiple Choice Assessment</h2>
+                <p>Select only one answer for each question.</p>
+            </div>
+
+            <div class="progress-container">
+                <div class="progress-info">
+                    <span>Assessment Progress</span>
+                    <span id="progressText">0 of 10 answered</span>
+                </div>
+
+                <div class="progress-track">
+                    <div id="progressBar" class="progress-bar"></div>
+                </div>
+            </div>
+
+            <form id="chapter5Quiz" novalidate>
+
+                <div class="quiz-question">
+                    <p>1. What is the main purpose of Responsive Web Design?</p>
+
+                    <label><input type="radio" name="q1" value="a"> A. To create websites for desktop computers only</label>
+                    <label><input type="radio" name="q1" value="b"> B. To make websites adapt to different screen sizes</label>
+                    <label><input type="radio" name="q1" value="c"> C. To remove CSS from websites</label>
+                    <label><input type="radio" name="q1" value="d"> D. To increase the number of web pages</label>
+                </div>
+
+                <div class="quiz-question">
+                    <p>2. Which HTML feature helps a webpage display properly on mobile devices?</p>
+
+                    <label><input type="radio" name="q2" value="a"> A. Footer element</label>
+                    <label><input type="radio" name="q2" value="b"> B. Title element</label>
+                    <label><input type="radio" name="q2" value="c"> C. Viewport meta tag</label>
+                    <label><input type="radio" name="q2" value="d"> D. Script element</label>
+                </div>
+
+                <div class="quiz-question">
+                    <p>3. Which CSS feature applies styles based on screen width?</p>
+
+                    <label><input type="radio" name="q3" value="a"> A. Media queries</label>
+                    <label><input type="radio" name="q3" value="b"> B. CSS comments</label>
+                    <label><input type="radio" name="q3" value="c"> C. Text decoration</label>
+                    <label><input type="radio" name="q3" value="d"> D. Border radius</label>
+                </div>
+
+                <div class="quiz-question">
+                    <p>4. Which CSS rule helps prevent images from exceeding their container width?</p>
+
+                    <label><input type="radio" name="q4" value="a"> A. width: 1000px;</label>
+                    <label><input type="radio" name="q4" value="b"> B. max-width: 100%;</label>
+                    <label><input type="radio" name="q4" value="c"> C. position: fixed;</label>
+                    <label><input type="radio" name="q4" value="d"> D. display: none;</label>
+                </div>
+
+                <div class="quiz-question">
+                    <p>5. What does mobile-first design mean?</p>
+
+                    <label><input type="radio" name="q5" value="a"> A. Designing for desktop first</label>
+                    <label><input type="radio" name="q5" value="b"> B. Removing mobile layouts</label>
+                    <label><input type="radio" name="q5" value="c"> C. Starting the design with smaller screens</label>
+                    <label><input type="radio" name="q5" value="d"> D. Using images only</label>
+                </div>
+
+                <div class="quiz-question">
+                    <p>6. Which CSS layout system arranges items in a row or column?</p>
+
+                    <label><input type="radio" name="q6" value="a"> A. Flexbox</label>
+                    <label><input type="radio" name="q6" value="b"> B. HTML title</label>
+                    <label><input type="radio" name="q6" value="c"> C. Meta description</label>
+                    <label><input type="radio" name="q6" value="d"> D. Image alt text</label>
+                </div>
+
+                <div class="quiz-question">
+                    <p>7. What is the purpose of CSS Grid?</p>
+
+                    <label><input type="radio" name="q7" value="a"> A. To create animations only</label>
+                    <label><input type="radio" name="q7" value="b"> B. To organize content into rows and columns</label>
+                    <label><input type="radio" name="q7" value="c"> C. To add website titles</label>
+                    <label><input type="radio" name="q7" value="d"> D. To compress images</label>
+                </div>
+
+                <div class="quiz-question">
+                    <p>8. What are breakpoints in responsive design?</p>
+
+                    <label><input type="radio" name="q8" value="a"> A. Image file names</label>
+                    <label><input type="radio" name="q8" value="b"> B. Points where a layout changes based on screen size</label>
+                    <label><input type="radio" name="q8" value="c"> C. HTML heading levels</label>
+                    <label><input type="radio" name="q8" value="d"> D. Website passwords</label>
+                </div>
+
+                <div class="quiz-question">
+                    <p>9. Which unit is relative to the viewport width?</p>
+
+                    <label><input type="radio" name="q9" value="a"> A. px</label>
+                    <label><input type="radio" name="q9" value="b"> B. pt</label>
+                    <label><input type="radio" name="q9" value="c"> C. vw</label>
+                    <label><input type="radio" name="q9" value="d"> D. cm</label>
+                </div>
+
+                <div class="quiz-question">
+                    <p>10. Why should developers test responsive websites on different devices?</p>
+
+                    <label><input type="radio" name="q10" value="a"> A. To check layout and usability on different screens</label>
+                    <label><input type="radio" name="q10" value="b"> B. To remove all website content</label>
+                    <label><input type="radio" name="q10" value="c"> C. To disable CSS</label>
+                    <label><input type="radio" name="q10" value="d"> D. To make every screen identical in size</label>
+                </div>
+
+                <div class="quiz-actions">
+                    <button type="submit" class="quiz-button">
+                        Submit Answers
+                    </button>
+
+                    <button type="reset" class="reset-button" id="resetChapter5Quiz">
+                        Reset Quiz
+                    </button>
+                </div>
+
+                <p id="formMessage" class="form-message" aria-live="polite"></p>
+
+            </form>
+        </section>
+
+        <section class="results-section" id="assessment-results" hidden>
+            <div id="chapter5QuizResult" class="quiz-result" aria-live="polite">
+
+                <span class="section-label">YOUR PERFORMANCE</span>
+                <h2>Assessment Results</h2>
+
+                <div class="score-circle">
+                    <strong id="scoreNumber">0/10</strong>
+                    <span id="scorePercentage">0%</span>
+                </div>
+
+                <h3 id="resultMessage">Keep Practicing!</h3>
+                <p id="resultDetails"></p>
+
+                <div class="score-breakdown">
+                    <div>
+                        <span>Correct Answers</span>
+                        <strong id="correctCount">0</strong>
+                    </div>
+
+                    <div>
+                        <span>Incorrect Answers</span>
+                        <strong id="incorrectCount">0</strong>
+                    </div>
+
+                    <div>
+                        <span>Total Questions</span>
+                        <strong>10</strong>
+                    </div>
+                </div>
+
+                <button type="button" id="tryAgain" class="try-again-button">
+                    Try Again
+                </button>
+            </div>
+
+            <div id="chapter5Explanations" class="answer-explanations">
+                <h3>Answer Explanations</h3>
+            </div>
+        </section>
+
+        <div class="lesson-navigation">
+            <a href="chapter5.html" class="nav-button secondary">
+                ← Back to Chapter 5
+            </a>
+
+            <a href="3rd%20yr%20toc.html" class="nav-button">
+                Back to Table of Contents →
+            </a>
+        </div>
+
+        <footer class="page-footer">
+            <p>WEBTECH LEARN | Web Technology Learning E-Book</p>
+            <p>Excellence Beyond Limits</p>
+        </footer>
+
+    </main>
+</div>
+
+<button id="backToTop" title="Back to Top">↑</button>
+
+</body>
+</html>

@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lesson 6 - DOM Manipulation and JavaScript Events </title>
+
+    <link rel="stylesheet" href="chapter7.css">
+    <link rel="stylesheet" href="../display-settings.css">
+    
+
+    <script src="../display-settings.js" defer></script>
+ 
+    <script src="chapter7-assesment.js" defer></script>
+</head>
+<body>
+<!-- HEADER -->
+<header class="header">
+    <div class="nav-container">
+
+        <a href="index.html" class="logo">
+            <img src="logo.jpg" alt="BSIT Digital Minds Logo" class="logo-image">
+
+            <span class="logo-text">
+                <small>BSIT | DIGITAL MINDS</small>
+            </span>
+        </a>
+
+        <a href="../pics/3rd yr toc.html" class="back-home">
+            ← Back to Table of Content
+        </a>
+
+    </div>
+    <link rel="stylesheet" href="ebook-pagination.css">
+<script src="ebook-pagination.js" defer></script>
+</header>
+
+
+<div class="page-layout">
+
+    <aside class="sidebar">
+        <h3>CHAPTER 7</h3>
+        <p class="sidebar-subtitle">Forms and Input Validation</p>
+        <nav>
+            <a href="#introduction">Introduction</a>
+            <a href="#importance">Why Validation Matters</a>
+            <a href="#form-submit">Form Submit Event</a>
+            <a href="#basic-validation">Basic Validation</a>
+            <a href="#regex">Regular Expressions</a>
+            <a href="#errors">Error Messages</a>
+            <a href="#realtime">Real-Time Validation</a>
+            <a href="#form-controls">Form Controls</a>
+            <a href="#password">Password Strength</a>
+            <a href="#submit-button">Submit Button Control</a>
+            <a href="#demo">Registration Form Demo</a>
+            <a href="#resources">Learning Resources</a>
+          
+            <a href="#glossary">Glossary</a>
+            <a href="#references">References</a>
+        </nav>
+        <div class="separate-learning-links">
+    <a href="chapter7-assessment.html">📋 Chapter 7 Assessment</a>
+</div>
+
+<!-- DOWNLOAD PDF BUTTON -->
+<div class="sidebar-download">
+    <button type="button" id="downloadPDF">
+        <span>↓</span>
+        Download Lesson PDF
+    </button>
+</div>
+    </aside>
+
+    <main class="main-content">
+
+        <section class="chapter-banner" id="introduction">
+            <span class="chapter-label">BSIT 3RD YEAR • WEB TECHNOLOGY</span>
+            <h1>Chapter 7: Forms and Input Validation</h1>
+            <p>Learn how to collect, check, and validate user information using HTML forms and JavaScript.</p>
+        </section>
+
+        <section class="content-card">
+            <h2>Introduction</h2>
+            <p>
+                Forms are important parts of interactive websites. They allow
+                users to submit information such as names, email addresses,
+                passwords, contact numbers, and other details.
+            </p>
+            <p>
+                Form validation is the process of checking whether the information
+                entered by a user follows the required rules before it is processed.
+                JavaScript can validate information in the browser and provide
+                immediate feedback when an input is missing or incorrect.
+            </p>
+            <div class="info-box">
+                <strong>Learning Objectives:</strong>
+                <ul>
+                    <li>Understand the purpose of HTML forms and form validation.</li>
+                    <li>Handle form submission using JavaScript events.</li>
+                    <li>Validate text, email, phone, and password inputs.</li>
+                    <li>Use regular expressions to check input formats.</li>
+                    <li>Display error messages and validate inputs in real time.</li>
+                    <li>Build a simple registration form with JavaScript validation.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="content-card" id="importance">
+            <h2>1. Why Does Form Validation Matter?</h2>
+
+            <h3>Forms Are Everywhere</h3>
+            <p>
+                Websites use forms for login pages, registration, checkout,
+                feedback, contact pages, online bookings, and search features.
+                Developers need to ensure that the information submitted by
+                users is complete and follows the expected format.
+            </p>
+
+            <h3>Better User Experience</h3>
+            <p>
+                Validation provides helpful feedback when users make mistakes.
+                Instead of waiting for a page to reload, users can immediately
+                see messages such as "Email is required" or "Password is too short."
+            </p>
+
+            <h3>Data Quality and Security</h3>
+            <p>
+                Validation helps prevent incomplete or incorrectly formatted
+                information from being submitted. However, client-side validation
+                can be bypassed, so important information must also be validated
+                on the server.
+            </p>
+
+            <div class="note-box">
+                <strong>Important:</strong> Client-side validation improves user
+                experience, but it is not a replacement for server-side validation.
+            </div>
+        </section>
+
+        <section class="content-card" id="form-submit">
+            <h2>2. The Form Submit Event</h2>
+            <p>
+                The submit event occurs when a user submits a form by clicking
+                the submit button or pressing Enter. JavaScript can listen for
+                this event and check the entered information before continuing.
+            </p>
+
+            <h3>Using preventDefault()</h3>
+            <p>
+                The <code>preventDefault()</code> method stops the browser's
+                default form submission behavior. This allows JavaScript to
+                validate the information first.
+            </p>
+
+            <pre><code>const form = document.getElementById("myForm");
+
+form.addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+
+    if (name === "") {
+        console.log("Name is required.");
+    } else {
+        console.log("Form is ready!");
+    }
+});</code></pre>
+
+            <p>
+                The <code>trim()</code> method removes unnecessary spaces at the
+                beginning and end of a text value.
+            </p>
+        </section>
+
+        <section class="content-card" id="basic-validation">
+            <h2>3. Basic Validation Checks</h2>
+            <p>JavaScript can perform different checks depending on the input field.</p>
+
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr><th>Validation</th><th>Purpose</th><th>Example</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Required Field</td><td>Checks if a field is empty.</td><td><code>value === ""</code></td></tr>
+                        <tr><td>Minimum Length</td><td>Checks the minimum number of characters.</td><td><code>value.length &lt; 8</code></td></tr>
+                        <tr><td>Maximum Length</td><td>Checks the maximum number of characters.</td><td><code>value.length &gt; 50</code></td></tr>
+                        <tr><td>Number Range</td><td>Checks if a number is within a range.</td><td><code>age &lt; 13</code></td></tr>
+                        <tr><td>Character Check</td><td>Checks for a required character.</td><td><code>email.includes("@")</code></td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>Example</h3>
+            <pre><code>const password = document.getElementById("password").value;
+
+if (password.length &lt; 8) {
+    console.log("Password must have at least 8 characters.");
+}</code></pre>
+        </section>
+
+        <section class="content-card" id="regex">
+            <h2>4. Regular Expressions (Regex) for Validation</h2>
+            <p>
+                A regular expression, also called Regex, is a pattern used to
+                check whether a string follows a specific format. It is useful
+                for validating email addresses, phone numbers, names, and passwords.
+            </p>
+
+            <h3>Email Pattern</h3>
+            <pre><code>const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+console.log(emailRegex.test("student@example.com")); // true
+console.log(emailRegex.test("student@")); // false</code></pre>
+
+            <h3>Phone Number Pattern</h3>
+            <pre><code>const phoneRegex = /^\d{10}$/;
+
+console.log(phoneRegex.test("9876543210")); // true
+console.log(phoneRegex.test("12345")); // false</code></pre>
+
+            <p>
+                This example checks for exactly 10 digits. Actual phone number
+                rules depend on the country and application requirements.
+            </p>
+
+            <h3>Password Pattern</h3>
+            <pre><code>const passwordRegex =
+/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
+
+console.log(passwordRegex.test("Student123")); // true
+console.log(passwordRegex.test("student123")); // false</code></pre>
+
+            <h3>Name Pattern</h3>
+            <pre><code>const nameRegex = /^[A-Za-z\s]+$/;
+
+console.log(nameRegex.test("Maria Santos")); // true
+console.log(nameRegex.test("Maria123")); // false</code></pre>
+
+            <div class="info-box">
+                <strong>Regex Tip:</strong> The <code>test()</code> method returns
+                <code>true</code> when the input matches the pattern and
+                <code>false</code> when it does not.
+            </div>
+        </section>
+
+        <section class="content-card" id="errors">
+            <h2>5. Showing Error Messages Dynamically</h2>
+            <p>
+                Instead of displaying repeated alert boxes, developers can show
+                error messages directly below the input fields. This makes forms
+                easier to understand and use.
+            </p>
+
+            <pre><code>function showError(input, message) {
+    const error = document.createElement("div");
+
+    error.className = "error";
+    error.textContent = message;
+
+    input.parentNode.appendChild(error);
+}</code></pre>
+
+            <p>
+                Developers can also use CSS classes to highlight invalid fields
+                with red borders and valid fields with green borders.
+            </p>
+
+            <pre><code>input.classList.add("invalid");
+input.classList.remove("valid");
+
+input.classList.add("valid");
+input.classList.remove("invalid");</code></pre>
+        </section>
+
+        <section class="content-card" id="realtime">
+            <h2>6. Real-Time Validation</h2>
+            <p>
+                Real-time validation checks information while the user is typing.
+                The <code>input</code> event is commonly used for text fields.
+                It allows users to receive immediate feedback without submitting
+                the entire form.
+            </p>
+
+            <pre><code>const emailInput = document.getElementById("email");
+
+emailInput.addEventListener("input", function() {
+    const email = emailInput.value.trim();
+
+    if (email === "") {
+        console.log("Email is required.");
+    } else if (!emailRegex.test(email)) {
+        console.log("Enter a valid email.");
+    } else {
+        console.log("Valid email.");
+    }
+});</code></pre>
+
+            <h3>Common Input Events</h3>
+            <ul>
+                <li><strong>input:</strong> Fires when the value of an input changes.</li>
+                <li><strong>change:</strong> Fires when a value is changed and committed.</li>
+                <li><strong>focus:</strong> Fires when an input receives focus.</li>
+                <li><strong>blur:</strong> Fires when an input loses focus.</li>
+            </ul>
+        </section>
+
+        <section class="content-card" id="form-controls">
+            <h2>7. Handling Checkboxes, Radio Buttons, and Select</h2>
+
+            <h3>Checkboxes</h3>
+            <p>
+                The <code>checked</code> property returns a Boolean value
+                indicating whether a checkbox is selected.
+            </p>
+            <pre><code>const agreement = document.getElementById("agree");
+
+console.log(agreement.checked);</code></pre>
+
+            <h3>Radio Buttons</h3>
+            <p>
+                Radio buttons allow users to choose one option from a group.
+            </p>
+            <pre><code>const selected = document.querySelector(
+    'input[name="course"]:checked'
+);
+
+if (selected) {
+    console.log(selected.value);
+}</code></pre>
+
+            <h3>Select Dropdown</h3>
+            <p>
+                A select element allows users to choose an option from a dropdown list.
+            </p>
+            <pre><code>const city = document.getElementById("city");
+
+console.log(city.value);
+
+console.log(city.options[city.selectedIndex].text);</code></pre>
+        </section>
+
+        <section class="content-card" id="password">
+            <h2>8. Password Strength Checker</h2>
+            <p>
+                A password strength checker evaluates a password based on
+                requirements such as length, uppercase letters, lowercase letters,
+                numbers, and special characters.
+            </p>
+
+            <div class="password-levels">
+                <div><span class="weak-dot"></span><strong>Weak:</strong> Few requirements are met.</div>
+                <div><span class="medium-dot"></span><strong>Medium:</strong> Several requirements are met.</div>
+                <div><span class="strong-dot"></span><strong>Strong:</strong> Most or all requirements are met.</div>
+            </div>
+
+            <h3>Example</h3>
+            <pre><code>function checkStrength(password) {
+    let score = 0;
+
+    if (password.length >= 8) score++;
+    if (password.length >= 12) score++;
+    if (/[a-z]/.test(password)) score++;
+    if (/[A-Z]/.test(password)) score++;
+    if (/\d/.test(password)) score++;
+    if (/[^A-Za-z0-9]/.test(password)) score++;
+
+    if (score <= 2) return "Weak";
+    if (score <= 4) return "Medium";
+
+    return "Strong";
+}</code></pre>
+        </section>
+
+        <section class="content-card" id="submit-button">
+            <h2>9. Enabling and Disabling the Submit Button</h2>
+            <p>
+                A submit button can remain disabled until all required fields
+                pass validation. This helps prevent incomplete forms from
+                being submitted accidentally.
+            </p>
+
+            <pre><code>function checkFormValidity() {
+    const nameValid = nameInput.value.trim().length >= 2;
+    const emailValid = emailRegex.test(emailInput.value);
+
+    submitButton.disabled = !(nameValid && emailValid);
+}</code></pre>
+
+            <div class="note-box">
+                <strong>Remember:</strong> Always validate the form again when
+                the user submits it. Do not rely only on a disabled button.
+            </div>
+        </section>
+
+        <section class="content-card" id="demo">
+            <h2>10. Complete Registration Form Demo</h2>
+            <p>
+                Try the form below. Enter the required information and observe
+                how JavaScript checks each field while you type.
+            </p>
+
+            <div class="form-demo">
+                <h3>Student Registration</h3>
+                <form id="registrationForm" novalidate>
+
+                    <div class="field">
+                        <label for="studentName">Full Name</label>
+                        <input type="text" id="studentName" placeholder="Enter your full name">
+                        <small class="error-msg" id="nameError"></small>
+                    </div>
+
+                    <div class="field">
+                        <label for="studentEmail">Email Address</label>
+                        <input type="text" id="studentEmail" placeholder="student@example.com">
+                        <small class="error-msg" id="emailError"></small>
+                    </div>
+
+                    <div class="field">
+                        <label for="studentPhone">Phone Number (10 digits)</label>
+                        <input type="text" id="studentPhone" maxlength="10" placeholder="0912345678">
+                        <small class="error-msg" id="phoneError"></small>
+                    </div>
+
+                    <div class="field">
+                        <label for="studentPassword">Password</label>
+                        <input type="password" id="studentPassword" placeholder="At least 8 characters">
+                        <small class="password-strength" id="passwordStrength"></small>
+                        <small class="error-msg" id="passwordError"></small>
+                    </div>
+
+                    <div class="field">
+                        <label for="studentCity">City</label>
+                        <select id="studentCity">
+                            <option value="">Select your city</option>
+                            <option value="Baliuag">Baliuag</option>
+                            <option value="Malolos">Malolos</option>
+                            <option value="San Rafael">San Rafael</option>
+                            <option value="Plaridel">Plaridel</option>
+                            <option value="Other">Other</option>
+                        </select>
+                        <small class="error-msg" id="cityError"></small>
+                    </div>
+
+                    <div class="field checkbox-field">
+                        <label>
+                            <input type="checkbox" id="agreeTerms">
+                            I agree to the terms and conditions.
+                        </label>
+                        <small class="error-msg" id="termsError"></small>
+                    </div>
+
+                    <button type="submit" class="primary-btn" id="registerButton" disabled>
+                        Register
+                    </button>
+
+                    <div id="registrationSuccess" class="success-message" aria-live="polite"></div>
+                </form>
+            </div>
+        </section>
+
+        <section class="content-card" id="diagram">
+            <h2>11. Form Validation Process</h2>
+            <p>
+                The diagram below shows a simplified process for checking
+                user information before a form is accepted.
+            </p>
+
+            <figure class="diagram">
+                <svg viewBox="0 0 700 430" role="img" aria-label="Form validation process diagram">
+                    <defs>
+                        <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+                            <path d="M0,0 L0,6 L9,3 z" fill="#7895b5"/>
+                        </marker>
+                    </defs>
+                    <g fill="none" stroke="#7895b5" stroke-width="3" marker-end="url(#arrow)">
+                        <path d="M350 75 V110"/>
+                        <path d="M350 165 V200"/>
+                        <path d="M350 255 V290"/>
+                        <path d="M350 345 V375"/>
+                    </g>
+                    <g font-family="Arial" text-anchor="middle">
+                        <rect x="220" y="20" width="260" height="55" rx="10" fill="#07376f"/>
+                        <text x="350" y="54" font-size="17" fill="white">User Enters Information</text>
+
+                        <rect x="220" y="110" width="260" height="55" rx="10" fill="#1765a5"/>
+                        <text x="350" y="144" font-size="17" fill="white">JavaScript Checks Inputs</text>
+
+                        <rect x="220" y="200" width="260" height="55" rx="10" fill="#dcecff" stroke="#1765a5" stroke-width="2"/>
+                        <text x="350" y="234" font-size="17" fill="#07376f">Are All Fields Valid?</text>
+
+                        <rect x="40" y="290" width="230" height="55" rx="10" fill="#fde5e5" stroke="#c33"/>
+                        <text x="155" y="324" font-size="16" fill="#9b2020">Show Error Messages</text>
+
+                        <rect x="430" y="290" width="230" height="55" rx="10" fill="#ddf5e5" stroke="#21834a"/>
+                        <text x="545" y="324" font-size="16" fill="#176b38">Accept Form Data</text>
+
+                        <rect x="220" y="375" width="260" height="45" rx="10" fill="#07376f"/>
+                        <text x="350" y="403" font-size="16" fill="white">Continue Processing</text>
+                    </g>
+                    <g stroke-width="3" fill="none">
+                        <path d="M220 228 H155 V290" stroke="#c33"/>
+                        <path d="M480 228 H545 V290" stroke="#21834a"/>
+                    </g>
+                    <g font-family="Arial" font-size="13" font-weight="bold">
+                        <text x="165" y="220" fill="#b3261e">NO</text>
+                        <text x="535" y="220" fill="#176b38">YES</text>
+                    </g>
+                </svg>
+                <figcaption>Figure 7.1 – Simplified form validation workflow.</figcaption>
+            </figure>
+        </section>
+
+        <section class="content-card" id="resources">
+            <h2>12. Learning Resources</h2>
+            <ul class="resource-list">
+                <li>
+                    <strong>MDN – Client-side Form Validation</strong>
+                    <p>Learn about validating form data in the browser.</p>
+                    <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation" target="_blank" rel="noopener">Open Learning Resource</a>
+                </li>
+                <li>
+                    <strong>MDN – HTML Forms</strong>
+                    <p>Review HTML form elements, input types, and form structure.</p>
+                    <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms" target="_blank" rel="noopener">Open HTML Forms Guide</a>
+                </li>
+                <li>
+                    <strong>MDN – Regular Expressions</strong>
+                    <p>Understand how regular expressions work in JavaScript.</p>
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions" target="_blank" rel="noopener">Open Regex Guide</a>
+                </li>
+                <li>
+                    <strong>JavaScript.info – Forms, Controls</strong>
+                    <p>Explore how JavaScript works with form elements.</p>
+                    <a href="https://javascript.info/form-elements" target="_blank" rel="noopener">Open JavaScript.info</a>
+                </li>
+            </ul>
+        </section>
+
+        <section class="content-card" id="activities">
+            <h2>13. Activities and Hands-on Exercises</h2>
+
+            <div class="activity">
+                <h3>Activity 1: Identify the Form Elements</h3>
+                <p><strong>Objective:</strong> Identify common HTML form elements and their purposes.</p>
+                <ol>
+                    <li>Create a form with a name field.</li>
+                    <li>Add an email input and a password input.</li>
+                    <li>Add a checkbox and a submit button.</li>
+                    <li>Write the purpose of each element.</li>
+                </ol>
+            </div>
+
+            <div class="activity">
+                <h3>Activity 2: Basic Input Validation</h3>
+                <p><strong>Objective:</strong> Apply basic JavaScript validation.</p>
+                <ol>
+                    <li>Create a form that asks for a student's name and age.</li>
+                    <li>Check if the name field is empty.</li>
+                    <li>Check if the age is between 13 and 120.</li>
+                    <li>Display an appropriate error message for invalid values.</li>
+                </ol>
+            </div>
+
+            <div class="activity">
+                <h3>Activity 3: Email and Password Validation</h3>
+                <p><strong>Objective:</strong> Practice using regular expressions.</p>
+                <ol>
+                    <li>Create an email input field.</li>
+                    <li>Use a regular expression to check the email format.</li>
+                    <li>Create a password input that requires at least 8 characters.</li>
+                    <li>Show a message when the input is valid or invalid.</li>
+                </ol>
+            </div>
+
+            <div class="activity">
+                <h3>Activity 4: Mini Project – Student Registration Form</h3>
+                <p><strong>Objective:</strong> Combine HTML forms, JavaScript events, and validation.</p>
+                <ol>
+                    <li>Create a student registration form.</li>
+                    <li>Include name, email, phone, password, and course fields.</li>
+                    <li>Validate the inputs using JavaScript.</li>
+                    <li>Display error messages below invalid fields.</li>
+                    <li>Show a success message when all information is valid.</li>
+                    <li>Test the form using both valid and invalid information.</li>
+                </ol>
+            </div>
+        </section>
+
+        <section class="content-card" id="assessment">
+            <h2>14. Assessment – Interactive Quiz</h2>
+            <p>Choose the correct answer for each question, then click Submit Quiz.</p>
+
+            <form id="quizForm">
+                <div id="quizQuestions"></div>
+                <button type="submit" class="primary-btn">Submit Quiz</button>
+                <button type="button" id="resetQuiz" class="secondary-btn">Retake Quiz</button>
+            </form>
+
+            <div id="quizResult" class="quiz-result" aria-live="polite"></div>
+        </section>
+
+        <section class="content-card" id="glossary">
+            <h2>15. Glossary</h2>
+            <dl class="glossary-list">
+                <dt>HTML Form</dt>
+                <dd>An HTML structure used to collect information from users.</dd>
+
+                <dt>Form Validation</dt>
+                <dd>The process of checking whether user input follows required rules.</dd>
+
+                <dt>Client-side Validation</dt>
+                <dd>Validation performed in the user's browser before data is sent to a server.</dd>
+
+                <dt>Server-side Validation</dt>
+                <dd>Validation performed by the server after receiving submitted data.</dd>
+
+                <dt>Submit Event</dt>
+                <dd>An event that occurs when a form is submitted.</dd>
+
+                <dt>preventDefault()</dt>
+                <dd>A method that prevents the browser's default action.</dd>
+
+                <dt>Regular Expression (Regex)</dt>
+                <dd>A pattern used to match and validate strings.</dd>
+
+                <dt>Real-Time Validation</dt>
+                <dd>Checking user input while the user is typing or changing a field.</dd>
+
+                <dt>Checkbox</dt>
+                <dd>A form control that allows a user to select or deselect an option.</dd>
+
+                <dt>Radio Button</dt>
+                <dd>A form control used to select one option from a group.</dd>
+
+                <dt>Password Strength</dt>
+                <dd>An estimate of how well a password meets security requirements.</dd>
+            </dl>
+        </section>
+
+        <section class="content-card" id="references">
+            <h2>16. References</h2>
+            <ol class="references-list">
+                <li>Modern Age Coders. (2026, April 9). <em>Forms and Input Validation | JavaScript Tutorial.</em> <a href="https://learn.modernagecoders.com/resources/javascript/forms-and-validation" target="_blank" rel="noopener">https://learn.modernagecoders.com/resources/javascript/forms-and-validation</a></li>
+                <li>MDN Web Docs. (n.d.). <em>Client-side Form Validation.</em> <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation" target="_blank" rel="noopener">MDN Web Docs</a></li>
+                <li>MDN Web Docs. (n.d.). <em>Web Forms.</em> <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms" target="_blank" rel="noopener">MDN Web Forms</a></li>
+                <li>MDN Web Docs. (n.d.). <em>JavaScript Regular Expressions.</em> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions" target="_blank" rel="noopener">MDN Regular Expressions</a></li>
+                <li>JavaScript.info. (n.d.). <em>Forms, Controls.</em> <a href="https://javascript.info/form-elements" target="_blank" rel="noopener">JavaScript.info</a></li>
+            </ol>
+        </section>
+
+      
+        <footer class="page-footer">
+            <p>WEBTECH LEARN | Web Technology Learning E-Book</p>
+            <p>Excellence Beyond Limits</p>
+        </footer>
+
+    </main>
+</div>
+
+<!-- DISPLAY SETTINGS -->
+<div id="displaySettings">
+
+    <button id="settingsToggle" type="button" aria-label="Open display settings">
+        ⚙️
+    </button>
+
+    <div id="settingsPanel">
+
+        <h3 class="settings-heading">Display Settings</h3>
+
+        <span class="settings-label">Dark Mode</span>
+
+        <button id="darkModeButton" class="settings-dark-button" type="button">
+            🌙 Switch to Dark Mode
+        </button>
+
+        <span class="settings-label">Text Size</span>
+
+        <div class="settings-size-controls">
+            <button id="decreaseText" type="button">A−</button>
+            <span id="textSizeValue">100%</span>
+            <button id="increaseText" type="button">A+</button>
+        </div>
+
+        <button id="resetSettings" type="button">
+            Reset Settings
+        </button>
+
+    </div>
+</div>
+<script src="chapter7.js" defer></script>
+</body>
+</html>

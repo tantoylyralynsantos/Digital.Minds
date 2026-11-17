@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <title>Chapter 1 | Internet and World Wide Web Fundamentals</title>
+
+    <link rel="stylesheet" href="chapter1.css">
+    <link rel="stylesheet" href="../display-settings.css">
+
+    <script src="../display-settings.js" defer></script>
+    <script src="chapter1.js" defer></script>
+    <script src="../learning-tracker.js" defer></script>
+</head>
+<body data-lesson-id="3rd-year-chapter-1"
+      data-year="3rd">
+
+<!-- HEADER -->
+<header class="header">
+    <div class="nav-container">
+
+        <a href="index.html" class="logo">
+            <img src="logo.jpg" alt="BSIT Digital Minds Logo" class="logo-image">
+
+            <span class="logo-text">
+                <small>BSIT | DIGITAL MINDS</small>
+            </span>
+        </a>
+
+        <a href="../pics/3rd yr toc.html" class="back-home">
+            ← Back to Table of Content
+        </a>
+
+    </div>
+    <link rel="stylesheet" href="ebook-pagination.css">
+<script src="ebook-pagination.js" defer></script>
+</header>
+
+
+<div class="page-layout">
+
+    <aside class="sidebar">
+        <h3>Chapter 1 Contents</h3>
+        <p class="sidebar-subtitle">Internet and World Wide Web Fundamentals</p>
+
+        <nav aria-label="Chapter 1 Table of Contents">
+            <a href="#introduction">Introduction</a>
+            <a href="#arpanet">ARPANET</a>
+            <a href="#nsfnet">NSFNET</a>
+            <a href="#internet">The Internet</a>
+            <a href="#internet2">Internet2</a>
+            <a href="#timeline">Computer Network Timeline</a>
+            <a href="#applications">Early Net Applications</a>
+            <a href="#cerf">Vinton Cerf</a>
+            <a href="#licklider">J.C.R. Licklider</a>
+            <a href="#connectivity">Client-Server</a>
+            <a href="#www">World Wide Web</a>
+            <a href="#browsers">Early Web Browsers</a>
+<a href="#glossary">Glossary</a>
+<a href="#learning-resources">Learning Resources</a>
+<a href="#references">References</a>
+        </nav>
+
+      <div class="separate-learning-links">
+    <a href="chapter1-assesment.html">📋 Chapter 1 Assessment</a>
+
+    <button type="button" id="downloadLessonBtn" class="download-pdf-button">
+        <span>↓</span> Download Lesson PDF
+    </button>
+</div>
+    </aside>
+
+    <main class="main-content">
+
+        <!-- INTRODUCTION -->
+         
+        <section class="lesson-banner" id="introduction">
+            <span class="chapter-label">CHAPTER 01</span>
+            <h1>Internet and World Wide Web Fundamentals</h1>
+            <p>
+                Explore the history, development, and fundamental concepts
+                of the Internet and the World Wide Web.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2>The Internet and World Wide Web</h2>
+
+            <blockquote>
+                “The Internet is becoming the town square for the global
+                village of tomorrow.”
+                <span>— Bill Gates</span>
+            </blockquote>
+
+            <p>
+                The Internet developed through years of research,
+                technological advancements, and the need for computers
+                to communicate and share information. Its development
+                eventually led to the World Wide Web, which made it
+                possible to access information through webpages and
+                interactive links.
+            </p>
+
+            <div class="highlight-box">
+                <h3>Guide Question</h3>
+                <p>When and why was the first computer network developed?</p>
+            </div>
+            <div class="page-number">Page 1</div>
+        </section>
+
+        <!-- ARPANET -->
+        <section class="content-section" id="arpanet">
+            <h2>1. ARPANET</h2>
+
+            <p>
+                Just as World War II accelerated the development of
+                modern computers, the Cold War fueled the development
+                of the Internet.
+            </p>
+
+            <p>
+                Although scientists who worked on the network wanted
+                to share computer resources, the U.S. Department of
+                Defense funded it as a research project to enhance
+                national defense.
+            </p>
+
+            <p>
+                The Cold War climate in the United States was marked
+                by fear of Russian communist expansion. This fear
+                increased after Russia tested its first atomic bomb
+                in 1949 and launched Sputnik, the first space satellite,
+                in 1957.
+            </p>
+
+            <figure class="historical-image">
+                <img
+                    src="arpanet.jpg"
+                    alt="Historical ARPANET Interface Message Processor"
+                    loading="lazy">
+                <figcaption>
+                    Historical ARPANET Interface Message Processor (IMP),
+                    equipment used in the early development of computer networking.
+                </figcaption>
+            </figure>
+
+            <div class="highlight-box">
+                <h3>ARPA</h3>
+                <p>
+                    The Advanced Research Projects Agency (ARPA) was
+                    created in February 1958. Its creation was directly
+                    connected to the launching of Sputnik and the
+                    recognition of the need to advance military
+                    technology through research and development.
+                </p>
+            </div>
+        </section>
+
+        <!-- NSFNET -->
+        <section class="content-section" id="nsfnet">
+            <h2>2. NSFNET</h2>
+
+            <p>
+                ARPANET evolved into NSFNET, which later evolved into
+                the Internet. Along the way, the Internet passed from
+                government control to private enterprise and
+                commercialization.
+            </p>
+
+            <p>
+                The National Science Foundation (NSF) was founded
+                by Congress and President Truman in 1950 to promote
+                the progress of science, advance national health,
+                prosperity and welfare, and support national defense.
+            </p>
+
+            <p>
+                By the late 1970s, ARPANET was having a tremendous
+                impact. The National Science Foundation began
+                developing a high-speed network to replace ARPANET.
+            </p>
+
+            <figure class="historical-image">
+                <img
+                    src="https://nsf-gov-resources.nsf.gov/styles/_inline_image_full_width/s3/2024-01/NSFNET_1988.png?VersionId=GcGuhyCY1DMMn3_ZGgIk5UyyQ_j5w5VB&itok=MU8vAtxI"
+                    alt="1988 NSFNET backbone network map"
+                    loading="lazy">
+                <figcaption>
+                    The 1988 NSFNET Backbone showing the early network
+                    connections between research institutions.
+                </figcaption>
+            </figure>
+
+            <p>
+                This main network, also known as the backbone,
+                connected smaller regional, national, and
+                international networks. Between 1990 and late 1994,
+                parts of NSFNET were sold to major telecommunications
+                companies until the Internet backbone became
+                completely commercial.
+            </p>
+        </section>
+
+        <!-- INTERNET -->
+        <section class="content-section" id="internet">
+            <h2>3. The Internet</h2>
+
+            <p>
+                While ARPANET was just one network, it quickly
+                evolved into a network of networks.
+            </p>
+
+            <p>
+                According to Vint Cerf, the term Internet came from
+                the inter-netting project and the system of networks
+                that emerged from the research.
+            </p>
+
+            <figure class="historical-image">
+                <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/b/bf/Internet_map_1024.jpg"
+                    alt="Visualization of interconnected networks forming the Internet"
+                    loading="lazy">
+                <figcaption>
+                    A visualization of interconnected networks,
+                    representing how separate computer networks
+                    form the global Internet.
+                </figcaption>
+            </figure>
+
+            <div class="highlight-box">
+                <h3>Important Concept</h3>
+                <p>
+                    The Internet is a global network of interconnected
+                    computer networks. No single person or organization
+                    owns the entire Internet.
+                </p>
+            </div>
+        </section>
+
+        <!-- INTERNET2 -->
+        <section class="content-section" id="internet2">
+            <h2>4. Internet2</h2>
+
+            <p>
+                Since the commercialization of the Internet, there
+                has been an effort to develop a new non-profit
+                network that returns to the original purpose of
+                the Internet: education and research.
+            </p>
+
+            <p>
+                Internet2 was developed by the research and
+                education community in 1996. It provides
+                leading-edge network capabilities and unique
+                partnership opportunities.
+            </p>
+
+            <figure class="historical-image">
+                <img
+                    src="https://www.internet2.edu/wp-content/uploads/2023/05/Internet2-logo.png"
+                    alt="Internet2 organization logo"
+                    loading="lazy">
+                <figcaption>
+                    Internet2, a research and education networking
+                    community supporting advanced network technologies.
+                </figcaption>
+            </figure>
+
+            <p>
+                By bringing research and academia together with
+                technology leaders from industry, government,
+                and the international community, Internet2
+                promotes collaboration and innovation.
+            </p>
+        </section>
+
+        <!-- TIMELINE -->
+        <section class="content-section" id="timeline">
+            <h2>5. Computer Network Timeline</h2>
+
+            <p>
+                The following timeline presents important events
+                that contributed to the development of computer
+                networks and the Internet.
+            </p>
+
+            <figure class="historical-image">
+                <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Sputnik_asm.jpg"
+                    alt="Historical Sputnik satellite"
+                    loading="lazy">
+                <figcaption>
+                    Sputnik 1, launched in 1957, was the first
+                    artificial Earth satellite and an important
+                    event during the Cold War.
+                </figcaption>
+            </figure>
+
+            <div class="timeline">
+
+                <div class="timeline-item">
+                    <span class="timeline-date">1945–1950s</span>
+                    <h3>Cold War and Nuclear Development</h3>
+                    <ul>
+                        <li>The United States was the only nuclear power until 1949, when Russia tested its first atomic bomb.</li>
+                        <li>In 1952, the United States developed the hydrogen bomb, followed by Russia in 1953.</li>
+                        <li>The 1950s was the era of bomb shelters and school bomb drills.</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="timeline-date">1957</span>
+                    <h3>Sputnik Launch</h3>
+                    <ul>
+                        <li>Russia launched Sputnik, the first man-made satellite, into space.</li>
+                        <li>The event increased concerns about Russian dominance in science and technology.</li>
+                        <li>Government funding for scientific research and development increased during the Cold War.</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="timeline-date">1964</span>
+                    <h3>Packet-Switching Technology</h3>
+                    <p>
+                        Packet-switching technology was funded by the
+                        U.S. Department of Defense. It aimed to develop
+                        a communication network without a central
+                        headquarters that could be destroyed during
+                        a nuclear attack.
+                    </p>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="timeline-date">1969</span>
+                    <h3>ARPANET Created</h3>
+                    <p>
+                        ARPANET was created by the Pentagon's Advanced
+                        Research Projects Agency. It connected computer
+                        sites at four research universities so scientists
+                        could share files.
+                    </p>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="timeline-date">1972</span>
+                    <h3>Network Development</h3>
+                    <ul>
+                        <li>ARPANET had 37 sites or nodes, including universities and government research facilities.</li>
+                        <li>Network protocols were developed to allow computers to transfer data.</li>
+                        <li>TCP/IP converts messages into packets and reassembles them at the receiving end.</li>
+                        <li>The first public demonstration of email allowed users to communicate.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- EARLY NET APPLICATIONS -->
+        <section class="content-section" id="applications">
+            <h2>6. Early Net Applications</h2>
+
+            <p>
+                Studies have shown that communication is one of the
+                major uses of the Internet. Until the 1990s,
+                communication and other computer network applications
+                were mostly text-based.
+            </p>
+
+            <figure class="historical-image">
+                <img
+                    src="ray.jpg"
+                    alt="Ray Tomlinson, pioneer of networked email"
+                    loading="lazy">
+                <figcaption>
+                    Ray Tomlinson, who developed the first networked
+                    email system and introduced the use of the @ symbol.
+                </figcaption>
+            </figure>
+
+            <div class="info-grid">
+
+                <article class="info-card">
+                    <h3>Electronic Mail (E-mail)</h3>
+                    <p>
+                        Email was first developed in 1971 by Ray
+                        Tomlinson of ARPANET. It uses the format
+                        user log-in name @ host computer name.
+                    </p>
+                </article>
+
+                <article class="info-card">
+                    <h3>Telnet</h3>
+                    <p>
+                        Telnet allows a direct connection from
+                        one computer to a distant server.
+                    </p>
+                </article>
+
+                <article class="info-card">
+                    <h3>FTP</h3>
+                    <p>
+                        File Transfer Protocol (FTP) is used to
+                        transfer files, particularly large files,
+                        between computers.
+                    </p>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- VINTON CERF -->
+        <section class="content-section" id="cerf">
+            <h2>7. Vinton Cerf: Father of the Internet</h2>
+
+            <p>
+                Vinton Cerf played a major role in developing the
+                protocols and telecommunications standards used
+                in Internet packet-switching technology.
+            </p>
+
+            <figure class="historical-image">
+                <img
+                    src="vinton.jpg"
+                    alt="Vinton Cerf, Internet pioneer"
+                    loading="lazy">
+                <figcaption>
+                    Vinton Cerf, one of the key developers of TCP/IP
+                    and a pioneer of the Internet.
+                </figcaption>
+            </figure>
+
+            <p>
+                In 1976, Cerf was a DARPA program manager in charge
+                of packet technology and inter-networking research.
+            </p>
+
+            <div class="highlight-box">
+                <h3>TCP/IP</h3>
+                <p>
+                    Transmission Control Protocol/Internet Protocol
+                    (TCP/IP), developed by Cerf's team at ARPA,
+                    checks data packets for errors and reassembles
+                    them in the correct sequential order at the
+                    destination site.
+                </p>
+            </div>
+
+            <p>
+                These packet-switching standard protocols allow
+                consistent and universal data transmission.
+            </p>
+        </section>
+
+        <!-- JCR LICKLIDER -->
+        <section class="content-section" id="licklider">
+            <h2>8. J.C.R. Licklider: Visionary from Missouri</h2>
+
+            <p>
+                Joseph Carl Robnett Licklider was a professor of
+                psychology of communications who worked at
+                DARPA's Information Processing Techniques Office.
+            </p>
+
+            <figure class="historical-image">
+                <img
+                    src="jcr.jpg"
+                    alt="Historical portrait of J.C.R. Licklider"
+                    loading="lazy">
+                <figcaption>
+                    J.C.R. Licklider, whose vision of interconnected
+                    computers helped influence the development of
+                    computer networking.
+                </figcaption>
+            </figure>
+
+            <p>
+                In 1960, Licklider envisioned a future thinking
+                center that would combine the functions of
+                libraries with advances in information storage
+                and retrieval.
+            </p>
+
+            <p>
+                He imagined a network of connected centers
+                that people could access through communication
+                lines.
+            </p>
+
+            <p>
+                In his 1965 book, <em>Libraries of the Future</em>,
+                Licklider discussed how computers could provide
+                an automated library with simultaneous remote
+                access for many people through a common database.
+            </p>
+        </section>
+
+        <!-- CLIENT SERVER -->
+        <section class="content-section" id="connectivity">
+            <h2>9. Computer Connectivity: Client-Server</h2>
+
+            <p>
+                Computers are connected together in networks
+                organized as clients and servers.
+            </p>
+
+            <figure class="historical-image">
+                <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/c/c9/Client-server-model.svg"
+                    alt="Client-server network architecture diagram"
+                    loading="lazy">
+                <figcaption>
+                    Client-server architecture: clients request
+                    information or services, while servers process
+                    requests and provide the requested resources.
+                </figcaption>
+            </figure>
+
+            <div class="info-grid">
+
+                <article class="info-card">
+                    <h3>Clients</h3>
+                    <p>
+                        Clients are personal computers or
+                        computer workstations that request
+                        information and services.
+                    </p>
+                </article>
+
+                <article class="info-card">
+                    <h3>Servers</h3>
+                    <p>
+                        Servers are large central computers
+                        that hold collections of data and
+                        programs. They help connect computers
+                        to other networks.
+                    </p>
+                </article>
+
+                <article class="info-card">
+                    <h3>Internet Service Providers (ISPs)</h3>
+                    <p>
+                        ISPs provide Internet connectivity
+                        through larger servers. Examples
+                        mentioned in the source include
+                        AOL and Comcast Cable.
+                    </p>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- WORLD WIDE WEB -->
+        <section class="content-section" id="www">
+            <h2>10. What is the World Wide Web?</h2>
+
+            <p>
+                Tim Berners-Lee developed the World Wide Web
+                in late 1990 while working at CERN, the
+                European Particle Physics Laboratory in
+                Geneva, Switzerland.
+            </p>
+
+            <p>
+                The Web added the ability to display graphics,
+                multimedia, and hypertext or interactive links
+                to the Internet.
+            </p>
+
+            <figure class="historical-image">
+                <img
+                    src="https://cds.cern.ch/images/CERN-HI-0903031-08/file?size=large"
+                    alt="Tim Berners-Lee and Robert Cailliau with the original NeXT computer"
+                    loading="lazy">
+                <figcaption>
+                    Tim Berners-Lee and Robert Cailliau with the NeXT
+                    computer used during the early development of
+                    the World Wide Web at CERN.
+                </figcaption>
+            </figure>
+
+            <h3>Ideas That Helped Build the Web</h3>
+
+            <div class="info-grid">
+
+                <article class="info-card">
+                    <h3>Vannevar Bush</h3>
+                    <p>
+                        Wrote "As We May Think" in 1945,
+                        describing the concept of a machine
+                        called Memex for cross-referencing
+                        information.
+                    </p>
+                </article>
+
+                <article class="info-card">
+                    <h3>Doug Engelbart</h3>
+                    <p>
+                        A Stanford researcher who invented
+                        the computer mouse, first demonstrated
+                        in 1968.
+                    </p>
+                </article>
+
+                <article class="info-card">
+                    <h3>Ted Nelson</h3>
+                    <p>
+                        Wrote <em>Literary Machines</em> in 1981,
+                        describing Xanadu, a non-linear
+                        hypertext format with embedded links.
+                    </p>
+                </article>
+
+            </div>
+
+            <div class="highlight-box">
+                <h3>HTML: Hypertext Markup Language</h3>
+                <p>
+                    Berners-Lee and his colleagues at CERN
+                    developed HTML, the computer language
+                    used for the Web. They also developed
+                    a browser program to access and display
+                    Web content.
+                </p>
+            </div>
+        </section>
+
+        <!-- EARLY WEB BROWSERS -->
+        <section class="content-section" id="browsers">
+            <h2>11. Early Web Browsers</h2>
+
+            <p>
+                Early browsers helped users access the Web
+                and view hypertext, graphics, and other
+                webpage content.
+            </p>
+
+            <figure class="historical-image">
+                <img
+                    src="ncsa.jpg"
+                    alt="Historical screenshot of the NCSA Mosaic web browser"
+                    loading="lazy">
+                <figcaption>
+                    NCSA Mosaic, one of the early graphical web browsers
+                    developed at the University of Illinois.
+                </figcaption>
+            </figure>
+
+            <div class="browser-list">
+
+                <article class="browser-card">
+                    <span class="browser-year">1992</span>
+                    <div>
+                        <h3>Lynx</h3>
+                        <p>
+                            A text-only hypertext browser
+                            developed by Michael Grobe and
+                            other students at the University
+                            of Kansas.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="browser-card">
+                    <span class="browser-year">1993</span>
+                    <div>
+                        <h3>Mosaic</h3>
+                        <p>
+                            An early successful browser
+                            capable of displaying hypertext
+                            and graphics. It was developed
+                            at the National Center for
+                            Supercomputing Applications.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="browser-card">
+                    <span class="browser-year">1994</span>
+                    <div>
+                        <h3>Netscape</h3>
+                        <p>
+                            An early commercially available
+                            browser produced by Mosaic
+                            Communications Corporation.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="browser-card">
+                    <span class="browser-year">1995</span>
+                    <div>
+                        <h3>Internet Explorer</h3>
+                        <p>
+                            Released by Microsoft in 1995.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="browser-card">
+                    <span class="browser-year">2004</span>
+                    <div>
+                        <h3>Mozilla Firefox</h3>
+                        <p>
+                            Released by Mozilla as a free,
+                            open-source browser in 2004.
+                        </p>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+        <!-- LEARNING RESOURCES -->
+<section class="content-section" id="learning-resources">
+
+    <span class="chapter-label">CHAPTER 01 STUDY MATERIALS</span>
+    <h2>Learning Resources</h2>
+
+    <p>
+        Explore these additional learning materials to understand
+        more about the history, development, and technologies of
+        the Internet and the World Wide Web.
+    </p>
+
+    <div class="learning-resource-list">
+
+        <article class="learning-resource-card">
+            <div class="resource-icon">🌐</div>
+            <div class="resource-info">
+                <h3>A Brief History of the Internet</h3>
+                <p>
+                    Learn how the Internet began and developed
+                    into a global network of interconnected computers.
+                </p>
+                <a href="https://www.internetsociety.org/internet/history-internet/brief-history-internet/"
+                   target="_blank" rel="noopener noreferrer">
+                    Explore Resource →
+                </a>
+            </div>
+        </article>
+
+        <article class="learning-resource-card">
+            <div class="resource-icon">💻</div>
+            <div class="resource-info">
+                <h3>The Birth of the World Wide Web</h3>
+                <p>
+                    Discover how Tim Berners-Lee created the
+                    World Wide Web at CERN.
+                </p>
+                <a href="https://home.cern/science/computing/birth-web"
+                   target="_blank" rel="noopener noreferrer">
+                    Explore Resource →
+                </a>
+            </div>
+        </article>
+
+        <article class="learning-resource-card">
+            <div class="resource-icon">🔬</div>
+            <div class="resource-info">
+                <h3>National Science Foundation</h3>
+                <p>
+                    Learn about the organization that supported
+                    scientific research and the development of NSFNET.
+                </p>
+                <a href="https://www.nsf.gov/"
+                   target="_blank" rel="noopener noreferrer">
+                    Explore Resource →
+                </a>
+            </div>
+        </article>
+
+        <article class="learning-resource-card">
+            <div class="resource-icon">🔗</div>
+            <div class="resource-info">
+                <h3>Internet2</h3>
+                <p>
+                    Explore the research and education network
+                    that supports advanced Internet technologies.
+                </p>
+                <a href="https://internet2.edu/"
+                   target="_blank" rel="noopener noreferrer">
+                    Explore Resource →
+                </a>
+            </div>
+        </article>
+
+        <article class="learning-resource-card">
+            <div class="resource-icon">📘</div>
+            <div class="resource-info">
+                <h3>Introduction to HTML</h3>
+                <p>
+                    Study the basic concepts of HTML and how it
+                    is used to structure webpages.
+                </p>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML"
+                   target="_blank" rel="noopener noreferrer">
+                    Explore Resource →
+                </a>
+            </div>
+        </article>
+
+    </div>
+
+    <div class="highlight-box">
+        <h3>Study Recommendation</h3>
+        <p>
+            Read the additional materials and compare them with
+            the topics discussed in this chapter. Take notes on
+            important events, people, and networking technologies.
+        </p>
+    </div>
+
+</section>
+
+<!-- GLOSSARY -->
+<section class="content-section" id="glossary">
+
+    <span class="chapter-label">CHAPTER 01 VOCABULARY</span>
+    <h2>Glossary of Terms</h2>
+
+    <p>
+        This glossary contains important terms and definitions
+        discussed in Chapter 1: Internet and World Wide Web Fundamentals.
+    </p>
+
+    <div class="glossary-list">
+
+        <div class="glossary-item">
+            <h3>1. ARPANET</h3>
+            <p>
+                Advanced Research Projects Agency Network. An early
+                computer network funded by the U.S. Department of Defense.
+            </p>
+        </div>
+
+        <div class="glossary-item">
+            <h3>2. ARPA</h3>
+            <p>
+                Advanced Research Projects Agency. An agency created
+                in 1958 to support research and technological development.
+            </p>
+        </div>
+
+        <div class="glossary-item">
+            <h3>3. NSF</h3>
+            <p>
+                National Science Foundation. An organization established
+                to promote scientific research and development.
+            </p>
+        </div>
+
+        <div class="glossary-item">
+            <h3>4. NSFNET</h3>
+            <p>
+                A high-speed network developed by the National Science
+                Foundation to connect research and educational institutions.
+            </p>
+        </div>
+
+        <div class="glossary-item">
+            <h3>5. Internet</h3>
+            <p>
+                A global network of interconnected computer networks
+                that allows devices to communicate and share information.
+            </p>
+        </div>
+
+        <div class="glossary-item">
+            <h3>6. Internet2</h3>
+            <p>
+                A research and education networking community that
+                develops advanced network capabilities.
+            </p>
+        </div>
+
+        <div class="glossary-item">
+            <h3>7. Packet Switching</h3>
+            <p>
+                A communication method that divides data into smaller
+                packets before sending them across a network.
+            </p>
+        </div>
+
+        <div class="glossary-item">
+            <h3>8. TCP/IP</h3>
+            <p>
+                Transmission Control Protocol/Internet Protocol.
+                A collection of communication protocols used to
+                transmit data across networks.
+            </p>
+        </div>
+
+        <div class="glossary-item">
+            <h3>9. E-mail</h3>
+            <p>
+                Electronic Mail. A method of sending and receiving
+                digital messages through computer networks.
+            </p>
+        </div>
+
+        <div class="glossary-item">
+            <h3>10. Telnet</h3>
+            <p>
+                A protocol that allows a user to connect to and
+                communicate with a remote computer.
+            </p>
+        </div>
+
+        <div class="glossary-item">
+            <h3>11. FTP</h3>
+            <p>
+                File Transfer Protocol. A protocol used to transfer
+                files between computers over a network.
+            </p>
+        </div>
+
+        <div class="glossary-item">
+            <h3>12. Client</h3>
+            <p>
+                A computer or workstation that requests information
+                or services from a server.
+            </p>
+        </div>
+
+        <div class="glossary-item">
+            <h3>13. Server</h3>
+            <p>
+                A computer that stores data, programs, and resources
+                and provides services to connected clients.
+            </p>
+        </div>
+
+        <div class="glossary-item">
+            <h3>14. ISP</h3>
+            <p>
+                Internet Service Provider. A company or organization
+                that provides access to the Internet.
+            </p>
+        </div>
+
+        <div class="glossary-item">
+            <h3>15. World Wide Web (WWW)</h3>
+            <p>
+                A system of interconnected webpages and digital
+                resources that users can access through the Internet.
+            </p>
+        </div>
+
+        <div class="glossary-item">
+            <h3>16. HTML</h3>
+            <p>
+                Hypertext Markup Language. The standard markup
+                language used to structure content on webpages.
+            </p>
+        </div>
+
+        <div class="glossary-item">
+            <h3>17. Hypertext</h3>
+            <p>
+                Text that contains links allowing users to navigate
+                from one document or webpage to another.
+            </p>
+        </div>
+
+        <div class="glossary-item">
+            <h3>18. Web Browser</h3>
+            <p>
+                A software application used to access, retrieve,
+                and display webpages and other Web content.
+            </p>
+        </div>
+
+        <div class="glossary-item">
+            <h3>19. Lynx</h3>
+            <p>
+                An early text-based Web browser that displays
+                webpage information without graphical images.
+            </p>
+        </div>
+
+        <div class="glossary-item">
+            <h3>20. Mosaic</h3>
+            <p>
+                An early graphical Web browser that helped popularize
+                the use of graphics and hypertext on the Web.
+            </p>
+        </div>
+
+        <div class="glossary-item">
+            <h3>21. Netscape</h3>
+            <p>
+                An early commercially available Web browser
+                released in the 1990s.
+            </p>
+        </div>
+
+    </div>
+
+    <div class="highlight-box">
+        <h3>Learning Tip</h3>
+        <p>
+            Review these terms to better understand the history,
+            development, and basic technologies of the Internet
+            and the World Wide Web.
+        </p>
+    </div>
+
+</section>
+
+
+        <!-- REFERENCES -->
+        <section class="content-section" id="references">
+            <h2>12. References</h2>
+
+            <div class="reference-item">
+                <h3>Chapter 8: Network Literacy – Internet and World Wide Web</h3>
+                <a href="https://www.researchgate.net/publication/300959781_Chapter_8_Network_Literacy_Internet_and_World_Wide_Web"
+                   target="_blank" rel="noopener noreferrer">View Source</a>
+            </div>
+
+            <div class="reference-item">
+                <h3>The Atlas of Cyberspace</h3>
+                <p>Martin Dodge and Rob Kitchin, January 2001.</p>
+                <a href="https://www.researchgate.net/publication/262008328_The_Atlas_of_Cyberspace"
+                   target="_blank" rel="noopener noreferrer">View Reference</a>
+            </div>
+
+            <div class="reference-item">
+                <h3>Weaving the Web</h3>
+                <p>Tim Berners-Lee, January 2000.</p>
+                <a href="https://www.researchgate.net/publication/200621922_Weaving_the_Web_The_Original_Design_and_Ultimate_Destiny_of_the_World_Wide_Web"
+                   target="_blank" rel="noopener noreferrer">View Reference</a>
+            </div>
+
+            <div class="reference-item">
+                <h3>What Is Web 2.0?</h3>
+                <p>Tim O'Reilly, January 2007.</p>
+                <a href="https://www.researchgate.net/publication/24114032_What_Is_Web_20_Design_Patterns_And_Business_Models_For_The_Next_Generation_Of_Software"
+                   target="_blank" rel="noopener noreferrer">View Reference</a>
+            </div>
+
+            <div class="reference-item">
+                <h3>Historical Image Sources</h3>
+                <p>
+                    Historical photographs and archival images
+                    used for educational purposes.
+                </p>
+                <a href="https://commons.wikimedia.org/"
+                   target="_blank" rel="noopener noreferrer">Wikimedia Commons</a>
+                <br>
+                <a href="https://cds.cern.ch/"
+                   target="_blank" rel="noopener noreferrer">CERN Document Server</a>
+                <br>
+                <a href="https://www.nsf.gov/"
+                   target="_blank" rel="noopener noreferrer">National Science Foundation</a>
+            </div>
+        </section>
+
+        <!-- LESSON NAVIGATION -->
+        <div class="lesson-navigation">
+
+            <a href="chapter1-assesment.html" class="next-button">
+                Chapter 1 Assessment →
+            </a>
+
+            <a href="chapter2.html" class="next-button">
+                Next Lesson →
+            </a>
+
+        </div>
+
+       
+
+<!-- BACK TO TOP -->
+<button id="backToTop" title="Back to Top" aria-label="Back to Top">
+    ↑
+</button>
+
+<!-- DISPLAY SETTINGS -->
+<div id="displaySettings">
+
+    <button id="settingsToggle" type="button" aria-label="Display settings">
+        ⚙️
+    </button>
+
+    <div id="settingsPanel">
+
+        <div class="settings-heading">Display Settings</div>
+
+        <span class="settings-label">Appearance</span>
+
+        <button id="darkModeButton" class="settings-dark-button" type="button">
+            🌙 Switch to Dark Mode
+        </button>
+
+        <span class="settings-label">Text Size</span>
+
+        <div class="settings-size-controls">
+            <button id="decreaseText" type="button">A−</button>
+            <span id="textSizeValue">100%</span>
+            <button id="increaseText" type="button">A+</button>
+        </div>
+
+        <button id="resetSettings" type="button">
+            Reset Settings
+        </button>
+
+     </div>
+</div>
+        <footer class="page-footer">
+            <p>WEBTECH LEARN | Web Technology Learning E-Book</p>
+            <p>Excellence Beyond Limits</p>
+        </footer>
+
+    </main>
+</div>
+
+</body>
+</html>

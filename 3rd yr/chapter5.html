@@ -1,0 +1,951 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lesson 5 - Responsive Web Design </title>
+
+    <link rel="stylesheet" href="chapter5.css">
+    <link rel="stylesheet" href="../display-settings.css">
+    
+
+    <script src="../display-settings.js" defer></script>
+ 
+    <script src="chapter5-assessment.js" defer></script>
+</head>
+<body>
+<!-- HEADER -->
+<header class="header">
+    <div class="nav-container">
+
+        <a href="index.html" class="logo">
+            <img src="logo.jpg" alt="BSIT Digital Minds Logo" class="logo-image">
+
+            <span class="logo-text">
+                <small>BSIT | DIGITAL MINDS</small>
+            </span>
+        </a>
+
+        <a href="../pics/3rd yr toc.html" class="back-home">
+            ← Back to Table of Content
+        </a>
+
+    </div>
+    <link rel="stylesheet" href="ebook-pagination.css">
+<script src="ebook-pagination.js" defer></script>
+</header>
+
+<div class="page-layout">
+
+    <aside class="sidebar">
+        <h3>CHAPTER 05</h3>
+        <p class="sidebar-subtitle">Responsive Web Design</p>
+
+        <nav>
+            <a href="#introduction" class="active">Introduction</a>
+            <a href="#viewport">Viewport Meta Tag</a>
+            <a href="#fluid-layouts">Fluid Layouts</a>
+            <a href="#media-queries">CSS Media Queries</a>
+            <a href="#mobile-first">Mobile-First Design</a>
+            <a href="#responsive-images">Responsive Images</a>
+            <a href="#flexible-grids">Flexible Grids</a>
+            <a href="#flexbox">CSS Flexbox</a>
+            <a href="#css-grid">CSS Grid</a>
+            <a href="#typography">Responsive Typography</a>
+            <a href="#breakpoints">Breakpoints</a>
+            <a href="#best-practices">Best Practices</a>
+            <a href="#summary">Summary</a>
+            <a href="#glossary">Glossary</a>
+            <a href="#references">References</a>
+            <a href="#references">Learning Resources</a>
+        </nav>
+ <div class="separate-learning-links">
+            <a href="chapter5-assessment.html">📋 Chapter 5 Assessment</a>
+        </div>
+        <div class="sidebar-download">
+    <button type="button" id="downloadPDF">
+        <span>↓</span>
+        Download Lesson PDF
+    </button>
+</div>
+    </aside>
+
+    <main class="main-content">
+
+        <section class="lesson-banner">
+          
+            <p class="chapter-number">CHAPTER 05</p>
+            <h1>Responsive Web Design</h1>
+            <p>
+                Learn how to create websites that adapt to different screen sizes,
+                devices, and viewing environments.
+            </p>
+        </section>
+
+        <!-- INTRODUCTION -->
+        <section class="content-section" id="introduction">
+            <h2>Introduction to Responsive Web Design</h2>
+
+            <p>
+                Responsive Web Design is an approach to web development that allows
+                websites to adjust their layout and appearance according to the
+                screen size and device being used. It helps create a consistent
+                and user-friendly experience on desktop computers, tablets, and
+                smartphones.
+            </p>
+
+            <p>
+                Instead of creating separate websites for different devices,
+                responsive design uses flexible layouts, images, and CSS media
+                queries to make one website work across different screen sizes.
+            </p>
+
+            <div class="highlight-box">
+                <strong>Key Idea:</strong>
+                A responsive website automatically adjusts its layout to provide
+                a better viewing and browsing experience on different devices.
+            </div>
+
+            <h3>Learning Objectives</h3>
+            <p>After completing this chapter, students should be able to:</p>
+
+            <ul>
+                <li>Explain the concept and importance of Responsive Web Design.</li>
+                <li>Understand the purpose of the viewport meta tag.</li>
+                <li>Use relative units to create fluid layouts.</li>
+                <li>Apply CSS media queries to different screen sizes.</li>
+                <li>Explain the mobile-first design approach.</li>
+                <li>Create responsive images and flexible grids.</li>
+                <li>Use Flexbox and CSS Grid for responsive layouts.</li>
+                <li>Identify common responsive design best practices.</li>
+            </ul>
+
+            <h3>Responsive Design Across Devices</h3>
+
+            <div class="device-showcase">
+                <div class="device-card desktop-device">
+                    <div class="device-screen">
+                        <div class="demo-header"></div>
+                        <div class="demo-content">
+                            <div></div><div></div><div></div>
+                        </div>
+                    </div>
+                    <strong>Desktop</strong>
+                    <span>Wide screen layout</span>
+                </div>
+
+                <div class="device-card tablet-device">
+                    <div class="device-screen">
+                        <div class="demo-header"></div>
+                        <div class="demo-content">
+                            <div></div><div></div>
+                        </div>
+                    </div>
+                    <strong>Tablet</strong>
+                    <span>Adjusted layout</span>
+                </div>
+
+                <div class="device-card mobile-device">
+                    <div class="device-screen">
+                        <div class="demo-header"></div>
+                        <div class="demo-content">
+                            <div></div><div></div><div></div>
+                        </div>
+                    </div>
+                    <strong>Mobile</strong>
+                    <span>Single-column layout</span>
+                </div>
+            </div>
+            <p class="image-caption">Illustration: A responsive layout adapting to different devices.</p>
+        </section>
+
+        <!-- VIEWPORT -->
+        <section class="content-section" id="viewport">
+            <h2>1. Viewport Meta Tag</h2>
+
+            <p>
+                The viewport is the visible area of a web page on a device.
+                The viewport meta tag tells the browser how to control the
+                page's dimensions and scaling on different devices.
+            </p>
+
+            <div class="code-example">
+                <div class="code-title">HTML Viewport Meta Tag</div>
+                <pre><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code></pre>
+            </div>
+
+            <h3>Explanation</h3>
+            <ul>
+                <li><strong>width=device-width</strong> – Sets the page width to match the device screen width.</li>
+                <li><strong>initial-scale=1.0</strong> – Sets the initial zoom level to 100%.</li>
+            </ul>
+
+            <div class="highlight-box">
+                The viewport meta tag is important when creating responsive
+                websites because it helps pages display properly on mobile devices.
+            </div>
+        </section>
+
+        <!-- FLUID LAYOUTS -->
+        <section class="content-section" id="fluid-layouts">
+            <h2>2. Fluid Layouts and Relative Units</h2>
+
+            <p>
+                A fluid layout uses flexible measurements instead of fixed
+                pixel dimensions. It allows page elements to resize according
+                to the available screen space.
+            </p>
+
+            <h3>Common Relative Units</h3>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <h4>% (Percentage)</h4>
+                    <p>Defines a size relative to its parent element.</p>
+                </div>
+
+                <div class="info-card">
+                    <h4>vw</h4>
+                    <p>Represents a percentage of the viewport width.</p>
+                </div>
+
+                <div class="info-card">
+                    <h4>vh</h4>
+                    <p>Represents a percentage of the viewport height.</p>
+                </div>
+
+                <div class="info-card">
+                    <h4>rem</h4>
+                    <p>Relative to the root element's font size.</p>
+                </div>
+
+                <div class="info-card">
+                    <h4>em</h4>
+                    <p>Relative to the font size of its parent element.</p>
+                </div>
+            </div>
+
+            <h3>Example of a Fluid Layout</h3>
+
+            <div class="code-example">
+                <div class="code-title">CSS Code</div>
+                <pre><code>.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}</code></pre>
+            </div>
+
+            <p>
+                The container uses 90% of the available width but will not
+                become wider than 1200 pixels.
+            </p>
+
+            <div class="fluid-demo">
+                <div class="fluid-demo-inner">
+                    <span>90% Flexible Container</span>
+                </div>
+            </div>
+            <p class="image-caption">Illustration: A fluid container adjusts to the available width.</p>
+        </section>
+
+        <!-- MEDIA QUERIES -->
+        <section class="content-section" id="media-queries">
+            <h2>3. CSS Media Queries</h2>
+
+            <p>
+                CSS media queries allow developers to apply different CSS styles
+                depending on the characteristics of a device, such as screen width.
+                They are commonly used to change layouts for desktop, tablet,
+                and mobile screens.
+            </p>
+
+            <h3>Example of a Media Query</h3>
+
+            <div class="code-example">
+                <div class="code-title">CSS Code</div>
+                <pre><code>.container {
+    width: 90%;
+    margin: auto;
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+}</code></pre>
+            </div>
+
+            <p>
+                In this example, the container width changes to 95% when the
+                screen width is 768 pixels or smaller.
+            </p>
+
+            <h3>How Media Queries Change Layouts</h3>
+
+            <div class="media-demo">
+                <div class="media-layout desktop-layout">
+                    <span>Desktop View</span>
+                    <div class="media-columns">
+                        <div>Content 1</div>
+                        <div>Content 2</div>
+                        <div>Content 3</div>
+                    </div>
+                </div>
+
+                <div class="media-layout mobile-layout">
+                    <span>Mobile View</span>
+                    <div class="media-columns">
+                        <div>Content 1</div>
+                        <div>Content 2</div>
+                        <div>Content 3</div>
+                    </div>
+                </div>
+            </div>
+            <p class="image-caption">Illustration: Content columns can rearrange on smaller screens.</p>
+        </section>
+
+        <!-- MOBILE FIRST -->
+        <section class="content-section" id="mobile-first">
+            <h2>4. Mobile-First Design</h2>
+
+            <p>
+                Mobile-first design is an approach where a website is designed
+                for smaller screens first before adding styles for larger screens.
+                This helps developers prioritize essential content and make
+                websites easier to use on mobile devices.
+            </p>
+
+            <h3>Characteristics of Mobile-First Design</h3>
+            <ul>
+                <li>Starts with a simple mobile layout.</li>
+                <li>Prioritizes important content and features.</li>
+                <li>Uses flexible elements and responsive measurements.</li>
+                <li>Adds more layout features for larger screens.</li>
+            </ul>
+
+            <div class="highlight-box">
+                <strong>Remember:</strong>
+                Mobile-first means starting with the smallest screen and
+                progressively improving the layout for larger screens.
+            </div>
+
+            <div class="code-example">
+                <div class="code-title">Mobile-First CSS Example</div>
+                <pre><code>/* Base style for mobile */
+.container {
+    display: block;
+}
+
+/* Larger screens */
+@media (min-width: 768px) {
+    .container {
+        display: flex;
+    }
+}</code></pre>
+            </div>
+        </section>
+
+        <!-- RESPONSIVE IMAGES -->
+        <section class="content-section" id="responsive-images">
+            <h2>5. Responsive Images and Media</h2>
+
+            <p>
+                Responsive images automatically adjust to fit the size of
+                their containing elements. This prevents images from overflowing
+                or becoming wider than the screen.
+            </p>
+
+            <h3>Basic Responsive Image CSS</h3>
+
+            <div class="code-example">
+                <div class="code-title">CSS Code</div>
+                <pre><code>img {
+    max-width: 100%;
+    height: auto;
+}</code></pre>
+            </div>
+
+            <h3>Using the Picture Element</h3>
+            <p>
+                The HTML picture element allows developers to provide different
+                image sources for different display conditions.
+            </p>
+
+            <div class="code-example">
+                <div class="code-title">HTML Code</div>
+                <pre><code>&lt;picture&gt;
+    &lt;source media="(max-width: 600px)" srcset="small-image.jpg"&gt;
+    &lt;img src="large-image.jpg" alt="Responsive example"&gt;
+&lt;/picture&gt;</code></pre>
+            </div>
+
+            <h3>Using srcset</h3>
+            <p>
+                The srcset attribute provides multiple image sources so the
+                browser can select an appropriate image based on the display
+                conditions.
+            </p>
+
+            <div class="code-example">
+                <div class="code-title">HTML Code</div>
+                <pre><code>&lt;img
+    src="image-small.jpg"
+    srcset="image-small.jpg 480w,
+            image-large.jpg 1000w"
+    sizes="(max-width: 600px) 480px, 1000px"
+    alt="Responsive image"&gt;</code></pre>
+            </div>
+
+            <div class="image-demo">
+                <div class="image-placeholder">
+                    <div class="image-icon">▧</div>
+                    <strong>Flexible Image</strong>
+                    <span>max-width: 100%; height: auto;</span>
+                </div>
+            </div>
+            <p class="image-caption">Illustration: A responsive image stays within its container.</p>
+        </section>
+
+        <!-- FLEXIBLE GRIDS -->
+        <section class="content-section" id="flexible-grids">
+            <h2>6. Flexible Grids</h2>
+
+            <p>
+                Flexible grids organize content into columns and rows that
+                adjust according to the available screen space. They help
+                maintain a structured layout on different devices.
+            </p>
+
+            <div class="grid-demo">
+                <div>Column 1</div>
+                <div>Column 2</div>
+                <div>Column 3</div>
+                <div>Column 4</div>
+            </div>
+
+            <p class="image-caption">Illustration: A flexible grid arrangement.</p>
+
+            <div class="code-example">
+                <div class="code-title">CSS Grid Example</div>
+                <pre><code>.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}</code></pre>
+            </div>
+        </section>
+
+        <!-- FLEXBOX -->
+        <section class="content-section" id="flexbox">
+            <h2>7. CSS Flexbox</h2>
+
+            <p>
+                Flexbox is a CSS layout system used to arrange elements in
+                a row or column. It makes it easier to distribute space and
+                align items within a container.
+            </p>
+
+            <h3>Important Flexbox Properties</h3>
+
+            <ul>
+                <li><strong>display: flex;</strong> – Creates a flex container.</li>
+                <li><strong>justify-content</strong> – Controls alignment along the main axis.</li>
+                <li><strong>align-items</strong> – Controls alignment along the cross axis.</li>
+                <li><strong>flex-wrap</strong> – Allows items to move onto another line.</li>
+                <li><strong>gap</strong> – Adds space between flex items.</li>
+            </ul>
+
+            <div class="code-example">
+                <div class="code-title">Flexbox CSS Example</div>
+                <pre><code>.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}</code></pre>
+            </div>
+
+            <div class="flex-demo">
+                <div>Item 1</div>
+                <div>Item 2</div>
+                <div>Item 3</div>
+            </div>
+        </section>
+
+        <!-- CSS GRID -->
+        <section class="content-section" id="css-grid">
+            <h2>8. CSS Grid</h2>
+
+            <p>
+                CSS Grid is a two-dimensional layout system that allows
+                developers to organize content into rows and columns.
+                It is useful for creating structured and responsive page layouts.
+            </p>
+
+            <h3>Example of CSS Grid</h3>
+
+            <div class="code-example">
+                <div class="code-title">CSS Code</div>
+                <pre><code>.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+}</code></pre>
+            </div>
+
+            <div class="css-grid-demo">
+                <div>Header</div>
+                <div>Main Content</div>
+                <div>Sidebar</div>
+                <div>Footer</div>
+            </div>
+            <p class="image-caption">Illustration: A grid layout organizes page sections.</p>
+        </section>
+
+        <!-- TYPOGRAPHY -->
+        <section class="content-section" id="typography">
+            <h2>9. Responsive Typography</h2>
+
+            <p>
+                Responsive typography allows text to adjust according to
+                screen size. It helps maintain readability and a balanced
+                appearance on different devices.
+            </p>
+
+            <h3>Using Relative Font Sizes</h3>
+
+            <div class="code-example">
+                <div class="code-title">CSS Code</div>
+                <pre><code>h1 {
+    font-size: clamp(1.8rem, 4vw, 3rem);
+}
+
+p {
+    font-size: 1rem;
+    line-height: 1.6;
+}</code></pre>
+            </div>
+
+            <p>
+                The clamp() function sets a minimum, preferred, and maximum
+                font size. This allows text to scale within a defined range.
+            </p>
+
+            <div class="typography-demo">
+                <h3>Responsive Heading</h3>
+                <p>This is an example of readable text that can adjust to different screen sizes.</p>
+            </div>
+        </section>
+
+        <!-- BREAKPOINTS -->
+        <section class="content-section" id="breakpoints">
+            <h2>10. Responsive Breakpoints</h2>
+
+            <p>
+                Breakpoints are screen-width points where a website's layout
+                changes to provide a better experience. Developers use media
+                queries to define these changes.
+            </p>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Device Category</th>
+                            <th>Example Screen Width</th>
+                            <th>Common Layout</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Mobile</td>
+                            <td>Up to 600px</td>
+                            <td>Single column</td>
+                        </tr>
+                        <tr>
+                            <td>Tablet</td>
+                            <td>601px – 900px</td>
+                            <td>Adjusted columns</td>
+                        </tr>
+                        <tr>
+                            <td>Desktop</td>
+                            <td>Above 900px</td>
+                            <td>Multiple columns</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="highlight-box">
+                These widths are examples only. Breakpoints should be selected
+                based on when the website's content and layout need adjustment.
+            </div>
+        </section>
+
+        <!-- BEST PRACTICES -->
+        <section class="content-section" id="best-practices">
+            <h2>11. Testing and Responsive Design Best Practices</h2>
+
+            <p>
+                Testing is an important part of responsive web development.
+                Developers should check how a website looks and works on
+                different screen sizes and devices.
+            </p>
+
+            <h3>Best Practices</h3>
+            <ul>
+                <li>Use the viewport meta tag.</li>
+                <li>Use flexible layouts and relative units.</li>
+                <li>Apply media queries when the layout needs to change.</li>
+                <li>Make images and media flexible.</li>
+                <li>Use readable typography.</li>
+                <li>Test the website on different screen sizes.</li>
+                <li>Check navigation, buttons, and other interactive elements.</li>
+                <li>Avoid unnecessary horizontal scrolling.</li>
+            </ul>
+
+            <h3>Testing Checklist</h3>
+            <div class="checklist">
+                <label><input type="checkbox"> The website fits a mobile screen.</label>
+                <label><input type="checkbox"> Images do not overflow their containers.</label>
+                <label><input type="checkbox"> Text is readable on small screens.</label>
+                <label><input type="checkbox"> Navigation is easy to use.</label>
+                <label><input type="checkbox"> The layout works on tablet and desktop.</label>
+            </div>
+        </section>
+
+        <!-- SUMMARY -->
+        <section class="content-section" id="summary">
+            <h2>Chapter Summary</h2>
+
+            <p>
+                Responsive Web Design makes websites adaptable to different
+                screen sizes and devices. It uses viewport settings, fluid
+                layouts, media queries, flexible images, grids, Flexbox,
+                CSS Grid, and responsive typography.
+            </p>
+
+            <p>
+                By applying mobile-first design and testing websites on
+                different screen sizes, developers can create websites
+                that are accessible, readable, and easy to use.
+            </p>
+        </section>
+
+        <!-- ACTIVITIES -->
+        <section class="content-section activity-section" id="activities">
+            <h2>Learning Activities and Exercises</h2>
+
+            <div class="activity-card">
+                <span class="activity-label">ACTIVITY 1</span>
+                <h3>Identify the Responsive Elements</h3>
+                <p>
+                    Identify at least five elements of a website that should
+                    adjust when viewed on a mobile device.
+                </p>
+                <p><strong>Task:</strong> Write your answers and briefly explain why each element needs to be responsive.</p>
+            </div>
+
+            <div class="activity-card">
+                <span class="activity-label">ACTIVITY 2</span>
+                <h3>Create a Fluid Container</h3>
+                <p>
+                    Create an HTML page with a container that uses a percentage
+                    width and a maximum width.
+                </p>
+                <p><strong>Task:</strong> Apply the following CSS and observe how the container behaves when the browser window is resized.</p>
+
+                <div class="code-example">
+                    <pre><code>.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}</code></pre>
+                </div>
+            </div>
+
+            <div class="activity-card">
+                <span class="activity-label">ACTIVITY 3</span>
+                <h3>Build a Responsive Layout</h3>
+                <p>
+                    Create a simple webpage with a header, navigation,
+                    content area, and footer.
+                </p>
+                <p><strong>Task:</strong> Use CSS media queries to adjust the layout for smaller screens.</p>
+            </div>
+        </section>
+
+        <!-- QUIZ -->
+        <section class="content-section" id="assessment">
+            <h2>Chapter Assessment</h2>
+            <p>Choose the correct answer for each question.</p>
+
+            <form id="chapter5Quiz">
+
+                <div class="quiz-question">
+                    <h3>1. What is the main purpose of Responsive Web Design?</h3>
+                    <label><input type="radio" name="q1" value="a"> To create websites for desktop computers only</label>
+                    <label><input type="radio" name="q1" value="b"> To make websites adapt to different screen sizes</label>
+                    <label><input type="radio" name="q1" value="c"> To remove CSS from websites</label>
+                    <label><input type="radio" name="q1" value="d"> To increase the number of web pages</label>
+                </div>
+
+                <div class="quiz-question">
+                    <h3>2. Which HTML tag helps a webpage display properly on mobile devices?</h3>
+                    <label><input type="radio" name="q2" value="a"> &lt;footer&gt;</label>
+                    <label><input type="radio" name="q2" value="b"> &lt;title&gt;</label>
+                    <label><input type="radio" name="q2" value="c"> Viewport meta tag</label>
+                    <label><input type="radio" name="q2" value="d"> &lt;script&gt;</label>
+                </div>
+
+                <div class="quiz-question">
+                    <h3>3. Which CSS feature is used to apply styles based on screen width?</h3>
+                    <label><input type="radio" name="q3" value="a"> Media queries</label>
+                    <label><input type="radio" name="q3" value="b"> CSS comments</label>
+                    <label><input type="radio" name="q3" value="c"> Text decoration</label>
+                    <label><input type="radio" name="q3" value="d"> Border radius</label>
+                </div>
+
+                <div class="quiz-question">
+                    <h3>4. Which CSS rule helps prevent images from exceeding their container width?</h3>
+                    <label><input type="radio" name="q4" value="a"> width: 1000px;</label>
+                    <label><input type="radio" name="q4" value="b"> max-width: 100%;</label>
+                    <label><input type="radio" name="q4" value="c"> position: fixed;</label>
+                    <label><input type="radio" name="q4" value="d"> display: none;</label>
+                </div>
+
+                <div class="quiz-question">
+                    <h3>5. What does mobile-first design mean?</h3>
+                    <label><input type="radio" name="q5" value="a"> Designing for desktop first</label>
+                    <label><input type="radio" name="q5" value="b"> Removing mobile layouts</label>
+                    <label><input type="radio" name="q5" value="c"> Starting the design with smaller screens</label>
+                    <label><input type="radio" name="q5" value="d"> Using images only</label>
+                </div>
+
+                <div class="quiz-question">
+                    <h3>6. Which CSS layout system is commonly used to arrange items in rows or columns?</h3>
+                    <label><input type="radio" name="q6" value="a"> Flexbox</label>
+                    <label><input type="radio" name="q6" value="b"> HTML title</label>
+                    <label><input type="radio" name="q6" value="c"> Meta description</label>
+                    <label><input type="radio" name="q6" value="d"> Image alt text</label>
+                </div>
+
+                <div class="quiz-question">
+                    <h3>7. What is the purpose of CSS Grid?</h3>
+                    <label><input type="radio" name="q7" value="a"> To create animations only</label>
+                    <label><input type="radio" name="q7" value="b"> To organize content into rows and columns</label>
+                    <label><input type="radio" name="q7" value="c"> To add website titles</label>
+                    <label><input type="radio" name="q7" value="d"> To compress images</label>
+                </div>
+
+                <div class="quiz-question">
+                    <h3>8. What are breakpoints in responsive design?</h3>
+                    <label><input type="radio" name="q8" value="a"> Image file names</label>
+                    <label><input type="radio" name="q8" value="b"> Points where a layout changes based on screen size</label>
+                    <label><input type="radio" name="q8" value="c"> HTML heading levels</label>
+                    <label><input type="radio" name="q8" value="d"> Website passwords</label>
+                </div>
+
+                <div class="quiz-question">
+                    <h3>9. Which unit is relative to the viewport width?</h3>
+                    <label><input type="radio" name="q9" value="a"> px</label>
+                    <label><input type="radio" name="q9" value="b"> pt</label>
+                    <label><input type="radio" name="q9" value="c"> vw</label>
+                    <label><input type="radio" name="q9" value="d"> cm</label>
+                </div>
+
+                <div class="quiz-question">
+                    <h3>10. Why should developers test responsive websites on different devices?</h3>
+                    <label><input type="radio" name="q10" value="a"> To check layout and usability on different screens</label>
+                    <label><input type="radio" name="q10" value="b"> To remove all website content</label>
+                    <label><input type="radio" name="q10" value="c"> To disable CSS</label>
+                    <label><input type="radio" name="q10" value="d"> To make every screen look identical in size</label>
+                </div>
+
+                <div class="quiz-actions">
+                    <button type="submit" class="quiz-button">Submit Answers</button>
+                    <button type="reset" class="reset-button" id="resetChapter5Quiz">Reset Quiz</button>
+                </div>
+            </form>
+
+            <div id="chapter5QuizResult" class="quiz-result" aria-live="polite"></div>
+            <div id="chapter5Explanations" class="answer-explanations"></div>
+        </section>
+
+        <!-- GLOSSARY -->
+        <section class="content-section" id="glossary">
+            <h2>Glossary of Terms</h2>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Term</th>
+                            <th>Definition</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Responsive Web Design</td><td>An approach to web design that adapts layouts to different screen sizes.</td></tr>
+                        <tr><td>Viewport</td><td>The visible area of a webpage on a device.</td></tr>
+                        <tr><td>Fluid Layout</td><td>A layout that uses flexible measurements to adjust to available space.</td></tr>
+                        <tr><td>Media Query</td><td>A CSS feature that applies styles based on device or screen conditions.</td></tr>
+                        <tr><td>Mobile-First</td><td>A design approach that starts with smaller screens.</td></tr>
+                        <tr><td>Flexible Image</td><td>An image that adjusts to fit its container.</td></tr>
+                        <tr><td>Flexbox</td><td>A CSS layout system for arranging items in one direction at a time.</td></tr>
+                        <tr><td>CSS Grid</td><td>A CSS layout system for arranging content in rows and columns.</td></tr>
+                        <tr><td>Breakpoint</td><td>A screen-width point where a layout changes.</td></tr>
+                        <tr><td>Typography</td><td>The style and appearance of text on a webpage.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        
+
+        <!-- REFERENCES -->
+        <section class="content-section" id="references">
+            <h2>References and Learning Resources</h2>
+
+            <p>Additional learning resources about Responsive Web Design:</p>
+
+            <div class="resource-card">
+                <h3>1. MDN Web Docs – Responsive Design</h3>
+                <p>Learn the basic concepts and techniques of responsive web design.</p>
+                <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Responsive_Design" target="_blank" rel="noopener">Visit MDN Web Docs ↗</a>
+            </div>
+
+            <div class="resource-card">
+                <h3>2. MDN Web Docs – CSS Media Queries</h3>
+                <p>Learn how to use media queries to apply CSS based on screen conditions.</p>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_media_queries" target="_blank" rel="noopener">Visit CSS Media Queries ↗</a>
+            </div>
+
+            <div class="resource-card">
+                <h3>3. MDN Web Docs – CSS Flexible Box Layout</h3>
+                <p>Explore the Flexbox layout model and its properties.</p>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout" target="_blank" rel="noopener">Visit Flexbox Guide ↗</a>
+            </div>
+
+            <div class="resource-card">
+                <h3>4. MDN Web Docs – CSS Grid Layout</h3>
+                <p>Understand how to create layouts using rows and columns.</p>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout" target="_blank" rel="noopener">Visit CSS Grid Guide ↗</a>
+            </div>
+
+            <div class="resource-card">
+                <h3>5. MDN Web Docs – Responsive Images</h3>
+                <p>Learn how to create images that work on different devices.</p>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Responsive_images" target="_blank" rel="noopener">Visit Responsive Images Guide ↗</a>
+            </div>
+        </section>
+        <section class="content-section" id="references">
+
+    <h2>Learning Resources</h2>
+
+    <p>
+        Explore these reliable learning materials to gain more knowledge
+        and improve your understanding of Responsive Web Design.
+    </p>
+
+    <div class="resource-list">
+
+        <div class="resource-card">
+            <h3>Responsive Design</h3>
+            <p>Learn the fundamentals of responsive web design and how websites adapt to different screen sizes.</p>
+            <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Responsive_Design" target="_blank">
+                Visit Learning Resource →
+            </a>
+        </div>
+
+        <div class="resource-card">
+            <h3>CSS Media Queries</h3>
+            <p>Understand how media queries apply different CSS styles depending on device characteristics.</p>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_media_queries" target="_blank">
+                Visit Learning Resource →
+            </a>
+        </div>
+
+        <div class="resource-card">
+            <h3>CSS Flexible Box Layout</h3>
+            <p>Explore Flexbox and learn how to arrange and align elements in responsive layouts.</p>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout" target="_blank">
+                Visit Learning Resource →
+            </a>
+        </div>
+
+        <div class="resource-card">
+            <h3>CSS Grid Layout</h3>
+            <p>Learn how to create flexible two-dimensional layouts using CSS Grid.</p>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout" target="_blank">
+                Visit Learning Resource →
+            </a>
+        </div>
+
+        <div class="resource-card">
+            <h3>Responsive Images</h3>
+            <p>Understand how to display suitable images for different screen sizes and devices.</p>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Responsive_images" target="_blank">
+                Visit Learning Resource →
+            </a>
+        </div>
+
+    </div>
+
+</section>
+    <!-- DISPLAY SETTINGS -->
+
+<div id="displaySettings">
+
+    <button id="settingsToggle" aria-label="Open Display Settings">
+        ⚙️
+    </button>
+
+    <div id="settingsPanel">
+
+        <div class="settings-heading">
+            Display Settings
+        </div>
+
+        <span class="settings-label">Appearance</span>
+
+        <button id="darkModeButton" class="settings-dark-button">
+            🌙 Switch to Dark Mode
+        </button>
+
+        <span class="settings-label">Text Size</span>
+
+        <div class="settings-size-controls">
+            <button id="decreaseText">A−</button>
+            <span id="textSizeValue">100%</span>
+            <button id="increaseText">A+</button>
+        </div>
+
+        <button id="resetSettings">
+            Reset Settings
+        </button>
+
+    
+     </div>
+</div>
+        <footer class="page-footer">
+            <p>WEBTECH LEARN | Web Technology Learning E-Book</p>
+            <p>Excellence Beyond Limits</p>
+        </footer>
+
+    </main>
+</div>
+
+<button id="backToTop" title="Back to Top">↑</button>
+<script src="chapter5.js" defer></script>
+</body>
+</html>

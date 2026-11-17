@@ -1,0 +1,1292 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Chapter 2 | Web Browsers, Servers, and HTTP/HTTPS</title>
+
+    <link rel="stylesheet" href="chapter2.css">
+    <link rel="stylesheet" href="../display-settings.css">
+
+    <script src="../display-settings.js" defer></script>
+    <script src="chapter2.js" defer></script>
+    <link rel="stylesheet" href="ebook-pagination.css">
+<script src="ebook-pagination.js" defer></script>
+</head>
+
+<body>
+
+
+<!-- HEADER -->
+<header class="header">
+    <div class="nav-container">
+
+        <a href="index.html" class="logo">
+            <img src="logo.jpg" alt="BSIT Digital Minds Logo" class="logo-image">
+
+            <span class="logo-text">
+                <small>BSIT | DIGITAL MINDS</small>
+            </span>
+        </a>
+
+        <a href="../pics/3rd yr toc.html" class="back-home">
+            ← Back to Table of Content
+        </a>
+
+    </div>
+ 
+</header>
+
+
+<div class="page-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <h3>CHAPTER 02</h3>
+
+        <p class="sidebar-subtitle">
+            Web Browsers, Servers, and HTTP/HTTPS
+        </p>
+
+       <nav aria-label="Chapter 2 Contents">
+    <a href="#introduction">Introduction</a>
+    <a href="#web-browser">Web Browser</a>
+    <a href="#browser-functions">Browser Functions</a>
+    <a href="#browser-architecture">Browser Architecture</a>
+    <a href="#web-server">Web Server</a>
+    <a href="#server-functions">Server Functions</a>
+    <a href="#server-architecture">Server Architecture</a>
+    <a href="#server-examples">Web Server Examples</a>
+    <a href="#http">HTTP</a>
+    <a href="#https">HTTPS</a>
+    <a href="#comparison">HTTP vs. HTTPS</a>
+    <a href="#request-response">Request and Response</a>
+    <a href="#glossary">Glossary</a>
+    <a href="#learning-resources">Learning Resources</a>
+    <a href="#references">References</a>
+</nav>
+
+<div class="separate-learning-links">
+
+    <a href="chapter2-assesment.html">
+        📋 Chapter 2 Assessment
+    </a>
+
+    <button type="button" id="downloadLessonBtn" class="download-pdf-button">
+        <span>↓</span> Download Lesson PDF
+    </button>
+
+</div>
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- BANNER -->
+        <section class="lesson-banner" id="introduction">
+
+            <span class="lesson-label">CHAPTER 02</span>
+
+            <h1>Web Browsers, Web Servers, and HTTP/HTTPS</h1>
+
+            <p>
+                Understand how web browsers and web servers work together
+                to deliver websites and information through the Internet.
+            </p>
+
+        </section>
+
+
+        <!-- INTRODUCTION -->
+        <section class="content-section">
+
+            <h2>Introduction</h2>
+
+            <p>
+                Every time we visit a website, watch an online video,
+                or search for information, web browsers and web servers
+                work together behind the scenes.
+            </p>
+
+            <p>
+                A web browser allows users to access and view websites,
+                while a web server stores website files and delivers
+                the requested information to the browser.
+            </p>
+
+            <p>
+                Communication between browsers and servers commonly
+                uses HTTP or HTTPS protocols.
+            </p>
+
+            <div class="highlight-box">
+
+                <h3>Learning Objectives</h3>
+
+                <p>At the end of this lesson, students should be able to:</p>
+
+                <ul>
+                    <li>Define a web browser and identify its functions.</li>
+                    <li>Explain the basic architecture of a web browser.</li>
+                    <li>Describe the role and functions of a web server.</li>
+                    <li>Identify common web server architectures.</li>
+                    <li>Differentiate HTTP from HTTPS.</li>
+                    <li>Explain how browsers and servers communicate.</li>
+                </ul>
+
+            </div>
+
+        </section>
+
+
+        <!-- WEB BROWSER -->
+        <section class="content-section" id="web-browser">
+
+            <h2>1. What is a Web Browser?</h2>
+
+            <p>
+                A web browser is an application software used to access,
+                retrieve, and display information available on the
+                World Wide Web.
+            </p>
+
+            <p>
+                It allows users to visit websites by entering a URL
+                (Uniform Resource Locator) in the address bar.
+                A browser can display different types of content,
+                including text, images, audio, video, and animations.
+            </p>
+
+            <figure class="historical-image">
+
+                <img
+                    src="../pics/mirco.jpg"
+                    alt="Google Chrome web browser"
+                    loading="lazy">
+
+                <figcaption>
+                    Google Chrome is an example of a commonly used
+                    web browser for accessing websites.
+                </figcaption>
+
+            </figure>
+
+            <div class="highlight-box">
+
+                <h3>Examples of Web Browsers</h3>
+
+                <p>
+                    Google Chrome, Mozilla Firefox, Microsoft Edge,
+                    Safari, and Opera are examples of commonly used
+                    web browsers.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- BROWSER FUNCTIONS -->
+        <section class="content-section" id="browser-functions">
+
+            <h2>2. Functions of a Web Browser</h2>
+
+            <div class="info-grid">
+
+                <div class="info-card">
+                    <h3>Access Websites</h3>
+                    <p>
+                        Browsers allow users to visit websites by
+                        entering a website address or URL.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Display Web Content</h3>
+                    <p>
+                        They interpret HTML, CSS, and JavaScript
+                        to display webpages.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Navigate the Web</h3>
+                    <p>
+                        Users can move between webpages using links,
+                        navigation buttons, and browser tabs.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Store Information</h3>
+                    <p>
+                        Browsers can store bookmarks, browsing history,
+                        cookies, and cached website resources.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- BROWSER ARCHITECTURE -->
+        <section class="content-section" id="browser-architecture">
+
+            <h2>3. Browser Architecture</h2>
+
+            <p>
+                Browser architecture refers to the internal components
+                that work together to process and display web content.
+            </p>
+
+            <figure class="historical-image">
+
+                <img
+                    src="../pics/browser.jpg"
+                    alt="Browser rendering architecture"
+                    loading="lazy">
+
+                <figcaption>
+                    Browser rendering architecture showing how webpage
+                    content is processed and displayed.
+                </figcaption>
+
+            </figure>
+
+            <div class="detail-card">
+
+                <h4>Controller or Dispatcher</h4>
+
+                <p>
+                    The controller manages user input and coordinates
+                    the actions of the browser components.
+                </p>
+
+            </div>
+
+            <div class="detail-card">
+
+                <h4>Interpreter</h4>
+
+                <p>
+                    The interpreter processes instructions and
+                    interprets webpage content so it can be displayed.
+                </p>
+
+            </div>
+
+            <div class="detail-card">
+
+                <h4>Client Programs</h4>
+
+                <p>
+                    Client programs handle communication through
+                    different protocols used to retrieve information
+                    from remote computers.
+                </p>
+
+            </div>
+
+            <div class="highlight-box">
+
+                <h3>Important Information</h3>
+
+                <p>
+                    HTML is essential for displaying webpage structure.
+                    Modern browsers also process CSS for presentation
+                    and JavaScript for webpage behavior.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- WEB SERVER -->
+        <section class="content-section" id="web-server">
+
+            <h2>4. What is a Web Server?</h2>
+
+            <p>
+                A web server is a computer system or software that
+                stores, processes, and delivers website content
+                to users through the Internet.
+            </p>
+
+            <p>
+                When a user requests a webpage, the web server
+                receives the request, processes it, and sends
+                the requested files or generated content back
+                to the user's browser.
+            </p>
+
+            <figure class="historical-image">
+
+                <img
+                    src="../pics/web.jpg"
+                    alt="Computer servers in a server rack"
+                    loading="lazy">
+
+                <figcaption>
+                    Server computers store and deliver website files
+                    and information to users.
+                </figcaption>
+
+            </figure>
+
+            <div class="highlight-box">
+
+                <h3>Simple Example</h3>
+
+                <p>
+                    When you open a school website, your browser
+                    sends a request to the website's server.
+                    The server responds by sending the webpage
+                    files so your browser can display them.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- SERVER FUNCTIONS -->
+        <section class="content-section" id="server-functions">
+
+            <h2>5. Functions of a Web Server</h2>
+
+            <div class="info-grid">
+
+                <div class="info-card">
+                    <h3>Store Website Files</h3>
+                    <p>
+                        Stores HTML, CSS, JavaScript, images,
+                        videos, and other website resources.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Process Requests</h3>
+                    <p>
+                        Receives and processes requests sent
+                        by web browsers.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Deliver Webpages</h3>
+                    <p>
+                        Sends requested website files and
+                        information to the browser.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Generate Responses</h3>
+                    <p>
+                        Can run server-side scripts and
+                        communicate with databases to
+                        generate dynamic content.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="highlight-box">
+
+                <h3>HTTP 404 Error</h3>
+
+                <p>
+                    A 404 Not Found error appears when a server
+                    cannot find the requested webpage or resource.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- SERVER ARCHITECTURE -->
+        <section class="content-section" id="server-architecture">
+
+            <h2>6. Web Server Architecture</h2>
+
+            <p>
+                Web servers use different architectures to handle
+                multiple requests from users.
+            </p>
+
+            <figure class="historical-image">
+
+                <img
+                    src="../pics/client.jpg"
+                    alt="Client and server architecture diagram"
+                    loading="lazy">
+
+                <figcaption>
+                    Client-server architecture showing the relationship
+                    between a client and a server.
+                </figcaption>
+
+            </figure>
+
+            <div class="detail-card">
+
+                <h4>Concurrent Architecture</h4>
+
+                <p>
+                    A concurrent server handles multiple client
+                    requests at the same time.
+                </p>
+
+                <ul>
+                    <li>
+                        <strong>Multi-process:</strong>
+                        Uses separate processes to handle requests.
+                    </li>
+
+                    <li>
+                        <strong>Multi-threaded:</strong>
+                        Uses multiple threads within a process to handle tasks.
+                    </li>
+
+                    <li>
+                        <strong>Hybrid:</strong>
+                        Combines multiple processes and multiple threads.
+                    </li>
+                </ul>
+
+            </div>
+
+            <div class="detail-card">
+
+                <h4>Single-Process Event-Driven Architecture</h4>
+
+                <p>
+                    Uses an event-driven approach to handle multiple
+                    connections without creating a separate process
+                    for every request.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- SERVER EXAMPLES -->
+        <section class="content-section" id="server-examples">
+
+            <h2>7. Examples of Web Server Software</h2>
+
+            <div class="info-grid">
+
+                <div class="info-card">
+                    <h3>Apache HTTP Server</h3>
+                    <p>
+                        A widely used open-source web server
+                        known for flexibility and extensibility.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Microsoft IIS</h3>
+                    <p>
+                        Internet Information Services is a
+                        web server software developed by Microsoft.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Lighttpd</h3>
+                    <p>
+                        A lightweight web server designed
+                        for efficient performance.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Apache Tomcat</h3>
+                    <p>
+                        A server environment commonly used
+                        to run Java-based web applications.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- HTTP -->
+        <section class="content-section" id="http">
+
+            <h2>8. HTTP – Hypertext Transfer Protocol</h2>
+
+            <p>
+                HTTP stands for Hypertext Transfer Protocol.
+                It is an application-layer protocol used for
+                communication between web browsers and web servers.
+            </p>
+
+            <p>
+                HTTP defines how requests and responses are
+                formatted and transmitted across the web.
+            </p>
+
+            <figure class="historical-image">
+
+                <img
+                    src="../pics/https.jpg"
+                    alt="HTTP protocol communication layers"
+                    loading="lazy">
+
+                <figcaption>
+                    HTTP is an application-layer protocol that allows
+                    browsers and servers to exchange information.
+                </figcaption>
+
+            </figure>
+
+            <div class="highlight-box">
+
+                <h3>How HTTP Works</h3>
+
+                <p>
+                    A browser sends an HTTP request to a web server.
+                    The server processes the request and returns
+                    an HTTP response containing the requested
+                    information or an error message.
+                </p>
+
+            </div>
+
+            <h3>Common HTTP Methods</h3>
+
+            <div class="table-wrapper">
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Method</th>
+                            <th>Purpose</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>GET</td>
+                            <td>Requests data or a resource from a server.</td>
+                        </tr>
+
+                        <tr>
+                            <td>POST</td>
+                            <td>Sends data to a server for processing.</td>
+                        </tr>
+
+                        <tr>
+                            <td>PUT</td>
+                            <td>Creates or replaces a resource at a specified location.</td>
+                        </tr>
+
+                        <tr>
+                            <td>DELETE</td>
+                            <td>Requests the deletion of a specified resource.</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- HTTPS -->
+        <section class="content-section" id="https">
+
+            <h2>9. HTTPS – Hypertext Transfer Protocol Secure</h2>
+
+            <p>
+                HTTPS stands for Hypertext Transfer Protocol Secure.
+                It is the secure version of HTTP.
+            </p>
+
+            <p>
+                HTTPS uses encryption through TLS (Transport Layer
+                Security) to protect information exchanged between
+                a browser and a web server.
+            </p>
+
+            <figure class="historical-image">
+
+                <img
+                    src="../pics/httpre.jpg"
+                    alt="Internet security illustration"
+                    loading="lazy">
+
+                <figcaption>
+                    HTTPS helps protect information exchanged
+                    between browsers and web servers.
+                </figcaption>
+
+            </figure>
+
+            <div class="highlight-box">
+
+                <h3>Why is HTTPS Important?</h3>
+
+                <ul>
+                    <li>Protects sensitive information during transmission.</li>
+                    <li>Helps prevent unauthorized reading of transmitted data.</li>
+                    <li>Helps verify the identity of the website through digital certificates.</li>
+                    <li>Provides protection against certain types of data interception and modification.</li>
+                </ul>
+
+            </div>
+
+        </section>
+
+
+        <!-- HTTP VS HTTPS -->
+        <section class="content-section" id="comparison">
+
+            <h2>10. HTTP vs. HTTPS</h2>
+
+            <figure class="historical-image">
+
+                <img
+                    src="../pics/http.jpg"
+                    alt="HTTP and HTTPS comparison"
+                    loading="lazy">
+
+                <figcaption>
+                    HTTP and HTTPS differ in how they protect
+                    information during communication.
+                </figcaption>
+
+            </figure>
+
+            <div class="table-wrapper">
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>HTTP</th>
+                            <th>HTTPS</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>Full Meaning</td>
+                            <td>Hypertext Transfer Protocol</td>
+                            <td>Hypertext Transfer Protocol Secure</td>
+                        </tr>
+
+                        <tr>
+                            <td>Security</td>
+                            <td>Does not provide TLS encryption by itself.</td>
+                            <td>Uses TLS encryption.</td>
+                        </tr>
+
+                        <tr>
+                            <td>Default Port</td>
+                            <td>80</td>
+                            <td>443</td>
+                        </tr>
+
+                        <tr>
+                            <td>Website Address</td>
+                            <td>http://</td>
+                            <td>https://</td>
+                        </tr>
+
+                        <tr>
+                            <td>Recommended Use</td>
+                            <td>Not suitable for sensitive information without additional protection.</td>
+                            <td>Recommended for websites, especially those handling private information.</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- REQUEST AND RESPONSE -->
+        <section class="content-section" id="request-response">
+
+            <h2>11. How Browsers and Servers Communicate</h2>
+
+            <p>
+                Web browsers and web servers communicate using
+                a request-and-response process.
+            </p>
+
+            <figure class="historical-image">
+
+                <img
+                    src="../pics/req.jpg"
+                    alt="HTTP request and response diagram"
+                    loading="lazy">
+
+                <figcaption>
+                    HTTP request and response process between
+                    a web browser and a web server.
+                </figcaption>
+
+            </figure>
+
+            <div class="process-flow">
+
+                <div class="process-step">
+                    <span>1</span>
+                    <h3>User Opens a Website</h3>
+                    <p>The user enters a URL in the browser.</p>
+                </div>
+
+                <div class="process-arrow">↓</div>
+
+                <div class="process-step">
+                    <span>2</span>
+                    <h3>Browser Sends a Request</h3>
+                    <p>The browser sends an HTTP or HTTPS request to the server.</p>
+                </div>
+
+                <div class="process-arrow">↓</div>
+
+                <div class="process-step">
+                    <span>3</span>
+                    <h3>Server Processes the Request</h3>
+                    <p>The server locates or generates the requested resource.</p>
+                </div>
+
+                <div class="process-arrow">↓</div>
+
+                <div class="process-step">
+                    <span>4</span>
+                    <h3>Server Sends a Response</h3>
+                    <p>The server returns the requested content or an error response.</p>
+                </div>
+
+                <div class="process-arrow">↓</div>
+
+                <div class="process-step">
+                    <span>5</span>
+                    <h3>Browser Displays the Website</h3>
+                    <p>The browser processes the received content and displays the webpage.</p>
+                </div>
+
+            </div>
+
+            <div class="highlight-box">
+
+                <h3>Example of an HTTP Request</h3>
+
+                <pre><code>GET /index.html HTTP/1.1
+Host: www.example.com</code></pre>
+
+                <p>
+                    This example shows a browser requesting
+                    the index.html page from a web server.
+                </p>
+
+            </div>
+
+        </section>
+        <!-- GLOSSARY -->
+<section class="content-section" id="glossary">
+
+    <span class="lesson-label">CHAPTER 02 VOCABULARY</span>
+
+    <h2>Glossary of Terms</h2>
+
+    <p>
+        This glossary presents important terms and definitions
+        discussed in Chapter 2: Web Browsers, Web Servers,
+        and HTTP/HTTPS.
+    </p>
+
+    <div class="glossary-list">
+
+        <div class="glossary-item">
+            <h3>1. Web Browser</h3>
+            <p>
+                A software application used to access, retrieve,
+                and display information from the World Wide Web.
+            </p>
+        </div>
+
+        <div class="glossary-item">
+            <h3>2. Web Server</h3>
+            <p>
+                A computer system or software that stores,
+                processes, and delivers website content to users.
+            </p>
+        </div>
+
+        <div class="glossary-item">
+            <h3>3. URL</h3>
+            <p>
+                Uniform Resource Locator. The address used
+                to locate a resource on the Internet.
+            </p>
+        </div>
+
+        <div class="glossary-item">
+            <h3>4. HTML</h3>
+            <p>
+                Hypertext Markup Language. The standard markup
+                language used to structure webpage content.
+            </p>
+        </div>
+
+        <div class="glossary-item">
+            <h3>5. CSS</h3>
+            <p>
+                Cascading Style Sheets. A language used to
+                control the appearance and layout of webpages.
+            </p>
+        </div>
+
+        <div class="glossary-item">
+            <h3>6. JavaScript</h3>
+            <p>
+                A programming language used to add interactive
+                behavior and dynamic features to webpages.
+            </p>
+        </div>
+
+        <div class="glossary-item">
+            <h3>7. Browser Architecture</h3>
+            <p>
+                The internal components of a browser that work
+                together to process and display web content.
+            </p>
+        </div>
+
+        <div class="glossary-item">
+            <h3>8. Interpreter</h3>
+            <p>
+                A component that processes and interprets
+                instructions or webpage content.
+            </p>
+        </div>
+
+        <div class="glossary-item">
+            <h3>9. Client</h3>
+            <p>
+                A computer or application that requests
+                information or services from a server.
+            </p>
+        </div>
+
+        <div class="glossary-item">
+            <h3>10. Server</h3>
+            <p>
+                A computer or software that provides resources
+                and services to connected clients.
+            </p>
+        </div>
+
+        <div class="glossary-item">
+            <h3>11. HTTP</h3>
+            <p>
+                Hypertext Transfer Protocol. An application-layer
+                protocol used for communication between browsers
+                and web servers.
+            </p>
+        </div>
+
+        <div class="glossary-item">
+            <h3>12. HTTPS</h3>
+            <p>
+                Hypertext Transfer Protocol Secure. The secure
+                version of HTTP that uses TLS to protect data
+                during transmission.
+            </p>
+        </div>
+
+        <div class="glossary-item">
+            <h3>13. TLS</h3>
+            <p>
+                Transport Layer Security. A security protocol
+                that helps protect information exchanged
+                over a network.
+            </p>
+        </div>
+
+        <div class="glossary-item">
+            <h3>14. Encryption</h3>
+            <p>
+                The process of converting information into
+                a protected form to prevent unauthorized reading.
+            </p>
+        </div>
+
+        <div class="glossary-item">
+            <h3>15. HTTP Request</h3>
+            <p>
+                A message sent by a browser to a server
+                asking for a resource or an action.
+            </p>
+        </div>
+
+        <div class="glossary-item">
+            <h3>16. HTTP Response</h3>
+            <p>
+                A message sent by a server back to a browser
+                containing the result of a request.
+            </p>
+        </div>
+
+        <div class="glossary-item">
+            <h3>17. GET</h3>
+            <p>
+                An HTTP method used to request data
+                or a resource from a server.
+            </p>
+        </div>
+
+        <div class="glossary-item">
+            <h3>18. POST</h3>
+            <p>
+                An HTTP method used to send data
+                to a server for processing.
+            </p>
+        </div>
+
+        <div class="glossary-item">
+            <h3>19. 404 Not Found</h3>
+            <p>
+                An HTTP status code indicating that the
+                requested resource could not be found.
+            </p>
+        </div>
+
+        <div class="glossary-item">
+            <h3>20. Web Server Architecture</h3>
+            <p>
+                The design and organization of server components
+                used to process and manage client requests.
+            </p>
+        </div>
+
+        <div class="glossary-item">
+            <h3>21. Apache HTTP Server</h3>
+            <p>
+                A widely used open-source web server software
+                designed to deliver web content.
+            </p>
+        </div>
+
+        <div class="glossary-item">
+            <h3>22. Microsoft IIS</h3>
+            <p>
+                Internet Information Services, a web server
+                software developed by Microsoft.
+            </p>
+        </div>
+
+        <div class="glossary-item">
+            <h3>23. Lighttpd</h3>
+            <p>
+                A lightweight web server designed
+                for efficient performance.
+            </p>
+        </div>
+
+        <div class="glossary-item">
+            <h3>24. Apache Tomcat</h3>
+            <p>
+                A server environment commonly used
+                to run Java-based web applications.
+            </p>
+        </div>
+
+    </div>
+
+    <div class="highlight-box">
+        <h3>Learning Tip</h3>
+        <p>
+            Review these terms to understand how browsers,
+            servers, and HTTP/HTTPS work together when
+            accessing websites.
+        </p>
+    </div>
+
+</section>
+<!-- LEARNING RESOURCES -->
+<section class="content-section" id="learning-resources">
+
+    <span class="lesson-label">CHAPTER 02 STUDY MATERIALS</span>
+
+    <h2>Learning Resources</h2>
+
+    <p>
+        Explore these additional references to improve your
+        understanding of web browsers, web servers,
+        HTTP, and HTTPS.
+    </p>
+
+    <div class="learning-resource-list">
+
+        <article class="learning-resource-card">
+            <div class="resource-icon">🌐</div>
+
+            <div class="resource-info">
+                <h3>How the Web Works</h3>
+
+                <p>
+                    Understand how browsers, servers, and
+                    the Internet communicate when accessing websites.
+                </p>
+
+                <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Environment_setup/How_the_web_works"
+                   target="_blank" rel="noopener noreferrer">
+                    Explore Resource →
+                </a>
+            </div>
+        </article>
+
+        <article class="learning-resource-card">
+            <div class="resource-icon">💻</div>
+
+            <div class="resource-info">
+                <h3>Web Browser Basics</h3>
+
+                <p>
+                    Learn about browsers and how they retrieve
+                    and display website content.
+                </p>
+
+                <a href="https://developer.mozilla.org/en-US/docs/Web"
+                   target="_blank" rel="noopener noreferrer">
+                    Explore Resource →
+                </a>
+            </div>
+        </article>
+
+        <article class="learning-resource-card">
+            <div class="resource-icon">🔗</div>
+
+            <div class="resource-info">
+                <h3>HTTP Overview</h3>
+
+                <p>
+                    Study HTTP requests, responses, methods,
+                    and how communication works on the Web.
+                </p>
+
+                <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview"
+                   target="_blank" rel="noopener noreferrer">
+                    Explore Resource →
+                </a>
+            </div>
+        </article>
+
+        <article class="learning-resource-card">
+            <div class="resource-icon">🔒</div>
+
+            <div class="resource-info">
+                <h3>HTTPS and Website Security</h3>
+
+                <p>
+                    Understand how HTTPS and TLS help
+                    protect communication between browsers
+                    and web servers.
+                </p>
+
+                <a href="https://developer.mozilla.org/en-US/docs/Glossary/HTTPS"
+                   target="_blank" rel="noopener noreferrer">
+                    Explore Resource →
+                </a>
+            </div>
+        </article>
+
+        <article class="learning-resource-card">
+            <div class="resource-icon">🖥️</div>
+
+            <div class="resource-info">
+                <h3>Apache HTTP Server Documentation</h3>
+
+                <p>
+                    Explore documentation about Apache
+                    and its web server features.
+                </p>
+
+                <a href="https://httpd.apache.org/docs/"
+                   target="_blank" rel="noopener noreferrer">
+                    Explore Resource →
+                </a>
+            </div>
+        </article>
+
+        <article class="learning-resource-card">
+            <div class="resource-icon">📘</div>
+
+            <div class="resource-info">
+                <h3>Microsoft IIS Documentation</h3>
+
+                <p>
+                    Learn about Microsoft's Internet
+                    Information Services web server.
+                </p>
+
+                <a href="https://learn.microsoft.com/en-us/iis/"
+                   target="_blank" rel="noopener noreferrer">
+                    Explore Resource →
+                </a>
+            </div>
+        </article>
+
+    </div>
+
+    <div class="highlight-box">
+        <h3>Study Recommendation</h3>
+
+        <p>
+            Read the additional materials and practice identifying
+            the differences between browsers, servers, HTTP,
+            and HTTPS. Review the request-and-response process
+            to strengthen your understanding.
+        </p>
+    </div>
+
+</section>
+
+
+        <!-- REFERENCES -->
+        <section class="content-section" id="references">
+
+            <h2>References</h2>
+
+            <div class="detail-card">
+
+                <h4>MDN Web Docs – How the Web Works</h4>
+
+                <p>
+                    Introduction to how browsers, servers, and the web communicate.
+                </p>
+
+                <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Environment_setup/How_the_web_works"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Visit MDN Web Docs
+                </a>
+
+            </div>
+
+            <div class="detail-card">
+
+                <h4>MDN Web Docs – HTTP</h4>
+
+                <p>Overview of HTTP and how it works.</p>
+
+                <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Visit HTTP Documentation
+                </a>
+
+            </div>
+
+            <div class="detail-card">
+
+                <h4>MDN Web Docs – HTTPS</h4>
+
+                <p>Information about secure communication on the web.</p>
+
+                <a href="https://developer.mozilla.org/en-US/docs/Glossary/HTTPS"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Visit HTTPS Documentation
+                </a>
+
+            </div>
+
+            <div class="detail-card">
+
+                <h4>Apache HTTP Server Documentation</h4>
+
+                <p>Documentation about Apache web server software.</p>
+
+                <a href="https://httpd.apache.org/docs/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Visit Apache Documentation
+                </a>
+
+            </div>
+
+        </section>
+
+
+
+
+
+      
+        <!-- BACK TO TOP -->
+        <button id="backToTop"
+                type="button"
+                aria-label="Back to top"
+                title="Back to Top">
+            ↑
+        </button>
+
+    </main>
+</div>
+
+<!-- DISPLAY SETTINGS -->
+<div id="displaySettings">
+
+    <button id="settingsToggle"
+            type="button"
+            aria-label="Display settings">
+        ⚙
+    </button>
+
+    <div id="settingsPanel">
+
+        <div class="settings-heading">
+            Display Settings
+        </div>
+
+        <span class="settings-label">Appearance</span>
+
+        <button id="darkModeButton"
+                class="settings-dark-button"
+                type="button">
+            🌙 Switch to Dark Mode
+        </button>
+
+        <span class="settings-label">Text Size</span>
+
+        <div class="settings-size-controls">
+            <button id="decreaseText" type="button">A−</button>
+            <span id="textSizeValue">100%</span>
+            <button id="increaseText" type="button">A+</button>
+        </div>
+
+        <button id="resetSettings" type="button">
+            Reset Settings
+        </button>
+
+ </div>
+</div>
+        <footer class="page-footer">
+            <p>WEBTECH LEARN | Web Technology Learning E-Book</p>
+            <p>Excellence Beyond Limits</p>
+        </footer>
+
+    </main>
+</div>
+
+
+</body>
+</html>

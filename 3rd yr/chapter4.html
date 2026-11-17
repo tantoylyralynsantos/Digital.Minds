@@ -1,0 +1,1082 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lesson 4 -CSS - Styling and Layout </title>
+
+    <link rel="stylesheet" href="chapter4.css">
+    <link rel="stylesheet" href="../display-settings.css">
+    
+
+    <script src="../display-settings.js" defer></script>
+ 
+    <script src="chapter4-assessment.js" defer></script>
+</head>
+<body>
+<!-- HEADER -->
+<header class="header">
+    <div class="nav-container">
+
+        <a href="index.html" class="logo">
+            <img src="logo.jpg" alt="BSIT Digital Minds Logo" class="logo-image">
+
+            <span class="logo-text">
+                <small>BSIT | DIGITAL MINDS</small>
+            </span>
+        </a>
+
+        <a href="../pics/3rd yr toc.html" class="back-home">
+            ← Back to Table of Content
+        </a>
+
+    </div>
+    <link rel="stylesheet" href="ebook-pagination.css">
+<script src="ebook-pagination.js" defer></script>
+</header>
+
+<div class="page-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <h3>LESSON 4</h3>
+        <p class="sidebar-subtitle">CSS - Styling and Layout</p>
+
+        <nav>
+            <a href="#introduction">Introduction</a>
+            <a href="#css-basics">CSS Basics</a>
+            <a href="#text-fonts">Styling Text and Fonts</a>
+            <a href="#box-model">CSS Box Model</a>
+            <a href="#positioning">Positioning and Display</a>
+            <a href="#flexbox">Flexbox</a>
+            <a href="#grid">CSS Grid Layout</a>
+            <a href="#responsive">Responsive Design</a>
+            <a href="#advanced">Advanced CSS Concepts</a>
+            <a href="#best-practices">Best Practices</a>
+            <a href="#frameworks">CSS Frameworks</a>
+            <a href="#resources">Learning Resources</a>
+            
+            <a href="#glossary">Glossary</a>
+            <a href="#references">References</a>
+        </nav>
+    <div class="separate-learning-links">
+    <a href="chapter4-assessment.html">📋 Chapter 4 Assessment</a>
+</div>
+
+<!-- DOWNLOAD PDF BUTTON -->
+<div class="sidebar-download">
+    <button type="button" id="downloadPDF">
+        <span>↓</span>
+        Download Lesson PDF
+    </button>
+</div>
+    </aside>
+    
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- BANNER -->
+        <section class="lesson-banner" id="introduction">
+            <span class="lesson-label">CHAPTER 04</span>
+            <h1>CSS - Styling and Layout</h1>
+            <p>
+                Learn how Cascading Style Sheets (CSS) transform
+                basic HTML documents into attractive, organized,
+                responsive, and user-friendly websites.
+            </p>
+        </section>
+
+        <!-- INTRODUCTION -->
+        <section class="content-section">
+            <h2>Introduction</h2>
+
+            <p>
+                Cascading Style Sheets (CSS) is a stylesheet language
+                used to describe how HTML elements should appear on
+                a webpage. It controls the colors, fonts, spacing,
+                layouts, backgrounds, and overall visual presentation
+                of a website.
+            </p>
+
+            <p>
+                CSS works together with HTML to create organized
+                and attractive websites. While HTML provides the
+                structure and content, CSS controls the appearance
+                and layout of those elements.
+            </p>
+
+            <div class="highlight-box">
+                <h3>Learning Objectives</h3>
+                <p>At the end of this lesson, students should be able to:</p>
+                <ul>
+                    <li>Explain the basic concepts and functions of CSS.</li>
+                    <li>Identify selectors, properties, and values.</li>
+                    <li>Apply text styling and CSS box model properties.</li>
+                    <li>Understand positioning, display, Flexbox, and Grid.</li>
+                    <li>Create responsive layouts using media queries.</li>
+                    <li>Identify advanced CSS concepts and frameworks.</li>
+                    <li>Apply CSS best practices when developing websites.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- CSS BASICS -->
+        <section class="content-section" id="css-basics">
+            <h2>1. CSS Basics</h2>
+
+            <p>
+                CSS uses rules to apply styles to HTML elements.
+                A CSS rule contains a selector and a declaration
+                block with properties and values.
+            </p>
+
+            <div class="code-example">
+                <h3>Basic CSS Syntax</h3>
+                <pre><code>p {
+    color: blue;
+    font-size: 16px;
+}</code></pre>
+                <p>
+                    In this example, <strong>p</strong> is the selector,
+                    <strong>color</strong> and <strong>font-size</strong>
+                    are properties, and blue and 16px are their values.
+                </p>
+            </div>
+
+            <h3>Basic CSS Selectors</h3>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Selector</th>
+                            <th>Example</th>
+                            <th>Purpose</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Type Selector</td>
+                            <td>div { }</td>
+                            <td>Selects all elements with the specified tag.</td>
+                        </tr>
+                        <tr>
+                            <td>Class Selector</td>
+                            <td>.container { }</td>
+                            <td>Selects elements with a specific class.</td>
+                        </tr>
+                        <tr>
+                            <td>ID Selector</td>
+                            <td>#header { }</td>
+                            <td>Selects the element with a specific ID.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>CSS Combinators</h3>
+            <p>Combinators describe relationships between selectors.</p>
+
+            <ul>
+                <li><strong>Descendant Selector:</strong> div p selects paragraph elements inside a div.</li>
+                <li><strong>Child Selector:</strong> div &gt; p selects direct paragraph children of a div.</li>
+                <li><strong>Adjacent Sibling:</strong> h1 + p selects the paragraph immediately after an h1.</li>
+                <li><strong>General Sibling:</strong> h1 ~ p selects paragraph siblings following an h1.</li>
+            </ul>
+
+            <h3>Pseudo-Classes and Pseudo-Elements</h3>
+
+            <div class="info-grid">
+                <article class="info-card">
+                    <h3>Pseudo-Classes</h3>
+                    <p>
+                        Define a special state of an element, such as
+                        when a user hovers over or focuses on it.
+                    </p>
+                    <pre><code>a:hover {
+    color: blue;
+}</code></pre>
+                </article>
+
+                <article class="info-card">
+                    <h3>Pseudo-Elements</h3>
+                    <p>
+                        Style a specific part of an element, such as
+                        the first letter or first line.
+                    </p>
+                    <pre><code>p::first-letter {
+    font-size: 2em;
+}</code></pre>
+                </article>
+            </div>
+        </section>
+
+        <!-- TEXT AND FONTS -->
+        <section class="content-section" id="text-fonts">
+            <h2>2. Styling Text and Fonts</h2>
+
+            <p>
+                CSS provides different properties for controlling
+                the appearance and readability of text on a webpage.
+            </p>
+
+            <h3>Font Properties</h3>
+
+            <div class="detail-card">
+                <h4>font-family</h4>
+                <p>Specifies the typeface or font used for text.</p>
+                <pre><code>p {
+    font-family: Arial, sans-serif;
+}</code></pre>
+            </div>
+
+            <div class="detail-card">
+                <h4>font-size</h4>
+                <p>Controls the size of the text using units such as px, em, rem, or vw.</p>
+                <pre><code>p {
+    font-size: 16px;
+}</code></pre>
+            </div>
+
+            <div class="detail-card">
+                <h4>font-weight</h4>
+                <p>Controls the thickness or boldness of text.</p>
+                <pre><code>p {
+    font-weight: bold;
+}</code></pre>
+            </div>
+
+            <div class="detail-card">
+                <h4>line-height</h4>
+                <p>Controls the vertical space between lines of text.</p>
+                <pre><code>p {
+    line-height: 1.6;
+}</code></pre>
+            </div>
+
+            <h3>Text Properties</h3>
+
+            <ul>
+                <li><strong>color:</strong> Changes the color of text.</li>
+                <li><strong>text-align:</strong> Aligns text to the left, right, center, or justified.</li>
+                <li><strong>text-transform:</strong> Changes text to uppercase, lowercase, or capitalize.</li>
+                <li><strong>text-decoration:</strong> Adds underline, overline, or line-through effects.</li>
+            </ul>
+
+            <div class="code-example">
+                <h3>Example of Text Styling</h3>
+                <pre><code>h1 {
+    color: #07376f;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.6;
+}</code></pre>
+            </div>
+        </section>
+
+        <!-- BOX MODEL -->
+        <section class="content-section" id="box-model">
+            <h2>3. CSS Box Model</h2>
+
+            <p>
+                The CSS Box Model explains how every HTML element
+                is displayed as a rectangular box. It consists of
+                four main parts: content, padding, border, and margin.
+            </p>
+
+            <div class="box-model-demo">
+                <div class="box-margin">
+                    <span>MARGIN</span>
+                    <div class="box-border">
+                        <span>BORDER</span>
+                        <div class="box-padding">
+                            <span>PADDING</span>
+                            <div class="box-content">
+                                CONTENT
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-grid">
+                <article class="info-card">
+                    <h3>Content</h3>
+                    <p>The actual information inside the element, such as text or images.</p>
+                </article>
+
+                <article class="info-card">
+                    <h3>Padding</h3>
+                    <p>The space between the content and the border.</p>
+                </article>
+
+                <article class="info-card">
+                    <h3>Border</h3>
+                    <p>The boundary surrounding the padding and content.</p>
+                </article>
+
+                <article class="info-card">
+                    <h3>Margin</h3>
+                    <p>The space outside the border that separates elements.</p>
+                </article>
+            </div>
+
+            <h3>Box Model Properties</h3>
+
+            <pre><code>div {
+    width: 200px;
+    height: 150px;
+    padding: 20px;
+    border: 2px solid black;
+    margin: 10px;
+    box-sizing: border-box;
+}</code></pre>
+
+            <div class="highlight-box">
+                <h3>Remember!</h3>
+                <p>
+                    The <strong>box-sizing: border-box;</strong> property
+                    includes padding and border within the specified
+                    width and height of an element.
+                </p>
+            </div>
+        </section>
+
+        <!-- POSITIONING -->
+        <section class="content-section" id="positioning">
+            <h2>4. Positioning and Display</h2>
+
+            <h3>CSS Positioning</h3>
+
+            <p>
+                The position property determines how an element
+                is placed within a webpage.
+            </p>
+
+            <div class="detail-card">
+                <h4>Static</h4>
+                <p>The default position. Elements follow the normal document flow.</p>
+                <pre><code>div {
+    position: static;
+}</code></pre>
+            </div>
+
+            <div class="detail-card">
+                <h4>Relative</h4>
+                <p>Positions an element relative to its normal position.</p>
+                <pre><code>div {
+    position: relative;
+    top: 10px;
+    left: 20px;
+}</code></pre>
+            </div>
+
+            <div class="detail-card">
+                <h4>Absolute</h4>
+                <p>Positions an element relative to its nearest positioned ancestor.</p>
+                <pre><code>div {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+}</code></pre>
+            </div>
+
+            <div class="detail-card">
+                <h4>Fixed</h4>
+                <p>Positions an element relative to the browser window, even while scrolling.</p>
+                <pre><code>div {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}</code></pre>
+            </div>
+
+            <div class="detail-card">
+                <h4>Sticky</h4>
+                <p>Allows an element to stick to a specified position while scrolling.</p>
+                <pre><code>div {
+    position: sticky;
+    top: 0;
+}</code></pre>
+            </div>
+
+            <h3>CSS Display Property</h3>
+
+            <div class="info-grid">
+                <article class="info-card">
+                    <h3>Block</h3>
+                    <p>Takes up the full available width and starts on a new line.</p>
+                    <pre><code>div {
+    display: block;
+}</code></pre>
+                </article>
+
+                <article class="info-card">
+                    <h3>Inline</h3>
+                    <p>Takes only the space needed and stays within the same line.</p>
+                    <pre><code>span {
+    display: inline;
+}</code></pre>
+                </article>
+
+                <article class="info-card">
+                    <h3>Inline-Block</h3>
+                    <p>Stays inline while allowing width and height to be controlled.</p>
+                    <pre><code>div {
+    display: inline-block;
+}</code></pre>
+                </article>
+
+                <article class="info-card">
+                    <h3>Flex and Grid</h3>
+                    <p>Modern layout systems for arranging webpage elements.</p>
+                    <pre><code>.container {
+    display: flex;
+}</code></pre>
+                </article>
+            </div>
+        </section>
+
+        <!-- FLEXBOX -->
+        <section class="content-section" id="flexbox">
+            <h2>5. Flexbox (Flexible Box Layout)</h2>
+
+            <p>
+                Flexbox is a one-dimensional CSS layout model used
+                to arrange and align items in a row or column.
+                It provides flexible control over spacing,
+                alignment, and item sizing.
+            </p>
+
+            <h3>Flexbox Container Properties</h3>
+
+            <div class="detail-card">
+                <h4>display: flex</h4>
+                <p>Activates Flexbox on a container.</p>
+                <pre><code>.container {
+    display: flex;
+}</code></pre>
+            </div>
+
+            <div class="detail-card">
+                <h4>flex-direction</h4>
+                <p>Determines whether items are arranged in a row or column.</p>
+                <pre><code>.container {
+    display: flex;
+    flex-direction: row;
+}</code></pre>
+            </div>
+
+            <div class="detail-card">
+                <h4>justify-content</h4>
+                <p>Controls the alignment and distribution of items along the main axis.</p>
+                <pre><code>.container {
+    justify-content: space-between;
+}</code></pre>
+            </div>
+
+            <div class="detail-card">
+                <h4>align-items</h4>
+                <p>Aligns items along the cross axis.</p>
+                <pre><code>.container {
+    align-items: center;
+}</code></pre>
+            </div>
+
+            <div class="detail-card">
+                <h4>flex-wrap</h4>
+                <p>Allows items to move to another line when space is limited.</p>
+                <pre><code>.container {
+    flex-wrap: wrap;
+}</code></pre>
+            </div>
+
+            <h3>Flexbox Item Properties</h3>
+
+            <ul>
+                <li><strong>flex-grow:</strong> Determines how much an item can grow.</li>
+                <li><strong>flex-shrink:</strong> Determines how much an item can shrink.</li>
+                <li><strong>flex-basis:</strong> Sets the initial size of an item.</li>
+                <li><strong>align-self:</strong> Controls the alignment of one individual item.</li>
+                <li><strong>order:</strong> Changes the visual order of flex items.</li>
+            </ul>
+
+            <div class="live-demo">
+                <h3>Flexbox Visual Example</h3>
+                <div class="flex-demo">
+                    <div>Item 1</div>
+                    <div>Item 2</div>
+                    <div>Item 3</div>
+                </div>
+                <p>These items are arranged horizontally using Flexbox.</p>
+            </div>
+        </section>
+
+        <!-- GRID -->
+        <section class="content-section" id="grid">
+            <h2>6. CSS Grid Layout</h2>
+
+            <p>
+                CSS Grid is a two-dimensional layout system that
+                allows developers to arrange elements in rows
+                and columns at the same time.
+            </p>
+
+            <h3>Important Grid Properties</h3>
+
+            <div class="detail-card">
+                <h4>grid-template-columns</h4>
+                <p>Defines the number and size of columns.</p>
+                <pre><code>.container {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+}</code></pre>
+            </div>
+
+            <div class="detail-card">
+                <h4>grid-template-rows</h4>
+                <p>Defines the size of grid rows.</p>
+                <pre><code>.container {
+    grid-template-rows: auto 100px;
+}</code></pre>
+            </div>
+
+            <div class="detail-card">
+                <h4>gap</h4>
+                <p>Controls the spacing between rows and columns.</p>
+                <pre><code>.container {
+    display: grid;
+    gap: 10px;
+}</code></pre>
+            </div>
+
+            <div class="detail-card">
+                <h4>grid-template-areas</h4>
+                <p>Assigns named areas to parts of a grid layout.</p>
+                <pre><code>.container {
+    display: grid;
+    grid-template-areas:
+        "header header"
+        "sidebar main"
+        "footer footer";
+}</code></pre>
+            </div>
+
+            <h3>Grid Item Properties</h3>
+
+            <ul>
+                <li><strong>grid-column:</strong> Specifies how many columns an item occupies.</li>
+                <li><strong>grid-row:</strong> Specifies how many rows an item occupies.</li>
+            </ul>
+
+            <div class="live-demo">
+                <h3>CSS Grid Visual Example</h3>
+                <div class="grid-demo">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div>
+                    <div>5</div>
+                    <div>6</div>
+                </div>
+                <p>Grid arranges items into rows and columns.</p>
+            </div>
+        </section>
+
+        <!-- RESPONSIVE DESIGN -->
+        <section class="content-section" id="responsive">
+            <h2>7. Responsive Web Design</h2>
+
+            <p>
+                Responsive Web Design is an approach to creating
+                websites that adjust their appearance and layout
+                depending on the screen size and device being used.
+            </p>
+
+            <h3>Media Queries</h3>
+
+            <p>
+                Media queries apply different CSS styles depending
+                on screen width, resolution, or orientation.
+            </p>
+
+            <pre><code>@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+}</code></pre>
+
+            <h3>Relative Units</h3>
+
+            <p>
+                Relative units allow elements to adjust based on
+                their parent or viewport dimensions.
+            </p>
+
+            <div class="info-grid">
+                <article class="info-card">
+                    <h3>em</h3>
+                    <p>Relative to the font size of the element's context.</p>
+                </article>
+
+                <article class="info-card">
+                    <h3>rem</h3>
+                    <p>Relative to the root element's font size.</p>
+                </article>
+
+                <article class="info-card">
+                    <h3>%</h3>
+                    <p>Relative to the size of the containing element.</p>
+                </article>
+
+                <article class="info-card">
+                    <h3>vw and vh</h3>
+                    <p>Relative to the viewport width and height.</p>
+                </article>
+            </div>
+
+            <div class="highlight-box">
+                <h3>Why is Responsive Design Important?</h3>
+                <ul>
+                    <li>Improves the user experience on mobile devices.</li>
+                    <li>Makes websites accessible on different screen sizes.</li>
+                    <li>Provides flexible and adaptable layouts.</li>
+                    <li>Reduces the need to maintain separate desktop and mobile websites.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ADVANCED CSS -->
+        <section class="content-section" id="advanced">
+            <h2>8. Advanced CSS Concepts</h2>
+
+            <h3>CSS Transitions</h3>
+            <p>
+                Transitions create smooth changes when CSS properties
+                change from one value to another.
+            </p>
+            <pre><code>button {
+    background-color: blue;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: darkblue;
+}</code></pre>
+
+            <h3>CSS Animations</h3>
+            <p>
+                Animations allow elements to change styles through
+                keyframes over a specified period.
+            </p>
+            <pre><code>@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+div {
+    animation: slideIn 1s forwards;
+}</code></pre>
+
+            <h3>CSS Variables</h3>
+            <p>
+                CSS custom properties allow developers to store
+                reusable values such as colors and spacing.
+            </p>
+            <pre><code>:root {
+    --main-color: #3498db;
+}
+
+div {
+    background-color: var(--main-color);
+}</code></pre>
+
+            <h3>Other Advanced CSS Features</h3>
+
+            <ul>
+                <li><strong>calc():</strong> Performs calculations for CSS property values.</li>
+                <li><strong>clamp():</strong> Sets a flexible value with minimum and maximum limits.</li>
+                <li><strong>min() and max():</strong> Return the smallest or largest value from a group of values.</li>
+                <li><strong>Scroll Snap:</strong> Helps scrolling stop at defined positions.</li>
+                <li><strong>CSS Filters:</strong> Apply visual effects such as blur and brightness.</li>
+                <li><strong>Clip Path:</strong> Creates custom shapes by clipping parts of an element.</li>
+                <li><strong>CSS Logical Properties:</strong> Adapt spacing to writing direction and layout.</li>
+            </ul>
+        </section>
+
+        <!-- BEST PRACTICES -->
+        <section class="content-section" id="best-practices">
+            <h2>9. CSS Best Practices and Optimization</h2>
+
+            <p>
+                CSS best practices help developers create organized,
+                maintainable, accessible, and efficient stylesheets.
+            </p>
+
+            <div class="info-grid">
+                <article class="info-card">
+                    <h3>Organize Your Code</h3>
+                    <p>Use comments and sections to make stylesheets easier to understand.</p>
+                </article>
+
+                <article class="info-card">
+                    <h3>Use Shorthand Properties</h3>
+                    <p>Combine related properties when appropriate to keep CSS concise.</p>
+                </article>
+
+                <article class="info-card">
+                    <h3>Remove Unused CSS</h3>
+                    <p>Reduce unnecessary styles to improve stylesheet efficiency.</p>
+                </article>
+
+                <article class="info-card">
+                    <h3>Use Consistent Naming</h3>
+                    <p>Follow naming methodologies such as BEM to organize CSS classes.</p>
+                </article>
+
+                <article class="info-card">
+                    <h3>Accessibility</h3>
+                    <p>Use readable color contrast and visible keyboard focus states.</p>
+                </article>
+
+                <article class="info-card">
+                    <h3>Reduced Motion</h3>
+                    <p>Respect users who prefer fewer animations and motion effects.</p>
+                </article>
+            </div>
+
+            <h3>Example: Accessible Focus State</h3>
+            <pre><code>a:focus {
+    outline: 2px solid blue;
+}</code></pre>
+        </section>
+
+        <!-- CSS FRAMEWORKS -->
+        <section class="content-section" id="frameworks">
+            <h2>10. CSS Frameworks: Bootstrap and Tailwind CSS</h2>
+
+            <p>
+                CSS frameworks provide predefined styles, utilities,
+                and components that help developers build websites
+                more efficiently.
+            </p>
+
+            <div class="detail-card">
+                <h4>Bootstrap</h4>
+                <p>
+                    Bootstrap is an open-source CSS framework that
+                    provides a responsive grid system, reusable
+                    components, and utility classes.
+                </p>
+
+                <h3>Features of Bootstrap</h3>
+                <ul>
+                    <li>Responsive grid system.</li>
+                    <li>Pre-built buttons, forms, cards, and modals.</li>
+                    <li>Mobile-first design.</li>
+                    <li>Customizable styles and components.</li>
+                </ul>
+
+                <pre><code>&lt;link
+href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+rel="stylesheet"&gt;
+
+&lt;div class="container"&gt;
+    &lt;h1 class="text-center"&gt;
+        Hello, Bootstrap!
+    &lt;/h1&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+
+            <div class="detail-card">
+                <h4>Tailwind CSS</h4>
+                <p>
+                    Tailwind CSS is a utility-first framework that
+                    allows developers to style elements directly
+                    through predefined utility classes.
+                </p>
+
+                <h3>Features of Tailwind CSS</h3>
+                <ul>
+                    <li>Utility-first approach.</li>
+                    <li>Highly customizable design.</li>
+                    <li>Responsive utility classes.</li>
+                    <li>Consistent spacing and typography.</li>
+                </ul>
+
+                <pre><code>&lt;div class="bg-blue-500 p-4 text-white"&gt;
+    Hello, Tailwind!
+&lt;/div&gt;</code></pre>
+            </div>
+
+            <h3>Bootstrap vs. Tailwind CSS</h3>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Category</th>
+                            <th>Bootstrap</th>
+                            <th>Tailwind CSS</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Approach</td>
+                            <td>Component-based framework</td>
+                            <td>Utility-first framework</td>
+                        </tr>
+                        <tr>
+                            <td>Design</td>
+                            <td>Provides predefined components</td>
+                            <td>Builds custom designs using utility classes</td>
+                        </tr>
+                        <tr>
+                            <td>Customization</td>
+                            <td>Customizable through its styling system</td>
+                            <td>Highly customizable through configuration and utilities</td>
+                        </tr>
+                        <tr>
+                            <td>Best Use</td>
+                            <td>Quick development using ready-made components</td>
+                            <td>Custom layouts and designs</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- LEARNING RESOURCES -->
+        <section class="content-section" id="resources">
+            <h2>11. Learning Resources</h2>
+
+            <p>
+                The following resources can help students explore
+                CSS concepts, practice coding, and improve their
+                web design skills.
+            </p>
+
+            <div class="resource-card">
+                <h3>MDN Web Docs - CSS</h3>
+                <p>
+                    A detailed reference for CSS properties,
+                    selectors, layouts, and styling techniques.
+                </p>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS"
+                   target="_blank" rel="noopener noreferrer">Visit MDN CSS →</a>
+            </div>
+
+            <div class="resource-card">
+                <h3>W3Schools - CSS Tutorial</h3>
+                <p>
+                    Beginner-friendly explanations and examples
+                    for learning CSS step by step.
+                </p>
+                <a href="https://www.w3schools.com/css/"
+                   target="_blank" rel="noopener noreferrer">Visit W3Schools →</a>
+            </div>
+
+            <div class="resource-card">
+                <h3>CSS-Tricks</h3>
+                <p>
+                    Articles and guides about CSS layouts,
+                    Flexbox, Grid, and other styling techniques.
+                </p>
+                <a href="https://css-tricks.com/"
+                   target="_blank" rel="noopener noreferrer">Visit CSS-Tricks →</a>
+            </div>
+
+            <div class="resource-card">
+                <h3>Flexbox Froggy</h3>
+                <p>
+                    An interactive game that teaches the basic
+                    concepts of CSS Flexbox.
+                </p>
+                <a href="https://flexboxfroggy.com/"
+                   target="_blank" rel="noopener noreferrer">Play Flexbox Froggy →</a>
+            </div>
+
+            <div class="resource-card">
+                <h3>Grid Garden</h3>
+                <p>
+                    A fun interactive activity for practicing
+                    CSS Grid properties.
+                </p>
+                <a href="https://cssgridgarden.com/"
+                   target="_blank" rel="noopener noreferrer">Play Grid Garden →</a>
+            </div>
+        </section>
+
+        <!-- ACTIVITIES -->
+        <section class="content-section activity-section" id="activities">
+
+            <div class="section-heading">
+                <span class="section-label">PRACTICAL APPLICATION</span>
+                <h2>12. Learning Activities</h2>
+                <p>Apply what you have learned through the following tasks.</p>
+            </div>
+
+            <div class="activity-card">
+                <h3>Activity 1: CSS Selector Identification</h3>
+                <p><strong>Instructions:</strong> Identify the type of CSS selector used in each example.</p>
+                <ol>
+                    <li>p { color: blue; }</li>
+                    <li>.header { background: navy; }</li>
+                    <li>#footer { text-align: center; }</li>
+                    <li>a:hover { color: red; }</li>
+                    <li>div p { font-size: 16px; }</li>
+                </ol>
+                <p class="activity-task">
+                    <strong>Task:</strong> Identify whether each example
+                    uses a type, class, ID, pseudo-class, or descendant selector.
+                </p>
+            </div>
+
+            <div class="activity-card">
+                <h3>Activity 2: Box Model Analysis</h3>
+                <p>
+                    Examine the following CSS code and identify the
+                    content, padding, border, and margin values.
+                </p>
+                <pre><code>.card {
+    width: 300px;
+    padding: 20px;
+    border: 2px solid black;
+    margin: 15px;
+}</code></pre>
+                <p class="activity-task">
+                    <strong>Task:</strong> Explain the purpose of each
+                    box model property and how it affects the card layout.
+                </p>
+            </div>
+
+            <div class="activity-card">
+                <h3>Activity 3: Flexbox and Grid Comparison</h3>
+                <p><strong>Instructions:</strong> Answer the following questions.</p>
+                <ol>
+                    <li>What is the main purpose of Flexbox?</li>
+                    <li>How is CSS Grid different from Flexbox?</li>
+                    <li>When would you use Flexbox in a navigation bar?</li>
+                    <li>When would you use Grid to arrange cards?</li>
+                    <li>Give one example of a website layout that uses both.</li>
+                </ol>
+            </div>
+
+            <div class="activity-card">
+                <h3>Hands-On Exercise: Create a Responsive Webpage</h3>
+                <p><strong>Objective:</strong> Create a simple responsive webpage using HTML and CSS.</p>
+
+                <p><strong>Requirements:</strong></p>
+                <ol>
+                    <li>Create a webpage with a header and navigation bar.</li>
+                    <li>Add a main content section with three cards.</li>
+                    <li>Use CSS Grid or Flexbox to arrange the cards.</li>
+                    <li>Apply colors, fonts, padding, margins, and borders.</li>
+                    <li>Add a media query for smaller screens.</li>
+                    <li>Test the webpage on desktop and mobile screen sizes.</li>
+                </ol>
+
+                <p class="activity-task">
+                    <strong>Expected Output:</strong> A clean and responsive
+                    webpage that adjusts its layout based on screen size.
+                </p>
+            </div>
+        </section>
+
+      
+        <!-- REFERENCES -->
+        <section class="content-section" id="references">
+            <h2>15. References</h2>
+
+            <p>The following materials were used as references for this lesson:</p>
+
+            <ol>
+                <li>
+                    Uploaded learning material:
+                    <strong>Lesson 4 – CSS: Styling and Layout (Including Responsive Design Using Flexbox/Grid)</strong>.
+                </li>
+                <li>
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS"
+                       target="_blank" rel="noopener noreferrer">MDN Web Docs – CSS</a>
+                </li>
+                <li>
+                    <a href="https://www.w3schools.com/css/"
+                       target="_blank" rel="noopener noreferrer">W3Schools – CSS Tutorial</a>
+                </li>
+                <li>
+                    <a href="https://getbootstrap.com/docs/5.3/getting-started/introduction/"
+                       target="_blank" rel="noopener noreferrer">Bootstrap Documentation</a>
+                </li>
+                <li>
+                    <a href="https://tailwindcss.com/docs"
+                       target="_blank" rel="noopener noreferrer">Tailwind CSS Documentation</a>
+                </li>
+                <li>
+                    <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/"
+                       target="_blank" rel="noopener noreferrer">CSS-Tricks – A Complete Guide to Flexbox</a>
+                </li>
+            </ol>
+        </section>
+
+     <!-- DISPLAY SETTINGS -->
+
+<div id="displaySettings">
+
+    <button id="settingsToggle" aria-label="Open Display Settings">
+        ⚙️
+    </button>
+
+    <div id="settingsPanel">
+
+        <div class="settings-heading">
+            Display Settings
+        </div>
+
+        <span class="settings-label">Appearance</span>
+
+        <button id="darkModeButton" class="settings-dark-button">
+            🌙 Switch to Dark Mode
+        </button>
+
+        <span class="settings-label">Text Size</span>
+
+        <div class="settings-size-controls">
+            <button id="decreaseText">A−</button>
+            <span id="textSizeValue">100%</span>
+            <button id="increaseText">A+</button>
+        </div>
+
+        <button id="resetSettings">
+            Reset Settings
+        </button>
+
+    
+     </div>
+</div>
+</div>
+        <footer class="page-footer">
+            <p>WEBTECH LEARN | Web Technology Learning E-Book</p>
+            <p>Excellence Beyond Limits</p>
+        </footer>
+
+    </main>
+</div>
+
+<button id="backToTop" title="Back to Top">↑</button>
+
+<script src="chapter4.js" defer></script>
+</body>
+</html>

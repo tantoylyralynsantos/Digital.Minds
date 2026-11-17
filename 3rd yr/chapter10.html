@@ -1,0 +1,1856 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lesson 10 - Website Testing, Hosting, Deployment, and Maintenance</title>
+
+    <link rel="stylesheet" href="chapter10.css">
+    <link rel="stylesheet" href="../display-settings.css">
+    <link rel="stylesheet" href="ebook-pagination.css">
+
+    <script src="../display-settings.js" defer></script>
+    <script src="ebook-pagination.js" defer></script>
+    <script src="chapter10.js" defer></script>
+
+    <style>
+        .lesson-visual {
+            width: 100%;
+            margin: 25px auto;
+            padding: 22px;
+            background: #f1f6fc;
+            border: 1px solid #dce7f3;
+            border-radius: 12px;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        .lesson-visual svg {
+            display: block;
+            width: 100%;
+            max-width: 650px;
+            height: auto;
+            margin: auto;
+        }
+
+        .lesson-visual figcaption {
+            margin-top: 12px;
+            color: #52647a;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        .visual-label {
+            color: #24558a;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        @media (max-width: 600px) {
+            .lesson-visual {
+                padding: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+
+<!-- HEADER -->
+<header class="header">
+    <div class="nav-container">
+
+        <a href="index.html" class="logo">
+            <img src="logo.jpg" alt="BSIT Digital Minds Logo" class="logo-image">
+
+            <span class="logo-text">
+                <small>BSIT | DIGITAL MINDS</small>
+            </span>
+        </a>
+
+        <a href="../pics/3rd yr toc.html" class="back-home">
+            ← Back to Table of Content
+        </a>
+
+    </div>
+</header>
+
+<div class="page-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <h3>Chapter 10</h3>
+
+        <p class="sidebar-subtitle">
+            Website Testing, Hosting, Deployment, and Maintenance
+        </p>
+
+        <nav>
+            <a href="#section1">1. Introduction to Website Testing</a>
+            <a href="#section2">2. Types of Website Testing</a>
+            <a href="#section3">3. Website Testing Process</a>
+            <a href="#section4">4. Website Testing Tools</a>
+            <a href="#section5">5. Introduction to Web Hosting</a>
+            <a href="#section6">6. Types of Web Hosting</a>
+            <a href="#section7">7. Choosing a Hosting Provider</a>
+            <a href="#section8">8. Website Deployment</a>
+            <a href="#section9">9. Deployment Process</a>
+            <a href="#section10">10. Website Maintenance</a>
+            <a href="#section11">11. Glossary</a>
+            <a href="#section12">12. Learning Resources</a>
+            <a href="#section13">13. Review and Reflection</a>
+            <a href="#section14">14. References</a>
+        </nav>
+
+        <div class="separate-learning-links">
+            <a href="chapter10-assessment.html">
+                📋 Chapter 10 Assessment
+            </a>
+        </div>
+
+        <div class="sidebar-download">
+            <button type="button" id="downloadPDF">
+                <span>↓</span>
+                Download Lesson PDF
+            </button>
+        </div>
+
+    </aside>
+
+   
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- CHAPTER BANNER -->
+        <section class="lesson-banner" id="top">
+            <span class="chapter-label">CHAPTER 10 • WEB TECHNOLOGY</span>
+            <h1>Website Testing, Hosting, Deployment, and Maintenance</h1>
+            <p>
+                Learn how websites are tested, hosted, published online,
+                and maintained to ensure proper functionality, performance,
+                and reliability.
+            </p>
+        </section>
+
+        <!-- SECTION 1 -->
+        <section class="content-section" id="section1">
+            <h2>1. Introduction to Website Testing</h2>
+
+            <p>
+                <strong>Website testing</strong> is the process of checking
+                a website to make sure that its features, functions, and
+                content work properly. It helps developers identify errors,
+                improve performance, and ensure that users can navigate
+                the website without problems.
+            </p>
+
+            <p>
+                Testing is an important part of website development because
+                it helps verify that a website meets its requirements before
+                it is released to the public.
+            </p>
+
+            <figure class="lesson-visual">
+                <div class="visual-label">WEBSITE TESTING OVERVIEW</div>
+                <svg viewBox="0 0 650 310" role="img"
+                     aria-label="Computer displaying a website being tested">
+                    <rect x="100" y="35" width="450" height="220"
+                          rx="16" fill="#dceafa"/>
+                    <rect x="125" y="58" width="400" height="170"
+                          rx="9" fill="#ffffff"/>
+                    <rect x="125" y="58" width="400" height="28"
+                          rx="9" fill="#24558a"/>
+
+                    <circle cx="145" cy="72" r="5" fill="#ffffff"/>
+                    <circle cx="163" cy="72" r="5" fill="#ffffff"/>
+                    <circle cx="181" cy="72" r="5" fill="#ffffff"/>
+
+                    <rect x="150" y="105" width="125" height="95"
+                          rx="7" fill="#e9f1fb"/>
+                    <rect x="295" y="110" width="190" height="12"
+                          rx="5" fill="#9bb6d3"/>
+                    <rect x="295" y="135" width="160" height="10"
+                          rx="5" fill="#dce7f3"/>
+                    <rect x="295" y="157" width="175" height="10"
+                          rx="5" fill="#dce7f3"/>
+
+                    <circle cx="420" cy="190" r="22" fill="#238451"/>
+                    <path d="M408 190 L417 199 L434 180"
+                          fill="none" stroke="#ffffff"
+                          stroke-width="5" stroke-linecap="round"
+                          stroke-linejoin="round"/>
+
+                    <path d="M265 255 L385 255 L400 275
+                             L250 275 Z" fill="#9bb6d3"/>
+
+                    <text x="325" y="300" text-anchor="middle"
+                          fill="#24558a" font-size="15"
+                          font-weight="bold">WEBSITE QUALITY CHECK</text>
+                </svg>
+                <figcaption>
+                    Website testing helps developers identify errors and
+                    verify that a website works properly before release.
+                </figcaption>
+            </figure>
+
+            <h3>Why Is Website Testing Important?</h3>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Find Errors</h3>
+                    <p>
+                        Helps identify broken links, incorrect information,
+                        and problems with website features.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Improve Performance</h3>
+                    <p>
+                        Checks website loading speed and responsiveness
+                        to provide a better browsing experience.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Ensure Compatibility</h3>
+                    <p>
+                        Checks whether a website works properly on
+                        different browsers and devices.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Improve User Experience</h3>
+                    <p>
+                        Makes sure that visitors can easily navigate
+                        and use the website.
+                    </p>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <h3>Key Idea</h3>
+                <p>
+                    Website testing helps ensure that a website is functional,
+                    reliable, secure, and ready for users before it is published.
+                </p>
+            </div>
+        </section>
+
+        <!-- SECTION 2 -->
+        <section class="content-section" id="section2">
+            <h2>2. Types of Website Testing</h2>
+
+            <p>
+                There are different types of website testing used to check
+                the quality and functionality of a website. Each type focuses
+                on a specific part of the system.
+            </p>
+
+            <figure class="lesson-visual">
+                <div class="visual-label">COMMON TYPES OF WEBSITE TESTING</div>
+                <svg viewBox="0 0 650 340" role="img"
+                     aria-label="Five types of website testing">
+                    <g text-anchor="middle">
+                        <rect x="15" y="25" width="190" height="115"
+                              rx="12" fill="#e5effa"/>
+                        <rect x="80" y="43" width="60" height="42"
+                              rx="5" fill="#2e78c5"/>
+                        <path d="M91 55 H129 M91 65 H120 M91 75 H124"
+                              stroke="white" stroke-width="3"/>
+                        <text x="110" y="112" fill="#24558a"
+                              font-size="13" font-weight="bold">FUNCTIONAL</text>
+
+                        <rect x="230" y="25" width="190" height="115"
+                              rx="12" fill="#e5effa"/>
+                        <path d="M277 85 A48 48 0 0 1 373 85"
+                              fill="none" stroke="#9bb6d3" stroke-width="10"/>
+                        <path d="M325 85 L355 48"
+                              stroke="#24558a" stroke-width="5"/>
+                        <circle cx="325" cy="85" r="7" fill="#24558a"/>
+                        <text x="325" y="112" fill="#24558a"
+                              font-size="13" font-weight="bold">PERFORMANCE</text>
+
+                        <rect x="445" y="25" width="190" height="115"
+                              rx="12" fill="#e5effa"/>
+                        <rect x="475" y="43" width="85" height="48"
+                              rx="4" fill="#2e78c5"/>
+                        <rect x="570" y="39" width="35" height="56"
+                              rx="5" fill="#5a9bcf"/>
+                        <text x="540" y="112" fill="#24558a"
+                              font-size="13" font-weight="bold">COMPATIBILITY</text>
+
+                        <rect x="125" y="180" width="190" height="115"
+                              rx="12" fill="#e5effa"/>
+                        <path d="M220 195 L255 209 V235
+                                 Q255 264 220 278 Q185 264 185 235
+                                 V209 Z" fill="#24558a"/>
+                        <path d="M205 235 L216 246 L238 220"
+                              fill="none" stroke="white" stroke-width="5"/>
+                        <text x="220" y="284" fill="#24558a"
+                              font-size="12" font-weight="bold">SECURITY</text>
+
+                        <rect x="335" y="180" width="190" height="115"
+                              rx="12" fill="#e5effa"/>
+                        <circle cx="430" cy="215" r="18" fill="#5a9bcf"/>
+                        <path d="M398 265 Q400 231 430 231 Q460 231 462 265"
+                              fill="#2e78c5"/>
+                        <text x="430" y="284" fill="#24558a"
+                              font-size="12" font-weight="bold">USABILITY</text>
+                    </g>
+                </svg>
+                <figcaption>
+                    Different testing methods help evaluate website
+                    functionality, speed, compatibility, security, and usability.
+                </figcaption>
+            </figure>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Functional Testing</h3>
+                    <p>
+                        Checks whether website features such as buttons,
+                        forms, links, and menus work correctly.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Performance Testing</h3>
+                    <p>
+                        Measures loading speed, responsiveness, and how
+                        the website behaves under different traffic conditions.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Compatibility Testing</h3>
+                    <p>
+                        Checks whether the website works on different
+                        browsers, operating systems, and devices.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Security Testing</h3>
+                    <p>
+                        Identifies possible security weaknesses and checks
+                        whether user information is properly protected.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Usability Testing</h3>
+                    <p>
+                        Evaluates whether the website is easy to understand,
+                        navigate, and use.
+                    </p>
+                </div>
+            </div>
+
+            <h3>Comparison of Testing Types</h3>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Testing Type</th>
+                            <th>Main Purpose</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Functional Testing</td>
+                            <td>Checks website features and functions.</td>
+                        </tr>
+                        <tr>
+                            <td>Performance Testing</td>
+                            <td>Checks website speed and performance.</td>
+                        </tr>
+                        <tr>
+                            <td>Compatibility Testing</td>
+                            <td>Checks different browsers and devices.</td>
+                        </tr>
+                        <tr>
+                            <td>Security Testing</td>
+                            <td>Checks possible security vulnerabilities.</td>
+                        </tr>
+                        <tr>
+                            <td>Usability Testing</td>
+                            <td>Checks how easy the website is to use.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- SECTION 3 -->
+        <section class="content-section" id="section3">
+            <h2>3. Website Testing Process</h2>
+
+            <p>
+                Website testing follows an organized process to make sure
+                that all important features are checked. Developers perform
+                several steps to identify and correct problems before
+                releasing the website.
+            </p>
+
+            <figure class="lesson-visual">
+                <div class="visual-label">WEBSITE TESTING WORKFLOW</div>
+                <svg viewBox="0 0 650 300" role="img"
+                     aria-label="Website testing workflow from planning to retesting">
+                    <g text-anchor="middle">
+                        <rect x="15" y="35" width="110" height="100"
+                              rx="10" fill="#e5effa"/>
+                        <circle cx="70" cy="67" r="18" fill="#24558a"/>
+                        <text x="70" y="73" fill="white" font-size="14">1</text>
+                        <text x="70" y="105" fill="#24558a"
+                              font-size="12" font-weight="bold">PLAN</text>
+
+                        <path d="M128 85 H145 M137 77 L145 85 L137 93"
+                              stroke="#24558a" stroke-width="3" fill="none"/>
+
+                        <rect x="150" y="35" width="110" height="100"
+                              rx="10" fill="#e5effa"/>
+                        <circle cx="205" cy="67" r="18" fill="#397db8"/>
+                        <text x="205" y="73" fill="white" font-size="14">2</text>
+                        <text x="205" y="105" fill="#24558a"
+                              font-size="12" font-weight="bold">TEST</text>
+
+                        <path d="M263 85 H280 M272 77 L280 85 L272 93"
+                              stroke="#24558a" stroke-width="3" fill="none"/>
+
+                        <rect x="285" y="35" width="110" height="100"
+                              rx="10" fill="#e5effa"/>
+                        <circle cx="340" cy="67" r="18" fill="#397db8"/>
+                        <text x="340" y="73" fill="white" font-size="14">3</text>
+                        <text x="340" y="105" fill="#24558a"
+                              font-size="12" font-weight="bold">IDENTIFY</text>
+
+                        <path d="M398 85 H415 M407 77 L415 85 L407 93"
+                              stroke="#24558a" stroke-width="3" fill="none"/>
+
+                        <rect x="420" y="35" width="105" height="100"
+                              rx="10" fill="#e5effa"/>
+                        <circle cx="472" cy="67" r="18" fill="#397db8"/>
+                        <text x="472" y="73" fill="white" font-size="14">4</text>
+                        <text x="472" y="105" fill="#24558a"
+                              font-size="12" font-weight="bold">FIX</text>
+
+                        <path d="M528 85 H545 M537 77 L545 85 L537 93"
+                              stroke="#24558a" stroke-width="3" fill="none"/>
+
+                        <rect x="550" y="35" width="90" height="100"
+                              rx="10" fill="#d8f1e3"/>
+                        <circle cx="595" cy="67" r="18" fill="#238451"/>
+                        <text x="595" y="73" fill="white" font-size="14">5</text>
+                        <text x="595" y="105" fill="#166534"
+                              font-size="12" font-weight="bold">RETEST</text>
+                    </g>
+
+                    <path d="M595 140 V190 H70 V140"
+                          stroke="#7ca6d1" stroke-width="2"
+                          stroke-dasharray="6 5" fill="none"/>
+                    <text x="325" y="225" text-anchor="middle"
+                          fill="#24558a" font-size="14" font-weight="bold">
+                        REPEAT TESTING WHEN NECESSARY
+                    </text>
+                    <text x="325" y="250" text-anchor="middle"
+                          fill="#52647a" font-size="12">
+                        Continue until important issues are resolved.
+                    </text>
+                </svg>
+                <figcaption>
+                    The testing process includes planning, testing,
+                    identifying errors, fixing problems, and retesting.
+                </figcaption>
+            </figure>
+
+            <h3>Steps in Website Testing</h3>
+
+            <ol>
+                <li>
+                    <strong>Planning:</strong>
+                    Identify the website features and requirements
+                    that need to be tested.
+                </li>
+                <li>
+                    <strong>Test Execution:</strong>
+                    Perform tests on website pages, links, forms,
+                    buttons, and other functions.
+                </li>
+                <li>
+                    <strong>Bug Identification:</strong>
+                    Record errors and unexpected behavior discovered
+                    during testing.
+                </li>
+                <li>
+                    <strong>Bug Fixing:</strong>
+                    Correct the identified problems in the website.
+                </li>
+                <li>
+                    <strong>Retesting:</strong>
+                    Test the corrected features again to confirm
+                    that the problems have been resolved.
+                </li>
+            </ol>
+
+            <div class="highlight-box">
+                <h3>Key Idea</h3>
+                <p>
+                    Testing does not end after finding an error.
+                    Developers must also correct the issue and test again
+                    to verify that the website works as expected.
+                </p>
+            </div>
+        </section>
+
+        <!-- SECTION 4 -->
+        <section class="content-section" id="section4">
+            <h2>4. Website Testing Tools</h2>
+
+            <p>
+                Website testing tools are software applications and services
+                that help developers check website quality. They make it
+                easier to identify errors, measure performance, validate
+                code, and automate testing activities.
+            </p>
+
+            <figure class="lesson-visual">
+                <div class="visual-label">WEBSITE TESTING TOOLS</div>
+                <svg viewBox="0 0 650 280" role="img"
+                     aria-label="Laptop showing website testing dashboard">
+                    <rect x="95" y="25" width="460" height="200"
+                          rx="13" fill="#dceafa" stroke="#24558a" stroke-width="4"/>
+                    <rect x="115" y="45" width="420" height="160"
+                          rx="6" fill="#ffffff"/>
+                    <rect x="115" y="45" width="420" height="27"
+                          fill="#24558a"/>
+                    <circle cx="133" cy="58" r="4" fill="white"/>
+                    <circle cx="149" cy="58" r="4" fill="white"/>
+                    <circle cx="165" cy="58" r="4" fill="white"/>
+
+                    <rect x="135" y="90" width="105" height="95"
+                          rx="6" fill="#e5effa"/>
+                    <rect x="150" y="105" width="75" height="9"
+                          rx="4" fill="#5a9bcf"/>
+                    <rect x="150" y="124" width="60" height="7"
+                          rx="4" fill="#9bb6d3"/>
+                    <rect x="150" y="140" width="70" height="7"
+                          rx="4" fill="#9bb6d3"/>
+
+                    <rect x="260" y="90" width="250" height="95"
+                          rx="6" fill="#f1f6fc"/>
+                    <rect x="278" y="105" width="210" height="12"
+                          rx="4" fill="#9bb6d3"/>
+                    <rect x="278" y="128" width="155" height="9"
+                          rx="4" fill="#dce7f3"/>
+                    <rect x="278" y="148" width="190" height="9"
+                          rx="4" fill="#dce7f3"/>
+
+                    <path d="M60 225 H590 L555 247 H95 Z"
+                          fill="#9bb6d3"/>
+                    <text x="325" y="270" text-anchor="middle"
+                          fill="#24558a" font-size="14"
+                          font-weight="bold">TESTING DASHBOARD</text>
+                </svg>
+                <figcaption>
+                    Testing tools help developers evaluate website quality
+                    and identify issues.
+                </figcaption>
+            </figure>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Google Lighthouse</h3>
+                    <p>
+                        Evaluates website performance, accessibility,
+                        SEO, and best practices.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Selenium</h3>
+                    <p>
+                        Automates browser interactions and helps test
+                        website functionality.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Browser Developer Tools</h3>
+                    <p>
+                        Helps inspect HTML, CSS, JavaScript errors,
+                        network activity, and website elements.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h3>W3C Validator</h3>
+                    <p>
+                        Checks HTML and CSS code for validation
+                        issues and errors.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h3>GTmetrix</h3>
+                    <p>
+                        Analyzes website loading performance and
+                        provides information about page speed.
+                    </p>
+                </div>
+            </div>
+
+            <h3>Testing Tools Comparison</h3>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tool</th>
+                            <th>Purpose</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Google Lighthouse</td>
+                            <td>Website performance and quality evaluation.</td>
+                        </tr>
+                        <tr>
+                            <td>Selenium</td>
+                            <td>Automated browser testing.</td>
+                        </tr>
+                        <tr>
+                            <td>Developer Tools</td>
+                            <td>Inspecting website code and debugging.</td>
+                        </tr>
+                        <tr>
+                            <td>W3C Validator</td>
+                            <td>HTML and CSS validation.</td>
+                        </tr>
+                        <tr>
+                            <td>GTmetrix</td>
+                            <td>Website speed analysis.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- SECTION 5 -->
+        <section class="content-section" id="section5">
+            <h2>5. Introduction to Web Hosting</h2>
+
+            <p>
+                <strong>Web hosting</strong> is a service that allows
+                individuals and organizations to make their websites
+                accessible through the internet. A hosting provider
+                stores website files, images, databases, and other
+                resources on a server.
+            </p>
+
+            <p>
+                Without web hosting or another suitable way of serving
+                website files, visitors cannot access a publicly available
+                website through the internet.
+            </p>
+
+            <figure class="lesson-visual">
+                <div class="visual-label">HOW WEB HOSTING WORKS</div>
+                <svg viewBox="0 0 650 320" role="img"
+                     aria-label="Website files stored on a server and accessed by internet users">
+                    <!-- SERVER -->
+                    <rect x="25" y="65" width="135" height="145"
+                          rx="12" fill="#dceafa" stroke="#24558a" stroke-width="3"/>
+                    <rect x="45" y="85" width="95" height="25"
+                          rx="5" fill="#2e78c5"/>
+                    <rect x="45" y="125" width="95" height="25"
+                          rx="5" fill="#2e78c5"/>
+                    <rect x="45" y="165" width="95" height="25"
+                          rx="5" fill="#2e78c5"/>
+                    <circle cx="125" cy="97" r="4" fill="white"/>
+                    <circle cx="125" cy="137" r="4" fill="white"/>
+                    <circle cx="125" cy="177" r="4" fill="white"/>
+                    <text x="92" y="238" text-anchor="middle"
+                          fill="#24558a" font-size="14" font-weight="bold">SERVER</text>
+
+                    <!-- ARROW -->
+                    <path d="M170 135 H225 M214 124 L225 135 L214 146"
+                          stroke="#24558a" stroke-width="4" fill="none"/>
+
+                    <!-- INTERNET -->
+                    <circle cx="325" cy="135" r="65"
+                            fill="#dceafa" stroke="#2e78c5" stroke-width="3"/>
+                    <path d="M260 135 H390 M325 70 C285 110 285 160 325 200
+                             M325 70 C365 110 365 160 325 200"
+                          fill="none" stroke="#2e78c5" stroke-width="3"/>
+                    <path d="M275 105 H375 M275 165 H375"
+                          stroke="#2e78c5" stroke-width="2" fill="none"/>
+                    <text x="325" y="235" text-anchor="middle"
+                          fill="#24558a" font-size="14" font-weight="bold">INTERNET</text>
+
+                    <!-- ARROW -->
+                    <path d="M395 135 H455 M444 124 L455 135 L444 146"
+                          stroke="#24558a" stroke-width="4" fill="none"/>
+
+                    <!-- USER COMPUTER -->
+                    <rect x="465" y="80" width="155" height="105"
+                          rx="9" fill="#dceafa" stroke="#24558a" stroke-width="3"/>
+                    <rect x="480" y="94" width="125" height="76"
+                          rx="5" fill="white"/>
+                    <rect x="493" y="106" width="99" height="12"
+                          rx="4" fill="#5a9bcf"/>
+                    <rect x="493" y="128" width="80" height="8"
+                          rx="4" fill="#c4d6ea"/>
+                    <rect x="493" y="145" width="90" height="8"
+                          rx="4" fill="#c4d6ea"/>
+                    <path d="M510 185 V202 H570 V185"
+                          fill="#9bb6d3" stroke="#24558a" stroke-width="2"/>
+                    <text x="542" y="238" text-anchor="middle"
+                          fill="#24558a" font-size="14" font-weight="bold">USER</text>
+                </svg>
+                <figcaption>
+                    Web hosting stores website files on a server and
+                    delivers them to visitors through the internet.
+                </figcaption>
+            </figure>
+
+            <h3>How Web Hosting Works</h3>
+
+            <ol>
+                <li>A developer creates website files such as HTML, CSS, and JavaScript.</li>
+                <li>The website files are uploaded to a hosting server.</li>
+                <li>A domain name is connected to the hosting service.</li>
+                <li>A visitor enters the website address in a browser.</li>
+                <li>The server sends the requested website content to the visitor.</li>
+            </ol>
+
+            <div class="highlight-box">
+                <h3>Example</h3>
+                <p>
+                    When a person visits a school website, the hosting server
+                    provides the files needed by the browser to display the
+                    website's pages, images, and other content.
+                </p>
+            </div>
+        </section>
+
+        <!-- SECTION 6 -->
+        <section class="content-section" id="section6">
+            <h2>6. Types of Web Hosting</h2>
+
+            <p>
+                Web hosting comes in different types depending on the
+                website's requirements, expected visitors, available
+                resources, and budget.
+            </p>
+
+            <figure class="lesson-visual">
+                <div class="visual-label">TYPES OF WEB HOSTING</div>
+                <svg viewBox="0 0 650 330" role="img"
+                     aria-label="Illustration of shared, VPS, dedicated and cloud hosting">
+                    <g text-anchor="middle">
+                        <!-- SHARED -->
+                        <rect x="15" y="20" width="285" height="125"
+                              rx="12" fill="#e5effa"/>
+                        <rect x="100" y="37" width="115" height="65"
+                              rx="7" fill="#24558a"/>
+                        <g fill="#ffffff">
+                            <rect x="112" y="48" width="38" height="16" rx="3"/>
+                            <rect x="162" y="48" width="38" height="16" rx="3"/>
+                            <rect x="112" y="74" width="38" height="16" rx="3"/>
+                            <rect x="162" y="74" width="38" height="16" rx="3"/>
+                        </g>
+                        <text x="157" y="125" fill="#24558a"
+                              font-size="14" font-weight="bold">SHARED HOSTING</text>
+
+                        <!-- VPS -->
+                        <rect x="350" y="20" width="285" height="125"
+                              rx="12" fill="#e5effa"/>
+                        <rect x="420" y="37" width="145" height="65"
+                              rx="7" fill="#397db8"/>
+                        <path d="M492 37 V102 M420 69 H565"
+                              stroke="white" stroke-width="3"/>
+                        <text x="492" y="125" fill="#24558a"
+                              font-size="14" font-weight="bold">VPS HOSTING</text>
+
+                        <!-- DEDICATED -->
+                        <rect x="15" y="175" width="285" height="125"
+                              rx="12" fill="#e5effa"/>
+                        <rect x="105" y="190" width="105" height="65"
+                              rx="7" fill="#5a9bcf"/>
+                        <rect x="120" y="202" width="75" height="12"
+                              rx="3" fill="white"/>
+                        <rect x="120" y="224" width="75" height="12"
+                              rx="3" fill="white"/>
+                        <text x="157" y="280" fill="#24558a"
+                              font-size="14" font-weight="bold">DEDICATED HOSTING</text>
+
+                        <!-- CLOUD -->
+                        <rect x="350" y="175" width="285" height="125"
+                              rx="12" fill="#e5effa"/>
+                        <path d="M430 235
+                                 C405 235 405 205 430 202
+                                 C435 177 480 175 490 202
+                                 C515 190 540 207 535 228
+                                 C555 252 530 264 510 255
+                                 H430 Z"
+                              fill="#397db8"/>
+                        <text x="492" y="280" fill="#24558a"
+                              font-size="14" font-weight="bold">CLOUD HOSTING</text>
+                    </g>
+                </svg>
+                <figcaption>
+                    Different hosting types offer different levels of
+                    server resources, control, and flexibility.
+                </figcaption>
+            </figure>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Shared Hosting</h3>
+                    <p>
+                        Multiple websites share the resources of one server.
+                        It is commonly used for smaller websites and projects.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h3>VPS Hosting</h3>
+                    <p>
+                        A physical server is divided into virtual private
+                        servers that provide separate environments.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Dedicated Hosting</h3>
+                    <p>
+                        A website or organization uses an entire physical
+                        server with dedicated resources.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Cloud Hosting</h3>
+                    <p>
+                        Uses multiple connected servers to provide hosting
+                        resources and flexibility.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Managed Hosting</h3>
+                    <p>
+                        The hosting provider handles certain technical
+                        responsibilities, such as server maintenance
+                        and updates.
+                    </p>
+                </div>
+            </div>
+
+            <h3>Hosting Types Comparison</h3>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Hosting Type</th>
+                            <th>Description</th>
+                            <th>Common Use</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Shared</td>
+                            <td>Several websites share server resources.</td>
+                            <td>Small websites and blogs.</td>
+                        </tr>
+                        <tr>
+                            <td>VPS</td>
+                            <td>A server is divided into virtual environments.</td>
+                            <td>Growing websites and applications.</td>
+                        </tr>
+                        <tr>
+                            <td>Dedicated</td>
+                            <td>One customer uses an entire physical server.</td>
+                            <td>Websites with high resource needs.</td>
+                        </tr>
+                        <tr>
+                            <td>Cloud</td>
+                            <td>Multiple connected servers provide resources.</td>
+                            <td>Scalable websites and applications.</td>
+                        </tr>
+                        <tr>
+                            <td>Managed</td>
+                            <td>Provider handles selected technical tasks.</td>
+                            <td>Organizations needing managed services.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- SECTION 7 -->
+        <section class="content-section" id="section7">
+            <h2>7. Choosing a Web Hosting Provider</h2>
+
+            <p>
+                A <strong>web hosting provider</strong> is a company that
+                offers server space and services needed to publish a website
+                online. Choosing a suitable provider helps ensure that a
+                website remains accessible, secure, and reliable.
+            </p>
+
+            <figure class="lesson-visual">
+                <div class="visual-label">CHOOSING A HOSTING PROVIDER</div>
+                <svg viewBox="0 0 650 300" role="img"
+                     aria-label="Checklist representing important hosting provider features">
+                    <rect x="155" y="20" width="340" height="245"
+                          rx="15" fill="#e5effa" stroke="#24558a" stroke-width="3"/>
+                    <rect x="235" y="40" width="180" height="32"
+                          rx="7" fill="#24558a"/>
+                    <text x="325" y="61" text-anchor="middle"
+                          fill="white" font-size="14" font-weight="bold">
+                        HOSTING CHECKLIST
+                    </text>
+
+                    <g fill="#ffffff" stroke="#9bb6d3" stroke-width="2">
+                        <rect x="190" y="90" width="270" height="28" rx="5"/>
+                        <rect x="190" y="128" width="270" height="28" rx="5"/>
+                        <rect x="190" y="166" width="270" height="28" rx="5"/>
+                        <rect x="190" y="204" width="270" height="28" rx="5"/>
+                    </g>
+
+                    <g stroke="#238451" stroke-width="3" fill="none">
+                        <path d="M205 103 L212 110 L224 96"/>
+                        <path d="M205 141 L212 148 L224 134"/>
+                        <path d="M205 179 L212 186 L224 172"/>
+                        <path d="M205 217 L212 224 L224 210"/>
+                    </g>
+
+                    <g fill="#24558a" font-size="12">
+                        <text x="235" y="109">UPTIME</text>
+                        <text x="235" y="147">SECURITY</text>
+                        <text x="235" y="185">SUPPORT</text>
+                        <text x="235" y="223">PRICING</text>
+                    </g>
+
+                    <text x="325" y="290" text-anchor="middle"
+                          fill="#24558a" font-size="13" font-weight="bold">
+                        COMPARE FEATURES BEFORE CHOOSING
+                    </text>
+                </svg>
+                <figcaption>
+                    Compare important hosting features before selecting
+                    a provider for your website.
+                </figcaption>
+            </figure>
+
+            <h3>Factors to Consider</h3>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Uptime</h3>
+                    <p>
+                        Refers to how consistently the hosting service
+                        keeps a website available to visitors.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Storage</h3>
+                    <p>
+                        The amount of space available for website files,
+                        images, and other resources.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Bandwidth</h3>
+                    <p>
+                        Refers to the capacity for transferring data
+                        between the website and its visitors.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Security</h3>
+                    <p>
+                        Includes security features that help protect
+                        website files and user information.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Customer Support</h3>
+                    <p>
+                        Provides assistance when technical problems
+                        or hosting issues occur.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Pricing</h3>
+                    <p>
+                        The cost of the hosting plan and the services
+                        included in the subscription.
+                    </p>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <h3>Important Reminder</h3>
+                <p>
+                    Always compare hosting plans based on the website's
+                    needs, expected visitors, available budget, and
+                    required technical features.
+                </p>
+            </div>
+        </section>
+
+        <!-- SECTION 8 -->
+        <section class="content-section" id="section8">
+            <h2>8. Website Deployment</h2>
+
+            <p>
+                <strong>Website deployment</strong> is the process of
+                publishing a website or making an updated version available
+                in its intended environment. It allows users to access
+                the website through the internet.
+            </p>
+
+            <p>
+                During development, a website is usually created and tested
+                on a local computer or development environment. Deployment
+                transfers the completed website to a production environment
+                where visitors can use it.
+            </p>
+
+            <figure class="lesson-visual">
+                <div class="visual-label">WEBSITE DEPLOYMENT</div>
+                <svg viewBox="0 0 650 310" role="img"
+                     aria-label="Website deployment from development computer to live website">
+                    <!-- DEVELOPMENT -->
+                    <rect x="25" y="50" width="160" height="130"
+                          rx="12" fill="#dceafa" stroke="#24558a" stroke-width="3"/>
+                    <rect x="40" y="65" width="130" height="90"
+                          rx="5" fill="white"/>
+                    <rect x="53" y="78" width="104" height="12"
+                          rx="4" fill="#5a9bcf"/>
+                    <rect x="53" y="101" width="70" height="8"
+                          rx="4" fill="#c4d6ea"/>
+                    <rect x="53" y="118" width="90" height="8"
+                          rx="4" fill="#c4d6ea"/>
+                    <path d="M75 180 V197 H135 V180"
+                          fill="#9bb6d3" stroke="#24558a" stroke-width="2"/>
+                    <text x="105" y="225" text-anchor="middle"
+                          fill="#24558a" font-size="14" font-weight="bold">DEVELOPMENT</text>
+
+                    <!-- ARROW -->
+                    <path d="M195 115 H430 M415 100 L430 115 L415 130"
+                          stroke="#24558a" stroke-width="5" fill="none"/>
+                    <text x="310" y="95" text-anchor="middle"
+                          fill="#24558a" font-size="13" font-weight="bold">DEPLOY</text>
+
+                    <!-- LIVE WEBSITE -->
+                    <rect x="455" y="50" width="165" height="130"
+                          rx="12" fill="#d8f1e3" stroke="#238451" stroke-width="3"/>
+                    <rect x="470" y="65" width="135" height="90"
+                          rx="5" fill="white"/>
+                    <rect x="483" y="78" width="109" height="12"
+                          rx="4" fill="#238451"/>
+                    <rect x="483" y="101" width="80" height="8"
+                          rx="4" fill="#c4d6ea"/>
+                    <rect x="483" y="118" width="95" height="8"
+                          rx="4" fill="#c4d6ea"/>
+                    <circle cx="588" cy="142" r="10" fill="#238451"/>
+                    <path d="M582 142 L587 147 L595 136"
+                          fill="none" stroke="white" stroke-width="2.5"/>
+                    <text x="537" y="225" text-anchor="middle"
+                          fill="#166534" font-size="14" font-weight="bold">LIVE WEBSITE</text>
+
+                    <text x="325" y="275" text-anchor="middle"
+                          fill="#52647a" font-size="13">
+                        From development to public access.
+                    </text>
+                </svg>
+                <figcaption>
+                    Deployment makes a completed website available
+                    in its live production environment.
+                </figcaption>
+            </figure>
+
+            <h3>Development vs. Production</h3>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Environment</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Development</td>
+                            <td>
+                                The environment where developers create,
+                                edit, and improve the website.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Testing / Staging</td>
+                            <td>
+                                The environment where the website is checked
+                                before it is released.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Production</td>
+                            <td>
+                                The live environment where visitors can
+                                access the website.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="highlight-box">
+                <h3>Key Idea</h3>
+                <p>
+                    Deployment connects the development process to the
+                    actual use of a website. Proper testing should be
+                    performed before making the website available publicly.
+                </p>
+            </div>
+        </section>
+
+        <!-- SECTION 9 -->
+        <section class="content-section" id="section9">
+            <h2>9. Website Deployment Process</h2>
+
+            <p>
+                Deploying a website involves several steps to make sure
+                that the website files, hosting environment, and settings
+                are ready for public access.
+            </p>
+
+            <figure class="lesson-visual">
+                <div class="visual-label">DEPLOYMENT WORKFLOW</div>
+                <svg viewBox="0 0 650 340" role="img"
+                     aria-label="Six stages of website deployment">
+                    <g text-anchor="middle">
+                        <rect x="15" y="25" width="190" height="110"
+                              rx="12" fill="#e5effa"/>
+                        <circle cx="110" cy="58" r="20" fill="#24558a"/>
+                        <text x="110" y="65" fill="white" font-size="15">1</text>
+                        <text x="110" y="101" fill="#24558a"
+                              font-size="13" font-weight="bold">DEVELOP</text>
+
+                        <rect x="230" y="25" width="190" height="110"
+                              rx="12" fill="#e5effa"/>
+                        <circle cx="325" cy="58" r="20" fill="#397db8"/>
+                        <text x="325" y="65" fill="white" font-size="15">2</text>
+                        <text x="325" y="101" fill="#24558a"
+                              font-size="13" font-weight="bold">TEST</text>
+
+                        <rect x="445" y="25" width="190" height="110"
+                              rx="12" fill="#e5effa"/>
+                        <circle cx="540" cy="58" r="20" fill="#397db8"/>
+                        <text x="540" y="65" fill="white" font-size="15">3</text>
+                        <text x="540" y="101" fill="#24558a"
+                              font-size="13" font-weight="bold">PREPARE HOSTING</text>
+
+                        <rect x="15" y="185" width="190" height="110"
+                              rx="12" fill="#e5effa"/>
+                        <circle cx="110" cy="218" r="20" fill="#397db8"/>
+                        <text x="110" y="225" fill="white" font-size="15">4</text>
+                        <text x="110" y="261" fill="#24558a"
+                              font-size="13" font-weight="bold">UPLOAD FILES</text>
+
+                        <rect x="230" y="185" width="190" height="110"
+                              rx="12" fill="#e5effa"/>
+                        <circle cx="325" cy="218" r="20" fill="#397db8"/>
+                        <text x="325" y="225" fill="white" font-size="15">5</text>
+                        <text x="325" y="261" fill="#24558a"
+                              font-size="13" font-weight="bold">CONNECT DOMAIN</text>
+
+                        <rect x="445" y="185" width="190" height="110"
+                              rx="12" fill="#d8f1e3"/>
+                        <circle cx="540" cy="218" r="20" fill="#238451"/>
+                        <text x="540" y="225" fill="white" font-size="15">6</text>
+                        <text x="540" y="261" fill="#166534"
+                              font-size="13" font-weight="bold">VERIFY WEBSITE</text>
+                    </g>
+                    <path d="M205 80 H230 M420 80 H445"
+                          stroke="#24558a" stroke-width="3"/>
+                    <path d="M540 135 V185"
+                          stroke="#24558a" stroke-width="3"/>
+                    <path d="M445 240 H420 M230 240 H205"
+                          stroke="#24558a" stroke-width="3"/>
+                </svg>
+                <figcaption>
+                    The deployment process prepares, uploads, connects,
+                    and verifies the website before public use.
+                </figcaption>
+            </figure>
+
+            <h3>Steps in Website Deployment</h3>
+
+            <ol>
+                <li>
+                    <strong>Complete Website Development:</strong>
+                    Finish the website pages, features, content,
+                    and required functionality.
+                </li>
+                <li>
+                    <strong>Test the Website:</strong>
+                    Check the website for errors, broken links,
+                    and compatibility issues.
+                </li>
+                <li>
+                    <strong>Prepare the Hosting Environment:</strong>
+                    Set up the hosting account and necessary server settings.
+                </li>
+                <li>
+                    <strong>Upload Website Files:</strong>
+                    Transfer the HTML, CSS, JavaScript, images,
+                    and other required files to the hosting service.
+                </li>
+                <li>
+                    <strong>Connect the Domain:</strong>
+                    Configure the domain name to point to the hosting service.
+                </li>
+                <li>
+                    <strong>Verify the Live Website:</strong>
+                    Open the website using its public address and check
+                    that its pages and features work correctly.
+                </li>
+            </ol>
+
+            <div class="highlight-box">
+                <h3>Important Reminder</h3>
+                <p>
+                    Always check the live website after deployment.
+                    A website that works on a local computer may still
+                    experience problems when placed in a production environment.
+                </p>
+            </div>
+        </section>
+
+        <!-- SECTION 10 -->
+        <section class="content-section" id="section10">
+            <h2>10. Website Maintenance</h2>
+
+            <p>
+                <strong>Website maintenance</strong> is the ongoing process
+                of checking, updating, and improving a website after it
+                has been published. It helps ensure that the website remains
+                secure, functional, updated, and reliable.
+            </p>
+
+            <p>
+                Maintenance is important because websites may need new
+                content, software updates, security improvements, and
+                corrections as time passes.
+            </p>
+
+            <figure class="lesson-visual">
+                <div class="visual-label">WEBSITE MAINTENANCE</div>
+                <svg viewBox="0 0 650 310" role="img"
+                     aria-label="Computer website with maintenance gears and check marks">
+                    <rect x="65" y="45" width="335" height="185"
+                          rx="14" fill="#dceafa" stroke="#24558a" stroke-width="3"/>
+                    <rect x="85" y="65" width="295" height="140"
+                          rx="6" fill="white"/>
+                    <rect x="85" y="65" width="295" height="25"
+                          rx="6" fill="#24558a"/>
+                    <rect x="105" y="108" width="100" height="75"
+                          rx="5" fill="#e5effa"/>
+                    <rect x="220" y="110" width="135" height="10"
+                          rx="4" fill="#9bb6d3"/>
+                    <rect x="220" y="132" width="115" height="8"
+                          rx="4" fill="#c4d6ea"/>
+                    <rect x="220" y="151" width="125" height="8"
+                          rx="4" fill="#c4d6ea"/>
+                    <path d="M175 230 H290 L310 250 H155 Z"
+                          fill="#9bb6d3"/>
+
+                    <!-- GEAR -->
+                    <circle cx="480" cy="120" r="48"
+                            fill="#dceafa" stroke="#2e78c5" stroke-width="5"/>
+                    <circle cx="480" cy="120" r="17"
+                            fill="white" stroke="#2e78c5" stroke-width="5"/>
+                    <g stroke="#2e78c5" stroke-width="10"
+                       stroke-linecap="round">
+                        <path d="M480 59 V72 M480 168 V181
+                                 M419 120 H432 M528 120 H541
+                                 M437 77 L447 87 M513 153 L523 163
+                                 M437 163 L447 153 M513 87 L523 77"/>
+                    </g>
+
+                    <!-- CHECK -->
+                    <circle cx="530" cy="215" r="29" fill="#238451"/>
+                    <path d="M515 215 L526 226 L545 203"
+                          fill="none" stroke="white" stroke-width="5"
+                          stroke-linecap="round" stroke-linejoin="round"/>
+
+                    <text x="325" y="285" text-anchor="middle"
+                          fill="#24558a" font-size="15" font-weight="bold">
+                        KEEP YOUR WEBSITE UPDATED
+                    </text>
+                </svg>
+                <figcaption>
+                    Regular website maintenance helps keep a website
+                    secure, updated, and functioning properly.
+                </figcaption>
+            </figure>
+
+            <h3>Why Is Website Maintenance Important?</h3>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Security</h3>
+                    <p>
+                        Helps protect the website by applying updates
+                        and checking possible security issues.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Performance</h3>
+                    <p>
+                        Helps maintain website speed and improve
+                        overall functionality.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Updated Content</h3>
+                    <p>
+                        Keeps website information, images, announcements,
+                        and other content accurate.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Reliability</h3>
+                    <p>
+                        Helps ensure that website pages and features
+                        remain available and usable.
+                    </p>
+                </div>
+            </div>
+
+            <h3>Website Maintenance Best Practices</h3>
+
+            <ul>
+                <li><strong>Regular Backups:</strong> Keep copies of important website files and databases.</li>
+                <li><strong>Software Updates:</strong> Update website software, plugins, libraries, and components.</li>
+                <li><strong>Security Monitoring:</strong> Check for suspicious activities and possible vulnerabilities.</li>
+                <li><strong>Broken Link Checking:</strong> Find and correct links that no longer work.</li>
+                <li><strong>Performance Monitoring:</strong> Monitor website loading speed and responsiveness.</li>
+                <li><strong>Content Updates:</strong> Make sure that information remains accurate and relevant.</li>
+                <li><strong>Availability Monitoring:</strong> Check whether the website can be accessed by visitors.</li>
+            </ul>
+
+            <div class="highlight-box">
+                <h3>Key Idea</h3>
+                <p>
+                    Website maintenance does not stop after deployment.
+                    It is an ongoing responsibility that keeps a website
+                    working properly over time.
+                </p>
+            </div>
+        </section>
+       
+<!-- SECTION 11: GLOSSARY -->
+<section class="content-section" id="section11">
+
+    <h2>11. Glossary</h2>
+
+    <p>
+        The following terms are important concepts discussed in this
+        lesson. These definitions will help you understand website
+        testing, hosting, deployment, and maintenance.
+    </p>
+
+    <div class="glossary-list">
+
+        <div class="glossary-item">
+            <h3>1. Website Testing</h3>
+            <p>The process of checking a website to identify errors and ensure that its features work properly.</p>
+        </div>
+
+        <div class="glossary-item">
+            <h3>2. Functional Testing</h3>
+            <p>A type of testing that checks whether website features such as buttons, forms, and links work correctly.</p>
+        </div>
+
+        <div class="glossary-item">
+            <h3>3. Performance Testing</h3>
+            <p>The process of measuring a website's speed, responsiveness, and performance under different conditions.</p>
+        </div>
+
+        <div class="glossary-item">
+            <h3>4. Compatibility Testing</h3>
+            <p>Testing that checks whether a website works properly across different browsers, devices, and operating systems.</p>
+        </div>
+
+        <div class="glossary-item">
+            <h3>5. Security Testing</h3>
+            <p>The process of identifying security weaknesses and checking how well a website protects information.</p>
+        </div>
+
+        <div class="glossary-item">
+            <h3>6. Usability Testing</h3>
+            <p>Testing that evaluates how easy and convenient a website is for users to navigate and operate.</p>
+        </div>
+
+        <div class="glossary-item">
+            <h3>7. Bug</h3>
+            <p>An error or defect in a website that causes unexpected or incorrect behavior.</p>
+        </div>
+
+        <div class="glossary-item">
+            <h3>8. Web Hosting</h3>
+            <p>A service that stores website files on a server and makes them accessible through the internet.</p>
+        </div>
+
+        <div class="glossary-item">
+            <h3>9. Hosting Provider</h3>
+            <p>A company that provides server space and services for publishing websites online.</p>
+        </div>
+
+        <div class="glossary-item">
+            <h3>10. Server</h3>
+            <p>A computer or system that stores resources and provides data or services to other computers.</p>
+        </div>
+
+        <div class="glossary-item">
+            <h3>11. Shared Hosting</h3>
+            <p>A hosting type where multiple websites use the resources of the same server.</p>
+        </div>
+
+        <div class="glossary-item">
+            <h3>12. VPS Hosting</h3>
+            <p>Virtual Private Server hosting, where a physical server is divided into separate virtual environments.</p>
+        </div>
+
+        <div class="glossary-item">
+            <h3>13. Dedicated Hosting</h3>
+            <p>A hosting service where one customer uses an entire physical server.</p>
+        </div>
+
+        <div class="glossary-item">
+            <h3>14. Cloud Hosting</h3>
+            <p>A hosting service that uses multiple connected servers to provide website resources.</p>
+        </div>
+
+        <div class="glossary-item">
+            <h3>15. Uptime</h3>
+            <p>The amount of time a website or server remains available and accessible.</p>
+        </div>
+
+        <div class="glossary-item">
+            <h3>16. Bandwidth</h3>
+            <p>The capacity for transferring data between a website and its visitors over a period of time.</p>
+        </div>
+
+        <div class="glossary-item">
+            <h3>17. Domain Name</h3>
+            <p>The readable address used to access a website, such as example.com.</p>
+        </div>
+
+        <div class="glossary-item">
+            <h3>18. Website Deployment</h3>
+            <p>The process of publishing a website to its intended environment so users can access it.</p>
+        </div>
+
+        <div class="glossary-item">
+            <h3>19. Production Environment</h3>
+            <p>The live environment where a completed website is available to its actual users.</p>
+        </div>
+
+        <div class="glossary-item">
+            <h3>20. Website Maintenance</h3>
+            <p>The ongoing process of updating, monitoring, securing, and improving a published website.</p>
+        </div>
+
+        <div class="glossary-item">
+            <h3>21. Backup</h3>
+            <p>A copy of website files or data that can be used to restore information when needed.</p>
+        </div>
+
+        <div class="glossary-item">
+            <h3>22. Website Vulnerability</h3>
+            <p>A weakness in a website or its system that could be exploited and cause security problems.</p>
+        </div>
+
+    </div>
+
+    <div class="highlight-box">
+        <h3>Remember</h3>
+        <p>
+            Understanding these terms will help you follow the complete
+            website development process, from testing and hosting to
+            deployment and maintenance.
+        </p>
+    </div>
+
+</section>
+
+
+<!-- SECTION 12: LEARNING RESOURCES -->
+<section class="content-section learning-resources-section" id="section12">
+
+    <h2>12. Learning Resources</h2>
+
+    <p>
+        Explore these online resources to learn more about website
+        testing, hosting, deployment, and website maintenance.
+    </p>
+
+    <div class="resource-list">
+
+        <div class="resource-card">
+            <div class="resource-icon">📘</div>
+            <div class="resource-content">
+                <h3>MDN Web Docs</h3>
+                <p>Learn about web development, HTML, CSS, JavaScript, and web standards.</p>
+                <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development"
+                   target="_blank" rel="noopener">Visit MDN Web Docs →</a>
+            </div>
+        </div>
+
+        <div class="resource-card">
+            <div class="resource-icon">🚀</div>
+            <div class="resource-content">
+                <h3>Google Lighthouse</h3>
+                <p>Learn how to evaluate website performance, accessibility, SEO, and best practices.</p>
+                <a href="https://developer.chrome.com/docs/lighthouse/"
+                   target="_blank" rel="noopener">Explore Lighthouse →</a>
+            </div>
+        </div>
+
+        <div class="resource-card">
+            <div class="resource-icon">🧪</div>
+            <div class="resource-content">
+                <h3>Selenium Documentation</h3>
+                <p>Study browser automation and learn how to test website features using Selenium.</p>
+                <a href="https://www.selenium.dev/documentation/"
+                   target="_blank" rel="noopener">Visit Selenium →</a>
+            </div>
+        </div>
+
+        <div class="resource-card">
+            <div class="resource-icon">🛠️</div>
+            <div class="resource-content">
+                <h3>Chrome DevTools</h3>
+                <p>Learn how to inspect website elements, debug JavaScript, and analyze network activity.</p>
+                <a href="https://developer.chrome.com/docs/devtools/"
+                   target="_blank" rel="noopener">Explore Chrome DevTools →</a>
+            </div>
+        </div>
+
+        <div class="resource-card">
+            <div class="resource-icon">🌐</div>
+            <div class="resource-content">
+                <h3>W3C Markup Validation Service</h3>
+                <p>Validate HTML documents and identify possible markup errors in your website.</p>
+                <a href="https://validator.w3.org/"
+                   target="_blank" rel="noopener">Visit W3C Validator →</a>
+            </div>
+        </div>
+
+        <div class="resource-card">
+            <div class="resource-icon">📊</div>
+            <div class="resource-content">
+                <h3>web.dev</h3>
+                <p>Explore guides about website performance, accessibility, and security.</p>
+                <a href="https://web.dev/"
+                   target="_blank" rel="noopener">Visit web.dev →</a>
+            </div>
+        </div>
+
+        <div class="resource-card">
+            <div class="resource-icon">⚡</div>
+            <div class="resource-content">
+                <h3>GTmetrix</h3>
+                <p>Learn how to analyze website loading speed and identify performance improvements.</p>
+                <a href="https://gtmetrix.com/"
+                   target="_blank" rel="noopener">Visit GTmetrix →</a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="highlight-box">
+        <h3>Study Tip</h3>
+        <p>
+            Read the documentation, explore the tools, and practice
+            testing a sample website. Applying these concepts will
+            help you understand how websites are prepared for public use.
+        </p>
+    </div>
+
+</section>
+
+
+<!-- SECTION 13: REVIEW AND REFLECTION -->
+<section class="content-section" id="section13">
+
+    <h2>13. Review and Reflection</h2>
+
+    <h3>Key Takeaways</h3>
+
+    <div class="info-grid">
+        <div class="info-card">
+            <h3>Website Testing</h3>
+            <p>Checks whether a website works properly and meets its requirements.</p>
+        </div>
+
+        <div class="info-card">
+            <h3>Web Hosting</h3>
+            <p>Provides server space and services that make websites accessible online.</p>
+        </div>
+
+        <div class="info-card">
+            <h3>Website Deployment</h3>
+            <p>Publishes a completed website to its intended environment.</p>
+        </div>
+
+        <div class="info-card">
+            <h3>Website Maintenance</h3>
+            <p>Keeps a website updated, secure, functional, and reliable.</p>
+        </div>
+    </div>
+
+    <h3>Part A: Review Questions</h3>
+
+    <ol>
+        <li>What is website testing, and why is it important?</li>
+        <li>What are the five common types of website testing?</li>
+        <li>What is the purpose of functional testing?</li>
+        <li>Give two examples of website testing tools.</li>
+        <li>What is web hosting?</li>
+        <li>What is the difference between shared hosting and dedicated hosting?</li>
+        <li>What factors should be considered when choosing a hosting provider?</li>
+        <li>What is website deployment?</li>
+        <li>What are the main steps involved in deploying a website?</li>
+        <li>Why is regular website maintenance important?</li>
+    </ol>
+
+    <h3>Part B: Reflection</h3>
+
+    <p>
+        Imagine that you have created a website for your school.
+        Explain why testing is necessary before publishing it.
+        Discuss how you would choose a hosting provider, deploy
+        the website, and maintain it after it becomes available online.
+    </p>
+
+    <h3>Write Your Reflection</h3>
+
+    <textarea id="reflectionAnswer" rows="7"
+        placeholder="Write your reflection here..."></textarea>
+
+    <p class="small-note">
+        Your response is for your own practice. Copy it somewhere
+        safe if you want to keep it.
+    </p>
+
+    <div class="highlight-box">
+        <h3>Final Key Takeaway</h3>
+        <p>
+            A successful website requires more than good design and
+            development. It must be tested, hosted properly, deployed
+            correctly, and maintained regularly to provide a reliable
+            experience for its users.
+        </p>
+    </div>
+
+</section>
+
+
+<!-- SECTION 14: REFERENCES -->
+<section class="content-section" id="section14">
+
+    <h2>14. References</h2>
+
+    <div class="reference-item">
+        <p>
+            MDN Web Docs. (n.d.).
+            <em>Learn web development.</em>
+            <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development"
+               target="_blank" rel="noopener">
+                https://developer.mozilla.org/en-US/docs/Learn_web_development
+            </a>
+        </p>
+    </div>
+
+    <div class="reference-item">
+        <p>
+            Google Developers. (n.d.).
+            <em>Lighthouse documentation.</em>
+            <a href="https://developer.chrome.com/docs/lighthouse/"
+               target="_blank" rel="noopener">
+                https://developer.chrome.com/docs/lighthouse/
+            </a>
+        </p>
+    </div>
+
+    <div class="reference-item">
+        <p>
+            Selenium. (n.d.).
+            <em>Selenium documentation.</em>
+            <a href="https://www.selenium.dev/documentation/"
+               target="_blank" rel="noopener">
+                https://www.selenium.dev/documentation/
+            </a>
+        </p>
+    </div>
+
+    <div class="reference-item">
+        <p>
+            World Wide Web Consortium. (n.d.).
+            <em>W3C.</em>
+            <a href="https://www.w3.org/"
+               target="_blank" rel="noopener">
+                https://www.w3.org/
+            </a>
+        </p>
+    </div>
+
+    <div class="reference-item">
+        <p>
+            web.dev. (n.d.).
+            <em>Web development resources.</em>
+            <a href="https://web.dev/"
+               target="_blank" rel="noopener">
+                https://web.dev/
+            </a>
+        </p>
+    </div>
+
+</section>
+
+
+        <!-- SECTION 12 -->
+        <section class="content-section" id="section12">
+            <h2>12. References</h2>
+
+            <div class="reference-item">
+                <p>
+                    MDN Web Docs. (n.d.).
+                    <em>Learn web development.</em>
+                    <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development"
+                       target="_blank" rel="noopener">
+                        https://developer.mozilla.org/en-US/docs/Learn_web_development
+                    </a>
+                </p>
+            </div>
+
+            <div class="reference-item">
+                <p>
+                    Google Developers. (n.d.).
+                    <em>Lighthouse documentation.</em>
+                    <a href="https://developer.chrome.com/docs/lighthouse/"
+                       target="_blank" rel="noopener">
+                        https://developer.chrome.com/docs/lighthouse/
+                    </a>
+                </p>
+            </div>
+
+            <div class="reference-item">
+                <p>
+                    Selenium. (n.d.).
+                    <em>Selenium documentation.</em>
+                    <a href="https://www.selenium.dev/documentation/"
+                       target="_blank" rel="noopener">
+                        https://www.selenium.dev/documentation/
+                    </a>
+                </p>
+            </div>
+
+            <div class="reference-item">
+                <p>
+                    World Wide Web Consortium. (n.d.).
+                    <em>W3C.</em>
+                    <a href="https://www.w3.org/"
+                       target="_blank" rel="noopener">
+                        https://www.w3.org/
+                    </a>
+                </p>
+            </div>
+
+            <div class="reference-item">
+                <p>
+                    web.dev. (n.d.).
+                    <em>Web development resources.</em>
+                    <a href="https://web.dev/"
+                       target="_blank" rel="noopener">
+                        https://web.dev/
+                    </a>
+                </p>
+            </div>
+        </section>
+
+        <blockquote>
+            “A successful website is not only built and published.
+            It is continuously tested, improved, and maintained.”
+            <span>— WEBTECH LEARN</span>
+        </blockquote>
+
+        <!-- LESSON NAVIGATION -->
+        <div class="lesson-navigation">
+            <a href="chapter9.html" class="previous-button">← Previous Chapter</a>
+            <a href="chapter11.html" class="next-button">Next Chapter →</a>
+        </div>
+
+        <!-- FOOTER -->
+        <footer class="page-footer">
+            <p>WEBTECH LEARN | Web Technology Learning E-Book</p>
+            <p>Excellence Beyond Limits</p>
+        </footer>
+
+    </main>
+</div>
+
+<button id="backToTop" title="Back to Top" aria-label="Back to Top">↑</button>
+
+<!-- DISPLAY SETTINGS -->
+<div id="displaySettings">
+    <button id="settingsToggle" type="button" aria-label="Display settings">⚙️</button>
+
+    <div id="settingsPanel">
+        <div class="settings-heading">Display Settings</div>
+
+        <span class="settings-label">Appearance</span>
+        <button id="darkModeButton" class="settings-dark-button" type="button">
+            🌙 Switch to Dark Mode
+        </button>
+
+        <span class="settings-label">Text Size</span>
+
+        <div class="settings-size-controls">
+            <button id="decreaseText" type="button">A−</button>
+            <span id="textSizeValue">100%</span>
+            <button id="increaseText" type="button">A+</button>
+        </div>
+
+        <button id="resetSettings" type="button">Reset Settings</button>
+    </div>
+</div>
+<script src="chapter10.js" defer></script>
+</body>
+</html>

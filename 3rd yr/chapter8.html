@@ -1,0 +1,1466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lesson 8 - DOM Manipulation and JavaScript Events </title>
+
+    <link rel="stylesheet" href="chapter8.css">
+    <link rel="stylesheet" href="../display-settings.css">
+    
+
+    <script src="../display-settings.js" defer></script>
+ 
+    <script src="chapter8-assesment.js" defer></script>
+</head>
+<body>
+<!-- HEADER -->
+<header class="header">
+    <div class="nav-container">
+
+        <a href="index.html" class="logo">
+            <img src="logo.jpg" alt="BSIT Digital Minds Logo" class="logo-image">
+
+            <span class="logo-text">
+                <small>BSIT | DIGITAL MINDS</small>
+            </span>
+        </a>
+
+        <a href="../pics/3rd yr toc.html" class="back-home">
+            ← Back to Table of Content
+        </a>
+
+    </div>
+    <link rel="stylesheet" href="ebook-pagination.css">
+<script src="ebook-pagination.js" defer></script>
+</header>
+
+<body>
+
+
+
+<div class="page-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <h3>Chapter 8 </h3>
+        <p class="sidebar-subtitle">
+            User Interface Design and Accessibility
+        </p>
+
+        <nav aria-label="Chapter 8 Table of Contents">
+            <a href="#introduction">Introduction</a>
+            <a href="#section1">1. Foundations of UI Design</a>
+            <a href="#section2">2. Principles of UI Design</a>
+            <a href="#section3">3. User-Centered Design</a>
+            <a href="#section4">4. Digital Accessibility</a>
+            <a href="#section5">5. WCAG Guidelines</a>
+            <a href="#section6">6. Practical Techniques</a>
+            <a href="#section7">7. Accessibility Testing</a>
+            <a href="#section8">8. Learning Resources</a>
+            <a href="#section9">9. Glossary</a>
+            <a href="#section10">10. Review Activities</a>
+            <a href="#section11">11. References</a>
+        </nav>
+<div class="separate-learning-links">
+    <a href="chapter8-assessment.html">📋 Chapter 8 Assessment</a>
+</div>
+
+<div class="sidebar-download">
+    <button type="button" id="downloadPDF">
+        <span>↓</span>
+        Download Lesson PDF
+    </button>
+</div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- INTRODUCTION -->
+        <section class="lesson-banner" id="introduction">
+
+            <span class="chapter-label">CHAPTER 08</span>
+
+            <h1>User Interface Design and Accessibility</h1>
+
+            <p>
+                A Detailed Learning Module for Information Technology Students
+            </p>
+
+        </section>
+
+        <!-- MODULE DESCRIPTION -->
+        <section class="content-section">
+
+            <h2>Module Description</h2>
+
+            <p>
+                This learning module explains how digital interfaces are planned,
+                designed, developed, and evaluated so that they are usable,
+                understandable, and accessible to people with different
+                abilities and needs.
+            </p>
+
+            <h3>Learning Objectives</h3>
+
+            <p>At the end of this module, learners should be able to:</p>
+
+            <ul>
+                <li>Define user interface (UI), user experience (UX), usability, and accessibility.</li>
+                <li>Explain major principles and processes used in effective UI design.</li>
+                <li>Identify common accessibility barriers in websites and applications.</li>
+                <li>Describe the four WCAG principles: Perceivable, Operable, Understandable, and Robust.</li>
+                <li>Recommend design improvements and basic tests for an inclusive interface.</li>
+            </ul>
+
+            <div class="highlight-box">
+                <h3>Learning Material</h3>
+                <p>
+                    English • Detailed Lessons • Learning Resources •
+                    Glossary • References
+                </p>
+            </div>
+
+        </section>
+
+        <!-- SECTION 1 -->
+        <section class="content-section" id="section1">
+
+            <h2>1. Foundations of User Interface Design</h2>
+
+            <p>
+                User Interface (UI) refers to the points of interaction between
+                a person and a digital product. It includes the screens, menus,
+                buttons, icons, text fields, images, navigation, and feedback
+                that allow a user to operate a system.
+            </p>
+
+            <p>
+                Examples include a mobile banking app, a school enrollment website,
+                a ticket kiosk, and a desktop application.
+            </p>
+
+            <!-- DIAGRAM 1 -->
+            <figure class="historical-image">
+                <svg viewBox="0 0 700 300" role="img"
+                     aria-label="Diagram of the main components of a user interface">
+
+                    <rect x="70" y="15" width="560" height="270"
+                          rx="14" fill="#eaf3fc"
+                          stroke="#10569a" stroke-width="3"/>
+
+                    <rect x="95" y="40" width="510" height="45"
+                          rx="7" fill="#10569a"/>
+
+                    <text x="350" y="69" text-anchor="middle"
+                          fill="white" font-size="19" font-weight="bold">
+                        WEBSITE HEADER
+                    </text>
+
+                    <rect x="95" y="105" width="140" height="145"
+                          rx="8" fill="white" stroke="#10569a" stroke-width="2"/>
+
+                    <text x="165" y="180" text-anchor="middle"
+                          fill="#082d59" font-size="18">MENU</text>
+
+                    <rect x="255" y="105" width="350" height="60"
+                          rx="8" fill="white" stroke="#10569a" stroke-width="2"/>
+
+                    <text x="430" y="142" text-anchor="middle"
+                          fill="#082d59" font-size="18">CONTENT</text>
+
+                    <rect x="255" y="185" width="155" height="45"
+                          rx="7" fill="#10569a"/>
+
+                    <text x="332" y="214" text-anchor="middle"
+                          fill="white" font-size="16">BUTTON</text>
+
+                    <rect x="425" y="185" width="180" height="45"
+                          rx="7" fill="white" stroke="#10569a" stroke-width="2"/>
+
+                    <text x="515" y="214" text-anchor="middle"
+                          fill="#082d59" font-size="15">INPUT FIELD</text>
+
+                </svg>
+
+                <figcaption>
+                    Figure 1. Basic components of a User Interface.
+                </figcaption>
+            </figure>
+
+            <h3>1.1 Goals of UI Design</h3>
+
+            <div class="info-grid">
+
+                <div class="info-card">
+                    <h3>Clarity</h3>
+                    <p>Users can understand the information and available actions.</p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Efficiency</h3>
+                    <p>Users can complete tasks without unnecessary steps.</p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Consistency</h3>
+                    <p>Similar elements behave in similar ways throughout the product.</p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Learnability</h3>
+                    <p>New users can understand how to begin and continue.</p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Error Reduction</h3>
+                    <p>The interface helps prevent mistakes and supports recovery.</p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Accessibility</h3>
+                    <p>People with a wide range of abilities can use the product.</p>
+                </div>
+
+            </div>
+
+            <h3>1.2 UI Design and UX Design</h3>
+
+            <p>
+                UI design concentrates on the interface itself: its visual layout,
+                controls, typography, colors, labels, and interactive behavior.
+                User Experience (UX) design considers the complete experience of
+                using a product, including whether it solves a real problem,
+                how easy the process feels, and whether users can achieve their goals.
+            </p>
+
+            <table>
+                <tr>
+                    <th>UI Design</th>
+                    <th>UX Design</th>
+                </tr>
+                <tr>
+                    <td>
+                        Designs the screens and interactive elements,
+                        such as buttons, menus, and forms.
+                        <br><br>
+                        Example: selecting the size, color, and placement
+                        of a Submit button.
+                    </td>
+                    <td>
+                        Designs the overall journey and experience,
+                        from the user's need to task completion.
+                        <br><br>
+                        Example: making the entire online enrollment
+                        process understandable and convenient.
+                    </td>
+                </tr>
+            </table>
+
+            <h3>1.3 Interface Types</h3>
+
+            <table>
+                <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                    <th>Example</th>
+                </tr>
+
+                <tr>
+                    <td>Graphical User Interface (GUI)</td>
+                    <td>Uses visual elements such as windows, icons, menus, and pointers.</td>
+                    <td>Desktop operating system or mobile app.</td>
+                </tr>
+
+                <tr>
+                    <td>Command-Line Interface (CLI)</td>
+                    <td>Users enter text commands to interact with the system.</td>
+                    <td>Terminal or command prompt.</td>
+                </tr>
+
+                <tr>
+                    <td>Voice User Interface (VUI)</td>
+                    <td>Users interact through spoken commands and audio responses.</td>
+                    <td>Voice assistant.</td>
+                </tr>
+
+                <tr>
+                    <td>Touch Interface</td>
+                    <td>Users interact by tapping, swiping, or using gestures.</td>
+                    <td>Smartphone or self-service kiosk.</td>
+                </tr>
+            </table>
+
+        </section>
+
+        <!-- SECTION 2 -->
+        <section class="content-section" id="section2">
+
+            <h2>2. Principles of Effective UI Design</h2>
+
+            <!-- DIAGRAM 2 -->
+            <figure class="historical-image">
+                <svg viewBox="0 0 700 280" role="img"
+                     aria-label="Four important user interface design principles">
+
+                    <rect x="20" y="15" width="660" height="250"
+                          rx="14" fill="#eaf3fc"/>
+
+                    <g text-anchor="middle">
+                        <circle cx="110" cy="105" r="42" fill="#10569a"/>
+                        <text x="110" y="112" fill="white" font-size="22">01</text>
+                        <text x="110" y="180" fill="#082d59" font-size="16">Simplicity</text>
+
+                        <circle cx="270" cy="105" r="42" fill="#10569a"/>
+                        <text x="270" y="112" fill="white" font-size="22">02</text>
+                        <text x="270" y="180" fill="#082d59" font-size="16">Consistency</text>
+
+                        <circle cx="430" cy="105" r="42" fill="#10569a"/>
+                        <text x="430" y="112" fill="white" font-size="22">03</text>
+                        <text x="430" y="180" fill="#082d59" font-size="16">Feedback</text>
+
+                        <circle cx="590" cy="105" r="42" fill="#10569a"/>
+                        <text x="590" y="112" fill="white" font-size="22">04</text>
+                        <text x="590" y="180" fill="#082d59" font-size="16">Readability</text>
+                    </g>
+
+                    <text x="350" y="230" text-anchor="middle"
+                          fill="#082d59" font-size="19" font-weight="bold">
+                        EFFECTIVE UI DESIGN PRINCIPLES
+                    </text>
+                </svg>
+
+                <figcaption>
+                    Figure 2. Important principles of effective UI design.
+                </figcaption>
+            </figure>
+
+            <h3>2.1 Simplicity and Focus</h3>
+
+            <p>
+                A simple interface presents the information and controls needed
+                for the current task without unnecessary distractions. Group
+                related content, use meaningful headings, and avoid displaying
+                too many choices at once. Simplicity should not remove important
+                information or hide essential functions.
+            </p>
+
+            <h3>2.2 Consistency</h3>
+
+            <p>
+                Use the same visual style and interaction patterns across pages.
+                If a blue button means “Continue” on one page, avoid making an
+                identical blue button perform an unrelated action elsewhere.
+                Consistency helps users predict what will happen.
+            </p>
+
+            <h3>2.3 Visual Hierarchy</h3>
+
+            <p>
+                Visual hierarchy communicates the relative importance of
+                information. Designers can use heading size, spacing, alignment,
+                contrast, and placement to guide attention. A page title should
+                be easy to identify, while supporting details should remain
+                visually secondary.
+            </p>
+
+            <h3>2.4 Feedback and System Status</h3>
+
+            <p>
+                The system should communicate the result of user actions.
+                Examples include a success message after saving, a progress
+                indicator during upload, or a clear notice when a page is loading.
+                Feedback should be timely and understandable.
+            </p>
+
+            <h3>2.5 Error Prevention and Recovery</h3>
+
+            <p>
+                Prevent errors with clear instructions, sensible input formats,
+                confirmation for important actions, and validation. When an
+                error happens, explain what needs attention and how to correct it.
+                Do not rely on a color change alone to communicate an error.
+            </p>
+
+            <h3>2.6 Readability and Legibility</h3>
+
+            <p>
+                Use readable typefaces, adequate text size, suitable line spacing,
+                and strong text-background contrast. Break long content into
+                sections and use descriptive headings. Avoid placing important
+                text over busy images.
+            </p>
+
+            <h3>2.7 User Control and Freedom</h3>
+
+            <p>
+                Users should be able to go back, cancel, undo, or correct an
+                action when appropriate. Avoid unexpected navigation, automatic
+                changes that users cannot control, and irreversible actions
+                without suitable warning.
+            </p>
+
+            <h3>2.8 Responsive and Adaptable Layouts</h3>
+
+            <p>
+                A responsive interface adjusts to different screen sizes and
+                orientations. Content should reflow on mobile devices, buttons
+                should remain reachable, and users should not need to scroll
+                horizontally to read ordinary text.
+            </p>
+
+            <h3>2.9 Example: A Well-Designed Enrollment Page</h3>
+
+            <p>
+                A clear enrollment page might show a descriptive page title,
+                a short introduction, a numbered list of steps, clearly labeled
+                document requirements, and a visible contact link. Related
+                requirements should be grouped together. The same navigation
+                and heading styles should be used throughout the site.
+            </p>
+
+        </section>
+
+        <!-- SECTION 3 -->
+        <section class="content-section" id="section3">
+
+            <h2>3. User-Centered Design Process</h2>
+
+            <p>
+                User-centered design places the needs, abilities, and goals of
+                intended users at the center of the design process. Designers
+                should learn about users before deciding how the interface will look.
+            </p>
+
+            <!-- DIAGRAM 3 -->
+            <figure class="historical-image">
+                <svg viewBox="0 0 700 260" role="img"
+                     aria-label="Four stages of the user-centered design process">
+
+                    <g text-anchor="middle">
+                        <rect x="10" y="65" width="150" height="95"
+                              rx="12" fill="#10569a"/>
+                        <text x="85" y="105" fill="white" font-size="17">Understand</text>
+                        <text x="85" y="130" fill="white" font-size="17">Users</text>
+
+                        <path d="M165 112 L190 112"
+                              stroke="#082d59" stroke-width="4"/>
+                        <path d="M182 104 L192 112 L182 120"
+                              fill="none" stroke="#082d59" stroke-width="3"/>
+
+                        <rect x="200" y="65" width="150" height="95"
+                              rx="12" fill="#10569a"/>
+                        <text x="275" y="105" fill="white" font-size="17">Create</text>
+                        <text x="275" y="130" fill="white" font-size="17">Design</text>
+
+                        <path d="M355 112 L380 112"
+                              stroke="#082d59" stroke-width="4"/>
+                        <path d="M372 104 L382 112 L372 120"
+                              fill="none" stroke="#082d59" stroke-width="3"/>
+
+                        <rect x="390" y="65" width="150" height="95"
+                              rx="12" fill="#10569a"/>
+                        <text x="465" y="105" fill="white" font-size="17">Test with</text>
+                        <text x="465" y="130" fill="white" font-size="17">Users</text>
+
+                        <path d="M545 112 L570 112"
+                              stroke="#082d59" stroke-width="4"/>
+                        <path d="M562 104 L572 112 L562 120"
+                              fill="none" stroke="#082d59" stroke-width="3"/>
+
+                        <rect x="580" y="65" width="110" height="95"
+                              rx="12" fill="#10569a"/>
+                        <text x="635" y="118" fill="white" font-size="17">Improve</text>
+                    </g>
+
+                    <text x="350" y="220" text-anchor="middle"
+                          fill="#082d59" font-size="18" font-weight="bold">
+                        USER-CENTERED DESIGN PROCESS
+                    </text>
+                </svg>
+
+                <figcaption>
+                    Figure 3. The user-centered design process.
+                </figcaption>
+            </figure>
+
+            <h3>3.1 Understand Users and Tasks</h3>
+
+            <p>
+                Identify who will use the product, what they need to accomplish,
+                the environment in which they will use it, and any barriers they
+                may encounter. For example, a school portal may be used by students
+                on phones, parents on desktop computers, and staff using assistive
+                technology.
+            </p>
+
+            <h3>3.2 Organize Information</h3>
+
+            <p>
+                Group related information and create a logical navigation structure.
+                Use familiar labels such as “Admissions,” “Requirements,” and
+                “Contact.” Avoid unclear menu names and unnecessary layers.
+            </p>
+
+            <h3>3.3 Create Wireframes and Prototypes</h3>
+
+            <p>
+                A wireframe is a simple layout showing the placement of content
+                and controls. A prototype is a model that allows people to try
+                or review an intended interaction before the final product is built.
+                Early testing can reveal confusing steps before development becomes
+                expensive.
+            </p>
+
+            <h3>3.4 Test with Users and Improve</h3>
+
+            <p>
+                Observe people completing realistic tasks. Ask where they hesitate,
+                what they misunderstand, and whether they can finish successfully.
+                Record issues, make improvements, and test again. Include people
+                with different access needs whenever possible.
+            </p>
+
+            <table>
+                <tr>
+                    <th>Stage</th>
+                    <th>What Happens</th>
+                    <th>Example Question</th>
+                </tr>
+
+                <tr>
+                    <td>Research</td>
+                    <td>Understand users, context, and goals.</td>
+                    <td>Who needs to use this system?</td>
+                </tr>
+
+                <tr>
+                    <td>Plan</td>
+                    <td>Organize content and task flow.</td>
+                    <td>Can users find the correct page?</td>
+                </tr>
+
+                <tr>
+                    <td>Design</td>
+                    <td>Create layouts and interaction patterns.</td>
+                    <td>Are labels and controls clear?</td>
+                </tr>
+
+                <tr>
+                    <td>Prototype</td>
+                    <td>Create a testable model.</td>
+                    <td>Can users complete the task?</td>
+                </tr>
+
+                <tr>
+                    <td>Evaluate</td>
+                    <td>Test, gather feedback, and revise.</td>
+                    <td>What barriers remain?</td>
+                </tr>
+            </table>
+
+        </section>
+
+        <!-- SECTION 4 -->
+        <section class="content-section" id="section4">
+
+            <h2>4. Introduction to Digital Accessibility</h2>
+
+            <p>
+                Digital accessibility is the practice of designing and developing
+                digital content and technology so that people with disabilities
+                can perceive, understand, navigate, and interact with it.
+                Accessibility also helps people who experience temporary or
+                situational limitations—for example, someone using a phone in
+                bright sunlight or watching a video in a noisy place.
+            </p>
+
+            <!-- DIAGRAM 4 -->
+            <figure class="historical-image">
+                <svg viewBox="0 0 700 280" role="img"
+                     aria-label="Examples of digital accessibility features">
+
+                    <rect x="20" y="15" width="660" height="250"
+                          rx="14" fill="#eaf3fc"/>
+
+                    <g text-anchor="middle" fill="#082d59">
+
+                        <circle cx="140" cy="100" r="42" fill="#10569a"/>
+                        <text x="140" y="111" fill="white" font-size="30">A</text>
+                        <text x="140" y="175" font-size="17">Readable Text</text>
+
+                        <circle cx="350" cy="100" r="42" fill="#10569a"/>
+                        <text x="350" y="111" fill="white" font-size="25">CC</text>
+                        <text x="350" y="175" font-size="17">Captions</text>
+
+                        <circle cx="560" cy="100" r="42" fill="#10569a"/>
+                        <text x="560" y="111" fill="white" font-size="25">⌨</text>
+                        <text x="560" y="175" font-size="17">Keyboard Access</text>
+
+                    </g>
+
+                    <text x="350" y="230" text-anchor="middle"
+                          fill="#082d59" font-size="19" font-weight="bold">
+                        DESIGNING FOR EVERYONE
+                    </text>
+                </svg>
+
+                <figcaption>
+                    Figure 4. Examples of digital accessibility features.
+                </figcaption>
+            </figure>
+
+            <h3>4.1 Different Access Needs</h3>
+
+            <table>
+                <tr>
+                    <th>Access Need</th>
+                    <th>Possible Barrier</th>
+                    <th>Design Support</th>
+                </tr>
+
+                <tr>
+                    <td>Visual</td>
+                    <td>Small text, low contrast, images with no useful text alternative.</td>
+                    <td>Readable text, contrast, zoom, meaningful alternative text, screen-reader support.</td>
+                </tr>
+
+                <tr>
+                    <td>Hearing</td>
+                    <td>Audio instructions or video without captions.</td>
+                    <td>Captions, transcripts, and visual notifications.</td>
+                </tr>
+
+                <tr>
+                    <td>Motor / Physical</td>
+                    <td>Controls that require precise mouse movement or gestures.</td>
+                    <td>Keyboard access, larger targets, and alternative input support.</td>
+                </tr>
+
+                <tr>
+                    <td>Cognitive / Learning</td>
+                    <td>Complex instructions, inconsistent layouts, confusing time limits.</td>
+                    <td>Plain language, predictable navigation, clear steps, and helpful feedback.</td>
+                </tr>
+            </table>
+
+            <h3>4.2 Accessibility Is Part of Quality</h3>
+
+            <p>
+                Accessibility improves the reach and quality of a digital product.
+                Captions can help people who cannot hear audio and people who are
+                studying in a quiet place. Clear headings help screen-reader users
+                navigate and also help sighted users scan a page. Keyboard support
+                helps people who cannot use a mouse and people who prefer keyboard
+                shortcuts.
+            </p>
+
+            <h3>4.3 Common Barriers and Fixes</h3>
+
+            <ul>
+                <li><strong>Low color contrast:</strong> Choose text and background colors with sufficient contrast.</li>
+                <li><strong>Color-only instructions:</strong> Add text, symbols, or patterns so meaning is not communicated by color alone.</li>
+                <li><strong>Missing image alternatives:</strong> Provide useful alternative text for informative images.</li>
+                <li><strong>Mouse-only operation:</strong> Make all important functions available through a keyboard.</li>
+                <li><strong>Uncaptioned media:</strong> Provide accurate captions and transcripts where appropriate.</li>
+                <li><strong>Unlabeled form fields:</strong> Use visible, programmatically associated labels.</li>
+                <li><strong>Unclear errors:</strong> Identify the problem and explain how to fix it.</li>
+            </ul>
+
+        </section>
+
+        <!-- SECTION 5 -->
+        <section class="content-section" id="section5">
+
+            <h2>5. Web Content Accessibility Guidelines (WCAG)</h2>
+
+            <p>
+                The Web Content Accessibility Guidelines (WCAG) are developed by
+                the World Wide Web Consortium (W3C). They provide internationally
+                recognized guidance for making web content more accessible.
+                WCAG is organized around four principles known as POUR.
+            </p>
+
+            <!-- DIAGRAM 5 -->
+            <figure class="historical-image">
+                <svg viewBox="0 0 700 290" role="img"
+                     aria-label="The four WCAG principles: Perceivable, Operable, Understandable, and Robust">
+
+                    <rect x="20" y="15" width="660" height="260"
+                          rx="14" fill="#eaf3fc"/>
+
+                    <g text-anchor="middle">
+
+                        <rect x="40" y="55" width="145" height="135"
+                              rx="12" fill="#10569a"/>
+                        <text x="112" y="105" fill="white"
+                              font-size="32" font-weight="bold">P</text>
+                        <text x="112" y="145" fill="white"
+                              font-size="15">Perceivable</text>
+
+                        <rect x="205" y="55" width="145" height="135"
+                              rx="12" fill="#10569a"/>
+                        <text x="277" y="105" fill="white"
+                              font-size="32" font-weight="bold">O</text>
+                        <text x="277" y="145" fill="white"
+                              font-size="15">Operable</text>
+
+                        <rect x="370" y="55" width="145" height="135"
+                              rx="12" fill="#10569a"/>
+                        <text x="442" y="105" fill="white"
+                              font-size="32" font-weight="bold">U</text>
+                        <text x="442" y="145" fill="white"
+                              font-size="14">Understandable</text>
+
+                        <rect x="535" y="55" width="125" height="135"
+                              rx="12" fill="#10569a"/>
+                        <text x="597" y="105" fill="white"
+                              font-size="32" font-weight="bold">R</text>
+                        <text x="597" y="145" fill="white"
+                              font-size="15">Robust</text>
+
+                    </g>
+
+                    <text x="350" y="235" text-anchor="middle"
+                          fill="#082d59" font-size="19" font-weight="bold">
+                        FOUR PRINCIPLES OF WCAG
+                    </text>
+                </svg>
+
+                <figcaption>
+                    Figure 5. The four WCAG principles known as POUR.
+                </figcaption>
+            </figure>
+
+            <h3>5.1 Perceivable</h3>
+
+            <p>
+                Information and user-interface components must be presented in
+                ways users can perceive. Content should not depend on only one sense.
+            </p>
+
+            <ul>
+                <li>Provide text alternatives for meaningful images.</li>
+                <li>Provide captions for prerecorded video with audio.</li>
+                <li>Use sufficient contrast for text and important interface components.</li>
+                <li>Allow content to be resized without losing information or functionality.</li>
+            </ul>
+
+            <h3>5.2 Operable</h3>
+
+            <p>
+                Interface components and navigation must be usable. Users should
+                be able to interact without being forced to use a method they cannot operate.
+            </p>
+
+            <ul>
+                <li>Make functionality available from a keyboard.</li>
+                <li>Show a visible keyboard focus indicator.</li>
+                <li>Provide enough time to complete tasks when time limits are used.</li>
+                <li>Use clear page titles and navigation.</li>
+            </ul>
+
+            <h3>5.3 Understandable</h3>
+
+            <p>
+                Information and interface operation must be clear and predictable.
+            </p>
+
+            <ul>
+                <li>Use plain and direct language.</li>
+                <li>Keep repeated navigation and controls consistent.</li>
+                <li>Provide clear labels and instructions for forms.</li>
+                <li>Explain errors and identify the fields that need correction.</li>
+            </ul>
+
+            <h3>5.4 Robust</h3>
+
+            <p>
+                Content should work reliably with different browsers, devices,
+                and assistive technologies. Use valid, semantic markup and ensure
+                controls expose their names, roles, and values to assistive technology.
+            </p>
+
+            <h3>5.5 WCAG Conformance Levels</h3>
+
+            <table>
+                <tr>
+                    <th>Level</th>
+                    <th>General Description</th>
+                </tr>
+
+                <tr>
+                    <td>A</td>
+                    <td>The minimum conformance level; addresses the most basic accessibility requirements.</td>
+                </tr>
+
+                <tr>
+                    <td>AA</td>
+                    <td>Addresses a broader range of barriers and is a common target in accessibility policies and projects.</td>
+                </tr>
+
+                <tr>
+                    <td>AAA</td>
+                    <td>The highest level; may not be practical or achievable for every type of content.</td>
+                </tr>
+            </table>
+
+            <p>
+                The appropriate conformance target depends on the project,
+                applicable laws, and organizational requirements. Meeting a
+                conformance level does not remove the need to test with real users.
+            </p>
+
+        </section>
+
+        <!-- SECTION 6 -->
+        <section class="content-section" id="section6">
+
+            <h2>6. Practical Techniques for Accessible Interfaces</h2>
+
+            <h3>6.1 Text, Color, and Structure</h3>
+
+            <ul>
+                <li>Use headings in a logical order and describe the topic of each section.</li>
+                <li>Use readable font sizes and line spacing.</li>
+                <li>
+                    Check text contrast against its background; WCAG 2.2 AA
+                    generally requires a contrast ratio of at least 4.5:1 for
+                    normal text and 3:1 for large text, subject to stated exceptions.
+                </li>
+                <li>Do not use color as the only way to show status or instructions.</li>
+                <li>Support zoom and reflow so content remains usable.</li>
+            </ul>
+
+            <h3>6.2 Images and Media</h3>
+
+            <p>
+                Alternative text (often called alt text) communicates the meaning
+                or function of an image to people who cannot see it. Write concise,
+                contextual descriptions. If an image is purely decorative and adds
+                no information, it can usually be hidden from assistive technology
+                with an empty alt attribute. Videos with speech or meaningful
+                sounds should have synchronized captions; audio-only content
+                should have a transcript.
+            </p>
+
+            <h3>6.3 Keyboard and Focus</h3>
+
+            <p>
+                A keyboard user should be able to move through interactive
+                elements in a logical order using keys such as Tab, Shift+Tab,
+                Enter, and Space where appropriate. The currently focused
+                element must be visually identifiable. Avoid keyboard traps,
+                where a user becomes stuck in one part of the interface.
+            </p>
+
+            <h3>6.4 Accessible Forms</h3>
+
+            <ul>
+                <li>Give every field a clear label; do not use placeholder text as the only label.</li>
+                <li>Explain required fields and accepted formats before submission.</li>
+                <li>Use clear error messages and associate them with the relevant field.</li>
+                <li>Preserve entered information when possible if the form has an error.</li>
+                <li>Make form controls usable by keyboard and assistive technology.</li>
+            </ul>
+
+            <h3>6.5 Example: Improving a Sign-In Form</h3>
+
+            <!-- DIAGRAM 6 -->
+            <figure class="historical-image">
+                <svg viewBox="0 0 700 350" role="img"
+                     aria-label="Example of a sign-in form with visible labels and accessible controls">
+
+                    <rect x="160" y="10" width="380" height="325"
+                          rx="15" fill="#eaf3fc"
+                          stroke="#10569a" stroke-width="2"/>
+
+                    <text x="350" y="50" text-anchor="middle"
+                          fill="#082d59" font-size="24" font-weight="bold">
+                        SIGN IN
+                    </text>
+
+                    <text x="195" y="95" fill="#082d59" font-size="16">
+                        Email Address
+                    </text>
+
+                    <rect x="195" y="105" width="310" height="42"
+                          rx="6" fill="white" stroke="#10569a" stroke-width="2"/>
+
+                    <text x="210" y="132" fill="#64748b" font-size="14">
+                        Enter your email
+                    </text>
+
+                    <text x="195" y="185" fill="#082d59" font-size="16">
+                        Password
+                    </text>
+
+                    <rect x="195" y="195" width="310" height="42"
+                          rx="6" fill="white" stroke="#10569a" stroke-width="2"/>
+
+                    <text x="210" y="222" fill="#64748b" font-size="14">
+                        Enter your password
+                    </text>
+
+                    <rect x="195" y="265" width="310" height="45"
+                          rx="7" fill="#10569a"/>
+
+                    <text x="350" y="294" text-anchor="middle"
+                          fill="white" font-size="17" font-weight="bold">
+                        SIGN IN
+                    </text>
+                </svg>
+
+                <figcaption>
+                    Figure 6. Example of a simple sign-in form with visible labels.
+                </figcaption>
+            </figure>
+
+            <table>
+                <tr>
+                    <th>Less Accessible</th>
+                    <th>More Accessible</th>
+                </tr>
+
+                <tr>
+                    <td>The field is identified only by placeholder text.</td>
+                    <td>A visible label such as “Email address” remains available when the user types.</td>
+                </tr>
+
+                <tr>
+                    <td>An error is indicated only by a red border.</td>
+                    <td>Text explains: “Enter a valid email address,” and identifies the field.</td>
+                </tr>
+
+                <tr>
+                    <td>The Sign In control cannot be reached by keyboard.</td>
+                    <td>The control can be reached and activated by keyboard, with visible focus.</td>
+                </tr>
+
+                <tr>
+                    <td>Video instructions have no captions.</td>
+                    <td>Accurate synchronized captions are provided.</td>
+                </tr>
+            </table>
+
+            <h3>6.6 Touch and Mobile Design</h3>
+
+            <p>
+                On touchscreens, controls should be large enough and spaced well
+                enough to reduce accidental activation. Important content should
+                fit different screen sizes, and orientation should not be
+                unnecessarily restricted. Avoid relying only on complex gestures
+                when a simple button or alternative control can provide the same function.
+            </p>
+
+        </section>
+
+        <!-- SECTION 7 -->
+        <section class="content-section" id="section7">
+
+            <h2>7. Accessibility Evaluation and Testing</h2>
+
+            <p>
+                Accessibility testing combines automated checks with human review.
+                No single tool can identify every issue. A page may pass an
+                automated scan but still be difficult to use with a keyboard
+                or screen reader.
+            </p>
+
+            <h3>7.1 Basic Manual Checks</h3>
+
+            <ul>
+                <li>Navigate the entire page using only a keyboard. Check that focus is visible and follows a logical order.</li>
+                <li>Zoom in and check whether content remains readable and usable.</li>
+                <li>Review headings, page titles, form labels, and link text.</li>
+                <li>Check text and important control contrast.</li>
+                <li>Listen to the page using a screen reader, if available, and check whether information is announced meaningfully.</li>
+                <li>Review images, captions, transcripts, and error messages.</li>
+            </ul>
+
+            <h3>7.2 Automated Tools</h3>
+
+            <p>
+                Automated accessibility tools can help detect issues such as
+                missing accessible names, some contrast problems, and certain
+                structural errors. Examples include browser accessibility
+                inspection tools and W3C's WAVE evaluation tool. Results should
+                be reviewed by a person; automated tools may report false
+                positives or miss problems that require human judgment.
+            </p>
+
+            <h3>7.3 Real-World Case: College Enrollment Portal</h3>
+
+            <p>
+                Imagine a college website where students read admission information,
+                complete an application, and upload documents. An inclusive design
+                would use clear navigation, meaningful headings, labels for every
+                field, instructions for accepted file types, keyboard-accessible
+                upload controls, and error messages that explain how to correct
+                a problem. The page should also adapt to mobile screens.
+            </p>
+
+            <h3>7.4 Evaluation Activity</h3>
+
+            <p>
+                Choose a website or app that you use. Test one important task,
+                such as finding a contact number or completing a form. Record:
+                (1) what works well, (2) any barrier you notice, (3) who may be
+                affected, and (4) one practical improvement. Do not assume a
+                person has the same abilities or device setup as you.
+            </p>
+
+        </section>
+
+        <!-- SECTION 8 -->
+        <section class="content-section" id="section8">
+
+            <h2>8. Learning Resources</h2>
+
+            <p>
+                Use these resources to deepen your understanding and practice
+                the concepts introduced in this module. The links below point
+                to established organizations and learning materials.
+            </p>
+
+            <table>
+                <tr>
+                    <th>Resource</th>
+                    <th>What It Offers</th>
+                </tr>
+
+                <tr>
+                    <td>
+                        <a href="https://www.w3.org/WAI/" target="_blank">
+                            W3C Web Accessibility Initiative (WAI)
+                        </a>
+                    </td>
+                    <td>
+                        Guides, tutorials, and explanations about web accessibility
+                        and inclusive design.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <a href="https://www.w3.org/TR/WCAG22/" target="_blank">
+                            WCAG 2.2 Recommendation
+                        </a>
+                    </td>
+                    <td>
+                        The official WCAG 2.2 technical standard, including
+                        success criteria and conformance levels.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <a href="https://www.w3.org/WAI/fundamentals/accessibility-intro/" target="_blank">
+                            WAI: Introduction to Web Accessibility
+                        </a>
+                    </td>
+                    <td>
+                        An introductory explanation of why accessibility
+                        matters and who benefits.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <a href="https://www.w3.org/WAI/test-evaluate/easy-checks/" target="_blank">
+                            WAI: Easy Checks
+                        </a>
+                    </td>
+                    <td>
+                        A first review checklist for common accessibility
+                        issues on websites.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <a href="https://webaim.org/" target="_blank">
+                            WebAIM
+                        </a>
+                    </td>
+                    <td>
+                        Practical articles, training, and tools for web accessibility.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <a href="https://wave.webaim.org/" target="_blank">
+                            WAVE Web Accessibility Evaluation Tool
+                        </a>
+                    </td>
+                    <td>
+                        A tool that helps identify some accessibility issues
+                        on web pages.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <a href="https://m3.material.io/" target="_blank">
+                            Google Material Design
+                        </a>
+                    </td>
+                    <td>
+                        Design guidance and interface patterns for digital products.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <a href="https://www.interaction-design.org/" target="_blank">
+                            Interaction Design Foundation
+                        </a>
+                    </td>
+                    <td>
+                        Learning articles and courses on UI, UX, and human-centered design.
+                    </td>
+                </tr>
+            </table>
+
+            <h3>Suggested Learning Sequence</h3>
+
+            <ol>
+                <li>Start with the WAI introduction to understand accessibility and its importance.</li>
+                <li>Read the WCAG overview and learn the four POUR principles.</li>
+                <li>Use WAI Easy Checks to inspect a website you know.</li>
+                <li>Review a UI design resource and compare its examples with the principles in this module.</li>
+                <li>Write a short reflection describing one accessibility improvement you would make to a familiar website.</li>
+            </ol>
+
+        </section>
+
+        <!-- SECTION 9 -->
+        <section class="content-section" id="section9">
+
+            <h2>9. Glossary</h2>
+
+            <p>
+                The following terms are important concepts discussed throughout
+                this learning module.
+            </p>
+
+            <table>
+                <tr>
+                    <th>Term</th>
+                    <th>Definition</th>
+                </tr>
+
+                <tr>
+                    <td>Accessibility</td>
+                    <td>The practice of making digital products and content usable by people with different abilities and needs.</td>
+                </tr>
+
+                <tr>
+                    <td>Alternative Text (Alt Text)</td>
+                    <td>A text description that communicates the purpose or information of an image.</td>
+                </tr>
+
+                <tr>
+                    <td>Assistive Technology</td>
+                    <td>Hardware or software that helps a person interact with digital content, such as a screen reader or switch device.</td>
+                </tr>
+
+                <tr>
+                    <td>Caption</td>
+                    <td>Text synchronized with video that represents speech and relevant sounds.</td>
+                </tr>
+
+                <tr>
+                    <td>Color Contrast</td>
+                    <td>The difference in visual brightness between foreground content and its background.</td>
+                </tr>
+
+                <tr>
+                    <td>Consistency</td>
+                    <td>Using similar patterns and behaviors for similar interface elements.</td>
+                </tr>
+
+                <tr>
+                    <td>Focus Indicator</td>
+                    <td>A visible sign showing which interactive element currently receives keyboard input.</td>
+                </tr>
+
+                <tr>
+                    <td>Graphical User Interface (GUI)</td>
+                    <td>An interface that uses visual elements such as icons, windows, menus, and buttons.</td>
+                </tr>
+
+                <tr>
+                    <td>Keyboard Accessibility</td>
+                    <td>The ability to operate interface functions using a keyboard without requiring a mouse.</td>
+                </tr>
+
+                <tr>
+                    <td>Legibility</td>
+                    <td>How easily individual characters and words can be distinguished.</td>
+                </tr>
+
+                <tr>
+                    <td>Perceivable</td>
+                    <td>A WCAG principle requiring information and interface components to be presentable to users in ways they can perceive.</td>
+                </tr>
+
+                <tr>
+                    <td>Prototype</td>
+                    <td>An early model of a product used to explore or test design ideas.</td>
+                </tr>
+
+                <tr>
+                    <td>Responsive Design</td>
+                    <td>An approach that adapts a layout to different screen sizes and devices.</td>
+                </tr>
+
+                <tr>
+                    <td>Robust</td>
+                    <td>A WCAG principle requiring content to work reliably with browsers and assistive technologies.</td>
+                </tr>
+
+                <tr>
+                    <td>Screen Reader</td>
+                    <td>Assistive technology that presents digital content through speech or braille output.</td>
+                </tr>
+
+                <tr>
+                    <td>Usability</td>
+                    <td>The extent to which specified users can use a product to achieve goals effectively, efficiently, and satisfactorily.</td>
+                </tr>
+
+                <tr>
+                    <td>User Experience (UX)</td>
+                    <td>The overall experience and perceptions a person has when interacting with a product or service.</td>
+                </tr>
+
+                <tr>
+                    <td>User Interface (UI)</td>
+                    <td>The visual and interactive parts through which a person uses a digital product.</td>
+                </tr>
+
+                <tr>
+                    <td>Visual Hierarchy</td>
+                    <td>The arrangement of elements to communicate their relative importance.</td>
+                </tr>
+
+                <tr>
+                    <td>WCAG</td>
+                    <td>Web Content Accessibility Guidelines, a W3C standard for accessible web content.</td>
+                </tr>
+            </table>
+
+        </section>
+
+        <!-- SECTION 10 -->
+        <section class="content-section" id="section10">
+
+            <h2>10. Review and Reflection Activities</h2>
+
+            <h3>A. Check Your Understanding</h3>
+
+            <ol>
+                <li>Define user interface design in your own words.</li>
+                <li>Explain one difference between UI and UX design.</li>
+                <li>Why are consistency and feedback important in an interface?</li>
+                <li>What is digital accessibility? Name two groups or situations that benefit from it.</li>
+                <li>What does POUR stand for?</li>
+                <li>Give one example of an accessibility barrier for keyboard users and a possible solution.</li>
+                <li>Why should forms use visible labels and helpful error messages?</li>
+                <li>Why is manual accessibility testing necessary even when an automated tool is used?</li>
+            </ol>
+
+            <h3>B. Application Activity</h3>
+
+            <p>
+                Select a school website, shopping website, or mobile application.
+                Evaluate one page using the following categories: navigation,
+                text readability, color contrast, image alternatives, keyboard
+                operation, form labels, and error messages. Write down at least
+                three strengths and three improvements. For each improvement,
+                explain which users may benefit and why.
+            </p>
+
+            <h3>C. Reflection</h3>
+
+            <p>
+                In one or two paragraphs, explain why accessibility should be
+                considered from the beginning of a project rather than added
+                only after the interface is complete. Include an example from
+                a website or application you have used.
+            </p>
+
+            <div class="highlight-box">
+                <h3>Reflection Notes</h3>
+                <p>
+                    Use the space below to write your thoughts about
+                    User Interface Design and Accessibility.
+                </p>
+
+                <textarea
+                    rows="6"
+                    placeholder="Write your reflection here..."
+                    style="width:100%; padding:12px; border:1px solid #cbd5e1; border-radius:8px; font-family:inherit; resize:vertical;">
+                </textarea>
+            </div>
+
+        </section>
+
+        <!-- SECTION 11 -->
+        <section class="content-section" id="section11">
+
+            <h2>11. References</h2>
+
+            <p>
+                The following references support the definitions, standards,
+                and design practices discussed in this learning module.
+                Online resources may be updated; consult the official pages
+                for the latest versions.
+            </p>
+
+            <div class="reference-item">
+                <h3>1. World Wide Web Consortium (W3C)</h3>
+                <p>
+                    (2023). Web Content Accessibility Guidelines (WCAG) 2.2.
+                </p>
+                <a href="https://www.w3.org/TR/WCAG22/"
+                   target="_blank" rel="noopener noreferrer">
+                    https://www.w3.org/TR/WCAG22/
+                </a>
+            </div>
+
+            <div class="reference-item">
+                <h3>2. W3C Web Accessibility Initiative</h3>
+                <p>Introduction to Web Accessibility.</p>
+                <a href="https://www.w3.org/WAI/fundamentals/accessibility-intro/"
+                   target="_blank" rel="noopener noreferrer">
+                    View Reference
+                </a>
+            </div>
+
+            <div class="reference-item">
+                <h3>3. W3C Web Accessibility Initiative</h3>
+                <p>WCAG Overview.</p>
+                <a href="https://www.w3.org/WAI/standards-guidelines/wcag/"
+                   target="_blank" rel="noopener noreferrer">
+                    View Reference
+                </a>
+            </div>
+
+            <div class="reference-item">
+                <h3>4. W3C Web Accessibility Initiative</h3>
+                <p>Easy Checks: A First Review of Web Accessibility.</p>
+                <a href="https://www.w3.org/WAI/test-evaluate/easy-checks/"
+                   target="_blank" rel="noopener noreferrer">
+                    View Reference
+                </a>
+            </div>
+
+            <div class="reference-item">
+                <h3>5. WebAIM</h3>
+                <p>Web Accessibility in Mind.</p>
+                <a href="https://webaim.org/"
+                   target="_blank" rel="noopener noreferrer">
+                    View Reference
+                </a>
+            </div>
+
+            <div class="reference-item">
+                <h3>6. Interaction Design Foundation</h3>
+                <p>Interaction Design and User Experience Learning Resources.</p>
+                <a href="https://www.interaction-design.org/"
+                   target="_blank" rel="noopener noreferrer">
+                    View Reference
+                </a>
+            </div>
+
+            <div class="reference-item">
+                <h3>7. Google</h3>
+                <p>Material Design 3.</p>
+                <a href="https://m3.material.io/"
+                   target="_blank" rel="noopener noreferrer">
+                    View Reference
+                </a>
+            </div>
+
+        </section>
+
+        <!-- END OF MODULE -->
+        <section class="content-section">
+            <h2>End of Learning Module</h2>
+
+            <blockquote>
+                An effective interface is not only attractive.
+                It should be useful, understandable, operable,
+                and accessible to the people who need it.
+            </blockquote>
+        </section>
+
+        <!-- LESSON NAVIGATION -->
+        <div class="lesson-navigation">
+
+            <a href="chapter7.html" class="next-button">
+                ← Previous Chapter
+            </a>
+
+            <a href="chapter9.html" class="next-button">
+                Next Chapter →
+            </a>
+
+        </div>
+
+        <!-- FOOTER -->
+        <footer class="page-footer">
+            <p>WEBTECH LEARN | BSIT DIGITAL E-BOOK</p>
+            <p>Excellence Beyond Limits</p>
+        </footer>
+
+    </main>
+</div>
+
+<!-- BACK TO TOP -->
+<button id="backToTop" title="Back to Top" aria-label="Back to Top">
+    ↑
+</button>
+
+<!-- DISPLAY SETTINGS -->
+<div id="displaySettings">
+
+    <button id="settingsToggle" type="button" aria-label="Display settings">
+        ⚙️
+    </button>
+
+    <div id="settingsPanel">
+
+        <div class="settings-heading">Display Settings</div>
+
+        <span class="settings-label">Appearance</span>
+
+        <button id="darkModeButton"
+                class="settings-dark-button"
+                type="button">
+            🌙 Switch to Dark Mode
+        </button>
+
+        <span class="settings-label">Text Size</span>
+
+        <div class="settings-size-controls">
+            <button id="decreaseText" type="button">A−</button>
+            <span id="textSizeValue">100%</span>
+            <button id="increaseText" type="button">A+</button>
+        </div>
+
+        <button id="resetSettings" type="button">
+            Reset Settings
+        </button>
+
+    </div>
+</div>
+<script src="chapter8.js" defer></script>
+</body>
+</html>
