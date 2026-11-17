@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 3 Assessment | BSIT Digital Minds</title>
+
+    <link rel="stylesheet" href="lesson3-assessment.css">
+    <link rel="stylesheet" href="display-settings.css">
+
+    <script src="display-settings.js" defer></script>
+    <script src="lesson3-assessment.js" defer></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="nav-container">
+
+            <a href="index.html" class="logo">
+                <img src="logo.jpg" alt="BSIT Digital Minds Logo" class="logo-image">
+
+                <span class="logo-text">
+                    <small>BSIT | DIGITAL MINDS</small>
+                </span>
+            </a>
+
+            <a href="lesson3.html" class="back-link">
+                ← Back to Lesson 3
+            </a>
+
+        </div>
+    </header>
+
+    <!-- MAIN LAYOUT -->
+    <div class="page-layout">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <div class="sidebar-heading">
+                <span class="sidebar-icon"></span>
+                <h3>Assessment </h3>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="#overview" class="nav-link active">Assessment Overview</a>
+                <a href="#instructions" class="nav-link">Instructions</a>
+                <a href="#part1" class="nav-link">Part I – Multiple Choice</a>
+                <a href="#part2" class="nav-link">Part II – Identification</a>
+                <a href="#part3" class="nav-link">Part III – True or False</a>
+                <a href="#submit" class="nav-link">Submit Assessment</a>
+            </nav>
+
+            <div class="sidebar-bottom">
+                <a href="lesson3.html" class="sidebar-back">
+                    ← Back to Lesson 3
+                </a>
+            </div>
+
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+
+            <!-- BANNER -->
+            <section class="lesson-banner" id="overview">
+
+                <div class="banner-content">
+                    <span class="banner-label">BSIT DIGITAL E-BOOK | 2ND YEAR</span>
+
+                    <h1>Lesson 3 Assessment</h1>
+
+                    <h2>Processes, Threads, and Process Scheduling</h2>
+
+                    <p>
+                        Test your knowledge and understanding of operating
+                        system processes, threads, and CPU scheduling.
+                    </p>
+
+                    <div class="banner-tags">
+                        <span>35 Questions</span>
+                        <span>3 Assessment Parts</span>
+                        <span>Automatic Scoring</span>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- INSTRUCTIONS -->
+            <section class="content-section" id="instructions">
+
+                <div class="section-heading">
+                    <span class="section-number">01</span>
+                    <div>
+                        <h2>Assessment Instructions</h2>
+                        <p>Read the instructions carefully before answering.</p>
+                    </div>
+                </div>
+
+                <div class="highlight-box">
+                    <h3> Important Reminder</h3>
+                    <p>
+                        Answer all questions based on your understanding of
+                        Lesson 3: Processes, Threads, and Process Scheduling.
+                        Make sure to review your answers before submitting.
+                    </p>
+                </div>
+
+                <div class="instruction-list">
+                    <div class="instruction-item">
+                        <span class="instruction-icon">1</span>
+                        <p>Read each question carefully before selecting or entering your answer.</p>
+                    </div>
+
+                    <div class="instruction-item">
+                        <span class="instruction-icon">2</span>
+                        <p>Choose only one correct answer for each Multiple Choice question.</p>
+                    </div>
+
+                    <div class="instruction-item">
+                        <span class="instruction-icon">3</span>
+                        <p>Type the correct term or concept for each Identification question.</p>
+                    </div>
+
+                    <div class="instruction-item">
+                        <span class="instruction-icon">4</span>
+                        <p>Select True or False for each statement in Part III.</p>
+                    </div>
+
+                    <div class="instruction-item">
+                        <span class="instruction-icon">5</span>
+                        <p>Answer all 35 questions before submitting your assessment.</p>
+                    </div>
+                </div>
+
+                <div class="summary-grid">
+
+                    <div class="summary-card">
+                        <span class="summary-icon"></span>
+                        <h3>20</h3>
+                        <p>Multiple Choice</p>
+                    </div>
+
+                    <div class="summary-card">
+                        <span class="summary-icon"></span>
+                        <h3>10</h3>
+                        <p>Identification</p>
+                    </div>
+
+                    <div class="summary-card">
+                        <span class="summary-icon"></span>
+                        <h3>5</h3>
+                        <p>True or False</p>
+                    </div>
+
+                    <div class="summary-card total-card">
+                        <span class="summary-icon"></span>
+                        <h3>35</h3>
+                        <p>Total Questions</p>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- PROGRESS -->
+            <section class="progress-section">
+
+                <div class="progress-info">
+                    <div>
+                        <h3>Assessment Progress</h3>
+                        <p id="progressText">0 out of 35 questions answered</p>
+                    </div>
+
+                    <span class="progress-percent" id="progressPercent">0%</span>
+                </div>
+
+                <div class="progress-track">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+
+            </section>
+
+            <!-- ASSESSMENT FORM -->
+            <form id="assessmentForm">
+
+                <!-- PART I -->
+                <section class="content-section assessment-part" id="part1">
+
+                    <div class="part-heading">
+                        <div class="part-label">PART I</div>
+
+                        <div>
+                            <h2>Multiple Choice</h2>
+                            <p>Choose the letter of the correct answer.</p>
+                        </div>
+
+                        <span class="question-count">20 Questions</span>
+                    </div>
+
+                    <div id="multipleChoiceContainer"></div>
+
+                </section>
+
+                <!-- PART II -->
+                <section class="content-section assessment-part" id="part2">
+
+                    <div class="part-heading">
+                        <div class="part-label">PART II</div>
+
+                        <div>
+                            <h2>Identification</h2>
+                            <p>Write the correct term or concept described in each statement.</p>
+                        </div>
+
+                        <span class="question-count">10 Questions</span>
+                    </div>
+
+                    <div id="identificationContainer"></div>
+
+                </section>
+
+                <!-- PART III -->
+                <section class="content-section assessment-part" id="part3">
+
+                    <div class="part-heading">
+                        <div class="part-label">PART III</div>
+
+                        <div>
+                            <h2>True or False</h2>
+                            <p>Determine whether each statement is True or False.</p>
+                        </div>
+
+                        <span class="question-count">5 Questions</span>
+                    </div>
+
+                    <div id="trueFalseContainer"></div>
+
+                </section>
+
+                <!-- SUBMIT -->
+                <section class="content-section submit-section" id="submit">
+
+                    <div class="submit-content">
+                        <span class="submit-icon"></span>
+
+                        <h2>Ready to Submit?</h2>
+
+                        <p>
+                            Make sure you have answered all 35 questions.
+                            Once submitted, your score and explanations will appear.
+                        </p>
+
+                        <div class="submit-buttons">
+                            <button type="button" class="reset-btn" id="resetButton">
+                                Reset Answers
+                            </button>
+
+                            <button type="submit" class="submit-btn">
+                                Submit Assessment →
+                            </button>
+                        </div>
+                    </div>
+
+                </section>
+
+            </form>
+
+            <!-- RESULTS -->
+            <section class="content-section results-section" id="resultsSection" hidden>
+
+                <div class="result-header">
+                    <span class="result-icon" id="resultIcon"></span>
+
+                    <h2 id="resultTitle">Assessment Completed!</h2>
+
+                    <p id="resultMessage"></p>
+                </div>
+
+                <div class="score-card">
+
+                    <span class="score-label">YOUR FINAL SCORE</span>
+
+                    <div class="score-display">
+                        <span id="scoreValue">0</span>
+                        <span class="score-total">/ 35</span>
+                    </div>
+
+                    <div class="score-percent" id="scorePercent">0%</div>
+
+                    <div class="score-status" id="scoreStatus">Keep Learning!</div>
+
+                </div>
+
+                <div class="breakdown-section">
+
+                    <h3>Score Breakdown</h3>
+
+                    <div class="breakdown-grid">
+
+                        <div class="breakdown-card">
+                            <span>Part I</span>
+                            <strong id="mcResult">0 / 20</strong>
+                            <small>Multiple Choice</small>
+                        </div>
+
+                        <div class="breakdown-card">
+                            <span>Part II</span>
+                            <strong id="idResult">0 / 10</strong>
+                            <small>Identification</small>
+                        </div>
+
+                        <div class="breakdown-card">
+                            <span>Part III</span>
+                            <strong id="tfResult">0 / 5</strong>
+                            <small>True or False</small>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="explanations-section">
+
+                    <h3>Answer Review and Explanations</h3>
+
+                    <p class="explanation-subtitle">
+                        Review your answers and understand the correct concepts.
+                    </p>
+
+                    <div id="explanationsContainer"></div>
+
+                </div>
+
+                <div class="result-buttons">
+
+                    <button type="button" class="reset-btn" id="tryAgainButton">
+                        ↻ Try Again
+                    </button>
+
+                    <a href="lesson3.html" class="back-result-btn">
+                        ← Back to Lesson 3
+                    </a>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>© 2026 BSIT | DIGITAL MINDS. All Rights Reserved.</p>
+        <p>Lesson 3: Processes, Threads, and Process Scheduling</p>
+    </footer>
+
+    <!-- BACK TO TOP -->
+    <button id="backToTop" title="Back to Top">↑</button>
+
+</body>
+</html>

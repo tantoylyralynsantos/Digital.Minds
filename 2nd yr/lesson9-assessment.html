@@ -1,0 +1,728 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 2 Assessment | WEBTECH LEARN</title>
+
+    <link rel="stylesheet" href="lesson9-assessment.css">
+    <link rel="stylesheet" href="display-settings.css">
+
+    <script src="display-settings.js" defer></script>
+    <script src="lesson9-assessment.js" defer></script>
+</head>
+<body>
+
+
+<!-- HEADER -->
+<header class="header">
+    <div class="nav-container">
+
+        <a href="index.html" class="logo">
+            <img src="logo.jpg" alt="BSIT Digital Minds Logo" class="logo-image">
+
+            <span class="logo-text">
+                <small>BSIT | DIGITAL MINDS</small>
+            </span>
+        </a>
+
+        <a href="lesson9.html" class="back-home">
+            ← Back to the lesson 9
+        </a>
+
+    </div>
+    <link rel="stylesheet" href="ebook-pagination.css">
+<script src="ebook-pagination.js" defer></script>
+</header>
+
+
+<div class="page-layout">
+
+    <aside class="sidebar">
+        <h3>ASSESSMENT </h3>
+
+        <nav>
+            <a href="#overview">Assessment Overview</a>
+            <a href="#instructions">Instructions</a>
+            <a href="#assessment">Assessment Questions</a>
+            <a href="#results">Assessment Results</a>
+        </nav>
+
+        <div class="sidebar-note">
+            <strong>Reminder</strong>
+            <p>Read each question carefully before selecting your answer. Make sure all questions are answered before submitting.</p>
+        </div>
+    </aside>
+
+    <main class="main-content">
+
+        <section class="lesson-banner">
+            <span class="banner-label">WEBTECH LEARN | BSIT DIGITAL MINDS</span>
+            <h1>Lesson 9 Assessment</h1>
+            <p>Authentication, Authorization, and Web Security</p>
+
+            <div class="banner-info">
+                <span>20 QUESTIONS</span>
+                <span>MULTIPLE CHOICE</span>
+                <span>20 POINTS</span>
+            </div>
+        </section>
+
+        <!-- OVERVIEW -->
+        <section class="content-section" id="overview">
+            <span class="section-label">ASSESSMENT OVERVIEW</span>
+            <h2>Test Your Knowledge</h2>
+
+            <p>This assessment measures your understanding of authentication, authorization, password security, encryption, access control, and common web security threats discussed in Lesson 9.</p>
+
+            <div class="overview-grid">
+                <div class="overview-card">
+                    <span class="overview-icon">📝</span>
+                    <h3>20 Questions</h3>
+                    <p>Multiple-choice questions</p>
+                </div>
+
+                <div class="overview-card">
+                    <span class="overview-icon">⭐</span>
+                    <h3>20 Points</h3>
+                    <p>One point for each correct answer</p>
+                </div>
+
+                <div class="overview-card">
+                    <span class="overview-icon">📊</span>
+                    <h3>Instant Results</h3>
+                    <p>Automatic checking and explanations</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- INSTRUCTIONS -->
+        <section class="content-section" id="instructions">
+            <span class="section-label">BEFORE YOU START</span>
+            <h2>Assessment Instructions</h2>
+
+            <ol class="instruction-list">
+                <li>Read each question carefully.</li>
+                <li>Select only one answer for every question.</li>
+                <li>Choose the letter that represents the best answer.</li>
+                <li>Answer all 20 questions before submitting.</li>
+                <li>Click the Submit Assessment button to check your answers.</li>
+                <li>Your score, percentage, and answer explanations will appear after submission.</li>
+                <li>You may click Try Again if you want to retake the assessment.</li>
+            </ol>
+
+            <div class="notice-box">
+                <strong>Important Reminder</strong>
+                <p>You must answer all questions before you can submit your assessment.</p>
+            </div>
+        </section>
+
+        <!-- ASSESSMENT -->
+        <section class="content-section" id="assessment">
+
+            <div class="assessment-heading">
+                <div>
+                    <span class="section-label">KNOWLEDGE CHECK</span>
+                    <h2>Assessment Questions</h2>
+                    <p>Select the correct answer for each question.</p>
+                </div>
+
+                <div class="question-total">
+                    <strong id="answeredCount">0/20</strong>
+                    <span>Answered</span>
+                </div>
+            </div>
+
+            <div class="progress-container">
+                <div class="progress-info">
+                    <span>Assessment Progress</span>
+                    <span id="progressText">0% Completed</span>
+                </div>
+
+                <div class="progress-track">
+                    <div class="progress-bar" id="progressBar"></div>
+                </div>
+            </div>
+
+            <form id="lesson9Assessment">
+
+                <!-- QUESTION 1 -->
+                <div class="question-card">
+                    <span class="question-number">QUESTION 01</span>
+                    <h3>What is the main purpose of web security?</h3>
+
+                    <label class="answer-option">
+                        <input type="radio" name="q1" value="A">
+                        <span>A. To make websites more colorful</span>
+                    </label>
+
+                    <label class="answer-option">
+                        <input type="radio" name="q1" value="B">
+                        <span>B. To protect websites, systems, and user information</span>
+                    </label>
+
+                    <label class="answer-option">
+                        <input type="radio" name="q1" value="C">
+                        <span>C. To increase the number of website advertisements</span>
+                    </label>
+
+                    <label class="answer-option">
+                        <input type="radio" name="q1" value="D">
+                        <span>D. To remove all website features</span>
+                    </label>
+                </div>
+
+                <!-- QUESTION 2 -->
+                <div class="question-card">
+                    <span class="question-number">QUESTION 02</span>
+                    <h3>Which security process verifies the identity of a user?</h3>
+
+                    <label class="answer-option">
+                        <input type="radio" name="q2" value="A">
+                        <span>A. Authorization</span>
+                    </label>
+
+                    <label class="answer-option">
+                        <input type="radio" name="q2" value="B">
+                        <span>B. Encryption</span>
+                    </label>
+
+                    <label class="answer-option">
+                        <input type="radio" name="q2" value="C">
+                        <span>C. Authentication</span>
+                    </label>
+
+                    <label class="answer-option">
+                        <input type="radio" name="q2" value="D">
+                        <span>D. Data Backup</span>
+                    </label>
+                </div>
+
+                <!-- QUESTION 3 -->
+                <div class="question-card">
+                    <span class="question-number">QUESTION 03</span>
+                    <h3>What does authorization determine?</h3>
+
+                    <label class="answer-option">
+                        <input type="radio" name="q3" value="A">
+                        <span>A. What an authenticated user is allowed to access</span>
+                    </label>
+
+                    <label class="answer-option">
+                        <input type="radio" name="q3" value="B">
+                        <span>B. The color of a website</span>
+                    </label>
+
+                    <label class="answer-option">
+                        <input type="radio" name="q3" value="C">
+                        <span>C. The speed of the internet connection</span>
+                    </label>
+
+                    <label class="answer-option">
+                        <input type="radio" name="q3" value="D">
+                        <span>D. The size of an image file</span>
+                    </label>
+                </div>
+
+                <!-- QUESTION 4 -->
+                <div class="question-card">
+                    <span class="question-number">QUESTION 04</span>
+                    <h3>Which of the following is an example of something you know?</h3>
+
+                    <label class="answer-option">
+                        <input type="radio" name="q4" value="A">
+                        <span>A. Fingerprint</span>
+                    </label>
+
+                    <label class="answer-option">
+                        <input type="radio" name="q4" value="B">
+                        <span>B. Smartphone</span>
+                    </label>
+
+                    <label class="answer-option">
+                        <input type="radio" name="q4" value="C">
+                        <span>C. Security key</span>
+                    </label>
+
+                    <label class="answer-option">
+                        <input type="radio" name="q4" value="D">
+                        <span>D. Password</span>
+                    </label>
+                </div>
+
+                <!-- QUESTION 5 -->
+                <div class="question-card">
+                    <span class="question-number">QUESTION 05</span>
+                    <h3>What is the purpose of password hashing?</h3>
+
+                    <label class="answer-option">
+                        <input type="radio" name="q5" value="A">
+                        <span>A. To display passwords publicly</span>
+                    </label>
+
+                    <label class="answer-option">
+                        <input type="radio" name="q5" value="B">
+                        <span>B. To protect stored passwords using a one-way transformation</span>
+                    </label>
+
+                    <label class="answer-option">
+                        <input type="radio" name="q5" value="C">
+                        <span>C. To make passwords shorter for users</span>
+                    </label>
+
+                    <label class="answer-option">
+                        <input type="radio" name="q5" value="D">
+                        <span>D. To remove the need for authentication</span>
+                    </label>
+                </div>
+
+                <!-- QUESTION 6 -->
+                <div class="question-card">
+                    <span class="question-number">QUESTION 06</span>
+                    <h3>What does MFA stand for?</h3>
+
+                    <label class="answer-option">
+                        <input type="radio" name="q6" value="A">
+                        <span>A. Multiple File Access</span>
+                    </label>
+
+                    <label class="answer-option">
+                        <input type="radio" name="q6" value="B">
+                        <span>B. Main Firewall Application</span>
+                    </label>
+
+                    <label class="answer-option">
+                        <input type="radio" name="q6" value="C">
+                        <span>C. Multi-Factor Authentication</span>
+                    </label>
+
+                    <label class="answer-option">
+                        <input type="radio" name="q6" value="D">
+                        <span>D. Manual File Authorization</span>
+                    </label>
+                </div>
+
+                <!-- QUESTION 7 -->
+                <div class="question-card">
+                    <span class="question-number">QUESTION 07</span>
+                    <h3>Which cookie attribute helps prevent JavaScript from accessing a cookie?</h3>
+
+                    <label class="answer-option">
+                        <input type="radio" name="q7" value="A">
+                        <span>A. HttpOnly</span>
+                    </label>
+
+                    <label class="answer-option">
+                        <input type="radio" name="q7" value="B">
+                        <span>B. Background</span>
+                    </label>
+
+                    <label class="answer-option">
+                        <input type="radio" name="q7" value="C">
+                        <span>C. FontSize</span>
+                    </label>
+
+                    <label class="answer-option">
+                        <input type="radio" name="q7" value="D">
+                        <span>D. Animation</span>
+                    </label>
+                </div>
+
+                <!-- QUESTION 8 -->
+                <div class="question-card">
+                    <span class="question-number">QUESTION 08</span>
+                    <h3>What is the primary purpose of HTTPS?</h3>
+
+                    <label class="answer-option">
+                        <input type="radio" name="q8" value="A">
+                        <span>A. To increase image resolution</span>
+                    </label>
+
+                    <label class="answer-option">
+                        <input type="radio" name="q8" value="B">
+                        <span>B. To remove website passwords</span>
+                    </label>
+
+                    <label class="answer-option">
+                        <input type="radio" name="q8" value="C">
+                        <span>C. To change the website layout</span>
+                    </label>
+
+                    <label class="answer-option">
+                        <input type="radio" name="q8" value="D">
+                        <span>D. To protect communication between browsers and servers using TLS</span>
+                    </label>
+                </div>
+
+                <!-- QUESTION 9 -->
+                <div class="question-card">
+                    <span class="question-number">QUESTION 09</span>
+                    <h3>Which access control model assigns permissions based on user roles?</h3>
+
+                    <label class="answer-option">
+                        <input type="radio" name="q9" value="A">
+                        <span>A. DAC</span>
+                    </label>
+
+                    <label class="answer-option">
+                        <input type="radio" name="q9" value="B">
+                        <span>B. RBAC</span>
+                    </label>
+
+                    <label class="answer-option">
+                        <input type="radio" name="q9" value="C">
+                        <span>C. MAC Address</span>
+                    </label>
+
+                    <label class="answer-option">
+                        <input type="radio" name="q9" value="D">
+                        <span>D. HTML</span>
+                    </label>
+                </div>
+
+                <!-- QUESTION 10 -->
+                <div class="question-card">
+                    <span class="question-number">QUESTION 10</span>
+                    <h3>What is SQL Injection?</h3>
+
+                    <label class="answer-option">
+                        <input type="radio" name="q10" value="A">
+                        <span>A. A method of improving website colors</span>
+                    </label>
+
+                    <label class="answer-option">
+                        <input type="radio" name="q10" value="B">
+                        <span>B. A process of compressing images</span>
+                    </label>
+
+                    <label class="answer-option">
+                        <input type="radio" name="q10" value="C">
+                        <span>C. An attack that manipulates database queries through unsafe input</span>
+                    </label>
+
+                    <label class="answer-option">
+                        <input type="radio" name="q10" value="D">
+                        <span>D. A technique for designing navigation menus</span>
+                    </label>
+                </div>
+
+                <!-- QUESTION 11 -->
+                <div class="question-card">
+                    <span class="question-number">QUESTION 11</span>
+                    <h3>Which is a primary defense against SQL Injection?</h3>
+
+                    <label class="answer-option">
+                        <input type="radio" name="q11" value="A">
+                        <span>A. Using larger images</span>
+                    </label>
+
+                    <label class="answer-option">
+                        <input type="radio" name="q11" value="B">
+                        <span>B. Disabling all website links</span>
+                    </label>
+
+                    <label class="answer-option">
+                        <input type="radio" name="q11" value="C">
+                        <span>C. Using decorative CSS</span>
+                    </label>
+
+                    <label class="answer-option">
+                        <input type="radio" name="q11" value="D">
+                        <span>D. Using parameterized queries or prepared statements</span>
+                    </label>
+                </div>
+
+                <!-- QUESTION 12 -->
+                <div class="question-card">
+                    <span class="question-number">QUESTION 12</span>
+                    <h3>What is Cross-Site Scripting (XSS)?</h3>
+
+                    <label class="answer-option">
+                        <input type="radio" name="q12" value="A">
+                        <span>A. A vulnerability that allows malicious scripts to run in users' browsers</span>
+                    </label>
+
+                    <label class="answer-option">
+                        <input type="radio" name="q12" value="B">
+                        <span>B. A method of creating a database backup</span>
+                    </label>
+
+                    <label class="answer-option">
+                        <input type="radio" name="q12" value="C">
+                        <span>C. A technique for increasing internet speed</span>
+                    </label>
+
+                    <label class="answer-option">
+                        <input type="radio" name="q12" value="D">
+                        <span>D. A process of creating user accounts</span>
+                    </label>
+                </div>
+
+                <!-- QUESTION 13 -->
+                <div class="question-card">
+                    <span class="question-number">QUESTION 13</span>
+                    <h3>What does CSRF attempt to do?</h3>
+
+                    <label class="answer-option">
+                        <input type="radio" name="q13" value="A">
+                        <span>A. Improve the design of a website</span>
+                    </label>
+
+                    <label class="answer-option">
+                        <input type="radio" name="q13" value="B">
+                        <span>B. Create stronger passwords automatically</span>
+                    </label>
+
+                    <label class="answer-option">
+                        <input type="radio" name="q13" value="C">
+                        <span>C. Trick an authenticated browser into sending an unwanted request</span>
+                    </label>
+
+                    <label class="answer-option">
+                        <input type="radio" name="q13" value="D">
+                        <span>D. Encrypt every image on a website</span>
+                    </label>
+                </div>
+
+                <!-- QUESTION 14 -->
+                <div class="question-card">
+                    <span class="question-number">QUESTION 14</span>
+                    <h3>What is a brute-force attack?</h3>
+
+                    <label class="answer-option">
+                        <input type="radio" name="q14" value="A">
+                        <span>A. An attack that changes website fonts</span>
+                    </label>
+
+                    <label class="answer-option">
+                        <input type="radio" name="q14" value="B">
+                        <span>B. Repeatedly trying different credentials to discover the correct one</span>
+                    </label>
+
+                    <label class="answer-option">
+                        <input type="radio" name="q14" value="C">
+                        <span>C. A method of backing up files</span>
+                    </label>
+
+                    <label class="answer-option">
+                        <input type="radio" name="q14" value="D">
+                        <span>D. A process of encrypting website images</span>
+                    </label>
+                </div>
+
+                <!-- QUESTION 15 -->
+                <div class="question-card">
+                    <span class="question-number">QUESTION 15</span>
+                    <h3>What does the principle of least privilege mean?</h3>
+
+                    <label class="answer-option">
+                        <input type="radio" name="q15" value="A">
+                        <span>A. Every user should have administrator access</span>
+                    </label>
+
+                    <label class="answer-option">
+                        <input type="radio" name="q15" value="B">
+                        <span>B. Users should share their passwords</span>
+                    </label>
+
+                    <label class="answer-option">
+                        <input type="radio" name="q15" value="C">
+                        <span>C. All users should have identical permissions</span>
+                    </label>
+
+                    <label class="answer-option">
+                        <input type="radio" name="q15" value="D">
+                        <span>D. Users should receive only the permissions necessary for their tasks</span>
+                    </label>
+                </div>
+
+                <!-- QUESTION 16 -->
+                <div class="question-card">
+                    <span class="question-number">QUESTION 16</span>
+                    <h3>Why are database backups important?</h3>
+
+                    <label class="answer-option">
+                        <input type="radio" name="q16" value="A">
+                        <span>A. They help restore information after data loss or system failure</span>
+                    </label>
+
+                    <label class="answer-option">
+                        <input type="radio" name="q16" value="B">
+                        <span>B. They remove the need for passwords</span>
+                    </label>
+
+                    <label class="answer-option">
+                        <input type="radio" name="q16" value="C">
+                        <span>C. They automatically prevent every cyberattack</span>
+                    </label>
+
+                    <label class="answer-option">
+                        <input type="radio" name="q16" value="D">
+                        <span>D. They make websites change their design</span>
+                    </label>
+                </div>
+
+                <!-- QUESTION 17 -->
+                <div class="question-card">
+                    <span class="question-number">QUESTION 17</span>
+                    <h3>Which tool is commonly used for web application security testing?</h3>
+
+                    <label class="answer-option">
+                        <input type="radio" name="q17" value="A">
+                        <span>A. Microsoft Paint</span>
+                    </label>
+
+                    <label class="answer-option">
+                        <input type="radio" name="q17" value="B">
+                        <span>B. Calculator</span>
+                    </label>
+
+                    <label class="answer-option">
+                        <input type="radio" name="q17" value="C">
+                        <span>C. OWASP ZAP</span>
+                    </label>
+
+                    <label class="answer-option">
+                        <input type="radio" name="q17" value="D">
+                        <span>D. Notepad</span>
+                    </label>
+                </div>
+
+                <!-- QUESTION 18 -->
+                <div class="question-card">
+                    <span class="question-number">QUESTION 18</span>
+                    <h3>What is the purpose of security monitoring?</h3>
+
+                    <label class="answer-option">
+                        <input type="radio" name="q18" value="A">
+                        <span>A. To change the appearance of the website</span>
+                    </label>
+
+                    <label class="answer-option">
+                        <input type="radio" name="q18" value="B">
+                        <span>B. To identify suspicious activities and possible security incidents</span>
+                    </label>
+
+                    <label class="answer-option">
+                        <input type="radio" name="q18" value="C">
+                        <span>C. To delete all user accounts</span>
+                    </label>
+
+                    <label class="answer-option">
+                        <input type="radio" name="q18" value="D">
+                        <span>D. To increase the size of database tables</span>
+                    </label>
+                </div>
+
+                <!-- QUESTION 19 -->
+                <div class="question-card">
+                    <span class="question-number">QUESTION 19</span>
+                    <h3>Which Philippine law is related to the protection of personal information?</h3>
+
+                    <label class="answer-option">
+                        <input type="radio" name="q19" value="A">
+                        <span>A. Cyber Design Act</span>
+                    </label>
+
+                    <label class="answer-option">
+                        <input type="radio" name="q19" value="B">
+                        <span>B. Internet Graphics Act</span>
+                    </label>
+
+                    <label class="answer-option">
+                        <input type="radio" name="q19" value="C">
+                        <span>C. Website Development Act</span>
+                    </label>
+
+                    <label class="answer-option">
+                        <input type="radio" name="q19" value="D">
+                        <span>D. Data Privacy Act of 2012</span>
+                    </label>
+                </div>
+
+                <!-- QUESTION 20 -->
+                <div class="question-card">
+                    <span class="question-number">QUESTION 20</span>
+                    <h3>Why should web developers apply security practices throughout development?</h3>
+
+                    <label class="answer-option">
+                        <input type="radio" name="q20" value="A">
+                        <span>A. To reduce vulnerabilities and protect users and their information</span>
+                    </label>
+
+                    <label class="answer-option">
+                        <input type="radio" name="q20" value="B">
+                        <span>B. To make every website look identical</span>
+                    </label>
+
+                    <label class="answer-option">
+                        <input type="radio" name="q20" value="C">
+                        <span>C. To remove all website functions</span>
+                    </label>
+
+                    <label class="answer-option">
+                        <input type="radio" name="q20" value="D">
+                        <span>D. To prevent users from browsing the internet</span>
+                    </label>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="submit-btn">Submit Assessment</button>
+                    <button type="reset" class="reset-btn" id="resetAssessment">Reset Answers</button>
+                </div>
+
+            </form>
+        </section>
+
+        <!-- RESULTS -->
+        <section class="content-section results-section" id="results" hidden>
+            <span class="section-label">ASSESSMENT COMPLETED</span>
+            <h2>Your Assessment Results</h2>
+
+            <div class="score-card">
+                <span class="score-caption">YOUR FINAL SCORE</span>
+                <div class="score-number">
+                    <span id="scoreNumber">0</span>
+                    <small>/ 20</small>
+                </div>
+                <h3 id="resultMessage">Good effort!</h3>
+                <p id="percentageText">0% Correct</p>
+            </div>
+
+            <div class="result-summary">
+                <div class="result-stat correct-stat">
+                    <strong id="correctCount">0</strong>
+                    <span>Correct Answers</span>
+                </div>
+
+                <div class="result-stat incorrect-stat">
+                    <strong id="incorrectCount">0</strong>
+                    <span>Incorrect Answers</span>
+                </div>
+            </div>
+
+            <h3 class="explanation-heading">Answer Key and Explanations</h3>
+            <p class="result-description">Review the correct answers and explanations below to understand the topics better.</p>
+
+            <div id="explanationList" class="explanation-list"></div>
+
+            <div class="result-actions">
+                <button type="button" id="tryAgain" class="submit-btn">Try Again</button>
+                <a href="lesson9.html" class="back-lesson-btn">Back to Lesson 9</a>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>© 2026 WEBTECH LEARN | BSIT DIGITAL MINDS</p>
+            <p>Learning Today, Securing Tomorrow.</p>
+        </footer>
+
+    </main>
+</div>
+
+<button id="backToTop" title="Back to Top">↑</button>
+
+<script src="lesson9-assessment.js"></script>
+</body>
+</html>

@@ -1,0 +1,631 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <title>Chapter 4 | CSS Styling and Layout</title>
+
+    <link rel="stylesheet" href="lesson5.css">
+    <link rel="stylesheet" href="display-settings.css">
+
+    <script src="display-settings.js" defer></script>
+    <script src="lesson5.js" defer></script>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+    <div class="nav-container">
+
+        <a href="index.html" class="logo">
+            <img src="logo.jpg" alt="BSIT Digital Minds Logo" class="logo-image">
+
+            <span class="logo-text">
+                <small>BSIT | DIGITAL MINDS</small>
+            </span>
+        </a>
+
+        <a href="2nd yr toc.html" class="back-home">
+            ← Back to Table of Content
+        </a>
+
+    </div>
+    <link rel="stylesheet" href="ebook-pagination.css">
+<script src="ebook-pagination.js" defer></script>
+</header>
+
+<div class="page-layout">
+
+    <aside class="sidebar">
+        <h3>LESSON 5</h3>
+        <p class="sidebar-subtitle">User Interface Design and Accessibility</p>
+        <nav>
+            <a href="#page1">01. Introduction</a>
+            <a href="#page2">02. Learning Objectives</a>
+            <a href="#page3">03. What is UI?</a>
+            <a href="#page4">04. UI and UX</a>
+            <a href="#page5">05. UI Principles</a>
+            <a href="#page6">06. Clarity and Consistency</a>
+            <a href="#page7">07. Visual Hierarchy</a>
+            <a href="#page8">08. Feedback and Simplicity</a>
+            <a href="#page9">09. Common UI Elements</a>
+            <a href="#page10">10. Navigation and Buttons</a>
+            <a href="#page11">11. Forms and Search</a>
+            <a href="#page12">12. Web Accessibility</a>
+            <a href="#page13">13. Accessibility Barriers</a>
+            <a href="#page14">14. Assistive Technology</a>
+            <a href="#page15">15. POUR Principles</a>
+            <a href="#page16">16. Perceivable</a>
+            <a href="#page17">17. Operable</a>
+            <a href="#page18">18. Understandable</a>
+            <a href="#page19">19. Robust</a>
+            <a href="#page20">20. WCAG Levels</a>
+            <a href="#page21">21. Readability</a>
+            <a href="#page22">22. Color and Contrast</a>
+            <a href="#page23">23. Images and Alt Text</a>
+            <a href="#page24">24. Keyboard Accessibility</a>
+            <a href="#page25">25. Accessible Forms</a>
+            <a href="#page26">26. Audio and Video</a>
+            <a href="#page27">27. Responsive Accessibility</a>
+            <a href="#page28">28. Accessible HTML</a>
+            <a href="#page29">29. Testing and Activities</a>
+            <a href="#page30">30. Summary and References</a>
+        </nav>
+         <div class="separate-learning-links">
+            <a href="lesson4-assessment.html">📖 Assessment</a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+
+        <section class="lesson-banner">
+            <span class="lesson-label">CHAPTER 05 • WEB DESIGN</span>
+            <h1>User Interface Design and Accessibility</h1>
+            <p>A practical lesson on creating clear, usable, inclusive, and accessible digital experiences.</p>
+            <div class="banner-tags">
+                <span>UI Design</span>
+                <span>Usability</span>
+                <span>Inclusive Design</span>
+                <span>Web Accessibility</span>
+            </div>
+        </section>
+
+        <!-- PAGE 1 -->
+        <section class="content-section lesson-page" id="page1">
+            <div class="page-heading"><span>PAGE 01</span><span>INTRODUCTION</span></div>
+            <h2>Introduction to User Interface Design and Accessibility</h2>
+            <p>Every website, mobile application, and digital platform has an interface that allows people to interact with its features. Users depend on menus, buttons, links, forms, icons, images, and text to understand information and complete tasks.</p>
+            <p>User Interface (UI) Design focuses on arranging and presenting these elements in a clear and useful way. Accessibility ensures that people with different abilities can perceive, understand, navigate, and interact with digital content.</p>
+            <p>A successful website should not only look attractive. It should also be understandable, easy to use, consistent, and available to as many people as possible.</p>
+            <div class="illustration">
+                <h3>How People Interact with a Website</h3>
+                <div class="ui-flow">
+                    <div class="flow-box">User</div><div class="flow-arrow">→</div>
+                    <div class="flow-box">Interface</div><div class="flow-arrow">→</div>
+                    <div class="flow-box">Action</div><div class="flow-arrow">→</div>
+                    <div class="flow-box">Feedback</div>
+                </div>
+                <p class="image-caption">Illustration: A user interacts with an interface, performs an action, and receives feedback.</p>
+            </div>
+            <div class="highlight-box"><strong>Learning Goal:</strong> Understand how interface design decisions affect the way people navigate, understand, and use websites—and learn techniques for making websites accessible to more users.</div>
+        </section>
+
+        <!-- PAGE 2 -->
+        <section class="content-section lesson-page" id="page2">
+            <div class="page-heading"><span>PAGE 02</span><span>LEARNING OBJECTIVES</span></div>
+            <h2>Learning Objectives</h2>
+            <p>At the end of this lesson, students should be able to:</p>
+            <ol>
+                <li>Define User Interface Design and explain its purpose.</li>
+                <li>Differentiate User Interface (UI) from User Experience (UX).</li>
+                <li>Identify the principles of effective interface design.</li>
+                <li>Recognize common user interface elements.</li>
+                <li>Explain the meaning and importance of web accessibility.</li>
+                <li>Describe common accessibility barriers and assistive technologies.</li>
+                <li>Explain the four POUR principles of accessibility.</li>
+                <li>Apply practical techniques for accessible text, images, forms, and navigation.</li>
+                <li>Recognize the importance of WCAG guidelines.</li>
+                <li>Perform basic usability and accessibility testing.</li>
+            </ol>
+            <div class="highlight-box"><strong>Expected Skill:</strong> Students should be able to evaluate a simple webpage and identify improvements that make it clearer, easier to use, and more accessible.</div>
+        </section>
+
+        <!-- PAGE 3 -->
+        <section class="content-section lesson-page" id="page3">
+            <div class="page-heading"><span>PAGE 03</span><span>UI FUNDAMENTALS</span></div>
+            <h2>What is User Interface Design?</h2>
+            <p>A User Interface (UI) is the part of a digital product that a person sees and interacts with. It includes the visible screens, menus, buttons, links, forms, icons, images, text, and other controls.</p>
+            <p>User Interface Design is the process of arranging and styling these elements so people can complete tasks easily and confidently.</p>
+            <h3>Examples of User Interfaces</h3>
+            <div class="image-grid">
+                <figure><div class="mock-screen"><div class="mock-bar"></div><div class="mock-line"></div><div class="mock-line short"></div><div class="mock-button"></div></div><figcaption>Website interface</figcaption></figure>
+                <figure><div class="mock-phone"><div class="mock-bar"></div><div class="mock-line"></div><div class="mock-button"></div><div class="mock-line short"></div></div><figcaption>Mobile application</figcaption></figure>
+                <figure><div class="mock-dashboard"><div></div><div></div><div></div><div></div></div><figcaption>Dashboard interface</figcaption></figure>
+            </div>
+            <p>A good interface helps users understand what they can do, where they are, and what will happen when they take an action.</p>
+        </section>
+
+        <!-- PAGE 4 -->
+        <section class="content-section lesson-page" id="page4">
+            <div class="page-heading"><span>PAGE 04</span><span>UI AND UX</span></div>
+            <h2>Understanding UI and UX</h2>
+            <p>User Interface (UI) and User Experience (UX) are connected concepts, but they have different focuses.</p>
+            <div class="comparison-grid">
+                <div class="comparison-card"><h3>User Interface (UI)</h3><p>Focuses on the visible and interactive elements of a digital product.</p><ul><li>Buttons and menus</li><li>Colors and typography</li><li>Page layout</li><li>Icons and visual controls</li></ul></div>
+                <div class="comparison-card"><h3>User Experience (UX)</h3><p>Focuses on the overall experience a person has while using a product.</p><ul><li>Ease of use</li><li>Task completion</li><li>Efficiency</li><li>User satisfaction</li></ul></div>
+            </div>
+            <p>A website may have attractive colors and buttons but still provide a poor experience if users cannot find information or complete a task. Good UI supports a positive UX.</p>
+            <div class="highlight-box"><strong>Remember:</strong> UI is about the interface people interact with. UX is about the overall experience they have.</div>
+        </section>
+
+        <!-- PAGE 5 -->
+        <section class="content-section lesson-page" id="page5">
+            <div class="page-heading"><span>PAGE 05</span><span>DESIGN PRINCIPLES</span></div>
+            <h2>Core Principles of Effective UI Design</h2>
+            <p>Effective interface design follows principles that help users understand and interact with a digital product.</p>
+            <div class="principle-list">
+                <div><b>1. Clarity</b><p>Use understandable labels, familiar icons, and straightforward instructions.</p></div>
+                <div><b>2. Consistency</b><p>Keep colors, typography, spacing, buttons, and navigation patterns consistent.</p></div>
+                <div><b>3. Visual Hierarchy</b><p>Make important information stand out through size, position, contrast, and spacing.</p></div>
+                <div><b>4. Feedback</b><p>Show users that an action was received, such as a success message after submitting a form.</p></div>
+                <div><b>5. Simplicity</b><p>Remove unnecessary elements and avoid overwhelming users with too many choices.</p></div>
+                <div><b>6. Efficiency</b><p>Help users complete common tasks with as few unnecessary steps as possible.</p></div>
+                <div><b>7. Error Prevention and Recovery</b><p>Prevent avoidable mistakes and explain how users can correct errors.</p></div>
+            </div>
+        </section>
+
+        <!-- PAGE 6 -->
+        <section class="content-section lesson-page" id="page6">
+            <div class="page-heading"><span>PAGE 06</span><span>CLARITY AND CONSISTENCY</span></div>
+            <h2>Clarity and Consistency</h2>
+            <h3>Clarity</h3>
+            <p>Clarity means making interface elements easy to recognize and understand. Labels should describe their purpose. Instructions should use familiar words and avoid unnecessary technical language.</p>
+            <h3>Consistency</h3>
+            <p>Consistency means using the same design patterns throughout a website. If buttons use the same color and shape for similar actions, users can learn how the interface works.</p>
+            <div class="illustration">
+                <h3>Consistent Button Design</h3>
+                <div class="button-demo"><button>Save Changes</button><button>Submit Form</button><button>Continue</button></div>
+                <p class="image-caption">Example: Similar buttons use consistent styling and clear action labels.</p>
+            </div>
+            <p>Inconsistent labels, colors, and navigation can confuse users. A consistent design reduces the effort needed to learn a website.</p>
+        </section>
+
+        <!-- PAGE 7 -->
+        <section class="content-section lesson-page" id="page7">
+            <div class="page-heading"><span>PAGE 07</span><span>VISUAL HIERARCHY</span></div>
+            <h2>Visual Hierarchy</h2>
+            <p>Visual hierarchy is the arrangement of interface elements according to their importance. It guides the user's attention and helps them identify what to read or do first.</p>
+            <p>Designers create hierarchy through font size, font weight, color contrast, spacing, alignment, and position.</p>
+            <div class="hierarchy-demo">
+                <span class="hierarchy-small">STUDENT SERVICES</span>
+                <strong>Welcome to Your Portal</strong>
+                <p>Find the services and information you need.</p>
+                <button>Explore Services</button>
+            </div>
+            <h3>Why Visual Hierarchy Matters</h3>
+            <ul><li>Highlights important information.</li><li>Makes pages easier to scan.</li><li>Helps users understand content structure.</li><li>Directs attention to important actions.</li></ul>
+        </section>
+
+        <!-- PAGE 8 -->
+        <section class="content-section lesson-page" id="page8">
+            <div class="page-heading"><span>PAGE 08</span><span>FEEDBACK AND SIMPLICITY</span></div>
+            <h2>Feedback, Simplicity, and Efficiency</h2>
+            <p><strong>Feedback</strong> informs users about the result of an action. Examples include confirmation messages, loading indicators, and error notices.</p>
+            <p><strong>Simplicity</strong> means showing only the information and controls needed for the current task. Too many unnecessary elements can distract users.</p>
+            <p><strong>Efficiency</strong> helps users complete tasks with fewer steps and less confusion.</p>
+            <div class="feedback-demo">
+                <div class="success-message">✓ Your form has been submitted successfully.</div>
+                <div class="error-message">! Please enter a valid email address.</div>
+                <div class="loading-message">Loading your information...</div>
+            </div>
+            <p>Useful feedback should be visible, understandable, and provided at the right time.</p>
+        </section>
+
+        <!-- PAGE 9 -->
+        <section class="content-section lesson-page" id="page9">
+            <div class="page-heading"><span>PAGE 09</span><span>COMMON UI ELEMENTS</span></div>
+            <h2>Common User Interface Elements</h2>
+            <p>UI elements are the building blocks of an interface. Each element has a purpose that helps users navigate or complete a task.</p>
+            <table>
+                <tr><th>Element</th><th>Purpose</th><th>Design Tip</th></tr>
+                <tr><td>Navigation menu</td><td>Moves users between pages or sections.</td><td>Use clear labels and a predictable order.</td></tr>
+                <tr><td>Button</td><td>Starts an action such as Save or Submit.</td><td>Use action words and visible focus.</td></tr>
+                <tr><td>Form field</td><td>Collects information from users.</td><td>Provide labels and error guidance.</td></tr>
+                <tr><td>Card</td><td>Groups related content.</td><td>Keep spacing and structure consistent.</td></tr>
+                <tr><td>Search box</td><td>Helps users find specific content.</td><td>Provide clear labels and useful results.</td></tr>
+            </table>
+        </section>
+
+        <!-- PAGE 10 -->
+        <section class="content-section lesson-page" id="page10">
+            <div class="page-heading"><span>PAGE 10</span><span>NAVIGATION AND BUTTONS</span></div>
+            <h2>Navigation Menus and Buttons</h2>
+            <p>Navigation menus help users understand the structure of a website and move between its pages. Navigation labels should be short, descriptive, and familiar.</p>
+            <p>Buttons trigger actions. Their labels should clearly explain what happens when users activate them.</p>
+            <div class="navigation-demo">
+                <div class="nav-demo-bar"><b>MY SCHOOL</b><span>Home</span><span>About</span><span>Programs</span><span>Contact</span></div>
+                <div class="nav-demo-content"><h3>Welcome to Our School</h3><p>Discover our programs and student services.</p><button>View Programs</button></div>
+            </div>
+            <h3>Good Navigation Practices</h3>
+            <ul><li>Place main navigation in a predictable location.</li><li>Use meaningful link names.</li><li>Show which page or section is currently active.</li><li>Make navigation usable with a keyboard.</li><li>Avoid hiding essential links behind unclear icons.</li></ul>
+        </section>
+
+        <!-- PAGE 11 -->
+        <section class="content-section lesson-page" id="page11">
+            <div class="page-heading"><span>PAGE 11</span><span>FORMS AND SEARCH</span></div>
+            <h2>Forms, Search Boxes, and Cards</h2>
+            <p>Forms collect information such as names, email addresses, feedback, and registration details. Every input should have a clear label and helpful instructions.</p>
+            <p>Search boxes allow users to find specific information without browsing every page. Cards group related information into organized sections.</p>
+            <div class="form-demo">
+                <h3>Sample Contact Form</h3>
+                <label for="sampleName">Full Name</label><input id="sampleName" type="text" placeholder="Enter your full name">
+                <label for="sampleEmail">Email Address</label><input id="sampleEmail" type="email" placeholder="Enter your email">
+                <label for="sampleMessage">Message</label><textarea id="sampleMessage" placeholder="Write your message"></textarea>
+                <button type="button">Send Message</button>
+            </div>
+            <p>A well-designed form explains what information is required and how users can correct mistakes.</p>
+        </section>
+
+        <!-- PAGE 12 -->
+        <section class="content-section lesson-page" id="page12">
+            <div class="page-heading"><span>PAGE 12</span><span>WEB ACCESSIBILITY</span></div>
+            <h2>Introduction to Web Accessibility</h2>
+            <p>Web accessibility means designing and developing websites so people with different abilities can perceive, understand, navigate, and interact with them.</p>
+            <p>Accessibility also benefits people using small screens, slow connections, older devices, or experiencing temporary limitations such as a broken arm or a bright environment.</p>
+            <div class="illustration">
+                <h3>Accessibility Supports Different Users</h3>
+                <div class="access-user-grid">
+                    <div><span>⌨️</span><b>Keyboard users</b><small>Navigate without a mouse</small></div>
+                    <div><span>🔊</span><b>Screen reader users</b><small>Listen to page information</small></div>
+                    <div><span>🔎</span><b>Low-vision users</b><small>Enlarge and read content</small></div>
+                    <div><span>💬</span><b>Deaf users</b><small>Use captions and transcripts</small></div>
+                </div>
+            </div>
+            <div class="highlight-box"><strong>Important:</strong> Accessibility is part of good web design—not an optional decoration.</div>
+        </section>
+
+        <!-- PAGE 13 -->
+        <section class="content-section lesson-page" id="page13">
+            <div class="page-heading"><span>PAGE 13</span><span>ACCESSIBILITY BARRIERS</span></div>
+            <h2>Common Accessibility Barriers</h2>
+            <p>A barrier is a design or technical issue that makes it difficult or impossible for someone to use a website.</p>
+            <ul>
+                <li><strong>Missing image descriptions:</strong> A blind user may not understand informative images without meaningful alternative text.</li>
+                <li><strong>Poor contrast:</strong> A user with low vision may struggle to read text that blends into its background.</li>
+                <li><strong>Mouse-only controls:</strong> A person who cannot use a mouse may be unable to reach buttons or links.</li>
+                <li><strong>Missing captions:</strong> Deaf or hard-of-hearing users may miss information in videos.</li>
+                <li><strong>Complex instructions:</strong> Users with cognitive or learning disabilities may struggle with unclear language and unpredictable navigation.</li>
+            </ul>
+            <div class="highlight-box">Removing barriers makes websites more inclusive and improves usability for everyone.</div>
+        </section>
+
+        <!-- PAGE 14 -->
+        <section class="content-section lesson-page" id="page14">
+            <div class="page-heading"><span>PAGE 14</span><span>ASSISTIVE TECHNOLOGY</span></div>
+            <h2>Assistive Technology</h2>
+            <p>Assistive technology includes software and hardware that help people interact with digital content. Accessible websites should work with these tools whenever possible.</p>
+            <div class="technology-grid">
+                <div><span>🔊</span><h3>Screen Readers</h3><p>Read webpage content aloud or present it through speech or Braille output.</p></div>
+                <div><span>⌨️</span><h3>Keyboard Navigation</h3><p>Allows people to operate websites without a mouse.</p></div>
+                <div><span>🔍</span><h3>Screen Magnifiers</h3><p>Enlarge portions of the screen for users who need magnification.</p></div>
+                <div><span>🎙️</span><h3>Speech Recognition</h3><p>Allows users to control devices or enter text using voice commands.</p></div>
+            </div>
+            <p>Developers can improve compatibility by using semantic HTML, descriptive labels, and logical page structure.</p>
+        </section>
+
+        <!-- PAGE 15 -->
+        <section class="content-section lesson-page" id="page15">
+            <div class="page-heading"><span>PAGE 15</span><span>POUR PRINCIPLES</span></div>
+            <h2>The Four POUR Principles</h2>
+            <p>The Web Content Accessibility Guidelines (WCAG) organize accessibility around four principles. They are commonly remembered as POUR.</p>
+            <div class="pour-grid">
+                <div><b>P</b><h3>Perceivable</h3><p>Information must be presented in ways users can perceive.</p></div>
+                <div><b>O</b><h3>Operable</h3><p>Interface controls and navigation must be usable.</p></div>
+                <div><b>U</b><h3>Understandable</h3><p>Information and operation must be clear and predictable.</p></div>
+                <div><b>R</b><h3>Robust</h3><p>Content should work reliably with browsers and assistive technologies.</p></div>
+            </div>
+            <p>These principles provide a foundation for evaluating and improving website accessibility.</p>
+        </section>
+
+        <!-- PAGE 16 -->
+        <section class="content-section lesson-page" id="page16">
+            <div class="page-heading"><span>PAGE 16</span><span>PERCEIVABLE</span></div>
+            <h2>Principle 1: Perceivable</h2>
+            <p>Perceivable means that users must be able to access the information presented on a webpage through at least one suitable way.</p>
+            <h3>Practical Examples</h3>
+            <ul><li>Add meaningful alternative text to informative images.</li><li>Provide captions for videos with audio.</li><li>Use readable text and sufficient color contrast.</li><li>Do not communicate important information through color alone.</li><li>Make content adaptable to different display settings.</li></ul>
+            <div class="illustration">
+                <h3>Image with Alternative Text</h3>
+                <div class="alt-image-demo"><span>🏫</span><p>Students studying inside a school library.</p></div>
+                <p class="image-caption">The description communicates the purpose or important information of the image.</p>
+            </div>
+        </section>
+
+        <!-- PAGE 17 -->
+        <section class="content-section lesson-page" id="page17">
+            <div class="page-heading"><span>PAGE 17</span><span>OPERABLE</span></div>
+            <h2>Principle 2: Operable</h2>
+            <p>Operable means users must be able to interact with controls and navigate the website. All essential functions should be available without requiring a mouse.</p>
+            <h3>Practical Examples</h3>
+            <ul><li>Allow users to reach links and buttons using the Tab key.</li><li>Use Enter or Space to activate controls where appropriate.</li><li>Show a visible keyboard focus indicator.</li><li>Keep the focus order logical.</li><li>Do not trap keyboard users inside a component.</li></ul>
+            <div class="keyboard-demo"><span>Tab</span><span>Shift + Tab</span><span>Enter</span><span>Space</span></div>
+            <p>Keyboard testing helps identify controls that cannot be reached or activated without a mouse.</p>
+        </section>
+
+        <!-- PAGE 18 -->
+        <section class="content-section lesson-page" id="page18">
+            <div class="page-heading"><span>PAGE 18</span><span>UNDERSTANDABLE</span></div>
+            <h2>Principle 3: Understandable</h2>
+            <p>Understandable means that information and interface behavior should be clear, consistent, and predictable.</p>
+            <h3>Practical Examples</h3>
+            <ul><li>Use plain and familiar language.</li><li>Keep menus and navigation patterns consistent.</li><li>Provide clear instructions for forms.</li><li>Identify errors using text and explain how to fix them.</li><li>Use descriptive headings and link labels.</li></ul>
+            <div class="example-comparison">
+                <div class="bad-example"><b>Unclear message</b><p>Error 104: Invalid input.</p></div>
+                <div class="good-example"><b>Helpful message</b><p>Please enter a valid email address, such as name@example.com.</p></div>
+            </div>
+        </section>
+
+        <!-- PAGE 19 -->
+        <section class="content-section lesson-page" id="page19">
+            <div class="page-heading"><span>PAGE 19</span><span>ROBUST</span></div>
+            <h2>Principle 4: Robust</h2>
+            <p>Robust means website content should work reliably with different browsers, devices, and assistive technologies.</p>
+            <h3>How to Support Robust Content</h3>
+            <ul><li>Use valid HTML markup.</li><li>Choose semantic elements that describe their purpose.</li><li>Use appropriate labels for form controls.</li><li>Provide accessible names for interactive elements.</li><li>Test pages using different browsers and assistive technologies.</li></ul>
+            <pre><code>&lt;button type="button"&gt;
+    Open Student Portal
+&lt;/button&gt;
+
+&lt;label for="student-email"&gt;
+    Email Address
+&lt;/label&gt;
+&lt;input type="email" id="student-email"&gt;</code></pre>
+            <p>Native HTML elements provide built-in behavior that helps browsers and assistive technologies interpret the page.</p>
+        </section>
+
+        <!-- PAGE 20 -->
+        <section class="content-section lesson-page" id="page20">
+            <div class="page-heading"><span>PAGE 20</span><span>WCAG CONFORMANCE</span></div>
+            <h2>WCAG Conformance Levels</h2>
+            <p>The Web Content Accessibility Guidelines (WCAG) provide internationally recognized recommendations for making web content more accessible.</p>
+            <p>WCAG defines three conformance levels:</p>
+            <div class="wcag-levels">
+                <div><b>A</b><h3>Level A</h3><p>Minimum level of accessibility requirements.</p></div>
+                <div><b>AA</b><h3>Level AA</h3><p>Addresses a broader range of barriers and is a common target for organizations.</p></div>
+                <div><b>AAA</b><h3>Level AAA</h3><p>Highest level, which may not be achievable for every type of content.</p></div>
+            </div>
+            <p>The appropriate target depends on applicable laws, policies, and project requirements.</p>
+            <div class="highlight-box">WCAG provides guidance for evaluating accessibility. It does not replace real user testing.</div>
+        </section>
+
+        <!-- PAGE 21 -->
+        <section class="content-section lesson-page" id="page21">
+            <div class="page-heading"><span>PAGE 21</span><span>READABILITY</span></div>
+            <h2>Text, Headings, and Readability</h2>
+            <p>Readable content helps users understand information without unnecessary effort. Text should be organized, legible, and easy to follow.</p>
+            <h3>Recommended Practices</h3>
+            <ul><li>Use one clear page title followed by descriptive section headings.</li><li>Maintain a logical heading order.</li><li>Choose readable fonts.</li><li>Provide enough line spacing and paragraph spacing.</li><li>Write concise link text that explains its destination.</li><li>Allow users to zoom text without losing content or functionality.</li></ul>
+            <div class="reading-demo"><h3>Student Registration</h3><p>Complete the registration form to create your student account. Enter your information carefully and review it before submitting.</p><a href="#page25">Read the form instructions</a></div>
+        </section>
+
+        <!-- PAGE 22 -->
+        <section class="content-section lesson-page" id="page22">
+            <div class="page-heading"><span>PAGE 22</span><span>COLOR AND CONTRAST</span></div>
+            <h2>Color and Contrast</h2>
+            <p>Color contrast is the difference in brightness between foreground content and its background. Sufficient contrast makes text and controls easier to see.</p>
+            <p>WCAG 2.2 Level AA generally requires a contrast ratio of at least <strong>4.5:1 for normal text</strong> and <strong>3:1 for large text</strong>.</p>
+            <div class="contrast-examples">
+                <div class="contrast-good">Readable text<br><small>Strong contrast</small></div>
+                <div class="contrast-poor">Hard to read<br><small>Low contrast</small></div>
+            </div>
+            <h3>Do Not Rely on Color Alone</h3>
+            <p>For example, do not identify required fields only by making them red. Add a written indicator such as “Required” so users can understand the information without depending on color.</p>
+        </section>
+
+        <!-- PAGE 23 -->
+        <section class="content-section lesson-page" id="page23">
+            <div class="page-heading"><span>PAGE 23</span><span>IMAGES AND ALT TEXT</span></div>
+            <h2>Images and Alternative Text</h2>
+            <p>Alternative text, commonly called alt text, is a text description added to an image. It communicates the purpose or important information of an informative image to users who may not see it.</p>
+            <h3>Example of Meaningful Alt Text</h3>
+            <pre><code>&lt;img
+  src="campus-library.jpg"
+  alt="Students reading at the campus library"
+&gt;</code></pre>
+            <h3>Decorative Images</h3>
+            <p>Decorative images generally use an empty alt attribute so screen readers can skip them.</p>
+            <pre><code>&lt;img src="decoration.png" alt=""&gt;</code></pre>
+            <div class="highlight-box">Describe the image's purpose or important information. Avoid unnecessary descriptions that do not help users understand the content.</div>
+        </section>
+
+        <!-- PAGE 24 -->
+        <section class="content-section lesson-page" id="page24">
+            <div class="page-heading"><span>PAGE 24</span><span>KEYBOARD ACCESSIBILITY</span></div>
+            <h2>Keyboard Accessibility</h2>
+            <p>Some users navigate websites without a mouse. They may use a keyboard, switch device, or other input method. Essential interface features must therefore be keyboard accessible.</p>
+            <h3>Important Keyboard Actions</h3>
+            <ul><li><strong>Tab:</strong> Moves focus forward to the next interactive element.</li><li><strong>Shift + Tab:</strong> Moves focus backward.</li><li><strong>Enter:</strong> Activates links and buttons where appropriate.</li><li><strong>Space:</strong> Activates buttons and controls where appropriate.</li><li><strong>Arrow keys:</strong> Navigate within some grouped controls.</li></ul>
+            <pre><code>button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+    outline: 3px solid #10569a;
+    outline-offset: 3px;
+}</code></pre>
+            <p>A visible focus indicator helps keyboard users identify the currently focused element.</p>
+        </section>
+
+        <!-- PAGE 25 -->
+        <section class="content-section lesson-page" id="page25">
+            <div class="page-heading"><span>PAGE 25</span><span>ACCESSIBLE FORMS</span></div>
+            <h2>Forms and Error Messages</h2>
+            <p>Accessible forms provide clear labels, useful instructions, and helpful error messages. Users should understand what information is expected before submitting a form.</p>
+            <h3>Form Accessibility Practices</h3>
+            <ul><li>Connect every input with a visible label.</li><li>Explain the expected format before submission.</li><li>Identify errors in text.</li><li>Explain what went wrong and how to fix it.</li><li>Do not clear all entered information when a validation error occurs.</li></ul>
+            <pre><code>&lt;label for="email"&gt;Email address&lt;/label&gt;
+&lt;input
+  type="email"
+  id="email"
+  name="email"
+  autocomplete="email"
+  required
+&gt;
+
+&lt;p class="error"&gt;
+  Error: Enter a valid email address.
+&lt;/p&gt;</code></pre>
+        </section>
+
+        <!-- PAGE 26 -->
+        <section class="content-section lesson-page" id="page26">
+            <div class="page-heading"><span>PAGE 26</span><span>AUDIO AND VIDEO</span></div>
+            <h2>Audio and Video Accessibility</h2>
+            <p>Audio and video can provide important information, but not every user can access media in the same way.</p>
+            <h3>Recommended Practices</h3>
+            <ul><li>Provide synchronized captions for prerecorded video with audio.</li><li>Provide transcripts when useful.</li><li>Describe important visual information through an appropriate text or audio alternative.</li><li>Make media controls accessible through a keyboard.</li><li>Use clear labels for play, pause, volume, and other controls.</li></ul>
+            <div class="media-demo"><div class="play-icon">▶</div><div><b>Sample Learning Video</b><p>Captions: Welcome to the lesson on web accessibility.</p></div></div>
+            <p>Captions and transcripts help users access spoken information in different situations.</p>
+        </section>
+
+        <!-- PAGE 27 -->
+        <section class="content-section lesson-page" id="page27">
+            <div class="page-heading"><span>PAGE 27</span><span>RESPONSIVE ACCESSIBILITY</span></div>
+            <h2>Responsive and Mobile Accessibility</h2>
+            <p>A responsive interface adapts to different screen sizes and orientations. Users should be able to read content and operate controls on desktops, laptops, tablets, and smartphones.</p>
+            <div class="device-demo">
+                <div class="device desktop-device"><span>Desktop</span></div>
+                <div class="device tablet-device"><span>Tablet</span></div>
+                <div class="device phone-device"><span>Mobile</span></div>
+            </div>
+            <h3>Responsive Accessibility Practices</h3>
+            <ul><li>Use flexible layouts.</li><li>Keep text readable at different screen sizes.</li><li>Provide sufficient spacing around controls.</li><li>Allow users to zoom.</li><li>Avoid unnecessary horizontal scrolling for ordinary page content at common zoom levels.</li><li>Test different screen sizes and orientations.</li></ul>
+        </section>
+
+        <!-- PAGE 28 -->
+        <section class="content-section lesson-page" id="page28">
+            <div class="page-heading"><span>PAGE 28</span><span>ACCESSIBLE HTML</span></div>
+            <h2>Accessible HTML Examples</h2>
+            <p>Semantic HTML gives content meaning and helps browsers and assistive technologies understand a webpage. Prefer elements that describe their purpose instead of using generic containers for everything.</p>
+            <h3>Example 1: Semantic Page Structure</h3>
+            <pre><code>&lt;header&gt;
+  &lt;h1&gt;Student Services&lt;/h1&gt;
+&lt;/header&gt;
+
+&lt;nav aria-label="Main navigation"&gt;
+  &lt;a href="index.html"&gt;Home&lt;/a&gt;
+  &lt;a href="services.html"&gt;Services&lt;/a&gt;
+&lt;/nav&gt;
+
+&lt;main&gt;
+  &lt;h2&gt;Available Services&lt;/h2&gt;
+  &lt;p&gt;Explore the services offered to students.&lt;/p&gt;
+&lt;/main&gt;
+
+&lt;footer&gt;Copyright 2026&lt;/footer&gt;</code></pre>
+            <h3>Example 2: Native Buttons</h3>
+            <pre><code>&lt;button type="button"&gt;Open Student Portal&lt;/button&gt;</code></pre>
+            <div class="highlight-box">Use native HTML elements whenever possible. ARIA attributes can add missing information when necessary, but they should not replace correct HTML structure.</div>
+        </section>
+
+        <!-- PAGE 29 -->
+        <section class="content-section lesson-page" id="page29">
+            <div class="page-heading"><span>PAGE 29</span><span>TESTING AND ACTIVITIES</span></div>
+            <h2>Testing UI Design and Accessibility</h2>
+            <p>Accessibility should be considered throughout planning, design, development, and testing. Automated tools can find some issues, but they cannot determine whether every page is understandable or easy to use.</p>
+            <h3>A Practical Testing Process</h3>
+            <ol>
+                <li>Review page structure, headings, landmarks, lists, and buttons.</li>
+                <li>Test with a keyboard using Tab, Shift+Tab, Enter, Space, and arrow keys where appropriate.</li>
+                <li>Check color contrast for text, buttons, icons, and focus indicators.</li>
+                <li>Inspect images and media for alt text and captions.</li>
+                <li>Test forms with empty or incorrect values and review error messages.</li>
+                <li>Resize and zoom the page on mobile-sized screens.</li>
+                <li>Ask people to try realistic tasks and observe where they hesitate.</li>
+            </ol>
+            <h3>Quick Accessibility Checklist</h3>
+            <div class="checklist">
+                <label><input type="checkbox"> The page has a clear title and logical heading order.</label>
+                <label><input type="checkbox"> Interactive features can be used with a keyboard.</label>
+                <label><input type="checkbox"> Keyboard focus is visible.</label>
+                <label><input type="checkbox"> Text and controls have sufficient contrast.</label>
+                <label><input type="checkbox"> Images have appropriate alternative text.</label>
+                <label><input type="checkbox"> Form fields have labels and helpful errors.</label>
+                <label><input type="checkbox"> The layout works on mobile screens and when zoomed.</label>
+                <label><input type="checkbox"> Links and buttons have clear names.</label>
+            </div>
+            <div class="activity-card">
+                <h3>Activity 1: UI Evaluation</h3>
+                <p>Choose a website and identify five interface elements. Explain the purpose of each element and suggest one improvement.</p>
+            </div>
+            <div class="activity-card">
+                <h3>Activity 2: Accessibility Inspection</h3>
+                <p>Navigate a webpage using only your keyboard. Record any button, link, or form control that cannot be reached or activated.</p>
+            </div>
+            <div class="activity-card">
+                <h3>Activity 3: Improve a Form</h3>
+                <p>Create a simple registration form with visible labels, clear instructions, required-field indicators, and helpful error messages.</p>
+            </div>
+            <div class="activity-card">
+                <h3>Hands-On Exercise: Accessible Student Services Page</h3>
+                <ol><li>Create a page with a semantic header, navigation, main section, and footer.</li><li>Add a meaningful heading structure.</li><li>Include an informative image with alt text.</li><li>Create a labeled contact form.</li><li>Make all controls keyboard accessible.</li><li>Check text contrast and mobile layout.</li></ol>
+                <p><strong>Expected Output:</strong> A simple, usable, and accessible student services webpage.</p>
+            </div>
+        </section>
+
+        <!-- PAGE 30 -->
+        <section class="content-section lesson-page" id="page30">
+            <div class="page-heading"><span>PAGE 30</span><span>SUMMARY AND REFERENCES</span></div>
+            <h2>Lesson Summary</h2>
+            <p>Effective User Interface Design combines clarity, consistency, useful feedback, simplicity, efficiency, and thoughtful visual organization. A good interface helps users understand what they can do and complete tasks confidently.</p>
+            <p>Accessibility strengthens interface design by removing barriers and supporting different ways of seeing, hearing, understanding, and interacting with content. The POUR principles—Perceivable, Operable, Understandable, and Robust—provide a foundation for accessible web experiences.</p>
+            <p>Developers should use semantic HTML, meaningful alternative text, readable content, sufficient contrast, keyboard-friendly controls, accessible forms, captions, and responsive layouts.</p>
+            <div class="highlight-box"><strong>Key Takeaway:</strong> A successful website should not only look good—it should work for as many people as possible.</div>
+
+            <h2>Glossary of Terms</h2>
+            <dl class="glossary">
+                <dt>User Interface (UI)</dt><dd>The visual and interactive part of a digital product.</dd>
+                <dt>User Experience (UX)</dt><dd>The overall experience a person has when using a product.</dd>
+                <dt>Accessibility</dt><dd>Designing content and controls so people with different abilities can use them.</dd>
+                <dt>Assistive Technology</dt><dd>Software or hardware that helps people interact with digital content.</dd>
+                <dt>Alternative Text</dt><dd>A text alternative that communicates the purpose or information of an image.</dd>
+                <dt>Semantic HTML</dt><dd>HTML elements chosen for their meaning and purpose.</dd>
+                <dt>Keyboard Accessibility</dt><dd>The ability to operate a website without a mouse.</dd>
+                <dt>WCAG</dt><dd>Web Content Accessibility Guidelines, a widely used international standard for web accessibility.</dd>
+                <dt>Visual Hierarchy</dt><dd>The arrangement of content according to its importance.</dd>
+                <dt>Contrast Ratio</dt><dd>A measurement of the difference in brightness between two colors.</dd>
+                <dt>Caption</dt><dd>Text that represents spoken dialogue and relevant audio in video content.</dd>
+                <dt>POUR</dt><dd>Perceivable, Operable, Understandable, and Robust.</dd>
+            </dl>
+
+            <h2>References and Further Reading</h2>
+            <ol class="references">
+                <li>World Wide Web Consortium (W3C). <a href="https://www.w3.org/TR/WCAG22/" target="_blank" rel="noopener">Web Content Accessibility Guidelines (WCAG) 2.2</a>.</li>
+                <li>W3C Web Accessibility Initiative (WAI). <a href="https://www.w3.org/WAI/fundamentals/accessibility-intro/" target="_blank" rel="noopener">Introduction to Web Accessibility</a>.</li>
+                <li>MDN Web Docs. <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility" target="_blank" rel="noopener">Accessibility</a>.</li>
+            </ol>
+
+            <a href="chapter5-assessment.html" class="assessment-link">Proceed to Lesson 5 Assessment →</a>
+        </section>
+
+        <div class="lesson-navigation">
+            <a href="3rd yr toc.html">← Back to Table of Contents</a>
+            <a href="chapter5-assessment.html">Take Lesson 5 Assessment →</a>
+        </div>
+
+        <footer class="page-footer">
+            <h3>WEBTECH LEARN</h3>
+            <p>BSIT DIGITAL E-BOOK</p>
+            <p>Chapter 5: User Interface Design and Accessibility</p>
+            <p>Learning to build clear, usable, and inclusive digital experiences.</p>
+        </footer>
+
+    </main>
+</div>
+
+<button id="backToTop" aria-label="Back to top">↑</button>
+
+</body>
+</html>

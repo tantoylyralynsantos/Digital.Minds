@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <title>Chapter 6 | Device and Input/Output Management</title>
+
+    <link rel="stylesheet" href="lesson6-assessment.css">
+    <link rel="stylesheet" href="display-settings.css">
+
+    <script src="display-settings.js" defer></script>
+    <script src="lesson6-assessment.js" defer></script>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+    <div class="nav-container">
+
+        <a href="index.html" class="logo">
+            <img src="logo.jpg" alt="BSIT Digital Minds Logo" class="logo-image">
+
+            <span class="logo-text">
+                <small>BSIT | DIGITAL MINDS</small>
+            </span>
+        </a>
+
+        <a href="2nd yr toc.html" class="back-home">
+            ← Back to Table of Content
+        </a>
+
+    </div>
+    <link rel="stylesheet" href="ebook-pagination.css">
+<script src="ebook-pagination.js" defer></script>
+</header>
+
+<div class="page-layout">
+
+    <aside class="sidebar">
+        <h3>LESSON 6</h3>
+        <p>ASSESSMENT NAVIGATION</p>
+
+        <nav>
+            <a href="#overview">Assessment Overview</a>
+            <a href="#multipleChoice">Part I - Multiple Choice</a>
+            <a href="#identification">Part II - Identification</a>
+            <a href="#trueFalse">Part III - True or False</a>
+            <a href="#results">Assessment Results</a>
+        </nav>
+
+        <div class="sidebar-progress">
+            <span>ANSWERED QUESTIONS</span>
+            <div class="progress-track">
+                <div id="sideProgress"></div>
+            </div>
+            <b id="progressText">0 / 35</b>
+        </div>
+    </aside>
+
+    <main class="main-content">
+
+        <section class="assessment-banner">
+            <span>CHAPTER 06 • OPERATING SYSTEMS</span>
+            <h1>Lesson 6 Assessment</h1>
+            <p>Device and Input/Output Management</p>
+            <div class="banner-tags">
+                <span>35 Questions</span>
+                <span>3 Parts</span>
+                <span>Automatic Scoring</span>
+            </div>
+        </section>
+
+        <section class="section-card" id="overview">
+            <h2>Assessment Overview</h2>
+            <p>Read each question carefully. Select or type your answer before submitting your assessment.</p>
+
+            <div class="overview-grid">
+                <div><strong>20</strong><span>Multiple Choice</span></div>
+                <div><strong>10</strong><span>Identification</span></div>
+                <div><strong>5</strong><span>True or False</span></div>
+                <div><strong>35</strong><span>Total Questions</span></div>
+            </div>
+
+            <div class="instruction-box">
+                <strong>Instructions:</strong>
+                <ul>
+                    <li>Answer all 35 questions.</li>
+                    <li>Choose only one answer for each multiple-choice question.</li>
+                    <li>Type your answer for identification questions.</li>
+                    <li>Select True or False for the final section.</li>
+                    <li>Click Submit Assessment when finished.</li>
+                </ul>
+            </div>
+        </section>
+
+        <div class="exam-progress">
+            <div>
+                <strong>Your Progress</strong>
+                <span id="progressLabel">0 of 35 answered</span>
+            </div>
+            <div class="progress-track">
+                <div id="mainProgress"></div>
+            </div>
+        </div>
+
+        <form id="assessmentForm">
+
+            <section class="section-card" id="multipleChoice">
+                <div class="section-heading">
+                    <span>PART I</span>
+                    <h2>Multiple Choice</h2>
+                    <p>Choose the letter of the correct answer. (20 points)</p>
+                </div>
+                <div id="mcqContainer"></div>
+            </section>
+
+            <section class="section-card" id="identification">
+                <div class="section-heading">
+                    <span>PART II</span>
+                    <h2>Identification</h2>
+                    <p>Type the correct term being described. (10 points)</p>
+                </div>
+                <div id="identificationContainer"></div>
+            </section>
+
+            <section class="section-card" id="trueFalse">
+                <div class="section-heading">
+                    <span>PART III</span>
+                    <h2>True or False</h2>
+                    <p>Select True if the statement is correct and False if it is incorrect. (5 points)</p>
+                </div>
+                <div id="trueFalseContainer"></div>
+            </section>
+
+            <div class="submit-area">
+                <p>Make sure you have answered all questions before submitting.</p>
+                <button type="submit" id="submitBtn">Submit Assessment</button>
+                <button type="button" id="resetBtn" class="reset-btn">Reset Answers</button>
+            </div>
+
+        </form>
+
+        <section class="section-card results-section" id="results">
+            <h2>Assessment Results</h2>
+            <div id="resultContent">
+                <p>Your score and answer explanations will appear here after you submit your assessment.</p>
+            </div>
+        </section>
+
+        <footer class="page-footer">
+            <h3>WEBTECH LEARN</h3>
+            <p>BSIT DIGITAL E-BOOK</p>
+            <p>Lesson 6: Device and Input/Output Management</p>
+        </footer>
+
+    </main>
+</div>
+
+<button id="backToTop" type="button" aria-label="Back to top">↑</button>
+
+</body>
+</html>

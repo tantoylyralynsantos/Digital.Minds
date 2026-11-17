@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <title>Chapter 1 | Internet and World Wide Web Fundamentals</title>
+
+    <link rel="stylesheet" href="lesson7.css">
+    <link rel="stylesheet" href="../display-settings.css">
+
+    <script src="../display-settings.js" defer></script>
+    <script src="lesson7.js" defer></script>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+    <div class="nav-container">
+
+        <a href="index.html" class="logo">
+            <img src="logo.jpg" alt="BSIT Digital Minds Logo" class="logo-image">
+
+            <span class="logo-text">
+                <small>BSIT | DIGITAL MINDS</small>
+            </span>
+        </a>
+
+        <a href="2nd yr toc.html" class="back-home">
+            ← Back to Table of Content
+        </a>
+
+    </div>
+    <link rel="stylesheet" href="ebook-pagination.css">
+<script src="ebook-pagination.js" defer></script>
+</header>
+<div class="page-layout">
+
+    <aside class="sidebar">
+        <h3>LESSON 7</h3>
+        <p class="sidebar-subtitle">Deadlocks and Resource Allocation</p>
+
+        <nav class="side-nav">
+            <a href="#page1">1. Introduction</a>
+            <a href="#page2">2. Resource Allocation</a>
+            <a href="#page3">3. Understanding Resources</a>
+            <a href="#page4">4. Resource Classification</a>
+            <a href="#page5">5. Allocation Concepts</a>
+            <a href="#page6">6. Allocation Policies</a>
+            <a href="#page7">7. Resource Allocation Graphs</a>
+            <a href="#page8">8. Introduction to Deadlocks</a>
+            <a href="#page9">9. Four Deadlock Conditions</a>
+            <a href="#page10">10. Deadlock Models</a>
+            <a href="#page11">11. Single Resource Deadlocks</a>
+            <a href="#page12">12. Multiple Resource Deadlocks</a>
+            <a href="#page13">13. Graphs in Deadlock Analysis</a>
+            <a href="#page14">14. Deadlock Prevention</a>
+            <a href="#page15">15. Deadlock Avoidance</a>
+            <a href="#page16">16. Safe and Unsafe States</a>
+            <a href="#page17">17. Banker's Algorithm</a>
+            <a href="#page18">18. Prevention vs. Avoidance</a>
+            <a href="#page19">19. Deadlock Detection</a>
+            <a href="#page20">20. Wait-for Graphs</a>
+            <a href="#page21">21. Detection Algorithms</a>
+            <a href="#page22">22. Process Termination</a>
+            <a href="#page23">23. Resource Preemption</a>
+            <a href="#page24">24. Process Rollback</a>
+            <a href="#page25">25. Modern Operating Systems</a>
+            <a href="#page26">26. Distributed Deadlocks</a>
+            <a href="#page27">27. Real-Time Systems</a>
+            <a href="#page28">28. Starvation and Management</a>
+            <a href="#page29">29. Real-World Applications</a>
+            <a href="#page30">30. Trends and Conclusion</a>
+        </nav>
+
+        <div class="separate-learning-links">
+            <a href="lesson7-assessment.html">📝 Take Lesson 7 Assessment</a>
+        </div>
+
+        <div class="sidebar-progress">
+            <p>Reading Progress</p>
+            <div class="progress-track">
+                <div id="sideProgress"></div>
+            </div>
+            <span id="progressText">0% Completed</span>
+        </div>
+    </aside>
+
+    <main class="main-content">
+
+        <div class="top-progress">
+            <span>LESSON 7</span>
+            <span id="pageCounter">Page 1 of 30</span>
+        </div>
+
+        <section class="lesson-banner">
+            <span class="lesson-label">OPERATING SYSTEMS</span>
+            <h1>DEADLOCKS AND RESOURCE ALLOCATION</h1>
+            <p>Understanding how operating systems distribute resources, manage process dependencies, and prevent system deadlocks.</p>
+            <div class="banner-tags">
+                <span>Resource Management</span>
+                <span>Deadlock Handling</span>
+                <span>BSIT</span>
+            </div>
+        </section>
+
+        <!-- PAGE 1 -->
+        <section class="content-section lesson-page" id="page1">
+            <span class="page-heading">PAGE 01 • INTRODUCTION</span>
+            <h2>Introduction to Deadlocks and Resource Allocation</h2>
+
+            <div class="illustration" data-illustration="computer">
+                <div class="image-caption">Computer processes sharing system resources</div>
+            </div>
+
+            <p>Modern operating systems support multiple users, applications, and hardware devices simultaneously. To accomplish this, operating systems must carefully manage resources such as processors, memory, storage devices, printers, network adapters, and input/output devices.</p>
+
+            <p>Since resources are limited, multiple processes often compete for the same resources. The operating system must allocate resources fairly and efficiently to maintain system stability and performance.</p>
+
+            <p>However, problems may occur when several processes wait indefinitely for resources held by one another. This situation is called a <strong>deadlock</strong>.</p>
+
+            <div class="highlight-box">
+                <h3>Why is this topic important?</h3>
+                <p>Understanding deadlocks and resource allocation helps explain how operating systems coordinate resources, avoid conflicts, and maintain efficient operation in multitasking environments.</p>
+            </div>
+
+            <h3>Topics Covered</h3>
+            <ul>
+                <li>Resource allocation principles and policies</li>
+                <li>Resource allocation graphs and deadlock conditions</li>
+                <li>Deadlock prevention, avoidance, and detection</li>
+                <li>Deadlock recovery and real-world applications</li>
+            </ul>
+        </section>
+
+        <!-- PAGE 2 -->
+        <section class="content-section lesson-page" id="page2">
+            <span class="page-heading">PAGE 02 • FUNDAMENTALS</span>
+            <h2>Fundamentals of Resource Allocation</h2>
+
+            <div class="illustration" data-illustration="allocation">
+                <div class="image-caption">Operating system assigning resources to processes</div>
+            </div>
+
+            <h3>What is Resource Allocation?</h3>
+            <p>Resource allocation is the process through which an operating system assigns available resources to processes, users, or applications. Programs need hardware and software components to perform their tasks.</p>
+
+            <h3>Commonly Allocated Resources</h3>
+            <div class="device-grid">
+                <div class="device-card"><span>⚙️</span><h4>CPU Time</h4><p>Processing time given to programs.</p></div>
+                <div class="device-card"><span>🧠</span><h4>Memory</h4><p>RAM used by running applications.</p></div>
+                <div class="device-card"><span>💾</span><h4>Storage</h4><p>Space for files and information.</p></div>
+                <div class="device-card"><span>🖨️</span><h4>Printers</h4><p>Devices used to print documents.</p></div>
+                <div class="device-card"><span>🌐</span><h4>Network</h4><p>Connections for data communication.</p></div>
+                <div class="device-card"><span>⌨️</span><h4>I/O Devices</h4><p>Input and output hardware.</p></div>
+            </div>
+
+            <h3>Objectives of Resource Allocation</h3>
+            <ul>
+                <li><strong>Efficient Utilization:</strong> Minimize resource waste.</li>
+                <li><strong>Fair Distribution:</strong> Provide reasonable access to processes.</li>
+                <li><strong>Improved Performance:</strong> Increase throughput and responsiveness.</li>
+                <li><strong>Conflict Prevention:</strong> Reduce competition and resource conflicts.</li>
+                <li><strong>System Stability:</strong> Maintain reliable operations.</li>
+            </ul>
+        </section>
+
+        <!-- PAGE 3 -->
+        <section class="content-section lesson-page" id="page3">
+            <span class="page-heading">PAGE 03 • SYSTEM RESOURCES</span>
+            <h2>Understanding Resources in Operating Systems</h2>
+
+            <div class="illustration" data-illustration="resources">
+                <div class="image-caption">Hardware and software resources</div>
+            </div>
+
+            <h3>Definition of a Resource</h3>
+            <p>A resource is any hardware or software component required by a process to perform its operations. Processes cannot execute successfully without obtaining the resources they need.</p>
+
+            <h3>Characteristics of Resources</h3>
+            <div class="comparison-grid">
+                <div class="comparison-card">
+                    <h4>Limited Availability</h4>
+                    <p>A resource exists in a finite quantity. For example, a computer may have only one printer.</p>
+                </div>
+                <div class="comparison-card">
+                    <h4>Shared Usage</h4>
+                    <p>Resources may be shared among multiple processes, such as CPU time.</p>
+                </div>
+                <div class="comparison-card">
+                    <h4>Allocation Requirement</h4>
+                    <p>Processes must request resources before they can use them.</p>
+                </div>
+                <div class="comparison-card">
+                    <h4>Release Requirement</h4>
+                    <p>Resources should be released when they are no longer needed.</p>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <strong>Remember:</strong> Resource management is important because many processes may need the same limited resources at the same time.
+            </div>
+        </section>
+
+        <!-- PAGE 4 -->
+        <section class="content-section lesson-page" id="page4">
+            <span class="page-heading">PAGE 04 • CLASSIFICATION</span>
+            <h2>Classification of Resources</h2>
+
+            <div class="illustration" data-illustration="classification">
+                <div class="image-caption">Different categories of computer resources</div>
+            </div>
+
+            <h3>1. Hardware Resources</h3>
+            <p>Hardware resources are the physical components of a computer system.</p>
+            <ul><li>Processors</li><li>Memory modules</li><li>Storage devices</li><li>Printers</li><li>Network adapters</li></ul>
+
+            <h3>2. Software Resources</h3>
+            <p>Software resources include programs, data, and operating system services.</p>
+            <ul><li>System files</li><li>Databases</li><li>Shared libraries</li><li>Communication services</li></ul>
+
+            <h3>3. Reusable Resources</h3>
+            <p>Reusable resources can be used repeatedly by different processes. Examples include CPUs, printers, and storage devices.</p>
+
+            <h3>4. Consumable Resources</h3>
+            <p>Consumable resources are created and consumed during system operation. Examples include messages, signals, and data packets.</p>
+        </section>
+
+        <!-- PAGE 5 -->
+        <section class="content-section lesson-page" id="page5">
+            <span class="page-heading">PAGE 05 • ALLOCATION PROCESS</span>
+            <h2>Resource Allocation Concepts</h2>
+
+            <div class="illustration" data-illustration="process">
+                <div class="image-caption">Request, allocation, use, and release of resources</div>
+            </div>
+
+            <h3>Resource Request</h3>
+            <p>A process submits a request before using a resource. The operating system checks whether the requested resource is available. If it is unavailable, the process may need to wait.</p>
+
+            <h3>Resource Allocation</h3>
+            <p>When a request is approved, the operating system assigns the resource to the process and updates its allocation records.</p>
+
+            <h3>Resource Release</h3>
+            <p>After completing its task, the process releases the resource so that other processes can use it.</p>
+
+            <h3>Resource Sharing</h3>
+            <p>Some resources can be shared among processes. Examples include CPU scheduling, shared memory, and network services.</p>
+
+            <div class="highlight-box">
+                <strong>Basic allocation cycle:</strong> Request → Allocation → Use → Release.
+            </div>
+        </section>
+
+        <!-- PAGE 6 -->
+        <section class="content-section lesson-page" id="page6">
+            <span class="page-heading">PAGE 06 • ALLOCATION POLICIES</span>
+            <h2>Resource Allocation Policies</h2>
+
+            <div class="illustration" data-illustration="policy">
+                <div class="image-caption">Different policies for assigning resources</div>
+            </div>
+
+            <h3>First-Come, First-Served (FCFS)</h3>
+            <p>Resources are allocated according to the order in which requests arrive.</p>
+            <p><strong>Advantages:</strong> Fair and easy to implement.</p>
+            <p><strong>Disadvantages:</strong> May cause delays and lower efficiency.</p>
+
+            <h3>Priority-Based Allocation</h3>
+            <p>Resources are assigned based on the priority level of each process.</p>
+            <p><strong>Advantages:</strong> Important processes receive resources sooner and critical applications are supported.</p>
+            <p><strong>Disadvantages:</strong> Low-priority processes may experience long delays.</p>
+
+            <h3>Dynamic Allocation</h3>
+            <p>Resources are assigned according to the current needs of processes.</p>
+            <p><strong>Advantages:</strong> Flexible and can improve utilization.</p>
+            <p><strong>Disadvantages:</strong> More complex to manage.</p>
+        </section>
+
+        <!-- PAGE 7 -->
+        <section class="content-section lesson-page" id="page7">
+            <span class="page-heading">PAGE 07 • RESOURCE GRAPHS</span>
+            <h2>Resource Allocation Graphs</h2>
+
+            <div class="illustration" data-illustration="rag">
+                <div class="image-caption">Process and resource relationships in a graph</div>
+            </div>
+
+            <h3>Definition</h3>
+            <p>A Resource Allocation Graph (RAG) is a visual representation of relationships between processes and resources. It helps analyze resource usage and identify possible deadlocks.</p>
+
+            <h3>Components of a Resource Allocation Graph</h3>
+            <div class="device-grid">
+                <div class="device-card"><span>⭕</span><h4>Processes</h4><p>Represented by circles, such as P1 and P2.</p></div>
+                <div class="device-card"><span>▭</span><h4>Resources</h4><p>Represented by rectangles, such as R1 and R2.</p></div>
+                <div class="device-card"><span>➡️</span><h4>Request Edge</h4><p>P1 → R1 means P1 requests R1.</p></div>
+                <div class="device-card"><span>↪️</span><h4>Assignment Edge</h4><p>R1 → P1 means R1 is assigned to P1.</p></div>
+            </div>
+
+            <h3>Importance</h3>
+            <ul><li>Visualizes resource usage.</li><li>Helps identify potential deadlocks.</li><li>Supports operating system analysis.</li><li>Improves resource management.</li></ul>
+        </section>
+
+        <!-- PAGE 8 -->
+        <section class="content-section lesson-page" id="page8">
+            <span class="page-heading">PAGE 08 • DEADLOCK INTRODUCTION</span>
+            <h2>Introduction to Deadlocks</h2>
+
+            <div class="illustration" data-illustration="deadlock">
+                <div class="image-caption">Two processes waiting for resources held by each other</div>
+            </div>
+
+            <h3>What is a Deadlock?</h3>
+            <p>A deadlock occurs when two or more processes cannot continue because each process is waiting for a resource currently held by another process.</p>
+
+            <h3>Example of a Deadlock</h3>
+            <div class="comparison-grid">
+                <div class="comparison-card">
+                    <h4>Process A</h4>
+                    <p>Holds the printer.</p>
+                    <p>Waiting for the scanner.</p>
+                </div>
+                <div class="comparison-card">
+                    <h4>Process B</h4>
+                    <p>Holds the scanner.</p>
+                    <p>Waiting for the printer.</p>
+                </div>
+            </div>
+
+            <p>Neither process can continue because each is waiting for a resource held by the other. Both processes become blocked.</p>
+
+            <h3>Effects of Deadlocks</h3>
+            <ul><li>Reduced system performance</li><li>Resource wastage</li><li>Application failures</li><li>User frustration</li><li>System unresponsiveness</li></ul>
+        </section>
+
+        <!-- PAGE 9 -->
+        <section class="content-section lesson-page" id="page9">
+            <span class="page-heading">PAGE 09 • DEADLOCK CONDITIONS</span>
+            <h2>Four Necessary Conditions for Deadlocks</h2>
+
+            <div class="illustration" data-illustration="conditions">
+                <div class="image-caption">Four conditions that must exist for a deadlock to occur</div>
+            </div>
+
+            <p>According to operating system theory, four conditions must be present simultaneously for a deadlock to occur.</p>
+
+            <div class="comparison-grid">
+                <div class="comparison-card"><h4>1. Mutual Exclusion</h4><p>A resource can only be used by one process at a time. Example: one printer handling one job at a time.</p></div>
+                <div class="comparison-card"><h4>2. Hold and Wait</h4><p>A process holds one or more resources while waiting for additional resources.</p></div>
+                <div class="comparison-card"><h4>3. No Preemption</h4><p>Resources cannot be forcibly removed. The process must release them voluntarily.</p></div>
+                <div class="comparison-card"><h4>4. Circular Wait</h4><p>Processes form a circular chain where each waits for a resource held by another.</p></div>
+            </div>
+
+            <div class="highlight-box">
+                <strong>Important:</strong> Removing at least one of these four conditions can prevent deadlocks.
+            </div>
+        </section>
+
+        <!-- PAGE 10 -->
+        <section class="content-section lesson-page" id="page10">
+            <span class="page-heading">PAGE 10 • DEADLOCK MODELS</span>
+            <h2>Introduction to Deadlock Models</h2>
+
+            <div class="illustration" data-illustration="model">
+                <div class="image-caption">Models used to understand process and resource dependencies</div>
+            </div>
+
+            <p>Deadlock models represent and analyze situations where processes compete for resources. They help system designers understand how deadlocks occur and how they can be managed.</p>
+
+            <h3>Common Deadlock Models</h3>
+            <ul>
+                <li><strong>Single Resource Models:</strong> Focus on one type of resource.</li>
+                <li><strong>Multiple Resource Models:</strong> Involve several types of resources.</li>
+                <li><strong>Resource Allocation Graph Models:</strong> Represent process-resource relationships.</li>
+                <li><strong>State-Based Models:</strong> Analyze system states and resource availability.</li>
+            </ul>
+        </section>
+
+        <!-- PAGE 11 -->
+        <section class="content-section lesson-page" id="page11">
+            <span class="page-heading">PAGE 11 • SINGLE RESOURCE</span>
+            <h2>Single-Resource Deadlocks</h2>
+
+            <div class="illustration" data-illustration="single">
+                <div class="image-caption">Processes competing for one resource type</div>
+            </div>
+
+            <p>A single-resource deadlock involves processes competing for one type of resource that exists in a limited quantity.</p>
+
+            <h3>Example</h3>
+            <p>Suppose a system has only one printer. Process A requests the printer while Process B also needs it. If resource requests and releases are improperly managed, waiting dependencies may develop.</p>
+
+            <h3>Characteristics</h3>
+            <ul><li>Limited resource availability</li><li>Simple dependencies</li><li>Usually easier to analyze</li></ul>
+        </section>
+
+        <!-- PAGE 12 -->
+        <section class="content-section lesson-page" id="page12">
+            <span class="page-heading">PAGE 12 • MULTIPLE RESOURCES</span>
+            <h2>Multiple-Resource Deadlocks</h2>
+
+            <div class="illustration" data-illustration="multiple">
+                <div class="image-caption">Multiple processes waiting for different resources</div>
+            </div>
+
+            <p>Multiple-resource deadlocks involve several resource types. These situations are common in modern computing environments.</p>
+
+            <h3>Example</h3>
+            <div class="comparison-grid">
+                <div class="comparison-card"><h4>Process A</h4><p>Holds Printer</p><p>Waits for Scanner</p></div>
+                <div class="comparison-card"><h4>Process B</h4><p>Holds Scanner</p><p>Waits for Storage</p></div>
+                <div class="comparison-card"><h4>Process C</h4><p>Holds Storage</p><p>Waits for Printer</p></div>
+            </div>
+
+            <p>A circular dependency forms because each process waits for a resource held by another process.</p>
+
+            <h3>Challenges</h3>
+            <p>Multiple-resource deadlocks are more difficult to identify, analyze, resolve, and prevent. Advanced resource management techniques may be required.</p>
+        </section>
+
+        <!-- PAGE 13 -->
+        <section class="content-section lesson-page" id="page13">
+            <span class="page-heading">PAGE 13 • GRAPH ANALYSIS</span>
+            <h2>Resource Allocation Graphs in Deadlock Analysis</h2>
+
+            <div class="illustration" data-illustration="cycle">
+                <div class="image-caption">A cycle in a resource allocation graph</div>
+            </div>
+
+            <p>A cycle occurs when processes and resources form a closed chain of requests and assignments.</p>
+
+            <h3>Example of a Cycle</h3>
+            <div class="code-example">P1 → R1 → P2 → R2 → P1</div>
+
+            <h3>Single-Instance Resource Systems</h3>
+            <p>If each resource type has only one instance, a cycle in the resource allocation graph guarantees a deadlock.</p>
+
+            <h3>Multiple-Instance Resource Systems</h3>
+            <p>If resource types have multiple instances, a cycle indicates the possibility of a deadlock, but further analysis is required.</p>
+        </section>
+
+        <!-- PAGE 14 -->
+        <section class="content-section lesson-page" id="page14">
+            <span class="page-heading">PAGE 14 • PREVENTION</span>
+            <h2>Deadlock Prevention</h2>
+
+            <div class="illustration" data-illustration="prevention">
+                <div class="image-caption">Preventing deadlocks by eliminating necessary conditions</div>
+            </div>
+
+            <p>Deadlock prevention uses techniques that ensure at least one of the four necessary deadlock conditions cannot occur.</p>
+
+            <h3>Preventing Mutual Exclusion</h3>
+            <p>Make resources shareable whenever possible. Examples include read-only files, network services, and shared memory areas. This is not possible for every resource, such as a printer.</p>
+
+            <h3>Preventing Hold and Wait</h3>
+            <p>Require processes to request all needed resources at once. This eliminates hold-and-wait but may cause resources to remain unused.</p>
+
+            <h3>Preventing No Preemption</h3>
+            <p>Allow the system to reclaim resources from a process when necessary, if the resource can safely be reassigned.</p>
+
+            <h3>Preventing Circular Wait</h3>
+            <p>Assign numerical identifiers to resources and require processes to request resources in ascending order.</p>
+        </section>
+
+        <!-- PAGE 15 -->
+        <section class="content-section lesson-page" id="page15">
+            <span class="page-heading">PAGE 15 • AVOIDANCE</span>
+            <h2>Deadlock Avoidance</h2>
+
+            <div class="illustration" data-illustration="avoidance">
+                <div class="image-caption">Checking resource requests before granting them</div>
+            </div>
+
+            <p>Deadlock avoidance evaluates resource allocation decisions before granting requests. The operating system attempts to ensure that every allocation leaves the system in a safe state.</p>
+
+            <h3>How Avoidance Works</h3>
+            <ul>
+                <li>Processes request resources.</li>
+                <li>The operating system examines the request.</li>
+                <li>The system evaluates the possible result of allocation.</li>
+                <li>The request is granted only if the system remains safe.</li>
+            </ul>
+
+            <div class="highlight-box">
+                Deadlock avoidance does not necessarily remove deadlock conditions. Instead, it carefully controls resource allocation to avoid unsafe states.
+            </div>
+        </section>
+
+        <!-- PAGE 16 -->
+        <section class="content-section lesson-page" id="page16">
+            <span class="page-heading">PAGE 16 • SYSTEM STATES</span>
+            <h2>Safe States and Unsafe States</h2>
+
+            <div class="illustration" data-illustration="states">
+                <div class="image-caption">Safe and unsafe resource allocation states</div>
+            </div>
+
+            <h3>Safe State</h3>
+            <p>A safe state is a system condition in which there is at least one sequence of process execution that allows all processes to complete successfully.</p>
+            <ul><li>A safe sequence exists.</li><li>All processes can eventually finish.</li><li>Resources can be released and reused.</li></ul>
+
+            <h3>Example of a Safe Sequence</h3>
+            <div class="code-example">P1 → P3 → P2 → P4</div>
+            <p>If each process can obtain the resources it needs and release them after completion, the system can remain safe.</p>
+
+            <h3>Unsafe State</h3>
+            <p>An unsafe state is a condition in which no guaranteed safe sequence exists. It does not automatically mean that a deadlock has already occurred, but it creates a risk of deadlock.</p>
+        </section>
+
+        <!-- PAGE 17 -->
+        <section class="content-section lesson-page" id="page17">
+            <span class="page-heading">PAGE 17 • BANKER'S ALGORITHM</span>
+            <h2>Banker's Algorithm</h2>
+
+            <div class="illustration" data-illustration="banker">
+                <div class="image-caption">Banker's Algorithm evaluates whether a resource request is safe</div>
+            </div>
+
+            <h3>Definition</h3>
+            <p>Banker's Algorithm is a deadlock avoidance technique that evaluates resource requests before granting them. It determines whether granting a request will leave the system in a safe state.</p>
+
+            <h3>Why is it Called the Banker's Algorithm?</h3>
+            <p>The idea is similar to how a bank grants loans only when it can still satisfy the needs of its customers. Similarly, an operating system grants resources only when system safety can be maintained.</p>
+
+            <h3>Data Structures Used</h3>
+            <ul>
+                <li><strong>Available:</strong> Number of currently available resources.</li>
+                <li><strong>Maximum:</strong> Maximum resource requirements of each process.</li>
+                <li><strong>Allocation:</strong> Resources currently assigned to each process.</li>
+                <li><strong>Need:</strong> Additional resources required for completion.</li>
+            </ul>
+
+            <h3>Working Principle</h3>
+            <ol><li>A process requests resources.</li><li>The system evaluates the request.</li><li>A simulated allocation is performed.</li><li>The system checks for a safe sequence.</li><li>The request is approved or postponed.</li></ol>
+
+            <h3>Advantages and Disadvantages</h3>
+            <p><strong>Advantages:</strong> Helps prevent deadlocks, maintains safe states, and supports resource planning.</p>
+            <p><strong>Disadvantages:</strong> Requires advance knowledge of maximum resource needs and adds computational overhead.</p>
+        </section>
+
+        <!-- PAGE 18 -->
+        <section class="content-section lesson-page" id="page18">
+            <span class="page-heading">PAGE 18 • COMPARISON</span>
+            <h2>Deadlock Prevention vs. Avoidance</h2>
+
+            <div class="illustration" data-illustration="comparison">
+                <div class="image-caption">Comparing two strategies for deadlock management</div>
+            </div>
+
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Feature</th><th>Prevention</th><th>Avoidance</th></tr></thead>
+                    <tbody>
+                        <tr><td>Strategy</td><td>Eliminates at least one deadlock condition</td><td>Avoids unsafe states</td></tr>
+                        <tr><td>Flexibility</td><td>Lower</td><td>Higher</td></tr>
+                        <tr><td>Resource Utilization</td><td>May be lower</td><td>Can be better</td></tr>
+                        <tr><td>Complexity</td><td>Generally simpler</td><td>More complex</td></tr>
+                        <tr><td>Decision Method</td><td>Restricts resource conditions</td><td>Checks system safety</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p>Both methods are important. Prevention removes conditions that make deadlocks possible, while avoidance evaluates resource requests to keep the system safe.</p>
+        </section>
+
+        <!-- PAGE 19 -->
+        <section class="content-section lesson-page" id="page19">
+            <span class="page-heading">PAGE 19 • DETECTION</span>
+            <h2>Deadlock Detection</h2>
+
+            <div class="illustration" data-illustration="detection">
+                <div class="image-caption">Operating system checking for blocked processes</div>
+            </div>
+
+            <p>Deadlock detection is the process used by an operating system to identify whether a deadlock currently exists. Unlike prevention and avoidance, detection allows deadlocks to occur and identifies them afterward.</p>
+
+            <h3>Why Detection is Necessary</h3>
+            <p>Preventing every possible deadlock may reduce resource utilization. In some environments, such as databases, cloud platforms, and distributed systems, detection may be more practical.</p>
+
+            <h3>Objectives</h3>
+            <ul><li>Identify blocked processes.</li><li>Detect resource cycles.</li><li>Support recovery operations.</li><li>Maintain system stability.</li><li>Prevent permanent delays.</li></ul>
+        </section>
+
+        <!-- PAGE 20 -->
+        <section class="content-section lesson-page" id="page20">
+            <span class="page-heading">PAGE 20 • WAIT-FOR GRAPHS</span>
+            <h2>Wait-for Graphs</h2>
+
+            <div class="illustration" data-illustration="waitfor">
+                <div class="image-caption">A wait-for graph showing process dependencies</div>
+            </div>
+
+            <h3>Definition</h3>
+            <p>A Wait-for Graph (WFG) is a simplified version of a Resource Allocation Graph. It focuses on relationships between processes instead of showing resource nodes separately.</p>
+
+            <h3>Components</h3>
+            <ul><li><strong>Processes:</strong> Represented as nodes, such as P1, P2, and P3.</li><li><strong>Directed Edges:</strong> Show that one process is waiting for another.</li></ul>
+
+            <h3>Example</h3>
+            <div class="code-example">P1 → P2<br>P2 → P3<br>P3 → P1</div>
+
+            <p>This circular relationship indicates a deadlock when the graph represents single-instance resource dependencies.</p>
+
+            <h3>Advantages</h3>
+            <ul><li>Simple representation</li><li>Easy cycle analysis</li><li>Useful for deadlock detection</li></ul>
+        </section>
+
+        <!-- PAGE 21 -->
+        <section class="content-section lesson-page" id="page21">
+            <span class="page-heading">PAGE 21 • DETECTION ALGORITHMS</span>
+            <h2>Deadlock Detection Algorithms</h2>
+
+            <div class="illustration" data-illustration="algorithm">
+                <div class="image-caption">Analyzing resource allocation and process requests</div>
+            </div>
+
+            <p>Detection algorithms examine system information to determine whether deadlocks exist. They evaluate resource allocation, process requests, available resources, and waiting relationships.</p>
+
+            <h3>Single-Instance Resource Detection</h3>
+            <ol><li>Create a wait-for graph.</li><li>Search the graph for cycles.</li><li>Report a deadlock if a cycle exists.</li></ol>
+
+            <h3>Multiple-Instance Resource Detection</h3>
+            <p>When resources have multiple instances, the system examines current allocations, pending requests, and available resources to determine whether processes can eventually proceed.</p>
+
+            <div class="highlight-box">
+                Multiple-instance detection requires more detailed analysis because a cycle alone does not always prove a deadlock.
+            </div>
+        </section>
+
+        <!-- PAGE 22 -->
+        <section class="content-section lesson-page" id="page22">
+            <span class="page-heading">PAGE 22 • RECOVERY</span>
+            <h2>Process Termination</h2>
+
+            <div class="illustration" data-illustration="termination">
+                <div class="image-caption">Terminating processes to release locked resources</div>
+            </div>
+
+            <p>Process termination is a deadlock recovery method in which one or more processes involved in a deadlock are stopped. Their resources are released so that other processes can continue.</p>
+
+            <h3>Terminating All Processes</h3>
+            <p>All deadlocked processes are terminated.</p>
+            <p><strong>Advantages:</strong> Simple and fast resolution.</p>
+            <p><strong>Disadvantages:</strong> Significant loss of work and possible data loss.</p>
+
+            <h3>Terminating One Process at a Time</h3>
+            <p>The operating system terminates processes individually until the deadlock disappears.</p>
+            <p>Factors include process priority, resource usage, completed work, and restart cost.</p>
+        </section>
+
+        <!-- PAGE 23 -->
+        <section class="content-section lesson-page" id="page23">
+            <span class="page-heading">PAGE 23 • RESOURCE PREEMPTION</span>
+            <h2>Resource Preemption</h2>
+
+            <div class="illustration" data-illustration="preemption">
+                <div class="image-caption">Reassigning a resource to help resolve a deadlock</div>
+            </div>
+
+            <p>Resource preemption involves temporarily removing resources from processes and assigning them to other processes to break a deadlock.</p>
+
+            <h3>Steps in Resource Preemption</h3>
+            <ol><li><strong>Resource Selection:</strong> Identify resources suitable for reassignment.</li><li><strong>Resource Removal:</strong> Take selected resources from a process.</li><li><strong>Resource Reallocation:</strong> Assign resources to waiting processes.</li><li><strong>Process Resumption:</strong> Allow processes to continue when resources become available.</li></ol>
+
+            <h3>Advantages</h3>
+            <ul><li>May preserve process execution.</li><li>Reduces workload loss.</li><li>Provides recovery flexibility.</li></ul>
+
+            <h3>Disadvantages</h3>
+            <ul><li>Increased complexity</li><li>Additional overhead</li><li>Possible process delays</li></ul>
+        </section>
+
+        <!-- PAGE 24 -->
+        <section class="content-section lesson-page" id="page24">
+            <span class="page-heading">PAGE 24 • PROCESS ROLLBACK</span>
+            <h2>Process Rollback</h2>
+
+            <div class="illustration" data-illustration="rollback">
+                <div class="image-caption">Restoring a process to a previously saved checkpoint</div>
+            </div>
+
+            <h3>Definition</h3>
+            <p>Rollback restores a process to a previously saved state. The operating system uses checkpoints to recover from deadlocks while reducing the loss of completed work.</p>
+
+            <h3>Checkpointing</h3>
+            <p>A checkpoint is a saved copy of process information, such as memory contents, register values, and system state information.</p>
+
+            <h3>Recovery Procedure</h3>
+            <ol><li>Deadlock is detected.</li><li>The process is rolled back.</li><li>Resources are released.</li><li>The process restarts from a checkpoint.</li></ol>
+
+            <h3>Advantages and Disadvantages</h3>
+            <p><strong>Advantages:</strong> Reduces data loss and preserves process progress.</p>
+            <p><strong>Disadvantages:</strong> Requires checkpoint storage and adds system overhead.</p>
+        </section>
+
+        <!-- PAGE 25 -->
+        <section class="content-section lesson-page" id="page25">
+            <span class="page-heading">PAGE 25 • MODERN OPERATING SYSTEMS</span>
+            <h2>Deadlock Handling in Modern Operating Systems</h2>
+
+            <div class="illustration" data-illustration="operatingsystems">
+                <div class="image-caption">Modern operating systems managing resources and processes</div>
+            </div>
+
+            <h3>Windows</h3>
+            <p>Microsoft Windows uses resource management, synchronization mechanisms, and timeout strategies. Many deadlock risks are reduced through system design.</p>
+
+            <h3>Linux</h3>
+            <p>Linux provides tools for resource monitoring, process tracking, and lock management. Developers use these tools to minimize deadlock risks.</p>
+
+            <h3>macOS</h3>
+            <p>macOS combines resource management, synchronization controls, and process scheduling to reduce deadlock occurrences.</p>
+
+            <div class="highlight-box">
+                Modern operating systems generally combine multiple techniques instead of relying on only one deadlock management method.
+            </div>
+        </section>
+
+        <!-- PAGE 26 -->
+        <section class="content-section lesson-page" id="page26">
+            <span class="page-heading">PAGE 26 • DISTRIBUTED SYSTEMS</span>
+            <h2>Distributed System Deadlocks</h2>
+
+            <div class="illustration" data-illustration="distributed">
+                <div class="image-caption">Processes and resources across connected computers</div>
+            </div>
+
+            <h3>Definition</h3>
+            <p>Distributed deadlocks occur when processes in different computers wait for resources controlled by other computers in a distributed system.</p>
+
+            <h3>Characteristics</h3>
+            <ul><li>Multiple servers</li><li>Network communication</li><li>Shared services</li><li>Remote resources</li></ul>
+
+            <h3>Challenges</h3>
+            <ul><li>Resource information is distributed.</li><li>Communication delays may occur.</li><li>System states change frequently.</li></ul>
+
+            <p>Specialized detection algorithms are needed because resource information is not always available in one central location.</p>
+        </section>
+
+        <!-- PAGE 27 -->
+        <section class="content-section lesson-page" id="page27">
+            <span class="page-heading">PAGE 27 • REAL-TIME SYSTEMS</span>
+            <h2>Resource Allocation in Real-Time Systems</h2>
+
+            <div class="illustration" data-illustration="realtime">
+                <div class="image-caption">Time-sensitive systems requiring predictable resource allocation</div>
+            </div>
+
+            <p>Real-time systems require predictable and timely resource allocation. Delays may affect critical operations and system safety.</p>
+
+            <h3>Examples</h3>
+            <div class="device-grid">
+                <div class="device-card"><span>🏥</span><h4>Medical Equipment</h4><p>Supports patient monitoring and treatment.</p></div>
+                <div class="device-card"><span>✈️</span><h4>Air Traffic Control</h4><p>Coordinates aircraft and flight information.</p></div>
+                <div class="device-card"><span>🤖</span><h4>Robotics</h4><p>Controls automated machines.</p></div>
+                <div class="device-card"><span>🏭</span><h4>Industrial Automation</h4><p>Coordinates manufacturing operations.</p></div>
+            </div>
+
+            <h3>Deadlock Management</h3>
+            <p>Real-time operating systems often emphasize deadlock prevention, strict resource ordering, and resource reservation to ensure critical tasks continue.</p>
+        </section>
+
+        <!-- PAGE 28 -->
+        <section class="content-section lesson-page" id="page28">
+            <span class="page-heading">PAGE 28 • STARVATION</span>
+            <h2>Resource Starvation and Deadlock Management</h2>
+
+            <div class="illustration" data-illustration="starvation">
+                <div class="image-caption">A low-priority process waiting repeatedly for resources</div>
+            </div>
+
+            <h3>What is Resource Starvation?</h3>
+            <p>Resource starvation occurs when a process waits indefinitely because resources are continually allocated to other processes.</p>
+
+            <h3>Causes of Starvation</h3>
+            <ul><li>Priority scheduling</li><li>Resource monopolization</li><li>Poor allocation policies</li></ul>
+
+            <h3>Prevention Techniques</h3>
+            <ul><li><strong>Aging:</strong> Gradually increase the priority of waiting processes.</li><li><strong>Fair Scheduling:</strong> Give processes reasonable access to resources.</li><li><strong>Priority Adjustments:</strong> Adjust priorities to reduce indefinite waiting.</li></ul>
+
+            <h3>Comparison of Deadlock Handling Methods</h3>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Method</th><th>Advantage</th><th>Disadvantage</th></tr></thead>
+                    <tbody>
+                        <tr><td>Prevention</td><td>Eliminates deadlock conditions</td><td>May reduce utilization</td></tr>
+                        <tr><td>Avoidance</td><td>Maintains safe states</td><td>Complex implementation</td></tr>
+                        <tr><td>Detection</td><td>Allows better resource usage</td><td>Requires monitoring</td></tr>
+                        <tr><td>Recovery</td><td>Restores operation</td><td>May lose work</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- PAGE 29 -->
+        <section class="content-section lesson-page" id="page29">
+            <span class="page-heading">PAGE 29 • REAL-WORLD APPLICATIONS</span>
+            <h2>Real-World Applications of Deadlocks and Resource Allocation</h2>
+
+            <div class="illustration" data-illustration="applications">
+                <div class="image-caption">Resource management in real-world computing environments</div>
+            </div>
+
+            <h3>Multiuser Operating Systems</h3>
+            <p>Windows Server, Linux Server Systems, and UNIX systems allocate CPU time, memory, storage, and network resources to multiple users and applications.</p>
+
+            <h3>Database Management Systems</h3>
+            <p>Banking systems, hospital records, student information systems, and e-commerce databases use locks and transaction management to control simultaneous access.</p>
+
+            <h3>Banking Systems</h3>
+            <p>Fund transfers, deposits, withdrawals, and balance inquiries depend on shared account records and transaction resources. Deadlock management helps prevent delays.</p>
+
+            <h3>Cloud Computing and Data Centers</h3>
+            <p>Platforms such as Microsoft Azure, Amazon Web Services, and Google Cloud allocate virtual machines, storage, network bandwidth, and processing resources.</p>
+
+            <h3>Distributed Computing</h3>
+            <p>Multiple interconnected computers share resources and coordinate tasks. Specialized detection methods help manage complex dependencies.</p>
+
+            <h3>Industrial Automation and Air Traffic Control</h3>
+            <p>Robots, sensors, production systems, communication channels, radar systems, and flight data systems require reliable resource allocation.</p>
+
+            <h3>Healthcare Information Systems</h3>
+            <p>Hospitals manage patient records, diagnostic systems, monitoring equipment, and medical databases. Reliable resource management helps reduce delays in critical operations.</p>
+        </section>
+
+        <!-- PAGE 30 -->
+        <section class="content-section lesson-page" id="page30">
+            <span class="page-heading">PAGE 30 • TRENDS AND CONCLUSION</span>
+            <h2>Current Trends, Learning Resources, and Conclusion</h2>
+
+            <div class="illustration" data-illustration="future">
+                <div class="image-caption">Emerging technologies in resource management</div>
+            </div>
+
+            <h3>Current Trends in Resource Management</h3>
+            <div class="comparison-grid">
+                <div class="comparison-card"><h4>Artificial Intelligence</h4><p>Predicts resource demands, optimizes allocations, and detects unusual activity.</p></div>
+                <div class="comparison-card"><h4>Cloud Optimization</h4><p>Dynamically assigns resources based on workload requirements.</p></div>
+                <div class="comparison-card"><h4>Virtualization</h4><p>Allows multiple virtual machines to share physical resources.</p></div>
+                <div class="comparison-card"><h4>Edge Computing</h4><p>Moves processing closer to users and devices to reduce latency.</p></div>
+                <div class="comparison-card"><h4>Internet of Things</h4><p>Coordinates resources used by smart homes, vehicles, sensors, and wearables.</p></div>
+            </div>
+
+            <h3>Challenges in Deadlock Management</h3>
+            <ul><li>Growing system complexity</li><li>Distributed environments</li><li>Increasing performance requirements</li><li>Security and resource exhaustion concerns</li></ul>
+
+            <h3>Learning Resources</h3>
+            <ul class="resource-list">
+                <li><a href="https://learn.microsoft.com" target="_blank">Microsoft Learn</a></li>
+                <li><a href="https://www.ibm.com/topics" target="_blank">IBM Technology Topics</a></li>
+                <li><a href="https://www.geeksforgeeks.org/operating-systems/" target="_blank">GeeksforGeeks Operating Systems</a></li>
+                <li><a href="https://www.tutorialspoint.com/operating_system" target="_blank">TutorialsPoint Operating System Tutorial</a></li>
+                <li><a href="https://docs.oracle.com" target="_blank">Oracle Documentation</a></li>
+                <li><a href="https://training.linuxfoundation.org" target="_blank">Linux Foundation Training</a></li>
+                <li><a href="https://ocw.mit.edu" target="_blank">MIT OpenCourseWare</a></li>
+                <li><a href="https://cs.stanford.edu" target="_blank">Stanford Computer Science</a></li>
+                <li><a href="https://www.computerhistory.org" target="_blank">Computer History Museum</a></li>
+                <li><a href="https://www.khanacademy.org/computing" target="_blank">Khan Academy Computing</a></li>
+            </ul>
+
+            <h3>Conclusion</h3>
+            <p>Deadlocks and resource allocation are fundamental concepts in operating system design. Resource allocation ensures that processes receive the hardware and software resources necessary to execute efficiently, while deadlock management prevents situations in which processes become permanently blocked.</p>
+
+            <p>This lesson discussed computing resources, allocation strategies, resource allocation graphs, deadlock conditions, prevention, avoidance, detection, and recovery. It also explored real-world applications in databases, banking, cloud computing, distributed systems, industrial automation, and healthcare.</p>
+
+            <p>As computing environments continue to evolve through artificial intelligence, virtualization, cloud computing, and the Internet of Things, effective resource allocation and deadlock management remain essential for reliable and stable systems.</p>
+
+            <h3>References</h3>
+            <ul class="references">
+                <li>Silberschatz, A., Galvin, P. B., & Gagne, G. (2018). <em>Operating System Concepts</em> (10th ed.). Wiley.</li>
+                <li>Stallings, W. (2018). <em>Operating Systems: Internals and Design Principles</em> (9th ed.). Pearson.</li>
+                <li>Tanenbaum, A. S., & Bos, H. (2015). <em>Modern Operating Systems</em> (4th ed.). Pearson.</li>
+                <li>Dijkstra, E. W. (1965). <em>Cooperating Sequential Processes</em>.</li>
+                <li>GeeksforGeeks. (2024). Operating System Tutorial.</li>
+                <li>IBM. (n.d.). Technology Topics.</li>
+                <li>Microsoft. (n.d.). Microsoft Learn.</li>
+                <li>Oracle Corporation. (n.d.). Oracle Documentation.</li>
+                <li>Massachusetts Institute of Technology. (n.d.). MIT OpenCourseWare.</li>
+            </ul>
+
+            <a href="lesson7-assessment.html" class="assessment-link">📝 Proceed to Lesson 7 Assessment →</a>
+        </section>
+
+        <footer class="page-footer">
+            <p>WEBTECH LEARN | BSIT DIGITAL E-BOOK</p>
+            <p>Lesson 7: Deadlocks and Resource Allocation</p>
+        </footer>
+
+    </main>
+</div>
+
+<button id="backToTop" title="Back to Top">↑</button>
+
+</body>
+</html>

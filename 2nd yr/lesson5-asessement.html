@@ -1,0 +1,204 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 5 Assessment | WEBTECH LEARN</title>
+    <link rel="stylesheet" href="chapter5-assessment.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="top-header">
+    <div class="header-content">
+        <a href="chapter5.html" class="brand">
+            <span class="brand-logo">DM</span>
+            <span>BSIT | DIGITAL MINDS</span>
+        </a>
+        <a href="chapter5.html" class="back-button">← Back to Lesson 5</a>
+    </div>
+</header>
+
+<div class="page-layout">
+
+    <aside class="sidebar">
+        <h2>Assessment</h2>
+        <nav class="sidebar-nav">
+            <a href="#overview" class="active">Assessment Overview</a>
+            <a href="#instructions">Instructions</a>
+            <a href="#part1">Part I – Multiple Choice</a>
+            <a href="#part2">Part II – Identification</a>
+            <a href="#part3">Part III – True or False</a>
+            <a href="#submit">Submit Assessment</a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <a href="chapter5.html">← Back to Lesson 5</a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+
+        <section class="hero-banner" id="overview">
+            <div class="hero-content">
+                <span class="eyebrow">BSIT DIGITAL E-BOOK | 3RD YEAR</span>
+                <h1>Lesson 5 Assessment</h1>
+                <h2>User Interface Design and Accessibility</h2>
+                <p>
+                    Test your knowledge and understanding of user interface design,
+                    usability, inclusive design, and web accessibility.
+                </p>
+
+                <div class="hero-tags">
+                    <span>35 Questions</span>
+                    <span>3 Assessment Parts</span>
+                    <span>Automatic Scoring</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-card instructions-card" id="instructions">
+            <div class="section-heading">
+                <span class="number-box">01</span>
+                <div>
+                    <h2>Assessment Instructions</h2>
+                    <p>Read the instructions carefully before answering.</p>
+                </div>
+            </div>
+
+            <div class="reminder-box">
+                <h3>Important Reminder</h3>
+                <p>
+                    Answer all 35 questions. Read each question carefully and select
+                    or type the most appropriate answer. Your score will be calculated
+                    automatically after submitting the assessment.
+                </p>
+            </div>
+
+            <ul class="instruction-list">
+                <li>Part I contains 20 multiple-choice questions.</li>
+                <li>Part II contains 10 identification questions.</li>
+                <li>Part III contains 5 true-or-false questions.</li>
+                <li>Each question is worth one point.</li>
+                <li>Make sure all questions are answered before submitting.</li>
+                <li>You can review your answers after submission.</li>
+            </ul>
+        </section>
+
+        <section class="content-card question-section" id="part1">
+            <div class="section-heading">
+                <span class="number-box">02</span>
+                <div>
+                    <h2>Part I – Multiple Choice</h2>
+                    <p>Choose the letter of the correct answer. (20 points)</p>
+                </div>
+            </div>
+            <div id="multipleChoiceQuestions"></div>
+        </section>
+
+        <section class="content-card question-section" id="part2">
+            <div class="section-heading">
+                <span class="number-box">03</span>
+                <div>
+                    <h2>Part II – Identification</h2>
+                    <p>Write the correct term being described. (10 points)</p>
+                </div>
+            </div>
+            <div id="identificationQuestions"></div>
+        </section>
+
+        <section class="content-card question-section" id="part3">
+            <div class="section-heading">
+                <span class="number-box">04</span>
+                <div>
+                    <h2>Part III – True or False</h2>
+                    <p>Determine whether each statement is True or False. (5 points)</p>
+                </div>
+            </div>
+            <div id="trueFalseQuestions"></div>
+        </section>
+
+        <section class="content-card submit-section" id="submit">
+            <div class="section-heading">
+                <span class="number-box">05</span>
+                <div>
+                    <h2>Submit Assessment</h2>
+                    <p>Check your progress before submitting your answers.</p>
+                </div>
+            </div>
+
+            <div class="progress-container">
+                <div class="progress-info">
+                    <span>Answered Questions</span>
+                    <strong id="progressText">0 / 35</strong>
+                </div>
+                <div class="progress-track">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+            </div>
+
+            <p class="submit-note" id="submitNote">
+                Please answer all questions before submitting.
+            </p>
+
+            <div class="submit-actions">
+                <button type="button" class="secondary-button" id="resetButton">
+                    Reset Answers
+                </button>
+                <button type="button" class="primary-button" id="submitButton">
+                    Submit Assessment →
+                </button>
+            </div>
+        </section>
+
+        <section class="content-card results-section" id="results" hidden>
+            <div class="result-header">
+                <span class="number-box">06</span>
+                <div>
+                    <h2>Assessment Results</h2>
+                    <p>Your assessment has been evaluated.</p>
+                </div>
+            </div>
+
+            <div class="score-card">
+                <span class="score-label">Your Final Score</span>
+                <div class="score-number" id="scoreNumber">0 / 35</div>
+                <div class="score-percent" id="scorePercent">0%</div>
+                <h3 id="resultMessage">Keep Learning!</h3>
+                <p id="resultDescription"></p>
+            </div>
+
+            <div class="result-breakdown" id="resultBreakdown"></div>
+
+            <div class="review-heading">
+                <h3>Answer Review</h3>
+                <p>Review your answers and the correct responses below.</p>
+            </div>
+            <div id="answerReview"></div>
+
+            <div class="result-actions">
+                <button type="button" class="secondary-button" id="retakeButton">
+                    Retake Assessment
+                </button>
+                <a href="chapter5.html" class="primary-button link-button">
+                    Back to Lesson 5 →
+                </a>
+            </div>
+        </section>
+
+        <footer class="page-footer">
+            <p>© 2026 WEBTECH LEARN | BSIT DIGITAL E-BOOK</p>
+            <p>Learning Today, Building Tomorrow.</p>
+        </footer>
+
+    </main>
+</div>
+
+<button id="backToTop" title="Back to top">↑</button>
+
+<script src="lesson5-asessement.js"></script>
+</body>
+</html>

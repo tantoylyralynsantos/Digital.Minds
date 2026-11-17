@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <title>Chapter 1 | Internet and World Wide Web Fundamentals</title>
+
+    <link rel="stylesheet" href="lesson3.css">
+    <link rel="stylesheet" href="display-settings.css">
+
+    <script src="display-settings.js" defer></script>
+    <script src="lesson3.js" defer></script>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+    <div class="nav-container">
+
+        <a href="index.html" class="logo">
+            <img src="logo.jpg" alt="BSIT Digital Minds Logo" class="logo-image">
+
+            <span class="logo-text">
+                <small>BSIT | DIGITAL MINDS</small>
+            </span>
+        </a>
+
+        <a href="2nd yr toc.html" class="back-home">
+            ← Back to Table of Content
+        </a>
+
+    </div>
+    <link rel="stylesheet" href="ebook-pagination.css">
+<script src="ebook-pagination.js" defer></script>
+</header>
+
+<div class="page-layout">
+
+    <aside class="sidebar">
+        <div class="sidebar-heading">
+            <span>LESSON 3</span>
+            <h3>Lesson Contents</h3>
+        </div>
+
+        <nav class="lesson-nav">
+            <a href="#introduction" class="nav-link active">1. Introduction</a>
+            <a href="#operating-system" class="nav-link">2. Operating Systems</a>
+            <a href="#processes" class="nav-link">3. Understanding Processes</a>
+            <a href="#process-components" class="nav-link">4. Process Components</a>
+            <a href="#process-states" class="nav-link">5. Process States</a>
+            <a href="#pcb" class="nav-link">6. Process Control Block</a>
+            <a href="#process-operations" class="nav-link">7. Process Operations</a>
+            <a href="#ipc" class="nav-link">8. Interprocess Communication</a>
+            <a href="#threads" class="nav-link">9. Understanding Threads</a>
+            <a href="#thread-types" class="nav-link">10. Types of Threads</a>
+            <a href="#thread-models" class="nav-link">11. Multithreading Models</a>
+            <a href="#scheduling" class="nav-link">12. Process Scheduling</a>
+            <a href="#scheduling-criteria" class="nav-link">13. Scheduling Criteria</a>
+            <a href="#algorithms" class="nav-link">14. Scheduling Algorithms</a>
+            <a href="#synchronization" class="nav-link">15. Synchronization</a>
+            <a href="#deadlocks" class="nav-link">16. Deadlocks</a>
+            <a href="#applications" class="nav-link">17. Real-World Applications</a>
+            <a href="#activities" class="nav-link">18. Activities</a>
+            <a href="#resources" class="nav-link">19. Learning Resources</a>
+            <a href="#references" class="nav-link">20. References</a>
+        </nav>
+        </nav>
+        <div class="separate-learning-links">
+            <a href="lesson3-assessment.html">📖 Assessment</a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+
+        <section class="lesson-banner">
+            <span class="chapter-label">SECOND YEAR • LESSON 3</span>
+            <h1>Processes, Threads, and Process Scheduling</h1>
+            <p>Understand how operating systems manage running programs, execute multiple tasks, and allocate CPU resources efficiently.</p>
+            <div class="banner-details">
+                <span>📘 Operating Systems</span>
+                <span>⏱ Learning Module</span>
+                <span>💻 BSIT</span>
+            </div>
+        </section>
+
+        <section class="content-section" id="introduction">
+            <span class="section-number">01</span>
+            <h2>Introduction</h2>
+            <p>Modern operating systems are designed to execute multiple programs efficiently while providing users with a responsive and reliable computing environment. To achieve this, operating systems use important concepts such as processes, threads, and process scheduling.</p>
+            <p>Whenever a user opens a web browser, runs a video player, launches a game, or edits a document, the operating system creates and manages processes and threads. It also schedules processor resources so that running applications receive the CPU time they need.</p>
+
+            <figure class="lesson-figure">
+                <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=85" alt="Computer circuit board representing computer processing">
+                <figcaption>Computer hardware provides the resources used by operating systems to execute programs.</figcaption>
+            </figure>
+
+            <div class="info-box">
+                <h3>Key Concepts</h3>
+                <ul>
+                    <li><strong>Process:</strong> A program that is currently being executed.</li>
+                    <li><strong>Thread:</strong> The smallest unit of CPU execution within a process.</li>
+                    <li><strong>Process Scheduling:</strong> The method used by an operating system to decide which process receives CPU time.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="content-section" id="operating-system">
+            <span class="section-number">02</span>
+            <h2>Fundamentals of Operating Systems</h2>
+            <p>An operating system is system software that serves as an interface between computer hardware and users. It manages computer resources and provides services that allow applications to run efficiently.</p>
+
+            <figure class="lesson-figure">
+                <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=85" alt="Server equipment in a data center">
+                <figcaption>Operating systems manage hardware and software resources in computers and servers.</figcaption>
+            </figure>
+
+            <h3>Primary Responsibilities of an Operating System</h3>
+            <div class="topic-grid">
+                <div class="topic-card"><span>⚙️</span><h4>Process Management</h4><p>Controls running programs and their execution.</p></div>
+                <div class="topic-card"><span>🧠</span><h4>Memory Management</h4><p>Allocates and manages computer memory.</p></div>
+                <div class="topic-card"><span>📁</span><h4>File Management</h4><p>Organizes and controls files and folders.</p></div>
+                <div class="topic-card"><span>🔌</span><h4>Device Management</h4><p>Coordinates connected hardware devices.</p></div>
+                <div class="topic-card"><span>🔐</span><h4>Security Management</h4><p>Protects system resources and information.</p></div>
+                <div class="topic-card"><span>📊</span><h4>Resource Allocation</h4><p>Distributes available resources to programs.</p></div>
+            </div>
+            <p>Examples of running processes include web browsers, media players, antivirus software, background services, and operating system utilities.</p>
+        </section>
+
+        <section class="content-section" id="processes">
+            <span class="section-number">03</span>
+            <h2>Understanding Processes</h2>
+            <h3>Definition of a Process</h3>
+            <p>A process is a program that is currently being executed by the computer. A program stored on a disk is passive because it contains instructions and data. When it is loaded into memory and begins execution, it becomes an active entity known as a process.</p>
+
+            <div class="comparison-box">
+                <div>
+                    <span class="comparison-icon">📄</span>
+                    <h4>Program</h4>
+                    <p>Microsoft Word stored on a disk. It is not currently running.</p>
+                </div>
+                <div class="comparison-arrow">→</div>
+                <div>
+                    <span class="comparison-icon">💻</span>
+                    <h4>Process</h4>
+                    <p>Microsoft Word currently running on the computer.</p>
+                </div>
+            </div>
+
+            <h3>Characteristics of a Process</h3>
+            <ul class="check-list">
+                <li><strong>Dynamic Nature:</strong> A process changes continuously during execution.</li>
+                <li><strong>Resource Ownership:</strong> Processes require CPU time, memory, input devices, output devices, and storage.</li>
+                <li><strong>Unique Identity:</strong> Every process receives a unique identifier called a Process ID (PID).</li>
+                <li><strong>Execution Context:</strong> Each process maintains information about its current instruction, processor registers, memory allocation, and scheduling information.</li>
+            </ul>
+
+            <h3>Importance of Processes</h3>
+            <p>Processes allow operating systems to support multitasking, manage resources efficiently, execute applications concurrently, improve productivity, and maintain system organization.</p>
+        </section>
+
+        <section class="content-section" id="process-components">
+            <span class="section-number">04</span>
+            <h2>Components of a Process</h2>
+            <p>A process consists of several important memory sections that support program execution.</p>
+
+            <figure class="lesson-figure">
+                <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=85" alt="Electronic circuit board representing memory and processing components">
+                <figcaption>Computer components work together to support program execution and memory operations.</figcaption>
+            </figure>
+
+            <div class="detail-card">
+                <h3>1. Text Section</h3>
+                <p>Contains the executable instructions that define the actions performed by the program.</p>
+                <p class="example-text">Examples: mathematical calculations, data processing, and file operations.</p>
+            </div>
+            <div class="detail-card">
+                <h3>2. Data Section</h3>
+                <p>Stores global variables and static variables used by the application.</p>
+                <p class="example-text">Examples: configuration settings, program constants, and shared information.</p>
+            </div>
+            <div class="detail-card">
+                <h3>3. Heap Section</h3>
+                <p>Used for dynamic memory allocation. Memory in the heap is allocated and released during program execution.</p>
+                <p class="example-text">Examples: dynamic arrays, linked lists, trees, and data structures.</p>
+            </div>
+            <div class="detail-card">
+                <h3>4. Stack Section</h3>
+                <p>Stores temporary information related to function calls. It commonly contains local variables, return addresses, and function parameters.</p>
+                <p class="example-text">The stack follows a Last-In-First-Out (LIFO) structure.</p>
+            </div>
+        </section>
+
+        <section class="content-section" id="process-states">
+            <span class="section-number">05</span>
+            <h2>Process States</h2>
+            <p>A process moves through several states during its execution. These states help explain how an operating system manages processes.</p>
+
+            <div class="state-flow">
+                <div class="state">NEW</div><span>→</span>
+                <div class="state">READY</div><span>→</span>
+                <div class="state running">RUNNING</div><span>→</span>
+                <div class="state">TERMINATED</div>
+            </div>
+            <div class="detail-card">
+                <h3>New State</h3>
+                <p>The process is being created. Resources are allocated and process information is initialized.</p>
+            </div>
+            <div class="detail-card">
+                <h3>Ready State</h3>
+                <p>The process is loaded into memory and prepared to execute, but it is waiting for CPU allocation.</p>
+            </div>
+            <div class="detail-card">
+                <h3>Running State</h3>
+                <p>The CPU is actively executing the process instructions.</p>
+            </div>
+            <div class="detail-card">
+                <h3>Waiting State</h3>
+                <p>The process waits for an external event, such as keyboard input, file access, or network communication.</p>
+            </div>
+            <div class="detail-card">
+                <h3>Terminated State</h3>
+                <p>The process has completed execution or has been stopped. Its allocated resources are released.</p>
+            </div>
+        </section>
+
+        <section class="content-section" id="pcb">
+            <span class="section-number">06</span>
+            <h2>Process Control Block (PCB)</h2>
+            <p>The Process Control Block (PCB) is a data structure maintained by the operating system. It contains information necessary for managing a process and allowing it to resume execution when needed.</p>
+
+            <div class="pcb-visual">
+                <h3>PROCESS CONTROL BLOCK</h3>
+                <div class="pcb-row"><span>Process Identification</span><strong>PID, Parent PID, User ID</strong></div>
+                <div class="pcb-row"><span>Process State</span><strong>Ready, Running, Waiting</strong></div>
+                <div class="pcb-row"><span>Program Counter</span><strong>Next instruction</strong></div>
+                <div class="pcb-row"><span>CPU Registers</span><strong>Current register values</strong></div>
+                <div class="pcb-row"><span>Memory Information</span><strong>Address space, allocation</strong></div>
+                <div class="pcb-row"><span>Scheduling Information</span><strong>Priority, queue information</strong></div>
+            </div>
+
+            <p>The PCB stores process identification, process state, program counter, CPU registers, memory information, and scheduling information.</p>
+        </section>
+
+        <section class="content-section" id="process-operations">
+            <span class="section-number">07</span>
+            <h2>Process Operations</h2>
+            <p>Process operations are activities performed on processes throughout their life cycle. The operating system monitors and manages processes from creation to termination.</p>
+
+            <h3>Common Process Operations</h3>
+            <ul class="check-list">
+                <li>Process creation</li>
+                <li>Process execution</li>
+                <li>Process suspension</li>
+                <li>Process resumption</li>
+                <li>Process synchronization</li>
+                <li>Process termination</li>
+            </ul>
+
+            <h3>Process Creation</h3>
+            <p>When a user launches an application or another process creates a new process, the operating system performs several steps:</p>
+            <ol class="number-list">
+                <li>Assigning a Process Identifier (PID)</li>
+                <li>Creating the Process Control Block (PCB)</li>
+                <li>Allocating memory resources</li>
+                <li>Loading executable code into memory</li>
+                <li>Initializing CPU registers</li>
+                <li>Scheduling the process for execution</li>
+            </ol>
+
+            <h3>Parent and Child Processes</h3>
+            <p>A parent process is a process that creates another process. The newly created process is called a child process. For example, a browser may create child processes for tab management, GPU processing, website rendering, and extension execution.</p>
+
+            <h3>Process Termination</h3>
+            <p>A process may terminate because of normal completion, a user request, a fatal error, or system shutdown. Termination releases resources occupied by the process.</p>
+        </section>
+
+        <section class="content-section" id="ipc">
+            <span class="section-number">08</span>
+            <h2>Interprocess Communication (IPC)</h2>
+            <p>Interprocess Communication (IPC) is the mechanism through which processes exchange information and coordinate activities. It supports multitasking, data sharing, resource coordination, and process synchronization.</p>
+
+            <figure class="lesson-figure">
+                <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=85" alt="Network servers used for communication and data exchange">
+                <figcaption>Communication between computer processes helps applications exchange information.</figcaption>
+            </figure>
+
+            <h3>Reasons for IPC</h3>
+            <div class="topic-grid">
+                <div class="topic-card"><span>📨</span><h4>Information Sharing</h4><p>Processes exchange information, such as a browser communicating with a download manager.</p></div>
+                <div class="topic-card"><span>🔗</span><h4>Resource Sharing</h4><p>Processes may need access to databases, printers, and storage devices.</p></div>
+                <div class="topic-card"><span>⚡</span><h4>Speed Improvement</h4><p>Tasks can be divided among processes and executed concurrently.</p></div>
+                <div class="topic-card"><span>🧩</span><h4>Modularity</h4><p>Applications can be divided into smaller independent processes.</p></div>
+            </div>
+
+            <h3>Methods of IPC</h3>
+            <div class="detail-card"><h4>Shared Memory</h4><p>Allows multiple processes to access a common memory area. It supports fast communication and efficient data transfer, but requires synchronization to prevent conflicts.</p></div>
+            <div class="detail-card"><h4>Message Passing</h4><p>Processes exchange information through messages. It provides simpler implementation and better isolation, but may introduce communication overhead.</p></div>
+            <div class="detail-card"><h4>Pipes</h4><p>Provide a communication channel between related processes. One process sends data while another receives it.</p></div>
+            <div class="detail-card"><h4>Sockets</h4><p>Enable communication between processes across networks. They are used in web applications, online games, chat systems, and distributed computing.</p></div>
+        </section>
+
+        <section class="content-section" id="threads">
+            <span class="section-number">09</span>
+            <h2>Understanding Threads</h2>
+            <p>A thread is the smallest unit of CPU execution within a process. While a process represents an entire program, threads represent smaller execution paths within that program.</p>
+
+            <figure class="lesson-figure">
+                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=85" alt="Person using a laptop with multiple applications">
+                <figcaption>A single application can perform different tasks using multiple threads.</figcaption>
+            </figure>
+
+            <h3>Processes versus Threads</h3>
+            <div class="table-wrapper">
+                <table>
+                    <thead><tr><th>Process</th><th>Thread</th></tr></thead>
+                    <tbody>
+                        <tr><td>Independent execution unit</td><td>Smaller execution unit</td></tr>
+                        <tr><td>Has its own memory space</td><td>Shares memory with threads in the same process</td></tr>
+                        <tr><td>Higher resource consumption</td><td>Lower resource consumption</td></tr>
+                        <tr><td>Slower creation</td><td>Faster creation</td></tr>
+                        <tr><td>Greater isolation</td><td>Less isolation</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>Example of Threads in a Web Browser</h3>
+            <p>A web browser process may contain threads responsible for:</p>
+            <ul class="check-list">
+                <li>Rendering web pages</li>
+                <li>Downloading files</li>
+                <li>Playing videos</li>
+                <li>Handling user interactions</li>
+            </ul>
+
+            <h3>Components of a Thread</h3>
+            <ul class="check-list">
+                <li><strong>Thread Identifier:</strong> A unique identification number.</li>
+                <li><strong>Program Counter:</strong> Points to the next instruction for execution.</li>
+                <li><strong>Register Set:</strong> Stores processor register information.</li>
+                <li><strong>Stack Space:</strong> Contains local variables and function call information.</li>
+            </ul>
+            <p>Threads within the same process share process memory, open files, system resources, and security information.</p>
+
+            <h3>Benefits of Threads</h3>
+            <div class="topic-grid">
+                <div class="topic-card"><h4>Improved Responsiveness</h4><p>Applications can remain responsive while background tasks execute.</p></div>
+                <div class="topic-card"><h4>Resource Sharing</h4><p>Threads share resources within the same process.</p></div>
+                <div class="topic-card"><h4>Economy</h4><p>Creating threads requires fewer resources than creating processes.</p></div>
+                <div class="topic-card"><h4>Enhanced Parallelism</h4><p>Threads can execute simultaneously on multicore processors.</p></div>
+            </div>
+        </section>
+
+        <section class="content-section" id="thread-types">
+            <span class="section-number">10</span>
+            <h2>Types of Threads</h2>
+            <div class="detail-card">
+                <h3>User-Level Threads</h3>
+                <p>User-level threads are managed entirely by user applications. The operating system remains unaware of their individual existence.</p>
+                <p><strong>Advantages:</strong> Faster creation, faster switching, and simple implementation.</p>
+                <p><strong>Disadvantages:</strong> Blocking one thread may block the entire process, and parallelism is limited.</p>
+            </div>
+            <div class="detail-card">
+                <h3>Kernel-Level Threads</h3>
+                <p>Kernel-level threads are managed directly by the operating system kernel. The operating system schedules and controls them individually.</p>
+                <p><strong>Advantages:</strong> Better responsiveness, improved parallelism, and greater system support.</p>
+                <p><strong>Disadvantages:</strong> Higher overhead and more complex management.</p>
+            </div>
+            <div class="detail-card">
+                <h3>Hybrid Threading</h3>
+                <p>Hybrid threading combines user-level and kernel-level threads to balance performance, flexibility, and resource utilization.</p>
+            </div>
+        </section>
+
+        <section class="content-section" id="thread-models">
+            <span class="section-number">11</span>
+            <h2>Multithreading Models</h2>
+            <p>A multithreading model defines how user threads are mapped to threads managed by the operating system.</p>
+
+            <div class="detail-card">
+                <h3>Many-to-One Model</h3>
+                <p>Multiple user-level threads are mapped to a single kernel thread.</p>
+                <p><strong>Advantages:</strong> Fast thread management and low overhead.</p>
+                <p><strong>Disadvantages:</strong> If one thread blocks, all threads block. It also does not provide true parallelism on multiprocessor systems.</p>
+            </div>
+            <div class="detail-card">
+                <h3>One-to-One Model</h3>
+                <p>Every user thread is mapped directly to a kernel thread. The operating system can schedule each thread independently.</p>
+                <p><strong>Advantages:</strong> Better responsiveness and true parallel execution.</p>
+                <p><strong>Disadvantages:</strong> Increased overhead and higher resource consumption.</p>
+            </div>
+            <div class="detail-card">
+                <h3>Many-to-Many Model</h3>
+                <p>Multiple user threads are mapped to multiple kernel threads. The number of user threads can exceed the number of kernel threads.</p>
+                <p><strong>Advantages:</strong> Good resource utilization, improved scalability, and better concurrency.</p>
+                <p><strong>Disadvantages:</strong> More complex implementation and management.</p>
+            </div>
+        </section>
+
+        <section class="content-section" id="scheduling">
+            <span class="section-number">12</span>
+            <h2>Process Scheduling</h2>
+            <p>Process scheduling is the method used by the operating system to decide which process receives CPU time. Since multiple processes compete for processor resources, the operating system must allocate CPU time efficiently.</p>
+
+            <figure class="lesson-figure">
+                <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=85" alt="People working with computers in an office">
+                <figcaption>Scheduling helps computer systems manage multiple tasks and applications.</figcaption>
+            </figure>
+
+            <h3>Objectives of Process Scheduling</h3>
+            <ul class="check-list">
+                <li><strong>Maximum CPU Utilization:</strong> Keep the processor busy whenever possible.</li>
+                <li><strong>Maximum Throughput:</strong> Increase the number of processes completed during a given period.</li>
+                <li><strong>Reduced Waiting Time:</strong> Reduce the time a process spends in the ready queue.</li>
+                <li><strong>Faster Response Time:</strong> Improve how quickly the system reacts to user requests.</li>
+                <li><strong>Fair Resource Allocation:</strong> Give every process a reasonable opportunity to execute.</li>
+            </ul>
+
+            <h3>Scheduling Queues</h3>
+            <div class="detail-card"><h4>Job Queue</h4><p>Contains all processes in the system. Every process enters this queue when created.</p></div>
+            <div class="detail-card"><h4>Ready Queue</h4><p>Contains processes loaded into memory that are ready to execute but waiting for CPU allocation.</p></div>
+            <div class="detail-card"><h4>Device Queue</h4><p>Contains processes waiting for input/output operations, such as printer, disk, or network operations.</p></div>
+
+            <h3>Types of Schedulers</h3>
+            <div class="detail-card"><h4>Long-Term Scheduler</h4><p>Determines which processes enter the system. It handles process admission, workload balancing, and resource planning.</p></div>
+            <div class="detail-card"><h4>Short-Term Scheduler</h4><p>Determines which process receives CPU allocation next. It operates frequently and must make decisions quickly.</p></div>
+            <div class="detail-card"><h4>Medium-Term Scheduler</h4><p>Temporarily removes processes from memory and later returns them. This process is known as swapping.</p></div>
+
+            <h3>Context Switching</h3>
+            <p>A context switch occurs when the CPU changes from executing one process to another. The operating system saves information about the current process and restores the information of the next process.</p>
+            <p>The saved information may include program counters, CPU registers, process state, memory information, and scheduling information. This information is usually stored in the PCB.</p>
+            <div class="info-box">
+                <h4>Remember</h4>
+                <p>Context switching enables multitasking and responsiveness, but excessive context switching may reduce performance and increase CPU overhead.</p>
+            </div>
+        </section>
+
+        <section class="content-section" id="scheduling-criteria">
+            <span class="section-number">13</span>
+            <h2>Scheduling Criteria</h2>
+            <p>Operating systems evaluate scheduling algorithms using several criteria.</p>
+            <div class="detail-card"><h3>CPU Utilization</h3><p>Measures the percentage of time the CPU remains active. The objective is to maximize utilization.</p></div>
+            <div class="detail-card"><h3>Throughput</h3><p>Measures the number of completed processes during a given period.</p></div>
+            <div class="detail-card"><h3>Turnaround Time</h3><p>The total time required from process submission until completion. Lower turnaround times are preferred.</p></div>
+            <div class="detail-card"><h3>Waiting Time</h3><p>The amount of time a process spends waiting in the ready queue.</p></div>
+            <div class="detail-card"><h3>Response Time</h3><p>Measures how quickly the system responds to requests. Interactive systems prioritize low response times.</p></div>
+            <div class="detail-card"><h3>Fairness</h3><p>Scheduling should prevent process starvation and ensure processes receive CPU access.</p></div>
+        </section>
+
+        <section class="content-section" id="algorithms">
+            <span class="section-number">14</span>
+            <h2>CPU Scheduling Algorithms</h2>
+            <p>Operating systems use different scheduling algorithms to allocate CPU resources.</p>
+
+            <div class="algorithm-card">
+                <span class="algorithm-tag">FCFS</span>
+                <h3>First-Come, First-Served</h3>
+                <p>Processes execute in the order they arrive.</p>
+                <p><strong>Advantages:</strong> Easy implementation and simple operation.</p>
+                <p><strong>Disadvantages:</strong> Long waiting times and poor responsiveness.</p>
+                <p class="example-text">Example: If Process A arrives before Process B, Process A executes first.</p>
+            </div>
+
+            <div class="algorithm-card">
+                <span class="algorithm-tag">SJF</span>
+                <h3>Shortest Job First</h3>
+                <p>Selects the process with the shortest execution time.</p>
+                <p><strong>Advantages:</strong> Lower average waiting time and improved efficiency.</p>
+                <p><strong>Disadvantages:</strong> Execution time may be difficult to predict, and starvation may occur.</p>
+            </div>
+
+            <div class="algorithm-card">
+                <span class="algorithm-tag">PRIORITY</span>
+                <h3>Priority Scheduling</h3>
+                <p>Each process receives a priority value. Higher-priority processes execute before lower-priority processes.</p>
+                <p><strong>Advantages:</strong> Important tasks execute earlier and resource allocation is flexible.</p>
+                <p><strong>Disadvantages:</strong> Low-priority processes may experience starvation.</p>
+            </div>
+
+            <div class="algorithm-card">
+                <span class="algorithm-tag">ROUND ROBIN</span>
+                <h3>Round Robin Scheduling</h3>
+                <p>Assigns each process a fixed time slice called a quantum. Processes rotate through the CPU in a circular manner.</p>
+                <p><strong>Advantages:</strong> Fairness, good responsiveness, and suitability for interactive systems.</p>
+                <p><strong>Disadvantages:</strong> Context-switching overhead.</p>
+            </div>
+
+            <div class="algorithm-card">
+                <span class="algorithm-tag">MULTILEVEL QUEUE</span>
+                <h3>Multilevel Queue Scheduling</h3>
+                <p>Divides processes into separate queues according to type, such as system, interactive, and batch processes. Each queue may use a different scheduling algorithm.</p>
+                <p><strong>Advantages:</strong> Organized scheduling and better resource management.</p>
+                <p><strong>Disadvantages:</strong> Complex implementation.</p>
+            </div>
+
+            <div class="algorithm-card">
+                <span class="algorithm-tag">MULTILEVEL FEEDBACK</span>
+                <h3>Multilevel Feedback Queue Scheduling</h3>
+                <p>Allows processes to move between queues. It supports dynamic priority adjustment, improved responsiveness, and adaptability.</p>
+            </div>
+        </section>
+
+        <section class="content-section" id="synchronization">
+            <span class="section-number">15</span>
+            <h2>Synchronization Concepts</h2>
+            <p>Synchronization is the process of coordinating multiple processes or threads to ensure that shared resources are accessed safely and efficiently. Its primary goal is to maintain data consistency and prevent conflicts.</p>
+
+            <h3>Race Conditions</h3>
+            <p>A race condition occurs when two or more processes or threads access shared data simultaneously and the final outcome depends on the order of execution.</p>
+            <div class="example-box">
+                <h4>Example: Bank Account</h4>
+                <p>Initial Balance: <strong>₱10,000</strong></p>
+                <p>Thread A withdraws ₱2,000.</p>
+                <p>Thread B withdraws ₱3,000.</p>
+                <p>A properly synchronized system should produce a final balance of:</p>
+                <strong class="final-balance">₱5,000</strong>
+            </div>
+
+            <h3>Critical Section Problem</h3>
+            <p>A critical section is a portion of program code that accesses shared resources. A correct solution should satisfy three requirements:</p>
+            <ul class="check-list">
+                <li><strong>Mutual Exclusion:</strong> Only one process or thread may execute within the critical section at a time.</li>
+                <li><strong>Progress:</strong> If no process is inside the critical section, waiting processes should be allowed to proceed.</li>
+                <li><strong>Bounded Waiting:</strong> Every waiting process should eventually receive access.</li>
+            </ul>
+
+            <h3>Semaphores</h3>
+            <p>A semaphore is a synchronization tool used to control access to shared resources. It uses operations such as:</p>
+            <div class="detail-card"><h4>Wait Operation</h4><p>Decreases the semaphore value. If the resource is unavailable, the requesting thread waits.</p></div>
+            <div class="detail-card"><h4>Signal Operation</h4><p>Increases the semaphore value to indicate that a resource has become available.</p></div>
+            <p><strong>Binary Semaphore:</strong> Contains only two possible values, 0 and 1.</p>
+            <p><strong>Counting Semaphore:</strong> Can store multiple values and manage resources available in multiple instances, such as three printers in a laboratory.</p>
+
+            <h3>Mutex Locks</h3>
+            <p>Mutex stands for Mutual Exclusion. It allows only one thread to access a resource at a time. If a thread acquires the mutex, other threads must wait until the mutex is released.</p>
+            <ol class="number-list">
+                <li>Thread requests mutex.</li>
+                <li>Mutex is locked.</li>
+                <li>Thread enters the critical section.</li>
+                <li>Thread completes the operation.</li>
+                <li>Mutex is unlocked.</li>
+                <li>Other threads may proceed.</li>
+            </ol>
+        </section>
+
+        <section class="content-section" id="deadlocks">
+            <span class="section-number">16</span>
+            <h2>Deadlocks and Their Management</h2>
+            <p>A deadlock occurs when two or more processes wait indefinitely for resources held by one another. Because none of the processes can proceed, execution becomes blocked.</p>
+
+            <div class="deadlock-visual">
+                <div class="deadlock-process"><strong>Process A</strong><span>Holds Resource 1</span><span>Waiting for Resource 2</span></div>
+                <div class="deadlock-center">↔ DEADLOCK ↔</div>
+                <div class="deadlock-process"><strong>Process B</strong><span>Holds Resource 2</span><span>Waiting for Resource 1</span></div>
+            </div>
+
+            <h3>Four Conditions for Deadlock</h3>
+            <div class="detail-card"><h4>1. Mutual Exclusion</h4><p>Resources cannot be shared. Only one process may use a resource at a time.</p></div>
+            <div class="detail-card"><h4>2. Hold and Wait</h4><p>A process holds one resource while requesting additional resources.</p></div>
+            <div class="detail-card"><h4>3. No Preemption</h4><p>Resources cannot be forcibly removed. They must be released voluntarily.</p></div>
+            <div class="detail-card"><h4>4. Circular Wait</h4><p>Processes form a circular chain of resource dependencies, with each process waiting for a resource held by another process.</p></div>
+
+            <h3>Deadlock Management</h3>
+            <div class="detail-card"><h4>Deadlock Prevention</h4><p>Attempts to eliminate one or more deadlock conditions through resource restrictions and controlled requests.</p></div>
+            <div class="detail-card"><h4>Deadlock Avoidance</h4><p>Evaluates resource requests and grants them only if the system remains in a safe state. One known approach is the Banker's Algorithm.</p></div>
+            <div class="detail-card"><h4>Deadlock Detection</h4><p>Allows deadlocks to occur and later identifies them by analyzing resource allocations.</p></div>
+            <div class="detail-card"><h4>Deadlock Recovery</h4><p>May involve terminating processes, restarting processes, or reallocating resources.</p></div>
+        </section>
+
+        <section class="content-section" id="applications">
+            <span class="section-number">17</span>
+            <h2>Real-World Applications</h2>
+            <p>Processes, threads, and scheduling play important roles in modern computing systems.</p>
+
+            <figure class="lesson-figure">
+                <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=85" alt="People using computers for technology work">
+                <figcaption>Modern digital services rely on operating system process and thread management.</figcaption>
+            </figure>
+
+            <div class="detail-card"><h3>Web Browsers</h3><p>Modern web browsers use processes for separate tabs, threads for rendering content, and scheduling for resource management.</p></div>
+            <div class="detail-card"><h3>Mobile Applications</h3><p>Smartphones rely on multithreading, process management, and CPU scheduling for music streaming, messaging, and navigation.</p></div>
+            <div class="detail-card"><h3>Online Banking Systems</h3><p>Banking systems use processes and threads to manage account access, deposits, withdrawals, and payments. Synchronization helps maintain transaction accuracy.</p></div>
+            <div class="detail-card"><h3>Cloud Computing</h3><p>Cloud platforms use process scheduling, thread management, and resource allocation to support many users.</p></div>
+            <div class="detail-card"><h3>E-Commerce Systems</h3><p>Online stores process customer requests, orders, payments, and inventory updates concurrently while maintaining accuracy.</p></div>
+        </section>
+
+        <section class="content-section" id="activities">
+            <span class="section-number">18</span>
+            <h2>Activities</h2>
+            <p>Answer the following activities to review the important concepts discussed in this lesson.</p>
+
+            <div class="activity-card">
+                <h3>Activity 1: Identification</h3>
+                <p>Identify the concept being described.</p>
+                <ol>
+                    <li>A program currently being executed.</li>
+                    <li>The smallest unit of CPU execution.</li>
+                    <li>Information structure used to store process data.</li>
+                    <li>A condition in which processes wait indefinitely for resources held by one another.</li>
+                    <li>A mechanism used to coordinate access to shared resources.</li>
+                    <li>The process of selecting a process for CPU execution.</li>
+                    <li>A communication mechanism between processes.</li>
+                    <li>A lock that allows only one thread to access a resource at a time.</li>
+                    <li>A state in which a process is ready but waiting for CPU allocation.</li>
+                    <li>The switching of CPU control between processes.</li>
+                </ol>
+            </div>
+
+            <div class="activity-card">
+                <h3>Activity 2: Multiple Choice</h3>
+                <p>Choose the correct answer.</p>
+                <ol>
+                    <li>Which component selects the next process for execution?</li>
+                    <li>Which scheduling algorithm uses a fixed time quantum?</li>
+                    <li>What is the smallest execution unit within a process?</li>
+                    <li>Which structure stores process information?</li>
+                    <li>What problem occurs when threads access shared data without synchronization?</li>
+                </ol>
+                <p class="note-text">Answer these questions in your notebook, then check your understanding using the separate Lesson 3 Assessment.</p>
+            </div>
+
+            <div class="activity-card">
+                <h3>Activity 3: Essay Questions</h3>
+                <p>Answer each question in at least 150 words.</p>
+                <ol>
+                    <li>Explain the difference between a process and a thread.</li>
+                    <li>Discuss the importance of process scheduling in modern operating systems.</li>
+                    <li>Explain how synchronization prevents race conditions.</li>
+                    <li>Describe the causes and effects of deadlocks.</li>
+                    <li>Discuss real-world applications of multithreading.</li>
+                </ol>
+            </div>
+
+            <a href="lesson3-assessment.html" class="assessment-link">Take Lesson 3 Assessment →</a>
+        </section>
+
+        <section class="content-section" id="resources">
+            <span class="section-number">19</span>
+            <h2>Learning Resources</h2>
+            <p>Use these resources to explore operating systems, processes, threads, and scheduling concepts further.</p>
+            <div class="resource-list">
+                <a href="https://learn.microsoft.com" target="_blank" rel="noopener">Microsoft Learn ↗</a>
+                <a href="https://www.ibm.com/topics" target="_blank" rel="noopener">IBM Documentation ↗</a>
+                <a href="https://www.geeksforgeeks.org/operating-systems/" target="_blank" rel="noopener">GeeksforGeeks Operating Systems ↗</a>
+                <a href="https://www.tutorialspoint.com/operating_system" target="_blank" rel="noopener">TutorialsPoint Operating Systems ↗</a>
+                <a href="https://www.khanacademy.org/computing" target="_blank" rel="noopener">Khan Academy Computing ↗</a>
+                <a href="https://training.linuxfoundation.org" target="_blank" rel="noopener">Linux Foundation ↗</a>
+                <a href="https://docs.oracle.com" target="_blank" rel="noopener">Oracle Documentation ↗</a>
+                <a href="https://ocw.mit.edu" target="_blank" rel="noopener">MIT OpenCourseWare ↗</a>
+            </div>
+        </section>
+
+        <section class="content-section" id="conclusion">
+            <h2>Conclusion</h2>
+            <p>Processes, threads, and process scheduling are fundamental concepts in modern operating systems. They enable computers to execute multiple tasks efficiently while maintaining stability, responsiveness, and optimal performance.</p>
+            <p>Processes serve as the basic units of program execution, while threads provide lightweight mechanisms for performing concurrent tasks within processes. Process scheduling ensures that CPU resources are allocated fairly and effectively among competing tasks.</p>
+            <p>Synchronization mechanisms such as semaphores and mutexes help maintain data consistency and prevent race conditions. Deadlock management techniques allow operating systems to identify, prevent, avoid, or recover from situations where processes become blocked.</p>
+            <p>These concepts are applied in web browsers, mobile devices, banking systems, cloud computing platforms, and e-commerce applications.</p>
+        </section>
+
+        <section class="content-section" id="references">
+            <span class="section-number">20</span>
+            <h2>References</h2>
+            <ol class="reference-list">
+                <li>Silberschatz, A., Galvin, P. B., & Gagne, G. (2018). <em>Operating System Concepts</em> (10th ed.). Wiley.</li>
+                <li>Stallings, W. (2018). <em>Operating Systems: Internals and Design Principles</em> (9th ed.). Pearson.</li>
+                <li>Tanenbaum, A. S., & Bos, H. (2015). <em>Modern Operating Systems</em> (4th ed.). Pearson.</li>
+                <li>GeeksforGeeks. (2024). Operating system tutorial. https://www.geeksforgeeks.org/operating-systems/</li>
+                <li>IBM. (n.d.). Operating systems. https://www.ibm.com/topics</li>
+                <li>Microsoft. (n.d.). Microsoft Learn. https://learn.microsoft.com</li>
+                <li>Oracle Corporation. (n.d.). Oracle documentation. https://docs.oracle.com</li>
+                <li>TutorialsPoint. (n.d.). Operating system tutorial. https://www.tutorialspoint.com/operating_system</li>
+                <li>Khan Academy. (n.d.). Computing. https://www.khanacademy.org/computing</li>
+                <li>Massachusetts Institute of Technology. (n.d.). MIT OpenCourseWare. https://ocw.mit.edu</li>
+            </ol>
+        </section>
+
+        <div class="lesson-footer">
+            <p>WEBTECH LEARN | BSIT DIGITAL E-BOOK</p>
+            <p>Lesson 3: Processes, Threads, and Process Scheduling</p>
+            <a href="2nd yr toc.html">← Back to Table of Contents</a>
+        </div>
+
+    </main>
+</div>
+
+<button id="backToTop" title="Back to top">↑</button>
+
+<script src="lesson3.js"></script>
+</body>
+</html>

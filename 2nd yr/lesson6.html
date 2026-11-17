@@ -1,0 +1,1038 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <title>Chapter 6 | Device and Input/Output Management</title>
+
+    <link rel="stylesheet" href="lesson6.css">
+    <link rel="stylesheet" href="display-settings.css">
+
+    <script src="display-settings.js" defer></script>
+    <script src="lesson6.js" defer></script>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+    <div class="nav-container">
+
+        <a href="index.html" class="logo">
+            <img src="logo.jpg" alt="BSIT Digital Minds Logo" class="logo-image">
+
+            <span class="logo-text">
+                <small>BSIT | DIGITAL MINDS</small>
+            </span>
+        </a>
+
+        <a href="2nd yr toc.html" class="back-home">
+            ← Back to Table of Content
+        </a>
+
+    </div>
+    <link rel="stylesheet" href="ebook-pagination.css">
+<script src="ebook-pagination.js" defer></script>
+</header>
+<div class="page-layout">
+
+    <aside class="sidebar">
+        <h3>LESSON 6</h3>
+        <p class="sidebar-subtitle">Device and Input/Output Management</p>
+
+        <nav class="side-nav">
+            <a href="#page1">01. Introduction</a>
+            <a href="#page2">02. Learning Objectives</a>
+            <a href="#page3">03. Device Management</a>
+            <a href="#page4">04. Objectives and Importance</a>
+            <a href="#page5">05. Input and Output Systems</a>
+            <a href="#page6">06. Components of an I/O System</a>
+            <a href="#page7">07. Input Devices</a>
+            <a href="#page8">08. Output Devices</a>
+            <a href="#page9">09. Controllers and Drivers</a>
+            <a href="#page10">10. Functions of Device Management</a>
+            <a href="#page11">11. I/O Hardware Structure</a>
+            <a href="#page12">12. I/O Communication Techniques</a>
+            <a href="#page13">13. Programmed I/O</a>
+            <a href="#page14">14. Interrupt-Driven I/O</a>
+            <a href="#page15">15. Interrupts and Handling</a>
+            <a href="#page16">16. Direct Memory Access</a>
+            <a href="#page17">17. Device Scheduling</a>
+            <a href="#page18">18. Device Queues</a>
+            <a href="#page19">19. Buffering</a>
+            <a href="#page20">20. Caching and Spooling</a>
+            <a href="#page21">21. I/O Performance Optimization</a>
+            <a href="#page22">22. Device Allocation</a>
+            <a href="#page23">23. Deadlocks in Device Management</a>
+            <a href="#page24">24. I/O Protection and Security</a>
+            <a href="#page25">25. Storage Device Management</a>
+            <a href="#page26">26. Network Device Management</a>
+            <a href="#page27">27. Modern I/O Technologies</a>
+            <a href="#page28">28. Plug-and-Play and Virtualization</a>
+            <a href="#page29">29. Applications and Activities</a>
+            <a href="#page30">30. Summary and References</a>
+        </nav>
+
+        <div class="separate-learning-links">
+            <a href="lesson6-assessment.html">📖 Lesson 6 Assessment</a>
+        </div>
+
+        <div class="sidebar-progress">
+            <p>READING PROGRESS</p>
+            <div class="progress-track">
+                <div id="sideProgress"></div>
+            </div>
+            <span id="progressText">0%</span>
+        </div>
+    </aside>
+
+    <main class="main-content">
+
+        <div class="top-progress">
+            <div id="progressBar"></div>
+        </div>
+
+        <section class="lesson-banner">
+            <span class="lesson-label">CHAPTER 06 • OPERATING SYSTEMS</span>
+            <h1>Device and Input/Output Management</h1>
+            <p>Understanding how operating systems control hardware devices and coordinate the transfer of information between computers and the external environment.</p>
+            <div class="banner-tags">
+                <span>Device Management</span>
+                <span>Input and Output</span>
+                <span>Device Drivers</span>
+                <span>I/O Technologies</span>
+            </div>
+        </section>
+
+        <!-- PAGE 1 -->
+        <section class="content-section lesson-page" id="page1">
+            <div class="page-heading"><span>PAGE 01</span><span>INTRODUCTION</span></div>
+            <h2>Introduction to Device and Input/Output Management</h2>
+
+            <p>Computer systems rely heavily on hardware devices to communicate with users and the external environment. These devices allow data to enter the computer, be processed, stored, and eventually delivered as useful information.</p>
+
+            <p>To ensure that all hardware components function correctly and efficiently, operating systems employ a specialized function known as device and input/output (I/O) management.</p>
+
+            <p>Device management is responsible for controlling, monitoring, and coordinating hardware devices connected to a computer system. These devices include keyboards, mice, monitors, printers, storage drives, scanners, webcams, and speakers.</p>
+
+            <p>Input/output management handles the transfer of data between the computer and external devices. Every time a user types on a keyboard, prints a document, saves a file, or plays a video, the operating system performs I/O operations.</p>
+
+            <div class="illustration">
+                <h3>Examples of Computer Hardware Devices</h3>
+                <img src="images/image30.png" alt="Different types of computer hardware devices" class="lesson-image">
+                <p class="image-caption">Figure 1. Examples of hardware devices used in computer systems.</p>
+            </div>
+
+            <div class="highlight-box"><strong>Key Idea:</strong> Device and I/O management allow software and hardware components to communicate efficiently, safely, and reliably.</div>
+        </section>
+
+        <!-- PAGE 2 -->
+        <section class="content-section lesson-page" id="page2">
+            <div class="page-heading"><span>PAGE 02</span><span>LEARNING OBJECTIVES</span></div>
+            <h2>Learning Objectives</h2>
+
+            <p>At the end of this lesson, students should be able to:</p>
+
+            <ol>
+                <li>Define device management and explain its role in an operating system.</li>
+                <li>Describe the objectives and importance of device management.</li>
+                <li>Differentiate input, output, and input/output operations.</li>
+                <li>Identify the major components of an I/O system.</li>
+                <li>Recognize different types of input and output devices.</li>
+                <li>Explain the functions of device controllers and device drivers.</li>
+                <li>Describe the major functions performed by device management.</li>
+                <li>Explain the structure of I/O hardware.</li>
+                <li>Compare programmed I/O, interrupt-driven I/O, and DMA.</li>
+                <li>Explain interrupts, device scheduling, and device queues.</li>
+                <li>Differentiate buffering, caching, and spooling.</li>
+                <li>Discuss device allocation, deadlocks, and I/O security.</li>
+                <li>Describe storage, network, and modern I/O technologies.</li>
+                <li>Recognize real-world applications of device management.</li>
+            </ol>
+
+            <div class="highlight-box"><strong>Expected Learning Outcome:</strong> Students should understand how an operating system coordinates hardware devices and manages data transfers to support reliable computer operations.</div>
+        </section>
+
+        <!-- PAGE 3 -->
+        <section class="content-section lesson-page" id="page3">
+            <div class="page-heading"><span>PAGE 03</span><span>DEVICE MANAGEMENT</span></div>
+            <h2>Fundamentals of Device Management</h2>
+
+            <h3>What is Device Management?</h3>
+            <p>Device management is a function of the operating system that controls and coordinates hardware devices connected to a computer system. Its primary purpose is to ensure that hardware resources operate effectively and that multiple applications can share devices safely.</p>
+
+            <p>Without device management, software applications would need to communicate directly with hardware. This would create complexity and increase the likelihood of errors. The operating system acts as an intermediary between applications and devices.</p>
+
+            <div class="illustration">
+                <h3>Operating System as an Intermediary</h3>
+                <img src="images/image5.png" alt="Operating system coordinating input and output devices" class="lesson-image">
+                <p class="image-caption">Figure 2. The operating system coordinates communication between the CPU, memory, and I/O devices.</p>
+            </div>
+
+            <h3>Examples of Device Management</h3>
+            <ul>
+                <li>Managing keyboard input while a user types.</li>
+                <li>Sending documents to a printer.</li>
+                <li>Controlling access to storage drives.</li>
+                <li>Managing network communication.</li>
+                <li>Coordinating data transfer between memory and devices.</li>
+            </ul>
+        </section>
+
+        <!-- PAGE 4 -->
+        <section class="content-section lesson-page" id="page4">
+            <div class="page-heading"><span>PAGE 04</span><span>OBJECTIVES AND IMPORTANCE</span></div>
+            <h2>Objectives and Importance of Device Management</h2>
+
+            <p>Device management seeks to achieve several important objectives that allow computer hardware to operate properly.</p>
+
+            <div class="principle-list">
+                <div><b>1. Efficient Resource Utilization</b><p>Devices should be used effectively without unnecessary waste of hardware resources.</p></div>
+                <div><b>2. Device Sharing</b><p>Multiple users and applications should be able to share hardware devices when appropriate.</p></div>
+                <div><b>3. Device Protection</b><p>The operating system should prevent unauthorized access to hardware resources.</p></div>
+                <div><b>4. Device Independence</b><p>Applications should function without needing detailed knowledge of specific hardware devices.</p></div>
+                <div><b>5. Error Handling</b><p>The operating system should detect and recover from device-related errors whenever possible.</p></div>
+            </div>
+
+            <h3>Why Device Management is Important</h3>
+            <ul>
+                <li>Improves hardware utilization.</li>
+                <li>Simplifies device communication.</li>
+                <li>Supports multitasking.</li>
+                <li>Enhances system security.</li>
+                <li>Reduces hardware conflicts.</li>
+                <li>Improves the user experience.</li>
+            </ul>
+
+            <div class="highlight-box">Modern computing environments depend on effective device management to maintain performance, reliability, and security.</div>
+        </section>
+
+        <!-- PAGE 5 -->
+        <section class="content-section lesson-page" id="page5">
+            <div class="page-heading"><span>PAGE 05</span><span>INPUT AND OUTPUT SYSTEMS</span></div>
+            <h2>Understanding Input and Output Systems</h2>
+
+            <h3>Definition of Input</h3>
+            <p>Input refers to the process of providing data or instructions to a computer system. Input devices allow users and external systems to communicate information to the computer.</p>
+
+            <h3>Definition of Output</h3>
+            <p>Output refers to information produced by a computer system and delivered to users or external devices. Examples include displayed text, printed documents, audio playback, video presentations, and network transmissions.</p>
+
+            <div class="comparison-grid">
+                <div class="comparison-card">
+                    <h3>Input</h3>
+                    <p>Information enters the computer.</p>
+                    <ul><li>Keyboard typing</li><li>Mouse clicks</li><li>Voice commands</li><li>Scanner input</li></ul>
+                </div>
+                <div class="comparison-card">
+                    <h3>Output</h3>
+                    <p>Information is delivered from the computer.</p>
+                    <ul><li>Displayed text</li><li>Printed reports</li><li>Audio playback</li><li>Video presentation</li></ul>
+                </div>
+            </div>
+
+            <div class="illustration">
+                <h3>Input, Processing, and Output</h3>
+                <img src="images/image7.png" alt="Diagram showing input, processing, and output" class="lesson-image">
+                <p class="image-caption">Figure 3. A computer receives input, processes information, and produces output.</p>
+            </div>
+        </section>
+
+        <!-- PAGE 6 -->
+        <section class="content-section lesson-page" id="page6">
+            <div class="page-heading"><span>PAGE 06</span><span>I/O SYSTEM COMPONENTS</span></div>
+            <h2>Components of an I/O System</h2>
+
+            <p>An input/output system consists of multiple components working together to facilitate communication between software and hardware.</p>
+
+            <h3>1. Application Programs</h3>
+            <p>Applications generate requests for input/output operations. Examples include web browsers, word processors, multimedia applications, and database systems. Applications interact with devices indirectly through the operating system.</p>
+
+            <h3>2. Operating System</h3>
+            <p>The operating system coordinates communication between applications and hardware devices. Its responsibilities include device allocation, driver management, data transfer coordination, and error handling.</p>
+
+            <h3>3. Hardware Devices</h3>
+            <p>Physical devices perform actual input and output activities. Examples include printers, monitors, keyboards, storage devices, and network adapters.</p>
+
+            <div class="illustration">
+                <h3>Basic I/O System Structure</h3>
+                <img src="images/image6.png" alt="Diagram of processor, memory, bus, device controllers, and I/O devices" class="lesson-image">
+                <p class="image-caption">Figure 4. Basic organization of an I/O system.</p>
+            </div>
+        </section>
+
+        <!-- PAGE 7 -->
+        <section class="content-section lesson-page" id="page7">
+            <div class="page-heading"><span>PAGE 07</span><span>INPUT DEVICES</span></div>
+            <h2>Types of Input Devices</h2>
+
+            <p>Input devices allow data entry into the computer system. They convert user actions or external information into data that a computer can process.</p>
+
+            <div class="device-grid">
+                <div><img src="images/image2.png" alt="Keyboard and mouse"><h3>Keyboard</h3><p>Used for text entry, data input, and command execution.</p></div>
+                <div><img src="images/image30.png" alt="Computer hardware examples"><h3>Mouse</h3><p>Allows users to select objects, navigate menus, and execute commands.</p></div>
+                <div><img src="images/image30.png" alt="Computer peripheral devices"><h3>Scanner</h3><p>Converts physical documents into digital formats.</p></div>
+            </div>
+
+            <h3>Other Input Devices</h3>
+            <ul>
+                <li><strong>Microphone:</strong> Allows voice input, audio recording, and voice recognition.</li>
+                <li><strong>Webcam:</strong> Captures images and video for communication and recording.</li>
+                <li><strong>Touchscreen:</strong> Accepts input through direct touch or gestures.</li>
+            </ul>
+
+            <div class="highlight-box">Input devices initiate many computing tasks by providing data and instructions to the computer.</div>
+        </section>
+
+        <!-- PAGE 8 -->
+        <section class="content-section lesson-page" id="page8">
+            <div class="page-heading"><span>PAGE 08</span><span>OUTPUT DEVICES</span></div>
+            <h2>Types of Output Devices</h2>
+
+            <p>Output devices present processed information to users or transfer it to another system. They convert digital information into a form that people or other devices can receive.</p>
+
+            <h3>Common Output Devices</h3>
+            <ul>
+                <li><strong>Monitor:</strong> Displays text, images, videos, and graphical information.</li>
+                <li><strong>Printer:</strong> Produces physical copies of digital documents.</li>
+                <li><strong>Speakers:</strong> Produce audio output such as music, alerts, and voice.</li>
+                <li><strong>Projector:</strong> Displays computer output on a larger screen or surface.</li>
+            </ul>
+
+            <h3>Types of Printers</h3>
+            <div class="comparison-grid">
+                <div class="comparison-card"><h3>Inkjet Printer</h3><p>Uses tiny droplets of ink to produce text and images on paper.</p></div>
+                <div class="comparison-card"><h3>Laser Printer</h3><p>Uses toner and a laser-based printing process to produce documents.</p></div>
+                <div class="comparison-card"><h3>Thermal Printer</h3><p>Uses heat to create printed output, often used for receipts and labels.</p></div>
+            </div>
+
+            <div class="illustration">
+                <h3>Examples of Output Hardware</h3>
+                <img src="images/image30.png" alt="Different computer hardware and peripheral devices" class="lesson-image">
+                <p class="image-caption">Figure 5. Examples of hardware peripherals used for input and output.</p>
+            </div>
+        </section>
+
+        <!-- PAGE 9 -->
+        <section class="content-section lesson-page" id="page9">
+            <div class="page-heading"><span>PAGE 09</span><span>DEVICE CONTROLLERS AND DRIVERS</span></div>
+            <h2>Device Controllers and Device Drivers</h2>
+
+            <h3>Device Controllers</h3>
+            <p>A device controller is a hardware component that manages the operation of a specific device or group of devices. It acts as an interface between the device and the computer system.</p>
+
+            <p>Its functions include receiving commands, controlling device operations, managing data transfer, and reporting device status.</p>
+
+            <h3>Examples of Device Controllers</h3>
+            <ul>
+                <li>Disk controllers.</li>
+                <li>Network controllers.</li>
+                <li>Graphics controllers.</li>
+                <li>USB controllers.</li>
+            </ul>
+
+            <h3>Device Drivers</h3>
+            <p>A device driver is software that allows the operating system to communicate with a particular hardware device. It translates operating system instructions into device-specific commands.</p>
+
+            <div class="illustration">
+                <h3>Communication Between the System and Devices</h3>
+                <img src="images/image10.png" alt="Diagram of device controller and connected I/O components" class="lesson-image">
+                <p class="image-caption">Figure 6. Device controllers and drivers support communication with hardware.</p>
+            </div>
+
+            <h3>Common Types of Drivers</h3>
+            <ul>
+                <li><strong>Character Device Drivers:</strong> Handle data transferred character by character.</li>
+                <li><strong>Block Device Drivers:</strong> Handle data transferred in blocks.</li>
+                <li><strong>Network Device Drivers:</strong> Support communication through network interfaces.</li>
+            </ul>
+        </section>
+
+        <!-- PAGE 10 -->
+        <section class="content-section lesson-page" id="page10">
+            <div class="page-heading"><span>PAGE 10</span><span>DEVICE MANAGEMENT FUNCTIONS</span></div>
+            <h2>Functions of Device Management</h2>
+
+            <p>The operating system performs several functions to ensure that connected hardware devices operate correctly and efficiently.</p>
+
+            <div class="principle-list">
+                <div><b>1. Device Allocation</b><p>Assigns devices to processes that need to use them.</p></div>
+                <div><b>2. Device Monitoring</b><p>Checks device status and monitors ongoing operations.</p></div>
+                <div><b>3. Device Scheduling</b><p>Determines the order in which pending I/O requests are processed.</p></div>
+                <div><b>4. Device Protection</b><p>Controls access to devices and prevents unauthorized use.</p></div>
+                <div><b>5. Error Handling</b><p>Detects and responds to device failures and communication problems.</p></div>
+            </div>
+
+            <p>These functions help the operating system manage shared hardware resources while supporting multiple applications and users.</p>
+
+            <div class="highlight-box">Device management provides organized access to hardware and helps prevent conflicts between programs.</div>
+        </section>
+
+        <!-- PAGE 11 -->
+        <section class="content-section lesson-page" id="page11">
+            <div class="page-heading"><span>PAGE 11</span><span>I/O HARDWARE STRUCTURE</span></div>
+            <h2>I/O Hardware Structure</h2>
+
+            <p>I/O hardware structure describes how the processor, memory, device controllers, buses, and external devices are organized to communicate with one another.</p>
+
+            <h3>Main Components</h3>
+            <ul>
+                <li><strong>CPU:</strong> Executes instructions and coordinates processing activities.</li>
+                <li><strong>Main Memory:</strong> Temporarily stores programs and data used by the system.</li>
+                <li><strong>Device Controller:</strong> Manages communication with a specific hardware device.</li>
+                <li><strong>Communication Bus:</strong> Provides pathways for transferring data and control signals.</li>
+                <li><strong>I/O Device:</strong> Performs input or output operations.</li>
+            </ul>
+
+            <div class="illustration">
+                <h3>Hardware Communication Structure</h3>
+                <img src="images/image9.png" alt="I/O hardware structure with CPU, memory, buses, and device controllers" class="lesson-image">
+                <p class="image-caption">Figure 7. Hardware components communicate through controllers and system buses.</p>
+            </div>
+
+            <p>These components work together to transfer information between the computer and external devices.</p>
+        </section>
+
+        <!-- PAGE 12 -->
+        <section class="content-section lesson-page" id="page12">
+            <div class="page-heading"><span>PAGE 12</span><span>I/O COMMUNICATION TECHNIQUES</span></div>
+            <h2>I/O Communication Techniques</h2>
+
+            <p>Operating systems use different techniques to manage communication between the CPU, memory, and I/O devices. The techniques determine how data is transferred and how the processor responds to device operations.</p>
+
+            <div class="comparison-grid">
+                <div class="comparison-card"><h3>Programmed I/O</h3><p>The CPU repeatedly checks the device status and manages the data transfer.</p></div>
+                <div class="comparison-card"><h3>Interrupt-Driven I/O</h3><p>The device notifies the CPU when it needs attention or when an operation is complete.</p></div>
+                <div class="comparison-card"><h3>Direct Memory Access</h3><p>A DMA controller transfers data between a device and memory with less CPU involvement.</p></div>
+            </div>
+
+            <div class="illustration">
+                <h3>DMA-Based Data Transfer</h3>
+                <img src="images/image1.png" alt="CPU, attached device, DMA controller, memory, and system bus diagram" class="lesson-image">
+                <p class="image-caption">Figure 8. A DMA controller coordinates data transfers between an attached device and memory.</p>
+            </div>
+        </section>
+
+        <!-- PAGE 13 -->
+        <section class="content-section lesson-page" id="page13">
+            <div class="page-heading"><span>PAGE 13</span><span>PROGRAMMED I/O</span></div>
+            <h2>Programmed I/O</h2>
+
+            <p>Programmed I/O is a communication technique in which the CPU directly controls the I/O operation. The processor repeatedly checks the status of the device to determine whether it is ready to send or receive data.</p>
+
+            <h3>How Programmed I/O Works</h3>
+            <ol>
+                <li>The CPU sends an I/O command to the device controller.</li>
+                <li>The CPU checks the device status.</li>
+                <li>If the device is not ready, the CPU continues checking.</li>
+                <li>When the device is ready, the CPU transfers the data.</li>
+                <li>The operation continues until the transfer is complete.</li>
+            </ol>
+
+            <div class="illustration">
+                <h3>Programmed I/O Communication</h3>
+                <img src="images/image3.png" alt="Microprocessor and I/O device communicating through data bus and control signals" class="lesson-image">
+                <p class="image-caption">Figure 9. The processor directly manages the I/O communication process.</p>
+            </div>
+
+            <h3>Advantages and Disadvantages</h3>
+            <ul>
+                <li><strong>Advantage:</strong> Simple to implement and understand.</li>
+                <li><strong>Disadvantage:</strong> The CPU may spend time repeatedly checking the device.</li>
+                <li><strong>Disadvantage:</strong> Less efficient for slow devices or large transfers.</li>
+            </ul>
+        </section>
+
+        <!-- PAGE 14 -->
+        <section class="content-section lesson-page" id="page14">
+            <div class="page-heading"><span>PAGE 14</span><span>INTERRUPT-DRIVEN I/O</span></div>
+            <h2>Interrupt-Driven I/O</h2>
+
+            <p>Interrupt-driven I/O is a technique in which an I/O device sends an interrupt signal to the CPU when it requires attention or when an operation is complete.</p>
+
+            <p>Unlike programmed I/O, the CPU does not need to continuously check the device status. It can perform other tasks while waiting for the device to signal that it needs service.</p>
+
+            <h3>How It Works</h3>
+            <ol>
+                <li>The CPU sends a request to the I/O device.</li>
+                <li>The device performs the requested operation.</li>
+                <li>The CPU continues executing other instructions.</li>
+                <li>The device sends an interrupt when it needs attention.</li>
+                <li>The CPU temporarily handles the interrupt.</li>
+                <li>The CPU resumes its previous work.</li>
+            </ol>
+
+            <div class="illustration">
+                <h3>Interrupt-Driven Communication</h3>
+                <img src="images/image4.png" alt="I/O devices and controllers connected through a network and communication paths" class="lesson-image">
+                <p class="image-caption">Figure 10. Interrupt-driven operations allow devices to request CPU attention.</p>
+            </div>
+
+            <div class="highlight-box">Interrupt-driven I/O improves processor efficiency because the CPU can perform other tasks while an I/O operation is taking place.</div>
+        </section>
+
+        <!-- PAGE 15 -->
+        <section class="content-section lesson-page" id="page15">
+            <div class="page-heading"><span>PAGE 15</span><span>INTERRUPTS AND HANDLING</span></div>
+            <h2>Interrupts and Interrupt Handling</h2>
+
+            <p>An interrupt is a signal that temporarily stops the normal execution of the CPU so that an event requiring attention can be handled.</p>
+
+            <h3>Types of Interrupts</h3>
+            <ul>
+                <li><strong>Hardware Interrupt:</strong> Generated by hardware devices such as keyboards, timers, or network controllers.</li>
+                <li><strong>Software Interrupt:</strong> Generated by software instructions or system requests.</li>
+                <li><strong>Maskable Interrupt:</strong> An interrupt that can be temporarily disabled or ignored by the processor.</li>
+                <li><strong>Non-Maskable Interrupt:</strong> A high-priority interrupt that generally cannot be disabled through ordinary interrupt masking.</li>
+            </ul>
+
+            <h3>Interrupt Handling Process</h3>
+            <ol>
+                <li><strong>Detection:</strong> The CPU detects an interrupt request.</li>
+                <li><strong>Context Saving:</strong> The current execution state is saved.</li>
+                <li><strong>Interrupt Service Routine:</strong> The appropriate handler processes the event.</li>
+                <li><strong>Restoration:</strong> The saved execution state is restored.</li>
+                <li><strong>Resumption:</strong> The CPU continues the interrupted task.</li>
+            </ol>
+
+            <div class="illustration">
+                <h3>Interrupt and System Communication</h3>
+                <img src="images/image25.png" alt="CPU, disk controller, USB controller, video adapter, and shared memory" class="lesson-image">
+                <p class="image-caption">Figure 11. Controllers communicate with the processor and memory during I/O operations.</p>
+            </div>
+        </section>
+
+        <!-- PAGE 16 -->
+        <section class="content-section lesson-page" id="page16">
+            <div class="page-heading"><span>PAGE 16</span><span>DIRECT MEMORY ACCESS</span></div>
+            <h2>Direct Memory Access (DMA)</h2>
+
+            <p>Direct Memory Access (DMA) is a data transfer technique that allows an I/O device to transfer information directly to or from main memory without requiring the CPU to manage every individual data movement.</p>
+
+            <h3>How DMA Works</h3>
+            <ol>
+                <li>The CPU prepares the DMA transfer by providing the required information.</li>
+                <li>The DMA controller receives the transfer request.</li>
+                <li>The controller manages access to the system bus and memory.</li>
+                <li>Data is transferred between the device and memory.</li>
+                <li>The DMA controller notifies the CPU when the transfer is complete.</li>
+            </ol>
+
+            <div class="illustration">
+                <h3>DMA Controller Structure</h3>
+                <img src="images/image15.png" alt="CPU, DMA, main memory, device controller, and peripheral connections" class="lesson-image">
+                <p class="image-caption">Figure 12. DMA supports data transfer with reduced processor involvement.</p>
+            </div>
+
+            <h3>Advantages of DMA</h3>
+            <ul>
+                <li>Reduces CPU involvement during data transfers.</li>
+                <li>Improves performance for large data transfers.</li>
+                <li>Allows the CPU to perform other tasks.</li>
+            </ul>
+
+            <h3>Disadvantages of DMA</h3>
+            <ul>
+                <li>Requires additional hardware.</li>
+                <li>Increases system complexity.</li>
+                <li>May create bus contention when multiple components need access.</li>
+            </ul>
+        </section>
+
+        <!-- PAGE 17 -->
+        <section class="content-section lesson-page" id="page17">
+            <div class="page-heading"><span>PAGE 17</span><span>DEVICE SCHEDULING</span></div>
+            <h2>Device Scheduling</h2>
+
+            <p>Device scheduling refers to the process of determining the order in which I/O requests are serviced. Multiple processes may request access to the same device at the same time.</p>
+
+            <p>The operating system must decide which request executes first, which request must wait, and how resources are allocated.</p>
+
+            <h3>Objectives of Device Scheduling</h3>
+            <ul>
+                <li>Improve system performance.</li>
+                <li>Reduce waiting times.</li>
+                <li>Increase device utilization.</li>
+                <li>Ensure fair access.</li>
+                <li>Optimize throughput.</li>
+            </ul>
+
+            <div class="illustration">
+                <h3>Device Scheduling and Queues</h3>
+                <img src="images/image17.png" alt="Job queue, ready queue, CPU, and I/O waiting queue diagram" class="lesson-image">
+                <p class="image-caption">Figure 13. Requests wait in queues while the operating system schedules their execution.</p>
+            </div>
+
+            <div class="highlight-box">Scheduling helps organize multiple I/O requests so that devices can be used efficiently and fairly.</div>
+        </section>
+
+        <!-- PAGE 18 -->
+        <section class="content-section lesson-page" id="page18">
+            <div class="page-heading"><span>PAGE 18</span><span>DEVICE QUEUES</span></div>
+            <h2>Device Queues</h2>
+
+            <p>A device queue stores pending requests for a hardware device. When a device is busy, additional requests are placed in a queue until the device becomes available.</p>
+
+            <h3>Importance of Device Queues</h3>
+            <ul>
+                <li>Organize pending requests.</li>
+                <li>Prevent conflicts between processes.</li>
+                <li>Improve device efficiency.</li>
+                <li>Support multitasking.</li>
+            </ul>
+
+            <p>Queues are commonly used for printers, storage devices, and network interfaces. The operating system processes requests according to its scheduling policies.</p>
+
+            <div class="illustration">
+                <h3>Example of a Request Queue</h3>
+                <img src="images/image16.png" alt="Processes waiting for resources in a queue" class="lesson-image">
+                <p class="image-caption">Figure 14. A queue organizes processes and resource requests.</p>
+            </div>
+
+            <h3>Example</h3>
+            <p>When several users send documents to one printer, the operating system places the print requests in a queue. The printer processes the documents one at a time.</p>
+        </section>
+
+        <!-- PAGE 19 -->
+        <section class="content-section lesson-page" id="page19">
+            <div class="page-heading"><span>PAGE 19</span><span>BUFFERING</span></div>
+            <h2>Buffering</h2>
+
+            <p>Buffering is the process of temporarily storing data in memory while it is transferred between devices. Buffers help accommodate differences in data processing speeds.</p>
+
+            <h3>Why Buffering is Necessary</h3>
+            <p>Different devices operate at different speeds. For example, the CPU can process information quickly, while a printer may operate more slowly. Buffers allow these components to communicate more effectively.</p>
+
+            <h3>Types of Buffering</h3>
+            <div class="comparison-grid">
+                <div class="comparison-card"><h3>Single Buffering</h3><p>Uses one temporary storage area. It is simple to implement but may provide limited performance.</p></div>
+                <div class="comparison-card"><h3>Double Buffering</h3><p>Uses two buffers to improve efficiency and reduce waiting time. It is commonly used in graphics processing.</p></div>
+                <div class="comparison-card"><h3>Multiple Buffering</h3><p>Uses several buffers to support smoother data flow and greater performance, especially in multimedia systems.</p></div>
+            </div>
+
+            <div class="illustration">
+                <h3>Basic Buffering Process</h3>
+                <img src="images/image29.png" alt="Input device sends data through a temporary buffer to a receiver" class="lesson-image">
+                <p class="image-caption">Figure 15. A buffer temporarily holds data during a transfer.</p>
+            </div>
+        </section>
+
+        <!-- PAGE 20 -->
+        <section class="content-section lesson-page" id="page20">
+            <div class="page-heading"><span>PAGE 20</span><span>CACHING AND SPOOLING</span></div>
+            <h2>Caching and Spooling</h2>
+
+            <h3>Caching</h3>
+            <p>Caching involves storing frequently accessed data in a high-speed storage area called a cache. Its objective is to reduce access times and improve system responsiveness.</p>
+
+            <h3>Benefits of Caching</h3>
+            <ul>
+                <li>Faster performance.</li>
+                <li>Reduced access to slower devices.</li>
+                <li>Improved responsiveness.</li>
+                <li>Better resource utilization.</li>
+            </ul>
+
+            <h3>Examples of Caching</h3>
+            <ul>
+                <li>Disk cache.</li>
+                <li>Browser cache.</li>
+                <li>Memory cache.</li>
+                <li>Processor cache.</li>
+            </ul>
+
+            <h3>Spooling</h3>
+            <p>Spooling stands for <strong>Simultaneous Peripheral Operations On-Line</strong>. It allows data to be stored temporarily before being processed by an output device.</p>
+
+            <div class="illustration">
+                <h3>Print Spooling Process</h3>
+                <img src="images/image11.png" alt="Diagram illustrating data waiting in a spool area before device processing" class="lesson-image">
+                <p class="image-caption">Figure 16. Spooling organizes output requests before they reach a device.</p>
+            </div>
+
+            <p>For example, when several users send documents to a printer, the operating system stores the print jobs in a spool area and sends them to the printer one at a time.</p>
+        </section>
+
+        <!-- PAGE 21 -->
+        <section class="content-section lesson-page" id="page21">
+            <div class="page-heading"><span>PAGE 21</span><span>I/O PERFORMANCE</span></div>
+            <h2>I/O Performance Optimization</h2>
+
+            <p>Operating systems use several methods to improve I/O performance. These techniques reduce delays, coordinate device operations, and maximize resource utilization.</p>
+
+            <h3>Common Optimization Techniques</h3>
+            <ul>
+                <li><strong>Interrupts:</strong> Allow devices to notify the CPU when attention is needed.</li>
+                <li><strong>DMA:</strong> Reduces CPU involvement during large data transfers.</li>
+                <li><strong>Buffering:</strong> Temporarily stores data to handle differences in device speeds.</li>
+                <li><strong>Caching:</strong> Keeps frequently accessed data in faster storage.</li>
+                <li><strong>Scheduling:</strong> Organizes the order of I/O requests.</li>
+                <li><strong>Spooling:</strong> Stores output jobs before sending them to a device.</li>
+            </ul>
+
+            <div class="illustration">
+                <h3>Memory and I/O Data Flow</h3>
+                <img src="images/image27.png" alt="CPU, I/O devices, and memory connected through data paths" class="lesson-image">
+                <p class="image-caption">Figure 17. Data moves between the CPU, memory, and I/O devices.</p>
+            </div>
+
+            <div class="highlight-box">Efficient I/O management is important in cloud computing, online gaming, multimedia streaming, artificial intelligence, and database systems.</div>
+        </section>
+
+        <!-- PAGE 22 -->
+        <section class="content-section lesson-page" id="page22">
+            <div class="page-heading"><span>PAGE 22</span><span>DEVICE ALLOCATION</span></div>
+            <h2>Device Allocation Strategies</h2>
+
+            <p>Device allocation refers to the process by which the operating system assigns hardware devices to processes that request access. Since multiple programs may require the same device, the operating system must manage allocation carefully.</p>
+
+            <h3>1. Dedicated Device Allocation</h3>
+            <p>Dedicated allocation gives exclusive control of a device to a single process. Examples include plotters, certain industrial devices, and specialized laboratory equipment.</p>
+
+            <h3>2. Shared Device Allocation</h3>
+            <p>Shared allocation allows multiple processes to use the same device. Examples include hard drives, network interfaces, and cloud storage services.</p>
+
+            <h3>3. Virtual Device Allocation</h3>
+            <p>Virtual devices provide the appearance that each process owns a dedicated resource. Examples include virtual printers, virtual disks, and virtual network interfaces.</p>
+
+            <div class="illustration">
+                <h3>Virtual Device Allocation</h3>
+                <img src="images/image12.png" alt="Diagram illustrating virtual device allocation and shared physical resources" class="lesson-image">
+                <p class="image-caption">Figure 18. Virtual allocation allows multiple processes to use managed resources.</p>
+            </div>
+        </section>
+
+        <!-- PAGE 23 -->
+        <section class="content-section lesson-page" id="page23">
+            <div class="page-heading"><span>PAGE 23</span><span>DEADLOCKS</span></div>
+            <h2>Deadlocks in Device Management</h2>
+
+            <h3>What is a Deadlock?</h3>
+            <p>A deadlock occurs when two or more processes are waiting indefinitely for resources held by one another. Because none of the processes can proceed, system progress stops.</p>
+
+            <h3>Four Conditions of Deadlock</h3>
+            <ol>
+                <li><strong>Mutual Exclusion:</strong> A resource can be used by only one process at a time.</li>
+                <li><strong>Hold and Wait:</strong> A process holds one resource while waiting for another.</li>
+                <li><strong>No Preemption:</strong> Resources cannot be forcibly taken away from a process.</li>
+                <li><strong>Circular Wait:</strong> A group of processes waits for resources held by one another in a circular chain.</li>
+            </ol>
+
+            <div class="illustration">
+                <h3>Deadlock in Device Management</h3>
+                <img src="images/image14.png" alt="Circular wait diagram showing processes waiting for printer and scanner resources" class="lesson-image">
+                <p class="image-caption">Figure 19. A circular wait can prevent processes from completing their operations.</p>
+            </div>
+
+            <h3>Deadlock Prevention</h3>
+            <ul>
+                <li>Use a consistent order when requesting resources.</li>
+                <li>Avoid holding resources while waiting for additional resources when possible.</li>
+                <li>Use controlled resource allocation.</li>
+                <li>Monitor processes and resource requests.</li>
+            </ul>
+        </section>
+
+        <!-- PAGE 24 -->
+        <section class="content-section lesson-page" id="page24">
+            <div class="page-heading"><span>PAGE 24</span><span>I/O PROTECTION AND SECURITY</span></div>
+            <h2>I/O Protection and Security</h2>
+
+            <p>I/O protection and security help prevent unauthorized access, misuse, and harmful operations involving hardware devices. Operating systems use security mechanisms to control how applications and users access I/O resources.</p>
+
+            <h3>Important Security Measures</h3>
+            <div class="principle-list">
+                <div><b>Access Control</b><p>Determines which users or programs are allowed to access a device.</p></div>
+                <div><b>Authentication</b><p>Verifies the identity of users before granting access to protected resources.</p></div>
+                <div><b>Device Isolation</b><p>Helps prevent one process from interfering with the operation of another process or device.</p></div>
+                <div><b>Monitoring</b><p>Observes device activities to identify unusual behavior or possible security problems.</p></div>
+            </div>
+
+            <div class="illustration">
+                <h3>I/O Protection and Security Model</h3>
+                <img src="images/image18.png" alt="I/O protection and security architecture showing user mode, kernel mode, and hardware" class="lesson-image">
+                <p class="image-caption">Figure 20. Protection mechanisms help control access to hardware resources.</p>
+            </div>
+
+            <div class="highlight-box">Protecting I/O devices helps maintain system reliability and prevents unauthorized hardware operations.</div>
+        </section>
+
+        <!-- PAGE 25 -->
+        <section class="content-section lesson-page" id="page25">
+            <div class="page-heading"><span>PAGE 25</span><span>STORAGE DEVICE MANAGEMENT</span></div>
+            <h2>Storage Device Management</h2>
+
+            <p>Storage device management involves organizing, controlling, and maintaining devices used to store data. The operating system manages access to storage devices and helps organize information for future use.</p>
+
+            <h3>Common Storage Devices</h3>
+            <ul>
+                <li><strong>Hard Disk Drive (HDD):</strong> Stores data on magnetic disks.</li>
+                <li><strong>Solid-State Drive (SSD):</strong> Uses flash memory to store data.</li>
+                <li><strong>USB Flash Drive:</strong> Provides portable storage through a USB connection.</li>
+                <li><strong>Optical Disc:</strong> Stores data on media such as CDs, DVDs, and Blu-ray discs.</li>
+            </ul>
+
+            <h3>Storage Management Activities</h3>
+            <ul>
+                <li>Space allocation.</li>
+                <li>Formatting.</li>
+                <li>Partition management.</li>
+                <li>File system organization.</li>
+                <li>Monitoring storage health and availability.</li>
+            </ul>
+
+            <div class="illustration">
+                <h3>Storage Device Management</h3>
+                <img src="images/image28.png" alt="Storage device management diagram showing HDD, SSD, and storage organization" class="lesson-image">
+                <p class="image-caption">Figure 21. Operating systems manage storage devices and organize available space.</p>
+            </div>
+        </section>
+
+        <!-- PAGE 26 -->
+        <section class="content-section lesson-page" id="page26">
+            <div class="page-heading"><span>PAGE 26</span><span>NETWORK DEVICE MANAGEMENT</span></div>
+            <h2>Network Device Management</h2>
+
+            <p>Network device management involves controlling and coordinating hardware components that allow computers to communicate with other devices and networks.</p>
+
+            <h3>Common Network Devices</h3>
+            <ul>
+                <li><strong>Network Interface Card (NIC):</strong> Connects a computer to a network.</li>
+                <li><strong>Router:</strong> Directs data between different networks.</li>
+                <li><strong>Switch:</strong> Connects devices within a local network.</li>
+                <li><strong>Wireless Adapter:</strong> Allows a device to connect through wireless communication.</li>
+                <li><strong>Modem:</strong> Enables communication through an internet service connection.</li>
+            </ul>
+
+            <div class="illustration">
+                <h3>Network Device Management</h3>
+                <img src="images/image23.png" alt="Network device management architecture" class="lesson-image">
+                <p class="image-caption">Figure 22. Network devices help computers exchange information.</p>
+            </div>
+
+            <p>Network device management supports communication across local area networks (LAN), wide area networks (WAN), wireless networks, and the internet.</p>
+        </section>
+
+        <!-- PAGE 27 -->
+        <section class="content-section lesson-page" id="page27">
+            <div class="page-heading"><span>PAGE 27</span><span>MODERN I/O TECHNOLOGIES</span></div>
+            <h2>Modern I/O Technologies</h2>
+
+            <p>Modern computing environments use different technologies to connect devices, transfer data, and support communication between hardware components.</p>
+
+            <h3>Common Modern Technologies</h3>
+            <ul>
+                <li><strong>USB:</strong> Provides a widely used connection for peripherals and storage devices.</li>
+                <li><strong>Bluetooth:</strong> Supports short-range wireless communication between devices.</li>
+                <li><strong>Wireless Peripherals:</strong> Allow devices such as keyboards, mice, and headphones to connect without cables.</li>
+                <li><strong>High-Speed Interfaces:</strong> Technologies such as USB-C, Thunderbolt, PCIe, and NVMe support high-speed communication and data access.</li>
+            </ul>
+
+            <div class="illustration">
+                <h3>Wireless Device Communication</h3>
+                <img src="images/image31.png" alt="Bluetooth wireless connections between a computer, mobile device, and peripherals" class="lesson-image">
+                <p class="image-caption">Figure 23. Wireless technologies connect computers with different peripherals.</p>
+            </div>
+
+            <h3>Emerging Trends</h3>
+            <ul>
+                <li>AI-based device management.</li>
+                <li>Internet of Things (IoT).</li>
+                <li>Edge computing.</li>
+                <li>Smart peripherals.</li>
+                <li>Device virtualization.</li>
+            </ul>
+        </section>
+
+        <!-- PAGE 28 -->
+        <section class="content-section lesson-page" id="page28">
+            <div class="page-heading"><span>PAGE 28</span><span>PLUG-AND-PLAY AND VIRTUALIZATION</span></div>
+            <h2>Plug-and-Play, Virtualization, and Hot-Swapping</h2>
+
+            <h3>Plug-and-Play (PnP)</h3>
+            <p>Plug-and-Play is a technology that allows an operating system to automatically detect and configure compatible hardware devices with minimal user intervention.</p>
+
+            <h3>Basic Plug-and-Play Process</h3>
+            <ol>
+                <li>A device is connected to the computer.</li>
+                <li>The operating system detects the new device.</li>
+                <li>The system identifies the device and its requirements.</li>
+                <li>The appropriate driver is selected or installed.</li>
+                <li>The device is configured and made available for use.</li>
+            </ol>
+
+            <div class="illustration">
+                <h3>Plug-and-Play Architecture</h3>
+                <img src="images/image22.png" alt="Plug-and-Play systems architecture and device configuration steps" class="lesson-image">
+                <p class="image-caption">Figure 24. Plug-and-Play simplifies hardware installation and configuration.</p>
+            </div>
+
+            <h3>Device Virtualization</h3>
+            <p>Device virtualization allows software-based representations of physical devices to be used by virtual machines or other computing environments.</p>
+
+            <div class="illustration">
+                <h3>Device Virtualization Architecture</h3>
+                <img src="images/image20.png" alt="Device virtualization architecture with virtual machines and physical hardware" class="lesson-image">
+                <p class="image-caption">Figure 25. Virtual machines can access hardware through virtualization layers.</p>
+            </div>
+
+            <h3>Hot-Swapping</h3>
+            <p>Hot-swapping refers to connecting or removing supported hardware components while a computer system is operating, without requiring a complete system shutdown.</p>
+
+            <img src="images/image34.png" alt="Hot-swapping technology architecture" class="lesson-image">
+            <p class="image-caption">Figure 26. Hot-swapping supports the replacement of compatible hardware during operation.</p>
+        </section>
+
+        <!-- PAGE 29 -->
+        <section class="content-section lesson-page" id="page29">
+            <div class="page-heading"><span>PAGE 29</span><span>APPLICATIONS AND ACTIVITIES</span></div>
+            <h2>Real-World Applications of Device Management</h2>
+
+            <p>Device and I/O management are used in many computing environments. They allow hardware components to communicate and support the activities of users, organizations, and automated systems.</p>
+
+            <div class="application-grid">
+                <div><h3>Personal Computers</h3><p>Manage keyboards, mice, monitors, printers, storage devices, and other peripherals.</p></div>
+                <div><h3>Mobile Devices</h3><p>Coordinate touchscreens, cameras, speakers, sensors, and wireless connections.</p></div>
+                <div><h3>Cloud Computing</h3><p>Manage virtual devices, storage resources, and network communication.</p></div>
+                <div><h3>Data Centers</h3><p>Coordinate storage systems, network interfaces, and server hardware.</p></div>
+                <div><h3>Multimedia Systems</h3><p>Support audio, video, graphics, and data transfers.</p></div>
+                <div><h3>Healthcare and Industry</h3><p>Support medical equipment, monitoring devices, and industrial hardware.</p></div>
+            </div>
+
+            <h2>Activities and Assessment</h2>
+
+            <div class="activity-card">
+                <h3>Activity 1: Identification</h3>
+                <p>Identify the term being described.</p>
+                <ol>
+                    <li>The operating system function responsible for controlling and coordinating hardware devices.</li>
+                    <li>A hardware component that manages the operation of a specific device.</li>
+                    <li>Software that allows the operating system to communicate with hardware.</li>
+                    <li>A technique that transfers data between a device and memory with less CPU involvement.</li>
+                    <li>A temporary memory area used during data transfer.</li>
+                </ol>
+            </div>
+
+            <div class="activity-card">
+                <h3>Activity 2: Multiple Choice</h3>
+                <ol>
+                    <li>What does DMA stand for?
+                        <ul><li>A. Dynamic Memory Access</li><li>B. Direct Memory Access</li><li>C. Digital Memory Allocation</li><li>D. Data Management Access</li></ul>
+                    </li>
+                    <li>Which technique allows the CPU to perform other tasks while an I/O operation is occurring?
+                        <ul><li>A. Programmed I/O</li><li>B. Interrupt-Driven I/O</li><li>C. Manual I/O</li><li>D. Direct Programming</li></ul>
+                    </li>
+                    <li>Which device is primarily an output device?
+                        <ul><li>A. Keyboard</li><li>B. Mouse</li><li>C. Monitor</li><li>D. Scanner</li></ul>
+                    </li>
+                    <li>Which component translates operating system instructions into device-specific commands?
+                        <ul><li>A. Device Driver</li><li>B. CPU</li><li>C. RAM</li><li>D. Cache</li></ul>
+                    </li>
+                    <li>What does Plug-and-Play primarily provide?
+                        <ul><li>A. Faster processors</li><li>B. Automatic device configuration</li><li>C. Larger memory capacity</li><li>D. Better storage allocation</li></ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="activity-card">
+                <h3>Activity 3: True or False</h3>
+                <ol>
+                    <li>DMA reduces CPU involvement during large data transfers.</li>
+                    <li>Interrupts are used to notify the CPU of device events.</li>
+                    <li>Spooling is commonly used in printing systems.</li>
+                    <li>Device drivers are hardware components.</li>
+                    <li>Plug-and-Play simplifies device installation.</li>
+                </ol>
+            </div>
+
+            <div class="activity-card">
+                <h3>Activity 4: Essay Questions</h3>
+                <p>Answer each question in at least 150 words.</p>
+                <ol>
+                    <li>Explain the importance of device management in operating systems.</li>
+                    <li>Compare Programmed I/O and Interrupt-Driven I/O.</li>
+                    <li>Discuss the role of Direct Memory Access (DMA) in improving system performance.</li>
+                    <li>Explain how buffering, caching, and spooling improve I/O efficiency.</li>
+                    <li>Describe the impact of modern technologies such as IoT and AI on device management.</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- PAGE 30 -->
+        <section class="content-section lesson-page" id="page30">
+            <div class="page-heading"><span>PAGE 30</span><span>SUMMARY AND REFERENCES</span></div>
+            <h2>Lesson Summary</h2>
+
+            <p>Device and Input/Output Management are fundamental functions of modern operating systems. They enable efficient communication between software applications and hardware devices, ensuring that computers can interact effectively with users and external environments.</p>
+
+            <p>Through components such as device drivers, device controllers, interrupts, and Direct Memory Access (DMA), operating systems provide coordination between processing units and peripheral devices.</p>
+
+            <p>This lesson discussed the principles of device management, input and output systems, communication techniques, buffering, caching, spooling, scheduling, security mechanisms, and virtualization technologies.</p>
+
+            <div class="highlight-box"><strong>Key Takeaway:</strong> Effective device and I/O management allow operating systems to control hardware resources efficiently, support multitasking, and maintain reliable system performance.</div>
+
+            <h2>Glossary of Terms</h2>
+            <dl class="glossary">
+                <dt>Device Management</dt><dd>An operating system function that controls and coordinates hardware devices.</dd>
+                <dt>Input</dt><dd>Data or instructions provided to a computer system.</dd>
+                <dt>Output</dt><dd>Information produced by a computer and delivered to users or other devices.</dd>
+                <dt>I/O System</dt><dd>Components that support communication between software and hardware.</dd>
+                <dt>Device Controller</dt><dd>Hardware that manages the operation of a device.</dd>
+                <dt>Device Driver</dt><dd>Software that allows the operating system to communicate with a hardware device.</dd>
+                <dt>Interrupt</dt><dd>A signal that requests the CPU's attention.</dd>
+                <dt>DMA</dt><dd>Direct Memory Access, a method for transferring data between devices and memory with reduced CPU involvement.</dd>
+                <dt>Device Scheduling</dt><dd>The process of deciding the order in which I/O requests are serviced.</dd>
+                <dt>Buffering</dt><dd>Temporarily storing data during a transfer.</dd>
+                <dt>Caching</dt><dd>Storing frequently accessed data in faster storage.</dd>
+                <dt>Spooling</dt><dd>Temporarily storing output jobs before a device processes them.</dd>
+                <dt>Deadlock</dt><dd>A situation where processes wait indefinitely for resources held by one another.</dd>
+                <dt>Plug-and-Play</dt><dd>Technology that automatically detects and configures compatible devices.</dd>
+                <dt>Hot-Swapping</dt><dd>Connecting or removing supported hardware while a system is operating.</dd>
+            </dl>
+
+            <h2>Learning Resources</h2>
+            <ul class="resource-list">
+                <li><a href="https://learn.microsoft.com" target="_blank" rel="noopener">Microsoft Learn</a></li>
+                <li><a href="https://www.ibm.com/topics" target="_blank" rel="noopener">IBM Technology Topics</a></li>
+                <li><a href="https://www.geeksforgeeks.org/operating-systems/" target="_blank" rel="noopener">GeeksforGeeks Operating Systems</a></li>
+                <li><a href="https://www.tutorialspoint.com/operating_system" target="_blank" rel="noopener">TutorialsPoint Operating System Tutorial</a></li>
+                <li><a href="https://docs.oracle.com" target="_blank" rel="noopener">Oracle Documentation</a></li>
+                <li><a href="https://training.linuxfoundation.org" target="_blank" rel="noopener">Linux Foundation Training</a></li>
+                <li><a href="https://ocw.mit.edu" target="_blank" rel="noopener">MIT OpenCourseWare</a></li>
+                <li><a href="https://cs.stanford.edu" target="_blank" rel="noopener">Stanford Computer Science</a></li>
+                <li><a href="https://www.computerhistory.org" target="_blank" rel="noopener">Computer History Museum</a></li>
+                <li><a href="https://www.khanacademy.org/computing" target="_blank" rel="noopener">Khan Academy Computing</a></li>
+            </ul>
+
+            <h2>References</h2>
+            <ol class="references">
+                <li>Silberschatz, A., Galvin, P. B., & Gagne, G. (2018). <em>Operating System Concepts.</em></li>
+                <li>Stallings, W. (2018). <em>Operating Systems: Internals and Design Principles.</em></li>
+                <li>Tanenbaum, A. S., & Bos, H. (2015). <em>Modern Operating Systems.</em></li>
+                <li>Forouzan, B. A. (2017). <em>Foundations of Computer Science.</em></li>
+                <li>GeeksforGeeks. (2024). <em>Operating Systems.</em></li>
+                <li>IBM. <em>Technology Topics and Computing Resources.</em></li>
+                <li>Microsoft. <em>Microsoft Learn Documentation.</em></li>
+                <li>Oracle. <em>Technical Documentation.</em></li>
+            </ol>
+
+            <a href="lesson6-assessment.html" class="assessment-link">Proceed to Lesson 6 Assessment →</a>
+        </section>
+
+       
+
+        <footer class="page-footer">
+            <h3>WEBTECH LEARN</h3>
+            <p>BSIT DIGITAL E-BOOK</p>
+            <p>Lesson 6: Device and Input/Output Management</p>
+            <p>Understanding how operating systems manage hardware devices and data communication.</p>
+        </footer>
+
+    </main>
+</div>
+
+<button id="backToTop" aria-label="Back to top">↑</button>
+
+</body>
+</html>

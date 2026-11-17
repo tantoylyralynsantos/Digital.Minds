@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lesson 9 | WEBTECH LEARN</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="lesson9.css">
+    <link rel="stylesheet" href="../display-settings.css">
+    <link rel="stylesheet" href="ebook-pagination.css">
+
+    <script src="../display-settings.js" defer></script>
+    <script src="ebook-pagination.js" defer></script>
+    <script src="lesson9.js" defer></script>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="header">
+    <div class="nav-container">
+
+        <a href="../index.html" class="logo">
+            <img src="logo.jpg" alt="BSIT Digital Minds Logo" class="logo-image">
+            <span class="logo-text">
+                <small>BSIT | DIGITAL MINDS</small>
+            </span>
+        </a>
+
+        <a href="2nd yr toc copy.html" class="back-home">
+            ← Back to Table of Contents
+        </a>
+
+    </div>
+</header>
+
+
+<!-- MAIN LAYOUT -->
+<div class="page-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="sidebar-heading">
+            <span class="sidebar-label">BSIT DIGITAL E-BOOK</span>
+            <h2>Lesson 9</h2>
+            <p>Authentication, Authorization, and Web Security</p>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="#introduction">01. Introduction</a>
+            <a href="#fundamentals">02. Security Fundamentals</a>
+            <a href="#authentication">03. Authentication</a>
+            <a href="#authorization">04. Authorization</a>
+            <a href="#comparison">05. Authentication vs Authorization</a>
+            <a href="#passwords">06. Password Security</a>
+            <a href="#hashing">07. Password Hashing</a>
+            <a href="#mfa">08. Multi-Factor Authentication</a>
+            <a href="#sessions">09. Sessions and Cookies</a>
+            <a href="#tokens">10. Authentication Tokens</a>
+            <a href="#access-control">11. Access Control</a>
+            <a href="#roles">12. Role-Based Access</a>
+            <a href="#encryption">13. Data Encryption</a>
+            <a href="#https">14. HTTPS and SSL/TLS</a>
+            <a href="#attacks">15. Common Security Attacks</a>
+            <a href="#sql">16. SQL Injection</a>
+            <a href="#xss">17. Cross-Site Scripting</a>
+            <a href="#csrf">18. CSRF Attacks</a>
+            <a href="#brute-force">19. Brute-Force Attacks</a>
+            <a href="#secure-coding">20. Secure Coding</a>
+            <a href="#database">21. Database Security</a>
+            <a href="#api">22. API Security</a>
+            <a href="#privacy">23. Data Privacy</a>
+            <a href="#best-practices">24. Security Best Practices</a>
+            <a href="#monitoring">25. Security Monitoring</a>
+            <a href="#incident">26. Incident Response</a>
+            <a href="#tools">27. Security Tools</a>
+            <a href="#activities">28. Learning Activities</a>
+            <a href="#glossary">29. Glossary</a>
+            <a href="#references">30. Conclusion and References</a>
+        </nav>
+
+        <div class="sidebar-note">
+            <strong>Learning Reminder</strong>
+            <p>Protecting user information is an important responsibility of every web developer.</p>
+        </div>
+
+        <a href="lesson9-assessment.html" class="assessment-sidebar-link">
+            📝 Take Lesson 9 Assessment
+        </a>
+
+    </aside>
+
+    <main class="main-content">
+
+        <section class="lesson-banner">
+            <span class="banner-label">BACHELOR OF SCIENCE IN INFORMATION TECHNOLOGY</span>
+            <h1>Authentication, Authorization, and Web Security</h1>
+            <p>Protecting Websites and User Data</p>
+            <div class="banner-info">
+                <span>LESSON 09</span>
+                <span>WEB TECHNOLOGY</span>
+                <span>30 LEARNING SECTIONS</span>
+            </div>
+        </section>
+
+        <!-- PAGE 1 -->
+        <section class="content-section" id="introduction">
+            <span class="page-number">PAGE 01</span>
+            <h2>1. Introduction to Web Security</h2>
+
+            <img class="lesson-image" src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200&q=85" alt="Cybersecurity concept">
+
+            <p>Web security refers to the practices, technologies, and procedures used to protect websites, web applications, servers, and user information from unauthorized access, attacks, and other online threats.</p>
+
+            <p>As more organizations use websites to provide services, store records, process payments, and communicate with customers, protecting digital information has become increasingly important.</p>
+
+            <p>Web developers must consider security throughout the development process. A website should not only look attractive and function correctly; it should also protect the people who use it.</p>
+
+            <h3>Why Is Web Security Important?</h3>
+            <ul>
+                <li>Protects personal and confidential information.</li>
+                <li>Prevents unauthorized access to user accounts.</li>
+                <li>Reduces the risk of data theft and financial loss.</li>
+                <li>Maintains the trust and confidence of website visitors.</li>
+                <li>Helps organizations maintain reliable online services.</li>
+            </ul>
+
+            <div class="example-box">
+                <strong>Real-World Example</strong>
+                <p>When a user logs in to an online banking website, security measures help ensure that only the authorized account owner can access financial information and perform transactions.</p>
+            </div>
+        </section>
+
+        <!-- PAGE 2 -->
+        <section class="content-section" id="fundamentals">
+            <span class="page-number">PAGE 02</span>
+            <h2>2. Fundamentals of Web Security</h2>
+
+            <p>Web security is based on several important principles that help protect information and systems. These principles guide developers when designing and maintaining secure applications.</p>
+
+            <h3>The CIA Triad</h3>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h4>Confidentiality</h4>
+                    <p>Ensures that sensitive information is accessible only to authorized individuals.</p>
+                </div>
+                <div class="info-card">
+                    <h4>Integrity</h4>
+                    <p>Ensures that information remains accurate and is not changed without permission.</p>
+                </div>
+                <div class="info-card">
+                    <h4>Availability</h4>
+                    <p>Ensures that systems and information are accessible when authorized users need them.</p>
+                </div>
+            </div>
+
+            <h3>Other Security Principles</h3>
+            <ul>
+                <li><strong>Authentication:</strong> Verifying the identity of a user.</li>
+                <li><strong>Authorization:</strong> Determining what an authenticated user can access.</li>
+                <li><strong>Accountability:</strong> Recording activities so actions can be reviewed.</li>
+                <li><strong>Least Privilege:</strong> Giving users only the permissions required for their tasks.</li>
+            </ul>
+
+            <div class="example-box">
+                <strong>Important Concept</strong>
+                <p>A secure website combines confidentiality, integrity, and availability to protect both its users and its information.</p>
+            </div>
+        </section>
+
+        <!-- PAGE 3 -->
+        <section class="content-section" id="authentication">
+            <span class="page-number">PAGE 03</span>
+            <h2>3. Understanding Authentication</h2>
+
+            <img class="lesson-image" src="https://images.unsplash.com/photo-1614064641938-3bbee52942c7?auto=format&fit=crop&w=1200&q=85" alt="Digital identity security">
+
+            <p>Authentication is the process of verifying the identity of a person, device, or system before allowing access to a protected resource.</p>
+
+            <p>Websites commonly authenticate users through usernames and passwords. More advanced systems may also use verification codes, biometric information, security keys, or authentication applications.</p>
+
+            <h3>Common Authentication Factors</h3>
+            <ol>
+                <li><strong>Something You Know:</strong> Passwords, PINs, or security answers.</li>
+                <li><strong>Something You Have:</strong> A smartphone, security token, or hardware key.</li>
+                <li><strong>Something You Are:</strong> Fingerprints, facial recognition, or other biometric characteristics.</li>
+            </ol>
+
+            <h3>How Authentication Works</h3>
+            <ol>
+                <li>The user opens a protected website.</li>
+                <li>The website displays a login form.</li>
+                <li>The user submits their credentials.</li>
+                <li>The server checks the submitted information.</li>
+                <li>If the identity is verified, the user can proceed.</li>
+            </ol>
+
+            <div class="example-box">
+                <strong>Example</strong>
+                <p>A student enters their school email and password into a learning management system. The system verifies the credentials before opening the student's account.</p>
+            </div>
+        </section>
+
+        <!-- PAGE 4 -->
+        <section class="content-section" id="authorization">
+            <span class="page-number">PAGE 04</span>
+            <h2>4. Understanding Authorization</h2>
+
+            <p>Authorization is the process of determining what an authenticated user is allowed to do within a website or application.</p>
+
+            <p>After a system confirms a user's identity, it checks the permissions assigned to that account. These permissions determine which pages, files, features, and actions the user can access.</p>
+
+            <h3>Examples of Authorization</h3>
+            <ul>
+                <li>An administrator can create, update, and delete user accounts.</li>
+                <li>A teacher can manage class records and learning materials.</li>
+                <li>A student can view their grades and personal information.</li>
+                <li>A regular customer can view and manage their own orders.</li>
+            </ul>
+
+            <h3>Why Authorization Matters</h3>
+            <p>Without proper authorization, users may gain access to information or functions that should be restricted. This can lead to data exposure, unauthorized changes, and misuse of the system.</p>
+
+            <div class="example-box">
+                <strong>Example</strong>
+                <p>A student may successfully log in to a school portal, but the student should not be allowed to open the administrator dashboard or modify another student's grades.</p>
+            </div>
+        </section>
+
+        <!-- PAGE 5 -->
+        <section class="content-section" id="comparison">
+            <span class="page-number">PAGE 05</span>
+            <h2>5. Authentication vs. Authorization</h2>
+
+            <p>Authentication and authorization are related security processes, but they serve different purposes.</p>
+
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Authentication</th>
+                            <th>Authorization</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Verifies who the user is.</td>
+                            <td>Determines what the user can do.</td>
+                        </tr>
+                        <tr>
+                            <td>Usually happens first.</td>
+                            <td>Usually follows authentication.</td>
+                        </tr>
+                        <tr>
+                            <td>Uses passwords, codes, or biometrics.</td>
+                            <td>Uses permissions, roles, and access policies.</td>
+                        </tr>
+                        <tr>
+                            <td>Answers: "Who are you?"</td>
+                            <td>Answers: "What are you allowed to access?"</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>Example in a School Website</h3>
+            <p>Authentication confirms that a person is a registered student. Authorization determines whether that student can view their own grades, submit assignments, or access restricted administrative features.</p>
+
+            <div class="example-box">
+                <strong>Remember</strong>
+                <p>Authentication verifies identity, while authorization controls access.</p>
+            </div>
+        </section>
+
+        <!-- PAGE 6 -->
+        <section class="content-section" id="passwords">
+            <span class="page-number">PAGE 06</span>
+            <h2>6. Password Security</h2>
+
+            <p>Passwords are one of the most widely used methods of authentication. They protect user accounts by requiring a secret combination of characters before access is granted.</p>
+
+            <h3>Characteristics of a Strong Password</h3>
+            <ul>
+                <li>Uses sufficient length.</li>
+                <li>Combines different types of characters when appropriate.</li>
+                <li>Avoids common words and predictable patterns.</li>
+                <li>Does not include easily guessed personal details.</li>
+                <li>Is unique for each important account.</li>
+            </ul>
+
+            <h3>Common Password Mistakes</h3>
+            <ul>
+                <li>Using the same password on multiple websites.</li>
+                <li>Sharing passwords with other people.</li>
+                <li>Using simple passwords such as 123456.</li>
+                <li>Writing passwords in publicly accessible locations.</li>
+                <li>Ignoring security warnings after a possible account compromise.</li>
+            </ul>
+
+            <div class="example-box">
+                <strong>Security Tip</strong>
+                <p>Use a reputable password manager to create and store unique passwords for different accounts.</p>
+            </div>
+        </section>
+
+        <!-- PAGE 7 -->
+        <section class="content-section" id="hashing">
+            <span class="page-number">PAGE 07</span>
+            <h2>7. Password Hashing and Storage</h2>
+
+            <p>Web applications should never store users' passwords as plain text. If a database is exposed, plain-text passwords can be read immediately by anyone who obtains the database.</p>
+
+            <p>Password hashing transforms a password into a fixed-length output using a one-way cryptographic function. A secure password-storage system uses a dedicated password-hashing algorithm with a unique salt for each password.</p>
+
+            <h3>Important Terms</h3>
+            <ul>
+                <li><strong>Hashing:</strong> A one-way process that transforms input into a hash value.</li>
+                <li><strong>Salt:</strong> Random data added to a password before hashing.</li>
+                <li><strong>Password Verification:</strong> Checking a submitted password against the stored password hash.</li>
+            </ul>
+
+            <h3>Recommended Password-Hashing Algorithms</h3>
+            <ul>
+                <li>Argon2id</li>
+                <li>bcrypt</li>
+                <li>scrypt</li>
+            </ul>
+
+            <div class="example-box">
+                <strong>Important</strong>
+                <p>Fast general-purpose hashes such as MD5 and SHA-1 should not be used alone for password storage.</p>
+            </div>
+        </section>
+
+        <!-- PAGE 8 -->
+        <section class="content-section" id="mfa">
+            <span class="page-number">PAGE 08</span>
+            <h2>8. Multi-Factor Authentication</h2>
+
+            <img class="lesson-image" src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=1200&q=85" alt="Mobile phone security verification">
+
+            <p>Multi-Factor Authentication (MFA) is a security method that requires users to provide two or more different verification factors before accessing an account.</p>
+
+            <h3>Common MFA Methods</h3>
+            <ul>
+                <li>One-time passwords sent through an approved channel.</li>
+                <li>Authenticator applications.</li>
+                <li>Hardware security keys.</li>
+                <li>Fingerprint or facial verification.</li>
+                <li>Passkeys using supported devices.</li>
+            </ul>
+
+            <h3>Benefits of MFA</h3>
+            <ul>
+                <li>Provides additional protection beyond passwords.</li>
+                <li>Makes stolen passwords less useful to attackers.</li>
+                <li>Helps protect sensitive accounts.</li>
+                <li>Reduces the risk of unauthorized login attempts.</li>
+            </ul>
+
+            <div class="example-box">
+                <strong>Example</strong>
+                <p>A user enters their password and then confirms the login using an authenticator application. Both steps help verify the user's identity.</p>
+            </div>
+        </section>
+
+        <!-- PAGE 9 -->
+        <section class="content-section" id="sessions">
+            <span class="page-number">PAGE 09</span>
+            <h2>9. Sessions and Cookies</h2>
+
+            <p>Sessions and cookies help websites maintain information about a user's interaction across multiple requests.</p>
+
+            <h3>What Is a Session?</h3>
+            <p>A session is a period of interaction between a user and a web application. After a successful login, the server may create a session to remember that the user has been authenticated.</p>
+
+            <h3>What Is a Cookie?</h3>
+            <p>A cookie is a small piece of data stored by a browser. Websites may use cookies to maintain sessions, remember preferences, or support other website functions.</p>
+
+            <h3>Important Cookie Security Attributes</h3>
+            <ul>
+                <li><strong>HttpOnly:</strong> Helps prevent JavaScript from reading a cookie.</li>
+                <li><strong>Secure:</strong> Restricts cookie transmission to secure HTTPS connections.</li>
+                <li><strong>SameSite:</strong> Helps control when cookies are sent with cross-site requests.</li>
+            </ul>
+
+            <div class="example-box">
+                <strong>Example</strong>
+                <p>When a user logs in to an online shopping website, a session may keep the user signed in while browsing different product pages.</p>
+            </div>
+        </section>
+
+        <!-- PAGE 10 -->
+        <section class="content-section" id="tokens">
+            <span class="page-number">PAGE 10</span>
+            <h2>10. Authentication Tokens</h2>
+
+            <p>An authentication token is a digital credential used to represent an authenticated user or authorize access to a protected resource.</p>
+
+            <p>Tokens are commonly used in web applications and APIs. Instead of repeatedly submitting a username and password, a client may send a valid token with requests.</p>
+
+            <h3>JSON Web Token (JWT)</h3>
+            <p>JSON Web Token is a compact format for representing claims between parties. A signed JWT can help a server verify that its contents have not been changed.</p>
+
+            <h3>Token Security Practices</h3>
+            <ul>
+                <li>Transmit tokens only through HTTPS.</li>
+                <li>Protect tokens from unauthorized access.</li>
+                <li>Use suitable expiration periods.</li>
+                <li>Validate signatures and relevant claims.</li>
+                <li>Provide a process for revoking or replacing compromised tokens.</li>
+            </ul>
+
+            <div class="example-box">
+                <strong>Example</strong>
+                <p>A mobile application may send an access token when requesting a user's profile from a protected API.</p>
+            </div>
+        </section>
+
+        <!-- PAGE 11 -->
+        <section class="content-section" id="access-control">
+            <span class="page-number">PAGE 11</span>
+            <h2>11. Access Control Models</h2>
+
+            <p>Access control refers to the rules and mechanisms used to decide who can access particular resources and what actions they can perform.</p>
+
+            <h3>Common Access Control Models</h3>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h4>DAC</h4>
+                    <p>Discretionary Access Control allows resource owners to decide who can access their resources.</p>
+                </div>
+                <div class="info-card">
+                    <h4>MAC</h4>
+                    <p>Mandatory Access Control uses centrally defined security classifications and policies.</p>
+                </div>
+                <div class="info-card">
+                    <h4>RBAC</h4>
+                    <p>Role-Based Access Control assigns permissions based on a user's role.</p>
+                </div>
+                <div class="info-card">
+                    <h4>ABAC</h4>
+                    <p>Attribute-Based Access Control makes decisions using attributes of users, resources, and context.</p>
+                </div>
+            </div>
+
+            <div class="example-box">
+                <strong>Example</strong>
+                <p>A school system may give administrators access to student management tools while students can only access their own academic records.</p>
+            </div>
+        </section>
+
+        <!-- PAGE 12 -->
+        <section class="content-section" id="roles">
+            <span class="page-number">PAGE 12</span>
+            <h2>12. Role-Based Access Control</h2>
+
+            <p>Role-Based Access Control (RBAC) is a method of managing permissions by assigning users to roles. Each role is associated with a specific set of allowed actions.</p>
+
+            <h3>Sample Roles in a School System</h3>
+            <ul>
+                <li><strong>Administrator:</strong> Manages accounts, settings, and system records.</li>
+                <li><strong>Teacher:</strong> Manages classes, assignments, and student performance.</li>
+                <li><strong>Student:</strong> Views lessons, submits activities, and checks grades.</li>
+                <li><strong>Guest:</strong> Views only publicly available information.</li>
+            </ul>
+
+            <h3>Advantages of RBAC</h3>
+            <ul>
+                <li>Makes permission management easier.</li>
+                <li>Reduces unnecessary access.</li>
+                <li>Supports organized account administration.</li>
+                <li>Helps enforce the principle of least privilege.</li>
+            </ul>
+
+            <div class="example-box">
+                <strong>Example</strong>
+                <p>When a teacher is assigned the Teacher role, the application grants the permissions associated with that role instead of manually configuring every permission separately.</p>
+            </div>
+        </section>
+
+        <!-- PAGE 13 -->
+        <section class="content-section" id="encryption">
+            <span class="page-number">PAGE 13</span>
+            <h2>13. Data Encryption</h2>
+
+            <img class="lesson-image" src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=85" alt="Computer data and digital security">
+
+            <p>Encryption is the process of converting readable information, called plaintext, into an unreadable form, called ciphertext, using a cryptographic method and key.</p>
+
+            <h3>Types of Encryption</h3>
+            <ul>
+                <li><strong>Symmetric Encryption:</strong> Uses the same secret key for encryption and decryption.</li>
+                <li><strong>Asymmetric Encryption:</strong> Uses a public key and a corresponding private key.</li>
+            </ul>
+
+            <h3>Why Encryption Is Important</h3>
+            <ul>
+                <li>Protects sensitive information during transmission.</li>
+                <li>Helps secure stored information.</li>
+                <li>Reduces the impact of unauthorized data exposure.</li>
+                <li>Supports secure communication between systems.</li>
+            </ul>
+
+            <div class="example-box">
+                <strong>Example</strong>
+                <p>When a user submits sensitive information through an HTTPS website, encryption helps protect the information while it travels between the browser and server.</p>
+            </div>
+        </section>
+
+        <!-- PAGE 14 -->
+        <section class="content-section" id="https">
+            <span class="page-number">PAGE 14</span>
+            <h2>14. HTTPS and SSL/TLS</h2>
+
+            <p>HTTPS stands for Hypertext Transfer Protocol Secure. It protects communication between a web browser and a web server by using Transport Layer Security (TLS).</p>
+
+            <p>TLS provides encryption, integrity protection, and server authentication through digital certificates and cryptographic protocols.</p>
+
+            <h3>HTTPS Benefits</h3>
+            <ul>
+                <li>Protects information from being easily read during transmission.</li>
+                <li>Helps detect unauthorized modification of transmitted data.</li>
+                <li>Helps users verify the identity of the website they connect to.</li>
+                <li>Supports safer online transactions and account logins.</li>
+            </ul>
+
+            <h3>HTTP vs. HTTPS</h3>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr><th>HTTP</th><th>HTTPS</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Does not provide TLS protection by itself.</td><td>Uses TLS to protect communication.</td></tr>
+                        <tr><td>Does not encrypt traffic by default.</td><td>Encrypts data in transit.</td></tr>
+                        <tr><td>Not suitable for sensitive information without another secure layer.</td><td>Recommended for websites, especially those handling accounts or personal data.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="example-box">
+                <strong>Remember</strong>
+                <p>Modern websites should use HTTPS throughout the site, not only on the login page.</p>
+            </div>
+        </section>
+
+        <!-- PAGE 15 -->
+        <section class="content-section" id="attacks">
+            <span class="page-number">PAGE 15</span>
+            <h2>15. Common Web Security Attacks</h2>
+
+            <p>Web applications may be targeted by attackers who attempt to steal information, interrupt services, or gain unauthorized access.</p>
+
+            <h3>Examples of Web Security Threats</h3>
+            <ul>
+                <li><strong>Phishing:</strong> Tricking users into revealing sensitive information through fake messages or websites.</li>
+                <li><strong>Malware:</strong> Malicious software designed to damage systems or steal information.</li>
+                <li><strong>SQL Injection:</strong> Inserting malicious SQL input into an application.</li>
+                <li><strong>Cross-Site Scripting:</strong> Injecting malicious scripts into pages viewed by other users.</li>
+                <li><strong>Cross-Site Request Forgery:</strong> Tricking an authenticated browser into making an unwanted request.</li>
+                <li><strong>Denial-of-Service:</strong> Overwhelming a service so legitimate users cannot access it.</li>
+            </ul>
+
+            <div class="example-box">
+                <strong>Security Awareness</strong>
+                <p>Understanding common attacks helps developers identify weaknesses and apply appropriate protection before attackers exploit them.</p>
+            </div>
+        </section>
+
+        <!-- PAGE 16 -->
+        <section class="content-section" id="sql">
+            <span class="page-number">PAGE 16</span>
+            <h2>16. SQL Injection</h2>
+
+            <p>SQL Injection is a security vulnerability that occurs when an application includes untrusted input in database queries without proper handling.</p>
+
+            <p>An attacker may attempt to change the meaning of a query, access unauthorized records, or modify database information.</p>
+
+            <h3>How to Prevent SQL Injection</h3>
+            <ul>
+                <li>Use parameterized queries or prepared statements.</li>
+                <li>Avoid building SQL statements through unsafe string concatenation.</li>
+                <li>Validate input according to the expected data type and format.</li>
+                <li>Use database accounts with limited permissions.</li>
+                <li>Handle database errors without revealing sensitive technical details.</li>
+            </ul>
+
+            <h3>Secure Development Example</h3>
+            <p>A login system should pass a submitted username as a query parameter rather than directly combining it with SQL command text.</p>
+
+            <div class="example-box">
+                <strong>Important</strong>
+                <p>Input validation is useful, but parameterized queries are a primary defense against SQL injection.</p>
+            </div>
+        </section>
+
+        <!-- PAGE 17 -->
+        <section class="content-section" id="xss">
+            <span class="page-number">PAGE 17</span>
+            <h2>17. Cross-Site Scripting (XSS)</h2>
+
+            <p>Cross-Site Scripting is a vulnerability that allows an attacker to cause malicious scripts to run in another user's browser through a vulnerable website.</p>
+
+            <h3>Types of XSS</h3>
+            <ul>
+                <li><strong>Stored XSS:</strong> Malicious content is stored by the application and later displayed to users.</li>
+                <li><strong>Reflected XSS:</strong> Malicious input is immediately included in a response page.</li>
+                <li><strong>DOM-Based XSS:</strong> Client-side JavaScript handles untrusted data in an unsafe way.</li>
+            </ul>
+
+            <h3>Ways to Prevent XSS</h3>
+            <ul>
+                <li>Encode output according to its context.</li>
+                <li>Avoid inserting untrusted content as executable HTML.</li>
+                <li>Use safe DOM methods such as textContent when displaying plain text.</li>
+                <li>Apply a suitable Content Security Policy.</li>
+                <li>Sanitize HTML when user-generated HTML must be supported.</li>
+            </ul>
+
+            <div class="example-box">
+                <strong>Example</strong>
+                <p>A comment section should display user-submitted text safely instead of treating the content as executable code.</p>
+            </div>
+        </section>
+
+        <!-- PAGE 18 -->
+        <section class="content-section" id="csrf">
+            <span class="page-number">PAGE 18</span>
+            <h2>18. Cross-Site Request Forgery (CSRF)</h2>
+
+            <p>Cross-Site Request Forgery is an attack that tricks a user's browser into sending an unwanted request to a website where the user is already authenticated.</p>
+
+            <p>If the website does not properly protect sensitive actions, the request may be processed using the user's existing session.</p>
+
+            <h3>Possible Consequences</h3>
+            <ul>
+                <li>Unauthorized changes to account settings.</li>
+                <li>Unwanted updates to personal information.</li>
+                <li>Unauthorized actions performed using a user's account.</li>
+            </ul>
+
+            <h3>Prevention Methods</h3>
+            <ul>
+                <li>Use anti-CSRF tokens for state-changing requests.</li>
+                <li>Configure appropriate SameSite cookie attributes.</li>
+                <li>Verify request origins where appropriate.</li>
+                <li>Require re-authentication for highly sensitive operations.</li>
+                <li>Do not use GET requests for actions that change important data.</li>
+            </ul>
+
+            <div class="example-box">
+                <strong>Example</strong>
+                <p>A secure banking application should verify that a money-transfer request genuinely originated from its own trusted application flow.</p>
+            </div>
+        </section>
+
+        <!-- PAGE 19 -->
+        <section class="content-section" id="brute-force">
+            <span class="page-number">PAGE 19</span>
+            <h2>19. Brute-Force and Credential Attacks</h2>
+
+            <p>A brute-force attack involves repeatedly attempting different passwords or credentials until the correct combination is found.</p>
+
+            <p>Credential stuffing is another attack in which previously exposed username and password combinations are tested against other websites.</p>
+
+            <h3>Protection Strategies</h3>
+            <ul>
+                <li>Apply rate limiting to login attempts.</li>
+                <li>Use multi-factor authentication.</li>
+                <li>Monitor suspicious login activity.</li>
+                <li>Use secure password-storage methods.</li>
+                <li>Notify users about unusual account activity.</li>
+                <li>Use carefully designed temporary account protections.</li>
+            </ul>
+
+            <div class="example-box">
+                <strong>Example</strong>
+                <p>If a login system detects many failed attempts from one source, it can slow down or temporarily restrict further attempts and record the activity for review.</p>
+            </div>
+        </section>
+
+        <!-- PAGE 20 -->
+        <section class="content-section" id="secure-coding">
+            <span class="page-number">PAGE 20</span>
+            <h2>20. Secure Coding Practices</h2>
+
+            <p>Secure coding means developing software in a way that reduces security weaknesses and protects information from misuse.</p>
+
+            <h3>Important Secure Coding Practices</h3>
+            <ul>
+                <li>Validate all untrusted input.</li>
+                <li>Encode output before displaying untrusted data.</li>
+                <li>Use prepared statements for database queries.</li>
+                <li>Protect sensitive operations with authorization checks.</li>
+                <li>Use secure authentication and session management.</li>
+                <li>Avoid exposing passwords, keys, and private information in source code.</li>
+                <li>Keep libraries and frameworks updated.</li>
+                <li>Review code for security problems before deployment.</li>
+            </ul>
+
+            <div class="example-box">
+                <strong>Developer Reminder</strong>
+                <p>Security should be considered from the planning stage through development, testing, deployment, and maintenance.</p>
+            </div>
+        </section>
+
+        <!-- PAGE 21 -->
+        <section class="content-section" id="database">
+            <span class="page-number">PAGE 21</span>
+            <h2>21. Database Security</h2>
+
+            <p>Database security involves protecting stored information against unauthorized access, accidental loss, improper modification, and data theft.</p>
+
+            <h3>Database Protection Methods</h3>
+            <ul>
+                <li>Require authentication for database access.</li>
+                <li>Assign limited permissions to database accounts.</li>
+                <li>Encrypt sensitive information when appropriate.</li>
+                <li>Back up important data regularly.</li>
+                <li>Monitor database activity.</li>
+                <li>Use secure connections between applications and databases.</li>
+                <li>Remove unused accounts and permissions.</li>
+            </ul>
+
+            <h3>Why Backups Matter</h3>
+            <p>Backups provide a way to restore information after accidental deletion, system failure, ransomware incidents, or other data-loss events.</p>
+
+            <div class="example-box">
+                <strong>Example</strong>
+                <p>An online school portal should protect student records and maintain secure backups so important academic information can be recovered when necessary.</p>
+            </div>
+        </section>
+
+        <!-- PAGE 22 -->
+        <section class="content-section" id="api">
+            <span class="page-number">PAGE 22</span>
+            <h2>22. API Security</h2>
+
+            <p>An Application Programming Interface (API) allows different software systems to communicate and exchange information. APIs often provide access to sensitive data, making security essential.</p>
+
+            <h3>Common API Security Measures</h3>
+            <ul>
+                <li>Require authentication for protected endpoints.</li>
+                <li>Check authorization for every sensitive operation.</li>
+                <li>Validate request data.</li>
+                <li>Use HTTPS.</li>
+                <li>Apply rate limiting.</li>
+                <li>Protect API keys and access tokens.</li>
+                <li>Return only the information a client is permitted to receive.</li>
+            </ul>
+
+            <h3>API Authentication Methods</h3>
+            <p>Depending on the application, APIs may use OAuth 2.0, access tokens, signed requests, or other suitable authentication mechanisms.</p>
+
+            <div class="example-box">
+                <strong>Example</strong>
+                <p>A mobile application requests a student's class schedule through an API. The API must verify the user's identity and permission before returning the schedule.</p>
+            </div>
+        </section>
+
+        <!-- PAGE 23 -->
+        <section class="content-section" id="privacy">
+            <span class="page-number">PAGE 23</span>
+            <h2>23. Data Privacy and User Protection</h2>
+
+            <p>Data privacy concerns how personal information is collected, used, stored, shared, and protected by organizations and applications.</p>
+
+            <h3>Examples of Personal Information</h3>
+            <ul>
+                <li>Full name and contact information.</li>
+                <li>Email addresses and account identifiers.</li>
+                <li>Location information.</li>
+                <li>Financial and transaction details.</li>
+                <li>Educational and employment records.</li>
+            </ul>
+
+            <h3>Privacy Protection Practices</h3>
+            <ul>
+                <li>Collect only information that is necessary.</li>
+                <li>Explain how personal information will be used.</li>
+                <li>Restrict access to authorized personnel.</li>
+                <li>Use appropriate security controls.</li>
+                <li>Follow applicable privacy laws and organizational policies.</li>
+                <li>Dispose of information securely when it is no longer needed and retention rules permit.</li>
+            </ul>
+
+            <div class="example-box">
+                <strong>Important</strong>
+                <p>In the Philippines, organizations handling personal data should understand and comply with the Data Privacy Act of 2012 and applicable regulations.</p>
+            </div>
+        </section>
+
+        <!-- PAGE 24 -->
+        <section class="content-section" id="best-practices">
+            <span class="page-number">PAGE 24</span>
+            <h2>24. Web Security Best Practices</h2>
+
+            <p>Maintaining a secure website requires a combination of technical controls, good development practices, and responsible user behavior.</p>
+
+            <h3>Recommended Practices</h3>
+            <ol>
+                <li>Use HTTPS across the website.</li>
+                <li>Store passwords using a dedicated password-hashing algorithm.</li>
+                <li>Enable MFA for important accounts.</li>
+                <li>Use secure session and cookie settings.</li>
+                <li>Validate input and encode output.</li>
+                <li>Use least-privilege permissions.</li>
+                <li>Keep software and dependencies updated.</li>
+                <li>Perform regular security testing.</li>
+                <li>Back up important information.</li>
+                <li>Monitor and investigate suspicious activity.</li>
+            </ol>
+
+            <div class="example-box">
+                <strong>Key Point</strong>
+                <p>No single security feature can protect every website. Effective protection requires multiple layers of security.</p>
+            </div>
+        </section>
+
+        <!-- PAGE 25 -->
+        <section class="content-section" id="monitoring">
+            <span class="page-number">PAGE 25</span>
+            <h2>25. Security Monitoring and Logging</h2>
+
+            <p>Security monitoring is the continuous observation of systems, applications, and network activity to identify suspicious behavior and possible security incidents.</p>
+
+            <h3>Examples of Activities to Monitor</h3>
+            <ul>
+                <li>Repeated failed login attempts.</li>
+                <li>Unexpected account permission changes.</li>
+                <li>Unusual access to sensitive records.</li>
+                <li>Unexpected system configuration changes.</li>
+                <li>Suspicious API requests.</li>
+            </ul>
+
+            <h3>What Is a Security Log?</h3>
+            <p>A security log is a record of important system events. Logs can help administrators investigate incidents, identify patterns, and understand what happened during a security event.</p>
+
+            <div class="example-box">
+                <strong>Example</strong>
+                <p>A website administrator reviews login logs after receiving an alert about repeated unsuccessful attempts to access an account.</p>
+            </div>
+        </section>
+
+        <!-- PAGE 26 -->
+        <section class="content-section" id="incident">
+            <span class="page-number">PAGE 26</span>
+            <h2>26. Security Incident Response</h2>
+
+            <p>A security incident is an event that threatens the confidentiality, integrity, or availability of information or systems.</p>
+
+            <h3>Basic Incident Response Activities</h3>
+            <ol>
+                <li><strong>Preparation:</strong> Create policies, procedures, and response plans.</li>
+                <li><strong>Detection:</strong> Identify suspicious activities or possible incidents.</li>
+                <li><strong>Containment:</strong> Limit the incident's impact.</li>
+                <li><strong>Eradication:</strong> Remove the cause of the incident.</li>
+                <li><strong>Recovery:</strong> Restore affected systems safely.</li>
+                <li><strong>Lessons Learned:</strong> Review the incident and improve security controls.</li>
+            </ol>
+
+            <h3>Why Incident Response Is Important</h3>
+            <p>A prepared response helps organizations reduce damage, restore services, protect users, and improve their security practices.</p>
+
+            <div class="example-box">
+                <strong>Example</strong>
+                <p>If an administrator discovers a compromised account, the organization may disable the affected credentials, investigate the activity, reset access, and review related logs.</p>
+            </div>
+        </section>
+
+        <!-- PAGE 27 -->
+        <section class="content-section" id="tools">
+            <span class="page-number">PAGE 27</span>
+            <h2>27. Common Web Security Tools</h2>
+
+            <p>Security tools help developers and administrators examine applications, identify weaknesses, and monitor systems.</p>
+
+            <h3>Examples of Security Tools</h3>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h4>OWASP ZAP</h4>
+                    <p>A web application security testing tool that can help identify common vulnerabilities.</p>
+                </div>
+                <div class="info-card">
+                    <h4>Burp Suite</h4>
+                    <p>A platform used for testing and analyzing web application security.</p>
+                </div>
+                <div class="info-card">
+                    <h4>Wireshark</h4>
+                    <p>A network protocol analyzer used to inspect network traffic.</p>
+                </div>
+                <div class="info-card">
+                    <h4>Nmap</h4>
+                    <p>A network discovery and security auditing tool.</p>
+                </div>
+            </div>
+
+            <h3>Responsible Tool Usage</h3>
+            <p>Security testing tools should only be used on systems that you own or have explicit permission to test. Unauthorized testing can violate laws and organizational policies.</p>
+        </section>
+
+        <!-- PAGE 28 -->
+        <section class="content-section" id="activities">
+            <span class="page-number">PAGE 28</span>
+            <h2>28. Learning Activities and Exercises</h2>
+
+            <h3>Activity 1: Identify the Security Concept</h3>
+            <p>Read each situation and identify the security concept being described.</p>
+            <ol>
+                <li>A website asks for a password to verify a user's identity.</li>
+                <li>A student is prevented from opening the administrator dashboard.</li>
+                <li>A website encrypts communication using HTTPS.</li>
+                <li>A system requires a password and a second verification factor.</li>
+                <li>A developer uses prepared statements to protect database queries.</li>
+            </ol>
+
+            <h3>Activity 2: Website Security Checklist</h3>
+            <p>Imagine that you are developing a school website. Identify at least five security features that you would include to protect student accounts and records.</p>
+
+            <h3>Activity 3: Short Reflection</h3>
+            <p>Answer the following questions in your own words:</p>
+            <ol>
+                <li>Why should passwords never be stored in plain text?</li>
+                <li>What is the difference between authentication and authorization?</li>
+                <li>Why is HTTPS important for websites?</li>
+                <li>How can MFA improve account security?</li>
+                <li>What responsibilities do web developers have in protecting user data?</li>
+            </ol>
+        </section>
+
+        <!-- PAGE 29 -->
+        <section class="content-section" id="glossary">
+            <span class="page-number">PAGE 29</span>
+            <h2>29. Glossary of Terms</h2>
+
+            <div class="glossary-list">
+                <p><strong>Authentication:</strong> The process of verifying a user's identity.</p>
+                <p><strong>Authorization:</strong> The process of deciding what an authenticated user can access.</p>
+                <p><strong>Encryption:</strong> Transforming readable data into protected, unreadable data.</p>
+                <p><strong>Hashing:</strong> Transforming input into a hash value using a one-way function.</p>
+                <p><strong>Multi-Factor Authentication:</strong> Using two or more different authentication factors.</p>
+                <p><strong>HTTPS:</strong> A secure version of HTTP that uses TLS.</p>
+                <p><strong>Cookie:</strong> A small piece of data stored by a browser.</p>
+                <p><strong>Session:</strong> A period of interaction between a user and an application.</p>
+                <p><strong>SQL Injection:</strong> An attack that manipulates database queries through unsafe input handling.</p>
+                <p><strong>Cross-Site Scripting:</strong> A vulnerability involving malicious scripts executed in users' browsers.</p>
+                <p><strong>CSRF:</strong> An attack that causes an authenticated browser to send an unwanted request.</p>
+                <p><strong>Firewall:</strong> A security control that filters network traffic according to rules.</p>
+                <p><strong>Access Control:</strong> Rules that determine who can use a resource.</p>
+                <p><strong>Token:</strong> A digital credential used to represent authorization or authentication.</p>
+                <p><strong>Data Privacy:</strong> The proper handling and protection of personal information.</p>
+            </div>
+        </section>
+
+        <!-- PAGE 30 -->
+        <section class="content-section" id="references">
+            <span class="page-number">PAGE 30</span>
+            <h2>30. Conclusion and References</h2>
+
+            <h3>Lesson Summary</h3>
+            <p>Authentication, authorization, and web security are essential parts of developing reliable and trustworthy websites. Authentication verifies the identity of users, while authorization determines which resources and actions they are allowed to access.</p>
+
+            <p>Developers must also understand password security, hashing, encryption, sessions, tokens, access control, and common web attacks. Applying secure coding practices and monitoring systems helps reduce the risk of unauthorized access and data exposure.</p>
+
+            <p>By following security best practices, web developers can build applications that protect user information and provide safer online experiences.</p>
+
+            <div class="example-box">
+                <strong>Final Learning Reminder</strong>
+                <p>Security is not a one-time task. It is an ongoing responsibility throughout the life of a web application.</p>
+            </div>
+
+            <h3>References and Learning Resources</h3>
+            <ul class="references-list">
+                <li><a href="https://owasp.org/www-project-top-ten/" target="_blank" rel="noopener">OWASP Top 10</a> — Common web application security risks.</li>
+                <li><a href="https://cheatsheetseries.owasp.org/" target="_blank" rel="noopener">OWASP Cheat Sheet Series</a> — Practical application security guidance.</li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/Security" target="_blank" rel="noopener">MDN Web Security</a> — Web security concepts and developer guidance.</li>
+                <li><a href="https://www.nist.gov/cyberframework" target="_blank" rel="noopener">NIST Cybersecurity Framework</a> — Cybersecurity risk management guidance.</li>
+                <li><a href="https://www.rfc-editor.org/rfc/rfc8446" target="_blank" rel="noopener">RFC 8446: TLS 1.3</a> — Technical standard for TLS 1.3.</li>
+                <li><a href="https://privacy.gov.ph/data-privacy-act/" target="_blank" rel="noopener">National Privacy Commission</a> — Philippine Data Privacy Act resources.</li>
+            </ul>
+
+            <div class="lesson-complete">
+                <h3>Congratulations!</h3>
+                <p>You have completed Lesson 9: Authentication, Authorization, and Web Security.</p>
+                <a href="lesson9-assessment.html" class="assessment-link">Take Lesson 9 Assessment →</a>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>© 2026 WEBTECH LEARN | BSIT DIGITAL MINDS</p>
+            <p>Learning Today, Securing Tomorrow.</p>
+        </footer>
+
+    </main>
+</div>
+
+<button id="backToTop" title="Back to Top">↑</button>
+
+<script src="lesson9.js"></script>
+</body>
+</html>

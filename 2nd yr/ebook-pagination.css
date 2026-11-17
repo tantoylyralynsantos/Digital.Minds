@@ -1,0 +1,86 @@
+
+/* =====================================
+   WEBTECH LEARN - EBOOK PAGINATION
+===================================== */
+
+.ebook-pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+    margin: 30px 0;
+    padding: 18px 20px;
+    background: #ffffff;
+    border: 1px solid #dce5ef;
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(8, 45, 89, 0.08);
+}
+
+.ebook-pagination .page-button {
+    padding: 11px 20px;
+    background: linear-gradient(135deg, #10569a, #082d59);
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-family: "DM Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.ebook-pagination .page-button:hover:not(:disabled) {
+    background: #07376f;
+    transform: translateY(-2px);
+}
+
+.ebook-pagination .page-button:disabled {
+    background: #aab8c8;
+    opacity: 0.65;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.ebook-pagination .page-indicator {
+    color: #082d59;
+    font-family: "DM Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: center;
+    white-space: nowrap;
+}
+
+/* Dark Mode */
+
+.dark-mode .ebook-pagination {
+    background: #142b45;
+    border-color: #294765;
+}
+
+.dark-mode .ebook-pagination .page-indicator {
+    color: #ffffff;
+}
+
+.dark-mode .ebook-pagination .page-button:disabled {
+    background: #42566c;
+    color: #d0deed;
+}
+
+/* Mobile Responsive */
+
+@media (max-width: 600px) {
+    .ebook-pagination {
+        gap: 8px;
+        padding: 12px 10px;
+    }
+
+    .ebook-pagination .page-button {
+        padding: 10px 9px;
+        font-size: 11px;
+    }
+
+    .ebook-pagination .page-indicator {
+        font-size: 11px;
+    }
+}

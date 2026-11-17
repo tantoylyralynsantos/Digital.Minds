@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <title>Chapter 6 | Device and Input/Output Management</title>
+
+    <link rel="stylesheet" href="lesson8-assessment.css">
+    <link rel="stylesheet" href="display-settings.css">
+
+    <script src="display-settings.js" defer></script>
+    <script src="lesson8-assessment.js" defer></script>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+    <div class="nav-container">
+
+        <a href="index.html" class="logo">
+            <img src="logo.jpg" alt="BSIT Digital Minds Logo" class="logo-image">
+
+            <span class="logo-text">
+                <small>BSIT | DIGITAL MINDS</small>
+            </span>
+        </a>
+
+        <a href="2nd yr toc.html" class="back-home">
+            ← Back to Table of Content
+        </a>
+
+    </div>
+    <link rel="stylesheet" href="ebook-pagination.css">
+<script src="ebook-pagination.js" defer></script>
+</header>
+
+
+    <main class="assessment-container">
+
+        <!-- INTRODUCTION -->
+        <section class="assessment-banner">
+            <span class="banner-label">BSIT DIGITAL E-BOOK • LESSON 08</span>
+            <h1>LESSON 8 ASSESSMENT</h1>
+            <h2>Virtualization and Virtual Machines</h2>
+            <p>
+                Test your understanding of virtualization, virtual machines,
+                hypervisors, containers, cloud computing, and related technologies.
+            </p>
+
+            <div class="banner-tags">
+                <span>Identification</span>
+                <span>Multiple Choice</span>
+                <span>True or False</span>
+                <span>Essay</span>
+            </div>
+        </section>
+
+        <!-- STUDENT INFORMATION -->
+        <section class="student-information">
+            <div class="section-heading">
+                <span class="section-number">01</span>
+                <div>
+                    <h2>Student Information</h2>
+                    <p>Complete your information before answering.</p>
+                </div>
+            </div>
+
+            <div class="student-grid">
+                <div class="form-group">
+                    <label for="studentName">Full Name</label>
+                    <input type="text" id="studentName" placeholder="Enter your full name">
+                </div>
+
+                <div class="form-group">
+                    <label for="studentSection">Year and Section</label>
+                    <input type="text" id="studentSection" placeholder="Enter your year and section">
+                </div>
+
+                <div class="form-group">
+                    <label for="studentDate">Date</label>
+                    <input type="date" id="studentDate">
+                </div>
+            </div>
+        </section>
+
+        <!-- INSTRUCTIONS -->
+        <section class="instructions-card">
+            <h2>Assessment Instructions</h2>
+            <ul>
+                <li>Read each question carefully before selecting or writing your answer.</li>
+                <li>Answer all 10 Identification questions.</li>
+                <li>Choose only one correct answer for each Multiple Choice question.</li>
+                <li>Choose True or False for every statement.</li>
+                <li>Answer all five essay questions using your own words.</li>
+                <li>Each essay answer must contain at least 150 words.</li>
+                <li>Click the Submit Assessment button when you are finished.</li>
+            </ul>
+
+            <div class="score-information">
+                <strong>Scoring:</strong>
+                <span>Identification: 10 points</span>
+                <span>Multiple Choice: 10 points</span>
+                <span>True or False: 10 points</span>
+                <span>Essay: Teacher evaluation, 50 points</span>
+            </div>
+        </section>
+
+        <!-- PROGRESS -->
+        <section class="progress-card">
+            <div class="progress-top">
+                <strong>Assessment Progress</strong>
+                <span id="progressText">0% Completed</span>
+            </div>
+
+            <div class="progress-track">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+
+            <p id="answeredCount">0 of 35 questions answered</p>
+        </section>
+
+        <!-- IDENTIFICATION -->
+        <section class="assessment-section" id="identification">
+            <div class="section-heading">
+                <span class="section-number">02</span>
+                <div>
+                    <h2>Part I – Identification</h2>
+                    <p>Write the correct term being described. (10 points)</p>
+                </div>
+            </div>
+
+            <div id="identificationQuestions"></div>
+        </section>
+
+        <!-- MULTIPLE CHOICE -->
+        <section class="assessment-section" id="multipleChoice">
+            <div class="section-heading">
+                <span class="section-number">03</span>
+                <div>
+                    <h2>Part II – Multiple Choice</h2>
+                    <p>Choose the letter of the best answer. (10 points)</p>
+                </div>
+            </div>
+
+            <div id="multipleChoiceQuestions"></div>
+        </section>
+
+        <!-- TRUE FALSE -->
+        <section class="assessment-section" id="trueFalse">
+            <div class="section-heading">
+                <span class="section-number">04</span>
+                <div>
+                    <h2>Part III – True or False</h2>
+                    <p>Read each statement and select True or False. (10 points)</p>
+                </div>
+            </div>
+
+            <div id="trueFalseQuestions"></div>
+        </section>
+
+        <!-- ESSAY -->
+        <section class="assessment-section" id="essay">
+            <div class="section-heading">
+                <span class="section-number">05</span>
+                <div>
+                    <h2>Part IV – Essay</h2>
+                    <p>Answer each question in at least 150 words. (50 points)</p>
+                </div>
+            </div>
+
+            <div class="essay-reminder">
+                <strong>Essay Reminder:</strong>
+                Your answers should be clear, organized, and written in your
+                own words. Each response must have at least 150 words.
+                Essay answers will be evaluated by your instructor.
+            </div>
+
+            <div id="essayQuestions"></div>
+        </section>
+
+        <!-- SUBMIT -->
+        <section class="submit-section">
+            <h2>Ready to Submit?</h2>
+            <p>
+                Review your answers before submitting. Unanswered questions
+                will be counted as incorrect in the automatically scored sections.
+            </p>
+
+            <button type="button" id="submitAssessment" class="submit-button">
+                Submit Assessment
+            </button>
+
+            <p class="submit-note" id="submitMessage">
+                Make sure you have answered all questions before submitting.
+            </p>
+        </section>
+
+        <!-- RESULTS -->
+        <section class="results-section" id="resultsSection">
+            <div class="result-header">
+                <span class="result-icon">✓</span>
+                <h2>Assessment Submitted!</h2>
+                <p id="resultStudentName">Student Name</p>
+            </div>
+
+            <div class="score-summary">
+                <div class="total-score">
+                    <span>Objective Score</span>
+                    <strong id="totalScore">0 / 30</strong>
+                    <small id="scorePercentage">0%</small>
+                </div>
+
+                <div class="score-breakdown">
+                    <div>
+                        <span>Identification</span>
+                        <strong id="identificationScore">0 / 10</strong>
+                    </div>
+                    <div>
+                        <span>Multiple Choice</span>
+                        <strong id="multipleChoiceScore">0 / 10</strong>
+                    </div>
+                    <div>
+                        <span>True or False</span>
+                        <strong id="trueFalseScore">0 / 10</strong>
+                    </div>
+                    <div>
+                        <span>Essay</span>
+                        <strong>For teacher evaluation</strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="result-message" id="resultMessage"></div>
+
+            <div class="answer-review">
+                <h3>Answer Review and Explanations</h3>
+                <p>
+                    Review the correct answers and explanations below to
+                    understand the concepts covered in this lesson.
+                </p>
+
+                <div id="answerReview"></div>
+            </div>
+
+            <div class="result-actions">
+                <button type="button" id="printResults" class="secondary-button">
+                    Print Results
+                </button>
+
+                <a href="lesson8.html" class="lesson-button">
+                    Back to Lesson 8
+                </a>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <h3>WEBTECH LEARN</h3>
+            <p>BSIT Digital E-Book | Web Technology Learning Resource</p>
+            <span>EXCELLENCE BEYOND LIMITS</span>
+            <p class="copyright">© 2026 BSIT Digital Minds. All Rights Reserved.</p>
+        </footer>
+
+    </main>
+
+    <script src="lesson8-assessment.js"></script>
+</body>
+</html>

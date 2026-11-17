@@ -1,0 +1,1538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <title>Chapter 1 | Internet and World Wide Web Fundamentals</title>
+
+    <link rel="stylesheet" href="lesson1.css">
+    <link rel="stylesheet" href="display-settings.css">
+
+    <script src="display-settings.js" defer></script>
+    <script src="lesson1.js" defer></script>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+    <div class="nav-container">
+
+        <a href="index.html" class="logo">
+            <img src="logo.jpg" alt="BSIT Digital Minds Logo" class="logo-image">
+
+            <span class="logo-text">
+                <small>BSIT | DIGITAL MINDS</small>
+            </span>
+        </a>
+
+        <a href="2nd yr toc.html" class="back-home">
+            ← Back to Table of Content
+        </a>
+
+    </div>
+    <link rel="stylesheet" href="ebook-pagination.css">
+<script src="ebook-pagination.js" defer></script>
+</header>
+
+
+<div class="page-layout">
+
+    <aside class="sidebar">
+        <h3>LESSON 01</h3>
+        <p class="sidebar-subtitle">Computer System Platforms and Architecture</p>
+
+        <nav aria-label="Lesson 1 Table of Contents">
+            <a href="#introduction">Introduction</a>
+            <a href="#objectives">Learning Objectives</a>
+            <a href="#computer-system">Computer Systems</a>
+            <a href="#functions">Basic Functions</a>
+            <a href="#components">Computer Components</a>
+            <a href="#hardware">Hardware</a>
+            <a href="#software">Software</a>
+            <a href="#peopleware">Peopleware</a>
+            <a href="#platforms">Computer Platforms</a>
+            <a href="#desktop">Desktop Platforms</a>
+            <a href="#mobile">Mobile Platforms</a>
+            <a href="#server">Server Platforms</a>
+            <a href="#evolution">Computer Generations</a>
+            <a href="#architecture">Computer Architecture</a>
+            <a href="#cpu">CPU</a>
+            <a href="#memory">Memory Systems</a>
+            <a href="#input-output">Input and Output</a>
+            <a href="#storage">Storage Systems</a>
+            <a href="#data">Data Representation</a>
+            <a href="#von-neumann">Von Neumann Architecture</a>
+            <a href="#operating-system">Operating Systems</a>
+            <a href="#performance">System Performance</a>
+            <a href="#trends">Modern Trends</a>
+            <a href="#resources">Learning Resources</a>
+            <a href="#activities">Activities and Assessment</a>
+            <a href="#glossary">Glossary</a>
+            <a href="#references">References</a>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+
+        <!-- LESSON BANNER -->
+        <section class="lesson-banner" id="introduction">
+            <span class="chapter-label">SECOND YEAR • LESSON 01</span>
+            <h1>Computer System Platforms and Architecture</h1>
+            <p>
+                Understand the components, platforms, architecture,
+                and operation of computer systems in modern technology.
+            </p>
+        </section>
+
+        <!-- INTRODUCTION -->
+        <section class="content-section">
+            <h2>Introduction</h2>
+
+            <blockquote>
+                "Technology is best when it brings people together."
+                <span>— Matt Mullenweg</span>
+            </blockquote>
+
+            <p>
+                Technology has become a vital part of everyday life.
+                People use computers for communication, education,
+                entertainment, business, research, and many other activities.
+                Whether using a smartphone to send messages, a laptop to
+                complete school assignments, or an online platform to attend
+                virtual meetings, computer systems play an important role
+                in modern society.
+            </p>
+
+            <p>
+                Computers have transformed the way individuals and
+                organizations perform tasks. Schools use computers to
+                provide learning materials and support collaboration.
+                Businesses use computer systems to manage records,
+                process transactions, and communicate with customers.
+                Hospitals and government agencies also depend on computers
+                to manage information and deliver services.
+            </p>
+
+            <p>
+                Computer System Platforms and Architecture focuses on the
+                design, structure, and operation of computer systems.
+                It examines the hardware and software components that
+                make computer systems function effectively. It also
+                explores the different platforms that support applications
+                and explains how computer hardware is organized to process
+                information.
+            </p>
+
+            <p>
+                A computer system platform consists of hardware,
+                operating systems, and supporting software that allow
+                applications to run. Computer architecture describes
+                how the components are organized and how they interact
+                to perform operations.
+            </p>
+
+            <div class="highlight-box">
+                <h3>Key Idea</h3>
+                <p>
+                    Understanding computer platforms and architecture
+                    helps learners understand how computers process,
+                    store, and manage information.
+                </p>
+            </div>
+        </section>
+
+        <!-- OBJECTIVES -->
+        <section class="content-section" id="objectives">
+            <h2>Learning Objectives</h2>
+            <p>At the end of this lesson, students should be able to:</p>
+
+            <ul>
+                <li>Explain the meaning and importance of computer systems.</li>
+                <li>Identify the basic functions and major components of a computer.</li>
+                <li>Differentiate hardware, software, and peopleware.</li>
+                <li>Describe different computer system platforms.</li>
+                <li>Explain the evolution of computer generations.</li>
+                <li>Identify the major functional units of computer architecture.</li>
+                <li>Describe the functions of the CPU, memory, input, output, and storage devices.</li>
+                <li>Explain the Von Neumann Architecture and its operation.</li>
+                <li>Recognize the functions of an operating system.</li>
+                <li>Discuss modern trends in computer systems.</li>
+            </ul>
+        </section>
+
+        <!-- COMPUTER SYSTEMS -->
+        <section class="content-section" id="computer-system">
+            <h2>1. Computer Systems</h2>
+
+            <img class="lesson-image"
+                 src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=85"
+                 alt="Computer circuit board and electronic components">
+
+            <p class="image-caption">A computer system uses electronic components to process information.</p>
+
+            <p>
+                A computer system is an electronic system that accepts
+                data, processes it according to instructions, stores
+                information, and produces meaningful output.
+            </p>
+
+            <p>
+                Computer systems are used in different environments,
+                including schools, offices, businesses, hospitals,
+                industries, and homes. They help users perform tasks
+                more accurately and efficiently.
+            </p>
+
+            <div class="highlight-box">
+                <h3>Examples of Computer Systems</h3>
+                <ul>
+                    <li>Desktop computers and laptops</li>
+                    <li>Smartphones and tablets</li>
+                    <li>Servers and workstations</li>
+                    <li>Embedded systems in appliances and vehicles</li>
+                    <li>Supercomputers used for scientific research</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- BASIC FUNCTIONS -->
+        <section class="content-section" id="functions">
+            <h2>2. Basic Functions of a Computer</h2>
+
+            <p>
+                A computer performs four basic functions to transform
+                raw data into useful information.
+            </p>
+
+            <div class="function-grid">
+                <article class="function-card">
+                    <span class="function-number">01</span>
+                    <h3>Input</h3>
+                    <p>Accepts data and instructions from the user through input devices.</p>
+                </article>
+
+                <article class="function-card">
+                    <span class="function-number">02</span>
+                    <h3>Processing</h3>
+                    <p>Processes data and performs calculations using the CPU.</p>
+                </article>
+
+                <article class="function-card">
+                    <span class="function-number">03</span>
+                    <h3>Output</h3>
+                    <p>Displays or presents the processed information to the user.</p>
+                </article>
+
+                <article class="function-card">
+                    <span class="function-number">04</span>
+                    <h3>Storage</h3>
+                    <p>Saves data, instructions, and information for future use.</p>
+                </article>
+            </div>
+
+            <div class="process-flow">
+                <div class="process-box">INPUT</div>
+                <span>→</span>
+                <div class="process-box">PROCESS</div>
+                <span>→</span>
+                <div class="process-box">OUTPUT</div>
+                <span>→</span>
+                <div class="process-box">STORAGE</div>
+            </div>
+            <p class="image-caption">The four basic functions of a computer system.</p>
+        </section>
+
+        <!-- COMPONENTS -->
+        <section class="content-section" id="components">
+            <h2>3. Major Components of a Computer System</h2>
+
+            <p>
+                A computer system is composed of different elements
+                that work together to perform computing tasks.
+            </p>
+
+            <div class="info-grid">
+                <article class="info-card">
+                    <h3>Hardware</h3>
+                    <p>The physical parts of a computer that can be seen and touched.</p>
+                </article>
+
+                <article class="info-card">
+                    <h3>Software</h3>
+                    <p>Programs and instructions that tell the computer what to do.</p>
+                </article>
+
+                <article class="info-card">
+                    <h3>Peopleware</h3>
+                    <p>The people who use, operate, maintain, and develop computer systems.</p>
+                </article>
+            </div>
+
+            <div class="highlight-box">
+                <h3>Remember</h3>
+                <p>
+                    Hardware, software, and peopleware work together.
+                    A computer system needs both physical components
+                    and programs, as well as people who know how to
+                    operate and manage them.
+                </p>
+            </div>
+        </section>
+
+        <!-- HARDWARE -->
+        <section class="content-section" id="hardware">
+            <h2>4. Computer Hardware</h2>
+
+            <img class="lesson-image"
+                 src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&w=1200&q=85"
+                 alt="Computer hardware components">
+
+            <p>
+                Hardware refers to the physical components of a
+                computer system. These components perform input,
+                processing, output, and storage operations.
+            </p>
+
+            <div class="info-grid">
+                <article class="info-card">
+                    <h3>Input Hardware</h3>
+                    <p>Keyboard, mouse, scanner, microphone, and webcam.</p>
+                </article>
+
+                <article class="info-card">
+                    <h3>Processing Hardware</h3>
+                    <p>CPU, motherboard, and graphics processing unit.</p>
+                </article>
+
+                <article class="info-card">
+                    <h3>Output Hardware</h3>
+                    <p>Monitor, printer, speakers, and projector.</p>
+                </article>
+
+                <article class="info-card">
+                    <h3>Storage Hardware</h3>
+                    <p>Hard disk drive, solid-state drive, flash drive, and memory card.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- SOFTWARE -->
+        <section class="content-section" id="software">
+            <h2>5. Computer Software</h2>
+
+            <p>
+                Software refers to the programs, instructions, and
+                applications that control computer operations.
+                Unlike hardware, software cannot be physically touched.
+            </p>
+
+            <div class="info-grid">
+                <article class="info-card">
+                    <h3>System Software</h3>
+                    <p>
+                        Manages computer hardware and provides a platform
+                        for application software.
+                    </p>
+                    <p><strong>Examples:</strong> Windows, Linux, macOS, and device drivers.</p>
+                </article>
+
+                <article class="info-card">
+                    <h3>Application Software</h3>
+                    <p>
+                        Helps users perform specific tasks such as writing
+                        documents, browsing, designing, and communicating.
+                    </p>
+                    <p><strong>Examples:</strong> Microsoft Word, Google Chrome, and Photoshop.</p>
+                </article>
+
+                <article class="info-card">
+                    <h3>Utility Software</h3>
+                    <p>
+                        Helps maintain, protect, and improve computer
+                        system performance.
+                    </p>
+                    <p><strong>Examples:</strong> Antivirus programs, backup tools, and disk cleanup utilities.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- PEOPLEWARE -->
+        <section class="content-section" id="peopleware">
+            <h2>6. Peopleware</h2>
+
+            <p>
+                Peopleware refers to the individuals who interact
+                with and manage computer systems. They are responsible
+                for using, developing, maintaining, and supporting
+                technology.
+            </p>
+
+            <div class="info-grid">
+                <article class="info-card">
+                    <h3>End Users</h3>
+                    <p>People who use computers to complete everyday tasks.</p>
+                </article>
+
+                <article class="info-card">
+                    <h3>Programmers</h3>
+                    <p>Develop software applications and computer programs.</p>
+                </article>
+
+                <article class="info-card">
+                    <h3>System Administrators</h3>
+                    <p>Manage computer systems, networks, and servers.</p>
+                </article>
+
+                <article class="info-card">
+                    <h3>IT Support Specialists</h3>
+                    <p>Help users troubleshoot hardware and software problems.</p>
+                </article>
+            </div>
+
+            <div class="highlight-box">
+                <h3>Importance of Peopleware</h3>
+                <p>
+                    Skilled professionals are necessary for developing
+                    software, managing hardware, solving technical
+                    problems, and ensuring that computer systems
+                    operate effectively.
+                </p>
+            </div>
+        </section>
+
+        <!-- PLATFORMS -->
+        <section class="content-section" id="platforms">
+            <h2>7. Computer System Platforms</h2>
+
+            <img class="lesson-image"
+                 src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=85"
+                 alt="Computer workstation used for software development">
+
+            <p>
+                A computer system platform is the environment in which
+                software applications run. Platforms consist of hardware,
+                operating systems, and supporting software that provide
+                services for users and applications.
+            </p>
+
+            <p>
+                Different platforms are designed to meet different
+                computing needs. Some are intended for personal use,
+                while others support businesses, organizations,
+                and large-scale networks.
+            </p>
+        </section>
+
+        <!-- DESKTOP -->
+        <section class="content-section" id="desktop">
+            <h2>8. Desktop Platforms</h2>
+
+            <p>
+                Desktop platforms are designed for personal and
+                professional computing tasks. They usually provide
+                high processing power, large storage capacity,
+                and support for multiple applications.
+            </p>
+
+            <div class="info-grid">
+                <article class="info-card">
+                    <h3>Microsoft Windows</h3>
+                    <p>A widely used desktop operating system for personal and business computers.</p>
+                </article>
+
+                <article class="info-card">
+                    <h3>macOS</h3>
+                    <p>Apple's operating system designed for Mac computers.</p>
+                </article>
+
+                <article class="info-card">
+                    <h3>Linux</h3>
+                    <p>An open-source operating system used on desktops, servers, and other devices.</p>
+                </article>
+            </div>
+
+            <div class="highlight-box">
+                <h3>Common Uses</h3>
+                <ul>
+                    <li>Office work and document preparation</li>
+                    <li>Research and online learning</li>
+                    <li>Software development</li>
+                    <li>Gaming and graphic design</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- MOBILE -->
+        <section class="content-section" id="mobile">
+            <h2>9. Mobile Platforms</h2>
+
+            <img class="lesson-image"
+                 src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=1200&q=85"
+                 alt="Modern smartphone">
+
+            <p>
+                Mobile platforms are designed for devices that can
+                be easily carried and used in different locations.
+                They support wireless connectivity, touchscreen
+                interfaces, and battery-powered operation.
+            </p>
+
+            <div class="info-grid">
+                <article class="info-card">
+                    <h3>Android</h3>
+                    <p>A mobile operating system used by smartphones, tablets, and other smart devices.</p>
+                </article>
+
+                <article class="info-card">
+                    <h3>iOS</h3>
+                    <p>Apple's mobile operating system used on iPhone devices.</p>
+                </article>
+            </div>
+
+            <div class="highlight-box">
+                <h3>Common Uses of Mobile Platforms</h3>
+                <ul>
+                    <li>Communication and social networking</li>
+                    <li>Mobile banking and online shopping</li>
+                    <li>Online learning</li>
+                    <li>Navigation and entertainment</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- SERVER -->
+        <section class="content-section" id="server">
+            <h2>10. Server Platforms</h2>
+
+            <img class="lesson-image"
+                 src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=85"
+                 alt="Server racks in a data center">
+
+            <p>
+                Server platforms provide services and resources to
+                other computers connected through a network. Unlike
+                desktop computers, servers are designed to support
+                many users simultaneously and operate continuously
+                for long periods.
+            </p>
+
+            <div class="info-grid">
+                <article class="info-card">
+                    <h3>Windows Server</h3>
+                    <p>A Microsoft server operating system used to manage network resources and services.</p>
+                </article>
+
+                <article class="info-card">
+                    <h3>Ubuntu Server</h3>
+                    <p>A Linux-based server platform used for hosting and managing services.</p>
+                </article>
+
+                <article class="info-card">
+                    <h3>Red Hat Enterprise Linux</h3>
+                    <p>An enterprise Linux platform used in business and data center environments.</p>
+                </article>
+            </div>
+
+            <div class="highlight-box">
+                <h3>Functions of Server Platforms</h3>
+                <ul>
+                    <li>File storage and sharing</li>
+                    <li>Database management</li>
+                    <li>Website hosting</li>
+                    <li>Email services</li>
+                    <li>Network management</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- EVOLUTION -->
+        <section class="content-section" id="evolution">
+            <h2>11. Evolution of Computer Generations</h2>
+
+            <p>
+                Computer technology has progressed significantly over
+                the years. Early computers were large, expensive, and
+                limited in their capabilities. As technology advanced,
+                computers became faster, smaller, more affordable,
+                and more powerful.
+            </p>
+
+            <div class="timeline">
+
+                <article class="timeline-item">
+                    <span class="timeline-date">FIRST GENERATION</span>
+                    <h3>Vacuum Tubes</h3>
+                    <p>
+                        First-generation computers used vacuum tubes
+                        as their primary electronic components.
+                    </p>
+                    <ul>
+                        <li>Extremely large in size</li>
+                        <li>Required significant electrical power</li>
+                        <li>Produced large amounts of heat</li>
+                        <li>Expensive to operate</li>
+                    </ul>
+                    <p><strong>Examples:</strong> ENIAC and UNIVAC I.</p>
+                </article>
+
+                <article class="timeline-item">
+                    <span class="timeline-date">SECOND GENERATION</span>
+                    <h3>Transistors</h3>
+                    <p>
+                        Transistors replaced vacuum tubes, making
+                        computers smaller, faster, and more reliable.
+                    </p>
+                    <ul>
+                        <li>Smaller physical size</li>
+                        <li>Lower power consumption</li>
+                        <li>Faster operation</li>
+                        <li>Greater reliability</li>
+                    </ul>
+                </article>
+
+                <article class="timeline-item">
+                    <span class="timeline-date">THIRD GENERATION</span>
+                    <h3>Integrated Circuits</h3>
+                    <p>
+                        Integrated circuits combined multiple
+                        electronic components onto a single chip.
+                    </p>
+                    <ul>
+                        <li>Increased processing speed</li>
+                        <li>Improved reliability</li>
+                        <li>Reduced maintenance costs</li>
+                        <li>Smaller physical dimensions</li>
+                    </ul>
+                </article>
+
+                <article class="timeline-item">
+                    <span class="timeline-date">FOURTH GENERATION</span>
+                    <h3>Microprocessors</h3>
+                    <p>
+                        The fourth generation began with the invention
+                        of the microprocessor, which combines essential
+                        CPU functions into a single chip.
+                    </p>
+                    <ul>
+                        <li>Personal computers became common</li>
+                        <li>Significant performance improvements</li>
+                        <li>Reduced cost</li>
+                        <li>Increased portability</li>
+                    </ul>
+                </article>
+
+                <article class="timeline-item">
+                    <span class="timeline-date">FIFTH GENERATION</span>
+                    <h3>Artificial Intelligence and Advanced Computing</h3>
+                    <p>
+                        Fifth-generation computing focuses on advanced
+                        technologies designed to make computers more
+                        intelligent and efficient.
+                    </p>
+                    <ul>
+                        <li>Artificial Intelligence (AI)</li>
+                        <li>Machine Learning</li>
+                        <li>Robotics</li>
+                        <li>Natural Language Processing</li>
+                        <li>Quantum Computing</li>
+                    </ul>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- ARCHITECTURE -->
+        <section class="content-section" id="architecture">
+            <h2>12. Introduction to Computer Architecture</h2>
+
+            <p>
+                Computer architecture refers to the design, structure,
+                and organization of a computer system. It describes
+                how hardware components are arranged and how they
+                work together to process information.
+            </p>
+
+            <p>
+                Computer architecture serves as the blueprint of a
+                computer system. It determines how instructions are
+                executed, how memory is organized, how data is
+                transferred, and how system performance can be optimized.
+            </p>
+
+            <div class="highlight-box">
+                <h3>Importance of Computer Architecture</h3>
+                <ul>
+                    <li><strong>Performance:</strong> Improves processing speed and responsiveness.</li>
+                    <li><strong>Reliability:</strong> Supports stable operation and reduces errors.</li>
+                    <li><strong>Scalability:</strong> Allows systems to be upgraded and expanded.</li>
+                    <li><strong>Efficiency:</strong> Helps use memory and storage resources effectively.</li>
+                    <li><strong>Security:</strong> Supports protection of data and system resources.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- CPU -->
+        <section class="content-section" id="cpu">
+            <h2>13. Central Processing Unit (CPU)</h2>
+
+            <img class="lesson-image"
+                 src="https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?auto=format&fit=crop&w=1200&q=85"
+                 alt="Computer processor">
+
+            <p>
+                The Central Processing Unit (CPU) is often called
+                the brain of the computer. It executes instructions,
+                performs calculations, and controls the activities
+                of other computer components.
+            </p>
+
+            <div class="info-grid">
+                <article class="info-card">
+                    <h3>Arithmetic Logic Unit (ALU)</h3>
+                    <p>
+                        Performs arithmetic operations such as addition
+                        and subtraction, as well as logical comparisons.
+                    </p>
+                </article>
+
+                <article class="info-card">
+                    <h3>Control Unit (CU)</h3>
+                    <p>
+                        Directs and coordinates the operations of
+                        computer components.
+                    </p>
+                </article>
+
+                <article class="info-card">
+                    <h3>Registers</h3>
+                    <p>
+                        Small, high-speed storage locations inside
+                        the CPU that temporarily hold data and instructions.
+                    </p>
+                </article>
+
+                <article class="info-card">
+                    <h3>Cache Memory</h3>
+                    <p>
+                        High-speed memory that stores frequently
+                        accessed data and instructions for faster processing.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <!-- MEMORY -->
+        <section class="content-section" id="memory">
+            <h2>14. Memory Systems</h2>
+
+            <p>
+                Computer memory stores data and instructions that
+                the CPU needs while performing tasks. Memory can
+                be classified into primary memory and secondary storage.
+            </p>
+
+            <div class="info-grid">
+                <article class="info-card">
+                    <h3>Random Access Memory (RAM)</h3>
+                    <p>
+                        RAM temporarily stores data and programs
+                        currently being used by the computer. It is
+                        volatile, meaning its contents are lost
+                        when power is turned off.
+                    </p>
+                </article>
+
+                <article class="info-card">
+                    <h3>Read-Only Memory (ROM)</h3>
+                    <p>
+                        ROM stores important instructions needed
+                        for computer startup. It is non-volatile,
+                        meaning it retains information without power.
+                    </p>
+                </article>
+
+                <article class="info-card">
+                    <h3>Cache Memory</h3>
+                    <p>
+                        Cache is a small, high-speed memory that
+                        helps the CPU access frequently used data quickly.
+                    </p>
+                </article>
+            </div>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Memory Type</th>
+                            <th>Purpose</th>
+                            <th>Volatility</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>RAM</td>
+                            <td>Temporarily stores active data and programs</td>
+                            <td>Volatile</td>
+                        </tr>
+                        <tr>
+                            <td>ROM</td>
+                            <td>Stores startup instructions</td>
+                            <td>Non-volatile</td>
+                        </tr>
+                        <tr>
+                            <td>Cache</td>
+                            <td>Provides faster access to frequently used data</td>
+                            <td>Volatile</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- INPUT OUTPUT -->
+        <section class="content-section" id="input-output">
+            <h2>15. Input and Output Systems</h2>
+
+            <p>
+                Input and output devices allow users to communicate
+                with a computer system. Input devices send data to
+                the computer, while output devices present the
+                results of processing.
+            </p>
+
+            <div class="info-grid">
+                <article class="info-card">
+                    <h3>Input Devices</h3>
+                    <p>
+                        Devices used to enter data and instructions
+                        into a computer.
+                    </p>
+                    <ul>
+                        <li>Keyboard</li>
+                        <li>Mouse</li>
+                        <li>Scanner</li>
+                        <li>Microphone</li>
+                        <li>Webcam</li>
+                    </ul>
+                </article>
+
+                <article class="info-card">
+                    <h3>Output Devices</h3>
+                    <p>
+                        Devices that present processed information
+                        to the user.
+                    </p>
+                    <ul>
+                        <li>Monitor</li>
+                        <li>Printer</li>
+                        <li>Speakers</li>
+                        <li>Projector</li>
+                        <li>Headphones</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <!-- STORAGE -->
+        <section class="content-section" id="storage">
+            <h2>16. Storage Systems</h2>
+
+            <p>
+                Storage devices keep data, applications, and files
+                for future use. Storage capacity and speed are
+                important factors affecting computer performance.
+            </p>
+
+            <div class="info-grid">
+                <article class="info-card">
+                    <h3>Hard Disk Drive (HDD)</h3>
+                    <p>
+                        Stores data using magnetic technology.
+                        It offers high storage capacity at an
+                        affordable cost but is generally slower
+                        than an SSD.
+                    </p>
+                </article>
+
+                <article class="info-card">
+                    <h3>Solid-State Drive (SSD)</h3>
+                    <p>
+                        Uses flash memory technology. It provides
+                        faster performance, improved durability,
+                        and quicker boot times.
+                    </p>
+                </article>
+
+                <article class="info-card">
+                    <h3>Flash Drives</h3>
+                    <p>
+                        Small portable storage devices used for
+                        transferring files, sharing documents,
+                        and backing up information.
+                    </p>
+                </article>
+
+                <article class="info-card">
+                    <h3>Memory Cards</h3>
+                    <p>
+                        Compact storage devices commonly used
+                        in cameras, smartphones, and tablets.
+                    </p>
+                </article>
+
+                <article class="info-card">
+                    <h3>Cloud Storage</h3>
+                    <p>
+                        Allows users to store files on remote
+                        servers and access them through the Internet.
+                    </p>
+                    <p><strong>Examples:</strong> Google Drive, OneDrive, and Dropbox.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- DATA -->
+        <section class="content-section" id="data">
+            <h2>17. Data Representation in Computer Systems</h2>
+
+            <p>
+                Computers represent and process information using
+                number systems. Digital computers use binary
+                because electronic circuits operate using two
+                basic states.
+            </p>
+
+            <div class="info-grid">
+                <article class="info-card">
+                    <h3>Binary Number System</h3>
+                    <p>Uses only two digits: 0 and 1.</p>
+                </article>
+
+                <article class="info-card">
+                    <h3>Decimal Number System</h3>
+                    <p>Uses ten digits: 0 through 9.</p>
+                </article>
+
+                <article class="info-card">
+                    <h3>Hexadecimal Number System</h3>
+                    <p>Uses sixteen symbols: 0–9 and A–F.</p>
+                </article>
+
+                <article class="info-card">
+                    <h3>Data Units</h3>
+                    <p>
+                        A bit is a single binary digit. Eight bits
+                        make one byte. Larger units include kilobytes,
+                        megabytes, gigabytes, and terabytes.
+                    </p>
+                </article>
+            </div>
+
+            <div class="highlight-box">
+                <h3>Example</h3>
+                <p>
+                    The binary number <strong>1010</strong> represents
+                    the decimal number <strong>10</strong>.
+                </p>
+            </div>
+        </section>
+
+        <!-- VON NEUMANN -->
+        <section class="content-section" id="von-neumann">
+            <h2>18. Von Neumann Architecture</h2>
+
+            <p>
+                The Von Neumann Architecture is one of the most
+                widely used models for computer design. In this
+                architecture, both instructions and data are stored
+                in the same memory.
+            </p>
+
+            <div class="architecture-diagram">
+                <div class="diagram-box">
+                    <h3>INPUT UNIT</h3>
+                    <p>Receives data and instructions</p>
+                </div>
+
+                <div class="diagram-arrow">↓</div>
+
+                <div class="diagram-box">
+                    <h3>MEMORY UNIT</h3>
+                    <p>Stores data and instructions</p>
+                </div>
+
+                <div class="diagram-arrow">↕</div>
+
+                <div class="diagram-box cpu-diagram">
+                    <h3>CPU</h3>
+                    <p>Control Unit • ALU • Registers</p>
+                </div>
+
+                <div class="diagram-arrow">↓</div>
+
+                <div class="diagram-box">
+                    <h3>OUTPUT UNIT</h3>
+                    <p>Displays processed information</p>
+                </div>
+            </div>
+
+            <p class="image-caption">Simplified representation of the Von Neumann computer architecture.</p>
+
+            <h3>Fetch-Decode-Execute Cycle</h3>
+
+            <div class="info-grid">
+                <article class="info-card">
+                    <h3>1. Fetch</h3>
+                    <p>The CPU retrieves an instruction from memory.</p>
+                </article>
+
+                <article class="info-card">
+                    <h3>2. Decode</h3>
+                    <p>The Control Unit interprets the instruction.</p>
+                </article>
+
+                <article class="info-card">
+                    <h3>3. Execute</h3>
+                    <p>The CPU performs the required operation.</p>
+                </article>
+
+                <article class="info-card">
+                    <h3>4. Store</h3>
+                    <p>The result is saved when necessary.</p>
+                </article>
+            </div>
+
+            <h3>Advantages</h3>
+            <ul>
+                <li>Simple design</li>
+                <li>Flexible operation</li>
+                <li>Supports stored-program systems</li>
+                <li>Widely implemented</li>
+            </ul>
+
+            <h3>Disadvantages</h3>
+            <ul>
+                <li>Data and instructions share the same memory path.</li>
+                <li>Shared access can create performance bottlenecks.</li>
+            </ul>
+        </section>
+
+        <!-- OPERATING SYSTEM -->
+        <section class="content-section" id="operating-system">
+            <h2>19. Operating System Architecture</h2>
+
+            <p>
+                An operating system (OS) provides the interface
+                between computer hardware and users. It manages
+                system resources and ensures that applications
+                function properly.
+            </p>
+
+            <div class="info-grid">
+                <article class="info-card">
+                    <h3>Process Management</h3>
+                    <p>Controls running programs and allocates CPU time.</p>
+                </article>
+
+                <article class="info-card">
+                    <h3>Memory Management</h3>
+                    <p>Allocates and manages memory used by programs.</p>
+                </article>
+
+                <article class="info-card">
+                    <h3>File Management</h3>
+                    <p>Organizes files and folders on storage devices.</p>
+                </article>
+
+                <article class="info-card">
+                    <h3>Device Management</h3>
+                    <p>Controls hardware devices through drivers.</p>
+                </article>
+
+                <article class="info-card">
+                    <h3>Security Management</h3>
+                    <p>Helps protect system resources and user information.</p>
+                </article>
+
+                <article class="info-card">
+                    <h3>User Interface</h3>
+                    <p>Allows users to interact with the computer system.</p>
+                </article>
+            </div>
+
+            <div class="highlight-box">
+                <h3>Examples of Operating Systems</h3>
+                <p>Microsoft Windows, macOS, Linux, Android, and iOS.</p>
+            </div>
+        </section>
+
+        <!-- PERFORMANCE -->
+        <section class="content-section" id="performance">
+            <h2>20. System Performance Factors</h2>
+
+            <p>
+                Computer performance refers to how efficiently
+                a computer system completes tasks and processes
+                information.
+            </p>
+
+            <div class="info-grid">
+                <article class="info-card">
+                    <h3>CPU Speed</h3>
+                    <p>Influences how quickly the processor executes instructions.</p>
+                </article>
+
+                <article class="info-card">
+                    <h3>RAM Capacity</h3>
+                    <p>Affects how many applications and tasks can run smoothly.</p>
+                </article>
+
+                <article class="info-card">
+                    <h3>Storage Type</h3>
+                    <p>SSD storage generally provides faster data access than HDD storage.</p>
+                </article>
+
+                <article class="info-card">
+                    <h3>Graphics Processing</h3>
+                    <p>Supports graphics-intensive tasks such as video editing and gaming.</p>
+                </article>
+
+                <article class="info-card">
+                    <h3>Cooling System</h3>
+                    <p>Helps maintain safe operating temperatures and stable performance.</p>
+                </article>
+
+                <article class="info-card">
+                    <h3>Software Optimization</h3>
+                    <p>Efficient software helps computer resources work effectively.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- MODERN TRENDS -->
+        <section class="content-section" id="trends">
+            <h2>21. Modern Trends in Computer Systems</h2>
+
+            <p>
+                Modern computer systems continue to develop as
+                new technologies provide faster processing,
+                improved connectivity, and more intelligent services.
+            </p>
+
+            <div class="info-grid">
+                <article class="info-card">
+                    <h3>Artificial Intelligence (AI)</h3>
+                    <p>
+                        Enables computer systems to perform tasks
+                        that normally require human intelligence,
+                        such as recognizing patterns and understanding language.
+                    </p>
+                </article>
+
+                <article class="info-card">
+                    <h3>Internet of Things (IoT)</h3>
+                    <p>
+                        Connects physical devices to the Internet
+                        so they can collect and exchange information.
+                    </p>
+                </article>
+
+                <article class="info-card">
+                    <h3>Edge Computing</h3>
+                    <p>
+                        Processes data closer to where it is generated
+                        instead of sending everything to a distant server.
+                    </p>
+                </article>
+
+                <article class="info-card">
+                    <h3>Virtualization</h3>
+                    <p>
+                        Allows multiple virtual computing environments
+                        to operate on a single physical machine.
+                    </p>
+                </article>
+
+                <article class="info-card">
+                    <h3>Quantum Computing</h3>
+                    <p>
+                        Uses principles of quantum mechanics to
+                        explore new approaches to complex computation.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <!-- LEARNING RESOURCES -->
+        <section class="content-section" id="resources">
+            <h2>Learning Resources</h2>
+
+            <p>
+                Use these resources to review computer systems,
+                hardware, software, and computer architecture.
+            </p>
+
+            <div class="reference-item">
+                <h3>Computer Architecture</h3>
+                <p>Learn about the organization and design of computer systems.</p>
+                <a href="https://www.geeksforgeeks.org/computer-organization-and-architecture-tutorials/"
+                   target="_blank" rel="noopener noreferrer">Explore Learning Resource →</a>
+            </div>
+
+            <div class="reference-item">
+                <h3>Computer Hardware and Software</h3>
+                <p>Review the basic components and functions of computer systems.</p>
+                <a href="https://edu.gcfglobal.org/en/computerbasics/"
+                   target="_blank" rel="noopener noreferrer">Explore Computer Basics →</a>
+            </div>
+
+            <div class="reference-item">
+                <h3>Operating Systems</h3>
+                <p>Understand how operating systems manage computer resources.</p>
+                <a href="https://www.geeksforgeeks.org/operating-systems/"
+                   target="_blank" rel="noopener noreferrer">Explore Operating Systems →</a>
+            </div>
+        </section>
+
+        <!-- ACTIVITIES -->
+        <section class="content-section" id="activities">
+            <h2>Activities and Assessment</h2>
+
+            <div class="assessment-card">
+                <span class="assessment-label">ACTIVITY 01</span>
+                <h3>Identify Computer Components</h3>
+                <p>
+                    Identify at least ten computer hardware components
+                    found in your home, school, or laboratory.
+                </p>
+                <ul>
+                    <li>Write the name of each component.</li>
+                    <li>Classify each as input, processing, output, or storage.</li>
+                    <li>Describe its main function.</li>
+                    <li>Present your answers in a table.</li>
+                </ul>
+            </div>
+
+            <div class="assessment-card">
+                <span class="assessment-label">ACTIVITY 02</span>
+                <h3>Compare Computer Platforms</h3>
+                <p>
+                    Compare desktop, mobile, and server platforms.
+                    Identify their characteristics, examples, and common uses.
+                </p>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Platform</th>
+                                <th>Examples</th>
+                                <th>Common Use</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Desktop</td>
+                                <td>Windows, macOS, Linux</td>
+                                <td>Office work and development</td>
+                            </tr>
+                            <tr>
+                                <td>Mobile</td>
+                                <td>Android, iOS</td>
+                                <td>Communication and mobile apps</td>
+                            </tr>
+                            <tr>
+                                <td>Server</td>
+                                <td>Windows Server, Ubuntu Server</td>
+                                <td>Hosting and network services</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="assessment-card">
+                <span class="assessment-label">EXERCISE</span>
+                <h3>Test Your Understanding</h3>
+                <p>Answer the following questions in your own words.</p>
+                <ol>
+                    <li>What is a computer system?</li>
+                    <li>What is the difference between hardware and software?</li>
+                    <li>What are the four basic functions of a computer?</li>
+                    <li>What is the role of the CPU?</li>
+                    <li>How does RAM differ from ROM?</li>
+                    <li>What is the purpose of an operating system?</li>
+                    <li>What is the Von Neumann Architecture?</li>
+                    <li>What are the four stages of the instruction cycle?</li>
+                    <li>How does an SSD differ from an HDD?</li>
+                    <li>Give two examples of modern computing trends.</li>
+                </ol>
+            </div>
+
+            <!-- QUIZ -->
+            <div class="assessment-card quiz-card">
+                <span class="assessment-label">KNOWLEDGE CHECK</span>
+                <h3>Lesson 1 Quiz</h3>
+                <p>Select the correct answer for each question.</p>
+
+                <form id="lesson1Quiz">
+
+                    <div class="quiz-question">
+                        <p>1. What refers to the physical components of a computer?</p>
+                        <label><input type="radio" name="q1" value="a"> Software</label>
+                        <label><input type="radio" name="q1" value="b"> Hardware</label>
+                        <label><input type="radio" name="q1" value="c"> Peopleware</label>
+                        <label><input type="radio" name="q1" value="d"> Operating system</label>
+                    </div>
+
+                    <div class="quiz-question">
+                        <p>2. Which component is commonly called the brain of the computer?</p>
+                        <label><input type="radio" name="q2" value="a"> Monitor</label>
+                        <label><input type="radio" name="q2" value="b"> Keyboard</label>
+                        <label><input type="radio" name="q2" value="c"> CPU</label>
+                        <label><input type="radio" name="q2" value="d"> Hard drive</label>
+                    </div>
+
+                    <div class="quiz-question">
+                        <p>3. Which memory is volatile?</p>
+                        <label><input type="radio" name="q3" value="a"> ROM</label>
+                        <label><input type="radio" name="q3" value="b"> Flash drive</label>
+                        <label><input type="radio" name="q3" value="c"> RAM</label>
+                        <label><input type="radio" name="q3" value="d"> SSD</label>
+                    </div>
+
+                    <div class="quiz-question">
+                        <p>4. Which generation introduced transistors?</p>
+                        <label><input type="radio" name="q4" value="a"> First generation</label>
+                        <label><input type="radio" name="q4" value="b"> Second generation</label>
+                        <label><input type="radio" name="q4" value="c"> Third generation</label>
+                        <label><input type="radio" name="q4" value="d"> Fourth generation</label>
+                    </div>
+
+                    <div class="quiz-question">
+                        <p>5. Which platform is designed to provide services to other computers?</p>
+                        <label><input type="radio" name="q5" value="a"> Desktop platform</label>
+                        <label><input type="radio" name="q5" value="b"> Mobile platform</label>
+                        <label><input type="radio" name="q5" value="c"> Gaming platform</label>
+                        <label><input type="radio" name="q5" value="d"> Server platform</label>
+                    </div>
+
+                    <div class="quiz-question">
+                        <p>6. What does the ALU perform?</p>
+                        <label><input type="radio" name="q6" value="a"> Printing documents</label>
+                        <label><input type="radio" name="q6" value="b"> Arithmetic and logical operations</label>
+                        <label><input type="radio" name="q6" value="c"> Storing files permanently</label>
+                        <label><input type="radio" name="q6" value="d"> Displaying images</label>
+                    </div>
+
+                    <div class="quiz-question">
+                        <p>7. Which storage device uses flash memory?</p>
+                        <label><input type="radio" name="q7" value="a"> SSD</label>
+                        <label><input type="radio" name="q7" value="b"> HDD</label>
+                        <label><input type="radio" name="q7" value="c"> DVD drive</label>
+                        <label><input type="radio" name="q7" value="d"> Magnetic tape</label>
+                    </div>
+
+                    <div class="quiz-question">
+                        <p>8. In the Von Neumann Architecture, where are data and instructions stored?</p>
+                        <label><input type="radio" name="q8" value="a"> Separate processors</label>
+                        <label><input type="radio" name="q8" value="b"> Output devices</label>
+                        <label><input type="radio" name="q8" value="c"> The same memory</label>
+                        <label><input type="radio" name="q8" value="d"> Keyboard memory only</label>
+                    </div>
+
+                    <div class="quiz-question">
+                        <p>9. Which software manages computer hardware and resources?</p>
+                        <label><input type="radio" name="q9" value="a"> Presentation software</label>
+                        <label><input type="radio" name="q9" value="b"> Operating system</label>
+                        <label><input type="radio" name="q9" value="c"> Image editor</label>
+                        <label><input type="radio" name="q9" value="d"> Web browser</label>
+                    </div>
+
+                    <div class="quiz-question">
+                        <p>10. Which technology connects physical devices to the Internet?</p>
+                        <label><input type="radio" name="q10" value="a"> ROM</label>
+                        <label><input type="radio" name="q10" value="b"> ALU</label>
+                        <label><input type="radio" name="q10" value="c"> Virtualization</label>
+                        <label><input type="radio" name="q10" value="d"> Internet of Things</label>
+                    </div>
+
+                    <button type="submit" class="quiz-button">Submit Quiz</button>
+                    <button type="button" id="resetLesson1Quiz" class="reset-button">Try Again</button>
+                </form>
+
+                <div id="lesson1QuizResult" class="quiz-result" aria-live="polite"></div>
+
+                <div id="lesson1Explanations" class="answer-explanations" hidden>
+                    <h3>Answer Explanations</h3>
+
+                    <div class="explanation">
+                        <strong>1. B — Hardware</strong>
+                        <p>Hardware refers to the physical parts of a computer system.</p>
+                    </div>
+
+                    <div class="explanation">
+                        <strong>2. C — CPU</strong>
+                        <p>The CPU executes instructions and processes data.</p>
+                    </div>
+
+                    <div class="explanation">
+                        <strong>3. C — RAM</strong>
+                        <p>RAM is volatile memory because its contents are lost when power is turned off.</p>
+                    </div>
+
+                    <div class="explanation">
+                        <strong>4. B — Second generation</strong>
+                        <p>The second generation introduced transistors to replace vacuum tubes.</p>
+                    </div>
+
+                    <div class="explanation">
+                        <strong>5. D — Server platform</strong>
+                        <p>Server platforms provide resources and services to connected computers.</p>
+                    </div>
+
+                    <div class="explanation">
+                        <strong>6. B — Arithmetic and logical operations</strong>
+                        <p>The ALU performs mathematical calculations and logical comparisons.</p>
+                    </div>
+
+                    <div class="explanation">
+                        <strong>7. A — SSD</strong>
+                        <p>SSDs use flash memory to store data.</p>
+                    </div>
+
+                    <div class="explanation">
+                        <strong>8. C — The same memory</strong>
+                        <p>The Von Neumann model stores both instructions and data in the same memory.</p>
+                    </div>
+
+                    <div class="explanation">
+                        <strong>9. B — Operating system</strong>
+                        <p>An operating system manages hardware, software, and system resources.</p>
+                    </div>
+
+                    <div class="explanation">
+                        <strong>10. D — Internet of Things</strong>
+                        <p>IoT connects physical devices so they can exchange data through networks.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- GLOSSARY -->
+        <section class="content-section" id="glossary">
+            <h2>Glossary</h2>
+
+            <div class="glossary-list">
+                <div class="glossary-item">
+                    <strong>Computer Architecture</strong>
+                    <p>The design and organization of computer components and how they work together.</p>
+                </div>
+
+                <div class="glossary-item">
+                    <strong>Computer Platform</strong>
+                    <p>The hardware and software environment where applications operate.</p>
+                </div>
+
+                <div class="glossary-item">
+                    <strong>CPU</strong>
+                    <p>Central Processing Unit; executes instructions and processes data.</p>
+                </div>
+
+                <div class="glossary-item">
+                    <strong>Hardware</strong>
+                    <p>The physical components of a computer system.</p>
+                </div>
+
+                <div class="glossary-item">
+                    <strong>Software</strong>
+                    <p>Programs and instructions that direct computer operations.</p>
+                </div>
+
+                <div class="glossary-item">
+                    <strong>RAM</strong>
+                    <p>Random Access Memory; temporary and volatile computer memory.</p>
+                </div>
+
+                <div class="glossary-item">
+                    <strong>ROM</strong>
+                    <p>Read-Only Memory; non-volatile memory used to store important instructions.</p>
+                </div>
+
+                <div class="glossary-item">
+                    <strong>Operating System</strong>
+                    <p>System software that manages hardware and software resources.</p>
+                </div>
+
+                <div class="glossary-item">
+                    <strong>Server</strong>
+                    <p>A computer or software system that provides services to other computers.</p>
+                </div>
+
+                <div class="glossary-item">
+                    <strong>Von Neumann Architecture</strong>
+                    <p>A computer design model that stores instructions and data in the same memory.</p>
+                </div>
+
+                <div class="glossary-item">
+                    <strong>Virtualization</strong>
+                    <p>Technology that creates virtual computing environments on physical hardware.</p>
+                </div>
+
+                <div class="glossary-item">
+                    <strong>IoT</strong>
+                    <p>Internet of Things; a network of physical devices connected to the Internet.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- REFERENCES -->
+        <section class="content-section" id="references">
+            <h2>References</h2>
+
+            <div class="reference-item">
+                <h3>Computer System Platforms and Architecture</h3>
+                <p>Course learning material used as the primary reference for this lesson.</p>
+            </div>
+
+            <div class="reference-item">
+                <h3>GeeksforGeeks – Computer Organization and Architecture</h3>
+                <p>Additional information about computer architecture and its components.</p>
+                <a href="https://www.geeksforgeeks.org/computer-organization-and-architecture-tutorials/"
+                   target="_blank" rel="noopener noreferrer">View Reference →</a>
+            </div>
+
+            <div class="reference-item">
+                <h3>GCFGlobal – Computer Basics</h3>
+                <p>Learning material about computer components and basic computer operations.</p>
+                <a href="https://edu.gcfglobal.org/en/computerbasics/"
+                   target="_blank" rel="noopener noreferrer">View Reference →</a>
+            </div>
+
+            <div class="reference-item">
+                <h3>GeeksforGeeks – Operating Systems</h3>
+                <p>Additional reading about operating systems and resource management.</p>
+                <a href="https://www.geeksforgeeks.org/operating-systems/"
+                   target="_blank" rel="noopener noreferrer">View Reference →</a>
+            </div>
+        </section>
+
+        <!-- BOTTOM NAVIGATION -->
+        <div class="lesson-navigation">
+            <a href="2nd yr toc.html" class="previous-button">← Table of Contents</a>
+            <a href="lesson2.html" class="next-button">Next Lesson →</a>
+        </div>
+
+        <footer class="page-footer">
+            <p>WEBTECH LEARN | BSIT DIGITAL E-BOOK</p>
+            <p>Excellence Beyond Limits</p>
+        </footer>
+
+    </main>
+</div>
+
+<button id="backToTop" title="Back to Top" aria-label="Back to Top">↑</button>
+
+</body>
+</html>

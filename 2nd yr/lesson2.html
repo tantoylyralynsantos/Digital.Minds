@@ -1,0 +1,2028 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <title>Chapter 1 | Internet and World Wide Web Fundamentals</title>
+
+    <link rel="stylesheet" href="lesson2.css">
+    <link rel="stylesheet" href="display-settings.css">
+
+    <script src="display-settings.js" defer></script>
+    <script src="lesson2.js" defer></script>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+    <div class="nav-container">
+
+        <a href="index.html" class="logo">
+            <img src="logo.jpg" alt="BSIT Digital Minds Logo" class="logo-image">
+
+            <span class="logo-text">
+                <small>BSIT | DIGITAL MINDS</small>
+            </span>
+        </a>
+
+        <a href="2nd yr toc.html" class="back-home">
+            ← Back to Table of Content
+        </a>
+
+    </div>
+    <link rel="stylesheet" href="ebook-pagination.css">
+<script src="ebook-pagination.js" defer></script>
+</header>
+
+<div class="page-layout">
+
+    <aside class="sidebar">
+        <h3>LESSON 02</h3>
+        <p class="sidebar-subtitle">Operating System Concepts and Functions</p>
+
+        <nav>
+            <a href="#introduction">Introduction</a>
+            <a href="#history">History and Evolution</a>
+            <a href="#concepts">OS Concepts</a>
+            <a href="#multitasking">Multitasking</a>
+            <a href="#multiprocessing">Multiprocessing</a>
+            <a href="#multithreading">Multithreading</a>
+            <a href="#virtual-memory">Virtual Memory</a>
+            <a href="#process">Process Management</a>
+            <a href="#memory">Memory Management</a>
+            <a href="#file">File Management</a>
+            <a href="#device">Device Management</a>
+            <a href="#security">Security and Protection</a>
+            <a href="#interface">User Interface</a>
+            <a href="#resources-allocation">Resource Allocation</a>
+            <a href="#errors">Error Detection</a>
+            <a href="#types">Types of Operating Systems</a>
+            <a href="#components">OS Components</a>
+            <a href="#architecture">OS Architecture</a>
+            <a href="#popular-os">Popular Operating Systems</a>
+            <a href="#future">Future Trends</a>
+            <a href="#activities">Activities</a>
+            <a href="#assessment">Assessment</a>
+            <a href="#resources">Learning Resources</a>
+            <a href="#glossary">Glossary</a>
+            <a href="#conclusion">Conclusion</a>
+            <a href="#references">References</a>
+
+<a href="#booting"> OS Booting Process</a>
+<a href="#system-calls"> System Calls</a>
+<a href="#virtualization"> Virtualization and Cloud Computing</a>
+<a href="#maintenance"> OS Maintenance and Troubleshooting</a>
+
+        </nav>
+        <div class="separate-learning-links">
+            <a href="lesson2-assessement.html">📖 Assessment</a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+
+        <section class="lesson-banner" id="introduction">
+            <span class="lesson-label">CHAPTER 02</span>
+            <h1>Operating System Concepts and Functions</h1>
+            <p>
+                Explore how operating systems manage computer hardware,
+                software, memory, processes, files, devices, and security.
+                Understand the technologies that allow computers and
+                mobile devices to work efficiently.
+            </p>
+            <div class="banner-tags">
+                <span>BSIT DIGITAL E-BOOK</span>
+                <span>2ND YEAR</span>
+                <span>OPERATING SYSTEMS</span>
+            </div>
+        </section>
+
+        <!-- INTRODUCTION -->
+        <section class="content-section">
+            <h2>Introduction to Operating Systems</h2>
+
+            <p>
+                An operating system (OS) is one of the most essential
+                software components of a computer system. It serves as
+                the interface between computer hardware and the user,
+                allowing various software applications to run efficiently
+                and effectively.
+            </p>
+
+            <p>
+                Without an operating system, a computer would be unable
+                to perform most of the functions that users rely on daily,
+                such as opening applications, managing files, connecting
+                to networks, and controlling hardware devices.
+            </p>
+
+            <p>
+                Operating systems provide a stable environment where
+                hardware and software components can work together.
+                They manage resources such as memory, processing power,
+                storage devices, and peripheral equipment while helping
+                maintain system stability and security.
+            </p>
+
+            <figure class="lesson-figure">
+                <svg viewBox="0 0 820 390" role="img" aria-label="Operating system connects users, applications and computer hardware">
+                    <rect x="245" y="20" width="330" height="65" rx="14" class="svg-blue"/>
+                    <text x="410" y="59" class="svg-white">USER</text>
+                    <path d="M410 85 V125" class="svg-line"/>
+                    <path d="M402 116 L410 128 L418 116" class="svg-arrow"/>
+                    <rect x="245" y="130" width="330" height="65" rx="14" class="svg-light"/>
+                    <text x="410" y="169" class="svg-dark">APPLICATIONS</text>
+                    <path d="M410 195 V235" class="svg-line"/>
+                    <path d="M402 226 L410 238 L418 226" class="svg-arrow"/>
+                    <rect x="245" y="240" width="330" height="65" rx="14" class="svg-blue"/>
+                    <text x="410" y="279" class="svg-white">OPERATING SYSTEM</text>
+                    <path d="M410 305 V335" class="svg-line"/>
+                    <path d="M402 326 L410 338 L418 326" class="svg-arrow"/>
+                    <rect x="95" y="340" width="630" height="42" rx="10" class="svg-hardware"/>
+                    <text x="410" y="367" class="svg-dark">COMPUTER HARDWARE</text>
+                </svg>
+                <figcaption>Figure 1. The operating system acts as a bridge between users, applications, and hardware.</figcaption>
+            </figure>
+
+            <div class="highlight-box">
+                <h3>Learning Objectives</h3>
+                <p>At the end of this lesson, students should be able to:</p>
+                <ul>
+                    <li>Explain the meaning and importance of an operating system.</li>
+                    <li>Describe the history and evolution of operating systems.</li>
+                    <li>Differentiate multitasking, multiprocessing, and multithreading.</li>
+                    <li>Explain the major functions of an operating system.</li>
+                    <li>Identify the components and architectures of operating systems.</li>
+                    <li>Compare popular desktop and mobile operating systems.</li>
+                    <li>Discuss emerging trends in operating system development.</li>
+                </ul>
+            </div>
+
+            <div class="focus-box">
+                <strong>Guide Question:</strong>
+                Why is an operating system necessary for a computer to perform
+                different tasks?
+            </div>
+        </section>
+
+        <!-- HISTORY -->
+        <section class="content-section" id="history">
+            <h2>1. History and Evolution of Operating Systems</h2>
+
+            <p>
+                Operating systems have changed significantly as computer
+                technology has developed. Early computers required users
+                to control hardware manually. Over time, operating systems
+                introduced automation, multitasking, graphical interfaces,
+                networking, and advanced security.
+            </p>
+
+            <figure class="lesson-figure">
+                <svg viewBox="0 0 900 300" role="img" aria-label="Timeline showing operating system evolution">
+                    <path d="M70 145 H830" class="svg-timeline"/>
+                    <g>
+                        <circle cx="100" cy="145" r="13" class="svg-dot"/>
+                        <text x="100" y="85" class="svg-dark">1940s–1950s</text>
+                        <text x="100" y="110" class="svg-small">Manual systems</text>
+                    </g>
+                    <g>
+                        <circle cx="270" cy="145" r="13" class="svg-dot"/>
+                        <text x="270" y="185" class="svg-dark">1950s</text>
+                        <text x="270" y="210" class="svg-small">Batch systems</text>
+                    </g>
+                    <g>
+                        <circle cx="440" cy="145" r="13" class="svg-dot"/>
+                        <text x="440" y="85" class="svg-dark">1960s</text>
+                        <text x="440" y="110" class="svg-small">Multiprogramming</text>
+                    </g>
+                    <g>
+                        <circle cx="610" cy="145" r="13" class="svg-dot"/>
+                        <text x="610" y="185" class="svg-dark">1970s–1980s</text>
+                        <text x="610" y="210" class="svg-small">Personal computers</text>
+                    </g>
+                    <g>
+                        <circle cx="800" cy="145" r="13" class="svg-dot"/>
+                        <text x="800" y="85" class="svg-dark">Modern era</text>
+                        <text x="800" y="110" class="svg-small">Mobile and cloud</text>
+                    </g>
+                </svg>
+                <figcaption>Figure 2. A simplified timeline of operating system development.</figcaption>
+            </figure>
+
+            <h3>1.1 Early Computing Systems</h3>
+            <p>
+                During the 1940s and 1950s, computers operated without
+                operating systems. Programmers interacted directly with
+                hardware by entering instructions using switches, punch
+                cards, and machine language programs. These computers
+                were expensive, difficult to use, and required highly
+                skilled operators.
+            </p>
+            <p>
+                Every program needed direct access to hardware resources.
+                Users manually loaded programs, managed storage devices,
+                and executed commands. Only one task could be performed
+                at a time, and errors could interrupt the entire process.
+            </p>
+
+            <h3>1.2 Batch Operating Systems</h3>
+            <p>
+                Batch operating systems appeared during the 1950s. They
+                collected jobs from multiple users and processed them
+                sequentially without requiring user interaction during
+                execution. Operators grouped similar jobs into batches,
+                which were processed automatically one after another.
+            </p>
+            <div class="diagram-card">
+                <h4>How Batch Processing Works</h4>
+                <div class="flow-row">
+                    <div class="flow-box">Job A</div>
+                    <div class="flow-box">Job B</div>
+                    <div class="flow-box">Job C</div>
+                </div>
+                <div class="flow-down">↓</div>
+                <div class="flow-box wide">BATCH QUEUE</div>
+                <div class="flow-down">↓</div>
+                <div class="flow-box wide blue-flow">OPERATING SYSTEM PROCESSES JOBS</div>
+                <div class="flow-down">↓</div>
+                <div class="flow-box wide">COMPLETED OUTPUT</div>
+            </div>
+            <p>
+                Advantages included improved efficiency, reduced setup
+                time, and increased productivity. However, users could
+                not interact with programs during execution, and errors
+                were often discovered only after processing was complete.
+            </p>
+
+            <h3>1.3 Multiprogramming Systems</h3>
+            <p>
+                During the 1960s, multiprogramming allowed multiple
+                programs to reside in memory simultaneously. When one
+                program waited for an input or output operation, the CPU
+                could execute another process. This improved processor
+                utilization and introduced important ideas such as process
+                scheduling and memory allocation.
+            </p>
+
+            <h3>1.4 Time-Sharing Systems</h3>
+            <p>
+                Time-sharing systems allowed multiple users to access a
+                computer simultaneously through terminals. The operating
+                system rapidly switched processor resources among users,
+                creating the impression that each user had exclusive access.
+                Universities, research institutions, and businesses adopted
+                these systems for interactive computing.
+            </p>
+
+            <h3>1.5 Personal Computer Operating Systems</h3>
+            <p>
+                The rise of personal computers during the 1970s and 1980s
+                made computers more accessible to individuals. Examples
+                included CP/M, MS-DOS, and Apple DOS. MS-DOS provided a
+                command-line interface that allowed users to manage files,
+                execute programs, and configure hardware.
+            </p>
+
+            <h3>1.6 Graphical User Interface Era</h3>
+            <p>
+                Graphical user interfaces transformed computing by allowing
+                people to interact with windows, icons, menus, and pointers
+                using a mouse. Examples included Apple Macintosh, Microsoft
+                Windows, and IBM OS/2. GUIs made computers easier to learn
+                and use.
+            </p>
+
+            <h3>1.7 Modern Operating Systems</h3>
+            <p>
+                Modern operating systems support artificial intelligence,
+                cloud computing, virtualization, internet connectivity,
+                mobile computing, cybersecurity, and distributed computing.
+                Examples include Windows 11, Linux, macOS, Android, and iOS.
+            </p>
+
+            <div class="example-box">
+                <h4>Real-Life Connection</h4>
+                <p>
+                    When a student opens a browser, edits a document, and
+                    listens to music on a laptop, the operating system
+                    coordinates the applications and computer resources
+                    needed for those activities.
+                </p>
+            </div>
+        </section>
+
+        <!-- CONCEPTS -->
+        <section class="content-section" id="concepts">
+            <h2>2. Concepts of Operating Systems</h2>
+            <p>
+                An operating system is system software responsible for
+                managing hardware resources and providing services for
+                application programs. It acts as a bridge between users
+                and computer hardware.
+            </p>
+            <p>
+                The operating system coordinates activities within a
+                computer system and ensures that available resources
+                are used effectively. It also provides a consistent
+                environment for applications.
+            </p>
+
+            <h3>Main Responsibilities of an OS</h3>
+            <div class="info-grid">
+                <article class="info-card"><h3>Manage Hardware</h3><p>Controls the processor, memory, storage, and connected devices.</p></article>
+                <article class="info-card"><h3>Run Applications</h3><p>Provides services that allow application programs to operate.</p></article>
+                <article class="info-card"><h3>Organize Data</h3><p>Creates and manages files, folders, and storage structures.</p></article>
+                <article class="info-card"><h3>Protect Information</h3><p>Uses authentication and permissions to help protect system resources.</p></article>
+            </div>
+        </section>
+
+        <!-- MULTITASKING -->
+        <section class="content-section" id="multitasking">
+            <h2>3. Multitasking</h2>
+            <p>
+                Multitasking refers to the ability of an operating system
+                to execute multiple tasks seemingly at the same time.
+                The processor rapidly switches between tasks, giving
+                users the impression that several applications are
+                running simultaneously.
+            </p>
+            <figure class="lesson-figure">
+                <svg viewBox="0 0 820 270" role="img" aria-label="Multitasking with browser music and document applications">
+                    <rect x="30" y="30" width="220" height="75" rx="12" class="svg-light"/>
+                    <rect x="300" y="30" width="220" height="75" rx="12" class="svg-light"/>
+                    <rect x="570" y="30" width="220" height="75" rx="12" class="svg-light"/>
+                    <text x="140" y="75" class="svg-dark">WEB BROWSER</text>
+                    <text x="410" y="75" class="svg-dark">MUSIC PLAYER</text>
+                    <text x="680" y="75" class="svg-dark">DOCUMENT</text>
+                    <path d="M140 105 V145 H410 V170 M410 105 V170 M680 105 V145 H410" class="svg-line"/>
+                    <rect x="275" y="175" width="270" height="65" rx="12" class="svg-blue"/>
+                    <text x="410" y="214" class="svg-white">CPU SCHEDULER</text>
+                </svg>
+                <figcaption>Figure 3. The operating system shares processor time among active tasks.</figcaption>
+            </figure>
+            <p>For example, a student may write a report, listen to music, browse websites, and download files at the same time.</p>
+            <h3>Advantages of Multitasking</h3>
+            <ul>
+                <li>Increases productivity.</li>
+                <li>Improves resource utilization.</li>
+                <li>Provides a smoother user experience.</li>
+                <li>Allows users to switch between applications quickly.</li>
+            </ul>
+        </section>
+
+        <!-- MULTIPROCESSING -->
+        <section class="content-section" id="multiprocessing">
+            <h2>4. Multiprocessing</h2>
+            <p>
+                Multiprocessing involves the use of multiple processors
+                or processing cores within a computer system. These
+                processors can execute different tasks at the same time,
+                increasing the system's ability to handle demanding work.
+            </p>
+            <figure class="lesson-figure">
+                <svg viewBox="0 0 820 240" role="img" aria-label="Multiple CPU cores process separate tasks">
+                    <rect x="280" y="15" width="260" height="55" rx="12" class="svg-blue"/>
+                    <text x="410" y="49" class="svg-white">MULTI-CORE PROCESSOR</text>
+                    <path d="M410 70 V95 M150 95 H670 M150 95 V125 M410 95 V125 M670 95 V125" class="svg-line"/>
+                    <rect x="55" y="130" width="190" height="75" rx="12" class="svg-light"/>
+                    <rect x="315" y="130" width="190" height="75" rx="12" class="svg-light"/>
+                    <rect x="575" y="130" width="190" height="75" rx="12" class="svg-light"/>
+                    <text x="150" y="175" class="svg-dark">CORE 1</text>
+                    <text x="410" y="175" class="svg-dark">CORE 2</text>
+                    <text x="670" y="175" class="svg-dark">CORE 3</text>
+                </svg>
+                <figcaption>Figure 4. Multiple processing cores can work on separate tasks.</figcaption>
+            </figure>
+            <h3>Benefits of Multiprocessing</h3>
+            <ul>
+                <li>Faster performance for suitable workloads.</li>
+                <li>Greater computational power.</li>
+                <li>Improved ability to handle multiple processes.</li>
+                <li>Potentially improved system reliability.</li>
+            </ul>
+        </section>
+
+        <!-- MULTITHREADING -->
+        <section class="content-section" id="multithreading">
+            <h2>5. Multithreading</h2>
+            <p>
+                A thread is the smallest unit of execution within a process.
+                Multithreading allows a program to perform multiple
+                operations concurrently. Threads belonging to the same
+                process share certain resources but can perform different
+                tasks.
+            </p>
+            <div class="diagram-card">
+                <h4>Example: A Web Browser Using Multiple Threads</h4>
+                <div class="flow-box wide blue-flow">WEB BROWSER PROCESS</div>
+                <div class="flow-down">↓</div>
+                <div class="flow-row">
+                    <div class="flow-box">Load Page</div>
+                    <div class="flow-box">Play Video</div>
+                    <div class="flow-box">Download</div>
+                </div>
+                <div class="flow-row">
+                    <div class="flow-box">Notifications</div>
+                    <div class="flow-box">User Input</div>
+                </div>
+            </div>
+            <p>
+                A browser may load page content, stream videos, download
+                files, and check notifications while remaining responsive
+                to user input.
+            </p>
+            <h3>Why Multithreading Matters</h3>
+            <p>
+                Multithreading can improve responsiveness and make better
+                use of available processor cores. It is useful in browsers,
+                games, media applications, and software that performs
+                several operations at once.
+            </p>
+        </section>
+
+        <!-- VIRTUAL MEMORY -->
+        <section class="content-section" id="virtual-memory">
+            <h2>6. Virtual Memory</h2>
+            <p>
+                Virtual memory enables the operating system to use storage
+                space as temporary support when physical RAM becomes
+                insufficient. The system can move less-active data out of
+                RAM and retrieve it when needed.
+            </p>
+            <figure class="lesson-figure">
+                <svg viewBox="0 0 820 280" role="img" aria-label="Virtual memory relationship between RAM and storage">
+                    <rect x="70" y="45" width="270" height="155" rx="15" class="svg-light"/>
+                    <rect x="480" y="45" width="270" height="155" rx="15" class="svg-hardware"/>
+                    <text x="205" y="85" class="svg-dark">PHYSICAL RAM</text>
+                    <text x="615" y="85" class="svg-dark">STORAGE</text>
+                    <rect x="105" y="110" width="200" height="55" rx="9" class="svg-blue"/>
+                    <text x="205" y="144" class="svg-white">ACTIVE DATA</text>
+                    <rect x="515" y="110" width="200" height="55" rx="9" class="svg-blue"/>
+                    <text x="615" y="144" class="svg-white">PAGED DATA</text>
+                    <path d="M340 135 H480" class="svg-line"/>
+                    <path d="M468 127 L482 135 L468 143" class="svg-arrow"/>
+                    <text x="410" y="115" class="svg-small">TRANSFER</text>
+                    <text x="410" y="245" class="svg-small">OS manages data movement when memory is under pressure</text>
+                </svg>
+                <figcaption>Figure 5. Virtual memory uses storage to support memory management.</figcaption>
+            </figure>
+            <h3>Benefits</h3>
+            <ul>
+                <li>Can help run larger applications.</li>
+                <li>Supports multitasking when RAM is limited.</li>
+                <li>Helps the OS manage available memory.</li>
+            </ul>
+            <div class="warning-box">
+                <strong>Remember:</strong> Storage is generally slower than RAM.
+                Excessive reliance on virtual memory may reduce performance.
+            </div>
+        </section>
+
+        <!-- PROCESS MANAGEMENT -->
+        <section class="content-section" id="process">
+            <h2>7. Process Management</h2>
+            <p>
+                Process management is one of the most important
+                responsibilities of an operating system. A process refers
+                to a program that is currently being executed. When a user
+                launches a browser, media player, office program, or game,
+                the operating system creates and manages processes.
+            </p>
+            <p>
+                Process management ensures that processes receive CPU
+                resources while preventing conflicts among applications.
+                The OS creates, schedules, pauses, resumes, and terminates
+                processes as needed.
+            </p>
+
+            <h3>7.1 Process States</h3>
+            <p>A process generally moves through five common states:</p>
+            <figure class="lesson-figure">
+                <svg viewBox="0 0 850 330" role="img" aria-label="Process state diagram">
+                    <rect x="30" y="120" width="130" height="65" rx="12" class="svg-light"/>
+                    <rect x="205" y="120" width="130" height="65" rx="12" class="svg-light"/>
+                    <rect x="390" y="120" width="130" height="65" rx="12" class="svg-blue"/>
+                    <rect x="575" y="30" width="130" height="65" rx="12" class="svg-light"/>
+                    <rect x="710" y="220" width="125" height="65" rx="12" class="svg-hardware"/>
+                    <text x="95" y="160" class="svg-dark">NEW</text>
+                    <text x="270" y="160" class="svg-dark">READY</text>
+                    <text x="455" y="160" class="svg-white">RUNNING</text>
+                    <text x="640" y="70" class="svg-dark">WAITING</text>
+                    <text x="772" y="260" class="svg-dark">EXIT</text>
+                    <path d="M160 152 H205 M335 152 H390 M520 140 L575 95 M575 65 L520 125 M520 175 L710 235" class="svg-line"/>
+                    <path d="M193 144 L205 152 L193 160 M378 144 L390 152 L378 160" class="svg-arrow"/>
+                    <text x="95" y="215" class="svg-small">Created</text>
+                    <text x="270" y="215" class="svg-small">Waiting for CPU</text>
+                    <text x="455" y="215" class="svg-small">Executing</text>
+                    <text x="640" y="115" class="svg-small">Waiting for event</text>
+                </svg>
+                <figcaption>Figure 6. Simplified process-state transitions.</figcaption>
+            </figure>
+            <ol>
+                <li><strong>New:</strong> The process is being created.</li>
+                <li><strong>Ready:</strong> The process is prepared and waiting for CPU time.</li>
+                <li><strong>Running:</strong> The CPU is currently executing the process.</li>
+                <li><strong>Waiting:</strong> The process is waiting for an event or input/output operation.</li>
+                <li><strong>Terminated:</strong> The process has finished execution.</li>
+            </ol>
+
+            <h3>7.2 Process Scheduling</h3>
+            <p>
+                Process scheduling determines which process should receive
+                CPU time. The operating system uses scheduling methods to
+                organize execution and improve system responsiveness.
+            </p>
+
+            <div class="info-grid">
+                <article class="info-card">
+                    <h3>First Come First Served (FCFS)</h3>
+                    <p>Processes are executed in the order they arrive. It is simple but may cause long waiting times.</p>
+                </article>
+                <article class="info-card">
+                    <h3>Round Robin</h3>
+                    <p>Each process receives a fixed time quantum. It supports fair sharing of CPU time.</p>
+                </article>
+                <article class="info-card">
+                    <h3>Priority Scheduling</h3>
+                    <p>Processes are assigned priorities. Important tasks may be executed before lower-priority tasks.</p>
+                </article>
+            </div>
+
+            <h3>7.3 Importance of Process Management</h3>
+            <ul>
+                <li>Improves system efficiency.</li>
+                <li>Supports multitasking.</li>
+                <li>Maximizes hardware utilization.</li>
+                <li>Helps prevent processes from interfering with one another.</li>
+                <li>Improves the user's experience.</li>
+            </ul>
+        </section>
+
+        <!-- MEMORY MANAGEMENT -->
+        <section class="content-section" id="memory">
+            <h2>8. Memory Management</h2>
+            <p>
+                Memory management controls and coordinates the computer's
+                primary memory (RAM). It ensures that each program receives
+                the memory resources it requires for execution. Effective
+                memory management improves performance, prevents software
+                conflicts, and maximizes available resources.
+            </p>
+            <figure class="lesson-figure">
+                <svg viewBox="0 0 820 300" role="img" aria-label="RAM divided into memory blocks for operating system and applications">
+                    <text x="410" y="35" class="svg-dark">MEMORY ALLOCATION</text>
+                    <rect x="180" y="65" width="460" height="48" rx="8" class="svg-blue"/>
+                    <rect x="180" y="120" width="460" height="48" rx="8" class="svg-light"/>
+                    <rect x="180" y="175" width="460" height="48" rx="8" class="svg-hardware"/>
+                    <rect x="180" y="230" width="460" height="48" rx="8" class="svg-light"/>
+                    <text x="410" y="95" class="svg-white">OPERATING SYSTEM</text>
+                    <text x="410" y="150" class="svg-dark">APPLICATION A</text>
+                    <text x="410" y="205" class="svg-dark">APPLICATION B</text>
+                    <text x="410" y="260" class="svg-dark">AVAILABLE MEMORY</text>
+                </svg>
+                <figcaption>Figure 7. An example of memory space assigned to system and application tasks.</figcaption>
+            </figure>
+
+            <h3>8.1 Functions of Memory Management</h3>
+            <ul>
+                <li>Allocation of memory to processes.</li>
+                <li>Monitoring memory usage.</li>
+                <li>Deallocation of unused memory.</li>
+                <li>Protection of memory spaces.</li>
+                <li>Management of virtual memory.</li>
+                <li>Optimization of memory utilization.</li>
+            </ul>
+
+            <h3>8.2 Memory Allocation</h3>
+            <p>
+                Memory allocation is the process of assigning memory space
+                to programs and processes. When an application starts, the
+                operating system reserves a portion of RAM for its use.
+                The amount assigned depends on program requirements,
+                available memory, active processes, and OS policies.
+            </p>
+            <div class="example-box">
+                <h4>Example</h4>
+                <p>
+                    Video editing software generally requires more memory
+                    than a simple text editor because it processes large
+                    multimedia files.
+                </p>
+            </div>
+
+            <h3>8.3 Memory Protection</h3>
+            <p>
+                Memory protection prevents one process from interfering
+                with another process's memory area. If a browser crashes,
+                memory protection helps prevent the problem from affecting
+                other running applications.
+            </p>
+            <ul>
+                <li>Increases system stability.</li>
+                <li>Enhances security.</li>
+                <li>Helps prevent data corruption.</li>
+                <li>Supports process isolation.</li>
+            </ul>
+
+            <h3>8.4 Importance of Memory Management</h3>
+            <p>
+                Proper memory management supports multitasking, enhances
+                application performance, increases system stability,
+                prevents memory conflicts, and improves overall efficiency.
+            </p>
+        </section>
+
+        <!-- FILE MANAGEMENT -->
+        <section class="content-section" id="file">
+            <h2>9. File Management</h2>
+            <p>
+                File management is the operating system function responsible
+                for organizing, storing, retrieving, and protecting data on
+                storage devices. Documents, images, videos, applications,
+                and system files must be managed efficiently.
+            </p>
+
+            <figure class="lesson-figure">
+                <svg viewBox="0 0 820 320" role="img" aria-label="Folder tree structure">
+                    <rect x="300" y="15" width="220" height="55" rx="10" class="svg-blue"/>
+                    <text x="410" y="50" class="svg-white">SCHOOL FILES</text>
+                    <path d="M410 70 V105 M140 105 H680 M140 105 V135 M320 105 V135 M500 105 V135 M680 105 V135" class="svg-line"/>
+                    <rect x="55" y="140" width="170" height="55" rx="10" class="svg-light"/>
+                    <rect x="235" y="140" width="170" height="55" rx="10" class="svg-light"/>
+                    <rect x="415" y="140" width="170" height="55" rx="10" class="svg-light"/>
+                    <rect x="595" y="140" width="170" height="55" rx="10" class="svg-light"/>
+                    <text x="140" y="175" class="svg-dark">ASSIGNMENTS</text>
+                    <text x="320" y="175" class="svg-dark">PROJECTS</text>
+                    <text x="500" y="175" class="svg-dark">RESEARCH</text>
+                    <text x="680" y="175" class="svg-dark">PRESENTATIONS</text>
+                    <text x="410" y="260" class="svg-small">Folders group related files and make information easier to find.</text>
+                </svg>
+                <figcaption>Figure 8. A simple folder structure for organizing school files.</figcaption>
+            </figure>
+
+            <h3>9.1 Functions of File Management</h3>
+            <ul>
+                <li>File creation and deletion.</li>
+                <li>File organization and retrieval.</li>
+                <li>Copying, moving, and renaming files.</li>
+                <li>Backup support.</li>
+                <li>Permission management.</li>
+                <li>Storage monitoring.</li>
+            </ul>
+
+            <h3>9.2 Directories and Folders</h3>
+            <p>
+                Directories, commonly known as folders, organize files into
+                logical groups. Students may create folders for school
+                projects, assignments, research papers, presentations,
+                and personal documents. Organized file structures reduce
+                confusion and improve productivity.
+            </p>
+
+            <h3>9.3 File Permissions</h3>
+            <p>
+                File permissions determine who can view, modify, delete,
+                or share files. This is important in organizations where
+                multiple users share computer resources.
+            </p>
+
+            <h3>9.4 Common File Systems</h3>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>File System</th><th>Common Use</th><th>Characteristics</th></tr></thead>
+                    <tbody>
+                        <tr><td>NTFS</td><td>Windows</td><td>Security permissions, large file support, quotas, encryption.</td></tr>
+                        <tr><td>FAT32</td><td>Portable storage</td><td>Broad compatibility and simple implementation, with file-size limitations.</td></tr>
+                        <tr><td>exFAT</td><td>Flash drives</td><td>Designed for portable storage and larger file support.</td></tr>
+                        <tr><td>ext4</td><td>Linux</td><td>Stability, reliability, and efficient performance.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <h3>9.5 Importance of File Management</h3>
+            <p>
+                Effective file management provides fast data access,
+                improved organization, easier backups, enhanced security,
+                and efficient storage utilization.
+            </p>
+        </section>
+
+        <!-- DEVICE MANAGEMENT -->
+        <section class="content-section" id="device">
+            <h2>10. Device Management</h2>
+            <p>
+                Device management refers to the operating system's ability
+                to control and coordinate hardware devices connected to
+                a computer. The OS ensures that hardware components
+                communicate properly with software applications.
+            </p>
+
+            <figure class="lesson-figure">
+                <svg viewBox="0 0 820 340" role="img" aria-label="Input output storage and communication devices">
+                    <rect x="285" y="15" width="250" height="60" rx="12" class="svg-blue"/>
+                    <text x="410" y="52" class="svg-white">OPERATING SYSTEM</text>
+                    <path d="M410 75 V110 M115 110 H705 M115 110 V145 M310 110 V145 M510 110 V145 M705 110 V145" class="svg-line"/>
+                    <rect x="35" y="150" width="160" height="110" rx="12" class="svg-light"/>
+                    <rect x="230" y="150" width="160" height="110" rx="12" class="svg-light"/>
+                    <rect x="430" y="150" width="160" height="110" rx="12" class="svg-light"/>
+                    <rect x="625" y="150" width="160" height="110" rx="12" class="svg-light"/>
+                    <text x="115" y="190" class="svg-dark">INPUT</text>
+                    <text x="115" y="220" class="svg-small">Keyboard, mouse</text>
+                    <text x="310" y="190" class="svg-dark">OUTPUT</text>
+                    <text x="310" y="220" class="svg-small">Monitor, printer</text>
+                    <text x="510" y="190" class="svg-dark">STORAGE</text>
+                    <text x="510" y="220" class="svg-small">HDD, SSD, USB</text>
+                    <text x="705" y="190" class="svg-dark">NETWORK</text>
+                    <text x="705" y="220" class="svg-small">Wi-Fi, Bluetooth</text>
+                </svg>
+                <figcaption>Figure 9. Examples of device categories managed by an operating system.</figcaption>
+            </figure>
+
+            <h3>10.1 Types of Devices</h3>
+            <ul>
+                <li><strong>Input devices:</strong> Keyboard, mouse, scanner, microphone, and webcam.</li>
+                <li><strong>Output devices:</strong> Monitor, printer, speakers, and projector.</li>
+                <li><strong>Storage devices:</strong> HDD, SSD, USB flash drives, and memory cards.</li>
+                <li><strong>Communication devices:</strong> Network adapters, Wi-Fi modules, and Bluetooth devices.</li>
+            </ul>
+
+            <h3>10.2 Device Drivers</h3>
+            <p>
+                Device drivers are specialized software programs that allow
+                communication between hardware devices and the operating
+                system. A printer driver allows the OS to communicate with
+                a printer, while a graphics driver enables communication
+                between applications and the graphics card.
+            </p>
+
+            <h3>10.3 Device Scheduling</h3>
+            <p>
+                When multiple programs request access to the same device,
+                the operating system determines the order of access. For
+                example, when several users send documents to a printer,
+                the OS manages the print queue and processes requests.
+            </p>
+        </section>
+
+        <!-- SECURITY -->
+        <section class="content-section" id="security">
+            <h2>11. Security and Protection</h2>
+            <p>
+                Security and protection help safeguard users, data,
+                applications, and hardware resources from unauthorized
+                access, malware, and cyberattacks. Operating systems use
+                security mechanisms to protect sensitive information such
+                as passwords, financial records, and personal files.
+            </p>
+
+            <figure class="lesson-figure">
+                <svg viewBox="0 0 820 310" role="img" aria-label="Security shield with lock illustration">
+                    <path d="M410 25 L575 85 V165 C575 235 505 275 410 295 C315 275 245 235 245 165 V85 Z" class="svg-blue"/>
+                    <rect x="350" y="125" width="120" height="90" rx="14" fill="#ffffff"/>
+                    <path d="M375 125 V100 C375 55 445 55 445 100 V125" fill="none" stroke="#ffffff" stroke-width="13"/>
+                    <circle cx="410" cy="165" r="12" fill="#10569a"/>
+                    <path d="M410 177 V194" stroke="#10569a" stroke-width="9" stroke-linecap="round"/>
+                    <text x="410" y="270" class="svg-white">SYSTEM PROTECTION</text>
+                </svg>
+                <figcaption>Figure 10. Security mechanisms help protect computer resources and information.</figcaption>
+            </figure>
+
+            <h3>11.1 Objectives of OS Security</h3>
+            <ul>
+                <li>Protecting user data.</li>
+                <li>Preventing unauthorized access.</li>
+                <li>Maintaining data integrity.</li>
+                <li>Preserving system availability.</li>
+                <li>Detecting security threats.</li>
+            </ul>
+
+            <h3>11.2 User Authentication</h3>
+            <p>
+                Authentication verifies the identity of users before
+                granting system access. Common methods include passwords,
+                PINs, fingerprint recognition, facial recognition, and
+                multi-factor authentication (MFA).
+            </p>
+
+            <h3>11.3 Access Control</h3>
+            <p>
+                Access control determines what actions users may perform
+                within a system. An administrator may install software,
+                modify system settings, and create user accounts. Standard
+                users may have more limited privileges.
+            </p>
+
+            <h3>11.4 Encryption</h3>
+            <p>
+                Encryption protects data by converting it into an
+                unreadable format that can only be accessed using
+                authorized keys. It helps protect confidential information
+                and secure data transmission.
+            </p>
+
+            <h3>11.5 Malware Protection</h3>
+            <p>
+                Malware is malicious software designed to damage systems
+                or steal information. Examples include viruses, worms,
+                Trojans, spyware, and ransomware. Operating systems may
+                use firewalls, antivirus programs, and threat detection
+                systems to help protect users.
+            </p>
+        </section>
+
+        <!-- USER INTERFACE -->
+        <section class="content-section" id="interface">
+            <h2>12. User Interface Management</h2>
+            <p>
+                User interface management enables communication between
+                users and computer systems. It provides the mechanisms
+                through which people interact with software and hardware
+                resources.
+            </p>
+
+            <div class="info-grid">
+                <article class="info-card">
+                    <h3>Command Line Interface (CLI)</h3>
+                    <p>
+                        A CLI requires users to type text-based commands.
+                        Examples include Command Prompt, PowerShell, and
+                        Linux Terminal.
+                    </p>
+                    <p><strong>Advantages:</strong> Fast for experienced users, uses fewer resources, and provides powerful administrative capabilities.</p>
+                    <p><strong>Disadvantages:</strong> Difficult for beginners and requires command memorization.</p>
+                </article>
+                <article class="info-card">
+                    <h3>Graphical User Interface (GUI)</h3>
+                    <p>
+                        A GUI uses windows, icons, buttons, menus, and
+                        pointers. Examples include Windows, macOS,
+                        Android, and iOS.
+                    </p>
+                    <p><strong>Advantages:</strong> Easy to learn, user-friendly, and visually appealing.</p>
+                    <p><strong>Disadvantages:</strong> May consume more resources and can be slower for some advanced tasks.</p>
+                </article>
+            </div>
+
+            <figure class="lesson-figure">
+                <svg viewBox="0 0 820 300" role="img" aria-label="Comparison of command line and graphical user interfaces">
+                    <rect x="35" y="25" width="350" height="230" rx="12" fill="#172b45"/>
+                    <rect x="435" y="25" width="350" height="230" rx="12" class="svg-light"/>
+                    <text x="210" y="60" class="svg-white">COMMAND LINE (CLI)</text>
+                    <text x="610" y="60" class="svg-dark">GRAPHICAL (GUI)</text>
+                    <text x="65" y="110" fill="#9fe8bd" font-size="17" text-anchor="start">C:\Users&gt; open file</text>
+                    <text x="65" y="145" fill="#ffffff" font-size="15" text-anchor="start">Command accepted...</text>
+                    <rect x="475" y="85" width="270" height="130" rx="8" fill="#ffffff" stroke="#b7c8da"/>
+                    <rect x="475" y="85" width="270" height="28" rx="8" fill="#10569a"/>
+                    <circle cx="493" cy="99" r="5" fill="#ffffff"/>
+                    <circle cx="510" cy="99" r="5" fill="#ffffff"/>
+                    <rect x="500" y="135" width="65" height="55" rx="6" fill="#eaf3fc"/>
+                    <rect x="580" y="135" width="65" height="55" rx="6" fill="#eaf3fc"/>
+                    <rect x="660" y="135" width="65" height="55" rx="6" fill="#eaf3fc"/>
+                    <text x="210" y="285" class="svg-small">Text commands</text>
+                    <text x="610" y="285" class="svg-small">Visual controls</text>
+                </svg>
+                <figcaption>Figure 11. CLI and GUI provide different ways to interact with an operating system.</figcaption>
+            </figure>
+        </section>
+
+        <!-- RESOURCE ALLOCATION -->
+        <section class="content-section" id="resources-allocation">
+            <h2>13. Resource Allocation</h2>
+            <p>
+                Resource allocation is the process by which an operating
+                system distributes available system resources among
+                running programs and users. Since resources are limited,
+                the OS must allocate them efficiently and fairly.
+            </p>
+            <h3>13.1 Resources Managed by the OS</h3>
+            <ul>
+                <li>Central Processing Unit (CPU).</li>
+                <li>Main memory (RAM).</li>
+                <li>Storage devices.</li>
+                <li>Printers and other peripherals.</li>
+                <li>Network connections.</li>
+                <li>Input and output devices.</li>
+            </ul>
+            <h3>13.2 CPU Allocation</h3>
+            <p>
+                Multiple applications often compete for processor time.
+                The operating system uses scheduling mechanisms to
+                distribute CPU resources efficiently among browsers,
+                games, office applications, media players, and background
+                system services.
+            </p>
+            <h3>13.3 Memory Allocation</h3>
+            <p>
+                Memory allocation distributes RAM among active programs.
+                The OS monitors memory availability and adjusts allocations
+                based on application requirements. This helps reduce
+                memory conflicts and supports multitasking.
+            </p>
+            <h3>13.4 Storage Allocation</h3>
+            <p>
+                The operating system allocates disk space to user files,
+                system files, applications, and temporary data. It also
+                tracks available storage and may warn users when disk
+                space becomes limited.
+            </p>
+            <h3>13.5 Network Resource Allocation</h3>
+            <p>
+                Modern computers access network resources such as internet
+                connections, bandwidth, data transmission, and wireless
+                communication. Efficient allocation helps improve
+                communication speed and reliability.
+            </p>
+            <div class="warning-box">
+                <strong>Common challenge:</strong> If one application
+                consumes too much memory or processing power, other
+                programs may slow down. The OS monitors and manages
+                resource usage to reduce these problems.
+            </div>
+        </section>
+
+        <!-- ERROR DETECTION -->
+        <section class="content-section" id="errors">
+            <h2>14. Error Detection and Handling</h2>
+            <p>
+                Error detection and handling refers to the operating
+                system's ability to identify, diagnose, report, and recover
+                from problems that occur during system operation. Errors
+                may arise from hardware failures, software bugs, user
+                mistakes, or external factors such as power interruptions.
+            </p>
+
+            <h3>14.1 Types of Errors</h3>
+            <div class="info-grid">
+                <article class="info-card">
+                    <h3>Hardware Errors</h3>
+                    <p>Involve physical computer components, such as damaged hard drives, faulty memory modules, overheating processors, or defective network devices.</p>
+                </article>
+                <article class="info-card">
+                    <h3>Software Errors</h3>
+                    <p>Occur when applications contain defects or encounter unexpected situations, such as crashes, programming bugs, corrupted files, or invalid instructions.</p>
+                </article>
+                <article class="info-card">
+                    <h3>User Errors</h3>
+                    <p>Occur due to incorrect actions, such as deleting important files, entering incorrect commands, or misconfiguring system settings.</p>
+                </article>
+            </div>
+
+            <h3>14.2 Error Detection Mechanisms</h3>
+            <ul>
+                <li><strong>System monitoring:</strong> Observes CPU usage, memory usage, device activity, and network performance.</li>
+                <li><strong>Log files:</strong> Record system events and errors to assist diagnosis.</li>
+                <li><strong>Diagnostic utilities:</strong> Help identify hardware problems, monitor system health, and evaluate performance.</li>
+            </ul>
+
+            <h3>14.3 Error Recovery</h3>
+            <p>When an error occurs, the operating system may attempt recovery through:</p>
+            <ul>
+                <li>Restarting affected services.</li>
+                <li>Closing affected applications.</li>
+                <li>Restoring backup files.</li>
+                <li>Restarting the system when necessary.</li>
+            </ul>
+        </section>
+
+        <!-- TYPES OF OS -->
+        <section class="content-section" id="types">
+            <h2>15. Types of Operating Systems</h2>
+            <p>
+                Operating systems can be classified according to how they
+                manage tasks, users, processors, and devices. Different
+                types are designed for different computing environments.
+            </p>
+            <div class="info-grid">
+                <article class="info-card"><h3>Batch OS</h3><p>Processes grouped jobs in batches with little or no interaction during execution.</p></article>
+                <article class="info-card"><h3>Time-Sharing OS</h3><p>Allows multiple users to share computing resources interactively.</p></article>
+                <article class="info-card"><h3>Multiprogramming OS</h3><p>Keeps multiple programs in memory and switches the CPU when a task waits.</p></article>
+                <article class="info-card"><h3>Multiprocessing OS</h3><p>Uses multiple processors or cores to execute tasks.</p></article>
+                <article class="info-card"><h3>Real-Time OS</h3><p>Designed to respond to events within specific timing requirements.</p></article>
+                <article class="info-card"><h3>Distributed OS</h3><p>Coordinates resources and activities across multiple connected computers.</p></article>
+                <article class="info-card"><h3>Network OS</h3><p>Provides services for computers connected through a network.</p></article>
+                <article class="info-card"><h3>Mobile OS</h3><p>Designed for mobile devices such as smartphones and tablets.</p></article>
+            </div>
+        </section>
+
+        <!-- COMPONENTS -->
+        <section class="content-section" id="components">
+            <h2>16. Components of an Operating System</h2>
+            <p>
+                An operating system consists of several interconnected
+                components that work together to manage computer hardware
+                and software.
+            </p>
+            <figure class="lesson-figure">
+                <svg viewBox="0 0 820 390" role="img" aria-label="Operating system component diagram">
+                    <rect x="260" y="15" width="300" height="58" rx="12" class="svg-blue"/>
+                    <text x="410" y="51" class="svg-white">OPERATING SYSTEM</text>
+                    <path d="M410 73 V105 M100 105 H720 M100 105 V135 M255 105 V135 M410 105 V135 M565 105 V135 M720 105 V135" class="svg-line"/>
+                    <rect x="25" y="140" width="150" height="80" rx="10" class="svg-light"/>
+                    <rect x="180" y="140" width="150" height="80" rx="10" class="svg-light"/>
+                    <rect x="335" y="140" width="150" height="80" rx="10" class="svg-light"/>
+                    <rect x="490" y="140" width="150" height="80" rx="10" class="svg-light"/>
+                    <rect x="645" y="140" width="150" height="80" rx="10" class="svg-light"/>
+                    <text x="100" y="185" class="svg-dark">KERNEL</text>
+                    <text x="255" y="185" class="svg-dark">SHELL</text>
+                    <text x="410" y="185" class="svg-dark">FILE SYSTEM</text>
+                    <text x="565" y="185" class="svg-dark">DRIVERS</text>
+                    <text x="720" y="185" class="svg-dark">UTILITIES</text>
+                    <path d="M410 220 V270" class="svg-line"/>
+                    <rect x="210" y="275" width="400" height="70" rx="12" class="svg-hardware"/>
+                    <text x="410" y="317" class="svg-dark">COMPUTER HARDWARE</text>
+                </svg>
+                <figcaption>Figure 12. Major components that work together within an operating system.</figcaption>
+            </figure>
+
+            <h3>16.1 Kernel</h3>
+            <p>
+                The kernel is the core component of an operating system.
+                It manages hardware resources and important system
+                operations, including memory management, process
+                management, device management, resource allocation,
+                and security enforcement.
+            </p>
+
+            <h3>16.2 Shell</h3>
+            <p>
+                The shell provides an interface between users and the
+                operating system. It interprets commands and forwards
+                requests to the kernel. Examples include Command Prompt,
+                PowerShell, Bash, and graphical desktop environments.
+            </p>
+
+            <h3>16.3 File System</h3>
+            <p>
+                The file system organizes and manages data stored on
+                storage devices. Its responsibilities include file
+                storage, data retrieval, access permissions, and
+                directory management.
+            </p>
+
+            <h3>16.4 Device Drivers</h3>
+            <p>
+                Device drivers are specialized software programs that
+                enable communication between the operating system and
+                hardware devices. Examples include printer, graphics,
+                network, and audio drivers.
+            </p>
+
+            <h3>16.5 System Utilities</h3>
+            <p>
+                Utilities are support programs that help maintain and
+                optimize system performance. Examples include Disk
+                Cleanup, backup software, antivirus programs, and
+                file compression tools.
+            </p>
+        </section>
+
+        <!-- ARCHITECTURE -->
+        <section class="content-section" id="architecture">
+            <h2>17. Operating System Architecture</h2>
+            <p>
+                Operating system architecture refers to the structural
+                design used to organize operating system components.
+                Different architectures offer different advantages in
+                performance, maintainability, and security.
+            </p>
+
+            <h3>17.1 Monolithic Architecture</h3>
+            <p>
+                In a monolithic architecture, many operating system
+                services run within a single kernel space. This design
+                can provide high performance and fast communication
+                among components, but debugging and fault isolation
+                may be difficult.
+            </p>
+
+            <h3>17.2 Layered Architecture</h3>
+            <p>
+                Layered architecture organizes the operating system into
+                multiple layers. Each layer performs specific functions
+                and interacts with adjacent layers. This structure can
+                make maintenance, organization, and troubleshooting easier,
+                although communication between layers may add overhead.
+            </p>
+
+            <figure class="lesson-figure">
+                <svg viewBox="0 0 820 330" role="img" aria-label="Layered operating system architecture">
+                    <rect x="190" y="20" width="440" height="55" rx="9" class="svg-light"/>
+                    <rect x="190" y="85" width="440" height="55" rx="9" class="svg-hardware"/>
+                    <rect x="190" y="150" width="440" height="55" rx="9" class="svg-light"/>
+                    <rect x="190" y="215" width="440" height="55" rx="9" class="svg-blue"/>
+                    <text x="410" y="55" class="svg-dark">USER APPLICATIONS</text>
+                    <text x="410" y="120" class="svg-dark">USER INTERFACE / SYSTEM SERVICES</text>
+                    <text x="410" y="185" class="svg-dark">KERNEL SERVICES</text>
+                    <text x="410" y="250" class="svg-white">HARDWARE</text>
+                    <text x="410" y="310" class="svg-small">Each layer communicates with the layer below or above it.</text>
+                </svg>
+                <figcaption>Figure 13. Simplified layered operating system architecture.</figcaption>
+            </figure>
+
+            <h3>17.3 Microkernel Architecture</h3>
+            <p>
+                A microkernel includes only essential functions within
+                the kernel. Additional services run in separate
+                user-space environments. This can improve security,
+                reliability, and update flexibility, although communication
+                between components may create overhead.
+            </p>
+
+            <h3>17.4 Hybrid Architecture</h3>
+            <p>
+                Hybrid architecture combines elements of monolithic and
+                microkernel approaches. It seeks to balance performance
+                and flexibility. Microsoft Windows and Apple macOS are
+                examples of systems commonly described as using hybrid
+                architectural approaches.
+            </p>
+        </section>
+
+        <!-- POPULAR OS -->
+        <section class="content-section" id="popular-os">
+            <h2>18. Popular Operating Systems</h2>
+            <p>
+                Different operating systems are designed to meet different
+                user requirements and computing environments. Some are
+                intended for personal computers, while others are designed
+                for servers, mobile devices, or enterprise networks.
+            </p>
+
+            <h3>18.1 Microsoft Windows</h3>
+            <p>
+                Microsoft Windows is widely used on personal computers,
+                laptops, and business workstations. It is known for its
+                graphical interface, extensive software compatibility,
+                and wide hardware support.
+            </p>
+            <ul>
+                <li><strong>Features:</strong> GUI, plug-and-play hardware support, multitasking, security, and networking.</li>
+                <li><strong>Advantages:</strong> Easy to use, broad application support, and compatibility with many devices.</li>
+                <li><strong>Disadvantages:</strong> Licensing costs, resource requirements, and exposure to malware threats.</li>
+                <li><strong>Applications:</strong> Schools, offices, businesses, homes, and government organizations.</li>
+            </ul>
+
+            <h3>18.2 Linux</h3>
+            <p>
+                Linux is an open-source operating system developed through
+                collaboration among programmers worldwide. Users can
+                study, modify, and distribute its source code according
+                to its license. It is popular among developers, network
+                administrators, and organizations.
+            </p>
+            <p><strong>Examples of distributions:</strong> Ubuntu, Fedora, Debian, Red Hat Enterprise Linux, and Linux Mint.</p>
+            <ul>
+                <li><strong>Features:</strong> Open source, security, stability, customization, and multi-user support.</li>
+                <li><strong>Advantages:</strong> Customizable, stable, and widely used for servers.</li>
+                <li><strong>Disadvantages:</strong> Learning curve and possible limitations with some commercial applications or hardware.</li>
+                <li><strong>Applications:</strong> Servers, cloud computing, cybersecurity, research, and supercomputers.</li>
+            </ul>
+
+            <h3>18.3 macOS</h3>
+            <p>
+                macOS is Apple's operating system designed for Macintosh
+                computers. It is known for its interface design, security
+                features, multimedia capabilities, and integration with
+                other Apple products.
+            </p>
+
+            <h3>18.4 Android</h3>
+            <p>
+                Android is a mobile operating system developed by Google.
+                It powers smartphones, tablets, smart televisions, and
+                wearable devices. It supports touchscreen interaction,
+                voice commands, mobile applications, wireless connectivity,
+                and cloud integration.
+            </p>
+
+            <h3>18.5 iOS</h3>
+            <p>
+                iOS is Apple's mobile operating system developed for
+                iPhones. It is known for performance, security, regular
+                updates, and a carefully controlled application ecosystem.
+            </p>
+
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Operating System</th><th>Typical Devices</th><th>Notable Characteristics</th></tr></thead>
+                    <tbody>
+                        <tr><td>Windows</td><td>Desktop and laptop PCs</td><td>Broad software and hardware compatibility.</td></tr>
+                        <tr><td>Linux</td><td>Servers and PCs</td><td>Open-source and customizable.</td></tr>
+                        <tr><td>macOS</td><td>Mac computers</td><td>Apple hardware integration.</td></tr>
+                        <tr><td>Android</td><td>Phones, tablets, smart devices</td><td>Flexible mobile platform.</td></tr>
+                        <tr><td>iOS</td><td>iPhone</td><td>Apple mobile ecosystem and controlled app environment.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- FUTURE -->
+        <section class="content-section" id="future">
+            <h2>19. Future Trends in Operating Systems</h2>
+            <p>
+                Operating systems continue to evolve alongside advances
+                in technology. Future operating systems are expected to
+                become smarter, faster, more connected, and more secure.
+            </p>
+
+            <h3>19.1 Artificial Intelligence Integration</h3>
+            <p>
+                Artificial intelligence may support performance
+                optimization, security monitoring, voice assistance,
+                predictive maintenance, and automated troubleshooting.
+                AI can help systems identify patterns and possible
+                problems before they affect users.
+            </p>
+
+            <h3>19.2 Cloud-Based Computing</h3>
+            <p>
+                Cloud computing is changing how software and operating
+                systems function. Cloud storage, online applications,
+                remote access, and virtual workspaces allow users to
+                access data and services from different locations.
+            </p>
+
+            <h3>19.3 Internet of Things (IoT)</h3>
+            <p>
+                The Internet of Things refers to interconnected devices
+                capable of communicating through networks. Examples
+                include smart homes, smart vehicles, industrial sensors,
+                and wearable technologies. Operating systems must support
+                connected devices while maintaining security and efficiency.
+            </p>
+
+            <h3>19.4 Virtualization</h3>
+            <p>
+                Virtualization allows multiple operating systems to run
+                on a single physical machine. Benefits include better
+                resource utilization, reduced hardware costs, flexibility,
+                and improved disaster recovery.
+            </p>
+
+            <h3>19.5 Improved Cybersecurity</h3>
+            <p>
+                Future security technologies may include AI-powered
+                threat detection, advanced encryption, behavioral
+                analysis, zero-trust security models, and enhanced
+                authentication systems.
+            </p>
+        </section>
+
+<!-- ==========================================
+     ADDITIONAL LESSON 1: OS BOOTING PROCESS
+=========================================== -->
+<section class="content-section" id="booting">
+    <h2>14. Operating System Booting Process</h2>
+
+    <p>
+        The booting process is the sequence of operations performed by a computer
+        when it is turned on or restarted. During this process, the computer
+        checks its hardware, initializes important system components, and loads
+        the operating system into memory. Booting is necessary because the
+        operating system must be ready before users can access applications,
+        files, and other computer resources.
+    </p>
+
+    <p>
+        When a computer starts, it does not immediately display the desktop.
+        Instead, it performs several steps to prepare the hardware and software
+        environment. These steps allow the computer to identify its devices,
+        locate the operating system, and transfer control to the system software.
+    </p>
+
+    <figure class="lesson-figure">
+        <div class="diagram-card">
+            <h3>Operating System Booting Sequence</h3>
+            <div class="flow-row">
+                <div class="flow-box">1. Power On</div>
+                <div class="flow-box">2. BIOS / UEFI</div>
+                <div class="flow-box">3. POST</div>
+            </div>
+            <div class="flow-down">↓</div>
+            <div class="flow-row">
+                <div class="flow-box">4. Bootloader</div>
+                <div class="flow-box">5. Kernel Loading</div>
+                <div class="flow-box">6. Login / Desktop</div>
+            </div>
+        </div>
+        <figcaption>
+            Figure 1. Simplified sequence of the computer booting process.
+        </figcaption>
+    </figure>
+
+    <h3>14.1 Power-On Stage</h3>
+    <p>
+        The first stage begins when the user presses the power button. The
+        computer receives electrical power, and its processor begins executing
+        the instructions stored in firmware. The motherboard, processor, memory,
+        and other essential components start preparing for operation.
+    </p>
+
+    <h3>14.2 BIOS and UEFI</h3>
+    <p>
+        BIOS (Basic Input/Output System) and UEFI (Unified Extensible Firmware
+        Interface) are firmware interfaces responsible for initializing
+        hardware and starting the boot process. BIOS is an older firmware
+        standard, while UEFI is commonly used in modern computers.
+    </p>
+    <p>
+        UEFI provides support for modern hardware features, larger storage
+        devices, and security capabilities such as Secure Boot. It helps the
+        computer identify a valid boot device and locate the bootloader.
+    </p>
+
+    <h3>14.3 Power-On Self-Test (POST)</h3>
+    <p>
+        POST is a diagnostic process performed during startup. It checks
+        whether important hardware components are functioning properly.
+        These may include the processor, memory, keyboard, and other essential
+        devices. If a serious hardware problem is detected, the computer may
+        display an error message or produce a series of beeps.
+    </p>
+
+    <h3>14.4 Bootloader Execution</h3>
+    <p>
+        The bootloader is a small program responsible for locating and loading
+        the operating system kernel. It may also provide a menu that allows
+        users to choose between multiple operating systems installed on the
+        same computer.
+    </p>
+
+    <h3>14.5 Kernel Loading</h3>
+    <p>
+        The kernel is the central component of an operating system. Once loaded
+        into memory, it initializes system services, manages hardware resources,
+        and prepares the environment needed by other operating system
+        components. It also coordinates communication between applications
+        and hardware.
+    </p>
+
+    <h3>14.6 Login Screen and Desktop Initialization</h3>
+    <p>
+        After the kernel and necessary system services are initialized, the
+        operating system displays the login screen or user interface. The user
+        can enter account credentials and access the desktop environment.
+        Startup applications and background services may also begin running.
+    </p>
+
+    <h3>Importance of the Booting Process</h3>
+    <ul>
+        <li>Prepares computer hardware for operation.</li>
+        <li>Checks important hardware components.</li>
+        <li>Loads the operating system into memory.</li>
+        <li>Starts essential system services.</li>
+        <li>Provides users access to applications and files.</li>
+    </ul>
+
+    <div class="info-grid">
+        <div class="info-card">
+            <h4>Cold Boot</h4>
+            <p>
+                Starting a computer from a completely powered-off state.
+            </p>
+        </div>
+        <div class="info-card">
+            <h4>Warm Boot</h4>
+            <p>
+                Restarting a computer without completely disconnecting
+                its power source.
+            </p>
+        </div>
+    </div>
+
+    <p>
+        Understanding the booting process is useful when diagnosing startup
+        problems. For example, a computer that repeatedly restarts or cannot
+        locate its operating system may have a hardware, firmware, bootloader,
+        or storage-related problem.
+    </p>
+</section>
+
+
+<!-- ==========================================
+     ADDITIONAL LESSON 2: SYSTEM CALLS
+=========================================== -->
+<section class="content-section" id="system-calls">
+    <h2>15. System Calls and Their Functions</h2>
+
+    <p>
+        System calls are mechanisms that allow application programs to request
+        services from the operating system kernel. Applications normally do not
+        have unrestricted access to hardware resources. Instead, they request
+        operating system services through system calls.
+    </p>
+
+    <p>
+        For example, when a user saves a document, the application needs the
+        operating system to create or update a file on a storage device. The
+        application makes an appropriate request, and the operating system
+        performs the operation while managing permissions and system resources.
+    </p>
+
+    <figure class="lesson-figure">
+        <div class="diagram-card">
+            <h3>How a System Call Works</h3>
+            <div class="flow-row">
+                <div class="flow-box">User Application</div>
+                <div class="flow-box">System Call</div>
+            </div>
+            <div class="flow-down">↓</div>
+            <div class="flow-row">
+                <div class="flow-box">Operating System Kernel</div>
+                <div class="flow-box">Hardware Resources</div>
+            </div>
+            <div class="flow-down">↓</div>
+            <div class="flow-box">Result Returned to Application</div>
+        </div>
+        <figcaption>
+            Figure 2. Communication between an application and the operating system.
+        </figcaption>
+    </figure>
+
+    <h3>15.1 Process Control</h3>
+    <p>
+        Process control system calls allow programs to create, execute, and
+        terminate processes. A process is a program that is currently being
+        executed by the computer. The operating system uses these services to
+        manage running applications and coordinate their activities.
+    </p>
+    <p>
+        For example, when a user opens a web browser, the operating system
+        creates a process that allows the browser to execute. When the user
+        closes the browser, the corresponding process is terminated.
+    </p>
+
+    <h3>15.2 File Management Calls</h3>
+    <p>
+        File management system calls allow applications to create, open, read,
+        write, close, and delete files. They provide a controlled method of
+        accessing information stored on disks and other storage devices.
+    </p>
+    <p>
+        Without these services, applications would not have a standard and
+        protected way to manage files. The operating system also checks
+        permissions before allowing certain file operations.
+    </p>
+
+    <h3>15.3 Device Management Calls</h3>
+    <p>
+        Device management calls allow applications to request access to
+        hardware devices. These may include printers, keyboards, storage
+        devices, cameras, and network adapters. The operating system
+        coordinates device access through drivers and other system services.
+    </p>
+
+    <h3>15.4 Information Maintenance Calls</h3>
+    <p>
+        Information maintenance calls allow programs to obtain or update
+        information about the system. Examples include retrieving the current
+        time, checking process information, and obtaining system configuration
+        details.
+    </p>
+
+    <h3>15.5 Communication Calls</h3>
+    <p>
+        Communication system calls allow processes to exchange information.
+        Processes may communicate through shared memory, message passing,
+        or other operating system communication mechanisms. These services
+        are important for applications that need to exchange data.
+    </p>
+
+    <h3>Examples of System Call Categories</h3>
+    <div class="table-wrap">
+        <table>
+            <thead>
+                <tr>
+                    <th>Category</th>
+                    <th>Purpose</th>
+                    <th>Example Activity</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Process Control</td>
+                    <td>Manage running processes</td>
+                    <td>Starting an application</td>
+                </tr>
+                <tr>
+                    <td>File Management</td>
+                    <td>Manage files and directories</td>
+                    <td>Saving a document</td>
+                </tr>
+                <tr>
+                    <td>Device Management</td>
+                    <td>Control hardware access</td>
+                    <td>Printing a document</td>
+                </tr>
+                <tr>
+                    <td>Information Maintenance</td>
+                    <td>Obtain system information</td>
+                    <td>Checking system time</td>
+                </tr>
+                <tr>
+                    <td>Communication</td>
+                    <td>Exchange data between processes</td>
+                    <td>Sharing information between programs</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3>Why Are System Calls Important?</h3>
+    <ul>
+        <li>Provide controlled access to operating system services.</li>
+        <li>Protect hardware resources from unauthorized access.</li>
+        <li>Allow applications to manage files and processes.</li>
+        <li>Support communication between running programs.</li>
+        <li>Help maintain system stability and security.</li>
+    </ul>
+
+    <p>
+        System calls are essential because they create a structured connection
+        between user applications and the operating system. They allow
+        applications to perform important operations without directly
+        controlling hardware resources.
+    </p>
+</section>
+
+
+<!-- ==========================================
+     ADDITIONAL LESSON 3: VIRTUALIZATION
+=========================================== -->
+<section class="content-section" id="virtualization">
+    <h2>16. Virtualization and Cloud-Based Operating Systems</h2>
+
+    <p>
+        Virtualization is a technology that allows one physical computer to
+        run multiple virtual computing environments. Each environment can
+        operate as if it were an independent computer. Virtualization is
+        commonly used in data centers, software development, testing
+        environments, and cloud computing.
+    </p>
+
+    <p>
+        A virtual machine (VM) is a software-based computer that uses virtual
+        hardware resources. It can have its own operating system, applications,
+        memory allocation, storage, and network configuration. Multiple virtual
+        machines may operate on one physical host computer.
+    </p>
+
+    <figure class="lesson-figure">
+        <div class="diagram-card">
+            <h3>Virtualization Structure</h3>
+            <div class="flow-box">Physical Computer Hardware</div>
+            <div class="flow-down">↓</div>
+            <div class="flow-box">Hypervisor</div>
+            <div class="flow-down">↓</div>
+            <div class="flow-row">
+                <div class="flow-box">
+                    Virtual Machine 1<br>
+                    Windows OS
+                </div>
+                <div class="flow-box">
+                    Virtual Machine 2<br>
+                    Linux OS
+                </div>
+                <div class="flow-box">
+                    Virtual Machine 3<br>
+                    Other OS
+                </div>
+            </div>
+        </div>
+        <figcaption>
+            Figure 3. Multiple virtual machines sharing one physical computer.
+        </figcaption>
+    </figure>
+
+    <h3>16.1 Hypervisor</h3>
+    <p>
+        A hypervisor is software or firmware that creates and manages virtual
+        machines. It distributes physical hardware resources among virtual
+        machines and helps keep their environments separated.
+    </p>
+
+    <div class="info-grid">
+        <div class="info-card">
+            <h4>Type 1 Hypervisor</h4>
+            <p>
+                Runs directly on the physical hardware. It is commonly used
+                in servers and enterprise environments.
+            </p>
+            <p><strong>Example:</strong> VMware ESXi and Microsoft Hyper-V.</p>
+        </div>
+        <div class="info-card">
+            <h4>Type 2 Hypervisor</h4>
+            <p>
+                Runs as an application on top of an existing operating system.
+                It is often used for learning, testing, and development.
+            </p>
+            <p><strong>Example:</strong> Oracle VirtualBox and VMware Workstation.</p>
+        </div>
+    </div>
+
+    <h3>16.2 Advantages of Virtualization</h3>
+    <ul>
+        <li><strong>Resource Efficiency:</strong> Multiple virtual machines can share physical hardware.</li>
+        <li><strong>Cost Reduction:</strong> Organizations may reduce the number of physical computers required.</li>
+        <li><strong>Testing Environment:</strong> Developers can test applications using different operating systems.</li>
+        <li><strong>Isolation:</strong> Separate virtual machines can help contain software problems.</li>
+        <li><strong>Flexibility:</strong> Virtual machines can be created, configured, and removed as needed.</li>
+    </ul>
+
+    <h3>16.3 Understanding Cloud Computing</h3>
+    <p>
+        Cloud computing provides computing resources and services through
+        internet-based infrastructure. Instead of depending entirely on local
+        computers, users and organizations can access remote servers,
+        applications, storage, and computing resources.
+    </p>
+    <p>
+        Cloud services may provide virtual machines, databases, file storage,
+        application hosting, and networking capabilities. Operating systems
+        remain important because they manage the resources used by applications
+        running in cloud environments.
+    </p>
+
+    <h3>16.4 Cloud Service Models</h3>
+    <div class="info-grid">
+        <div class="info-card">
+            <h4>Infrastructure as a Service (IaaS)</h4>
+            <p>
+                Provides virtual servers, storage, and networking resources.
+                Users can configure operating systems and applications.
+            </p>
+        </div>
+        <div class="info-card">
+            <h4>Platform as a Service (PaaS)</h4>
+            <p>
+                Provides a platform for developing and deploying applications
+                without managing all underlying infrastructure.
+            </p>
+        </div>
+        <div class="info-card">
+            <h4>Software as a Service (SaaS)</h4>
+            <p>
+                Provides software applications through the internet, often
+                using a web browser.
+            </p>
+        </div>
+    </div>
+
+    <h3>16.5 Practical Applications</h3>
+    <p>
+        Virtualization is useful in educational institutions because students
+        can practice installing and configuring operating systems without
+        requiring separate physical computers. IT professionals also use
+        virtual machines to test software updates, troubleshoot problems,
+        and simulate network environments.
+    </p>
+
+    <p>
+        Cloud computing supports businesses that need flexible computing
+        resources. It allows organizations to increase or decrease resources
+        based on their needs. However, cloud environments also require
+        appropriate security controls, access management, and data protection.
+    </p>
+
+    <h3>Virtualization vs. Traditional Computing</h3>
+    <div class="table-wrap">
+        <table>
+            <thead>
+                <tr>
+                    <th>Traditional Computing</th>
+                    <th>Virtualized Computing</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Usually uses one main operating system per computer.</td>
+                    <td>Can run multiple virtual machines on one physical host.</td>
+                </tr>
+                <tr>
+                    <td>Hardware resources are assigned to the physical system.</td>
+                    <td>Resources can be distributed among virtual machines.</td>
+                </tr>
+                <tr>
+                    <td>Testing different operating systems may require separate computers.</td>
+                    <td>Different operating systems can be tested through virtual machines.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+
+<!-- ==========================================
+     ADDITIONAL LESSON 4: MAINTENANCE
+=========================================== -->
+<section class="content-section" id="maintenance">
+    <h2>17. Operating System Maintenance and Troubleshooting</h2>
+
+    <p>
+        Operating system maintenance refers to the activities performed to
+        keep a computer system secure, stable, and efficient. Regular
+        maintenance helps prevent common problems, protects important data,
+        and ensures that the operating system continues to function properly.
+    </p>
+
+    <p>
+        Troubleshooting is the process of identifying, analyzing, and resolving
+        problems that affect a computer system. These problems may involve
+        software errors, hardware failures, network connectivity, storage
+        issues, or incorrect system configurations.
+    </p>
+
+    <h3>17.1 Installing Operating System Updates</h3>
+    <p>
+        Operating system updates provide improvements, bug fixes, security
+        patches, and compatibility enhancements. Updates help protect
+        computers against known security vulnerabilities and improve
+        system reliability.
+    </p>
+    <p>
+        Users should install updates from trusted sources and follow the
+        recommended installation instructions. Some updates require the
+        computer to restart before the changes become effective.
+    </p>
+
+    <h3>17.2 Managing Storage Space</h3>
+    <p>
+        Storage management involves monitoring available disk space and
+        organizing stored files. When a storage device becomes nearly full,
+        the computer may experience reduced performance or fail to install
+        updates and applications.
+    </p>
+    <ul>
+        <li>Remove unnecessary temporary files.</li>
+        <li>Uninstall applications that are no longer needed.</li>
+        <li>Organize documents into folders.</li>
+        <li>Move large files to appropriate external or cloud storage.</li>
+        <li>Check storage capacity regularly.</li>
+    </ul>
+
+    <h3>17.3 Backup and Data Recovery</h3>
+    <p>
+        A backup is a separate copy of important data that can be restored
+        when the original files become unavailable. Data loss may occur
+        because of accidental deletion, hardware failure, malware, or
+        unexpected system errors.
+    </p>
+
+    <figure class="lesson-figure">
+        <div class="diagram-card">
+            <h3>Basic Backup Process</h3>
+            <div class="flow-row">
+                <div class="flow-box">Original Files</div>
+                <div class="flow-box">Backup Process</div>
+            </div>
+            <div class="flow-down">↓</div>
+            <div class="flow-row">
+                <div class="flow-box">External Storage</div>
+                <div class="flow-box">Cloud Storage</div>
+            </div>
+            <div class="flow-down">↓</div>
+            <div class="flow-box">Restore Data When Needed</div>
+        </div>
+        <figcaption>
+            Figure 4. A basic process for backing up and restoring data.
+        </figcaption>
+    </figure>
+
+    <p>
+        Backups should be stored separately from the original data whenever
+        possible. Users should also check whether backup files can actually
+        be restored. A backup that has never been tested may not provide
+        reliable protection during an emergency.
+    </p>
+
+    <h3>17.4 Malware Protection</h3>
+    <p>
+        Malware refers to malicious software designed to damage systems,
+        steal information, disrupt operations, or gain unauthorized access.
+        Viruses, worms, ransomware, and spyware are examples of malware.
+    </p>
+    <p>
+        Operating systems provide security features that help protect users
+        and devices. These may include built-in security tools, firewalls,
+        application permissions, and automatic security updates.
+    </p>
+    <ul>
+        <li>Install software from trusted sources.</li>
+        <li>Keep security tools updated.</li>
+        <li>Avoid suspicious links and attachments.</li>
+        <li>Use strong passwords and appropriate account permissions.</li>
+        <li>Back up important information regularly.</li>
+    </ul>
+
+    <h3>17.5 Common Operating System Problems</h3>
+    <div class="table-wrap">
+        <table>
+            <thead>
+                <tr>
+                    <th>Problem</th>
+                    <th>Possible Cause</th>
+                    <th>Basic Troubleshooting</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Slow Computer</td>
+                    <td>Too many running applications or limited memory.</td>
+                    <td>Close unnecessary programs and check resource usage.</td>
+                </tr>
+                <tr>
+                    <td>Application Not Responding</td>
+                    <td>Software error or insufficient resources.</td>
+                    <td>Wait, close the application safely, or restart it.</td>
+                </tr>
+                <tr>
+                    <td>Insufficient Storage</td>
+                    <td>Disk space is nearly full.</td>
+                    <td>Remove unnecessary files and review storage usage.</td>
+                </tr>
+                <tr>
+                    <td>Network Connection Failure</td>
+                    <td>Incorrect settings or network equipment problems.</td>
+                    <td>Check network settings and restart network equipment if appropriate.</td>
+                </tr>
+                <tr>
+                    <td>Startup Failure</td>
+                    <td>Boot configuration, operating system, or hardware issue.</td>
+                    <td>Use appropriate recovery tools or seek technical assistance.</td>
+                </tr>
+                <tr>
+                    <td>Device Not Recognized</td>
+                    <td>Driver or hardware connection problem.</td>
+                    <td>Check connections and verify the device driver.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3>17.6 Safe Troubleshooting Practices</h3>
+    <p>
+        Troubleshooting should be performed carefully to avoid additional
+        damage or data loss. Before changing important system settings,
+        users should understand the purpose of the change and create a
+        backup when necessary.
+    </p>
+    <ol>
+        <li>Identify the problem and observe any error messages.</li>
+        <li>Determine when the problem started.</li>
+        <li>Check simple causes such as cables, settings, and available storage.</li>
+        <li>Use built-in diagnostic and troubleshooting tools.</li>
+        <li>Apply one appropriate solution at a time.</li>
+        <li>Restart and test the computer if required.</li>
+        <li>Document the solution for future reference.</li>
+    </ol>
+
+    <h3>17.7 Importance of Regular Maintenance</h3>
+    <p>
+        Regular maintenance reduces the likelihood of system problems and
+        helps extend the useful life of computer equipment. It also improves
+        system security by ensuring that important updates and protective
+        measures are applied.
+    </p>
+
+    <div class="info-grid">
+        <div class="info-card">
+            <h4>Performance</h4>
+            <p>
+                Proper maintenance helps keep system resources organized
+                and available.
+            </p>
+        </div>
+        <div class="info-card">
+            <h4>Security</h4>
+            <p>
+                Updates and security checks help reduce exposure to known
+                threats.
+            </p>
+        </div>
+        <div class="info-card">
+            <h4>Reliability</h4>
+            <p>
+                Backups and regular checks help reduce the impact of
+                unexpected problems.
+            </p>
+        </div>
+    </div>
+
+    <p>
+        Operating system maintenance and troubleshooting are important skills
+        for IT students and professionals. They help users understand common
+        computer problems and apply safe methods to maintain system
+        performance, security, and reliability.
+    </p>
+</section>
+
+
+        <!-- RESOURCES -->
+        <section class="content-section" id="resources">
+            <h2>22. Learning Resources</h2>
+            <p>Use the following resources to explore operating system topics further.</p>
+            <ul class="resource-list">
+                <li><a href="https://learn.microsoft.com" target="_blank" rel="noopener">Microsoft Learn</a> – Microsoft learning and technical documentation.</li>
+                <li><a href="https://www.ibm.com/topics/operating-systems" target="_blank" rel="noopener">IBM Operating Systems Overview</a> – Introduction to operating system concepts.</li>
+                <li><a href="https://www.geeksforgeeks.org/operating-systems/" target="_blank" rel="noopener">GeeksforGeeks Operating System Tutorial</a> – OS concepts and explanations.</li>
+                <li><a href="https://www.tutorialspoint.com/operating_system/index.htm" target="_blank" rel="noopener">TutorialsPoint Operating System Tutorial</a> – Topics about operating systems.</li>
+                <li><a href="https://www.khanacademy.org/computing" target="_blank" rel="noopener">Khan Academy Computing</a> – Computing lessons and concepts.</li>
+                <li><a href="https://training.linuxfoundation.org" target="_blank" rel="noopener">Linux Foundation</a> – Linux learning and training resources.</li>
+                <li><a href="https://docs.oracle.com" target="_blank" rel="noopener">Oracle Documentation</a> – Technical documentation.</li>
+                <li><a href="https://www.computerhistory.org" target="_blank" rel="noopener">Computer History Museum</a> – Computer history resources.</li>
+            </ul>
+        </section>
+
+        <!-- GLOSSARY -->
+        <section class="content-section" id="glossary">
+            <h2>23. Glossary of Terms</h2>
+            <dl class="glossary-list">
+                <dt>Operating System (OS)</dt><dd>System software that manages computer hardware and provides services to applications.</dd>
+                <dt>Kernel</dt><dd>The core component of an operating system.</dd>
+                <dt>Process</dt><dd>A program that is currently being executed.</dd>
+                <dt>Thread</dt><dd>The smallest unit of execution within a process.</dd>
+                <dt>Multitasking</dt><dd>The ability of an OS to handle multiple tasks seemingly at the same time.</dd>
+                <dt>Multiprocessing</dt><dd>The use of multiple processors or processing cores.</dd>
+                <dt>Virtual Memory</dt><dd>A memory management technique that uses storage to support RAM.</dd>
+                <dt>RAM</dt><dd>Random Access Memory, the computer's primary working memory.</dd>
+                <dt>File System</dt><dd>A method used to organize and manage files on storage devices.</dd>
+                <dt>Device Driver</dt><dd>Software that enables communication between the OS and hardware.</dd>
+                <dt>CLI</dt><dd>Command Line Interface, a text-based way to interact with a system.</dd>
+                <dt>GUI</dt><dd>Graphical User Interface, a visual way to interact with a system.</dd>
+                <dt>Authentication</dt><dd>The process of verifying a user's identity.</dd>
+                <dt>Encryption</dt><dd>The process of converting information into a protected format.</dd>
+                <dt>Resource Allocation</dt><dd>The distribution of system resources among programs and users.</dd>
+                <dt>Virtualization</dt><dd>A technology that allows virtual computing environments to run on physical hardware.</dd>
+            </dl>
+        </section>
+
+        <!-- CONCLUSION -->
+        <section class="content-section" id="conclusion">
+            <h2>24. Conclusion</h2>
+            <p>
+                Operating systems are fundamental components of modern
+                computer systems. They serve as the bridge between users
+                and hardware, making it possible to perform computing
+                tasks efficiently and effectively. Through functions such
+                as process management, memory management, file management,
+                device management, security, and resource allocation,
+                operating systems ensure that computer resources are
+                used properly and applications function smoothly.
+            </p>
+            <p>
+                The evolution of operating systems from simple
+                batch-processing systems to advanced platforms demonstrates
+                the rapid advancement of computing technology. Modern
+                operating systems support personal computers, servers,
+                smartphones, and embedded systems. They increasingly
+                incorporate cloud connectivity, artificial intelligence,
+                virtualization, and advanced security mechanisms.
+            </p>
+            <p>
+                Understanding operating system concepts and functions
+                provides a strong foundation for students pursuing
+                Information Technology, Computer Science, and related
+                fields. As technology continues to evolve, operating
+                systems will remain essential to digital computing.
+            </p>
+            <div class="highlight-box">
+                <h3>Key Takeaway</h3>
+                <p>
+                    An operating system does more than start a computer.
+                    It coordinates hardware, manages applications, protects
+                    information, and provides the environment that makes
+                    everyday computing possible.
+                </p>
+            </div>
+        </section>
+
+        <!-- REFERENCES -->
+        <section class="content-section" id="references">
+            <h2>25. References</h2>
+            <ol class="reference-list">
+                <li>Britannica. (n.d.). <em>Operating system.</em> Encyclopaedia Britannica. <a href="https://www.britannica.com/technology/operating-system" target="_blank" rel="noopener">https://www.britannica.com/technology/operating-system</a></li>
+                <li>Computer History Museum. (n.d.). <em>Computer History Museum.</em> <a href="https://www.computerhistory.org" target="_blank" rel="noopener">https://www.computerhistory.org</a></li>
+                <li>GeeksforGeeks. (2024). <em>Operating system tutorial.</em> <a href="https://www.geeksforgeeks.org/operating-systems/" target="_blank" rel="noopener">https://www.geeksforgeeks.org/operating-systems/</a></li>
+                <li>IBM. (n.d.). <em>What is an operating system (OS)?</em> <a href="https://www.ibm.com/topics/operating-systems" target="_blank" rel="noopener">https://www.ibm.com/topics/operating-systems</a></li>
+                <li>Intel Corporation. (n.d.). <em>Intel Education.</em> <a href="https://www.intel.com/content/www/us/en/education.html" target="_blank" rel="noopener">https://www.intel.com/content/www/us/en/education.html</a></li>
+                <li>Khan Academy. (n.d.). <em>Computing.</em> <a href="https://www.khanacademy.org/computing" target="_blank" rel="noopener">https://www.khanacademy.org/computing</a></li>
+                <li>Linux Foundation. (n.d.). <em>Linux training and certification.</em> <a href="https://training.linuxfoundation.org" target="_blank" rel="noopener">https://training.linuxfoundation.org</a></li>
+                <li>Microsoft. (n.d.). <em>Microsoft Learn.</em> <a href="https://learn.microsoft.com" target="_blank" rel="noopener">https://learn.microsoft.com</a></li>
+                <li>Oracle Corporation. (n.d.). <em>Oracle Documentation.</em> <a href="https://docs.oracle.com" target="_blank" rel="noopener">https://docs.oracle.com</a></li>
+                <li>TutorialsPoint. (n.d.). <em>Operating system tutorial.</em> <a href="https://www.tutorialspoint.com/operating_system/index.html" target="_blank" rel="noopener">https://www.tutorialspoint.com/operating_system/index.html</a></li>
+            </ol>
+        </section>
+
+        <footer class="lesson-footer">
+            <p>WEBTECH LEARN | BSIT DIGITAL E-BOOK</p>
+            <p>Lesson 2 – Operating System Concepts and Functions</p>
+            <a href="#introduction">Back to Top ↑</a>
+        </footer>
+
+    </main>
+</div>
+
+<button id="backToTop" aria-label="Back to top">↑</button>
+
+</body>
+</html>

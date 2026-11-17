@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <title>Chapter 6 | Device and Input/Output Management</title>
+
+    <link rel="stylesheet" href="lesson7-assessment.css">
+    <link rel="stylesheet" href="display-settings.css">
+
+    <script src="display-settings.js" defer></script>
+    <script src="lesson7-assessment.js" defer></script>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+    <div class="nav-container">
+
+        <a href="index.html" class="logo">
+            <img src="logo.jpg" alt="BSIT Digital Minds Logo" class="logo-image">
+
+            <span class="logo-text">
+                <small>BSIT | DIGITAL MINDS</small>
+            </span>
+        </a>
+
+        <a href="2nd yr toc.html" class="back-home">
+            ← Back to Table of Content
+        </a>
+
+    </div>
+    <link rel="stylesheet" href="ebook-pagination.css">
+<script src="ebook-pagination.js" defer></script>
+</header>
+
+
+<div class="page-layout">
+
+    <aside class="sidebar">
+        <h3>LESSON 7</h3>
+        <p class="sidebar-subtitle">Assessment Navigation</p>
+
+        <nav class="side-nav">
+            <a href="#overview" class="active">1. Assessment Overview</a>
+            <a href="#instructions">2. Instructions</a>
+            <a href="#assessment">3. Assessment Questions</a>
+            
+        </nav>
+
+
+        <div class="sidebar-progress">
+            <p>Your Progress</p>
+            <div class="progress-track">
+                <div id="sideProgress"></div>
+            </div>
+            <span id="progressText">0 of 20 answered</span>
+        </div>
+    </aside>
+
+    <main class="main-content">
+
+        <div class="top-progress">
+            <span>LESSON 7 ASSESSMENT</span>
+            <span>20 QUESTIONS</span>
+        </div>
+
+        <section class="assessment-banner">
+            <span class="lesson-label">OPERATING SYSTEMS</span>
+            <h1>LESSON 7 ASSESSMENT</h1>
+            <p>Deadlocks and Resource Allocation</p>
+            <div class="banner-tags">
+                <span>Resource Management</span>
+                <span>Deadlock Handling</span>
+                <span>20 Items</span>
+            </div>
+        </section>
+
+        <!-- OVERVIEW -->
+        <section class="content-section" id="overview">
+            <span class="section-label">01 • OVERVIEW</span>
+            <h2>Assessment Overview</h2>
+            <p class="section-intro">
+                This assessment measures your understanding of resource allocation,
+                deadlock conditions, resource allocation graphs, deadlock prevention,
+                avoidance, detection, and recovery techniques.
+            </p>
+
+            <div class="overview-grid">
+                <div class="overview-card">
+                    <span class="overview-icon">📝</span>
+                    <h3>20 Questions</h3>
+                    <p>Multiple-choice questions covering Lesson 7.</p>
+                </div>
+
+                <div class="overview-card">
+                    <span class="overview-icon">🎯</span>
+                    <h3>20 Points</h3>
+                    <p>Each correct answer is worth one point.</p>
+                </div>
+
+                <div class="overview-card">
+                    <span class="overview-icon">⏱️</span>
+                    <h3>Self-Paced</h3>
+                    <p>Answer the questions at your own pace.</p>
+                </div>
+
+                <div class="overview-card">
+                    <span class="overview-icon">🏆</span>
+                    <h3>60% Passing</h3>
+                    <p>You need at least 12 correct answers to pass.</p>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <h3>Learning Objective</h3>
+                <p>
+                    After completing this assessment, students should be able to
+                    identify resource allocation concepts, explain the four necessary
+                    conditions of deadlock, distinguish deadlock management methods,
+                    and recognize appropriate recovery techniques.
+                </p>
+            </div>
+        </section>
+
+        <!-- INSTRUCTIONS -->
+        <section class="content-section" id="instructions">
+            <span class="section-label">02 • GUIDELINES</span>
+            <h2>Assessment Instructions</h2>
+            <p class="section-intro">
+                Read the following instructions carefully before answering.
+            </p>
+
+            <div class="instruction-list">
+                <div class="instruction-item">
+                    <span>01</span>
+                    <div>
+                        <h3>Read Each Question</h3>
+                        <p>Read every question carefully before selecting your answer.</p>
+                    </div>
+                </div>
+
+                <div class="instruction-item">
+                    <span>02</span>
+                    <div>
+                        <h3>Select One Answer</h3>
+                        <p>Choose only one option for each multiple-choice question.</p>
+                    </div>
+                </div>
+
+                <div class="instruction-item">
+                    <span>03</span>
+                    <div>
+                        <h3>Answer All Questions</h3>
+                        <p>Make sure all 20 questions have been answered before submitting.</p>
+                    </div>
+                </div>
+
+                <div class="instruction-item">
+                    <span>04</span>
+                    <div>
+                        <h3>Submit Your Assessment</h3>
+                        <p>Click the Submit Assessment button to calculate your score.</p>
+                    </div>
+                </div>
+
+                <div class="instruction-item">
+                    <span>05</span>
+                    <div>
+                        <h3>Review Your Results</h3>
+                        <p>Check your score, correct answers, and explanations after submission.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="reminder-box">
+                <strong>Reminder:</strong> You cannot submit the assessment while some
+                questions are unanswered. Complete all items first.
+            </div>
+        </section>
+
+        <!-- ASSESSMENT -->
+        <section class="content-section" id="assessment">
+            <span class="section-label">03 • TEST YOUR KNOWLEDGE</span>
+            <h2>Assessment Questions</h2>
+            <p class="section-intro">
+                Choose the best answer for each question. Your progress will update
+                automatically as you answer.
+            </p>
+
+            <div class="quiz-progress-card">
+                <div class="quiz-progress-heading">
+                    <strong>Assessment Progress</strong>
+                    <span id="answeredCount">0 / 20 Answered</span>
+                </div>
+                <div class="quiz-progress-track">
+                    <div id="quizProgress"></div>
+                </div>
+            </div>
+
+            <form id="assessmentForm">
+
+                <div class="question-card" data-question="1">
+                    <div class="question-top">
+                        <span class="question-number">QUESTION 01</span>
+                        <span class="question-points">1 POINT</span>
+                    </div>
+                    <h3>What is resource allocation in an operating system?</h3>
+                    <div class="options">
+                        <label><input type="radio" name="q1" value="A"><span>A. Removing all programs from memory</span></label>
+                        <label><input type="radio" name="q1" value="B"><span>B. Assigning available resources to processes</span></label>
+                        <label><input type="radio" name="q1" value="C"><span>C. Deleting unnecessary system files</span></label>
+                        <label><input type="radio" name="q1" value="D"><span>D. Shutting down the computer automatically</span></label>
+                    </div>
+                    <div class="question-feedback"></div>
+                </div>
+
+                <div class="question-card" data-question="2">
+                    <div class="question-top">
+                        <span class="question-number">QUESTION 02</span>
+                        <span class="question-points">1 POINT</span>
+                    </div>
+                    <h3>Which of the following is an example of a hardware resource?</h3>
+                    <div class="options">
+                        <label><input type="radio" name="q2" value="A"><span>A. Database software</span></label>
+                        <label><input type="radio" name="q2" value="B"><span>B. Shared library</span></label>
+                        <label><input type="radio" name="q2" value="C"><span>C. Printer</span></label>
+                        <label><input type="radio" name="q2" value="D"><span>D. Operating system service</span></label>
+                    </div>
+                    <div class="question-feedback"></div>
+                </div>
+
+                <div class="question-card" data-question="3">
+                    <div class="question-top">
+                        <span class="question-number">QUESTION 03</span>
+                        <span class="question-points">1 POINT</span>
+                    </div>
+                    <h3>Which sequence represents the basic resource allocation cycle?</h3>
+                    <div class="options">
+                        <label><input type="radio" name="q3" value="A"><span>A. Request → Allocation → Use → Release</span></label>
+                        <label><input type="radio" name="q3" value="B"><span>B. Release → Delete → Restart → Request</span></label>
+                        <label><input type="radio" name="q3" value="C"><span>C. Use → Shutdown → Allocation → Delete</span></label>
+                        <label><input type="radio" name="q3" value="D"><span>D. Allocation → Shutdown → Request → Restart</span></label>
+                    </div>
+                    <div class="question-feedback"></div>
+                </div>
+
+                <div class="question-card" data-question="4">
+                    <div class="question-top">
+                        <span class="question-number">QUESTION 04</span>
+                        <span class="question-points">1 POINT</span>
+                    </div>
+                    <h3>What is a deadlock?</h3>
+                    <div class="options">
+                        <label><input type="radio" name="q4" value="A"><span>A. A process that finishes successfully</span></label>
+                        <label><input type="radio" name="q4" value="B"><span>B. A computer running multiple applications</span></label>
+                        <label><input type="radio" name="q4" value="C"><span>C. A process receiving more memory</span></label>
+                        <label><input type="radio" name="q4" value="D"><span>D. Processes waiting indefinitely for resources held by one another</span></label>
+                    </div>
+                    <div class="question-feedback"></div>
+                </div>
+
+                <div class="question-card" data-question="5">
+                    <div class="question-top">
+                        <span class="question-number">QUESTION 05</span>
+                        <span class="question-points">1 POINT</span>
+                    </div>
+                    <h3>Which condition means that a resource can be used by only one process at a time?</h3>
+                    <div class="options">
+                        <label><input type="radio" name="q5" value="A"><span>A. Circular Wait</span></label>
+                        <label><input type="radio" name="q5" value="B"><span>B. Mutual Exclusion</span></label>
+                        <label><input type="radio" name="q5" value="C"><span>C. Hold and Wait</span></label>
+                        <label><input type="radio" name="q5" value="D"><span>D. No Preemption</span></label>
+                    </div>
+                    <div class="question-feedback"></div>
+                </div>
+
+                <div class="question-card" data-question="6">
+                    <div class="question-top">
+                        <span class="question-number">QUESTION 06</span>
+                        <span class="question-points">1 POINT</span>
+                    </div>
+                    <h3>What happens in the Hold and Wait condition?</h3>
+                    <div class="options">
+                        <label><input type="radio" name="q6" value="A"><span>A. A process releases all resources immediately</span></label>
+                        <label><input type="radio" name="q6" value="B"><span>B. A process uses no resources</span></label>
+                        <label><input type="radio" name="q6" value="C"><span>C. A process holds resources while waiting for additional ones</span></label>
+                        <label><input type="radio" name="q6" value="D"><span>D. The operating system deletes a process</span></label>
+                    </div>
+                    <div class="question-feedback"></div>
+                </div>
+
+                <div class="question-card" data-question="7">
+                    <div class="question-top">
+                        <span class="question-number">QUESTION 07</span>
+                        <span class="question-points">1 POINT</span>
+                    </div>
+                    <h3>Which deadlock condition states that resources cannot be forcibly taken from a process?</h3>
+                    <div class="options">
+                        <label><input type="radio" name="q7" value="A"><span>A. No Preemption</span></label>
+                        <label><input type="radio" name="q7" value="B"><span>B. Mutual Exclusion</span></label>
+                        <label><input type="radio" name="q7" value="C"><span>C. Circular Wait</span></label>
+                        <label><input type="radio" name="q7" value="D"><span>D. Resource Sharing</span></label>
+                    </div>
+                    <div class="question-feedback"></div>
+                </div>
+
+                <div class="question-card" data-question="8">
+                    <div class="question-top">
+                        <span class="question-number">QUESTION 08</span>
+                        <span class="question-points">1 POINT</span>
+                    </div>
+                    <h3>In a Resource Allocation Graph, how are processes commonly represented?</h3>
+                    <div class="options">
+                        <label><input type="radio" name="q8" value="A"><span>A. Rectangles</span></label>
+                        <label><input type="radio" name="q8" value="B"><span>B. Triangles</span></label>
+                        <label><input type="radio" name="q8" value="C"><span>C. Arrows</span></label>
+                        <label><input type="radio" name="q8" value="D"><span>D. Circles</span></label>
+                    </div>
+                    <div class="question-feedback"></div>
+                </div>
+
+                <div class="question-card" data-question="9">
+                    <div class="question-top">
+                        <span class="question-number">QUESTION 09</span>
+                        <span class="question-points">1 POINT</span>
+                    </div>
+                    <h3>What does a request edge P1 → R1 mean in a Resource Allocation Graph?</h3>
+                    <div class="options">
+                        <label><input type="radio" name="q9" value="A"><span>A. R1 is assigned to P1</span></label>
+                        <label><input type="radio" name="q9" value="B"><span>B. P1 is requesting resource R1</span></label>
+                        <label><input type="radio" name="q9" value="C"><span>C. P1 has released R1</span></label>
+                        <label><input type="radio" name="q9" value="D"><span>D. R1 has terminated P1</span></label>
+                    </div>
+                    <div class="question-feedback"></div>
+                </div>
+
+                <div class="question-card" data-question="10">
+                    <div class="question-top">
+                        <span class="question-number">QUESTION 10</span>
+                        <span class="question-points">1 POINT</span>
+                    </div>
+                    <h3>What is the main purpose of deadlock prevention?</h3>
+                    <div class="options">
+                        <label><input type="radio" name="q10" value="A"><span>A. To increase the number of running programs</span></label>
+                        <label><input type="radio" name="q10" value="B"><span>B. To allow all processes to wait indefinitely</span></label>
+                        <label><input type="radio" name="q10" value="C"><span>C. To ensure at least one necessary deadlock condition cannot occur</span></label>
+                        <label><input type="radio" name="q10" value="D"><span>D. To remove all hardware resources</span></label>
+                    </div>
+                    <div class="question-feedback"></div>
+                </div>
+
+                <div class="question-card" data-question="11">
+                    <div class="question-top">
+                        <span class="question-number">QUESTION 11</span>
+                        <span class="question-points">1 POINT</span>
+                    </div>
+                    <h3>How does deadlock avoidance make resource allocation decisions?</h3>
+                    <div class="options">
+                        <label><input type="radio" name="q11" value="A"><span>A. It grants every request immediately</span></label>
+                        <label><input type="radio" name="q11" value="B"><span>B. It ignores process requirements</span></label>
+                        <label><input type="radio" name="q11" value="C"><span>C. It terminates all processes before allocation</span></label>
+                        <label><input type="radio" name="q11" value="D"><span>D. It checks whether granting a request keeps the system safe</span></label>
+                    </div>
+                    <div class="question-feedback"></div>
+                </div>
+
+                <div class="question-card" data-question="12">
+                    <div class="question-top">
+                        <span class="question-number">QUESTION 12</span>
+                        <span class="question-points">1 POINT</span>
+                    </div>
+                    <h3>What is a safe state?</h3>
+                    <div class="options">
+                        <label><input type="radio" name="q12" value="A"><span>A. A state where at least one safe sequence allows all processes to finish</span></label>
+                        <label><input type="radio" name="q12" value="B"><span>B. A state where all resources are permanently locked</span></label>
+                        <label><input type="radio" name="q12" value="C"><span>C. A state where no process is allowed to execute</span></label>
+                        <label><input type="radio" name="q12" value="D"><span>D. A state where the computer is turned off</span></label>
+                    </div>
+                    <div class="question-feedback"></div>
+                </div>
+
+                <div class="question-card" data-question="13">
+                    <div class="question-top">
+                        <span class="question-number">QUESTION 13</span>
+                        <span class="question-points">1 POINT</span>
+                    </div>
+                    <h3>Which algorithm is commonly used for deadlock avoidance?</h3>
+                    <div class="options">
+                        <label><input type="radio" name="q13" value="A"><span>A. First-Come, First-Served</span></label>
+                        <label><input type="radio" name="q13" value="B"><span>B. Banker's Algorithm</span></label>
+                        <label><input type="radio" name="q13" value="C"><span>C. Round Robin</span></label>
+                        <label><input type="radio" name="q13" value="D"><span>D. Binary Search</span></label>
+                    </div>
+                    <div class="question-feedback"></div>
+                </div>
+
+                <div class="question-card" data-question="14">
+                    <div class="question-top">
+                        <span class="question-number">QUESTION 14</span>
+                        <span class="question-points">1 POINT</span>
+                    </div>
+                    <h3>In the Banker's Algorithm, what does Available represent?</h3>
+                    <div class="options">
+                        <label><input type="radio" name="q14" value="A"><span>A. The maximum number of processes</span></label>
+                        <label><input type="radio" name="q14" value="B"><span>B. The resources already permanently deleted</span></label>
+                        <label><input type="radio" name="q14" value="C"><span>C. The number of resource instances currently available</span></label>
+                        <label><input type="radio" name="q14" value="D"><span>D. The number of completed programs only</span></label>
+                    </div>
+                    <div class="question-feedback"></div>
+                </div>
+
+                <div class="question-card" data-question="15">
+                    <div class="question-top">
+                        <span class="question-number">QUESTION 15</span>
+                        <span class="question-points">1 POINT</span>
+                    </div>
+                    <h3>What does an unsafe state mean?</h3>
+                    <div class="options">
+                        <label><input type="radio" name="q15" value="A"><span>A. A deadlock has definitely already occurred</span></label>
+                        <label><input type="radio" name="q15" value="B"><span>B. The system has no hardware resources</span></label>
+                        <label><input type="radio" name="q15" value="C"><span>C. Every process has completed</span></label>
+                        <label><input type="radio" name="q15" value="D"><span>D. No guaranteed safe sequence exists, so deadlock is possible</span></label>
+                    </div>
+                    <div class="question-feedback"></div>
+                </div>
+
+                <div class="question-card" data-question="16">
+                    <div class="question-top">
+                        <span class="question-number">QUESTION 16</span>
+                        <span class="question-points">1 POINT</span>
+                    </div>
+                    <h3>What is the purpose of deadlock detection?</h3>
+                    <div class="options">
+                        <label><input type="radio" name="q16" value="A"><span>A. To identify whether a deadlock currently exists</span></label>
+                        <label><input type="radio" name="q16" value="B"><span>B. To prevent users from opening files</span></label>
+                        <label><input type="radio" name="q16" value="C"><span>C. To increase monitor resolution</span></label>
+                        <label><input type="radio" name="q16" value="D"><span>D. To replace the operating system</span></label>
+                    </div>
+                    <div class="question-feedback"></div>
+                </div>
+
+                <div class="question-card" data-question="17">
+                    <div class="question-top">
+                        <span class="question-number">QUESTION 17</span>
+                        <span class="question-points">1 POINT</span>
+                    </div>
+                    <h3>What does a Wait-for Graph show?</h3>
+                    <div class="options">
+                        <label><input type="radio" name="q17" value="A"><span>A. The physical size of system memory</span></label>
+                        <label><input type="radio" name="q17" value="B"><span>B. The relationship between processes waiting for one another</span></label>
+                        <label><input type="radio" name="q17" value="C"><span>C. The number of installed applications</span></label>
+                        <label><input type="radio" name="q17" value="D"><span>D. The speed of the computer processor</span></label>
+                    </div>
+                    <div class="question-feedback"></div>
+                </div>
+
+                <div class="question-card" data-question="18">
+                    <div class="question-top">
+                        <span class="question-number">QUESTION 18</span>
+                        <span class="question-points">1 POINT</span>
+                    </div>
+                    <h3>Which recovery method stops one or more processes to release their resources?</h3>
+                    <div class="options">
+                        <label><input type="radio" name="q18" value="A"><span>A. Resource sharing</span></label>
+                        <label><input type="radio" name="q18" value="B"><span>B. Dynamic allocation</span></label>
+                        <label><input type="radio" name="q18" value="C"><span>C. Process termination</span></label>
+                        <label><input type="radio" name="q18" value="D"><span>D. Priority scheduling</span></label>
+                    </div>
+                    <div class="question-feedback"></div>
+                </div>
+
+                <div class="question-card" data-question="19">
+                    <div class="question-top">
+                        <span class="question-number">QUESTION 19</span>
+                        <span class="question-points">1 POINT</span>
+                    </div>
+                    <h3>What is process rollback?</h3>
+                    <div class="options">
+                        <label><input type="radio" name="q19" value="A"><span>A. Deleting every file in the computer</span></label>
+                        <label><input type="radio" name="q19" value="B"><span>B. Increasing the process priority permanently</span></label>
+                        <label><input type="radio" name="q19" value="C"><span>C. Assigning all resources to one process</span></label>
+                        <label><input type="radio" name="q19" value="D"><span>D. Restoring a process to a previously saved state</span></label>
+                    </div>
+                    <div class="question-feedback"></div>
+                </div>
+
+                <div class="question-card" data-question="20">
+                    <div class="question-top">
+                        <span class="question-number">QUESTION 20</span>
+                        <span class="question-points">1 POINT</span>
+                    </div>
+                    <h3>What technique helps prevent resource starvation by gradually increasing the priority of waiting processes?</h3>
+                    <div class="options">
+                        <label><input type="radio" name="q20" value="A"><span>A. Aging</span></label>
+                        <label><input type="radio" name="q20" value="B"><span>B. Process termination</span></label>
+                        <label><input type="radio" name="q20" value="C"><span>C. Circular waiting</span></label>
+                        <label><input type="radio" name="q20" value="D"><span>D. Resource preemption</span></label>
+                    </div>
+                    <div class="question-feedback"></div>
+                </div>
+
+                <div id="formMessage" class="form-message" role="alert"></div>
+
+                <div class="submit-area">
+                    <p>Review your answers before submitting your assessment.</p>
+                    <button type="submit" class="submit-btn">Submit Assessment →</button>
+                    <button type="button" id="resetBtn" class="reset-btn">Reset Answers</button>
+                </div>
+
+            </form>
+        </section>
+
+        <!-- RESULTS -->
+        <section class="content-section results-section" id="results">
+            <span class="section-label">04 • PERFORMANCE</span>
+            <h2>Assessment Results</h2>
+            <p class="section-intro">
+                Your assessment results and answer explanations will appear here after submission.
+            </p>
+
+            <div id="resultPlaceholder" class="result-placeholder">
+                <div class="placeholder-icon">📊</div>
+                <h3>No Results Yet</h3>
+                <p>Complete all 20 questions and submit your assessment to view your results.</p>
+            </div>
+
+            <div id="resultContent" class="result-content" hidden>
+                <div class="result-banner" id="resultBanner">
+                    <div class="result-icon" id="resultIcon">🏆</div>
+                    <h3 id="resultTitle">Assessment Completed!</h3>
+                    <p id="resultMessage"></p>
+                </div>
+
+                <div class="score-grid">
+                    <div class="score-card">
+                        <span>YOUR SCORE</span>
+                        <strong id="scoreValue">0/20</strong>
+                    </div>
+                    <div class="score-card">
+                        <span>PERCENTAGE</span>
+                        <strong id="percentageValue">0%</strong>
+                    </div>
+                    <div class="score-card">
+                        <span>CORRECT</span>
+                        <strong id="correctValue">0</strong>
+                    </div>
+                    <div class="score-card">
+                        <span>INCORRECT</span>
+                        <strong id="incorrectValue">0</strong>
+                    </div>
+                </div>
+
+                <div class="answer-summary">
+                    <h3>Answer Review</h3>
+                    <p class="review-description">
+                        Review each item to understand which answers were correct
+                        and which concepts need more practice.
+                    </p>
+                    <div id="answerReview"></div>
+                </div>
+
+                <div class="result-actions">
+                    <button type="button" id="tryAgainBtn" class="submit-btn">Try Again ↻</button>
+                    <a href="lesson7.html" class="back-lesson-btn">Review Lesson 7</a>
+                </div>
+            </div>
+        </section>
+
+        <footer class="page-footer">
+            <p>WEBTECH LEARN | BSIT DIGITAL E-BOOK</p>
+            <p>Lesson 7: Deadlocks and Resource Allocation — Assessment</p>
+        </footer>
+
+    </main>
+</div>
+
+<button id="backToTop" title="Back to Top">↑</button>
+
+</body>
+</html>

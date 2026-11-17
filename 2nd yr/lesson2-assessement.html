@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lesson 2 Assessment | Operating System Concepts and Functions</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="lesson2-assessement.css">
+    <link rel="stylesheet" href="display-settings.css">
+
+    <script src="display-settings.js" defer></script>
+    <script src="lesson2-assessement.js" defer></script>
+</head>
+<body>
+
+<header class="header">
+    <div class="nav-container">
+        <a href="index.html" class="logo">
+            <img src="logo.jpg" alt="BSIT Digital Minds Logo" class="logo-image">
+            <span class="logo-text">
+                <small>BSIT | DIGITAL MINDS</small>
+            </span>
+        </a>
+
+        <a href="lesson2.html" class="back-home">
+            ← Back to Lesson 2
+        </a>
+    </div>
+</header>
+
+<div class="page-layout">
+
+    <aside class="sidebar">
+        <h3>LESSON 02</h3>
+        <p class="sidebar-subtitle">Operating System Concepts and Functions</p>
+
+        <nav>
+            <a href="#assessment-overview">Assessment Overview</a>
+            <a href="#instructions">Instructions</a>
+            <a href="#part1">Part I – Multiple Choice</a>
+            <a href="#part2">Part II – Identification</a>
+            <a href="#part3">Part III – True or False</a>
+            <a href="#submit-assessment">Submit Assessment</a>
+        </nav>
+
+        <div class="separate-learning-links">
+            <a href="lesson2.html">📘 Back to Lesson</a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+
+        <section class="lesson-banner" id="assessment-overview">
+            <span class="lesson-label">LESSON 02</span>
+            <h1>Assessment: Operating System Concepts and Functions</h1>
+            <p>
+                Test your understanding of operating systems, their history,
+                concepts, functions, components, architecture, and modern
+                technologies. Read each question carefully before answering.
+            </p>
+
+            <div class="banner-tags">
+                <span>BSIT DIGITAL E-BOOK</span>
+                <span>2ND YEAR</span>
+                <span>35 ITEMS</span>
+            </div>
+        </section>
+
+        <section class="content-section" id="instructions">
+            <h2>Assessment Instructions</h2>
+
+            <p>
+                This assessment measures your understanding of the topics
+                discussed in Lesson 2: Operating System Concepts and Functions.
+                Answer all 35 questions to complete the assessment.
+            </p>
+
+            <div class="highlight-box">
+                <h3>General Instructions</h3>
+                <ul>
+                    <li>Read each question carefully.</li>
+                    <li>Select only one answer for each multiple-choice question.</li>
+                    <li>For identification, type the correct term in the answer field.</li>
+                    <li>For True or False, select the correct statement.</li>
+                    <li>Make sure all questions are answered before submitting.</li>
+                    <li>Your score and answer explanations will appear after submission.</li>
+                </ul>
+            </div>
+
+            <div class="assessment-summary">
+                <div class="summary-card">
+                    <span class="summary-number">20</span>
+                    <span class="summary-label">Multiple Choice</span>
+                </div>
+                <div class="summary-card">
+                    <span class="summary-number">10</span>
+                    <span class="summary-label">Identification</span>
+                </div>
+                <div class="summary-card">
+                    <span class="summary-number">5</span>
+                    <span class="summary-label">True or False</span>
+                </div>
+                <div class="summary-card">
+                    <span class="summary-number">35</span>
+                    <span class="summary-label">Total Items</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section assessment-section">
+
+            <div class="assessment-progress">
+                <div class="progress-top">
+                    <span>Assessment Progress</span>
+                    <strong id="progressText">0 of 35 answered</strong>
+                </div>
+
+                <div class="progress-track">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+            </div>
+
+            <form id="assessmentForm" autocomplete="off">
+
+                <!-- PART I -->
+                <div class="part-heading" id="part1">
+                    <span class="part-number">PART I</span>
+                    <h2>Multiple Choice</h2>
+                    <p>
+                        Choose the letter of the correct answer.
+                        Each question is worth one point.
+                    </p>
+                </div>
+
+                <div id="multipleChoiceContainer"></div>
+
+                <!-- PART II -->
+                <div class="part-heading" id="part2">
+                    <span class="part-number">PART II</span>
+                    <h2>Identification</h2>
+                    <p>
+                        Identify the term being described. Type your answer
+                        in the space provided.
+                    </p>
+                </div>
+
+                <div id="identificationContainer"></div>
+
+                <!-- PART III -->
+                <div class="part-heading" id="part3">
+                    <span class="part-number">PART III</span>
+                    <h2>True or False</h2>
+                    <p>
+                        Read each statement carefully. Select TRUE if the
+                        statement is correct and FALSE if it is incorrect.
+                    </p>
+                </div>
+
+                <div id="trueFalseContainer"></div>
+
+                <div class="submit-section" id="submit-assessment">
+                    <h3>Ready to Submit?</h3>
+                    <p>
+                        Review your answers before submitting. Your score
+                        and explanations will be displayed after checking
+                        your responses.
+                    </p>
+
+                    <div class="submit-buttons">
+                        <button type="button" id="resetAssessment" class="reset-btn">
+                            Reset Answers
+                        </button>
+
+                        <button type="submit" id="submitAssessment" class="submit-btn">
+                            Submit Assessment
+                        </button>
+                    </div>
+                </div>
+
+            </form>
+        </section>
+
+        <!-- RESULTS -->
+        <section class="content-section results-section" id="results" hidden>
+
+            <div class="result-heading">
+                <span class="lesson-label">ASSESSMENT COMPLETED</span>
+                <h2>Your Assessment Results</h2>
+                <p id="resultMessage">Your results are ready.</p>
+            </div>
+
+            <div class="score-display">
+                <span class="score-label">YOUR FINAL SCORE</span>
+                <div class="score-number">
+                    <span id="scoreNumber">0</span>
+                    <span class="score-total">/ 35</span>
+                </div>
+                <div class="score-percentage" id="scorePercentage">0%</div>
+                <div class="result-status" id="resultStatus">Completed</div>
+            </div>
+
+            <div class="score-breakdown">
+                <h3>Score Breakdown</h3>
+
+                <div class="breakdown-row">
+                    <span>Part I – Multiple Choice</span>
+                    <strong id="mcScore">0 / 20</strong>
+                </div>
+
+                <div class="breakdown-row">
+                    <span>Part II – Identification</span>
+                    <strong id="idScore">0 / 10</strong>
+                </div>
+
+                <div class="breakdown-row">
+                    <span>Part III – True or False</span>
+                    <strong id="tfScore">0 / 5</strong>
+                </div>
+            </div>
+
+            <div class="result-details" id="resultDetails"></div>
+
+            <div class="explanation-container">
+                <h3>Answer Key and Explanations</h3>
+                <p>
+                    Review the correct answers and explanations to understand
+                    the concepts covered in this assessment.
+                </p>
+
+                <div id="explanationList"></div>
+            </div>
+
+            <div class="submit-buttons result-buttons">
+                <button type="button" id="tryAgain" class="submit-btn">
+                    Try Again
+                </button>
+
+                <a href="lesson2.html" class="back-lesson-btn">
+                    Back to Lesson 2
+                </a>
+            </div>
+
+        </section>
+
+        <footer class="lesson-footer">
+            <p>WEBTECH LEARN | BSIT DIGITAL E-BOOK</p>
+            <p>Lesson 2 – Operating System Concepts and Functions</p>
+            <a href="#assessment-overview">Back to Top ↑</a>
+        </footer>
+
+    </main>
+</div>
+
+<button id="backToTop" aria-label="Back to top">↑</button>
+
+</body>
+</html>

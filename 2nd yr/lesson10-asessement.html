@@ -1,0 +1,288 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 2 Assessment | WEBTECH LEARN</title>
+
+    <link rel="stylesheet" href="lesson10-asessement.css">
+    <link rel="stylesheet" href="display-settings.css">
+
+    <script src="display-settings.js" defer></script>
+    <script src="lesson10-asessement.js" defer></script>
+</head>
+<body>
+
+
+<!-- HEADER -->
+<header class="header">
+    <div class="nav-container">
+
+        <a href="index.html" class="logo">
+            <img src="logo.jpg" alt="BSIT Digital Minds Logo" class="logo-image">
+
+            <span class="logo-text">
+                <small>BSIT | DIGITAL MINDS</small>
+            </span>
+        </a>
+
+        <a href="lesson10.html" class="back-home">
+            ← Back to the lesson 10
+        </a>
+
+    </div>
+   
+</header>
+
+
+<div class="page-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <h3>ASSESSMENT </h3>
+
+        <nav>
+            <a href="#overview">Assessment Overview</a>
+            <a href="#instructions">Instructions</a>
+            <a href="#assessment">Assessment Questions</a>
+            <a href="#results">Assessment Results</a>
+        </nav>
+
+        <div class="sidebar-note">
+            <strong>Reminder</strong>
+            <p>
+                Read each question carefully before selecting your answer.
+                Make sure all questions are answered before submitting.
+            </p>
+        </div>
+
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- BANNER -->
+        <section class="lesson-banner">
+
+            <span class="banner-label">
+                WEBTECH LEARN | BSIT DIGITAL MINDS
+            </span>
+
+            <h1>Lesson 10 Assessment</h1>
+
+            <p>Mobile and Application Platforms</p>
+
+            <div class="banner-info">
+                <span>20 QUESTIONS</span>
+                <span>MULTIPLE CHOICE</span>
+                <span>20 POINTS</span>
+            </div>
+
+        </section>
+
+        <!-- OVERVIEW -->
+        <section class="content-section" id="overview">
+
+            <span class="section-label">ASSESSMENT OVERVIEW</span>
+
+            <h2>Test Your Knowledge</h2>
+
+            <p>
+                This assessment measures your understanding of mobile and
+                application platforms, their evolution, operating systems,
+                development models, components, features, and importance
+                in modern computing. It covers the concepts discussed
+                throughout Lesson 10.
+            </p>
+
+            <div class="overview-grid">
+
+                <div class="overview-card">
+                    <span class="overview-icon">📝</span>
+                    <h3>20 Questions</h3>
+                    <p>Multiple-choice questions</p>
+                </div>
+
+                <div class="overview-card">
+                    <span class="overview-icon">⭐</span>
+                    <h3>20 Points</h3>
+                    <p>One point for each correct answer</p>
+                </div>
+
+                <div class="overview-card">
+                    <span class="overview-icon">📊</span>
+                    <h3>Instant Results</h3>
+                    <p>Automatic checking and explanations</p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- INSTRUCTIONS -->
+        <section class="content-section" id="instructions">
+
+            <span class="section-label">BEFORE YOU START</span>
+
+            <h2>Assessment Instructions</h2>
+
+            <ol class="instruction-list">
+                <li>Read each question carefully.</li>
+                <li>Select only one answer for every question.</li>
+                <li>Choose the letter that represents the best answer.</li>
+                <li>Answer all 20 questions before submitting.</li>
+                <li>Click the Submit Assessment button to check your answers.</li>
+                <li>Your score, percentage, and answer explanations will appear after submission.</li>
+                <li>You may click Try Again if you want to retake the assessment.</li>
+            </ol>
+
+            <div class="notice-box">
+                <strong>Important Reminder</strong>
+                <p>
+                    You must answer all questions before you can submit
+                    your assessment.
+                </p>
+            </div>
+
+        </section>
+
+        <!-- ASSESSMENT QUESTIONS -->
+        <section class="content-section" id="assessment">
+
+            <div class="assessment-heading">
+
+                <div>
+                    <span class="section-label">KNOWLEDGE CHECK</span>
+                    <h2>Assessment Questions</h2>
+                    <p>Select the correct answer for each question.</p>
+                </div>
+
+                <div class="question-total">
+                    <strong id="answeredCount">0/20</strong>
+                    <span>Answered</span>
+                </div>
+
+            </div>
+
+            <!-- PROGRESS -->
+            <div class="progress-container">
+
+                <div class="progress-info">
+                    <span>Assessment Progress</span>
+                    <span id="progressText">0% Completed</span>
+                </div>
+
+                <div class="progress-track">
+                    <div class="progress-bar" id="progressBar"></div>
+                </div>
+
+            </div>
+
+            <!-- QUESTIONS WILL BE GENERATED BY JAVASCRIPT -->
+            <form id="lesson10Assessment">
+
+                <div id="questionContainer"></div>
+
+                <div class="form-actions">
+
+                    <button type="submit" class="submit-btn">
+                        Submit Assessment
+                    </button>
+
+                    <button type="reset" class="reset-btn" id="resetAssessment">
+                        Reset Answers
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+        <!-- RESULTS -->
+        <section class="content-section results-section" id="results" hidden>
+
+            <span class="section-label">ASSESSMENT COMPLETED</span>
+
+            <h2>Your Assessment Results</h2>
+
+            <!-- SCORE -->
+            <div class="score-card">
+
+                <span class="score-caption">YOUR FINAL SCORE</span>
+
+                <div class="score-number">
+                    <span id="scoreNumber">0</span>
+                    <small>/ 20</small>
+                </div>
+
+                <h3 id="resultMessage">Good effort!</h3>
+
+                <p id="percentageText">0% Correct</p>
+
+            </div>
+
+            <!-- RESULT SUMMARY -->
+            <div class="result-summary">
+
+                <div class="result-stat correct-stat">
+                    <strong id="correctCount">0</strong>
+                    <span>Correct Answers</span>
+                </div>
+
+                <div class="result-stat incorrect-stat">
+                    <strong id="incorrectCount">0</strong>
+                    <span>Incorrect Answers</span>
+                </div>
+
+            </div>
+
+            <!-- EXPLANATIONS -->
+            <h3 class="explanation-heading">
+                Answer Key and Explanations
+            </h3>
+
+            <p class="result-description">
+                Review the correct answers and explanations below
+                to understand the topics better.
+            </p>
+
+            <div id="explanationList" class="explanation-list"></div>
+
+            <!-- RESULT BUTTONS -->
+            <div class="result-actions">
+
+                <button type="button" id="tryAgain" class="submit-btn">
+                    Try Again
+                </button>
+
+                <a href="lesson10.html" class="back-lesson-btn">
+                    Back to Lesson 10
+                </a>
+
+            </div>
+
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+
+            <p>© 2026 WEBTECH LEARN | BSIT DIGITAL MINDS</p>
+
+            <p>Learning Today, Innovating Tomorrow.</p>
+
+        </footer>
+
+    </main>
+
+</div>
+
+<!-- BACK TO TOP -->
+<button id="backToTop" title="Back to Top">
+    ↑
+</button>
+
+</body>
+</html>

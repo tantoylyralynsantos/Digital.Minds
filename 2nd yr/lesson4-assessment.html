@@ -1,0 +1,207 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 1 Assessment | WEBTECH LEARN</title>
+
+    <link rel="stylesheet" href="chapter1-assesment.css">
+    <link rel="stylesheet" href="../display-settings.css">
+
+    <script src="../display-settings.js" defer></script>
+    <script src="chapter1-asessement.js" defer></script>
+</head>
+<body>
+
+
+<!-- HEADER -->
+<header class="header">
+    <div class="nav-container">
+
+        <a href="index.html" class="logo">
+            <img src="logo.jpg" alt="BSIT Digital Minds Logo" class="logo-image">
+
+            <span class="logo-text">
+                <small>BSIT | DIGITAL MINDS</small>
+            </span>
+        </a>
+
+        <a href="chapter1.html" class="back-home">
+            ← Back to Chapter 1
+        </a>
+
+    </div>
+    <link rel="stylesheet" href="ebook-pagination.css">
+<script src="ebook-pagination.js" defer></script>
+</header>
+
+
+<main class="assessment-container">
+
+    <section class="assessment-banner">
+        <span class="lesson-label">LESSON 04</span>
+        <h1>CSS – Styling and Layout</h1>
+        <p>Assessment and Evaluation</p>
+        <div class="banner-details">
+            <span>35 Questions</span>
+            <span>3 Sections</span>
+            <span>Automatic Scoring</span>
+        </div>
+    </section>
+
+    <section class="instructions content-section">
+        <h2>Assessment Instructions</h2>
+        <p>
+            Read each question carefully and select or enter the
+            correct answer. Complete all 35 questions before
+            submitting your assessment.
+        </p>
+
+        <ul>
+            <li>Part I – Multiple Choice: 20 questions</li>
+            <li>Part II – Identification: 10 questions</li>
+            <li>Part III – True or False: 5 questions</li>
+            <li>Each correct answer is worth one point.</li>
+            <li>Your score and answer explanations will appear after submission.</li>
+        </ul>
+    </section>
+
+    <section class="progress-section content-section">
+        <div class="progress-heading">
+            <h2>Your Progress</h2>
+            <strong id="progressText">0 / 35 Answered</strong>
+        </div>
+
+        <div class="progress-track">
+            <div class="progress-fill" id="progressFill"></div>
+        </div>
+
+        <p id="progressMessage">Start answering the questions.</p>
+    </section>
+
+    <form id="assessmentForm">
+
+        <!-- PART I -->
+        <section class="content-section question-section">
+            <div class="section-heading">
+                <span class="section-number">PART I</span>
+                <h2>Multiple Choice</h2>
+                <p>Choose the letter of the best answer.</p>
+            </div>
+
+            <div id="multipleChoiceQuestions"></div>
+        </section>
+
+        <!-- PART II -->
+        <section class="content-section question-section">
+            <div class="section-heading">
+                <span class="section-number">PART II</span>
+                <h2>Identification</h2>
+                <p>Identify the CSS term or concept being described.</p>
+            </div>
+
+            <div id="identificationQuestions"></div>
+        </section>
+
+        <!-- PART III -->
+        <section class="content-section question-section">
+            <div class="section-heading">
+                <span class="section-number">PART III</span>
+                <h2>True or False</h2>
+                <p>Select True if the statement is correct and False if it is incorrect.</p>
+            </div>
+
+            <div id="trueFalseQuestions"></div>
+        </section>
+
+        <!-- SUBMIT -->
+        <section class="content-section submit-section">
+            <h2>Submit Your Assessment</h2>
+            <p>
+                Review your answers before submitting.
+                Make sure all 35 questions are completed.
+            </p>
+
+            <button type="submit" class="quiz-button">
+                Submit Assessment
+            </button>
+
+            <button type="button" id="resetAssessment" class="reset-button">
+                Reset Answers
+            </button>
+
+            <p class="submit-note">
+                Your score, performance, and answer explanations
+                will appear after submission.
+            </p>
+        </section>
+
+    </form>
+
+    <!-- RESULTS -->
+    <section class="content-section results-section" id="results" hidden>
+
+        <span class="assessment-label">ASSESSMENT RESULTS</span>
+        <h2>Your Results</h2>
+
+        <p>Here is your performance summary for Lesson 4.</p>
+
+        <div class="score-display">
+            <span id="scoreNumber">0/35</span>
+            <span id="scorePercentage">0%</span>
+        </div>
+
+        <h3 id="resultMessage">Assessment completed!</h3>
+        <p id="resultDetails"></p>
+
+        <div class="score-breakdown">
+            <div>
+                <span>Multiple Choice</span>
+                <strong id="mcScore">0/20</strong>
+            </div>
+
+            <div>
+                <span>Identification</span>
+                <strong id="idScore">0/10</strong>
+            </div>
+
+            <div>
+                <span>True or False</span>
+                <strong id="tfScore">0/5</strong>
+            </div>
+        </div>
+
+        <div class="answer-explanations">
+            <h3>Answer Key and Explanations</h3>
+            <p>
+                Review the correct answers and explanations
+                to improve your understanding of CSS Styling and Layout.
+            </p>
+
+            <div id="explanationList"></div>
+        </div>
+
+        <button type="button" id="tryAgain" class="quiz-button">
+            Try Again
+        </button>
+
+    </section>
+
+    <div class="lesson-navigation">
+        <a href="lesson4.html" class="previous-button">← Back to Lesson</a>
+        <a href="3rd yr toc.html" class="next-button">Table of Contents →</a>
+    </div>
+
+    <footer class="page-footer">
+        <p>WEBTECH LEARN | BSIT DIGITAL E-BOOK</p>
+        <p>Excellence Beyond Limits</p>
+    </footer>
+
+</main>
+
+<button id="backToTop" title="Back to top">↑</button>
+
+<script src="lesson4-assessment.js"></script>
+</body>
+</html>

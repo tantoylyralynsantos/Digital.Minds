@@ -1,0 +1,890 @@
+
+/* =========================================
+   WEBTECH LEARN - DIGITAL E-BOOK LIBRARY
+========================================= */
+
+/* GENERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f3f6fa;
+    color: #173b59;
+    line-height: 1.6;
+}
+
+/* HEADER */
+.top-header {
+    width: 100%;
+    background: #ffffff;
+    border-bottom: 1px solid #e2e9f0;
+    padding: 17px 6%;
+}
+
+.header-content {
+    max-width: 1250px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: #16466d;
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-decoration: none;
+}
+
+.back-link {
+    color: #607b91;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.25s;
+}
+
+.back-link:hover {
+    color: #0878bd;
+}
+
+/* MAIN CONTAINER */
+.toc-container {
+    width: 90%;
+    max-width: 1250px;
+    margin: 48px auto 75px;
+}
+
+/* INTRODUCTION */
+.ebook-intro {
+    max-width: 720px;
+    margin-bottom: 48px;
+}
+
+.eyebrow {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 15px;
+    background: #e4eff8;
+    color: #39749d;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    border-radius: 3px;
+}
+
+.ebook-intro h1 {
+    color: #173b59;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 37px;
+    line-height: 1.25;
+    margin-bottom: 12px;
+}
+
+.ebook-intro > p {
+    max-width: 650px;
+    color: #718294;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.intro-line {
+    width: 55px;
+    height: 3px;
+    background: #9bbbd1;
+    margin: 22px 0 12px;
+}
+
+.intro-caption {
+    color: #8b9ba9;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.7px;
+}
+
+/* SECTION HEADING */
+.section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 22px;
+}
+
+.section-heading h2 {
+    color: #173b59;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 25px;
+    margin-bottom: 3px;
+}
+
+.section-heading p {
+    color: #8493a1;
+    font-size: 12px;
+}
+
+.book-count {
+    padding: 7px 12px;
+    background: #e5edf4;
+    color: #58738a;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border-radius: 3px;
+}
+
+/* SEARCH */
+.lesson-search {
+    margin-bottom: 30px;
+}
+
+#lessonSearch {
+    width: 100%;
+    max-width: 410px;
+    padding: 12px 15px;
+    background: #ffffff;
+    color: #294c67;
+    border: 1px solid #dce5ed;
+    border-radius: 5px;
+    outline: none;
+    font-size: 13px;
+    transition: 0.25s;
+}
+
+#lessonSearch:focus {
+    border-color: #8aafca;
+    box-shadow: 0 0 0 3px rgba(111, 164, 199, 0.12);
+}
+
+#resultMessage {
+    margin-top: 8px;
+    color: #8998a6;
+    font-size: 11px;
+}
+
+/* BOOK GRID */
+.ebook-section .lesson-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 32px 24px;
+    align-items: stretch;
+}
+
+/* BOOK LINK */
+.ebook-section a.lesson-card {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    aspect-ratio: 0.70;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    border: none;
+    border-radius: 2px;
+    box-shadow: none;
+    text-decoration: none;
+    overflow: visible;
+    transition: transform 0.3s ease;
+}
+
+.ebook-section a.lesson-card::before {
+    display: none;
+}
+
+.ebook-section a.lesson-card:hover {
+    transform: translateY(-7px);
+    box-shadow: none;
+}
+
+/* BOOK COVER */
+.book-cover {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    padding: 17px 13px 13px 19px;
+    overflow: hidden;
+    border: 1px solid rgba(50, 70, 85, 0.13);
+    border-radius: 2px;
+    box-shadow:
+        3px 5px 10px rgba(0, 0, 0, 0.12),
+        inset 5px 0 7px rgba(0, 0, 0, 0.06);
+    transition: box-shadow 0.3s ease;
+}
+
+/* BOOK SPINE */
+.book-cover::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 7px;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.10);
+}
+
+/* COVER COLORS */
+.cover-01 { background: #dcebed; }
+.cover-02 { background: #e9e2d8; }
+.cover-03 { background: #e8dcd5; }
+.cover-04 { background: #dfe7e0; }
+.cover-05 { background: #dce8ef; }
+.cover-06 { background: #e9e1d4; }
+.cover-07 { background: #dce9e8; }
+.cover-08 { background: #e8e1eb; }
+.cover-09 { background: #e5e4dc; }
+.cover-10 { background: #dce5ed; }
+
+/* BOOK TOP */
+.book-top {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.book-top > span:first-child {
+    width: fit-content;
+    padding: 5px 7px;
+    background: rgba(255, 255, 255, 0.65);
+    color: #48667c;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border-radius: 2px;
+}
+
+/* BOOK NUMBER */
+.book-number {
+    position: absolute;
+    top: 36px;
+    right: 8px;
+    color: rgba(30, 65, 85, 0.13);
+    font-size: clamp(30px, 3.5vw, 47px);
+    line-height: 1;
+    font-weight: 800;
+}
+
+/* BOOK CONTENT */
+.book-content {
+    position: relative;
+    z-index: 1;
+    margin: auto 0;
+    padding: 12px 0;
+    max-width: 100%;
+}
+
+.book-category {
+    color: #627c8d;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    margin-bottom: 10px;
+}
+
+.book-content h3 {
+    color: #23445d;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(13px, 1.25vw, 17px);
+    line-height: 1.35;
+    font-weight: 700;
+    overflow-wrap: break-word;
+}
+
+.book-subtitle {
+    color: #687d89;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 9px;
+    line-height: 1.5;
+    margin-top: 10px;
+}
+
+/* BOOK FOOTER */
+.book-footer {
+    position: relative;
+    z-index: 1;
+    padding-top: 9px;
+    border-top: 1px solid rgba(50, 75, 90, 0.20);
+}
+
+.book-footer span {
+    color: #5e7788;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+}
+
+/* BOOK HOVER */
+.ebook-section a.lesson-card:hover .book-cover {
+    box-shadow:
+        7px 12px 18px rgba(0, 0, 0, 0.17),
+        inset 5px 0 7px rgba(0, 0, 0, 0.06);
+}
+
+.ebook-section a.lesson-card:focus-visible {
+    outline: 3px solid #6ba5ce;
+    outline-offset: 5px;
+}
+
+/* NO RESULTS */
+.no-results {
+    padding: 30px;
+    margin-top: 20px;
+    text-align: center;
+    color: #718092;
+    background: #ffffff;
+    border: 1px solid #dce4eb;
+    border-radius: 4px;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+/* FOOTER */
+.page-footer {
+    padding: 25px 15px;
+    text-align: center;
+    background: #ffffff;
+    border-top: 1px solid #e1e7ed;
+}
+
+.page-footer p {
+    color: #58738a;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.page-footer span {
+    color: #96a3ae;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+}
+
+/* DISPLAY SETTINGS */
+#displaySettings {
+    z-index: 999;
+}
+
+/* TABLET */
+@media (max-width: 1000px) {
+    .ebook-section .lesson-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 27px 19px;
+    }
+}
+
+/* SMALL TABLET */
+@media (max-width: 700px) {
+    .toc-container {
+        width: 92%;
+        margin-top: 35px;
+    }
+
+    .ebook-section .lesson-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 23px 15px;
+    }
+
+    .book-cover {
+        padding: 14px 10px 11px 15px;
+    }
+
+    .book-content h3 {
+        font-size: 14px;
+    }
+
+    .book-subtitle {
+        font-size: 8px;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 480px) {
+    .top-header {
+        padding: 15px 5%;
+    }
+
+    .logo {
+        font-size: 16px;
+    }
+
+    .back-link {
+        font-size: 11px;
+    }
+
+    .toc-container {
+        width: 91%;
+        margin-top: 30px;
+    }
+
+    .ebook-intro h1 {
+        font-size: 29px;
+    }
+
+    .ebook-intro > p {
+        font-size: 13px;
+    }
+
+    .section-heading h2 {
+        font-size: 21px;
+    }
+
+    .ebook-section .lesson-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 22px 15px;
+    }
+
+    .book-content h3 {
+        font-size: 14px;
+    }
+
+    .book-number {
+        font-size: 36px;
+    }
+}
+/* =====================================
+   HEADER - MATCH HOME PAGE DESIGN
+===================================== */
+
+.top-header {
+    width: 100%;
+    height: 104px;
+    padding: 0 3%;
+    background: #0b355d;
+    border-bottom: none;
+    position: relative;
+    z-index: 1000;
+}
+
+.header-content {
+    width: 100%;
+    max-width: 1450px;
+    height: 100%;
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* BRAND LOGO */
+
+.brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    text-decoration: none;
+}
+
+.logo-box {
+    width: 62px;
+    height: 62px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #ffffff;
+    color: #07365f;
+
+    font-size: 36px;
+    font-weight: 900;
+    border-radius: 17px;
+}
+
+.logo-text {
+    color: #b9d2e9;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+}
+
+/* NAVIGATION */
+
+.main-navigation {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.nav-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 17px 20px;
+
+    color: #e5eff9;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+
+    border-radius: 11px;
+    transition: 0.25s ease;
+}
+
+.nav-link:hover,
+.main-navigation > .nav-link:first-child {
+    background: rgba(255, 255, 255, 0.12);
+    color: #ffffff;
+}
+
+.dropdown-arrow {
+    font-size: 18px;
+}
+
+/* LESSON DROPDOWN */
+
+.nav-dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+
+    min-width: 190px;
+    max-height: 350px;
+    overflow-y: auto;
+
+    padding: 8px;
+    margin-top: 8px;
+
+    background: #ffffff;
+    border: 1px solid #dce6f0;
+    border-radius: 9px;
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.nav-dropdown:hover .dropdown-menu,
+.nav-dropdown:focus-within .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 10px 12px;
+
+    color: #16466d;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+
+    border-radius: 5px;
+    transition: 0.2s;
+}
+
+.dropdown-menu a:hover {
+    background: #e8f2fb;
+    color: #0878bd;
+}
+
+/* RESPONSIVE HEADER */
+
+@media (max-width: 850px) {
+
+    .top-header {
+        height: auto;
+        padding: 15px 4%;
+    }
+
+    .header-content {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .main-navigation {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+
+    .nav-link {
+        padding: 10px 12px;
+        font-size: 12px;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .logo-box {
+        width: 48px;
+        height: 48px;
+        font-size: 28px;
+        border-radius: 13px;
+    }
+
+    .logo-text {
+        font-size: 10px;
+        letter-spacing: 1.5px;
+    }
+
+    .main-navigation {
+        gap: 2px;
+    }
+
+    .nav-link {
+        padding: 9px 8px;
+        font-size: 11px;
+    }
+
+}
+/* =========================================
+   HEADER AND NAVIGATION
+========================================= */
+
+.header {
+    width: 100%;
+    background: rgba(8, 45, 89, 0.97);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 3px 18px rgba(0, 0, 0, 0.08);
+}
+
+.nav-container {
+    max-width: 1250px;
+    min-height: 82px;
+    padding: 12px 30px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--white);
+}
+
+.logo-icon {
+    width: 46px;
+    height: 46px;
+    display: grid;
+    place-items: center;
+    border-radius: 13px;
+    background: var(--white);
+    color: var(--navy);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 25px;
+    font-weight: 800;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.logo-text {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 17px;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+    line-height: 1.4;
+}
+
+.logo-text small {
+    display: block;
+    color: #c5dcf5;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nav-link,
+.nav-dropdown-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 11px 14px;
+    border: none;
+    border-radius: 7px;
+    background: transparent;
+    color: #e7f1fc;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.nav-link:hover,
+.nav-link.active,
+.nav-dropdown-toggle:hover,
+.nav-dropdown.open .nav-dropdown-toggle {
+    background: rgba(255, 255, 255, 0.12);
+    color: var(--white);
+}
+
+.nav-dropdown {
+    position: relative;
+}
+
+.dropdown-arrow {
+    font-size: 16px;
+    transition: transform 0.25s ease;
+}
+
+.nav-dropdown.open .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+.nav-dropdown-menu {
+    position: absolute;
+    top: calc(100% + 12px);
+    left: 0;
+    min-width: 205px;
+    padding: 8px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 11px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    display: none;
+    z-index: 1001;
+}
+
+.nav-dropdown-menu::before {
+    content: "";
+    position: absolute;
+    top: -8px;
+    left: 0;
+    width: 100%;
+    height: 10px;
+}
+
+.nav-dropdown.open .nav-dropdown-menu {
+    display: block;
+}
+
+.nav-dropdown-menu a {
+    display: block;
+    padding: 11px 13px;
+    border-radius: 7px;
+    color: var(--navy);
+    font-size: 13px;
+    font-weight: 600;
+    transition: 0.2s ease;
+}
+
+.nav-dropdown-menu a:hover {
+    background: var(--blue-light);
+    color: var(--blue);
+}
+
+.menu-toggle {
+    display: none;
+    width: 42px;
+    height: 42px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 8px;
+    background: transparent;
+    color: white;
+    font-size: 23px;
+    cursor: pointer;
+}
+
+/* HEADER LOGO IMAGE */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
+
+.logo-image {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    display: block;
+    border-radius: 50%;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+/* BACK TO HOME BUTTON */
+.back-home {
+    margin-left: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    background: #10569a;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: 0.3s ease;
+}
+
+.back-home:hover {
+    background: #082d59;
+    transform: translateY(-2px);
+}
+
+/* HEADER LOGO */
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+/* AESTHETIC BACK TO HOME */
+.back-home {
+    margin-left: auto;
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 18px;
+    color: #ffffff;
+    text-decoration: none;
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+.back-home:hover {
+    background: #ffffff;
+    color: #082d59;
+    transform: translateY(-2px);
+}
+.back-home {
+    margin-left: auto;
+    display: inline-flex;
+    align-items: center;
+    padding: 7px 13px;
+    color: #ffffff;
+    text-decoration: none;
+    font-family: 'Playfair Display', serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.back-home:hover {
+    background: #ffffff;
+    color: #082d59;
+    transform: translateY(-2px);
+}
