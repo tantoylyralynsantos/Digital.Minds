@@ -287,49 +287,4 @@
 </html>
 
 
-const loginForm = document.getElementById("loginForm");
 
-const usernameInput = document.getElementById("username");
-const rememberMe = document.getElementById("rememberMe");
-
-// LOAD SAVED USERNAME
-window.addEventListener("DOMContentLoaded", function () {
-
-    const savedUsername = localStorage.getItem("digitalMindsUsername");
-
-    if (savedUsername) {
-        usernameInput.value = savedUsername;
-        rememberMe.checked = true;
-    }
-
-});
-
-// SAVE USERNAME BEFORE SUBMITTING
-loginForm.addEventListener("submit", function () {
-
-    const username = usernameInput.value.trim();
-
-    if (rememberMe.checked) {
-        localStorage.setItem("digitalMindsUsername", username);
-    } else {
-        localStorage.removeItem("digitalMindsUsername");
-    }
-
-});
-
-// SHOW / HIDE PASSWORD
-const passwordInput = document.getElementById("password");
-const togglePassword = document.getElementById("togglePassword");
-
-togglePassword.addEventListener("click", function () {
-
-    const hidden = passwordInput.type === "password";
-
-    passwordInput.type = hidden ? "text" : "password";
-
-    togglePassword.setAttribute(
-        "aria-label",
-        hidden ? "Hide password" : "Show password"
-    );
-
-});
